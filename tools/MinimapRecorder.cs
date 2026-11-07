@@ -17,6 +17,8 @@ static class MinimapRecorder
     [DllImport("user32.dll")] static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint pid);
 
     const int Size = 480; // 1920x1080'de varsayılan minimap bu karenin içinde kalır
+    // Üst orta skor çubuğu (ajan portreleri, skor, süre): ölen rakibi okumak için. Sağ üstteki öldürme akışı (oyuncu adları) dışarıda kalır.
+    static readonly Rectangle Top = new Rectangle(480, 0, 960, 140);
 
     static void Main(string[] args)
     {
@@ -30,8 +32,12 @@ static class MinimapRecorder
         Console.CancelKeyPress += (o, e) => { e.Cancel = true; stop = true; };
         int saved = 0;
         long lastHash = 0;
+        string topDir = Path.Combine(dir, "ust");
+        Directory.CreateDirectory(topDir);
         using (var bmp = new Bitmap(Size, Size, PixelFormat.Format24bppRgb))
         using (var g = Graphics.FromImage(bmp))
+        using (var top = new Bitmap(Top.Width, Top.Height, PixelFormat.Format24bppRgb))
+        using (var gt = Graphics.FromImage(top))
         {
             while (!stop)
             {
@@ -43,7 +49,10 @@ static class MinimapRecorder
                     if (h != lastHash) // menüde donmuş görüntüyü tekrar tekrar kaydetme
                     {
                         lastHash = h;
-                        bmp.Save(Path.Combine(dir, DateTime.Now.ToString("HHmmss_fff") + ".png"), ImageFormat.Png);
+                        string name = DateTime.Now.ToString("HHmmss_fff") + ".png";
+                        bmp.Save(Path.Combine(dir, name), ImageFormat.Png);
+                        gt.CopyFromScreen(Top.X, Top.Y, 0, 0, Top.Size, CopyPixelOperation.SourceCopy);
+                        top.Save(Path.Combine(topDir, name), ImageFormat.Png);
                         saved++;
                         Console.Write("\rKaydedilen kare: " + saved + "   ");
                     }
