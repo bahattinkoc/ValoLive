@@ -334,6 +334,7 @@ zirve	tertinggi
 ✗ HenrikDev anahtarı geçersiz	✗ Key HenrikDev tidak valid
 ✗ Oyuncu bulunamadı (isim/etiket/bölge)	✗ Pemain tidak ditemukan (nama/tag/region)
 Rakip hafızası: minimap'te son görülen yerler (deneysel)	Ingatan musuh: posisi terakhir terlihat di minimap (eksperimental)
+Rakip hafızası: harita üstünde ikonlar (deneysel)	Ingatan musuh: ikon di atas minimap (eksperimental)
 {0} dk	{0} mnt
 {0} sn	{0} dtk
 şimdi	sekarang

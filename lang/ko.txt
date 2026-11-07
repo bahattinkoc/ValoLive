@@ -334,6 +334,7 @@ zirve	최고
 ✗ HenrikDev anahtarı geçersiz	✗ HenrikDev 키가 잘못됨
 ✗ Oyuncu bulunamadı (isim/etiket/bölge)	✗ 플레이어를 찾을 수 없음 (이름/태그/지역)
 Rakip hafızası: minimap'te son görülen yerler (deneysel)	적 기억: 미니맵에서 마지막으로 본 위치 (실험적)
+Rakip hafızası: harita üstünde ikonlar (deneysel)	적 기억: 미니맵 위 아이콘 (실험적)
 {0} dk	{0}분
 {0} sn	{0}초
 şimdi	지금

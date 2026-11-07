@@ -65,7 +65,7 @@ namespace ValoLive
         ComboBox cmbCategory;
         Button btnAlign;
         Label lblRadarPos;
-        CheckBox chkRadar, chkChat, chkPost, chkBot, chkWgc, chkBreak, chkAutoLobby, chkAlerts, chkAutoCover, chkMemory;
+        CheckBox chkRadar, chkChat, chkPost, chkBot, chkWgc, chkBreak, chkAutoLobby, chkAlerts, chkAutoCover, chkMemory, chkMemoryMap;
         string liveState = "";
         bool autoCovered;                 // perdeyi ajan seçimi açtı (F9 ile açılanı maç başı kapatmaz)
         Control[] appShift; bool appRow = true;
@@ -74,6 +74,7 @@ namespace ValoLive
         readonly MinimapMemory memory = new MinimapMemory();
         readonly Timer memTimer = new Timer { Interval = 250 };
         MemoryPanel memPanel;
+        MemoryMarks memMarks;
         int memScore = -1;
         bool memStarting;
         DateTime memRetry;
@@ -157,12 +158,13 @@ namespace ValoLive
                    tRadar = L.T("Minimap'i radar rozetiyle ört"), tAutoCover = L.T("Ajan seçiminde sniper perdesi (otomatik)"),
                    tChat = L.T("Yayında chat kutusu"), tPost = L.T("Maç sonu kartı (ısı haritası + özet)"),
                    tBot = L.F("Chat komutları ({0})", string.Join(" ", ChatBot.Commands)), tBreak = L.T("Menüde bekleme ekranı (sıra sayacı)"),
-                   tMemory = L.T("Rakip hafızası: minimap'te son görülen yerler (deneysel)");
+                   tMemory = L.T("Rakip hafızası: minimap'te son görülen yerler (deneysel)"),
+                   tMemoryMap = L.T("Rakip hafızası: harita üstünde ikonlar (deneysel)");
             using (var cap = new Font(L.SansBold, 8.25f))
                 LabelW = Math.Max(104, new[] { "Stream URL", "Stream Key", L.T("Kick hesabı"), L.T("Başlık"), L.T("Kategori"), L.T("Etiketler"), "Riot ID", "HenrikDev key",
                     L.T("Kalite"), L.T("Yakalama"), L.T("Uygulama"), L.T("Mikrofon"), L.T("Oyun sesi"), L.T("Rozet yeri") }
                     .Max(s => TextRenderer.MeasureText(Theme.Upper(s), cap).Width) + 12);
-            int toggleW = new[] { tAutoLobby, tAlerts, tWgc, tDenoise, tRadar, tAutoCover, tChat, tPost, tBot, tBreak, tMemory }.Max(s => VToggle.WidthFor(s, Font));
+            int toggleW = new[] { tAutoLobby, tAlerts, tWgc, tDenoise, tRadar, tAutoCover, tChat, tPost, tBot, tBreak, tMemory, tMemoryMap }.Max(s => VToggle.WidthFor(s, Font));
             ColW = Math.Min(560, Math.Max(Math.Max(420, LabelW + 316), toggleW + 4));
 
             var sub = new Label { Text = L.T("Kick için hafif Valorant yayın aracı · RTX NVENC"), ForeColor = Mut, AutoSize = true, Location = new Point(22, 56) };
@@ -254,6 +256,9 @@ namespace ValoLive
             chkMemory = new VToggle { Text = tMemory, ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
             Controls.Add(chkMemory); y += 26;
             chkMemory.CheckedChanged += (s, e) => SaveSettings();
+            chkMemoryMap = new VToggle { Text = tMemoryMap, ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
+            Controls.Add(chkMemoryMap); y += 26;
+            chkMemoryMap.CheckedChanged += (s, e) => SaveSettings();
             int leftBottom = y;
 
             // ---- Sağ sütun ----
@@ -515,6 +520,7 @@ namespace ValoLive
             chkAlerts.Checked = cfg.LobbyAlerts;
             chkAutoCover.Checked = cfg.AutoCover;
             chkMemory.Checked = cfg.EnemyMemory;
+            chkMemoryMap.Checked = cfg.EnemyMemoryMap;
             UpdateKickStatus();
         }
 
@@ -541,7 +547,7 @@ namespace ValoLive
             cfg.MapCover = chkRadar.Checked;
             cfg.ChatBox = chkChat.Checked;
             if (chkPost != null) { cfg.PostMatchCard = chkPost.Checked; cfg.ChatBot = chkBot.Checked; }
-            if (chkWgc != null) { cfg.WindowCapture = chkWgc.Checked; cfg.BreakScreen = chkBreak.Checked; cfg.AutoLobby = chkAutoLobby.Checked; cfg.LobbyAlerts = chkAlerts.Checked; cfg.AutoCover = chkAutoCover.Checked; cfg.EnemyMemory = chkMemory.Checked; }
+            if (chkWgc != null) { cfg.WindowCapture = chkWgc.Checked; cfg.BreakScreen = chkBreak.Checked; cfg.AutoLobby = chkAutoLobby.Checked; cfg.LobbyAlerts = chkAlerts.Checked; cfg.AutoCover = chkAutoCover.Checked; cfg.EnemyMemory = chkMemory.Checked; cfg.EnemyMemoryMap = chkMemoryMap.Checked; }
             cfg.Save();
         }
 
@@ -806,11 +812,11 @@ namespace ValoLive
         void TickMemory()
         {
             var s = live?.Snap;
-            if (!cfg.EnemyMemory || s == null || !s.InGame)
+            if (!MemoryWanted || s == null || !s.InGame)
             {
                 if (memory.Active) { memory.Stop(); MinimapMemory.Log("durdu"); }
                 memScore = -1;
-                memPanel?.Hide();
+                memPanel?.Hide(); memMarks?.Hide();
                 return;
             }
             if (!memory.Active && !memStarting && DateTime.Now >= memRetry) { memRetry = DateTime.Now.AddSeconds(15); StartMemory(); }
@@ -818,14 +824,26 @@ namespace ValoLive
             if (score != memScore) { if (memScore >= 0) { memory.NewRound(); MinimapMemory.Log($"yeni raund · skor {s.Ally}-{s.Enemy}"); } memScore = score; }
 
             var rows = memory.Snapshot();
-            if (memory.GameFront && rows.Count > 0 && !memory.MapRect.IsEmpty)
+            bool ready = memory.GameFront && rows.Count > 0 && !memory.MapRect.IsEmpty;
+            float scale = Screen.PrimaryScreen.Bounds.Width / (float)screenW;
+            if (ready && cfg.EnemyMemory)
             {
-                if (memPanel == null || memPanel.IsDisposed) memPanel = new MemoryPanel(Screen.PrimaryScreen.Bounds.Width / (float)screenW);
+                if (memPanel == null || memPanel.IsDisposed) memPanel = new MemoryPanel(scale);
                 memPanel.Set(rows, memory.MapRect);
                 if (!memPanel.Visible) memPanel.Show();
             }
             else memPanel?.Hide();
+            if (ready && cfg.EnemyMemoryMap && MemoryMarks.Any(rows))
+            {
+                if (memMarks == null || memMarks.IsDisposed) memMarks = new MemoryMarks(scale);
+                memMarks.Set(rows, memory.MapRect);
+                if (!memMarks.Visible) memMarks.Show();
+            }
+            else memMarks?.Hide();
         }
+
+        /// <summary>Yazılı şerit ya da harita ikonları: ikisinden biri açıksa minimap okunur.</summary>
+        bool MemoryWanted => cfg.EnemyMemory || cfg.EnemyMemoryMap;
 
         void StartMemory()
         {
@@ -840,7 +858,7 @@ namespace ValoLive
                     BeginInvoke((Action)(() =>
                     {
                         memStarting = false;
-                        if (cfg.EnemyMemory && live.Snap.InGame) { memory.Start(st.MapUrl, enemies); memScore = -1; }
+                        if (MemoryWanted && live.Snap.InGame) { memory.Start(st.MapUrl, enemies); memScore = -1; }
                     }));
                 }
                 catch (Exception e) { MinimapMemory.Log("maç okunamadı: " + e.Message); memStarting = false; }

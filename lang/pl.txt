@@ -334,6 +334,7 @@ zirve	szczyt
 ✗ HenrikDev anahtarı geçersiz	✗ Nieprawidłowy klucz HenrikDev
 ✗ Oyuncu bulunamadı (isim/etiket/bölge)	✗ Nie znaleziono gracza (nick/tag/region)
 Rakip hafızası: minimap'te son görülen yerler (deneysel)	Pamięć wrogów: ostatnio widziane miejsca z minimapy (eksperymentalne)
+Rakip hafızası: harita üstünde ikonlar (deneysel)	Pamięć wrogów: ikony na minimapie (eksperymentalne)
 {0} dk	{0} min
 {0} sn	{0} s
 şimdi	teraz

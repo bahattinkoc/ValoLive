@@ -141,6 +141,7 @@ ROUND AÇILIŞI
 ROZETİ MİNİMAP'E HİZALA\n\n
 Radyant
 Rakibin
+Rakip hafızası: harita üstünde ikonlar (deneysel)
 Rakip hafızası: minimap'te son görülen yerler (deneysel)
 Rakipler maç başlayınca görünür (ajan seçiminde Riot göstermez).
 Rakipte {0} kişilik parti

@@ -334,6 +334,7 @@ zirve	picco
 ✗ HenrikDev anahtarı geçersiz	✗ Chiave HenrikDev non valida
 ✗ Oyuncu bulunamadı (isim/etiket/bölge)	✗ Giocatore non trovato (nome/tag/regione)
 Rakip hafızası: minimap'te son görülen yerler (deneysel)	Memoria nemici: ultime posizioni viste sulla minimappa (sperimentale)
+Rakip hafızası: harita üstünde ikonlar (deneysel)	Memoria nemici: icone sulla minimappa (sperimentale)
 {0} dk	{0} min
 {0} sn	{0} s
 şimdi	ora

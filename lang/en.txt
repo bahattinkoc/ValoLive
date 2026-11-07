@@ -334,6 +334,7 @@ zirve	peak
 ✗ HenrikDev anahtarı geçersiz	✗ Invalid HenrikDev key
 ✗ Oyuncu bulunamadı (isim/etiket/bölge)	✗ Player not found (name/tag/region)
 Rakip hafızası: minimap'te son görülen yerler (deneysel)	Enemy memory: last seen spots from the minimap (experimental)
+Rakip hafızası: harita üstünde ikonlar (deneysel)	Enemy memory: icons on the minimap (experimental)
 {0} dk	{0} min
 {0} sn	{0} s
 şimdi	now
