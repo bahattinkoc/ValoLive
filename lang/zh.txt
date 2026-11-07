@@ -1,0 +1,335 @@
+# ValoLive Â· zh Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+ (sen)	 (你)
+ (şu an kapalı)	 (目前已關閉)
+ · BU HARİTADA {0} MAÇI	 · 此地圖 {0} 場
+ · devam ediyor…	 · 進行中…
+ · seni {0} kez öldürdü, sen onu {1}	 · 擊殺你 {0} 次，你擊殺他 {1} 次
+ · {0} maçlık galibiyet serisi	 · {0} 連勝中
+ ▲seri	 ▲連勝
+ ▼tilt	 ▼心態
+"{0}" adında kategori bulunamadı.	找不到名為 "{0}" 的分類。
+%{0}	{0}%
+(mikrofon yok)	(無麥克風)
++{0} karşılaşma daha	+{0} 次相遇
+, ilk ölüm %{0}	，首殺陣亡 {0}%
+. İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.	。首次交火通常來自他；預瞄角度，不要硬探頭。
+1080p60 · 6000 kbps (önerilen)	1080p60 · 6000 kbps (建議)
+2 kayıp serisinden sonra yeterli maç yok; örnek arttıkça netleşir.	連敗 2 場後的對戰數還不夠；資料越多越準確。
+2 kayıptan sonra ({0})	連敗 2 場後 ({0})
+720p60 · 4500 kbps (zayıf internet)	720p60 · 4500 kbps (網路較慢)
+936p60 · 6000 kbps (keskin + hafif)	936p60 · 6000 kbps (清晰 + 輕量)
+<h2>ValoLive Kick'e bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>	<h2>ValoLive 已連接 Kick ✓</h2><p>你可以關閉此分頁。</p>
+AGRESİF	激進
+AJAN SEÇİMİ	特務選擇
+ANALİZİM	我的分析
+Ajan	特務
+Ajan seçiminde sniper perdesi (otomatik)	特務選擇時開啟防偷看遮罩 (自動)
+Akşam	傍晚
+Altın	金牌
+Analizim	我的分析
+Atak	進攻
+Ayrıntı: %LOCALAPPDATA%\ValoLive\ffmpeg.log	詳細資訊：%LOCALAPPDATA%\ValoLive\ffmpeg.log
+Açmak için simgeye tıkla; çıkış simgenin sağ tık menüsünde.	點擊圖示開啟；結束請在圖示的右鍵選單中。
+BERABERE	平手
+BUGÜN	今天
+Bağlan	連接
+Bağlanılamadı	連線失敗
+Bağlanıyor…	連線中…
+Bağlı değil	未連接
+Başlık	標題
+Başlık uygulanamadı: 	無法套用標題： 
+Başlık, kategori ve etiketler Kick'e uygulandı ✓	已將標題、分類與標籤套用到 Kick ✓
+Belirgin bir alışkanlık yok — dengeli oynuyor.	沒有明顯習慣 — 打法平衡。
+Bildirimler (tanıdık oyuncu, smurf, parti)	通知 (熟人、小號、組隊)
+Bronz	銅牌
+Bu haritada bomba kurmamış.	未曾在此地圖安裝。
+Bu pencere yayına ve kayda girmez · adını gizleyenler aranmaz	此視窗不會出現在直播或錄影中 · 不查詢隱藏名稱的玩家
+Bugün henüz rekabetçi maç yok.	今天還沒有競技對戰。
+Bugün {0}G {1}M · {2} RR	今天 {0}勝 {1}敗 · {2} RR
+Bölge bulunamadı: Valorant'ı bir kez açman gerekiyor	找不到伺服器區域：請先啟動一次 VALORANT
+BİRAZDAN DÖNÜYORUM	馬上回來
+CANLI	直播中
+CANLI SKOR	即時比分
+Canlı skor: {0}-{1} · {2}	即時比分：{0}-{1} · {2}
+Chat komutları ({0})	聊天室指令 ({0})
+Client ID ve Client Secret gerekli.	需要 Client ID 與 Client Secret。
+Defans	防守
+Demir	鐵牌
+Derecesiz	未評級
+Desteklenmeyen ses biçimi ({0} bit).	不支援的音訊格式 ({0} 位元)。
+Dil, yayın bitince ValoLive yeniden açıldığında değişir.	直播結束並重新啟動 ValoLive 後才會切換語言。
+ESKİ DOST	老戰友
+Elmas	鑽石
+Enter: kaydet     Esc: vazgeç\n\n	Enter：儲存     Esc：取消\n\n
+Etiketler	標籤
+F9  Sniper koruması      F10  Yayın özeti	F9  防偷看      F10  直播總結
+GG, TEŞEKKÜRLER!	GG，謝謝！
+Gece	深夜
+Gizli oyuncu	隱藏玩家
+GÖRÜNTÜ	畫面
+GÜNÜN MAÇI	本日最佳對戰
+Gümüş	銀牌
+Günlükler	記錄檔
+Günün mağazası: {0} · yenilenmesine {1} sa {2} dk	今日商店：{0} · {1} 小時 {2} 分後刷新
+Gürültü filtresi	降噪
+Güç dengesi (ortalama ranka göre): takımın %{0:0} · rakip %{1:0}	實力對比 (依平均牌位)：我方 {0:0}% · 敵方 {1:0}%
+GİRİŞÇİ	突破手
+HARİTA	地圖
+HARİTALAR	各地圖
+Hafif yakalama (yalnızca oyun penceresi)	輕量擷取 (僅遊戲視窗)
+Hazırlanıyor…	準備中…
+HenrikDev anahtarı yok	沒有 HenrikDev 金鑰
+Hepsi	全部
+Hızlı	快速模式
+KAFACI	爆頭獵人
+KATMANLAR	圖層
+KAZANMA	勝率
+KENDİ ANALİZİM	我的分析
+KISA BİR ARA	稍微休息
+Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.	爆頭率很高 ({0}%)。別正面對槍，用技能進場。
+Kalite	畫質
+Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil	相遇記錄：{0}  ·  彩色外框 = 曾在同一場對戰 (滑鼠移上去)  ·  點擊玩家：分析 · 右鍵：個人檔案
+Kategori	分類
+Kaydet ve bağlan	儲存並連接
+Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.	連敗後沒有下滑 — 心態很穩。
+Kick Stream URL ve Stream Key gerekli.\nKick → Creator Dashboard → Settings bölümünden kopyalayabilirsin.	需要 Kick Stream URL 與 Stream Key。\n可在 Kick → Creator Dashboard → Settings 複製。
+Kick hesabı	Kick 帳號
+Kick hesabı bağlı değil.	Kick 帳號未連接。
+Kick hesabını bağla	連接你的 Kick 帳號
+Kick için hafif Valorant yayın aracı · RTX NVENC	Kick 專用輕量 VALORANT 直播工具 · RTX NVENC
+Kick kanal bilgisi alınamadı.	無法取得 Kick 頻道資訊。
+Kick onayı 3 dakika içinde gelmedi.	3 分鐘內未收到 Kick 授權。
+Kick onayı reddedildi: 	Kick 授權被拒絕： 
+Kick oturumu sona ermiş, yeniden bağlan.	Kick 登入已過期，請重新連接。
+Kick'e bağlanılamadı:\n	無法連接 Kick：\n
+Kick'e şimdi uygula	立即套用到 Kick
+Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):	開啟 Kick 開發者頁面 (需先登入)：
+Kick'ten URL ve key al	從 Kick 取得 URL 與金鑰
+Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:	Kick 需要你自己的「開發者應用程式」才能修改標題與分類。\n只需一次，約 2 分鐘：
+Komutlar: 	指令： 
+Kopyala	複製
+Kurduğu bölge: 	安裝區域： 
+LOBİDE	大廳中
+MAÇ	對戰
+MAÇ ODASI	對戰房間
+MAÇ ÖZETİ	對戰總結
+MAÇTA	對戰中
+Maç Odası	對戰房間
+Maç bekleniyor…	等待對戰中…
+Maç bulununca otomatik aç	配對成功時自動開啟
+Maç bulununca takımın burada listelenir.	配對成功後，我方隊伍會顯示在這裡。
+Maç bulununca yayın kendiliğinden oyuna döner	配對成功後直播會自動回到遊戲畫面
+Maç sonu kartı (ısı haritası + özet)	賽後卡片 (熱點圖 + 總結)
+Maçlar inceleniyor {0}/{1}…	正在分析對戰 {0}/{1}…
+Maçları inceleniyor…	正在分析對戰…
+Mağaza bilgisi alınamadı.	無法取得商店資訊。
+Menüde bekleme ekranı (sıra sayacı)	選單中的等待畫面 (排隊計時)
+Mikrofon	麥克風
+Minimap'e hizala	對齊小地圖
+Minimap'i radar rozetiyle ört	用雷達徽章遮住小地圖
+NEREDE ÖLÜYORSUN	陣亡位置
+OP'ÇU	狙擊手
+OTURUM	本次場次
+OYUN STİLİ	打法風格
+Otomatik (Valorant dili)	自動 (VALORANT 語言)
+Oyun sesi	遊戲音效
+PARTİ	組隊
+Platin	白金
+Profili aç ↗	開啟個人檔案 ↗
+RAKİPLER	敵方隊伍
+RANK ATLADIN!	牌位晉升！
+ROUND AÇILIŞI	回合開局
+ROZETİ MİNİMAP'E HİZALA\n\n	將徽章對齊小地圖\n\n
+Radyant	輻能戰魂
+Rakibin	曾是對手
+Rakipler maç başlayınca görünür (ajan seçiminde Riot göstermez).	對戰開始後才會顯示敵方 (特務選擇時 Riot 會隱藏)。
+Rakipte {0} kişilik parti	敵方 {0} 人組隊
+Rank bilgisi henüz yok.	尚無牌位資訊。
+Rekabetçi	競技
+Riot ID + anahtar gerekli	需要 Riot ID + 金鑰
+Riot bağlantı hatası: 	Riot 連線錯誤： 
+Riot hesabına giriş yapılmamış	未登入 Riot 帳號
+Riot istemcisi açılıyor…	Riot 用戶端啟動中…
+Riot istemcisi kapalı	Riot 用戶端已關閉
+Riot istemcisine ulaşılamadı: 	無法連線到 Riot 用戶端： 
+Riot yavaşlattı, bekleniyor… {0}/{1}	Riot 限流中，等待… {0}/{1}
+Round açılışların dengeli.	你的回合開局很平衡。
+Roundu o açıyor: ilk kan %{0}	由他開啟回合：首殺 {0}%
+Roundu sık sık ilk ölerek açıyorsun (ortalama ~%10). İlk teması takım arkadaşına ver ya da fayda ile gir.	你常常第一個陣亡開局 (平均約 10%)。把首次交火交給隊友，或用技能進場。
+Rozet yeri	徽章位置
+RÖVANŞ	復仇
+SAATE GÖRE	依時段
+SABIRLI	沉穩
+SAYILAR	數據
+SERİ	連勝
+SES	音訊
+SIK GÖRÜLEN	常遇到
+SIRA BEKLENİYOR	排隊中
+SIRADAKİ MAÇ BİRAZDAN	下一場即將開始
+SNIPER KORUMASI AKTİF	防偷看已啟用
+SON MAÇ	上一場
+SON MAÇ · maç bekleniyor	上一場 · 等待對戰中
+Sabah	早上
+Sadece Valorant (önerilen)	僅 VALORANT (建議)
+Ses cihazı yanıt vermedi.	音訊裝置沒有回應。
+Seçtiğim uygulama	選擇的應用程式
+Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.	常用雪梨擊殺 (擊殺的 {0}%)。經濟局也可能一槍爆頭。
+Sniper koruması (F9)	防偷看 (F9)
+Son maç bilgisi yok.	沒有上一場的資訊。
+Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	上一場：{0} {1} · {2} · {3} · {4} · HS {5}
+Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.	最近沒玩過這張地圖。上面的打法仍然適用。
+Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.	接著瀏覽器會開啟 Kick 授權頁面，按「允許」即可。
+Stil çıkarmak için yeterli round yok (en az 40).	回合數不足，無法判斷打法 (至少 40)。
+Stream URL / Stream Key'i Kick panelinden yeniden kopyala	請從 Kick 後台重新複製 Stream URL / Stream Key
+Sv	Lv
+Süre: {0:hh\:mm\:ss}	時長：{0:hh\:mm\:ss}
+Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	拖曳：移動\n滑鼠滾輪：放大 / 縮小 (Shift：微調)\n方向鍵：1 px (Shift：10 px)\n\n
+SİLAH	武器
+Sık ilk ölüyor (roundların %{0}). Erken peek atar; sabırlı bekle, sana gelir.	常常第一個陣亡 (回合的 {0}%)。會提早探頭，耐心等他過來。
+Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz	已隱藏排隊 / 特務選擇 — 對戰開始後回來
+Sıraya girilince sayaç başlar	開始排隊後計時器才會啟動
+TAKIMIN	我方隊伍
+TANIDIK	熟人
+TEST KAYDEDİLİYOR…	測試錄影中…
+TEST KAYDI (15 sn)	測試錄影 (15 秒)
+Takım arkadaşın	曾是隊友
+Takımında {0} kişilik parti	我方有 {0} 人組隊
+Tam ekran (her şey görünür)	全螢幕 (全部可見)
+Tarayıcıda Kick onayı bekleniyor…	正在瀏覽器中等待 Kick 授權…
+TİLT	心態
+Uygulama	應用程式
+Uygulamanın Client ID ve Client Secret'ını buraya yapıştır:	請在此貼上應用程式的 Client ID 與 Client Secret：
+ValoLive arka planda çalışıyor	ValoLive 正在背景執行
+ValoLive — Kendi Analizim	ValoLive — 我的分析
+ValoLive — Maç Odası	ValoLive — 對戰房間
+ValoLive — Oyuncu Analizi	ValoLive — 玩家分析
+ValoLive — SNIPER KORUMASI AÇIK	ValoLive — 防偷看已開啟
+ValoLive — YAYIN ÖZETİ	ValoLive — 直播總結
+ValoLive'ı aç	開啟 ValoLive
+Varsayılan ses çıkışı	預設音訊輸出
+Vazgeç	取消
+YALNIZ	獨行俠
+YAYIN BİLGİSİ	直播資訊
+YAYIN ÖZETİ	直播總結
+YAYINI BAŞLAT	開始直播
+YAYINI BİTİR	結束直播
+YENİLGİ	敗北
+Yakalama	擷取
+Yayın açık. Kapatılsın mı?	直播進行中。確定要關閉嗎？
+Yayın bilgisi uygulanamadı:\n	無法套用直播資訊：\n
+Yayında chat kutusu	直播中顯示聊天框
+Yayını başlat	開始直播
+Yayını bitir	結束直播
+Yeni uygulama oluştur. Ad: ValoLive · Redirect URL olarak şunu yaz:	建立新的應用程式。名稱：ValoLive · Redirect URL 請填入：
+Yücelik	超凡入聖
+ZAFER	勝利
+adını gizliyor — geçmişine bakılmaz	隱藏名稱 — 不查詢戰績
+atak	進攻
+bağlanıyor	連線中
+bağlı	已連接
+berabere	平手
+bu pencere yayına girmez	此視窗不會出現在直播中
+bugün	今天
+chat odası bulunamadı	找不到聊天室
+defans	防守
+defter dolduruluyor {0}/{1}	正在建立記錄 {0}/{1}
+dün	昨天
+form	近況
+genel kazanma ({0})	總勝率 ({0})
+gerçek zamanlı sunucu bilgisi yok	沒有即時伺服器資訊
+geçersiz yanıt	回應無效
+geçmiş alınamadı	無法取得戰績
+geçmiş yükleniyor…	載入戰績中…
+harita	地圖
+hasar/round	傷害/回合
+ilk kan / round	首殺 / 回合
+ilk kan senden	你的首殺
+ilk öldüğün round kayıp	首殺陣亡後輸掉的回合
+ilk ölen sensin	你最先陣亡
+ilk ölüm / round	首殺陣亡 / 回合
+incelenecek maç bulunamadı	沒有可分析的對戰
+kafa isabeti	爆頭率
+kaybettin	你輸了
+kazandın	你贏了
+kazanma	勝率
+koptu: 	已中斷： 
+kurma {0} · imha {1}	安裝 {0} · 拆除 {1}
+maç	對戰
+maçları inceleniyor…	正在分析對戰…
+misafir erişimi alınamadı	無法取得訪客權限
+noktalar: öldürdüğü anda durduğu yer	點：擊殺當下的站位
+ort.	平均
+oturumun 4.+ maçı ({0})	本次第 4 場以後 ({0})
+rakip	敵方
+rakipte	在敵方
+rank yükleniyor…	載入牌位中…
+son {0} maç · {1} round incelendi	最近 {0} 場 · 已分析 {1} 回合
+son {0} rekabetçi maç	最近 {0} 場競技
+standart	預設
+sunucu sessiz kaldı	伺服器沒有回應
+takım arkadaşın	隊友
+takımında	在我方
+ulti / maç	終極技 / 場
+yayın başlayınca bağlanır	開始直播時連線
+zirve	最高
+{0:0} ay önce	{0:0} 個月前
+{0:0} gün önce	{0:0} 天前
+{0:0} hafta önce	{0:0} 週前
+{0} açılamadı: {1}	無法開啟{0}：{1}
+{0} açılınca yayın kendiliğinden devam eder	{0} 開啟後直播會自動繼續
+{0} fps  ·  {1}  ·  düşen kare: {2}  ·  hız {3}	{0} fps  ·  {1}  ·  掉幀：{2}  ·  速度 {3}
+{0} maç · %{1} kazanma · atak round %{2} · defans round %{3}	{0} 場 · 勝率 {1}% · 進攻回合 {2}% · 防守回合 {3}%
+{0} maç · düellolar ekleniyor {1}/{2}	{0} 場 · 正在加入對槍資料 {1}/{2}
+{0} maç · tarama hatası: {1}	{0} 場 · 掃描錯誤：{1}
+{0} maç · {1}	{0} 場 · {1}
+{0} portu kullanımda; ValoLive'ı yeniden başlatıp tekrar dene.	連接埠 {0} 已被佔用；請重新啟動 ValoLive 後再試。
+{0} rekabetçi maç	{0} 場競技
+{0} · o maçta {1}/{2}/{3}{4}	{0} · 那場 {1}/{2}/{3}{4}
+{0} · {1} RR	{0} · {1} RR
+{0} · {1} {2} · daha önce {3} kez	{0} · {1} {2} · 之前遇過 {3} 次
+{0}. ROUND	第 {0} 回合
+{0}: kullanılmamış	{0}：未使用
+{0}: {1} round · round başı {2:0.00} öldürme · kafa %{3}	{0}：{1} 回合 · 每回合 {2:0.00} 擊殺 · 爆頭 {3}%
+{0}G  {1}M	{0}勝  {1}敗
+· act %{0} ({1})	· 章節 {0}% ({1})
+· düello sen {0} – {1} o	· 對槍 你 {0} – {1} 他
+· {0} kez aynı maçtaydınız	· 同場 {0} 次
+Çap {0} px · konum {1}, {2}	直徑 {0} px · 位置 {1}, {2}
+Çıkış	結束
+Öldürmelerinin büyük kısmı Operator ile (%{0}). Uzun açıları kuru peek'leme, flaşla ya da başka yerden gir.	大部分擊殺來自間諜狙擊槍 ({0}%)。別硬探長距離角度 — 先閃光或換路線。
+Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	陣亡時很少被補槍 ({0}%)。單獨行動，遠離隊友。
+Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	你陣亡時隊友常常補不到槍：你太孤立了。和隊友在同一區域行動。
+Ölümsüzlük	神話
+Önce Kick hesabını bağla (Yayın Bilgisi → Bağlan).	請先連接 Kick 帳號 (直播資訊 → 連接)。
+Öğlen	下午
+Ücretsiz anahtar al	取得免費金鑰
+Üstte tut	保持在最上層
+çap {0} px · konum {1}, {2}	直徑 {0} px · 位置 {1}, {2}
+öldürdüğün yerler	你的擊殺位置
+öldüğün yerler	你的陣亡位置
+ölümü trade edilen	陣亡後被補槍
+ölümün trade edildi	你的陣亡被補槍
+İLK KAN	首殺
+İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.	連敗 2 場後明顯下滑：這時短暫休息會有幫助。
+İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.	很少參與首次交火 ({0}%)。小心晚轉點/繞後，注意背後。
+İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.	權限：勾選 user:read、channel:read、channel:write、chat:write → 儲存。
+Şu an maçta değil.	目前不在對戰中。
+…	…
+… API limiti, bekleniyor	… API 限制，等待中
+● BAĞLANIYOR…	● 連線中…
+● BAĞLANTI KOPTU — yeniden bağlanılıyor ({0})	● 連線中斷 — 重新連線中 ({0})
+● BAŞLATILAMADI	● 無法開始
+● CANLI	● 直播中
+● DURDURULUYOR…	● 停止中…
+● EKRAN YAKALAMA YENİLENİYOR (yayın açık)	● 正在重新啟動螢幕擷取 (直播持續中)
+● HAZIR	● 就緒
+● KICK BAĞLANTIYI REDDETTİ	● KICK 拒絕了連線
+● TEST BAŞARISIZ	● 測試失敗
+● TEST KAYDI	● 測試錄影
+● TEST KAYDI HAZIR	● 測試錄影完成
+● YAYIN BİTTİ	● 直播已結束
+● YAYIN DURDU	● 直播已中斷
+⚠  Valorant "Tam ekran" modunda: alt-tab'da yayın takılır.  Valorant → Ayarlar → Video → Genel → Görüntü Modu: "Pencereli Tam Ekran" seç.	⚠  VALORANT 為「全螢幕」模式：Alt-Tab 時直播會卡頓。  VALORANT → 設定 → 影像 → 一般 → 顯示模式：選擇「視窗化全螢幕」。
+✗ Bağlantı hatası	✗ 連線錯誤
+✗ HenrikDev anahtarı geçersiz	✗ HenrikDev 金鑰無效
+✗ Oyuncu bulunamadı (isim/etiket/bölge)	✗ 找不到玩家 (名稱/標籤/區域)

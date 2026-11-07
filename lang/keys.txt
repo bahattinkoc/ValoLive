@@ -1,0 +1,334 @@
+ (sen)
+ (şu an kapalı)
+ · BU HARİTADA {0} MAÇI
+ · devam ediyor…
+ · seni {0} kez öldürdü, sen onu {1}
+ · {0} maçlık galibiyet serisi
+ ▲seri
+ ▼tilt
+"{0}" adında kategori bulunamadı.
+%{0}
+(mikrofon yok)
++{0} karşılaşma daha
+, ilk ölüm %{0}
+. İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.
+1080p60 · 6000 kbps (önerilen)
+2 kayıp serisinden sonra yeterli maç yok; örnek arttıkça netleşir.
+2 kayıptan sonra ({0})
+720p60 · 4500 kbps (zayıf internet)
+936p60 · 6000 kbps (keskin + hafif)
+<h2>ValoLive Kick'e bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>
+AGRESİF
+AJAN SEÇİMİ
+ANALİZİM
+Ajan
+Ajan seçiminde sniper perdesi (otomatik)
+Akşam
+Altın
+Analizim
+Atak
+Ayrıntı: %LOCALAPPDATA%\ValoLive\ffmpeg.log
+Açmak için simgeye tıkla; çıkış simgenin sağ tık menüsünde.
+BERABERE
+BUGÜN
+Bağlan
+Bağlanılamadı
+Bağlanıyor…
+Bağlı değil
+Başlık
+Başlık uygulanamadı: 
+Başlık, kategori ve etiketler Kick'e uygulandı ✓
+Belirgin bir alışkanlık yok — dengeli oynuyor.
+Bildirimler (tanıdık oyuncu, smurf, parti)
+Bronz
+Bu haritada bomba kurmamış.
+Bu pencere yayına ve kayda girmez · adını gizleyenler aranmaz
+Bugün henüz rekabetçi maç yok.
+Bugün {0}G {1}M · {2} RR
+Bölge bulunamadı: Valorant'ı bir kez açman gerekiyor
+BİRAZDAN DÖNÜYORUM
+CANLI
+CANLI SKOR
+Canlı skor: {0}-{1} · {2}
+Chat komutları ({0})
+Client ID ve Client Secret gerekli.
+Defans
+Demir
+Derecesiz
+Desteklenmeyen ses biçimi ({0} bit).
+Dil, yayın bitince ValoLive yeniden açıldığında değişir.
+ESKİ DOST
+Elmas
+Enter: kaydet     Esc: vazgeç\n\n
+Etiketler
+F9  Sniper koruması      F10  Yayın özeti
+GG, TEŞEKKÜRLER!
+Gece
+Gizli oyuncu
+GÖRÜNTÜ
+GÜNÜN MAÇI
+Gümüş
+Günlükler
+Günün mağazası: {0} · yenilenmesine {1} sa {2} dk
+Gürültü filtresi
+Güç dengesi (ortalama ranka göre): takımın %{0:0} · rakip %{1:0}
+GİRİŞÇİ
+HARİTA
+HARİTALAR
+Hafif yakalama (yalnızca oyun penceresi)
+Hazırlanıyor…
+HenrikDev anahtarı yok
+Hepsi
+Hızlı
+KAFACI
+KATMANLAR
+KAZANMA
+KENDİ ANALİZİM
+KISA BİR ARA
+Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.
+Kalite
+Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil
+Kategori
+Kaydet ve bağlan
+Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.
+Kick Stream URL ve Stream Key gerekli.\nKick → Creator Dashboard → Settings bölümünden kopyalayabilirsin.
+Kick hesabı
+Kick hesabı bağlı değil.
+Kick hesabını bağla
+Kick için hafif Valorant yayın aracı · RTX NVENC
+Kick kanal bilgisi alınamadı.
+Kick onayı 3 dakika içinde gelmedi.
+Kick onayı reddedildi: 
+Kick oturumu sona ermiş, yeniden bağlan.
+Kick'e bağlanılamadı:\n
+Kick'e şimdi uygula
+Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):
+Kick'ten URL ve key al
+Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:
+Komutlar: 
+Kopyala
+Kurduğu bölge: 
+LOBİDE
+MAÇ
+MAÇ ODASI
+MAÇ ÖZETİ
+MAÇTA
+Maç Odası
+Maç bekleniyor…
+Maç bulununca otomatik aç
+Maç bulununca takımın burada listelenir.
+Maç bulununca yayın kendiliğinden oyuna döner
+Maç sonu kartı (ısı haritası + özet)
+Maçlar inceleniyor {0}/{1}…
+Maçları inceleniyor…
+Mağaza bilgisi alınamadı.
+Menüde bekleme ekranı (sıra sayacı)
+Mikrofon
+Minimap'e hizala
+Minimap'i radar rozetiyle ört
+NEREDE ÖLÜYORSUN
+OP'ÇU
+OTURUM
+OYUN STİLİ
+Otomatik (Valorant dili)
+Oyun sesi
+PARTİ
+Platin
+Profili aç ↗
+RAKİPLER
+RANK ATLADIN!
+ROUND AÇILIŞI
+ROZETİ MİNİMAP'E HİZALA\n\n
+Radyant
+Rakibin
+Rakipler maç başlayınca görünür (ajan seçiminde Riot göstermez).
+Rakipte {0} kişilik parti
+Rank bilgisi henüz yok.
+Rekabetçi
+Riot ID + anahtar gerekli
+Riot bağlantı hatası: 
+Riot hesabına giriş yapılmamış
+Riot istemcisi açılıyor…
+Riot istemcisi kapalı
+Riot istemcisine ulaşılamadı: 
+Riot yavaşlattı, bekleniyor… {0}/{1}
+Round açılışların dengeli.
+Roundu o açıyor: ilk kan %{0}
+Roundu sık sık ilk ölerek açıyorsun (ortalama ~%10). İlk teması takım arkadaşına ver ya da fayda ile gir.
+Rozet yeri
+RÖVANŞ
+SAATE GÖRE
+SABIRLI
+SAYILAR
+SERİ
+SES
+SIK GÖRÜLEN
+SIRA BEKLENİYOR
+SIRADAKİ MAÇ BİRAZDAN
+SNIPER KORUMASI AKTİF
+SON MAÇ
+SON MAÇ · maç bekleniyor
+Sabah
+Sadece Valorant (önerilen)
+Ses cihazı yanıt vermedi.
+Seçtiğim uygulama
+Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.
+Sniper koruması (F9)
+Son maç bilgisi yok.
+Son maç: {0} {1} · {2} · {3} · {4} · HS {5}
+Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.
+Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.
+Stil çıkarmak için yeterli round yok (en az 40).
+Stream URL / Stream Key'i Kick panelinden yeniden kopyala
+Sv
+Süre: {0:hh\:mm\:ss}
+Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n
+SİLAH
+Sık ilk ölüyor (roundların %{0}). Erken peek atar; sabırlı bekle, sana gelir.
+Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz
+Sıraya girilince sayaç başlar
+TAKIMIN
+TANIDIK
+TEST KAYDEDİLİYOR…
+TEST KAYDI (15 sn)
+Takım arkadaşın
+Takımında {0} kişilik parti
+Tam ekran (her şey görünür)
+Tarayıcıda Kick onayı bekleniyor…
+TİLT
+Uygulama
+Uygulamanın Client ID ve Client Secret'ını buraya yapıştır:
+ValoLive arka planda çalışıyor
+ValoLive — Kendi Analizim
+ValoLive — Maç Odası
+ValoLive — Oyuncu Analizi
+ValoLive — SNIPER KORUMASI AÇIK
+ValoLive — YAYIN ÖZETİ
+ValoLive'ı aç
+Varsayılan ses çıkışı
+Vazgeç
+YALNIZ
+YAYIN BİLGİSİ
+YAYIN ÖZETİ
+YAYINI BAŞLAT
+YAYINI BİTİR
+YENİLGİ
+Yakalama
+Yayın açık. Kapatılsın mı?
+Yayın bilgisi uygulanamadı:\n
+Yayında chat kutusu
+Yayını başlat
+Yayını bitir
+Yeni uygulama oluştur. Ad: ValoLive · Redirect URL olarak şunu yaz:
+Yücelik
+ZAFER
+adını gizliyor — geçmişine bakılmaz
+atak
+bağlanıyor
+bağlı
+berabere
+bu pencere yayına girmez
+bugün
+chat odası bulunamadı
+defans
+defter dolduruluyor {0}/{1}
+dün
+form
+genel kazanma ({0})
+gerçek zamanlı sunucu bilgisi yok
+geçersiz yanıt
+geçmiş alınamadı
+geçmiş yükleniyor…
+harita
+hasar/round
+ilk kan / round
+ilk kan senden
+ilk öldüğün round kayıp
+ilk ölen sensin
+ilk ölüm / round
+incelenecek maç bulunamadı
+kafa isabeti
+kaybettin
+kazandın
+kazanma
+koptu: 
+kurma {0} · imha {1}
+maç
+maçları inceleniyor…
+misafir erişimi alınamadı
+noktalar: öldürdüğü anda durduğu yer
+ort.
+oturumun 4.+ maçı ({0})
+rakip
+rakipte
+rank yükleniyor…
+son {0} maç · {1} round incelendi
+son {0} rekabetçi maç
+standart
+sunucu sessiz kaldı
+takım arkadaşın
+takımında
+ulti / maç
+yayın başlayınca bağlanır
+zirve
+{0:0} ay önce
+{0:0} gün önce
+{0:0} hafta önce
+{0} açılamadı: {1}
+{0} açılınca yayın kendiliğinden devam eder
+{0} fps  ·  {1}  ·  düşen kare: {2}  ·  hız {3}
+{0} maç · %{1} kazanma · atak round %{2} · defans round %{3}
+{0} maç · düellolar ekleniyor {1}/{2}
+{0} maç · tarama hatası: {1}
+{0} maç · {1}
+{0} portu kullanımda; ValoLive'ı yeniden başlatıp tekrar dene.
+{0} rekabetçi maç
+{0} · o maçta {1}/{2}/{3}{4}
+{0} · {1} RR
+{0} · {1} {2} · daha önce {3} kez
+{0}. ROUND
+{0}: kullanılmamış
+{0}: {1} round · round başı {2:0.00} öldürme · kafa %{3}
+{0}G  {1}M
+· act %{0} ({1})
+· düello sen {0} – {1} o
+· {0} kez aynı maçtaydınız
+Çap {0} px · konum {1}, {2}
+Çıkış
+Öldürmelerinin büyük kısmı Operator ile (%{0}). Uzun açıları kuru peek'leme, flaşla ya da başka yerden gir.
+Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.
+Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.
+Ölümsüzlük
+Önce Kick hesabını bağla (Yayın Bilgisi → Bağlan).
+Öğlen
+Ücretsiz anahtar al
+Üstte tut
+çap {0} px · konum {1}, {2}
+öldürdüğün yerler
+öldüğün yerler
+ölümü trade edilen
+ölümün trade edildi
+İLK KAN
+İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.
+İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.
+İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.
+Şu an maçta değil.
+…
+… API limiti, bekleniyor
+● BAĞLANIYOR…
+● BAĞLANTI KOPTU — yeniden bağlanılıyor ({0})
+● BAŞLATILAMADI
+● CANLI
+● DURDURULUYOR…
+● EKRAN YAKALAMA YENİLENİYOR (yayın açık)
+● HAZIR
+● KICK BAĞLANTIYI REDDETTİ
+● TEST BAŞARISIZ
+● TEST KAYDI
+● TEST KAYDI HAZIR
+● YAYIN BİTTİ
+● YAYIN DURDU
+⚠  Valorant "Tam ekran" modunda: alt-tab'da yayın takılır.  Valorant → Ayarlar → Video → Genel → Görüntü Modu: "Pencereli Tam Ekran" seç.
+✗ Bağlantı hatası
+✗ HenrikDev anahtarı geçersiz
+✗ Oyuncu bulunamadı (isim/etiket/bölge)

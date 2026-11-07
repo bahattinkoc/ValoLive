@@ -1,0 +1,335 @@
+# ValoLive Â· de Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+ (sen)	 (du)
+ (şu an kapalı)	 (gerade geschlossen)
+ · BU HARİTADA {0} MAÇI	 · {0} MATCHES AUF DIESER MAP
+ · devam ediyor…	 · läuft…
+ · seni {0} kez öldürdü, sen onu {1}	 · hat dich {0}× getötet, du ihn {1}×
+ · {0} maçlık galibiyet serisi	 · {0} Siege in Folge
+ ▲seri	 ▲Serie
+ ▼tilt	 ▼Tilt
+"{0}" adında kategori bulunamadı.	Keine Kategorie namens "{0}" gefunden.
+%{0}	{0} %
+(mikrofon yok)	(kein Mikrofon)
++{0} karşılaşma daha	+{0} weitere Begegnungen
+, ilk ölüm %{0}	, erster Tod {0} %
+. İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.	. Der erste Kontakt kommt meist von ihm; Winkel vorzielen, nicht trocken peeken.
+1080p60 · 6000 kbps (önerilen)	1080p60 · 6000 kbps (empfohlen)
+2 kayıp serisinden sonra yeterli maç yok; örnek arttıkça netleşir.	Noch zu wenige Spiele nach 2 Niederlagen in Folge; wird mit mehr Daten klarer.
+2 kayıptan sonra ({0})	Nach 2 Niederlagen ({0})
+720p60 · 4500 kbps (zayıf internet)	720p60 · 4500 kbps (schwaches Internet)
+936p60 · 6000 kbps (keskin + hafif)	936p60 · 6000 kbps (scharf + leicht)
+<h2>ValoLive Kick'e bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>	<h2>ValoLive ist mit Kick verbunden ✓</h2><p>Du kannst diesen Tab schließen.</p>
+AGRESİF	AGGRESSIV
+AJAN SEÇİMİ	AGENTENAUSWAHL
+ANALİZİM	MEINE STATS
+Ajan	Agent
+Ajan seçiminde sniper perdesi (otomatik)	Sniper-Schutz in der Agentenauswahl (automatisch)
+Akşam	Abend
+Altın	Gold
+Analizim	Meine Stats
+Atak	Angriff
+Ayrıntı: %LOCALAPPDATA%\ValoLive\ffmpeg.log	Details: %LOCALAPPDATA%\ValoLive\ffmpeg.log
+Açmak için simgeye tıkla; çıkış simgenin sağ tık menüsünde.	Zum Öffnen auf das Symbol klicken; Beenden im Rechtsklick-Menü des Symbols.
+BERABERE	UNENTSCHIEDEN
+BUGÜN	HEUTE
+Bağlan	Verbinden
+Bağlanılamadı	Verbindung fehlgeschlagen
+Bağlanıyor…	Verbinde…
+Bağlı değil	Nicht verbunden
+Başlık	Titel
+Başlık uygulanamadı: 	Titel konnte nicht gesetzt werden: 
+Başlık, kategori ve etiketler Kick'e uygulandı ✓	Titel, Kategorie und Tags auf Kick übernommen ✓
+Belirgin bir alışkanlık yok — dengeli oynuyor.	Keine auffällige Gewohnheit — spielt ausgeglichen.
+Bildirimler (tanıdık oyuncu, smurf, parti)	Hinweise (bekannter Spieler, Smurf, Party)
+Bronz	Bronze
+Bu haritada bomba kurmamış.	Hat auf dieser Map nicht gepflanzt.
+Bu pencere yayına ve kayda girmez · adını gizleyenler aranmaz	Dieses Fenster erscheint nie im Stream oder in Aufnahmen · Spieler mit verstecktem Namen werden nicht gesucht
+Bugün henüz rekabetçi maç yok.	Heute noch keine gewerteten Spiele.
+Bugün {0}G {1}M · {2} RR	Heute {0}S {1}N · {2} RR
+Bölge bulunamadı: Valorant'ı bir kez açman gerekiyor	Region nicht gefunden: Starte Valorant einmal
+BİRAZDAN DÖNÜYORUM	GLEICH ZURÜCK
+CANLI	LIVE
+CANLI SKOR	LIVE-STAND
+Canlı skor: {0}-{1} · {2}	Live-Stand: {0}-{1} · {2}
+Chat komutları ({0})	Chat-Befehle ({0})
+Client ID ve Client Secret gerekli.	Client ID und Client Secret sind erforderlich.
+Defans	Verteidigung
+Demir	Eisen
+Derecesiz	Ungewertet
+Desteklenmeyen ses biçimi ({0} bit).	Nicht unterstütztes Audioformat ({0} Bit).
+Dil, yayın bitince ValoLive yeniden açıldığında değişir.	Die Sprache wechselt, wenn der Stream endet und ValoLive neu startet.
+ESKİ DOST	ALTER FREUND
+Elmas	Diamant
+Enter: kaydet     Esc: vazgeç\n\n	Enter: speichern     Esc: abbrechen\n\n
+Etiketler	Tags
+F9  Sniper koruması      F10  Yayın özeti	F9  Sniper-Schutz      F10  Stream-Rückblick
+GG, TEŞEKKÜRLER!	GG, DANKE!
+Gece	Nacht
+Gizli oyuncu	Versteckter Spieler
+GÖRÜNTÜ	VIDEO
+GÜNÜN MAÇI	MATCH DES TAGES
+Gümüş	Silber
+Günlükler	Protokolle
+Günün mağazası: {0} · yenilenmesine {1} sa {2} dk	Heutiger Shop: {0} · erneuert sich in {1} Std. {2} Min.
+Gürültü filtresi	Rauschfilter
+Güç dengesi (ortalama ranka göre): takımın %{0:0} · rakip %{1:0}	Kräfteverhältnis (nach Durchschnittsrang): dein Team {0:0} % · Gegner {1:0} %
+GİRİŞÇİ	ENTRY
+HARİTA	MAP
+HARİTALAR	MAPS
+Hafif yakalama (yalnızca oyun penceresi)	Leichte Aufnahme (nur Spielfenster)
+Hazırlanıyor…	Wird vorbereitet…
+HenrikDev anahtarı yok	Kein HenrikDev-Schlüssel
+Hepsi	Alle
+Hızlı	Swiftplay
+KAFACI	HEADHUNTER
+KATMANLAR	EBENEN
+KAZANMA	SIEGQUOTE
+KENDİ ANALİZİM	MEINE STATS
+KISA BİR ARA	KURZE PAUSE
+Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.	Hohe Kopfschussquote ({0} %). Keine offenen Duelle — geh mit Fähigkeiten rein.
+Kalite	Qualität
+Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil	Begegnungsbuch: {0}  ·  farbiger Ring = ihr wart schon im selben Match (darüberfahren)  ·  Spieler anklicken: Analyse · Rechtsklick: Profil
+Kategori	Kategorie
+Kaydet ve bağlan	Speichern und verbinden
+Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.	Kein Einbruch nach Niederlagenserien — du bist tilt-resistent.
+Kick Stream URL ve Stream Key gerekli.\nKick → Creator Dashboard → Settings bölümünden kopyalayabilirsin.	Kick Stream URL und Stream Key sind erforderlich.\nDu findest sie unter Kick → Creator Dashboard → Settings.
+Kick hesabı	Kick-Konto
+Kick hesabı bağlı değil.	Kick-Konto ist nicht verbunden.
+Kick hesabını bağla	Kick-Konto verbinden
+Kick için hafif Valorant yayın aracı · RTX NVENC	Leichtes Valorant-Streaming-Tool für Kick · RTX NVENC
+Kick kanal bilgisi alınamadı.	Kick-Kanalinfos konnten nicht abgerufen werden.
+Kick onayı 3 dakika içinde gelmedi.	Kick-Bestätigung kam nicht innerhalb von 3 Minuten.
+Kick onayı reddedildi: 	Kick-Bestätigung abgelehnt: 
+Kick oturumu sona ermiş, yeniden bağlan.	Kick-Sitzung abgelaufen, bitte neu verbinden.
+Kick'e bağlanılamadı:\n	Verbindung zu Kick fehlgeschlagen:\n
+Kick'e şimdi uygula	Jetzt auf Kick übernehmen
+Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):	Öffne die Kick-Entwicklerseite (du musst eingeloggt sein):
+Kick'ten URL ve key al	URL und Key von Kick holen
+Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:	Kick verlangt eine eigene "Entwickler-App", um Titel und Kategorie zu ändern.\nEinmalig, 2 Minuten Aufwand:
+Komutlar: 	Befehle: 
+Kopyala	Kopieren
+Kurduğu bölge: 	Gepflanzt auf: 
+LOBİDE	IN DER LOBBY
+MAÇ	MATCH
+MAÇ ODASI	MATCH-RAUM
+MAÇ ÖZETİ	MATCH-ÜBERSICHT
+MAÇTA	IM MATCH
+Maç Odası	Match-Raum
+Maç bekleniyor…	Warte auf ein Match…
+Maç bulununca otomatik aç	Automatisch öffnen, wenn ein Match gefunden wird
+Maç bulununca takımın burada listelenir.	Dein Team wird hier angezeigt, sobald ein Match gefunden ist.
+Maç bulununca yayın kendiliğinden oyuna döner	Der Stream kehrt automatisch ins Spiel zurück, sobald ein Match gefunden ist
+Maç sonu kartı (ısı haritası + özet)	Karte nach dem Match (Heatmap + Übersicht)
+Maçlar inceleniyor {0}/{1}…	Matches werden analysiert {0}/{1}…
+Maçları inceleniyor…	Matches werden analysiert…
+Mağaza bilgisi alınamadı.	Shop-Infos konnten nicht abgerufen werden.
+Menüde bekleme ekranı (sıra sayacı)	Warteschirm im Menü (Warteschlangen-Timer)
+Mikrofon	Mikrofon
+Minimap'e hizala	An Minimap ausrichten
+Minimap'i radar rozetiyle ört	Minimap mit Radar-Abzeichen abdecken
+NEREDE ÖLÜYORSUN	WO DU STIRBST
+OP'ÇU	OP-SPIELER
+OTURUM	SITZUNG
+OYUN STİLİ	SPIELSTIL
+Otomatik (Valorant dili)	Automatisch (Valorant-Sprache)
+Oyun sesi	Spielsound
+PARTİ	PARTY
+Platin	Platin
+Profili aç ↗	Profil öffnen ↗
+RAKİPLER	GEGNER
+RANK ATLADIN!	RANG AUFGESTIEGEN!
+ROUND AÇILIŞI	RUNDENERÖFFNUNG
+ROZETİ MİNİMAP'E HİZALA\n\n	ABZEICHEN AN MINIMAP AUSRICHTEN\n\n
+Radyant	Strahlend
+Rakibin	Dein Gegner
+Rakipler maç başlayınca görünür (ajan seçiminde Riot göstermez).	Gegner erscheinen, wenn das Match beginnt (in der Agentenauswahl zeigt Riot sie nicht).
+Rakipte {0} kişilik parti	Gegner: {0}er-Party
+Rank bilgisi henüz yok.	Noch keine Ranginfos.
+Rekabetçi	Gewertet
+Riot ID + anahtar gerekli	Riot ID + Schlüssel erforderlich
+Riot bağlantı hatası: 	Riot-Verbindungsfehler: 
+Riot hesabına giriş yapılmamış	Nicht bei einem Riot-Konto angemeldet
+Riot istemcisi açılıyor…	Riot Client startet…
+Riot istemcisi kapalı	Riot Client ist geschlossen
+Riot istemcisine ulaşılamadı: 	Riot Client nicht erreichbar: 
+Riot yavaşlattı, bekleniyor… {0}/{1}	Riot bremst, warte… {0}/{1}
+Round açılışların dengeli.	Deine Rundeneröffnungen sind ausgeglichen.
+Roundu o açıyor: ilk kan %{0}	Er eröffnet Runden: First Blood {0} %
+Roundu sık sık ilk ölerek açıyorsun (ortalama ~%10). İlk teması takım arkadaşına ver ya da fayda ile gir.	Du eröffnest Runden oft, indem du zuerst stirbst (Schnitt ~10 %). Lass einen Teammate den ersten Kontakt nehmen oder geh mit Fähigkeiten rein.
+Rozet yeri	Position des Abzeichens
+RÖVANŞ	REVANCHE
+SAATE GÖRE	NACH TAGESZEIT
+SABIRLI	GEDULDIG
+SAYILAR	ZAHLEN
+SERİ	SERIE
+SES	AUDIO
+SIK GÖRÜLEN	HÄUFIG
+SIRA BEKLENİYOR	IN DER WARTESCHLANGE
+SIRADAKİ MAÇ BİRAZDAN	NÄCHSTES MATCH GLEICH
+SNIPER KORUMASI AKTİF	SNIPER-SCHUTZ AKTIV
+SON MAÇ	LETZTES MATCH
+SON MAÇ · maç bekleniyor	LETZTES MATCH · warte auf ein Match
+Sabah	Morgen
+Sadece Valorant (önerilen)	Nur Valorant (empfohlen)
+Ses cihazı yanıt vermedi.	Audiogerät reagiert nicht.
+Seçtiğim uygulama	Ausgewählte App
+Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.	Viele Kills mit der Sheriff ({0} % der Kills). Kann dich auch in Eco-Runden one-tappen.
+Sniper koruması (F9)	Sniper-Schutz (F9)
+Son maç bilgisi yok.	Keine Infos zum letzten Match.
+Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	Letztes Match: {0} {1} · {2} · {3} · {4} · HS {5}
+Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.	Hat diese Map in letzter Zeit nicht gespielt. Der Spielstil oben gilt trotzdem.
+Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.	Danach öffnet sich die Kick-Bestätigung im Browser; klick einfach auf "Zulassen".
+Stil çıkarmak için yeterli round yok (en az 40).	Zu wenige Runden für einen Spielstil (mindestens 40).
+Stream URL / Stream Key'i Kick panelinden yeniden kopyala	Stream URL / Stream Key erneut aus dem Kick-Dashboard kopieren
+Sv	Lv
+Süre: {0:hh\:mm\:ss}	Dauer: {0:hh\:mm\:ss}
+Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	Ziehen: verschieben\nMausrad: größer / kleiner (Shift: fein)\nPfeiltasten: 1 px (Shift: 10 px)\n\n
+SİLAH	WAFFEN
+Sık ilk ölüyor (roundların %{0}). Erken peek atar; sabırlı bekle, sana gelir.	Stirbt oft zuerst ({0} % der Runden). Peekt früh; warte geduldig, er kommt zu dir.
+Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz	Warteschlange / Agentenauswahl verborgen — zurück, wenn das Match beginnt
+Sıraya girilince sayaç başlar	Der Timer startet, sobald du in die Warteschlange gehst
+TAKIMIN	DEIN TEAM
+TANIDIK	BEKANNT
+TEST KAYDEDİLİYOR…	TEST LÄUFT…
+TEST KAYDI (15 sn)	TESTAUFNAHME (15 s)
+Takım arkadaşın	Dein Teammate
+Takımında {0} kişilik parti	Dein Team hat eine {0}er-Party
+Tam ekran (her şey görünür)	Vollbild (alles sichtbar)
+Tarayıcıda Kick onayı bekleniyor…	Warte auf Kick-Bestätigung im Browser…
+TİLT	TILT
+Uygulama	App
+Uygulamanın Client ID ve Client Secret'ını buraya yapıştır:	Füge Client ID und Client Secret der App hier ein:
+ValoLive arka planda çalışıyor	ValoLive läuft im Hintergrund
+ValoLive — Kendi Analizim	ValoLive — Meine Stats
+ValoLive — Maç Odası	ValoLive — Match-Raum
+ValoLive — Oyuncu Analizi	ValoLive — Spieleranalyse
+ValoLive — SNIPER KORUMASI AÇIK	ValoLive — SNIPER-SCHUTZ AN
+ValoLive — YAYIN ÖZETİ	ValoLive — STREAM-RÜCKBLICK
+ValoLive'ı aç	ValoLive öffnen
+Varsayılan ses çıkışı	Standard-Audioausgabe
+Vazgeç	Abbrechen
+YALNIZ	EINZELGÄNGER
+YAYIN BİLGİSİ	STREAM-INFO
+YAYIN ÖZETİ	STREAM-RÜCKBLICK
+YAYINI BAŞLAT	STREAM STARTEN
+YAYINI BİTİR	STREAM BEENDEN
+YENİLGİ	NIEDERLAGE
+Yakalama	Aufnahme
+Yayın açık. Kapatılsın mı?	Der Stream läuft. Wirklich schließen?
+Yayın bilgisi uygulanamadı:\n	Stream-Info konnte nicht übernommen werden:\n
+Yayında chat kutusu	Chatbox im Stream
+Yayını başlat	Stream starten
+Yayını bitir	Stream beenden
+Yeni uygulama oluştur. Ad: ValoLive · Redirect URL olarak şunu yaz:	Neue App erstellen. Name: ValoLive · als Redirect URL eintragen:
+Yücelik	Aufgestiegen
+ZAFER	SIEG
+adını gizliyor — geçmişine bakılmaz	versteckt seinen Namen — Verlauf wird nicht geprüft
+atak	Angriff
+bağlanıyor	verbinde
+bağlı	verbunden
+berabere	unentschieden
+bu pencere yayına girmez	dieses Fenster erscheint nie im Stream
+bugün	heute
+chat odası bulunamadı	Chatraum nicht gefunden
+defans	Verteidigung
+defter dolduruluyor {0}/{1}	Buch wird gefüllt {0}/{1}
+dün	gestern
+form	Form
+genel kazanma ({0})	Siegquote gesamt ({0})
+gerçek zamanlı sunucu bilgisi yok	keine Echtzeit-Serverinfos
+geçersiz yanıt	ungültige Antwort
+geçmiş alınamadı	Verlauf nicht abrufbar
+geçmiş yükleniyor…	Verlauf lädt…
+harita	Map
+hasar/round	Schaden/Runde
+ilk kan / round	First Blood / Runde
+ilk kan senden	First Blood durch dich
+ilk öldüğün round kayıp	Runde verloren nach erstem Tod
+ilk ölen sensin	du stirbst zuerst
+ilk ölüm / round	erster Tod / Runde
+incelenecek maç bulunamadı	keine Matches zum Analysieren
+kafa isabeti	Kopfschussquote
+kaybettin	verloren
+kazandın	gewonnen
+kazanma	Siegquote
+koptu: 	getrennt: 
+kurma {0} · imha {1}	gepflanzt {0} · entschärft {1}
+maç	Matches
+maçları inceleniyor…	Matches werden analysiert…
+misafir erişimi alınamadı	kein Gastzugang
+noktalar: öldürdüğü anda durduğu yer	Punkte: wo er beim Kill stand
+ort.	Ø
+oturumun 4.+ maçı ({0})	4.+ Spiel der Sitzung ({0})
+rakip	Gegner
+rakipte	im Gegnerteam
+rank yükleniyor…	Rang lädt…
+son {0} maç · {1} round incelendi	letzte {0} Matches · {1} Runden analysiert
+son {0} rekabetçi maç	letzte {0} gewertete Matches
+standart	Standard
+sunucu sessiz kaldı	Server antwortet nicht mehr
+takım arkadaşın	dein Teammate
+takımında	in deinem Team
+ulti / maç	Ults / Match
+yayın başlayınca bağlanır	verbindet beim Streamstart
+zirve	Bestwert
+{0:0} ay önce	vor {0:0} Monaten
+{0:0} gün önce	vor {0:0} Tagen
+{0:0} hafta önce	vor {0:0} Wochen
+{0} açılamadı: {1}	{0} konnte nicht geöffnet werden: {1}
+{0} açılınca yayın kendiliğinden devam eder	Der Stream geht automatisch weiter, sobald {0} offen ist
+{0} fps  ·  {1}  ·  düşen kare: {2}  ·  hız {3}	{0} fps  ·  {1}  ·  verlorene Frames: {2}  ·  Tempo {3}
+{0} maç · %{1} kazanma · atak round %{2} · defans round %{3}	{0} Matches · {1} % Siege · Angriffsrunden {2} % · Verteidigungsrunden {3} %
+{0} maç · düellolar ekleniyor {1}/{2}	{0} Matches · Duelle werden ergänzt {1}/{2}
+{0} maç · tarama hatası: {1}	{0} Matches · Scanfehler: {1}
+{0} maç · {1}	{0} Matches · {1}
+{0} portu kullanımda; ValoLive'ı yeniden başlatıp tekrar dene.	Port {0} ist belegt; starte ValoLive neu und versuch es noch mal.
+{0} rekabetçi maç	{0} gewertete Matches
+{0} · o maçta {1}/{2}/{3}{4}	{0} · in dem Match {1}/{2}/{3}{4}
+{0} · {1} RR	{0} · {1} RR
+{0} · {1} {2} · daha önce {3} kez	{0} · {1} {2} · schon {3}× getroffen
+{0}. ROUND	RUNDE {0}
+{0}: kullanılmamış	{0}: nicht benutzt
+{0}: {1} round · round başı {2:0.00} öldürme · kafa %{3}	{0}: {1} Runden · {2:0.00} Kills pro Runde · Kopfschuss {3} %
+{0}G  {1}M	{0}S  {1}N
+· act %{0} ({1})	· Akt {0} % ({1})
+· düello sen {0} – {1} o	· Duelle du {0} – {1} er
+· {0} kez aynı maçtaydınız	· {0}× im selben Match
+Çap {0} px · konum {1}, {2}	Größe {0} px · Position {1}, {2}
+Çıkış	Beenden
+Öldürmelerinin büyük kısmı Operator ile (%{0}). Uzun açıları kuru peek'leme, flaşla ya da başka yerden gir.	Die meisten Kills mit der Operator ({0} %). Lange Winkel nicht trocken peeken — flashen oder anders reingehen.
+Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	Wird beim Tod selten getradet ({0} %). Spielt allein, weit weg vom Team.
+Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	Dein Team kann dich meist nicht traden: du stehst allein. Spiel im selben Bereich wie ein Teammate.
+Ölümsüzlük	Unsterblich
+Önce Kick hesabını bağla (Yayın Bilgisi → Bağlan).	Verbinde zuerst dein Kick-Konto (Stream-Info → Verbinden).
+Öğlen	Nachmittag
+Ücretsiz anahtar al	Kostenlosen Schlüssel holen
+Üstte tut	Im Vordergrund
+çap {0} px · konum {1}, {2}	Größe {0} px · Position {1}, {2}
+öldürdüğün yerler	deine Kills
+öldüğün yerler	deine Tode
+ölümü trade edilen	Tode getradet
+ölümün trade edildi	dein Tod wurde getradet
+İLK KAN	FIRST BLOODS
+İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.	Nach zwei Niederlagen fällst du deutlich ab: eine kurze Pause hilft dann.
+İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.	Geht selten ins erste Duell ({0} %). Rechne mit späten Rotationen/Lurks, sichere deinen Rücken.
+İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.	Berechtigungen: user:read, channel:read, channel:write, chat:write ankreuzen → Speichern.
+Şu an maçta değil.	Gerade nicht im Match.
+…	…
+… API limiti, bekleniyor	… API-Limit, warte
+● BAĞLANIYOR…	● VERBINDE…
+● BAĞLANTI KOPTU — yeniden bağlanılıyor ({0})	● VERBINDUNG GETRENNT — verbinde neu ({0})
+● BAŞLATILAMADI	● START FEHLGESCHLAGEN
+● CANLI	● LIVE
+● DURDURULUYOR…	● WIRD GESTOPPT…
+● EKRAN YAKALAMA YENİLENİYOR (yayın açık)	● BILDSCHIRMAUFNAHME STARTET NEU (Stream läuft)
+● HAZIR	● BEREIT
+● KICK BAĞLANTIYI REDDETTİ	● KICK HAT DIE VERBINDUNG ABGELEHNT
+● TEST BAŞARISIZ	● TEST FEHLGESCHLAGEN
+● TEST KAYDI	● TESTAUFNAHME
+● TEST KAYDI HAZIR	● TESTAUFNAHME FERTIG
+● YAYIN BİTTİ	● STREAM BEENDET
+● YAYIN DURDU	● STREAM ABGEBROCHEN
+⚠  Valorant "Tam ekran" modunda: alt-tab'da yayın takılır.  Valorant → Ayarlar → Video → Genel → Görüntü Modu: "Pencereli Tam Ekran" seç.	⚠  Valorant läuft im Modus "Vollbild": Bei Alt-Tab ruckelt der Stream.  Valorant → Einstellungen → Video → Allgemein → Anzeigemodus: "Fenster-Vollbild" wählen.
+✗ Bağlantı hatası	✗ Verbindungsfehler
+✗ HenrikDev anahtarı geçersiz	✗ Ungültiger HenrikDev-Schlüssel
+✗ Oyuncu bulunamadı (isim/etiket/bölge)	✗ Spieler nicht gefunden (Name/Tag/Region)

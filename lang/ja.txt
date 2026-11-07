@@ -1,0 +1,335 @@
+# ValoLive Â· ja Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+ (sen)	 (あなた)
+ (şu an kapalı)	 (現在終了中)
+ · BU HARİTADA {0} MAÇI	 · このマップで{0}試合
+ · devam ediyor…	 · 処理中…
+ · seni {0} kez öldürdü, sen onu {1}	 · あなたを{0}回キル、あなたは{1}回キル
+ · {0} maçlık galibiyet serisi	 · {0}連勝中
+ ▲seri	 ▲連勝
+ ▼tilt	 ▼ティルト
+"{0}" adında kategori bulunamadı.	"{0}" という名前のカテゴリーが見つかりません。
+%{0}	{0}%
+(mikrofon yok)	(マイクなし)
++{0} karşılaşma daha	+{0}件の遭遇
+, ilk ölüm %{0}	、ファーストデス {0}%
+. İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.	。最初の接敵は彼からが多い。角を置きエイムで待ち、ドライピークはしないこと。
+1080p60 · 6000 kbps (önerilen)	1080p60 · 6000 kbps (推奨)
+2 kayıp serisinden sonra yeterli maç yok; örnek arttıkça netleşir.	2連敗後の試合数がまだ足りません。データが増えると明確になります。
+2 kayıptan sonra ({0})	2連敗後 ({0})
+720p60 · 4500 kbps (zayıf internet)	720p60 · 4500 kbps (回線が弱い場合)
+936p60 · 6000 kbps (keskin + hafif)	936p60 · 6000 kbps (くっきり + 軽量)
+<h2>ValoLive Kick'e bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>	<h2>ValoLive が Kick に接続されました ✓</h2><p>このタブは閉じて構いません。</p>
+AGRESİF	アグレッシブ
+AJAN SEÇİMİ	エージェント選択
+ANALİZİM	自分の分析
+Ajan	エージェント
+Ajan seçiminde sniper perdesi (otomatik)	エージェント選択中にスナイプ対策カバー (自動)
+Akşam	夕方
+Altın	ゴールド
+Analizim	自分の分析
+Atak	攻撃
+Ayrıntı: %LOCALAPPDATA%\ValoLive\ffmpeg.log	詳細: %LOCALAPPDATA%\ValoLive\ffmpeg.log
+Açmak için simgeye tıkla; çıkış simgenin sağ tık menüsünde.	アイコンをクリックで開きます。終了はアイコンの右クリックメニューから。
+BERABERE	引き分け
+BUGÜN	今日
+Bağlan	接続
+Bağlanılamadı	接続できませんでした
+Bağlanıyor…	接続中…
+Bağlı değil	未接続
+Başlık	タイトル
+Başlık uygulanamadı: 	タイトルを適用できませんでした: 
+Başlık, kategori ve etiketler Kick'e uygulandı ✓	タイトル・カテゴリー・タグを Kick に適用しました ✓
+Belirgin bir alışkanlık yok — dengeli oynuyor.	目立った癖なし — バランス型。
+Bildirimler (tanıdık oyuncu, smurf, parti)	通知 (知り合い、スマーフ、パーティー)
+Bronz	ブロンズ
+Bu haritada bomba kurmamış.	このマップで設置していません。
+Bu pencere yayına ve kayda girmez · adını gizleyenler aranmaz	このウィンドウは配信にも録画にも映りません · 名前を隠しているプレイヤーは検索しません
+Bugün henüz rekabetçi maç yok.	今日はまだコンペティティブの試合がありません。
+Bugün {0}G {1}M · {2} RR	今日 {0}勝 {1}敗 · {2} RR
+Bölge bulunamadı: Valorant'ı bir kez açman gerekiyor	リージョンが見つかりません: VALORANT を一度起動してください
+BİRAZDAN DÖNÜYORUM	すぐ戻ります
+CANLI	配信中
+CANLI SKOR	ライブスコア
+Canlı skor: {0}-{1} · {2}	ライブスコア: {0}-{1} · {2}
+Chat komutları ({0})	チャットコマンド ({0})
+Client ID ve Client Secret gerekli.	Client ID と Client Secret が必要です。
+Defans	防衛
+Demir	アイアン
+Derecesiz	ランクなし
+Desteklenmeyen ses biçimi ({0} bit).	未対応の音声形式です ({0} bit)。
+Dil, yayın bitince ValoLive yeniden açıldığında değişir.	言語は配信終了後、ValoLive の再起動時に切り替わります。
+ESKİ DOST	旧友
+Elmas	ダイヤモンド
+Enter: kaydet     Esc: vazgeç\n\n	Enter: 保存     Esc: キャンセル\n\n
+Etiketler	タグ
+F9  Sniper koruması      F10  Yayın özeti	F9  スナイプ対策      F10  配信まとめ
+GG, TEŞEKKÜRLER!	GG、ありがとう！
+Gece	深夜
+Gizli oyuncu	非公開プレイヤー
+GÖRÜNTÜ	映像
+GÜNÜN MAÇI	本日のベストマッチ
+Gümüş	シルバー
+Günlükler	ログ
+Günün mağazası: {0} · yenilenmesine {1} sa {2} dk	本日のストア: {0} · 更新まで {1}時間{2}分
+Gürültü filtresi	ノイズ除去
+Güç dengesi (ortalama ranka göre): takımın %{0:0} · rakip %{1:0}	戦力差 (平均ランク): 味方 {0:0}% · 敵 {1:0}%
+GİRİŞÇİ	エントリー
+HARİTA	マップ
+HARİTALAR	マップ
+Hafif yakalama (yalnızca oyun penceresi)	軽量キャプチャ (ゲームウィンドウのみ)
+Hazırlanıyor…	準備中…
+HenrikDev anahtarı yok	HenrikDev キーなし
+Hepsi	すべて
+Hızlı	スイフトプレイ
+KAFACI	ヘッドハンター
+KATMANLAR	オーバーレイ
+KAZANMA	勝率
+KENDİ ANALİZİM	自分の分析
+KISA BİR ARA	ちょっと休憩
+Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.	ヘッドショット率が高い ({0}%)。正面撃ち合いは避け、スキルで入ろう。
+Kalite	画質
+Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil	遭遇記録: {0}  ·  色付きリング = 以前同じ試合にいた (ホバー)  ·  プレイヤーをクリック: 分析 · 右クリック: プロフィール
+Kategori	カテゴリー
+Kaydet ve bağlan	保存して接続
+Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.	連敗後も崩れていません — ティルト耐性あり。
+Kick Stream URL ve Stream Key gerekli.\nKick → Creator Dashboard → Settings bölümünden kopyalayabilirsin.	Kick の Stream URL と Stream Key が必要です。\nKick → Creator Dashboard → Settings からコピーできます。
+Kick hesabı	Kick アカウント
+Kick hesabı bağlı değil.	Kick アカウントが接続されていません。
+Kick hesabını bağla	Kick アカウントを接続
+Kick için hafif Valorant yayın aracı · RTX NVENC	Kick 向け軽量 VALORANT 配信ツール · RTX NVENC
+Kick kanal bilgisi alınamadı.	Kick のチャンネル情報を取得できませんでした。
+Kick onayı 3 dakika içinde gelmedi.	3 分以内に Kick の承認がありませんでした。
+Kick onayı reddedildi: 	Kick の承認が拒否されました: 
+Kick oturumu sona ermiş, yeniden bağlan.	Kick のセッションが切れました。再接続してください。
+Kick'e bağlanılamadı:\n	Kick に接続できませんでした:\n
+Kick'e şimdi uygula	今すぐ Kick に適用
+Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):	Kick の開発者ページを開く (ログインが必要):
+Kick'ten URL ve key al	Kick で URL とキーを取得
+Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:	タイトルとカテゴリーを変更するには、Kick で自分の「開発者アプリ」が必要です。\n最初の 1 回だけ、2 分で終わります:
+Komutlar: 	コマンド: 
+Kopyala	コピー
+Kurduğu bölge: 	設置サイト: 
+LOBİDE	ロビー中
+MAÇ	試合
+MAÇ ODASI	マッチルーム
+MAÇ ÖZETİ	試合まとめ
+MAÇTA	試合中
+Maç Odası	マッチルーム
+Maç bekleniyor…	試合を待っています…
+Maç bulununca otomatik aç	マッチ成立時に自動で開く
+Maç bulununca takımın burada listelenir.	マッチが成立すると、ここに味方チームが表示されます。
+Maç bulununca yayın kendiliğinden oyuna döner	マッチが成立すると配信は自動でゲームに戻ります
+Maç sonu kartı (ısı haritası + özet)	試合後カード (ヒートマップ + まとめ)
+Maçlar inceleniyor {0}/{1}…	試合を分析中 {0}/{1}…
+Maçları inceleniyor…	試合を分析中…
+Mağaza bilgisi alınamadı.	ストア情報を取得できませんでした。
+Menüde bekleme ekranı (sıra sayacı)	メニュー中の待機画面 (キュータイマー)
+Mikrofon	マイク
+Minimap'e hizala	ミニマップに合わせる
+Minimap'i radar rozetiyle ört	ミニマップをレーダーバッジで隠す
+NEREDE ÖLÜYORSUN	デス位置
+OP'ÇU	オペレーター使い
+OTURUM	セッション
+OYUN STİLİ	プレイスタイル
+Otomatik (Valorant dili)	自動 (VALORANT の言語)
+Oyun sesi	ゲーム音
+PARTİ	パーティー
+Platin	プラチナ
+Profili aç ↗	プロフィールを開く ↗
+RAKİPLER	敵チーム
+RANK ATLADIN!	ランクアップ！
+ROUND AÇILIŞI	ラウンド序盤
+ROZETİ MİNİMAP'E HİZALA\n\n	バッジをミニマップに合わせる\n\n
+Radyant	レディアント
+Rakibin	敵だった
+Rakipler maç başlayınca görünür (ajan seçiminde Riot göstermez).	敵は試合開始時に表示されます (エージェント選択中は Riot が非表示にします)。
+Rakipte {0} kişilik parti	敵に{0}人パーティー
+Rank bilgisi henüz yok.	ランク情報はまだありません。
+Rekabetçi	コンペティティブ
+Riot ID + anahtar gerekli	Riot ID + キーが必要
+Riot bağlantı hatası: 	Riot 接続エラー: 
+Riot hesabına giriş yapılmamış	Riot アカウントにログインしていません
+Riot istemcisi açılıyor…	Riot クライアントを起動中…
+Riot istemcisi kapalı	Riot クライアントが閉じています
+Riot istemcisine ulaşılamadı: 	Riot クライアントに接続できません: 
+Riot yavaşlattı, bekleniyor… {0}/{1}	Riot の制限中、待機… {0}/{1}
+Round açılışların dengeli.	ラウンド序盤のバランスは良好です。
+Roundu o açıyor: ilk kan %{0}	ラウンドを開くタイプ: ファーストブラッド {0}%
+Roundu sık sık ilk ölerek açıyorsun (ortalama ~%10). İlk teması takım arkadaşına ver ya da fayda ile gir.	最初に倒れてラウンドを始めることが多い (平均 ~10%)。最初の接敵は味方に任せるか、スキルで入ろう。
+Rozet yeri	バッジの位置
+RÖVANŞ	リベンジ
+SAATE GÖRE	時間帯別
+SABIRLI	慎重派
+SAYILAR	数値
+SERİ	連勝
+SES	音声
+SIK GÖRÜLEN	よく会う
+SIRA BEKLENİYOR	キュー中
+SIRADAKİ MAÇ BİRAZDAN	次の試合はまもなく
+SNIPER KORUMASI AKTİF	スナイプ対策 作動中
+SON MAÇ	前の試合
+SON MAÇ · maç bekleniyor	前の試合 · 試合待ち
+Sabah	朝
+Sadece Valorant (önerilen)	VALORANT のみ (推奨)
+Ses cihazı yanıt vermedi.	オーディオデバイスが応答しません。
+Seçtiğim uygulama	選択したアプリ
+Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.	シェリフでのキルが多い (キルの{0}%)。エコラウンドでもワンタップされうる。
+Sniper koruması (F9)	スナイプ対策 (F9)
+Son maç bilgisi yok.	前の試合の情報はありません。
+Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	前の試合: {0} {1} · {2} · {3} · {4} · HS {5}
+Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.	最近このマップをプレイしていません。上のスタイルは引き続き有効です。
+Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.	その後ブラウザで Kick の承認ページが開くので「許可」を押すだけです。
+Stil çıkarmak için yeterli round yok (en az 40).	スタイルを判定するにはラウンド数が足りません (最低 40)。
+Stream URL / Stream Key'i Kick panelinden yeniden kopyala	Kick ダッシュボードから Stream URL / Stream Key をもう一度コピーしてください
+Sv	Lv
+Süre: {0:hh\:mm\:ss}	時間: {0:hh\:mm\:ss}
+Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	ドラッグ: 移動\nマウスホイール: 拡大 / 縮小 (Shift: 微調整)\n矢印キー: 1 px (Shift: 10 px)\n\n
+SİLAH	武器
+Sık ilk ölüyor (roundların %{0}). Erken peek atar; sabırlı bekle, sana gelir.	よく最初に倒れる (ラウンドの{0}%)。早めにピークしてくるので、落ち着いて待てば来る。
+Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz	キュー / エージェント選択は非表示 — 試合開始で戻ります
+Sıraya girilince sayaç başlar	キューに入るとタイマーが始まります
+TAKIMIN	味方チーム
+TANIDIK	知り合い
+TEST KAYDEDİLİYOR…	テスト録画中…
+TEST KAYDI (15 sn)	テスト録画 (15 秒)
+Takım arkadaşın	味方だった
+Takımında {0} kişilik parti	味方に{0}人パーティー
+Tam ekran (her şey görünür)	全画面 (すべて映る)
+Tarayıcıda Kick onayı bekleniyor…	ブラウザで Kick の承認を待っています…
+TİLT	ティルト
+Uygulama	アプリ
+Uygulamanın Client ID ve Client Secret'ını buraya yapıştır:	アプリの Client ID と Client Secret をここに貼り付け:
+ValoLive arka planda çalışıyor	ValoLive はバックグラウンドで動作中です
+ValoLive — Kendi Analizim	ValoLive — 自分の分析
+ValoLive — Maç Odası	ValoLive — マッチルーム
+ValoLive — Oyuncu Analizi	ValoLive — プレイヤー分析
+ValoLive — SNIPER KORUMASI AÇIK	ValoLive — スナイプ対策 ON
+ValoLive — YAYIN ÖZETİ	ValoLive — 配信まとめ
+ValoLive'ı aç	ValoLive を開く
+Varsayılan ses çıkışı	既定の音声出力
+Vazgeç	キャンセル
+YALNIZ	一匹狼
+YAYIN BİLGİSİ	配信情報
+YAYIN ÖZETİ	配信まとめ
+YAYINI BAŞLAT	配信開始
+YAYINI BİTİR	配信終了
+YENİLGİ	敗北
+Yakalama	キャプチャ
+Yayın açık. Kapatılsın mı?	配信中です。閉じますか？
+Yayın bilgisi uygulanamadı:\n	配信情報を適用できませんでした:\n
+Yayında chat kutusu	配信にチャット欄を表示
+Yayını başlat	配信開始
+Yayını bitir	配信終了
+Yeni uygulama oluştur. Ad: ValoLive · Redirect URL olarak şunu yaz:	新しいアプリを作成。名前: ValoLive · Redirect URL に次を入力:
+Yücelik	アセンダント
+ZAFER	勝利
+adını gizliyor — geçmişine bakılmaz	名前を隠している — 履歴は確認しません
+atak	攻撃
+bağlanıyor	接続中
+bağlı	接続済み
+berabere	引き分け
+bu pencere yayına girmez	このウィンドウは配信に映りません
+bugün	今日
+chat odası bulunamadı	チャットルームが見つかりません
+defans	防衛
+defter dolduruluyor {0}/{1}	記録を作成中 {0}/{1}
+dün	昨日
+form	調子
+genel kazanma ({0})	全体勝率 ({0})
+gerçek zamanlı sunucu bilgisi yok	リアルタイムサーバー情報なし
+geçersiz yanıt	無効な応答
+geçmiş alınamadı	履歴を取得できませんでした
+geçmiş yükleniyor…	履歴を読み込み中…
+harita	マップ
+hasar/round	ダメージ/R
+ilk kan / round	FB / ラウンド
+ilk kan senden	自分のFB
+ilk öldüğün round kayıp	ファーストデス後の敗北ラウンド
+ilk ölen sensin	最初に倒れる
+ilk ölüm / round	ファーストデス / ラウンド
+incelenecek maç bulunamadı	分析する試合がありません
+kafa isabeti	ヘッドショット率
+kaybettin	敗北
+kazandın	勝利
+kazanma	勝率
+koptu: 	切断: 
+kurma {0} · imha {1}	設置 {0} · 解除 {1}
+maç	試合
+maçları inceleniyor…	試合を分析中…
+misafir erişimi alınamadı	ゲストアクセスを取得できません
+noktalar: öldürdüğü anda durduğu yer	点: キルした瞬間の立ち位置
+ort.	平均
+oturumun 4.+ maçı ({0})	セッション4試合目以降 ({0})
+rakip	敵
+rakipte	敵チーム
+rank yükleniyor…	ランクを読み込み中…
+son {0} maç · {1} round incelendi	直近 {0} 試合 · {1} ラウンドを分析
+son {0} rekabetçi maç	直近 {0} 試合 (コンペ)
+standart	標準
+sunucu sessiz kaldı	サーバーが応答しません
+takım arkadaşın	味方
+takımında	味方チーム
+ulti / maç	アルティメット / 試合
+yayın başlayınca bağlanır	配信開始時に接続
+zirve	最高
+{0:0} ay önce	{0:0}か月前
+{0:0} gün önce	{0:0}日前
+{0:0} hafta önce	{0:0}週間前
+{0} açılamadı: {1}	{0} を開けませんでした: {1}
+{0} açılınca yayın kendiliğinden devam eder	{0} を開くと配信は自動で再開します
+{0} fps  ·  {1}  ·  düşen kare: {2}  ·  hız {3}	{0} fps  ·  {1}  ·  ドロップ: {2}  ·  速度 {3}
+{0} maç · %{1} kazanma · atak round %{2} · defans round %{3}	{0} 試合 · 勝率 {1}% · 攻撃ラウンド {2}% · 防衛ラウンド {3}%
+{0} maç · düellolar ekleniyor {1}/{2}	{0} 試合 · 撃ち合いを追加中 {1}/{2}
+{0} maç · tarama hatası: {1}	{0} 試合 · スキャンエラー: {1}
+{0} maç · {1}	{0} 試合 · {1}
+{0} portu kullanımda; ValoLive'ı yeniden başlatıp tekrar dene.	ポート {0} は使用中です。ValoLive を再起動して再試行してください。
+{0} rekabetçi maç	コンペ {0} 試合
+{0} · o maçta {1}/{2}/{3}{4}	{0} · その試合で {1}/{2}/{3}{4}
+{0} · {1} RR	{0} · {1} RR
+{0} · {1} {2} · daha önce {3} kez	{0} · {1} {2} · これまで {3} 回
+{0}. ROUND	第{0}ラウンド
+{0}: kullanılmamış	{0}: 未使用
+{0}: {1} round · round başı {2:0.00} öldürme · kafa %{3}	{0}: {1} ラウンド · 1 ラウンドあたり {2:0.00} キル · HS {3}%
+{0}G  {1}M	{0}勝  {1}敗
+· act %{0} ({1})	· アクト {0}% ({1})
+· düello sen {0} – {1} o	· 撃ち合い 自分 {0} – {1} 相手
+· {0} kez aynı maçtaydınız	· 同じ試合 {0} 回
+Çap {0} px · konum {1}, {2}	直径 {0} px · 位置 {1}, {2}
+Çıkış	終了
+Öldürmelerinin büyük kısmı Operator ile (%{0}). Uzun açıları kuru peek'leme, flaşla ya da başka yerden gir.	キルの大半がオペレーター ({0}%)。長いアングルにドライピークせず、フラッシュか別ルートで。
+Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	倒れてもトレードされにくい ({0}%)。味方から離れて単独行動。
+Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	倒れても味方がトレードできていない: 孤立しています。味方と同じエリアでプレイしよう。
+Ölümsüzlük	イモータル
+Önce Kick hesabını bağla (Yayın Bilgisi → Bağlan).	先に Kick アカウントを接続してください (配信情報 → 接続)。
+Öğlen	昼
+Ücretsiz anahtar al	無料キーを取得
+Üstte tut	常に手前に表示
+çap {0} px · konum {1}, {2}	直径 {0} px · 位置 {1}, {2}
+öldürdüğün yerler	キル位置
+öldüğün yerler	デス位置
+ölümü trade edilen	トレードされたデス
+ölümün trade edildi	トレードされたデス
+İLK KAN	ファーストブラッド
+İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.	2連敗後に明らかに崩れています: そこで短い休憩を挟もう。
+İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.	最初の撃ち合いにはあまり出ない ({0}%)。遅いローテ/裏取りに注意し、背後を確認。
+İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.	権限: user:read, channel:read, channel:write, chat:write にチェック → 保存。
+Şu an maçta değil.	現在試合中ではありません。
+…	…
+… API limiti, bekleniyor	… API 制限、待機中
+● BAĞLANIYOR…	● 接続中…
+● BAĞLANTI KOPTU — yeniden bağlanılıyor ({0})	● 接続が切れました — 再接続中 ({0})
+● BAŞLATILAMADI	● 開始できませんでした
+● CANLI	● 配信中
+● DURDURULUYOR…	● 停止中…
+● EKRAN YAKALAMA YENİLENİYOR (yayın açık)	● 画面キャプチャを再起動中 (配信は継続中)
+● HAZIR	● 準備完了
+● KICK BAĞLANTIYI REDDETTİ	● KICK が接続を拒否しました
+● TEST BAŞARISIZ	● テスト失敗
+● TEST KAYDI	● テスト録画
+● TEST KAYDI HAZIR	● テスト録画完了
+● YAYIN BİTTİ	● 配信終了
+● YAYIN DURDU	● 配信が停止しました
+⚠  Valorant "Tam ekran" modunda: alt-tab'da yayın takılır.  Valorant → Ayarlar → Video → Genel → Görüntü Modu: "Pencereli Tam Ekran" seç.	⚠  VALORANT が「フルスクリーン」モードです: Alt-Tab で配信がカクつきます。  VALORANT → 設定 → ビデオ → 一般 → 表示モード: 「ウィンドウフルスクリーン」を選択。
+✗ Bağlantı hatası	✗ 接続エラー
+✗ HenrikDev anahtarı geçersiz	✗ HenrikDev キーが無効です
+✗ Oyuncu bulunamadı (isim/etiket/bölge)	✗ プレイヤーが見つかりません (名前/タグ/リージョン)

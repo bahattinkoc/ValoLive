@@ -1,0 +1,335 @@
+# ValoLive Â· vi Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+ (sen)	 (bạn)
+ (şu an kapalı)	 (đang đóng)
+ · BU HARİTADA {0} MAÇI	 · {0} TRẬN TRÊN BẢN ĐỒ NÀY
+ · devam ediyor…	 · đang xử lý…
+ · seni {0} kez öldürdü, sen onu {1}	 · hạ bạn {0} lần, bạn hạ họ {1}
+ · {0} maçlık galibiyet serisi	 · chuỗi {0} trận thắng
+ ▲seri	 ▲chuỗi thắng
+ ▼tilt	 ▼tilt
+"{0}" adında kategori bulunamadı.	Không tìm thấy danh mục "{0}".
+%{0}	{0}%
+(mikrofon yok)	(không có micro)
++{0} karşılaşma daha	+{0} lần gặp nữa
+, ilk ölüm %{0}	, chết đầu {0}%
+. İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.	. Pha giao tranh đầu thường đến từ họ; ngắm sẵn góc, đừng peek chay.
+1080p60 · 6000 kbps (önerilen)	1080p60 · 6000 kbps (khuyên dùng)
+2 kayıp serisinden sonra yeterli maç yok; örnek arttıkça netleşir.	Chưa đủ trận sau chuỗi thua 2; dữ liệu nhiều hơn sẽ rõ hơn.
+2 kayıptan sonra ({0})	Sau 2 trận thua ({0})
+720p60 · 4500 kbps (zayıf internet)	720p60 · 4500 kbps (mạng yếu)
+936p60 · 6000 kbps (keskin + hafif)	936p60 · 6000 kbps (nét + nhẹ)
+<h2>ValoLive Kick'e bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>	<h2>ValoLive đã kết nối với Kick ✓</h2><p>Bạn có thể đóng tab này.</p>
+AGRESİF	HUNG HĂNG
+AJAN SEÇİMİ	CHỌN ĐẶC VỤ
+ANALİZİM	THỐNG KÊ CỦA TÔI
+Ajan	Đặc vụ
+Ajan seçiminde sniper perdesi (otomatik)	Màn che chống snipe khi chọn đặc vụ (tự động)
+Akşam	Buổi tối
+Altın	Vàng
+Analizim	Thống kê của tôi
+Atak	Tấn công
+Ayrıntı: %LOCALAPPDATA%\ValoLive\ffmpeg.log	Chi tiết: %LOCALAPPDATA%\ValoLive\ffmpeg.log
+Açmak için simgeye tıkla; çıkış simgenin sağ tık menüsünde.	Nhấn vào biểu tượng để mở; thoát nằm trong menu chuột phải của biểu tượng.
+BERABERE	HÒA
+BUGÜN	HÔM NAY
+Bağlan	Kết nối
+Bağlanılamadı	Kết nối thất bại
+Bağlanıyor…	Đang kết nối…
+Bağlı değil	Chưa kết nối
+Başlık	Tiêu đề
+Başlık uygulanamadı: 	Không áp dụng được tiêu đề: 
+Başlık, kategori ve etiketler Kick'e uygulandı ✓	Đã áp dụng tiêu đề, danh mục và thẻ lên Kick ✓
+Belirgin bir alışkanlık yok — dengeli oynuyor.	Không có thói quen rõ rệt — chơi cân bằng.
+Bildirimler (tanıdık oyuncu, smurf, parti)	Thông báo (người quen, smurf, nhóm)
+Bronz	Đồng
+Bu haritada bomba kurmamış.	Chưa từng cài bom trên bản đồ này.
+Bu pencere yayına ve kayda girmez · adını gizleyenler aranmaz	Cửa sổ này không bao giờ lên stream hay bản ghi · không tra người chơi ẩn tên
+Bugün henüz rekabetçi maç yok.	Hôm nay chưa có trận xếp hạng nào.
+Bugün {0}G {1}M · {2} RR	Hôm nay {0}T {1}B · {2} RR
+Bölge bulunamadı: Valorant'ı bir kez açman gerekiyor	Không tìm thấy khu vực: hãy mở Valorant một lần
+BİRAZDAN DÖNÜYORUM	QUAY LẠI NGAY
+CANLI	TRỰC TIẾP
+CANLI SKOR	TỈ SỐ TRỰC TIẾP
+Canlı skor: {0}-{1} · {2}	Tỉ số trực tiếp: {0}-{1} · {2}
+Chat komutları ({0})	Lệnh chat ({0})
+Client ID ve Client Secret gerekli.	Cần Client ID và Client Secret.
+Defans	Phòng thủ
+Demir	Sắt
+Derecesiz	Không xếp hạng
+Desteklenmeyen ses biçimi ({0} bit).	Định dạng âm thanh không hỗ trợ ({0} bit).
+Dil, yayın bitince ValoLive yeniden açıldığında değişir.	Ngôn ngữ sẽ đổi khi stream kết thúc và ValoLive khởi động lại.
+ESKİ DOST	BẠN CŨ
+Elmas	Kim Cương
+Enter: kaydet     Esc: vazgeç\n\n	Enter: lưu     Esc: hủy\n\n
+Etiketler	Thẻ
+F9  Sniper koruması      F10  Yayın özeti	F9  Chống snipe      F10  Tổng kết stream
+GG, TEŞEKKÜRLER!	GG, CẢM ƠN!
+Gece	Ban đêm
+Gizli oyuncu	Người chơi ẩn
+GÖRÜNTÜ	HÌNH ẢNH
+GÜNÜN MAÇI	TRẬN CỦA NGÀY
+Gümüş	Bạc
+Günlükler	Nhật ký
+Günün mağazası: {0} · yenilenmesine {1} sa {2} dk	Cửa hàng hôm nay: {0} · làm mới sau {1} giờ {2} phút
+Gürültü filtresi	Lọc tiếng ồn
+Güç dengesi (ortalama ranka göre): takımın %{0:0} · rakip %{1:0}	Cán cân (theo rank trung bình): đội bạn {0:0}% · đối thủ {1:0}%
+GİRİŞÇİ	MỞ GIAO TRANH
+HARİTA	BẢN ĐỒ
+HARİTALAR	BẢN ĐỒ
+Hafif yakalama (yalnızca oyun penceresi)	Ghi hình nhẹ (chỉ cửa sổ game)
+Hazırlanıyor…	Đang chuẩn bị…
+HenrikDev anahtarı yok	Không có khóa HenrikDev
+Hepsi	Tất cả
+Hızlı	Đấu Nhanh
+KAFACI	THỢ SĂN ĐẦU
+KATMANLAR	LỚP PHỦ
+KAZANMA	TỈ LỆ THẮNG
+KENDİ ANALİZİM	THỐNG KÊ CỦA TÔI
+KISA BİR ARA	NGHỈ CHÚT
+Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.	Tỉ lệ headshot cao ({0}%). Đừng đấu súng trực diện — vào bằng kỹ năng.
+Kalite	Chất lượng
+Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil	Sổ gặp mặt: {0}  ·  vòng màu = từng chung trận (rê chuột)  ·  nhấn người chơi: phân tích · chuột phải: hồ sơ
+Kategori	Danh mục
+Kaydet ve bağlan	Lưu và kết nối
+Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.	Không tụt phong độ sau chuỗi thua — bạn miễn nhiễm tilt.
+Kick Stream URL ve Stream Key gerekli.\nKick → Creator Dashboard → Settings bölümünden kopyalayabilirsin.	Cần Kick Stream URL và Stream Key.\nSao chép tại Kick → Creator Dashboard → Settings.
+Kick hesabı	Tài khoản Kick
+Kick hesabı bağlı değil.	Tài khoản Kick chưa kết nối.
+Kick hesabını bağla	Kết nối tài khoản Kick
+Kick için hafif Valorant yayın aracı · RTX NVENC	Công cụ stream Valorant nhẹ cho Kick · RTX NVENC
+Kick kanal bilgisi alınamadı.	Không lấy được thông tin kênh Kick.
+Kick onayı 3 dakika içinde gelmedi.	Không nhận được xác nhận từ Kick trong 3 phút.
+Kick onayı reddedildi: 	Kick từ chối xác nhận: 
+Kick oturumu sona ermiş, yeniden bağlan.	Phiên Kick đã hết hạn, hãy kết nối lại.
+Kick'e bağlanılamadı:\n	Không kết nối được Kick:\n
+Kick'e şimdi uygula	Áp dụng lên Kick ngay
+Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):	Mở trang nhà phát triển của Kick (cần đăng nhập):
+Kick'ten URL ve key al	Lấy URL và key từ Kick
+Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:	Kick yêu cầu "ứng dụng nhà phát triển" riêng của bạn để đổi tiêu đề và danh mục.\nChỉ một lần, mất 2 phút:
+Komutlar: 	Lệnh: 
+Kopyala	Sao chép
+Kurduğu bölge: 	Cài bom tại: 
+LOBİDE	Ở SẢNH
+MAÇ	TRẬN
+MAÇ ODASI	PHÒNG TRẬN ĐẤU
+MAÇ ÖZETİ	TỔNG KẾT TRẬN
+MAÇTA	ĐANG TRONG TRẬN
+Maç Odası	Phòng trận đấu
+Maç bekleniyor…	Đang chờ trận…
+Maç bulununca otomatik aç	Tự mở khi tìm thấy trận
+Maç bulununca takımın burada listelenir.	Đội của bạn sẽ hiện ở đây khi tìm thấy trận.
+Maç bulununca yayın kendiliğinden oyuna döner	Stream tự quay lại game khi tìm thấy trận
+Maç sonu kartı (ısı haritası + özet)	Thẻ cuối trận (bản đồ nhiệt + tổng kết)
+Maçlar inceleniyor {0}/{1}…	Đang phân tích trận {0}/{1}…
+Maçları inceleniyor…	Đang phân tích trận…
+Mağaza bilgisi alınamadı.	Không lấy được cửa hàng.
+Menüde bekleme ekranı (sıra sayacı)	Màn hình chờ trong menu (đồng hồ hàng chờ)
+Mikrofon	Micro
+Minimap'e hizala	Căn theo bản đồ nhỏ
+Minimap'i radar rozetiyle ört	Che bản đồ nhỏ bằng huy hiệu radar
+NEREDE ÖLÜYORSUN	BẠN CHẾT Ở ĐÂU
+OP'ÇU	CHUYÊN OP
+OTURUM	PHIÊN
+OYUN STİLİ	LỐI CHƠI
+Otomatik (Valorant dili)	Tự động (ngôn ngữ của Valorant)
+Oyun sesi	Âm thanh game
+PARTİ	NHÓM
+Platin	Bạch Kim
+Profili aç ↗	Mở hồ sơ ↗
+RAKİPLER	ĐỐI THỦ
+RANK ATLADIN!	LÊN RANK!
+ROUND AÇILIŞI	MỞ ĐẦU HIỆP
+ROZETİ MİNİMAP'E HİZALA\n\n	CĂN HUY HIỆU THEO BẢN ĐỒ NHỎ\n\n
+Radyant	Tỏa Sáng
+Rakibin	Từng là đối thủ
+Rakipler maç başlayınca görünür (ajan seçiminde Riot göstermez).	Đối thủ hiện khi trận bắt đầu (Riot ẩn họ khi chọn đặc vụ).
+Rakipte {0} kişilik parti	Đối thủ có nhóm {0} người
+Rank bilgisi henüz yok.	Chưa có thông tin rank.
+Rekabetçi	Đấu Xếp Hạng
+Riot ID + anahtar gerekli	Cần Riot ID + khóa
+Riot bağlantı hatası: 	Lỗi kết nối Riot: 
+Riot hesabına giriş yapılmamış	Chưa đăng nhập tài khoản Riot
+Riot istemcisi açılıyor…	Riot Client đang mở…
+Riot istemcisi kapalı	Riot Client đang tắt
+Riot istemcisine ulaşılamadı: 	Không liên lạc được Riot Client: 
+Riot yavaşlattı, bekleniyor… {0}/{1}	Riot giới hạn yêu cầu, đang chờ… {0}/{1}
+Round açılışların dengeli.	Mở đầu hiệp của bạn cân bằng.
+Roundu o açıyor: ilk kan %{0}	Họ là người mở hiệp: first blood {0}%
+Roundu sık sık ilk ölerek açıyorsun (ortalama ~%10). İlk teması takım arkadaşına ver ya da fayda ile gir.	Bạn hay mở hiệp bằng việc chết trước (trung bình ~10%). Nhường pha giao tranh đầu cho đồng đội hoặc vào bằng kỹ năng.
+Rozet yeri	Vị trí huy hiệu
+RÖVANŞ	BÁO THÙ
+SAATE GÖRE	THEO GIỜ TRONG NGÀY
+SABIRLI	KIÊN NHẪN
+SAYILAR	CHỈ SỐ
+SERİ	CHUỖI THẮNG
+SES	ÂM THANH
+SIK GÖRÜLEN	HAY GẶP
+SIRA BEKLENİYOR	ĐANG XẾP HÀNG
+SIRADAKİ MAÇ BİRAZDAN	TRẬN TIẾP THEO SẮP BẮT ĐẦU
+SNIPER KORUMASI AKTİF	CHỐNG SNIPE ĐANG BẬT
+SON MAÇ	TRẬN TRƯỚC
+SON MAÇ · maç bekleniyor	TRẬN TRƯỚC · đang chờ trận
+Sabah	Buổi sáng
+Sadece Valorant (önerilen)	Chỉ Valorant (khuyên dùng)
+Ses cihazı yanıt vermedi.	Thiết bị âm thanh không phản hồi.
+Seçtiğim uygulama	Ứng dụng đã chọn
+Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.	Hạ nhiều bằng Sheriff ({0}% số mạng). Vòng eco vẫn có thể one-tap bạn.
+Sniper koruması (F9)	Chống snipe (F9)
+Son maç bilgisi yok.	Không có thông tin trận trước.
+Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	Trận trước: {0} {1} · {2} · {3} · {4} · HS {5}
+Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.	Gần đây chưa chơi bản đồ này. Lối chơi bên trên vẫn đúng.
+Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.	Sau đó trang xác nhận của Kick sẽ mở trong trình duyệt; chỉ cần bấm "Cho phép".
+Stil çıkarmak için yeterli round yok (en az 40).	Chưa đủ hiệp để rút ra lối chơi (ít nhất 40).
+Stream URL / Stream Key'i Kick panelinden yeniden kopyala	Sao chép lại Stream URL / Stream Key từ bảng điều khiển Kick
+Sv	Cấp
+Süre: {0:hh\:mm\:ss}	Thời lượng: {0:hh\:mm\:ss}
+Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	Kéo: di chuyển\nLăn chuột: phóng to / thu nhỏ (Shift: tinh chỉnh)\nPhím mũi tên: 1 px (Shift: 10 px)\n\n
+SİLAH	VŨ KHÍ
+Sık ilk ölüyor (roundların %{0}). Erken peek atar; sabırlı bekle, sana gelir.	Hay chết trước ({0}% số hiệp). Peek sớm; cứ kiên nhẫn chờ, họ sẽ tự tới.
+Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz	Đã ẩn hàng chờ / chọn đặc vụ — quay lại khi trận bắt đầu
+Sıraya girilince sayaç başlar	Đồng hồ chạy khi bạn vào hàng chờ
+TAKIMIN	ĐỘI BẠN
+TANIDIK	QUEN MẶT
+TEST KAYDEDİLİYOR…	ĐANG GHI THỬ…
+TEST KAYDI (15 sn)	GHI THỬ (15 giây)
+Takım arkadaşın	Từng là đồng đội
+Takımında {0} kişilik parti	Đội bạn có nhóm {0} người
+Tam ekran (her şey görünür)	Toàn màn hình (thấy mọi thứ)
+Tarayıcıda Kick onayı bekleniyor…	Đang chờ xác nhận Kick trong trình duyệt…
+TİLT	TILT
+Uygulama	Ứng dụng
+Uygulamanın Client ID ve Client Secret'ını buraya yapıştır:	Dán Client ID và Client Secret của ứng dụng vào đây:
+ValoLive arka planda çalışıyor	ValoLive đang chạy nền
+ValoLive — Kendi Analizim	ValoLive — Thống kê của tôi
+ValoLive — Maç Odası	ValoLive — Phòng trận đấu
+ValoLive — Oyuncu Analizi	ValoLive — Phân tích người chơi
+ValoLive — SNIPER KORUMASI AÇIK	ValoLive — ĐANG BẬT CHỐNG SNIPE
+ValoLive — YAYIN ÖZETİ	ValoLive — TỔNG KẾT STREAM
+ValoLive'ı aç	Mở ValoLive
+Varsayılan ses çıkışı	Đầu ra âm thanh mặc định
+Vazgeç	Hủy
+YALNIZ	SÓI ĐƠN ĐỘC
+YAYIN BİLGİSİ	THÔNG TIN STREAM
+YAYIN ÖZETİ	TỔNG KẾT STREAM
+YAYINI BAŞLAT	BẮT ĐẦU STREAM
+YAYINI BİTİR	KẾT THÚC STREAM
+YENİLGİ	THẤT BẠI
+Yakalama	Ghi hình
+Yayın açık. Kapatılsın mı?	Đang stream. Đóng luôn?
+Yayın bilgisi uygulanamadı:\n	Không áp dụng được thông tin stream:\n
+Yayında chat kutusu	Khung chat trên stream
+Yayını başlat	Bắt đầu stream
+Yayını bitir	Kết thúc stream
+Yeni uygulama oluştur. Ad: ValoLive · Redirect URL olarak şunu yaz:	Tạo ứng dụng mới. Tên: ValoLive · nhập địa chỉ này làm Redirect URL:
+Yücelik	Siêu Việt
+ZAFER	CHIẾN THẮNG
+adını gizliyor — geçmişine bakılmaz	ẩn tên — không kiểm tra lịch sử
+atak	tấn công
+bağlanıyor	đang kết nối
+bağlı	đã kết nối
+berabere	hòa
+bu pencere yayına girmez	cửa sổ này không lên stream
+bugün	hôm nay
+chat odası bulunamadı	không tìm thấy phòng chat
+defans	phòng thủ
+defter dolduruluyor {0}/{1}	đang điền sổ {0}/{1}
+dün	hôm qua
+form	phong độ
+genel kazanma ({0})	tỉ lệ thắng chung ({0})
+gerçek zamanlı sunucu bilgisi yok	không có thông tin máy chủ thời gian thực
+geçersiz yanıt	phản hồi không hợp lệ
+geçmiş alınamadı	không lấy được lịch sử
+geçmiş yükleniyor…	đang tải lịch sử…
+harita	bản đồ
+hasar/round	sát thương/hiệp
+ilk kan / round	first blood / hiệp
+ilk kan senden	first blood của bạn
+ilk öldüğün round kayıp	thua hiệp sau khi chết trước
+ilk ölen sensin	bạn chết trước
+ilk ölüm / round	chết đầu / hiệp
+incelenecek maç bulunamadı	không có trận để phân tích
+kafa isabeti	tỉ lệ headshot
+kaybettin	bạn thua
+kazandın	bạn thắng
+kazanma	tỉ lệ thắng
+koptu: 	mất kết nối: 
+kurma {0} · imha {1}	cài {0} · gỡ {1}
+maç	trận
+maçları inceleniyor…	đang phân tích trận…
+misafir erişimi alınamadı	không lấy được quyền khách
+noktalar: öldürdüğü anda durduğu yer	chấm: vị trí đứng lúc hạ mạng
+ort.	TB
+oturumun 4.+ maçı ({0})	trận thứ 4+ của phiên ({0})
+rakip	đối thủ
+rakipte	ở đội đối thủ
+rank yükleniyor…	đang tải rank…
+son {0} maç · {1} round incelendi	{0} trận gần nhất · đã phân tích {1} hiệp
+son {0} rekabetçi maç	{0} trận xếp hạng gần nhất
+standart	mặc định
+sunucu sessiz kaldı	máy chủ không phản hồi
+takım arkadaşın	đồng đội
+takımında	ở đội bạn
+ulti / maç	tuyệt chiêu / trận
+yayın başlayınca bağlanır	kết nối khi bắt đầu stream
+zirve	cao nhất
+{0:0} ay önce	{0:0} tháng trước
+{0:0} gün önce	{0:0} ngày trước
+{0:0} hafta önce	{0:0} tuần trước
+{0} açılamadı: {1}	Không mở được {0}: {1}
+{0} açılınca yayın kendiliğinden devam eder	Stream tự tiếp tục khi {0} được mở
+{0} fps  ·  {1}  ·  düşen kare: {2}  ·  hız {3}	{0} fps  ·  {1}  ·  khung hình rớt: {2}  ·  tốc độ {3}
+{0} maç · %{1} kazanma · atak round %{2} · defans round %{3}	{0} trận · thắng {1}% · hiệp tấn công {2}% · hiệp phòng thủ {3}%
+{0} maç · düellolar ekleniyor {1}/{2}	{0} trận · đang thêm đấu súng {1}/{2}
+{0} maç · tarama hatası: {1}	{0} trận · lỗi quét: {1}
+{0} maç · {1}	{0} trận · {1}
+{0} portu kullanımda; ValoLive'ı yeniden başlatıp tekrar dene.	Cổng {0} đang bị dùng; hãy khởi động lại ValoLive và thử lại.
+{0} rekabetçi maç	{0} trận xếp hạng
+{0} · o maçta {1}/{2}/{3}{4}	{0} · trận đó {1}/{2}/{3}{4}
+{0} · {1} RR	{0} · {1} RR
+{0} · {1} {2} · daha önce {3} kez	{0} · {1} {2} · đã gặp {3} lần
+{0}. ROUND	HIỆP {0}
+{0}: kullanılmamış	{0}: chưa dùng
+{0}: {1} round · round başı {2:0.00} öldürme · kafa %{3}	{0}: {1} hiệp · {2:0.00} mạng mỗi hiệp · headshot {3}%
+{0}G  {1}M	{0}T  {1}B
+· act %{0} ({1})	· màn {0}% ({1})
+· düello sen {0} – {1} o	· đấu súng bạn {0} – {1} họ
+· {0} kez aynı maçtaydınız	· {0} lần chung trận
+Çap {0} px · konum {1}, {2}	Đường kính {0} px · vị trí {1}, {2}
+Çıkış	Thoát
+Öldürmelerinin büyük kısmı Operator ile (%{0}). Uzun açıları kuru peek'leme, flaşla ya da başka yerden gir.	Phần lớn mạng hạ bằng Operator ({0}%). Đừng peek chay góc dài — dùng flash hoặc đi đường khác.
+Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	Hiếm khi được trade khi chết ({0}%). Chơi một mình, xa đồng đội.
+Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	Đội bạn thường không trade kịp: bạn bị cô lập. Hãy chơi cùng khu vực với đồng đội.
+Ölümsüzlük	Bất Tử
+Önce Kick hesabını bağla (Yayın Bilgisi → Bağlan).	Hãy kết nối tài khoản Kick trước (Thông tin stream → Kết nối).
+Öğlen	Buổi trưa
+Ücretsiz anahtar al	Lấy khóa miễn phí
+Üstte tut	Luôn ở trên cùng
+çap {0} px · konum {1}, {2}	đường kính {0} px · vị trí {1}, {2}
+öldürdüğün yerler	nơi bạn hạ mạng
+öldüğün yerler	nơi bạn chết
+ölümü trade edilen	chết được trade
+ölümün trade edildi	bạn đã được trade
+İLK KAN	FIRST BLOOD
+İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.	Bạn tụt rõ sau hai trận thua: lúc đó nghỉ ngắn sẽ giúp ích.
+İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.	Hiếm khi vào pha đấu súng đầu ({0}%). Cẩn thận xoay muộn/lurk, kiểm tra sau lưng.
+İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.	Quyền: tích user:read, channel:read, channel:write, chat:write → Lưu.
+Şu an maçta değil.	Hiện không ở trong trận.
+…	…
+… API limiti, bekleniyor	… giới hạn API, đang chờ
+● BAĞLANIYOR…	● ĐANG KẾT NỐI…
+● BAĞLANTI KOPTU — yeniden bağlanılıyor ({0})	● MẤT KẾT NỐI — đang kết nối lại ({0})
+● BAŞLATILAMADI	● KHÔNG KHỞI ĐỘNG ĐƯỢC
+● CANLI	● TRỰC TIẾP
+● DURDURULUYOR…	● ĐANG DỪNG…
+● EKRAN YAKALAMA YENİLENİYOR (yayın açık)	● ĐANG KHỞI ĐỘNG LẠI GHI MÀN HÌNH (stream vẫn bật)
+● HAZIR	● SẴN SÀNG
+● KICK BAĞLANTIYI REDDETTİ	● KICK TỪ CHỐI KẾT NỐI
+● TEST BAŞARISIZ	● THỬ THẤT BẠI
+● TEST KAYDI	● GHI THỬ
+● TEST KAYDI HAZIR	● BẢN GHI THỬ ĐÃ XONG
+● YAYIN BİTTİ	● ĐÃ KẾT THÚC STREAM
+● YAYIN DURDU	● STREAM BỊ DỪNG
+⚠  Valorant "Tam ekran" modunda: alt-tab'da yayın takılır.  Valorant → Ayarlar → Video → Genel → Görüntü Modu: "Pencereli Tam Ekran" seç.	⚠  Valorant đang ở chế độ "Toàn màn hình": stream bị giật khi Alt-Tab.  Valorant → Cài đặt → Video → Chung → Chế độ hiển thị: chọn "Toàn màn hình dạng cửa sổ".
+✗ Bağlantı hatası	✗ Lỗi kết nối
+✗ HenrikDev anahtarı geçersiz	✗ Khóa HenrikDev không hợp lệ
+✗ Oyuncu bulunamadı (isim/etiket/bölge)	✗ Không tìm thấy người chơi (tên/tag/khu vực)

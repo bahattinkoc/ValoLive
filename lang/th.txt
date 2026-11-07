@@ -1,0 +1,335 @@
+# ValoLive Â· th Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+ (sen)	 (คุณ)
+ (şu an kapalı)	 (ปิดอยู่ตอนนี้)
+ · BU HARİTADA {0} MAÇI	 · {0} แมตช์ในแมพนี้
+ · devam ediyor…	 · กำลังทำงาน…
+ · seni {0} kez öldürdü, sen onu {1}	 · ฆ่าคุณ {0} ครั้ง คุณฆ่าเขา {1}
+ · {0} maçlık galibiyet serisi	 · ชนะติดกัน {0} เกม
+ ▲seri	 ▲ชนะติด
+ ▼tilt	 ▼หัวร้อน
+"{0}" adında kategori bulunamadı.	ไม่พบหมวดหมู่ชื่อ "{0}"
+%{0}	{0}%
+(mikrofon yok)	(ไม่มีไมโครโฟน)
++{0} karşılaşma daha	+อีก {0} ครั้งที่เจอกัน
+, ilk ölüm %{0}	, ตายก่อน {0}%
+. İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.	. การปะทะแรกมักมาจากเขา เล็งมุมรอไว้ อย่าพีคโล่ง ๆ
+1080p60 · 6000 kbps (önerilen)	1080p60 · 6000 kbps (แนะนำ)
+2 kayıp serisinden sonra yeterli maç yok; örnek arttıkça netleşir.	ยังมีเกมหลังแพ้ติด 2 ไม่พอ ข้อมูลมากขึ้นจะชัดขึ้น
+2 kayıptan sonra ({0})	หลังแพ้ 2 เกม ({0})
+720p60 · 4500 kbps (zayıf internet)	720p60 · 4500 kbps (เน็ตช้า)
+936p60 · 6000 kbps (keskin + hafif)	936p60 · 6000 kbps (คม + เบา)
+<h2>ValoLive Kick'e bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>	<h2>ValoLive เชื่อมต่อกับ Kick แล้ว ✓</h2><p>ปิดแท็บนี้ได้เลย</p>
+AGRESİF	สายบุก
+AJAN SEÇİMİ	เลือกเอเจนต์
+ANALİZİM	สถิติของฉัน
+Ajan	เอเจนต์
+Ajan seçiminde sniper perdesi (otomatik)	ม่านกันสไนป์ตอนเลือกเอเจนต์ (อัตโนมัติ)
+Akşam	ตอนเย็น
+Altın	โกลด์
+Analizim	สถิติของฉัน
+Atak	บุก
+Ayrıntı: %LOCALAPPDATA%\ValoLive\ffmpeg.log	รายละเอียด: %LOCALAPPDATA%\ValoLive\ffmpeg.log
+Açmak için simgeye tıkla; çıkış simgenin sağ tık menüsünde.	คลิกไอคอนเพื่อเปิด ออกจากโปรแกรมได้ที่เมนูคลิกขวาของไอคอน
+BERABERE	เสมอ
+BUGÜN	วันนี้
+Bağlan	เชื่อมต่อ
+Bağlanılamadı	เชื่อมต่อไม่สำเร็จ
+Bağlanıyor…	กำลังเชื่อมต่อ…
+Bağlı değil	ยังไม่เชื่อมต่อ
+Başlık	ชื่อสตรีม
+Başlık uygulanamadı: 	ใช้ชื่อสตรีมไม่สำเร็จ: 
+Başlık, kategori ve etiketler Kick'e uygulandı ✓	ใช้ชื่อสตรีม หมวดหมู่ และแท็กบน Kick แล้ว ✓
+Belirgin bir alışkanlık yok — dengeli oynuyor.	ไม่มีนิสัยเด่น — เล่นสมดุล
+Bildirimler (tanıdık oyuncu, smurf, parti)	การแจ้งเตือน (ผู้เล่นที่รู้จัก, สเมิร์ฟ, ปาร์ตี้)
+Bronz	บรอนซ์
+Bu haritada bomba kurmamış.	ไม่เคยวางสไปค์ในแมพนี้
+Bu pencere yayına ve kayda girmez · adını gizleyenler aranmaz	หน้าต่างนี้ไม่ขึ้นในสตรีมหรือการอัด · ไม่ค้นหาผู้เล่นที่ซ่อนชื่อ
+Bugün henüz rekabetçi maç yok.	วันนี้ยังไม่มีแมตช์จัดอันดับ
+Bugün {0}G {1}M · {2} RR	วันนี้ ชนะ {0} แพ้ {1} · {2} RR
+Bölge bulunamadı: Valorant'ı bir kez açman gerekiyor	ไม่พบภูมิภาค: เปิด VALORANT ก่อนหนึ่งครั้ง
+BİRAZDAN DÖNÜYORUM	เดี๋ยวกลับมา
+CANLI	สด
+CANLI SKOR	สกอร์สด
+Canlı skor: {0}-{1} · {2}	สกอร์สด: {0}-{1} · {2}
+Chat komutları ({0})	คำสั่งแชท ({0})
+Client ID ve Client Secret gerekli.	ต้องใส่ Client ID และ Client Secret
+Defans	ป้องกัน
+Demir	ไอรอน
+Derecesiz	ไม่จัดอันดับ
+Desteklenmeyen ses biçimi ({0} bit).	ไม่รองรับรูปแบบเสียงนี้ ({0} บิต)
+Dil, yayın bitince ValoLive yeniden açıldığında değişir.	ภาษาจะเปลี่ยนเมื่อจบสตรีมและเปิด ValoLive ใหม่
+ESKİ DOST	เพื่อนเก่า
+Elmas	ไดมอนด์
+Enter: kaydet     Esc: vazgeç\n\n	Enter: บันทึก     Esc: ยกเลิก\n\n
+Etiketler	แท็ก
+F9  Sniper koruması      F10  Yayın özeti	F9  กันสไนป์      F10  สรุปสตรีม
+GG, TEŞEKKÜRLER!	GG ขอบคุณ!
+Gece	กลางคืน
+Gizli oyuncu	ผู้เล่นที่ซ่อนชื่อ
+GÖRÜNTÜ	ภาพ
+GÜNÜN MAÇI	แมตช์แห่งวัน
+Gümüş	ซิลเวอร์
+Günlükler	บันทึก
+Günün mağazası: {0} · yenilenmesine {1} sa {2} dk	ร้านค้าวันนี้: {0} · รีเฟรชใน {1} ชม. {2} นาที
+Gürültü filtresi	ตัดเสียงรบกวน
+Güç dengesi (ortalama ranka göre): takımın %{0:0} · rakip %{1:0}	ดุลกำลัง (ตามแรงค์เฉลี่ย): ทีมคุณ {0:0}% · ฝั่งตรงข้าม {1:0}%
+GİRİŞÇİ	สายเปิด
+HARİTA	แมพ
+HARİTALAR	แมพ
+Hafif yakalama (yalnızca oyun penceresi)	จับภาพแบบเบา (เฉพาะหน้าต่างเกม)
+Hazırlanıyor…	กำลังเตรียม…
+HenrikDev anahtarı yok	ไม่มีคีย์ HenrikDev
+Hepsi	ทั้งหมด
+Hızlı	Swiftplay
+KAFACI	สายเฮดช็อต
+KATMANLAR	เลเยอร์
+KAZANMA	อัตราชนะ
+KENDİ ANALİZİM	สถิติของฉัน
+KISA BİR ARA	พักสั้น ๆ
+Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.	เฮดช็อตสูง ({0}%) อย่าดวลตรง ๆ — เข้าพร้อมสกิล
+Kalite	คุณภาพ
+Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil	บันทึกการเจอกัน: {0}  ·  วงสี = เคยอยู่แมตช์เดียวกัน (ชี้เมาส์)  ·  คลิกผู้เล่น: วิเคราะห์ · คลิกขวา: โปรไฟล์
+Kategori	หมวดหมู่
+Kaydet ve bağlan	บันทึกและเชื่อมต่อ
+Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.	แพ้ติดแล้วไม่ดรอป — ใจนิ่งมาก
+Kick Stream URL ve Stream Key gerekli.\nKick → Creator Dashboard → Settings bölümünden kopyalayabilirsin.	ต้องใส่ Kick Stream URL และ Stream Key\nคัดลอกได้จาก Kick → Creator Dashboard → Settings
+Kick hesabı	บัญชี Kick
+Kick hesabı bağlı değil.	ยังไม่ได้เชื่อมต่อบัญชี Kick
+Kick hesabını bağla	เชื่อมต่อบัญชี Kick
+Kick için hafif Valorant yayın aracı · RTX NVENC	เครื่องมือสตรีม VALORANT แบบเบาสำหรับ Kick · RTX NVENC
+Kick kanal bilgisi alınamadı.	ดึงข้อมูลช่อง Kick ไม่ได้
+Kick onayı 3 dakika içinde gelmedi.	ไม่ได้รับการอนุมัติจาก Kick ภายใน 3 นาที
+Kick onayı reddedildi: 	Kick ปฏิเสธการอนุมัติ: 
+Kick oturumu sona ermiş, yeniden bağlan.	เซสชัน Kick หมดอายุ เชื่อมต่อใหม่
+Kick'e bağlanılamadı:\n	เชื่อมต่อ Kick ไม่ได้:\n
+Kick'e şimdi uygula	ใช้กับ Kick ตอนนี้
+Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):	เปิดหน้านักพัฒนาของ Kick (ต้องล็อกอินก่อน):
+Kick'ten URL ve key al	รับ URL และคีย์จาก Kick
+Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:	Kick ต้องใช้ "แอปนักพัฒนา" ของคุณเองเพื่อเปลี่ยนชื่อสตรีมและหมวดหมู่\nทำครั้งเดียว ใช้เวลา 2 นาที:
+Komutlar: 	คำสั่ง: 
+Kopyala	คัดลอก
+Kurduğu bölge: 	จุดที่วาง: 
+LOBİDE	อยู่ในล็อบบี้
+MAÇ	แมตช์
+MAÇ ODASI	ห้องแมตช์
+MAÇ ÖZETİ	สรุปแมตช์
+MAÇTA	ในแมตช์
+Maç Odası	ห้องแมตช์
+Maç bekleniyor…	กำลังรอแมตช์…
+Maç bulununca otomatik aç	เปิดอัตโนมัติเมื่อหาแมตช์เจอ
+Maç bulununca takımın burada listelenir.	ทีมของคุณจะแสดงที่นี่เมื่อหาแมตช์เจอ
+Maç bulununca yayın kendiliğinden oyuna döner	สตรีมจะกลับไปที่เกมเองเมื่อหาแมตช์เจอ
+Maç sonu kartı (ısı haritası + özet)	การ์ดหลังจบแมตช์ (ฮีตแมพ + สรุป)
+Maçlar inceleniyor {0}/{1}…	กำลังวิเคราะห์แมตช์ {0}/{1}…
+Maçları inceleniyor…	กำลังวิเคราะห์แมตช์…
+Mağaza bilgisi alınamadı.	ดึงข้อมูลร้านค้าไม่ได้
+Menüde bekleme ekranı (sıra sayacı)	หน้ารอในเมนู (ตัวจับเวลาคิว)
+Mikrofon	ไมโครโฟน
+Minimap'e hizala	จัดให้ตรงมินิแมพ
+Minimap'i radar rozetiyle ört	ปิดมินิแมพด้วยตราเรดาร์
+NEREDE ÖLÜYORSUN	ตายตรงไหน
+OP'ÇU	สาย OP
+OTURUM	เซสชัน
+OYUN STİLİ	สไตล์การเล่น
+Otomatik (Valorant dili)	อัตโนมัติ (ภาษาของ VALORANT)
+Oyun sesi	เสียงเกม
+PARTİ	ปาร์ตี้
+Platin	แพลทินัม
+Profili aç ↗	เปิดโปรไฟล์ ↗
+RAKİPLER	ฝั่งตรงข้าม
+RANK ATLADIN!	แรงค์อัป!
+ROUND AÇILIŞI	การเปิดรอบ
+ROZETİ MİNİMAP'E HİZALA\n\n	จัดตราให้ตรงมินิแมพ\n\n
+Radyant	เรเดียนท์
+Rakibin	เคยเป็นศัตรู
+Rakipler maç başlayınca görünür (ajan seçiminde Riot göstermez).	ฝั่งตรงข้ามจะแสดงเมื่อแมตช์เริ่ม (Riot ซ่อนไว้ตอนเลือกเอเจนต์)
+Rakipte {0} kişilik parti	ฝั่งตรงข้ามปาร์ตี้ {0} คน
+Rank bilgisi henüz yok.	ยังไม่มีข้อมูลแรงค์
+Rekabetçi	จัดอันดับ
+Riot ID + anahtar gerekli	ต้องใส่ Riot ID + คีย์
+Riot bağlantı hatası: 	ข้อผิดพลาดการเชื่อมต่อ Riot: 
+Riot hesabına giriş yapılmamış	ยังไม่ได้ล็อกอินบัญชี Riot
+Riot istemcisi açılıyor…	Riot Client กำลังเปิด…
+Riot istemcisi kapalı	Riot Client ปิดอยู่
+Riot istemcisine ulaşılamadı: 	ติดต่อ Riot Client ไม่ได้: 
+Riot yavaşlattı, bekleniyor… {0}/{1}	Riot จำกัดคำขอ กำลังรอ… {0}/{1}
+Round açılışların dengeli.	การเปิดรอบของคุณสมดุลดี
+Roundu o açıyor: ilk kan %{0}	เขาเป็นคนเปิดรอบ: เฟิร์สบลัด {0}%
+Roundu sık sık ilk ölerek açıyorsun (ortalama ~%10). İlk teması takım arkadaşına ver ya da fayda ile gir.	คุณมักเปิดรอบด้วยการตายก่อน (เฉลี่ย ~10%) ให้เพื่อนรับการปะทะแรก หรือเข้าพร้อมสกิล
+Rozet yeri	ตำแหน่งตรา
+RÖVANŞ	แก้แค้น
+SAATE GÖRE	ตามช่วงเวลา
+SABIRLI	ใจเย็น
+SAYILAR	ตัวเลข
+SERİ	ชนะติด
+SES	เสียง
+SIK GÖRÜLEN	เจอบ่อย
+SIRA BEKLENİYOR	กำลังรอคิว
+SIRADAKİ MAÇ BİRAZDAN	แมตช์ต่อไปใกล้แล้ว
+SNIPER KORUMASI AKTİF	กันสไนป์ทำงานอยู่
+SON MAÇ	แมตช์ล่าสุด
+SON MAÇ · maç bekleniyor	แมตช์ล่าสุด · กำลังรอแมตช์
+Sabah	ตอนเช้า
+Sadece Valorant (önerilen)	เฉพาะ VALORANT (แนะนำ)
+Ses cihazı yanıt vermedi.	อุปกรณ์เสียงไม่ตอบสนอง
+Seçtiğim uygulama	แอปที่เลือก
+Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.	ฆ่าด้วย Sheriff เยอะ ({0}% ของการฆ่า) รอบอีโคก็โดนวันแท็ปได้
+Sniper koruması (F9)	กันสไนป์ (F9)
+Son maç bilgisi yok.	ไม่มีข้อมูลแมตช์ล่าสุด
+Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	แมตช์ล่าสุด: {0} {1} · {2} · {3} · {4} · HS {5}
+Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.	ช่วงหลังไม่ได้เล่นแมพนี้ สไตล์ด้านบนยังใช้ได้
+Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.	จากนั้นหน้าอนุมัติของ Kick จะเปิดในเบราว์เซอร์ แค่กด "อนุญาต"
+Stil çıkarmak için yeterli round yok (en az 40).	รอบยังไม่พอจะสรุปสไตล์ (อย่างน้อย 40)
+Stream URL / Stream Key'i Kick panelinden yeniden kopyala	คัดลอก Stream URL / Stream Key จากแดชบอร์ด Kick ใหม่อีกครั้ง
+Sv	Lv
+Süre: {0:hh\:mm\:ss}	ระยะเวลา: {0:hh\:mm\:ss}
+Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	ลาก: ย้าย\nล้อเมาส์: ขยาย / ย่อ (Shift: ละเอียด)\nปุ่มลูกศร: 1 px (Shift: 10 px)\n\n
+SİLAH	อาวุธ
+Sık ilk ölüyor (roundların %{0}). Erken peek atar; sabırlı bekle, sana gelir.	ตายก่อนบ่อย ({0}% ของรอบ) ชอบพีคเร็ว รอใจเย็น ๆ เดี๋ยวเขามาเอง
+Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz	ซ่อนคิว / การเลือกเอเจนต์ — กลับมาเมื่อแมตช์เริ่ม
+Sıraya girilince sayaç başlar	ตัวจับเวลาจะเริ่มเมื่อเข้าคิว
+TAKIMIN	ทีมของคุณ
+TANIDIK	คนรู้จัก
+TEST KAYDEDİLİYOR…	กำลังอัดทดสอบ…
+TEST KAYDI (15 sn)	อัดทดสอบ (15 วิ)
+Takım arkadaşın	เคยเป็นเพื่อนร่วมทีม
+Takımında {0} kişilik parti	ทีมคุณมีปาร์ตี้ {0} คน
+Tam ekran (her şey görünür)	เต็มจอ (เห็นทุกอย่าง)
+Tarayıcıda Kick onayı bekleniyor…	กำลังรอการอนุมัติจาก Kick ในเบราว์เซอร์…
+TİLT	หัวร้อน
+Uygulama	แอป
+Uygulamanın Client ID ve Client Secret'ını buraya yapıştır:	วาง Client ID และ Client Secret ของแอปที่นี่:
+ValoLive arka planda çalışıyor	ValoLive ทำงานอยู่เบื้องหลัง
+ValoLive — Kendi Analizim	ValoLive — สถิติของฉัน
+ValoLive — Maç Odası	ValoLive — ห้องแมตช์
+ValoLive — Oyuncu Analizi	ValoLive — วิเคราะห์ผู้เล่น
+ValoLive — SNIPER KORUMASI AÇIK	ValoLive — เปิดกันสไนป์อยู่
+ValoLive — YAYIN ÖZETİ	ValoLive — สรุปสตรีม
+ValoLive'ı aç	เปิด ValoLive
+Varsayılan ses çıkışı	เอาต์พุตเสียงเริ่มต้น
+Vazgeç	ยกเลิก
+YALNIZ	หมาป่าเดียวดาย
+YAYIN BİLGİSİ	ข้อมูลสตรีม
+YAYIN ÖZETİ	สรุปสตรีม
+YAYINI BAŞLAT	เริ่มสตรีม
+YAYINI BİTİR	จบสตรีม
+YENİLGİ	แพ้
+Yakalama	การจับภาพ
+Yayın açık. Kapatılsın mı?	กำลังสตรีมอยู่ ปิดเลยไหม?
+Yayın bilgisi uygulanamadı:\n	ใช้ข้อมูลสตรีมไม่สำเร็จ:\n
+Yayında chat kutusu	กล่องแชทบนสตรีม
+Yayını başlat	เริ่มสตรีม
+Yayını bitir	จบสตรีม
+Yeni uygulama oluştur. Ad: ValoLive · Redirect URL olarak şunu yaz:	สร้างแอปใหม่ ชื่อ: ValoLive · ใส่สิ่งนี้เป็น Redirect URL:
+Yücelik	แอสเซนแดนท์
+ZAFER	ชนะ
+adını gizliyor — geçmişine bakılmaz	ซ่อนชื่อ — ไม่ตรวจประวัติ
+atak	บุก
+bağlanıyor	กำลังเชื่อมต่อ
+bağlı	เชื่อมต่อแล้ว
+berabere	เสมอ
+bu pencere yayına girmez	หน้าต่างนี้ไม่ขึ้นในสตรีม
+bugün	วันนี้
+chat odası bulunamadı	ไม่พบห้องแชท
+defans	ป้องกัน
+defter dolduruluyor {0}/{1}	กำลังเติมบันทึก {0}/{1}
+dün	เมื่อวาน
+form	ฟอร์ม
+genel kazanma ({0})	อัตราชนะรวม ({0})
+gerçek zamanlı sunucu bilgisi yok	ไม่มีข้อมูลเซิร์ฟเวอร์เรียลไทม์
+geçersiz yanıt	การตอบกลับไม่ถูกต้อง
+geçmiş alınamadı	ดึงประวัติไม่ได้
+geçmiş yükleniyor…	กำลังโหลดประวัติ…
+harita	แมพ
+hasar/round	ดาเมจ/รอบ
+ilk kan / round	เฟิร์สบลัด / รอบ
+ilk kan senden	เฟิร์สบลัดจากคุณ
+ilk öldüğün round kayıp	รอบที่แพ้หลังตายก่อน
+ilk ölen sensin	คุณตายก่อน
+ilk ölüm / round	ตายก่อน / รอบ
+incelenecek maç bulunamadı	ไม่มีแมตช์ให้วิเคราะห์
+kafa isabeti	อัตราเฮดช็อต
+kaybettin	คุณแพ้
+kazandın	คุณชนะ
+kazanma	อัตราชนะ
+koptu: 	หลุดการเชื่อมต่อ: 
+kurma {0} · imha {1}	วาง {0} · กู้ {1}
+maç	แมตช์
+maçları inceleniyor…	กำลังวิเคราะห์แมตช์…
+misafir erişimi alınamadı	ขอสิทธิ์ผู้เยี่ยมชมไม่ได้
+noktalar: öldürdüğü anda durduğu yer	จุด: ตำแหน่งที่ยืนตอนฆ่า
+ort.	เฉลี่ย
+oturumun 4.+ maçı ({0})	เกมที่ 4+ ของเซสชัน ({0})
+rakip	ศัตรู
+rakipte	อยู่ฝั่งตรงข้าม
+rank yükleniyor…	กำลังโหลดแรงค์…
+son {0} maç · {1} round incelendi	{0} แมตช์ล่าสุด · วิเคราะห์ {1} รอบ
+son {0} rekabetçi maç	{0} แมตช์จัดอันดับล่าสุด
+standart	ค่าเริ่มต้น
+sunucu sessiz kaldı	เซิร์ฟเวอร์เงียบไป
+takım arkadaşın	เพื่อนร่วมทีม
+takımında	อยู่ทีมคุณ
+ulti / maç	อัลติ / แมตช์
+yayın başlayınca bağlanır	เชื่อมต่อเมื่อเริ่มสตรีม
+zirve	สูงสุด
+{0:0} ay önce	{0:0} เดือนก่อน
+{0:0} gün önce	{0:0} วันก่อน
+{0:0} hafta önce	{0:0} สัปดาห์ก่อน
+{0} açılamadı: {1}	เปิด{0}ไม่ได้: {1}
+{0} açılınca yayın kendiliğinden devam eder	สตรีมจะไปต่อเองเมื่อ {0} เปิดอยู่
+{0} fps  ·  {1}  ·  düşen kare: {2}  ·  hız {3}	{0} fps  ·  {1}  ·  เฟรมตก: {2}  ·  ความเร็ว {3}
+{0} maç · %{1} kazanma · atak round %{2} · defans round %{3}	{0} แมตช์ · ชนะ {1}% · รอบบุก {2}% · รอบป้องกัน {3}%
+{0} maç · düellolar ekleniyor {1}/{2}	{0} แมตช์ · กำลังเพิ่มข้อมูลดวล {1}/{2}
+{0} maç · tarama hatası: {1}	{0} แมตช์ · สแกนผิดพลาด: {1}
+{0} maç · {1}	{0} แมตช์ · {1}
+{0} portu kullanımda; ValoLive'ı yeniden başlatıp tekrar dene.	พอร์ต {0} ถูกใช้อยู่ ปิดแล้วเปิด ValoLive ใหม่แล้วลองอีกครั้ง
+{0} rekabetçi maç	{0} แมตช์จัดอันดับ
+{0} · o maçta {1}/{2}/{3}{4}	{0} · ในแมตช์นั้น {1}/{2}/{3}{4}
+{0} · {1} RR	{0} · {1} RR
+{0} · {1} {2} · daha önce {3} kez	{0} · {1} {2} · เคยเจอ {3} ครั้ง
+{0}. ROUND	รอบที่ {0}
+{0}: kullanılmamış	{0}: ไม่ได้ใช้
+{0}: {1} round · round başı {2:0.00} öldürme · kafa %{3}	{0}: {1} รอบ · ฆ่า {2:0.00} ต่อรอบ · เฮดช็อต {3}%
+{0}G  {1}M	ชนะ {0}  แพ้ {1}
+· act %{0} ({1})	· แอ็กต์ {0}% ({1})
+· düello sen {0} – {1} o	· ดวล คุณ {0} – {1} เขา
+· {0} kez aynı maçtaydınız	· เจอในแมตช์เดียวกัน {0} ครั้ง
+Çap {0} px · konum {1}, {2}	ขนาด {0} px · ตำแหน่ง {1}, {2}
+Çıkış	ออก
+Öldürmelerinin büyük kısmı Operator ile (%{0}). Uzun açıları kuru peek'leme, flaşla ya da başka yerden gir.	ฆ่าส่วนใหญ่ด้วย Operator ({0}%) อย่าพีคมุมยาวโล่ง ๆ — ใช้แฟลชหรือไปทางอื่น
+Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	ตายแล้วไม่ค่อยมีคนเทรด ({0}%) เล่นคนเดียวห่างจากทีม
+Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	ทีมมักเทรดคุณไม่ทัน: คุณอยู่คนเดียว เล่นโซนเดียวกับเพื่อนร่วมทีม
+Ölümsüzlük	อิมมอร์ทัล
+Önce Kick hesabını bağla (Yayın Bilgisi → Bağlan).	เชื่อมต่อบัญชี Kick ก่อน (ข้อมูลสตรีม → เชื่อมต่อ)
+Öğlen	ตอนบ่าย
+Ücretsiz anahtar al	รับคีย์ฟรี
+Üstte tut	อยู่บนสุดเสมอ
+çap {0} px · konum {1}, {2}	ขนาด {0} px · ตำแหน่ง {1}, {2}
+öldürdüğün yerler	จุดที่คุณฆ่า
+öldüğün yerler	จุดที่คุณตาย
+ölümü trade edilen	ตายแล้วถูกเทรด
+ölümün trade edildi	การตายของคุณถูกเทรด
+İLK KAN	เฟิร์สบลัด
+İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.	หลังแพ้ 2 เกมคุณดรอปชัดเจน ตอนนั้นพักสั้น ๆ จะช่วยได้
+İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.	ไม่ค่อยเข้าดวลแรก ({0}%) ระวังการหมุนช้า/อ้อมหลัง เช็กหลังด้วย
+İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.	สิทธิ์: ติ๊ก user:read, channel:read, channel:write, chat:write → บันทึก
+Şu an maçta değil.	ตอนนี้ไม่ได้อยู่ในแมตช์
+…	…
+… API limiti, bekleniyor	… ติดลิมิต API กำลังรอ
+● BAĞLANIYOR…	● กำลังเชื่อมต่อ…
+● BAĞLANTI KOPTU — yeniden bağlanılıyor ({0})	● การเชื่อมต่อหลุด — กำลังเชื่อมต่อใหม่ ({0})
+● BAŞLATILAMADI	● เริ่มไม่ได้
+● CANLI	● สด
+● DURDURULUYOR…	● กำลังหยุด…
+● EKRAN YAKALAMA YENİLENİYOR (yayın açık)	● กำลังเริ่มจับภาพหน้าจอใหม่ (สตรีมยังออนอยู่)
+● HAZIR	● พร้อม
+● KICK BAĞLANTIYI REDDETTİ	● KICK ปฏิเสธการเชื่อมต่อ
+● TEST BAŞARISIZ	● ทดสอบล้มเหลว
+● TEST KAYDI	● อัดทดสอบ
+● TEST KAYDI HAZIR	● อัดทดสอบเสร็จแล้ว
+● YAYIN BİTTİ	● จบสตรีมแล้ว
+● YAYIN DURDU	● สตรีมหยุด
+⚠  Valorant "Tam ekran" modunda: alt-tab'da yayın takılır.  Valorant → Ayarlar → Video → Genel → Görüntü Modu: "Pencereli Tam Ekran" seç.	⚠  VALORANT อยู่ในโหมด "เต็มจอ": สตรีมจะกระตุกเมื่อ Alt-Tab  VALORANT → ตั้งค่า → วิดีโอ → ทั่วไป → โหมดการแสดงผล: เลือก "เต็มจอแบบหน้าต่าง"
+✗ Bağlantı hatası	✗ ข้อผิดพลาดการเชื่อมต่อ
+✗ HenrikDev anahtarı geçersiz	✗ คีย์ HenrikDev ไม่ถูกต้อง
+✗ Oyuncu bulunamadı (isim/etiket/bölge)	✗ ไม่พบผู้เล่น (ชื่อ/แท็ก/ภูมิภาค)

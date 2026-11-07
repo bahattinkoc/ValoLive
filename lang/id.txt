@@ -1,0 +1,335 @@
+# ValoLive Â· id Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+ (sen)	 (kamu)
+ (şu an kapalı)	 (sedang tertutup)
+ · BU HARİTADA {0} MAÇI	 · {0} MATCH DI MAP INI
+ · devam ediyor…	 · sedang berjalan…
+ · seni {0} kez öldürdü, sen onu {1}	 · membunuhmu {0} kali, kamu membunuhnya {1}
+ · {0} maçlık galibiyet serisi	 · {0} kemenangan beruntun
+ ▲seri	 ▲beruntun
+ ▼tilt	 ▼tilt
+"{0}" adında kategori bulunamadı.	Kategori bernama "{0}" tidak ditemukan.
+%{0}	{0}%
+(mikrofon yok)	(tanpa mikrofon)
++{0} karşılaşma daha	+{0} pertemuan lagi
+, ilk ölüm %{0}	, mati pertama {0}%
+. İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.	. Kontak pertama biasanya datang darinya; pre-aim sudutnya, jangan dry peek.
+1080p60 · 6000 kbps (önerilen)	1080p60 · 6000 kbps (disarankan)
+2 kayıp serisinden sonra yeterli maç yok; örnek arttıkça netleşir.	Belum cukup match setelah 2 kekalahan beruntun; makin banyak data makin jelas.
+2 kayıptan sonra ({0})	Setelah 2 kekalahan ({0})
+720p60 · 4500 kbps (zayıf internet)	720p60 · 4500 kbps (internet lemah)
+936p60 · 6000 kbps (keskin + hafif)	936p60 · 6000 kbps (tajam + ringan)
+<h2>ValoLive Kick'e bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>	<h2>ValoLive terhubung ke Kick ✓</h2><p>Tab ini boleh ditutup.</p>
+AGRESİF	AGRESIF
+AJAN SEÇİMİ	PEMILIHAN AGENT
+ANALİZİM	STATISTIKKU
+Ajan	Agent
+Ajan seçiminde sniper perdesi (otomatik)	Tirai anti-sniping saat pemilihan agent (otomatis)
+Akşam	Sore
+Altın	Gold
+Analizim	Statistikku
+Atak	Serang
+Ayrıntı: %LOCALAPPDATA%\ValoLive\ffmpeg.log	Detail: %LOCALAPPDATA%\ValoLive\ffmpeg.log
+Açmak için simgeye tıkla; çıkış simgenin sağ tık menüsünde.	Klik ikon untuk membuka; keluar ada di menu klik kanan ikon.
+BERABERE	SERI
+BUGÜN	HARI INI
+Bağlan	Hubungkan
+Bağlanılamadı	Gagal terhubung
+Bağlanıyor…	Menghubungkan…
+Bağlı değil	Belum terhubung
+Başlık	Judul
+Başlık uygulanamadı: 	Gagal menerapkan judul: 
+Başlık, kategori ve etiketler Kick'e uygulandı ✓	Judul, kategori, dan tag diterapkan ke Kick ✓
+Belirgin bir alışkanlık yok — dengeli oynuyor.	Tidak ada kebiasaan menonjol — main seimbang.
+Bildirimler (tanıdık oyuncu, smurf, parti)	Notifikasi (pemain dikenal, smurf, party)
+Bronz	Bronze
+Bu haritada bomba kurmamış.	Belum pernah plant di map ini.
+Bu pencere yayına ve kayda girmez · adını gizleyenler aranmaz	Jendela ini tidak pernah muncul di stream maupun rekaman · pemain yang menyembunyikan nama tidak dicari
+Bugün henüz rekabetçi maç yok.	Belum ada match kompetitif hari ini.
+Bugün {0}G {1}M · {2} RR	Hari ini {0}M {1}K · {2} RR
+Bölge bulunamadı: Valorant'ı bir kez açman gerekiyor	Region tidak ditemukan: buka Valorant sekali dulu
+BİRAZDAN DÖNÜYORUM	SEBENTAR LAGI KEMBALI
+CANLI	LIVE
+CANLI SKOR	SKOR LIVE
+Canlı skor: {0}-{1} · {2}	Skor live: {0}-{1} · {2}
+Chat komutları ({0})	Perintah chat ({0})
+Client ID ve Client Secret gerekli.	Client ID dan Client Secret wajib diisi.
+Defans	Bertahan
+Demir	Iron
+Derecesiz	Tanpa Peringkat
+Desteklenmeyen ses biçimi ({0} bit).	Format audio tidak didukung ({0} bit).
+Dil, yayın bitince ValoLive yeniden açıldığında değişir.	Bahasa akan berganti setelah stream selesai dan ValoLive dibuka ulang.
+ESKİ DOST	TEMAN LAMA
+Elmas	Diamond
+Enter: kaydet     Esc: vazgeç\n\n	Enter: simpan     Esc: batal\n\n
+Etiketler	Tag
+F9  Sniper koruması      F10  Yayın özeti	F9  Anti-sniping      F10  Rekap stream
+GG, TEŞEKKÜRLER!	GG, MAKASIH!
+Gece	Malam
+Gizli oyuncu	Pemain tersembunyi
+GÖRÜNTÜ	VIDEO
+GÜNÜN MAÇI	MATCH TERBAIK HARI INI
+Gümüş	Silver
+Günlükler	Log
+Günün mağazası: {0} · yenilenmesine {1} sa {2} dk	Toko hari ini: {0} · diperbarui dalam {1} j {2} m
+Gürültü filtresi	Filter derau
+Güç dengesi (ortalama ranka göre): takımın %{0:0} · rakip %{1:0}	Peta kekuatan (rata-rata rank): timmu {0:0}% · lawan {1:0}%
+GİRİŞÇİ	ENTRY
+HARİTA	MAP
+HARİTALAR	MAP
+Hafif yakalama (yalnızca oyun penceresi)	Capture ringan (hanya jendela game)
+Hazırlanıyor…	Menyiapkan…
+HenrikDev anahtarı yok	Tidak ada key HenrikDev
+Hepsi	Semua
+Hızlı	Swiftplay
+KAFACI	PEMBURU KEPALA
+KATMANLAR	LAPISAN
+KAZANMA	WIN RATE
+KENDİ ANALİZİM	STATISTIKKU
+KISA BİR ARA	ISTIRAHAT SEBENTAR
+Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.	Headshot tinggi ({0}%). Jangan duel langsung — masuk pakai skill.
+Kalite	Kualitas
+Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil	Catatan pertemuan: {0}  ·  cincin berwarna = pernah satu match (arahkan kursor)  ·  klik pemain: analisis · klik kanan: profil
+Kategori	Kategori
+Kaydet ve bağlan	Simpan dan hubungkan
+Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.	Tidak drop setelah kalah beruntun — kamu kebal tilt.
+Kick Stream URL ve Stream Key gerekli.\nKick → Creator Dashboard → Settings bölümünden kopyalayabilirsin.	Kick Stream URL dan Stream Key wajib diisi.\nSalin dari Kick → Creator Dashboard → Settings.
+Kick hesabı	Akun Kick
+Kick hesabı bağlı değil.	Akun Kick belum terhubung.
+Kick hesabını bağla	Hubungkan akun Kick
+Kick için hafif Valorant yayın aracı · RTX NVENC	Alat streaming Valorant ringan untuk Kick · RTX NVENC
+Kick kanal bilgisi alınamadı.	Gagal mengambil info channel Kick.
+Kick onayı 3 dakika içinde gelmedi.	Persetujuan Kick tidak datang dalam 3 menit.
+Kick onayı reddedildi: 	Persetujuan Kick ditolak: 
+Kick oturumu sona ermiş, yeniden bağlan.	Sesi Kick kedaluwarsa, hubungkan lagi.
+Kick'e bağlanılamadı:\n	Gagal terhubung ke Kick:\n
+Kick'e şimdi uygula	Terapkan ke Kick sekarang
+Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):	Buka halaman developer Kick (harus sudah login):
+Kick'ten URL ve key al	Ambil URL dan key dari Kick
+Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:	Kick butuh "aplikasi developer" milikmu sendiri untuk mengubah judul dan kategori.\nSekali saja, 2 menit:
+Komutlar: 	Perintah: 
+Kopyala	Salin
+Kurduğu bölge: 	Plant di: 
+LOBİDE	DI LOBI
+MAÇ	MATCH
+MAÇ ODASI	RUANG MATCH
+MAÇ ÖZETİ	RINGKASAN MATCH
+MAÇTA	DALAM MATCH
+Maç Odası	Ruang Match
+Maç bekleniyor…	Menunggu match…
+Maç bulununca otomatik aç	Buka otomatis saat match ditemukan
+Maç bulununca takımın burada listelenir.	Timmu akan tampil di sini saat match ditemukan.
+Maç bulununca yayın kendiliğinden oyuna döner	Stream otomatis kembali ke game saat match ditemukan
+Maç sonu kartı (ısı haritası + özet)	Kartu akhir match (heatmap + ringkasan)
+Maçlar inceleniyor {0}/{1}…	Menganalisis match {0}/{1}…
+Maçları inceleniyor…	Menganalisis match…
+Mağaza bilgisi alınamadı.	Gagal mengambil info toko.
+Menüde bekleme ekranı (sıra sayacı)	Layar tunggu di menu (penghitung antrean)
+Mikrofon	Mikrofon
+Minimap'e hizala	Sejajarkan dengan minimap
+Minimap'i radar rozetiyle ört	Tutup minimap dengan lencana radar
+NEREDE ÖLÜYORSUN	DI MANA KAMU MATI
+OP'ÇU	JAGO OP
+OTURUM	SESI
+OYUN STİLİ	GAYA MAIN
+Otomatik (Valorant dili)	Otomatis (bahasa Valorant)
+Oyun sesi	Suara game
+PARTİ	PARTY
+Platin	Platinum
+Profili aç ↗	Buka profil ↗
+RAKİPLER	LAWAN
+RANK ATLADIN!	NAIK RANK!
+ROUND AÇILIŞI	PEMBUKAAN RONDE
+ROZETİ MİNİMAP'E HİZALA\n\n	SEJAJARKAN LENCANA DENGAN MINIMAP\n\n
+Radyant	Radiant
+Rakibin	Pernah jadi lawan
+Rakipler maç başlayınca görünür (ajan seçiminde Riot göstermez).	Lawan muncul saat match dimulai (Riot menyembunyikannya saat pemilihan agent).
+Rakipte {0} kişilik parti	Lawan party {0} orang
+Rank bilgisi henüz yok.	Belum ada info rank.
+Rekabetçi	Kompetitif
+Riot ID + anahtar gerekli	Riot ID + key wajib diisi
+Riot bağlantı hatası: 	Kesalahan koneksi Riot: 
+Riot hesabına giriş yapılmamış	Belum login ke akun Riot
+Riot istemcisi açılıyor…	Riot Client sedang dibuka…
+Riot istemcisi kapalı	Riot Client tertutup
+Riot istemcisine ulaşılamadı: 	Riot Client tidak bisa dihubungi: 
+Riot yavaşlattı, bekleniyor… {0}/{1}	Riot membatasi, menunggu… {0}/{1}
+Round açılışların dengeli.	Pembukaan rondemu seimbang.
+Roundu o açıyor: ilk kan %{0}	Dia yang membuka ronde: first blood {0}%
+Roundu sık sık ilk ölerek açıyorsun (ortalama ~%10). İlk teması takım arkadaşına ver ya da fayda ile gir.	Kamu sering membuka ronde dengan mati duluan (rata-rata ~10%). Serahkan kontak pertama ke rekan tim atau masuk pakai skill.
+Rozet yeri	Posisi lencana
+RÖVANŞ	BALAS DENDAM
+SAATE GÖRE	MENURUT WAKTU
+SABIRLI	SABAR
+SAYILAR	ANGKA
+SERİ	BERUNTUN
+SES	AUDIO
+SIK GÖRÜLEN	SERING KETEMU
+SIRA BEKLENİYOR	DALAM ANTREAN
+SIRADAKİ MAÇ BİRAZDAN	MATCH BERIKUTNYA SEGERA
+SNIPER KORUMASI AKTİF	ANTI-SNIPING AKTIF
+SON MAÇ	MATCH TERAKHIR
+SON MAÇ · maç bekleniyor	MATCH TERAKHIR · menunggu match
+Sabah	Pagi
+Sadece Valorant (önerilen)	Hanya Valorant (disarankan)
+Ses cihazı yanıt vermedi.	Perangkat audio tidak merespons.
+Seçtiğim uygulama	Aplikasi pilihan
+Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.	Banyak kill dengan Sheriff ({0}% kill). Bisa one-tap kamu di ronde eco juga.
+Sniper koruması (F9)	Anti-sniping (F9)
+Son maç bilgisi yok.	Tidak ada info match terakhir.
+Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	Match terakhir: {0} {1} · {2} · {3} · {4} · HS {5}
+Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.	Belakangan tidak memainkan map ini. Gaya main di atas tetap berlaku.
+Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.	Lalu halaman persetujuan Kick terbuka di browser; cukup klik "Izinkan".
+Stil çıkarmak için yeterli round yok (en az 40).	Ronde belum cukup untuk membaca gaya main (minimal 40).
+Stream URL / Stream Key'i Kick panelinden yeniden kopyala	Salin ulang Stream URL / Stream Key dari dasbor Kick
+Sv	Lv
+Süre: {0:hh\:mm\:ss}	Durasi: {0:hh\:mm\:ss}
+Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	Seret: pindah\nRoda mouse: perbesar / perkecil (Shift: halus)\nTombol panah: 1 px (Shift: 10 px)\n\n
+SİLAH	SENJATA
+Sık ilk ölüyor (roundların %{0}). Erken peek atar; sabırlı bekle, sana gelir.	Sering mati duluan ({0}% ronde). Peek terlalu cepat; tunggu dengan sabar, dia akan datang.
+Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz	Antrean / pemilihan agent disembunyikan — kembali saat match dimulai
+Sıraya girilince sayaç başlar	Penghitung mulai saat kamu masuk antrean
+TAKIMIN	TIMMU
+TANIDIK	DIKENAL
+TEST KAYDEDİLİYOR…	MEREKAM UJI…
+TEST KAYDI (15 sn)	REKAMAN UJI (15 dtk)
+Takım arkadaşın	Pernah jadi rekan tim
+Takımında {0} kişilik parti	Timmu punya party {0} orang
+Tam ekran (her şey görünür)	Layar penuh (semua terlihat)
+Tarayıcıda Kick onayı bekleniyor…	Menunggu persetujuan Kick di browser…
+TİLT	TILT
+Uygulama	Aplikasi
+Uygulamanın Client ID ve Client Secret'ını buraya yapıştır:	Tempel Client ID dan Client Secret aplikasi di sini:
+ValoLive arka planda çalışıyor	ValoLive berjalan di latar belakang
+ValoLive — Kendi Analizim	ValoLive — Statistikku
+ValoLive — Maç Odası	ValoLive — Ruang Match
+ValoLive — Oyuncu Analizi	ValoLive — Analisis Pemain
+ValoLive — SNIPER KORUMASI AÇIK	ValoLive — ANTI-SNIPING AKTIF
+ValoLive — YAYIN ÖZETİ	ValoLive — REKAP STREAM
+ValoLive'ı aç	Buka ValoLive
+Varsayılan ses çıkışı	Output audio default
+Vazgeç	Batal
+YALNIZ	SERIGALA PENYENDIRI
+YAYIN BİLGİSİ	INFO STREAM
+YAYIN ÖZETİ	REKAP STREAM
+YAYINI BAŞLAT	MULAI STREAM
+YAYINI BİTİR	AKHIRI STREAM
+YENİLGİ	KALAH
+Yakalama	Capture
+Yayın açık. Kapatılsın mı?	Stream sedang live. Tutup sekarang?
+Yayın bilgisi uygulanamadı:\n	Gagal menerapkan info stream:\n
+Yayında chat kutusu	Kotak chat di stream
+Yayını başlat	Mulai stream
+Yayını bitir	Akhiri stream
+Yeni uygulama oluştur. Ad: ValoLive · Redirect URL olarak şunu yaz:	Buat aplikasi baru. Nama: ValoLive · isi Redirect URL dengan:
+Yücelik	Ascendant
+ZAFER	MENANG
+adını gizliyor — geçmişine bakılmaz	menyembunyikan nama — riwayat tidak dicek
+atak	serang
+bağlanıyor	menghubungkan
+bağlı	terhubung
+berabere	seri
+bu pencere yayına girmez	jendela ini tidak muncul di stream
+bugün	hari ini
+chat odası bulunamadı	ruang chat tidak ditemukan
+defans	bertahan
+defter dolduruluyor {0}/{1}	mengisi catatan {0}/{1}
+dün	kemarin
+form	performa
+genel kazanma ({0})	win rate keseluruhan ({0})
+gerçek zamanlı sunucu bilgisi yok	tidak ada info server realtime
+geçersiz yanıt	respons tidak valid
+geçmiş alınamadı	gagal mengambil riwayat
+geçmiş yükleniyor…	memuat riwayat…
+harita	map
+hasar/round	damage/ronde
+ilk kan / round	first blood / ronde
+ilk kan senden	first blood darimu
+ilk öldüğün round kayıp	ronde kalah setelah mati duluan
+ilk ölen sensin	kamu mati duluan
+ilk ölüm / round	mati pertama / ronde
+incelenecek maç bulunamadı	tidak ada match untuk dianalisis
+kafa isabeti	headshot
+kaybettin	kamu kalah
+kazandın	kamu menang
+kazanma	win rate
+koptu: 	terputus: 
+kurma {0} · imha {1}	plant {0} · defuse {1}
+maç	match
+maçları inceleniyor…	menganalisis match…
+misafir erişimi alınamadı	gagal mendapat akses tamu
+noktalar: öldürdüğü anda durduğu yer	titik: posisinya saat mendapat kill
+ort.	rata².
+oturumun 4.+ maçı ({0})	match ke-4+ di sesi ini ({0})
+rakip	lawan
+rakipte	di tim lawan
+rank yükleniyor…	memuat rank…
+son {0} maç · {1} round incelendi	{0} match terakhir · {1} ronde dianalisis
+son {0} rekabetçi maç	{0} match kompetitif terakhir
+standart	standar
+sunucu sessiz kaldı	server tidak merespons
+takım arkadaşın	rekan tim
+takımında	di timmu
+ulti / maç	ult / match
+yayın başlayınca bağlanır	terhubung saat stream dimulai
+zirve	tertinggi
+{0:0} ay önce	{0:0} bulan lalu
+{0:0} gün önce	{0:0} hari lalu
+{0:0} hafta önce	{0:0} minggu lalu
+{0} açılamadı: {1}	Gagal membuka {0}: {1}
+{0} açılınca yayın kendiliğinden devam eder	Stream otomatis lanjut saat {0} terbuka
+{0} fps  ·  {1}  ·  düşen kare: {2}  ·  hız {3}	{0} fps  ·  {1}  ·  frame hilang: {2}  ·  kecepatan {3}
+{0} maç · %{1} kazanma · atak round %{2} · defans round %{3}	{0} match · {1}% menang · ronde serang {2}% · ronde bertahan {3}%
+{0} maç · düellolar ekleniyor {1}/{2}	{0} match · menambahkan duel {1}/{2}
+{0} maç · tarama hatası: {1}	{0} match · kesalahan pemindaian: {1}
+{0} maç · {1}	{0} match · {1}
+{0} portu kullanımda; ValoLive'ı yeniden başlatıp tekrar dene.	Port {0} sedang dipakai; buka ulang ValoLive lalu coba lagi.
+{0} rekabetçi maç	{0} match kompetitif
+{0} · o maçta {1}/{2}/{3}{4}	{0} · di match itu {1}/{2}/{3}{4}
+{0} · {1} RR	{0} · {1} RR
+{0} · {1} {2} · daha önce {3} kez	{0} · {1} {2} · sudah {3} kali
+{0}. ROUND	RONDE {0}
+{0}: kullanılmamış	{0}: tidak dipakai
+{0}: {1} round · round başı {2:0.00} öldürme · kafa %{3}	{0}: {1} ronde · {2:0.00} kill per ronde · headshot {3}%
+{0}G  {1}M	{0}M  {1}K
+· act %{0} ({1})	· act {0}% ({1})
+· düello sen {0} – {1} o	· duel kamu {0} – {1} dia
+· {0} kez aynı maçtaydınız	· {0} kali di match yang sama
+Çap {0} px · konum {1}, {2}	Diameter {0} px · posisi {1}, {2}
+Çıkış	Keluar
+Öldürmelerinin büyük kısmı Operator ile (%{0}). Uzun açıları kuru peek'leme, flaşla ya da başka yerden gir.	Kebanyakan kill-nya dengan Operator ({0}%). Jangan dry peek sudut panjang — flash atau lewat jalur lain.
+Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	Jarang di-trade saat mati ({0}%). Main sendiri, jauh dari tim.
+Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	Timmu biasanya tidak bisa men-trade kamu: kamu sendirian. Main di area yang sama dengan rekan tim.
+Ölümsüzlük	Immortal
+Önce Kick hesabını bağla (Yayın Bilgisi → Bağlan).	Hubungkan akun Kick dulu (Info Stream → Hubungkan).
+Öğlen	Siang
+Ücretsiz anahtar al	Dapatkan key gratis
+Üstte tut	Selalu di atas
+çap {0} px · konum {1}, {2}	diameter {0} px · posisi {1}, {2}
+öldürdüğün yerler	lokasi kill-mu
+öldüğün yerler	lokasi kematianmu
+ölümü trade edilen	kematian ter-trade
+ölümün trade edildi	kematianmu di-trade
+İLK KAN	FIRST BLOOD
+İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.	Performamu jelas turun setelah dua kekalahan: istirahat sebentar membantu saat itu.
+İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.	Jarang ikut duel pertama ({0}%). Waspadai rotasi telat/lurk, cek belakangmu.
+İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.	Izin: centang user:read, channel:read, channel:write, chat:write → Simpan.
+Şu an maçta değil.	Sedang tidak dalam match.
+…	…
+… API limiti, bekleniyor	… batas API, menunggu
+● BAĞLANIYOR…	● MENGHUBUNGKAN…
+● BAĞLANTI KOPTU — yeniden bağlanılıyor ({0})	● KONEKSI PUTUS — menghubungkan ulang ({0})
+● BAŞLATILAMADI	● GAGAL MEMULAI
+● CANLI	● LIVE
+● DURDURULUYOR…	● MENGHENTIKAN…
+● EKRAN YAKALAMA YENİLENİYOR (yayın açık)	● MEMULAI ULANG CAPTURE LAYAR (stream tetap jalan)
+● HAZIR	● SIAP
+● KICK BAĞLANTIYI REDDETTİ	● KICK MENOLAK KONEKSI
+● TEST BAŞARISIZ	● UJI GAGAL
+● TEST KAYDI	● REKAMAN UJI
+● TEST KAYDI HAZIR	● REKAMAN UJI SIAP
+● YAYIN BİTTİ	● STREAM SELESAI
+● YAYIN DURDU	● STREAM BERHENTI
+⚠  Valorant "Tam ekran" modunda: alt-tab'da yayın takılır.  Valorant → Ayarlar → Video → Genel → Görüntü Modu: "Pencereli Tam Ekran" seç.	⚠  Valorant dalam mode "Layar Penuh": stream patah-patah saat Alt-Tab.  Valorant → Pengaturan → Video → Umum → Mode Tampilan: pilih "Layar Penuh Berjendela".
+✗ Bağlantı hatası	✗ Kesalahan koneksi
+✗ HenrikDev anahtarı geçersiz	✗ Key HenrikDev tidak valid
+✗ Oyuncu bulunamadı (isim/etiket/bölge)	✗ Pemain tidak ditemukan (nama/tag/region)
