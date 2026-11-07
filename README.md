@@ -1,2 +1,146 @@
+<div align="center">
+
+<img src="icon.png" width="128" alt="ValoLive">
+
 # ValoLive
-A tracker for Valorant during the match
+
+**A lightweight Valorant streaming companion for Kick: live overlays, a sniper cover, and a match room that scouts the lobby for you.**
+
+[![Download](https://img.shields.io/github/v/release/bahattinkoc/ValoLive?label=download&style=for-the-badge&color=ff4655)](https://github.com/bahattinkoc/ValoLive/releases/latest)
+![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-0078d4?style=for-the-badge)
+![NVENC](https://img.shields.io/badge/NVIDIA-NVENC-76b900?style=for-the-badge)
+![License](https://img.shields.io/badge/license-GPL--3.0-blue?style=for-the-badge)
+
+[English](#features) · [Türkçe](#türkçe)
+
+</div>
+
+---
+
+Press **START STREAM** and you're streaming: ValoLive captures Valorant, encodes it on your RTX card and sends it to Kick. Your rank, session record and last match are drawn on top automatically. No OBS scenes, browser sources or plugins to set up.
+
+<p align="center"><img src="docs/main.png" width="560" alt="ValoLive main window"></p>
+
+## Features
+
+### 🎥 One-click streaming to Kick
+- Captures the game and encodes it with **NVENC**, so your CPU stays free for frames.
+- Sets your Kick **title and category** before you go live.
+- Records your microphone along with the game audio.
+- Optional **chat bot** that answers viewers from your account:
+
+  | Command | Reply |
+  |---|---|
+  | `!rank` | Current rank and RR |
+  | `!today` | Today's wins, losses and net RR |
+  | `!last` | Your last match: agent, K/D/A, score |
+  | `!score` | Live score of the current match |
+  | `!store` / `!skin` | Today's store and the skin in your hands |
+  | `!commands` | Lists all of the above |
+
+### 📈 Overlays your chat will actually read
+A compact rank card with session record, RR gain and win streak. When you rank up, a **RANK UP!** banner pops in on stream.
+
+<p align="center"><img src="docs/overlay-rankup.png" width="720" alt="Rank card and rank-up banner"></p>
+
+### 🛡️ Sniper cover (F9)
+Agent select hides itself from the stream **automatically**, and the game comes back the moment the round starts. Press **F9** to cover the stream manually whenever you want.
+
+<p align="center"><img src="docs/overlay-sniper.png" width="720" alt="Sniper cover"></p>
+
+### ⏱️ Queue screen and stream recap (F10)
+While you're in queue, viewers see a timer, your session stats and your last match instead of the menu. Press **F10** at the end of the night for a **GG** recap card.
+
+<p align="center">
+  <img src="docs/overlay-queue.png" width="49%" alt="Queue screen">
+  <img src="docs/overlay-summary.png" width="49%" alt="Stream recap">
+</p>
+
+### 📡 Radar badge
+A small round widget in the corner of the stream. It cycles through your rank, today's record with an RR graph, and your last match.
+
+<p align="center"><img src="docs/radar.png" width="720" alt="Radar badge pages"></p>
+
+### 🗺️ Post-match card
+After every game, a card shows where you got your kills (●) and where you died (✕) on the minimap, plus K/D/A, ACS, HS% and first bloods.
+
+<p align="center"><img src="docs/postmatch.png" width="330" alt="Post-match card"></p>
+
+### 🔍 Match Room: know who you're up against
+Open it during agent select or in game, and every player in the lobby is scouted for you:
+- **Rank, peak rank, level, act win rate**, K/D and HS% for every player.
+- **Recent form** in RR (`▲streak` or `▼tilt`) plus their last three matches with agents and scores.
+- **Party detection**: duos and stacks are color-tagged on both teams.
+- **Smurf warnings** for low-level accounts with suspiciously good stats.
+- **Encounter log**: a colored ring shows players you've met before, and whether they were teammates or enemies.
+- **Balance of power**: your team's average rank against theirs.
+- Players with hidden names stay hidden. ValoLive doesn't look them up.
+
+<p align="center"><img src="docs/lobby.png" width="820" alt="Match Room"></p>
+
+Click a player for a detailed analysis, or right-click to open their profile. **MY STATS** runs the same breakdown on your own account: your best maps, agents and recent form.
+
+### 🌍 16 languages
+English, Türkçe, Deutsch, Español, Français, Italiano, Polski, Português, Русский, العربية, 日本語, 한국어, 中文, ไทย, Tiếng Việt, Bahasa Indonesia. These are the languages spoken across Valorant's servers. Pick one in settings and the whole app, the overlays and the chat bot switch with it.
+
+### 🔒 Privacy first
+- ValoLive's own windows **never show up on stream or in recordings**, so the Match Room is for your eyes only.
+- Your Kick stream key and API keys are **encrypted on your PC** (Windows DPAPI) and are never sent anywhere else.
+- ValoLive only reads the local Valorant client API. It doesn't inject anything into the game or touch its memory.
+
+## Requirements
+
+- Windows 10 or 11 (64-bit)
+- An NVIDIA GPU with NVENC (RTX recommended)
+- [.NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48) (already included in up-to-date Windows 10/11)
+- **FFmpeg**: install it with one command:
+  ```
+  winget install Gyan.FFmpeg
+  ```
+  Or put `ffmpeg.exe` next to `ValoLive.exe`.
+- A Kick account and its stream key
+
+## Getting started
+
+1. Download the latest `ValoLive-vX.Y.Z.zip` from **[Releases](https://github.com/bahattinkoc/ValoLive/releases/latest)** and extract it anywhere.
+2. Run `ValoLive.exe`. If Windows SmartScreen warns you, click **More info → Run anyway** (the app isn't code-signed).
+3. Paste your Kick **stream URL and key** (Kick → Creator Dashboard → Settings). Optionally press **Connect** to link your Kick account for title, category and the chat bot.
+4. Launch Valorant, pick your microphone and press **START STREAM**. GL HF! 🎯
+
+> Press **TEST RECORDING (15 s)** first to check the picture and sound without going live.
+
+## Building from source
+
+You need the Visual Studio 2022 Build Tools (they include the C# compiler).
+
+```powershell
+git clone https://github.com/bahattinkoc/ValoLive.git
+cd ValoLive
+.\build.ps1
+```
+
+This produces `ValoLive.exe` in the repo folder. Translations are in `lang/`. Run `lang-sync.ps1` to check them for missing keys.
+
+## Disclaimer
+
+ValoLive isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
+
+---
+
+## Türkçe
+
+**ValoLive**, Kick için hafif bir Valorant yayın aracıdır. **Yayını başlat**'a basarsın: oyun ekran kartında (NVENC) kodlanıp Kick'e gider. Rankın, günlük skorun ve son maçın yayına otomatik olarak işlenir. OBS sahnesi ya da eklenti kurman gerekmez.
+
+- **Tek tıkla Kick yayını**: Başlığı ve kategoriyi ayarlar, mikrofonunu oyun sesiyle birlikte alır, istersen sohbet botunu da çalıştırır (`!rank`, `!bugün`, `!son`, `!skor`, `!mağaza`, `!skin`, `!komutlar`).
+- **Overlay'ler**: Rank kartı, günlük G/M, RR kazancı ve seri gösterilir. Rank atlayınca yayında **RANK ATLADIN!** bandı çıkar.
+- **Sniper koruması (F9)**: Ajan seçimi yayından otomatik gizlenir, maç başlayınca görüntü geri gelir.
+- **Sıra ekranı ve yayın özeti (F10)**: Sırada beklerken izleyici menü yerine sayaç ve istatistik görür. Gece sonunda **GG** kartı gösterilir.
+- **Radar rozeti**: Köşede dönen küçük bir widget. Sırayla rankını, günün skorunu ve son maçını gösterir.
+- **Maç sonu kartı**: Haritada nerede adam vurduğunu ve nerede öldüğünü gösterir; yanında K/D/A, ACS, HS% ve ilk kanlar yer alır.
+- **Maç Odası**: Lobideki herkesin rankı, en yüksek rankı, formu (▲seri / ▼tilt), son maçları, **parti tespiti**, **smurf uyarısı**, daha önce karşılaştığın oyuncular ve takımların güç dengesi.
+- **16 dil**: Valorant sunucularında konuşulan diller.
+- **Gizlilik**: ValoLive pencereleri yayına ve kayda girmez. Yayın anahtarın bilgisayarında şifreli (DPAPI) saklanır. Oyuna hiçbir şey enjekte edilmez.
+
+**Kurulum:** [Releases](https://github.com/bahattinkoc/ValoLive/releases/latest) sayfasından zip'i indirip açın, `winget install Gyan.FFmpeg` ile FFmpeg'i kurun ve `ValoLive.exe`'yi çalıştırın. SmartScreen uyarı verirse **Ek bilgi → Yine de çalıştır** deyin.
+
+<div align="center"><sub>Made with ❤️ for the Valorant streaming community · GPL-3.0</sub></div>

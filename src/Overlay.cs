@@ -274,7 +274,7 @@ namespace ValoLive
 
         void DrawCover(Graphics g, ValoState st)
         {
-            FullBackground(g, L.T("CANLI") + " · " + PlayerName.ToUpper());
+            FullBackground(g, L.T("CANLI") + " · " + PlayerName.ToUpper(L.Culture));
             using (var f = F(30)) Centered(g, L.T("SNIPER KORUMASI AKTİF"), f, Accent, X(330));
             using (var f = F(96)) Centered(g, L.T("AJAN SEÇİMİ"), f, Color.White, X(380));
             using (var f = Small(26)) Centered(g, L.T("Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz"), f, Muted, X(510));
@@ -283,7 +283,7 @@ namespace ValoLive
 
         void DrawPrivacy(Graphics g, ValoState st)
         {
-            FullBackground(g, L.T("CANLI") + " · " + PlayerName.ToUpper());
+            FullBackground(g, L.T("CANLI") + " · " + PlayerName.ToUpper(L.Culture));
             using (var f = F(30)) Centered(g, L.T("KISA BİR ARA"), f, Accent, X(330));
             using (var f = F(96)) Centered(g, L.T("BİRAZDAN DÖNÜYORUM"), f, Color.White, X(380));
             using (var f = Small(26)) Centered(g, L.F("{0} açılınca yayın kendiliğinden devam eder", PrivacyApp), f, Muted, X(510));
@@ -292,7 +292,7 @@ namespace ValoLive
 
         void DrawBreak(Graphics g, ValoState st, DateTime? queueSince)
         {
-            FullBackground(g, L.T("CANLI") + " · " + PlayerName.ToUpper());
+            FullBackground(g, L.T("CANLI") + " · " + PlayerName.ToUpper(L.Culture));
             if (queueSince is DateTime q)
             {
                 var t = DateTime.Now - q;
@@ -326,7 +326,7 @@ namespace ValoLive
 
         void DrawSummary(Graphics g, ValoState st)
         {
-            FullBackground(g, L.T("YAYIN ÖZETİ") + " · " + PlayerName.ToUpper());
+            FullBackground(g, L.T("YAYIN ÖZETİ") + " · " + PlayerName.ToUpper(L.Culture));
             using (var f = F(96)) Centered(g, L.T("GG, TEŞEKKÜRLER!"), f, Color.White, X(250));
             if (st == null) return;
             DrawStatsRow(g, st, X(420));
