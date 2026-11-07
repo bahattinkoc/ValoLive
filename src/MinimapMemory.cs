@@ -692,11 +692,11 @@ namespace ValoLive
         {
             var bmp = new Bitmap(size.Width, size.Height, PixelFormat.Format32bppArgb);
             using (var g = Graphics.FromImage(bmp))
-            using (var font = new Font(L.SansBold, 7f))
+            using (var font = new Font(L.SansBold, 6.25f))
             {
                 g.SmoothingMode = SmoothingMode.AntiAlias; g.InterpolationMode = InterpolationMode.HighQualityBicubic;
                 g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
-                float d = Math.Max(16, size.Width * 0.062f); // oyunun ikonundan biraz büyük (~24 px @ 1080p)
+                float d = Math.Max(12, size.Width * 0.046f); // oyunun ikonundan biraz küçük (~18 px @ 1080p)
                 foreach (var s in marks)
                 {
                     var age = DateTime.Now - s.Seen;
@@ -704,7 +704,7 @@ namespace ValoLive
                     float a = (float)Math.Max(0.5, 1 - Math.Max(0, age.TotalSeconds - 5) / 70);
                     float cx = s.U * size.Width, cy = s.V * size.Height;
                     var rc = new RectangleF(cx - d / 2, cy - d / 2, d, d);
-                    using (var bg = new SolidBrush(Color.FromArgb((int)(220 * a), 14, 16, 22))) g.FillEllipse(bg, RectangleF.Inflate(rc, 2.5f, 2.5f));
+                    using (var bg = new SolidBrush(Color.FromArgb((int)(220 * a), 14, 16, 22))) g.FillEllipse(bg, RectangleF.Inflate(rc, 1.5f, 1.5f));
                     var ic = AgentIcon(s.AgentId);
                     if (ic != null)
                         using (var path = new GraphicsPath())
@@ -715,7 +715,7 @@ namespace ValoLive
                             g.DrawImage(ic, Rectangle.Round(rc), 0, 0, ic.Width, ic.Height, GraphicsUnit.Pixel, ia);
                             g.ResetClip();
                         }
-                    using (var p = new Pen(Color.FromArgb((int)(255 * a), Purple), 2f) { DashPattern = new[] { 2.2f, 1.4f } }) g.DrawEllipse(p, rc);
+                    using (var p = new Pen(Color.FromArgb((int)(255 * a), Purple), 1.5f) { DashPattern = new[] { 2.2f, 1.4f } }) g.DrawEllipse(p, rc);
                     // Geçen süre: ikonun altında küçük hap
                     string t = MemoryPanel.Ago(age);
                     var ts = g.MeasureString(t, font);
