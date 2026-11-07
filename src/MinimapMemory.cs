@@ -50,7 +50,7 @@ namespace ValoLive
             lock (lk) memory.Clear();
             thread = new Thread(() => Loop(mapUrl, enemyAgents, gen)) { IsBackground = true, Name = "minimap", Priority = ThreadPriority.BelowNormal };
             thread.Start();
-            Diag.Event("HAFIZA", $"başladı · {mapUrl} · rakip ajan {enemyAgents.Count}");
+            Log($"başladı · {mapUrl} · rakip ajan {enemyAgents.Count}");
         }
 
         public void Stop()
@@ -74,15 +74,33 @@ namespace ValoLive
 
         public void Dispose() => Stop();
 
+        static readonly object logLock = new object();
+
+        /// <summary>Yayından bağımsız günlük: logs\hafiza_GGAAYYYY.log (test sırasında yayın açık olmayabilir).</summary>
+        public static void Log(string text)
+        {
+            Diag.Event("HAFIZA", text);
+            try
+            {
+                lock (logLock)
+                {
+                    Directory.CreateDirectory(Diag.Dir);
+                    File.AppendAllText(Path.Combine(Diag.Dir, $"hafiza_{DateTime.Now:yyyyMMdd}.log"), $"{DateTime.Now:HH:mm:ss}  {text}\r\n");
+                }
+            }
+            catch { }
+        }
+
         void Loop(string mapUrl, List<string> enemies, int gen)
         {
             try { SetThreadDpiAwarenessContext(new IntPtr(-4)); } catch { } // gerçek piksel (Windows ölçeklemesinden bağımsız)
             Engine eng;
             try { eng = Engine.Create(mapUrl, enemies); }
-            catch (Exception e) { Diag.Event("HAFIZA", "hazırlanamadı: " + e.Message); if (gen == generation) thread = null; return; }
+            catch (Exception e) { Log("hazırlanamadı: " + e.Message); if (gen == generation) thread = null; return; }
 
             var sw = new Stopwatch();
             Bitmap bmp = null;
+            int frames = 0, seenFrames = 0; double totalMs = 0, maxMs = 0; DateTime statAt = DateTime.Now.AddMinutes(1);
             try
             {
                 while (gen == generation)
@@ -111,12 +129,19 @@ namespace ValoLive
                             }
                         }
                         LastMs = sw.Elapsed.TotalMilliseconds;
+                        frames++; totalMs += LastMs; if (LastMs > maxMs) maxMs = LastMs; if (seen.Count > 0) seenFrames++;
+                        if (now >= statAt)
+                        {
+                            Log($"son 1 dk: {frames} kare · ort {totalMs / Math.Max(1, frames):0.0} ms · en uzun {maxMs:0} ms · rakip görülen kare {seenFrames} · " +
+                                (eng.Calibrated ? $"minimap {eng.MapS}px @ {eng.MapX},{eng.MapY}" : "kalibre değil"));
+                            frames = seenFrames = 0; totalMs = maxMs = 0; statAt = now.AddMinutes(1);
+                        }
                     }
                     int wait = (GameFront ? 100 : 500) - (int)sw.ElapsedMilliseconds;
                     if (wait > 0) Thread.Sleep(wait);
                 }
             }
-            catch (Exception e) { Diag.Event("HAFIZA", "durdu: " + e.Message); }
+            catch (Exception e) { Log("durdu: " + e.Message); }
             finally { bmp?.Dispose(); }
         }
 
@@ -283,7 +308,7 @@ namespace ValoLive
                             double sc = Score(floor, W, H, s, ox, oy, br);
                             if (sc > best) { best = sc; bs = s; bx = ox; by = oy; }
                         }
-                Diag.Event("HAFIZA", $"kalibrasyon {mapKey}: {bs}px @ {bx},{by} · skor {best:0.00} · {(br ? "savunma" : "saldırı")}");
+                Log($"kalibrasyon {mapKey}: {bs}px @ {bx},{by} · skor {best:0.00} · {(br ? "savunma" : "saldırı")}");
                 if (best < 0.75) return; // harita büyük açık / skor tablosu: sonra yeniden
                 MapS = bs; MapX = bx; MapY = by; defending = br; Calibrated = true;
                 SaveCalibration();

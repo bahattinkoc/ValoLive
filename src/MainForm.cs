@@ -808,14 +808,14 @@ namespace ValoLive
             var s = live?.Snap;
             if (!cfg.EnemyMemory || s == null || !s.InGame)
             {
-                if (memory.Active) { memory.Stop(); Diag.Event("HAFIZA", "durdu"); }
+                if (memory.Active) { memory.Stop(); MinimapMemory.Log("durdu"); }
                 memScore = -1;
                 memPanel?.Hide();
                 return;
             }
             if (!memory.Active && !memStarting && DateTime.Now >= memRetry) { memRetry = DateTime.Now.AddSeconds(15); StartMemory(); }
             int score = s.Ally + s.Enemy;
-            if (score != memScore) { if (memScore >= 0) memory.NewRound(); memScore = score; }
+            if (score != memScore) { if (memScore >= 0) { memory.NewRound(); MinimapMemory.Log($"yeni raund · skor {s.Ally}-{s.Enemy}"); } memScore = score; }
 
             var rows = memory.Snapshot();
             if (memory.GameFront && rows.Count > 0 && !memory.MapRect.IsEmpty)
@@ -843,7 +843,7 @@ namespace ValoLive
                         if (cfg.EnemyMemory && live.Snap.InGame) { memory.Start(st.MapUrl, enemies); memScore = -1; }
                     }));
                 }
-                catch (Exception e) { Diag.Event("HAFIZA", "maç okunamadı: " + e.Message); memStarting = false; }
+                catch (Exception e) { MinimapMemory.Log("maç okunamadı: " + e.Message); memStarting = false; }
             });
         }
 
