@@ -333,3 +333,7 @@ zirve	peak
 ✗ Bağlantı hatası	✗ Connection error
 ✗ HenrikDev anahtarı geçersiz	✗ Invalid HenrikDev key
 ✗ Oyuncu bulunamadı (isim/etiket/bölge)	✗ Player not found (name/tag/region)
+Rakip hafızası: minimap'te son görülen yerler (deneysel)	Enemy memory: last seen spots from the minimap (experimental)
+{0} dk	{0} min
+{0} sn	{0} s
+şimdi	now

@@ -333,3 +333,7 @@ zirve	最高
 ✗ Bağlantı hatası	✗ 接続エラー
 ✗ HenrikDev anahtarı geçersiz	✗ HenrikDev キーが無効です
 ✗ Oyuncu bulunamadı (isim/etiket/bölge)	✗ プレイヤーが見つかりません (名前/タグ/リージョン)
+Rakip hafızası: minimap'te son görülen yerler (deneysel)	敵の記憶：ミニマップで最後に見えた位置（実験的）
+{0} dk	{0}分
+{0} sn	{0}秒
+şimdi	今

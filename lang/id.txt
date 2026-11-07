@@ -333,3 +333,7 @@ zirve	tertinggi
 ✗ Bağlantı hatası	✗ Kesalahan koneksi
 ✗ HenrikDev anahtarı geçersiz	✗ Key HenrikDev tidak valid
 ✗ Oyuncu bulunamadı (isim/etiket/bölge)	✗ Pemain tidak ditemukan (nama/tag/region)
+Rakip hafızası: minimap'te son görülen yerler (deneysel)	Ingatan musuh: posisi terakhir terlihat di minimap (eksperimental)
+{0} dk	{0} mnt
+{0} sn	{0} dtk
+şimdi	sekarang

@@ -333,3 +333,7 @@ zirve	الأعلى
 ✗ Bağlantı hatası	✗ خطأ في الاتصال
 ✗ HenrikDev anahtarı geçersiz	✗ مفتاح HenrikDev غير صالح
 ✗ Oyuncu bulunamadı (isim/etiket/bölge)	✗ اللاعب غير موجود (الاسم/الوسم/المنطقة)
+Rakip hafızası: minimap'te son görülen yerler (deneysel)	ذاكرة الأعداء: آخر أماكن رُصدوا فيها على الخريطة المصغّرة (تجريبي)
+{0} dk	{0} د
+{0} sn	{0} ث
+şimdi	الآن

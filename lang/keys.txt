@@ -141,6 +141,7 @@ ROUND AÇILIŞI
 ROZETİ MİNİMAP'E HİZALA\n\n
 Radyant
 Rakibin
+Rakip hafızası: minimap'te son görülen yerler (deneysel)
 Rakipler maç başlayınca görünür (ajan seçiminde Riot göstermez).
 Rakipte {0} kişilik parti
 Rank bilgisi henüz yok.
@@ -276,6 +277,7 @@ zirve
 {0:0} hafta önce
 {0} açılamadı: {1}
 {0} açılınca yayın kendiliğinden devam eder
+{0} dk
 {0} fps  ·  {1}  ·  düşen kare: {2}  ·  hız {3}
 {0} maç · %{1} kazanma · atak round %{2} · defans round %{3}
 {0} maç · düellolar ekleniyor {1}/{2}
@@ -283,6 +285,7 @@ zirve
 {0} maç · {1}
 {0} portu kullanımda; ValoLive'ı yeniden başlatıp tekrar dene.
 {0} rekabetçi maç
+{0} sn
 {0} · o maçta {1}/{2}/{3}{4}
 {0} · {1} RR
 {0} · {1} {2} · daha önce {3} kez
@@ -313,6 +316,7 @@ zirve
 İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.
 İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.
 Şu an maçta değil.
+şimdi
 …
 … API limiti, bekleniyor
 ● BAĞLANIYOR…

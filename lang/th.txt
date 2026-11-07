@@ -333,3 +333,7 @@ zirve	สูงสุด
 ✗ Bağlantı hatası	✗ ข้อผิดพลาดการเชื่อมต่อ
 ✗ HenrikDev anahtarı geçersiz	✗ คีย์ HenrikDev ไม่ถูกต้อง
 ✗ Oyuncu bulunamadı (isim/etiket/bölge)	✗ ไม่พบผู้เล่น (ชื่อ/แท็ก/ภูมิภาค)
+Rakip hafızası: minimap'te son görülen yerler (deneysel)	ความจำศัตรู: ตำแหน่งล่าสุดที่เห็นบนมินิแมพ (ทดลอง)
+{0} dk	{0} นาที
+{0} sn	{0} วิ
+şimdi	ตอนนี้

@@ -36,6 +36,8 @@ namespace ValoLive
         {
             public string Name, Minimap;
             public double XMul, YMul, XAdd, YAdd;
+            /// <summary>Bölge adları ("A/Lambalar") ve minimap görselindeki 0..1 konumları.</summary>
+            public List<KeyValuePair<string, System.Drawing.PointF>> Callouts = new List<KeyValuePair<string, System.Drawing.PointF>>();
 
             /// <summary>Oyun koordinatı → minimap görselinde 0..1 konum (valorant-api'nin dönüşüm katsayılarıyla; x ve y yer değiştirir).</summary>
             public System.Drawing.PointF ToMinimap(double gameX, double gameY) =>
@@ -48,11 +50,15 @@ namespace ValoLive
             var m = ((Get("/maps?language=" + L.Api) as object[]) ?? new object[0])
                 .FirstOrDefault(x => string.Equals(S(J(x, "mapUrl")), mapUrl, StringComparison.OrdinalIgnoreCase));
             if (m == null) return null;
-            return new Map
+            var map = new Map
             {
                 Name = RiotLocal.Title(S(J(m, "displayName"))), Minimap = S(J(m, "displayIcon")),
                 XMul = D(J(m, "xMultiplier")), YMul = D(J(m, "yMultiplier")), XAdd = D(J(m, "xScalarToAdd")), YAdd = D(J(m, "yScalarToAdd")),
             };
+            foreach (var c in (J(m, "callouts") as object[]) ?? new object[0])
+                map.Callouts.Add(new KeyValuePair<string, System.Drawing.PointF>(S(J(c, "superRegionName")) + "/" + S(J(c, "regionName")),
+                    map.ToMinimap(D(J(c, "location", "x")), D(J(c, "location", "y")))));
+            return map;
         }
 
         /// <summary>Silah görünümünün renk varyantı → (ad, görsel). Görsel: tam görünüm, yoksa ikon.</summary>

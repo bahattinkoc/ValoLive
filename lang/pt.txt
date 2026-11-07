@@ -333,3 +333,7 @@ zirve	pico
 ✗ Bağlantı hatası	✗ Erro de conexão
 ✗ HenrikDev anahtarı geçersiz	✗ Chave da HenrikDev inválida
 ✗ Oyuncu bulunamadı (isim/etiket/bölge)	✗ Jogador não encontrado (nome/tag/região)
+Rakip hafızası: minimap'te son görülen yerler (deneysel)	Memória de inimigos: últimos locais vistos no minimapa (experimental)
+{0} dk	{0} min
+{0} sn	{0} s
+şimdi	agora

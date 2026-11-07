@@ -38,6 +38,7 @@ namespace ValoLive
         public bool ChatBox = true, MapCover = true, ChatBot = true, PostMatchCard = true;
         public bool WindowCapture;                                   // hafif yakalama: yalnızca Valorant penceresi (deneysel, varsayılan kapalı)
         public bool BreakScreen = true, AutoLobby = true, LobbyAlerts = true, AutoCover = true, TrayHintShown;
+        public bool EnemyMemory;                                     // rakip hafızası: minimap'ten son görülen yerler (deneysel, varsayılan kapalı)
         public int MapCoverX = 10, MapCoverY = 10, MapCoverD; // rozetin ekran pikselinde konumu/çapı (D=0: varsayılan)
 
         public static Settings Load()

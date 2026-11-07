@@ -333,3 +333,7 @@ zirve	cao nhất
 ✗ Bağlantı hatası	✗ Lỗi kết nối
 ✗ HenrikDev anahtarı geçersiz	✗ Khóa HenrikDev không hợp lệ
 ✗ Oyuncu bulunamadı (isim/etiket/bölge)	✗ Không tìm thấy người chơi (tên/tag/khu vực)
+Rakip hafızası: minimap'te son görülen yerler (deneysel)	Ghi nhớ địch: vị trí thấy lần cuối trên bản đồ nhỏ (thử nghiệm)
+{0} dk	{0} phút
+{0} sn	{0} giây
+şimdi	bây giờ

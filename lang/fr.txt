@@ -333,3 +333,7 @@ zirve	pic
 ✗ Bağlantı hatası	✗ Erreur de connexion
 ✗ HenrikDev anahtarı geçersiz	✗ Clé HenrikDev invalide
 ✗ Oyuncu bulunamadı (isim/etiket/bölge)	✗ Joueur introuvable (nom/tag/région)
+Rakip hafızası: minimap'te son görülen yerler (deneysel)	Mémoire ennemie : dernières positions vues sur la minicarte (expérimental)
+{0} dk	{0} min
+{0} sn	{0} s
+şimdi	maintenant

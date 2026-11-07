@@ -333,3 +333,7 @@ zirve	Bestwert
 ✗ Bağlantı hatası	✗ Verbindungsfehler
 ✗ HenrikDev anahtarı geçersiz	✗ Ungültiger HenrikDev-Schlüssel
 ✗ Oyuncu bulunamadı (isim/etiket/bölge)	✗ Spieler nicht gefunden (Name/Tag/Region)
+Rakip hafızası: minimap'te son görülen yerler (deneysel)	Gegner-Gedächtnis: zuletzt gesehene Orte von der Minimap (experimentell)
+{0} dk	{0} Min.
+{0} sn	{0} s
+şimdi	jetzt

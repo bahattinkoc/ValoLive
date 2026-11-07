@@ -65,12 +65,18 @@ namespace ValoLive
         ComboBox cmbCategory;
         Button btnAlign;
         Label lblRadarPos;
-        CheckBox chkRadar, chkChat, chkPost, chkBot, chkWgc, chkBreak, chkAutoLobby, chkAlerts, chkAutoCover;
+        CheckBox chkRadar, chkChat, chkPost, chkBot, chkWgc, chkBreak, chkAutoLobby, chkAlerts, chkAutoCover, chkMemory;
         string liveState = "";
         bool autoCovered;                 // perdeyi ajan seçimi açtı (F9 ile açılanı maç başı kapatmaz)
         Control[] appShift; bool appRow = true;
         NotifyIcon tray; bool exiting;
         LiveInfo live;
+        readonly MinimapMemory memory = new MinimapMemory();
+        readonly Timer memTimer = new Timer { Interval = 250 };
+        MemoryPanel memPanel;
+        int memScore = -1;
+        bool memStarting;
+        DateTime memRetry;
         PostMatchLayer postLayer;
         ChatBot bot;
         Label lblKick, lblChat;
@@ -134,6 +140,8 @@ namespace ValoLive
             live = new LiveInfo(); // canlı skor ve maç sonu özeti (Riot istemcisinin kendi durum bilgisi)
             live.Changed += s => { if (IsHandleCreated) try { BeginInvoke((Action)(() => ApplyLive(s))); } catch { } };
             live.PostMatchReady += pm => { var l = postLayer; if (l != null && (pm.Queue == "competitive" || pm.Queue == "unrated" || pm.Queue == "swiftplay" || pm.Queue == "premier")) l.Show(pm); };
+            memTimer.Tick += (s, e) => TickMemory();
+            memTimer.Start();
         }
 
         // ---------- Arayüz ----------
@@ -148,12 +156,13 @@ namespace ValoLive
                    tWgc = L.T("Hafif yakalama (yalnızca oyun penceresi)"), tDenoise = L.T("Gürültü filtresi"),
                    tRadar = L.T("Minimap'i radar rozetiyle ört"), tAutoCover = L.T("Ajan seçiminde sniper perdesi (otomatik)"),
                    tChat = L.T("Yayında chat kutusu"), tPost = L.T("Maç sonu kartı (ısı haritası + özet)"),
-                   tBot = L.F("Chat komutları ({0})", string.Join(" ", ChatBot.Commands)), tBreak = L.T("Menüde bekleme ekranı (sıra sayacı)");
+                   tBot = L.F("Chat komutları ({0})", string.Join(" ", ChatBot.Commands)), tBreak = L.T("Menüde bekleme ekranı (sıra sayacı)"),
+                   tMemory = L.T("Rakip hafızası: minimap'te son görülen yerler (deneysel)");
             using (var cap = new Font(L.SansBold, 8.25f))
                 LabelW = Math.Max(104, new[] { "Stream URL", "Stream Key", L.T("Kick hesabı"), L.T("Başlık"), L.T("Kategori"), L.T("Etiketler"), "Riot ID", "HenrikDev key",
                     L.T("Kalite"), L.T("Yakalama"), L.T("Uygulama"), L.T("Mikrofon"), L.T("Oyun sesi"), L.T("Rozet yeri") }
                     .Max(s => TextRenderer.MeasureText(Theme.Upper(s), cap).Width) + 12);
-            int toggleW = new[] { tAutoLobby, tAlerts, tWgc, tDenoise, tRadar, tAutoCover, tChat, tPost, tBot, tBreak }.Max(s => VToggle.WidthFor(s, Font));
+            int toggleW = new[] { tAutoLobby, tAlerts, tWgc, tDenoise, tRadar, tAutoCover, tChat, tPost, tBot, tBreak, tMemory }.Max(s => VToggle.WidthFor(s, Font));
             ColW = Math.Min(560, Math.Max(Math.Max(420, LabelW + 316), toggleW + 4));
 
             var sub = new Label { Text = L.T("Kick için hafif Valorant yayın aracı · RTX NVENC"), ForeColor = Mut, AutoSize = true, Location = new Point(22, 56) };
@@ -242,6 +251,9 @@ namespace ValoLive
             Controls.Add(chkAlerts); y += 26;
             chkAutoLobby.CheckedChanged += (s, e) => SaveSettings();
             chkAlerts.CheckedChanged += (s, e) => { SaveSettings(); if (lobby != null && !lobby.IsDisposed) lobby.Alerts = chkAlerts.Checked; };
+            chkMemory = new VToggle { Text = tMemory, ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
+            Controls.Add(chkMemory); y += 26;
+            chkMemory.CheckedChanged += (s, e) => SaveSettings();
             int leftBottom = y;
 
             // ---- Sağ sütun ----
@@ -502,6 +514,7 @@ namespace ValoLive
             chkAutoLobby.Checked = cfg.AutoLobby;
             chkAlerts.Checked = cfg.LobbyAlerts;
             chkAutoCover.Checked = cfg.AutoCover;
+            chkMemory.Checked = cfg.EnemyMemory;
             UpdateKickStatus();
         }
 
@@ -528,7 +541,7 @@ namespace ValoLive
             cfg.MapCover = chkRadar.Checked;
             cfg.ChatBox = chkChat.Checked;
             if (chkPost != null) { cfg.PostMatchCard = chkPost.Checked; cfg.ChatBot = chkBot.Checked; }
-            if (chkWgc != null) { cfg.WindowCapture = chkWgc.Checked; cfg.BreakScreen = chkBreak.Checked; cfg.AutoLobby = chkAutoLobby.Checked; cfg.LobbyAlerts = chkAlerts.Checked; cfg.AutoCover = chkAutoCover.Checked; }
+            if (chkWgc != null) { cfg.WindowCapture = chkWgc.Checked; cfg.BreakScreen = chkBreak.Checked; cfg.AutoLobby = chkAutoLobby.Checked; cfg.LobbyAlerts = chkAlerts.Checked; cfg.AutoCover = chkAutoCover.Checked; cfg.EnemyMemory = chkMemory.Checked; }
             cfg.Save();
         }
 
@@ -782,6 +795,56 @@ namespace ValoLive
             else if (autoCovered && (s.State != "PREGAME" || !cfg.AutoCover)) { overlay.Cover = autoCovered = false; UpdateTitle(); }
             liveState = s.State;
             if (entering && cfg.AutoLobby) OpenLobby(true);
+        }
+
+        // ---------- Rakip hafızası (deneysel) ----------
+
+        /// <summary>
+        /// Maçtayken minimap okuyucusunu çalıştırır, raund değişince (skor toplamı) hafızayı sıfırlar ve şeridi günceller.
+        /// Rakip ajanlar maç başında Riot istemcisinden bir kez okunur; tanıma yalnızca onlar arasında yapılır.
+        /// </summary>
+        void TickMemory()
+        {
+            var s = live?.Snap;
+            if (!cfg.EnemyMemory || s == null || !s.InGame)
+            {
+                if (memory.Active) { memory.Stop(); Diag.Event("HAFIZA", "durdu"); }
+                memScore = -1;
+                memPanel?.Hide();
+                return;
+            }
+            if (!memory.Active && !memStarting && DateTime.Now >= memRetry) { memRetry = DateTime.Now.AddSeconds(15); StartMemory(); }
+            int score = s.Ally + s.Enemy;
+            if (score != memScore) { if (memScore >= 0) memory.NewRound(); memScore = score; }
+
+            var rows = memory.Snapshot();
+            if (memory.GameFront && rows.Count > 0 && !memory.MapRect.IsEmpty)
+            {
+                if (memPanel == null || memPanel.IsDisposed) memPanel = new MemoryPanel(Screen.PrimaryScreen.Bounds.Width / (float)screenW);
+                memPanel.Set(rows, memory.MapRect);
+                if (!memPanel.Visible) memPanel.Show();
+            }
+            else memPanel?.Hide();
+        }
+
+        void StartMemory()
+        {
+            memStarting = true;
+            Task.Run(() =>
+            {
+                try
+                {
+                    var st = new RiotLocal().Read();
+                    var enemies = st.Players.Where(p => !p.Ally).Select(p => p.AgentId).ToList();
+                    if (st.Phase != "ingame" || enemies.Count == 0) { memStarting = false; return; }
+                    BeginInvoke((Action)(() =>
+                    {
+                        memStarting = false;
+                        if (cfg.EnemyMemory && live.Snap.InGame) { memory.Start(st.MapUrl, enemies); memScore = -1; }
+                    }));
+                }
+                catch (Exception e) { Diag.Event("HAFIZA", "maç okunamadı: " + e.Message); memStarting = false; }
+            });
         }
 
         // ---------- Maç odası ----------
@@ -1147,6 +1210,7 @@ namespace ValoLive
             UnregisterHotKey(Handle, 2);
             tracker?.Dispose();
             live?.Dispose();
+            memory.Dispose();
             DisposeAudio();
             overlay.Dispose();
             tray.Visible = false; tray.Dispose(); // yoksa simge fare üstünden geçene kadar bildirim alanında kalır
