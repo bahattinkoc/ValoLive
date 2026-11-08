@@ -265,7 +265,7 @@ namespace ValoLive
         static int Count(ref Bitmap bmp, Rectangle r, float k, bool flip, out byte[] px, out int stride)
         {
             if (bmp == null || bmp.Size != r.Size) { bmp?.Dispose(); bmp = new Bitmap(r.Width, r.Height, PixelFormat.Format24bppRgb); }
-            using (var g = Graphics.FromImage(bmp)) g.CopyFromScreen(r.Left, r.Top, 0, 0, r.Size, CopyPixelOperation.SourceCopy);
+            GameFrames.Copy(bmp, r.Left, r.Top);
             if (flip) bmp.RotateFlip(RotateFlipType.RotateNoneFlipX);
             px = MinimapMemory.TopBar.Pixels(bmp, out stride);
             return MinimapMemory.TopBar.Alive(px, stride, k);

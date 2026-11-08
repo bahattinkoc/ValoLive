@@ -1,7 +1,8 @@
 // valocap: ValoLive'ın ekran kartı motoru. Yakalama → birleştirme → NV12 → NVENC → MPEG-TS; hiçbir kare işlemciye inmez.
 //
 // valocap.exe --out <dosya | \\.\pipe\ad> --epoch <unix ms> [--size 1920x1080] [--canvas 2560x1440] [--fps 60] [--bitrate 6000]
-//             [--window <hwnd> | --monitor <n>] [--fill RRGGBB] [--panel <ad>] [--layer <ad>,x,y,w,h,up]...
+//             [--window <hwnd> | --monitor <n>] [--fill RRGGBB] [--panel <ad>] [--layer <ad>,x,y,w,h,up]... [--grab <ad>]
+//             [--gpu-priority -7..7]
 //
 // stdin komutları: layer <i> <0|1> · panel <0|1> · mask <i> <x> <y> <w> <h> · cover <0|1> · flip <0|1> · zoom <0|1>
 //                  source window <hwnd> · source monitor <n> · quit
@@ -22,6 +23,7 @@
 #include <thread>
 #include <vector>
 #include "capture.h"
+#include "grab.h"
 #include "nvenc.h"
 #include "render.h"
 #include "ts.h"
@@ -121,6 +123,8 @@ struct Args
     bool hasPanel = false;
     LayerSpec panel;
     std::vector<LayerSpec> layers;
+    std::wstring grab;
+    int gpuPriority = 0;   // -7..7; 7 motoru oyunun önüne geçirir (yetenek yoğun anlarda oyunun FPS'i düşüyordu)
 };
 
 static bool Parse(int argc, char** argv, Args& a)
@@ -141,6 +145,8 @@ static bool Parse(int argc, char** argv, Args& a)
             unsigned c = strtoul(v.c_str(), nullptr, 16);
             a.fill[0] = ((c >> 16) & 255) / 255.f; a.fill[1] = ((c >> 8) & 255) / 255.f; a.fill[2] = (c & 255) / 255.f; i++;
         }
+        else if (k == "--grab") { a.grab = Wide(v); i++; }
+        else if (k == "--gpu-priority") { a.gpuPriority = std::clamp(atoi(v.c_str()), -7, 7); i++; }
         else if (k == "--panel") { a.hasPanel = true; a.panel.name = Wide(v); a.panel.w = -1; i++; }
         else if (k == "--layer")
         {
@@ -189,9 +195,9 @@ int main(int argc, char** argv)
     ComPtr<ID3D11DeviceContext> ctx;
     auto dev = MakeDevice(ctx);
     if (!dev) { Say("error D3D11 aygıtı oluşturulamadı"); return 3; }
-    // Oyun ekran kartını doldursa da kareler gecikmesin (Windows izin verdiği ölçüde).
+    // Ekran kartı önceliği: varsayılan normal. Yükseltmek yayını korur ama oyunun karelerini geciktirir.
     ComPtr<IDXGIDevice> dxgi;
-    if (SUCCEEDED(dev.As(&dxgi))) dxgi->SetGPUThreadPriority(7);
+    if (a.gpuPriority != 0 && SUCCEEDED(dev.As(&dxgi))) dxgi->SetGPUThreadPriority(a.gpuPriority);
 
     std::string err;
     Capture cap;
@@ -206,6 +212,9 @@ int main(int argc, char** argv)
     // Pencere yakalanamazsa siyah kare yerine birincil ekran (örtüler zaten ekran koordinatında).
     if (a.window && !cap.StartWindow(a.window, err)) { Say("error " + err); a.window = nullptr; a.monitor = 0; }
     if (!a.window && a.monitor >= 0 && !cap.StartMonitor(a.monitor, err)) Say("error " + err);
+    // Bölge okuma açılamazsa ValoLive ekrandan okumaya devam eder; yayın etkilenmez.
+    Grabber grab;
+    if (!a.grab.empty() && !grab.Open(a.grab, err)) Say("error " + err);
 
     Writer out;
     if (!out.Open(a.out, err)) { Say("error " + err); return 5; }
@@ -256,6 +265,9 @@ int main(int argc, char** argv)
 
     ComPtr<ID3D11Texture2D> capTex;
     int64_t n = 0, statFrames = 0, statFresh = 0, statLate = 0, statSkip = 0;
+    // Takılma: oyundan yeni kare gelmeyen en uzun süre ve 50 ms'yi aşanların sayısı (5 sn ortalaması kısa düşüşleri gizler).
+    LARGE_INTEGER lastFresh; QueryPerformanceCounter(&lastFresh);
+    double statGapMax = 0; int64_t statStalls = 0, statGrabs = 0;
     double statGpu = 0;
     LARGE_INTEGER statAt; QueryPerformanceCounter(&statAt);
     Say("ready");
@@ -265,7 +277,11 @@ int main(int argc, char** argv)
         int64_t d = due(n);
         if (now.QuadPart < d)
         {
+            // Bölge okuması bekliyorsa kareyi beklemeden ilerlet (okuma ~2 kare yerine birkaç ms sürer).
+            // Ekran kartına yalnızca yeni kopya verilince gönderilir; 4 ms'de bir uyanılır (oyunu sık kesmesin).
+            if (grab.Busy() && grab.Tick(dev.Get(), ctx.Get(), capTex.Get())) ctx->Flush();
             LARGE_INTEGER rel; rel.QuadPart = -(int64_t)((d - now.QuadPart) * 10000000.0 / qf.QuadPart);
+            if (grab.Busy()) rel.QuadPart = std::max<int64_t>(rel.QuadPart, -40000);
             SetWaitableTimer(timer, &rel, 0, nullptr, nullptr, FALSE);
             WaitForSingleObject(timer, 100);
             continue;
@@ -288,7 +304,16 @@ int main(int argc, char** argv)
         }
 
         LARGE_INTEGER g0; QueryPerformanceCounter(&g0);
-        if (cap.Latest(ctx.Get(), capTex)) statFresh++;
+        if (cap.Latest(ctx.Get(), capTex))
+        {
+            statFresh++;
+            double gap = (g0.QuadPart - lastFresh.QuadPart) * 1000.0 / qf.QuadPart;
+            statGapMax = std::max(statGapMax, gap);
+            if (gap > 50) statStalls++;
+            lastFresh = g0;
+        }
+        if (grab.Busy()) statGrabs++;
+        grab.Tick(dev.Get(), ctx.Get(), capTex.Get());
         ID3D11Texture2D* target = enc.NextInput();
         ren.Render(ctx.Get(), capTex.Get(), target);
         ctx->Flush();
@@ -302,16 +327,18 @@ int main(int argc, char** argv)
         {
             double sec = (g1.QuadPart - statAt.QuadPart) / (double)qf.QuadPart;
             char b[256];
-            sprintf_s(b, "stats fps=%.1f fresh=%.1f late=%lld skipped=%lld submit_ms=%.2f queue_kb=%zu pending=%d capture=%s",
+            sprintf_s(b, "stats fps=%.1f fresh=%.1f late=%lld skipped=%lld submit_ms=%.2f queue_kb=%zu pending=%d capture=%s gap_max_ms=%.0f stalls=%lld grabs=%lld",
                       statFrames / sec, statFresh / sec, statLate, statSkip, statGpu / std::max<int64_t>(1, statFrames),
-                      out.Queued() / 1024, enc.Pending(), cap.Active() ? cap.Describe().c_str() : "yok");
+                      out.Queued() / 1024, enc.Pending(), cap.Active() ? cap.Describe().c_str() : "yok", statGapMax, statStalls, statGrabs);
             Say(b);
             statFrames = statFresh = statLate = statSkip = 0; statGpu = 0; statAt = g1;
+            statGapMax = 0; statStalls = statGrabs = 0;
         }
     }
     quit = true;
     enc.Flush(sink);
     cap.Stop();
+    grab.Close();
     out.Close();
     if (input.joinable()) input.detach();   // stdin okuması bloklu kalabilir; süreç zaten bitiyor
     Say("bye");

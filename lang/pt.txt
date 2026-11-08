@@ -459,4 +459,4 @@ yok	nenhuma
 Şişe	Garrafa
 Şişede mesaj	Mensagem na garrafa
 POP!	POP!
-Ekran kartı motoru (deneysel, işlemciyi boşaltır)	Motor de GPU (experimental, libera a CPU)
+Ekran kartı motoru (işlemciyi boşaltır)	Motor de GPU (libera a CPU)

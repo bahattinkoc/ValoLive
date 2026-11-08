@@ -459,4 +459,4 @@ yok	none
 Şişe	Bottle
 Şişede mesaj	Message in a bottle
 POP!	POP!
-Ekran kartı motoru (deneysel, işlemciyi boşaltır)	GPU engine (experimental, frees the CPU)
+Ekran kartı motoru (işlemciyi boşaltır)	GPU engine (frees the CPU)

@@ -44,11 +44,13 @@ namespace ValoLive
         public string FunBlock = "amk, aq, amina, aminakoyim, orospu, pic, siktir, siker, sikim, sik, yarrak, yarak, oc, ibne, kahpe, pezevenk, serefsiz, anani, fuck, shit, bitch, nigger, nigga, faggot, cunt, whore";
         public bool FunOn(string id) => Fun && !("," + FunOff + ",").Contains("," + id + ",");
         public bool WindowCapture;                                   // hafif yakalama: yalnızca Valorant penceresi (deneysel, varsayılan kapalı)
-        public bool GpuEngine;                                       // ekran kartı motoru (valocap.exe): görüntü işlemciye hiç inmez (deneysel, varsayılan kapalı)
+        public bool GpuEngine = true;                                // ekran kartı motoru (valocap.exe): görüntü işlemciye hiç inmez; açılamazsa ffmpeg yoluna dönülür
         public bool BreakScreen = true, AutoLobby = true, LobbyAlerts = true, AutoCover = true, TrayHintShown;
         public bool EnemyMemory;                                     // rakip hafızası: minimap'ten son görülen yerler (deneysel, varsayılan kapalı)
         public bool EnemyMemoryMap;                                  // rakip hafızası: son yerler harita üstünde ikonla (deneysel, varsayılan kapalı)
         public bool EnemyMemoryDiag;                                 // rakip hafızası tanı kaydı: ekran kareleri logs\hafiza-kayit (arayüzde yok, elle açılır)
+        public bool EngineRegionReads = true;                        // hafıza/anlar oyun karesini motordan okur; false: ekrandan (arayüzde yok, karşılaştırma için)
+        public int EngineGpuPriority;                                // motorun ekran kartı önceliği -7..7 (0 normal; 7 oyunun FPS'ini düşürüyordu; arayüzde yok)
         public int MapCoverX = 10, MapCoverY = 10, MapCoverD; // rozetin ekran pikselinde konumu/çapı (D=0: varsayılan)
 
         public static Settings Load()

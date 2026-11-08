@@ -459,4 +459,4 @@ yok	ไม่มี
 Şişe	ขวด
 Şişede mesaj	ข้อความในขวด
 POP!	ป๊อก!
-Ekran kartı motoru (deneysel, işlemciyi boşaltır)	เอนจิน GPU (ทดลอง, ลดภาระ CPU)
+Ekran kartı motoru (işlemciyi boşaltır)	เอนจิน GPU (ลดภาระ CPU)
