@@ -65,8 +65,11 @@ namespace ValoLive
             GameFront = false;
         }
 
-        /// <summary>Yeni raund: eski yerler artık yanıltıcı.</summary>
-        public void NewRound() { roundReset = true; lock (lk) memory.Clear(); }
+        /// <summary>Yeni raund: eski yerler artık yanıltıcı. Skor raund *bitince* değişir; ardından birkaç saniye
+        /// hayatta kalan rakipler minimap'te görünmeye devam eder. Onlar yeni rauda taşınmasın diye bir süre görmezden gelinir.</summary>
+        public void NewRound() { roundReset = true; quietUntil = DateTime.Now.AddSeconds(QuietSeconds).Ticks; lock (lk) memory.Clear(); }
+        const int QuietSeconds = 15;
+        long quietUntil;
 
         public List<Sighting> Snapshot()
         {
@@ -104,6 +107,7 @@ namespace ValoLive
             Bitmap bmp = null, barBmp = null;
             var bar = new TopBar(eng.Icons);
             var dead = new HashSet<string>();
+            var diag = new DiagRecorder();
             int frames = 0, seenFrames = 0, tick = 0; double totalMs = 0, maxMs = 0; DateTime statAt = DateTime.Now.AddMinutes(1);
             try
             {
@@ -133,15 +137,26 @@ namespace ValoLive
                                 var d = bar.Update(barBmp, k);
                                 if (d != null && !d.SetEquals(dead))
                                 {
+                                    // Birkaç rakip ölüyken çubuk birden 5'e dolduysa yeni raundun satın alma evresi başladı
+                                    // (diriltme yalnızca bir kişiyi geri getirir); skor bilgisi gecikse de hafıza temizlenir.
+                                    if (d.Count == 0 && dead.Count >= 2)
+                                    {
+                                        quietUntil = Math.Max(quietUntil, now.AddSeconds(5).Ticks);
+                                        Log("çubuk dolu: yeni raund, hafıza temizlendi");
+                                    }
                                     dead = d;
                                     Log("ölü: " + (dead.Count == 0 ? "yok" : string.Join(", ", dead.Select(eng.NameOf))));
                                 }
+                                diag.Bar(barBmp, now);
                             }
                             catch { }
                         }
+                        if (tick % 20 == 1) diag.Map(bmp, now);
+                        bool quiet = now.Ticks < quietUntil;
                         lock (lk)
                         {
                             if (gen != generation) break;
+                            if (quiet) { memory.Clear(); seen.Clear(); }
                             foreach (var a in dead) memory.Remove(a);
                             foreach (var s in memory.Values) s.Visible = false;
                             foreach (var e in seen)
@@ -556,6 +571,56 @@ namespace ValoLive
         public static string IconFile(string agent) => Engine.IconFile(agent);
 
         /// <summary>
+        /// Deneme sürümü tanı kaydı: maç boyunca saniyede bir üst çubuk (yalnızca rakip portreleri, oyuncu adı yok) ve
+        /// 2 saniyede bir minimap karesi logs\hafiza-kayit\&lt;maç&gt;\ altına yazılır; hatalar sonradan kare kare incelenebilsin.
+        /// Yalnızca son 3 maç tutulur (maç başına ~15 MB).
+        /// </summary>
+        sealed class DiagRecorder
+        {
+            const int Keep = 3;
+            static readonly ImageCodecInfo Jpeg = ImageCodecInfo.GetImageEncoders().First(c => c.FormatID == ImageFormat.Jpeg.Guid);
+            string dir; bool failed; DateTime nextBar;
+
+            string Dir()
+            {
+                if (dir != null || failed) return dir;
+                try
+                {
+                    string root = Path.Combine(Diag.Dir, "hafiza-kayit");
+                    Directory.CreateDirectory(root);
+                    foreach (var old in Directory.GetDirectories(root).OrderByDescending(d => d).Skip(Keep - 1))
+                        try { Directory.Delete(old, true); } catch { }
+                    dir = Path.Combine(root, DateTime.Now.ToString("yyyyMMdd_HHmmss"));
+                    Directory.CreateDirectory(dir);
+                }
+                catch { failed = true; dir = null; }
+                return dir;
+            }
+
+            public void Bar(Bitmap bmp, DateTime now)
+            {
+                if (now < nextBar) return;
+                nextBar = now.AddSeconds(1);
+                var d = Dir(); if (d == null) return;
+                try { bmp.Save(Path.Combine(d, $"c_{now:HHmmss_fff}.png"), ImageFormat.Png); } catch { }
+            }
+
+            public void Map(Bitmap bmp, DateTime now)
+            {
+                var d = Dir(); if (d == null) return;
+                try
+                {
+                    using (var p = new EncoderParameters(1))
+                    {
+                        p.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, 75L);
+                        bmp.Save(Path.Combine(d, $"m_{now:HHmmss_fff}.jpg"), Jpeg, p);
+                    }
+                }
+                catch { }
+            }
+        }
+
+        /// <summary>
         /// Üst orta skor çubuğu, rakip tarafı (sağ yarı): canlı rakiplerin portreleri ortadan başlayarak yan yana durur,
         /// ölen kalkar ve kalanlar kayar.
         /// Kaç kişi canlı: yuvadaki kenar yoğunluğu (portre var/yok). Kim: 5'i de canlıyken alınan portre kopyalarıyla sırası bozulmadan eşleme.
@@ -575,6 +640,7 @@ namespace ValoLive
             int costN, fullReads;
             string[] order;                              // yuva → ajan (güvenilir olduğunda)
             string pendingKey; int pendingRuns;
+            HashSet<string> reported = new HashSet<string>();
 
             public TopBar(Dictionary<string, Bitmap> agentIcons)
             {
@@ -632,7 +698,7 @@ namespace ValoLive
 
             public void NewRound()
             {
-                slots = null; pendingKey = null; pendingRuns = 0;
+                slots = null; pendingKey = null; pendingRuns = 0; reported = new HashSet<string>();
                 for (int i = 0; i < N; i++) for (int j = 0; j < N; j++) cost[i, j] *= 0.5; // sıra maç boyunca aynı kalır; yine de taze kanıt ağır bassın
                 costN /= 2;
             }
@@ -685,7 +751,12 @@ namespace ValoLive
                 var deadSet = new HashSet<string>(Enumerable.Range(0, N).Where(i => !alive.Contains(i) && order[i] != null).Select(i => order[i]));
                 string key = string.Join(",", deadSet.OrderBy(x => x));
                 if (key != pendingKey) { pendingKey = key; pendingRuns = 1; return null; }
-                return ++pendingRuns >= 3 ? deadSet : null;
+                // Ölüm ~1 sn tutarlılıkla kabul edilir; birinin dirilmesi (yalnızca Sage yapabilir) ~3 sn ister,
+                // kısa süreli yanlış okumalar ölüleri haritaya geri getirmesin.
+                bool revive = reported.Any(a => !deadSet.Contains(a));
+                if (++pendingRuns < (revive ? 9 : 3)) return null;
+                reported = deadSet;
+                return deadSet;
             }
 
             static IEnumerable<int[]> Subsets(int n)
