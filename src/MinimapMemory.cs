@@ -557,21 +557,22 @@ namespace ValoLive
 
         /// <summary>
         /// Üst orta skor çubuğu, rakip tarafı (sağ yarı): canlı rakiplerin portreleri ortadan başlayarak yan yana durur,
-        /// ölen kalkar ve kalanlar kayar; her portrenin altında ince bir çizgi vardır.
-        /// Kaç kişi canlı: çizgiler. Kim: 5'i de canlıyken alınan portre kopyalarıyla sırası bozulmadan eşleme.
+        /// ölen kalkar ve kalanlar kayar.
+        /// Kaç kişi canlı: yuvadaki kenar yoğunluğu (portre var/yok). Kim: 5'i de canlıyken alınan portre kopyalarıyla sırası bozulmadan eşleme.
         /// Hangi sıra hangi ajan: küçültülmüş portre ile ajan ikonu, maç boyunca biriken farkla tek tek atama.
         /// Ölçüler 1080p'de, ekran ortasına göre; başka çözünürlükte pencere yüksekliğiyle orantılanır.
         /// </summary>
         sealed class TopBar
         {
             const int N = 5;
+            const double MaxSame = 45;                   // aynı portrenin iki karesi arasındaki fark bundan küçük kalır
             sealed class Tpl { public string Agent; public int D; public float[] R, G, B, A; }
 
             readonly List<string> agents;
             readonly List<Tpl> icons = new List<Tpl>();
             byte[][] slots; int cw, ch;                // 5'i de canlıyken portre kopyaları (gerçek piksel)
             readonly double[,] cost = new double[N, N];  // yuva × ajan, birikmiş fark
-            int costN; DateTime nextCost;
+            int costN, fullReads;
             string[] order;                              // yuva → ajan (güvenilir olduğunda)
             string pendingKey; int pendingRuns;
 
@@ -607,7 +608,12 @@ namespace ValoLive
                 var px = new byte[d.Stride * bmp.Height]; Marshal.Copy(d.Scan0, px, 0, px.Length); int st = d.Stride; bmp.UnlockBits(d);
 
                 var on = new bool[N];
-                for (int i = 0; i < N; i++) on[i] = Pill(px, st, i, k) > 7;
+                for (int i = 0; i < N; i++)
+                {
+                    double e = Edges(px, st, i, k);
+                    if (e >= 40 && e < 100) return null; // ne dolu ne boş: geçiş, efekt
+                    on[i] = e >= 100;
+                }
                 int n = 0; while (n < N && on[n]) n++;
                 for (int i = n; i < N; i++) if (on[i]) return null; // canlılar art arda gelir; değilse görüntü bozuk (harita, efekt)
                 if (n == 0) return null;                            // çubuk yok: raund arası, skor tablosu
@@ -616,8 +622,11 @@ namespace ValoLive
                 int[] alive;
                 if (n == N)
                 {
-                    slots = Enumerable.Range(0, N).Select(i => Crop(px, st, i, k)).ToArray();
-                    if (DateTime.Now >= nextCost) { nextCost = DateTime.Now.AddSeconds(2); LearnOrder(bmp, k); }
+                    var cur = Enumerable.Range(0, N).Select(i => Crop(px, st, i, k)).ToArray();
+                    // Ölümden sonra boş 5. yuvanın çizgisi bazen dolu okunur; kopyalar yalnızca her portre eskisine hâlâ benziyorsa yenilenir.
+                    if (slots != null && Enumerable.Range(0, N).Any(i => Diff(cur[i], slots[i], k) > MaxSame)) return null;
+                    slots = cur;
+                    if (fullReads++ % 6 == 0) LearnOrder(bmp, k); // ~2 sn'de bir (saniyede 3 okuma)
                     alive = Enumerable.Range(0, N).ToArray();
                 }
                 else
@@ -652,16 +661,20 @@ namespace ValoLive
                 }
             }
 
-            static double L(byte[] px, int st, int x, int y) { int i = y * st + x * 3; return (px[i] + px[i + 1] + px[i + 2]) / 3.0; }
-
-            /// <summary>Portre altındaki çizginin çevresine göre parlaklığı (dolu yuva ~+10..30, boş ~0).</summary>
-            static double Pill(byte[] px, int st, int slot, float k)
+            /// <summary>Yuvanın portre alanında komşu pikseller arası ortalama fark: piksel-art portre 130..200,
+            /// boş yarı saydam şerit 0..30 (açık zeminli haritalarda bile; portre altı çizgisi orada zayıf kalıyordu).</summary>
+            static double Edges(byte[] px, int st, int slot, float k)
             {
-                int x0 = (int)((16 + 66 * slot) * k), w = (int)(28 * k); double s = 0;
-                int[] on = { (int)(77 * k), (int)(78 * k), (int)(79 * k), (int)(80 * k) }, off = { (int)(73 * k), (int)(74 * k), (int)(83 * k), (int)(84 * k) };
-                for (int x = x0; x < x0 + w; x++)
-                    s += on.Average(y => L(px, st, x, y)) - off.Average(y => L(px, st, x, y));
-                return s / w;
+                int x0 = (int)((14 + 66.5 * slot) * k), y0 = (int)(33 * k), w = (int)(32 * k), h = Math.Max(1, (int)Math.Round(k)); double s = 0; int n = 0;
+                for (int y = y0; y < y0 + w; y += h)
+                    for (int x = x0; x < x0 + w; x += h)
+                    {
+                        int i = y * st + x * 3, r = i + h * 3, d = i + h * st;
+                        s += Math.Abs(px[i] - px[r]) + Math.Abs(px[i + 1] - px[r + 1]) + Math.Abs(px[i + 2] - px[r + 2])
+                           + Math.Abs(px[i] - px[d]) + Math.Abs(px[i + 1] - px[d + 1]) + Math.Abs(px[i + 2] - px[d + 2]);
+                        n++;
+                    }
+                return s / n;
             }
 
             byte[] Crop(byte[] px, int st, int slot, float k)
