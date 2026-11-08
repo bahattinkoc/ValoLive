@@ -66,6 +66,32 @@ After every game, a card shows where you got your kills (●) and where you died
 
 <p align="center"><img src="docs/postmatch.png" width="330" alt="Post-match card"></p>
 
+### 🎬 Stream moments
+ValoLive reads the scoreboard bar and calls out the big plays on stream as they happen: **first blood**, **clutch** attempts (1v2 … 1v5) with the result, **last enemy standing**, flawless rounds, round streaks, comebacks, match point and overtime. After the match, its best (and funniest) moments get a short banner: aces, 4Ks, ninja defuses, knife kills, fall deaths…
+
+### 🎈 Chat fun: viewers play with your stream
+Viewers type a command in Kick chat and it comes to life on screen. No channel points needed, just a cooldown per viewer (mods and you skip it).
+
+| Command | What happens |
+|---|---|
+| `!balloon <msg>` / `!pop` | The message floats up on a balloon; `!pop` bursts it |
+| `!plane <msg>` | A plane flies across towing the message as a banner |
+| `!bottle <msg>` | A message in a bottle washes ashore |
+| `!pigeon <msg>` | A pigeon delivers it (and leaves a little surprise) |
+| `!paper <msg>` | A paper plane glides by |
+| `!spray <msg>` | Graffiti on the wall for a minute |
+| `!tomato` / `!egg` | Splat! |
+| `!sticker <emoji>` | Slaps a sticker on the screen |
+| `!firework` | Group goal: when enough viewers join, the fireworks show starts |
+| `!race` | Duck race: everyone who joins gets a duck, the bot announces the winner |
+| `!say <msg>` | A robot voice reads it out |
+| `!flip` / `!zoom` | Flips the screen for 3 s / magnifies the crosshair for 6 s |
+
+Plus **emoji rain** when chat spams the same emoji, and an **aquarium** where everyone who chats swims as a fish. Links are stripped and a banned-words list is applied. Every effect can be switched off one by one, and **PREVIEW** lets you try them all without going live.
+
+### 🎛️ Stream panel
+All on-stream settings (overlays, radar badge, sniper cover, chat fun) live in their own **Stream Panel** window. Open it from the main window or the tray icon.
+
 ### 🔍 Match Room: know who you're up against
 Open it during agent select or in game, and every player in the lobby is scouted for you:
 - **Rank, peak rank, level, act win rate**, K/D and HS% for every player.
@@ -148,6 +174,9 @@ ValoLive isn't endorsed by Riot Games and doesn't reflect the views or opinions 
 - **Sıra ekranı ve yayın özeti (F10)**: Sırada beklerken izleyici menü yerine sayaç ve istatistik görür. Gece sonunda **GG** kartı gösterilir.
 - **Radar rozeti**: Köşede dönen küçük bir widget. Sırayla rankını, günün skorunu ve son maçını gösterir.
 - **Maç sonu kartı**: Haritada nerede adam vurduğunu ve nerede öldüğünü gösterir; yanında K/D/A, ACS, HS% ve ilk kanlar yer alır.
+- **Yayın anları**: İlk kan, clutch denemeleri ve sonucu, son rakip, kusursuz raundlar, raund serileri, geri dönüşler, maç sayısı ve uzatma yayında anında duyurulur. Maç bitince en iyi (ve en komik) anlar kısa bir bantla gösterilir: ace, 4K, ninja defuse, bıçak kill, düşerek ölme…
+- **Chat eğlencesi**: İzleyiciler chat'e komut yazar, ekranda canlanır: `!balloon`, `!plane`, `!bottle`, `!pigeon`, `!paper`, `!spray`, `!tomato`, `!egg`, `!sticker`, `!firework`, `!race`, `!say`, `!flip`, `!zoom`. Ayrıca emoji yağmuru ve chat'e yazanların balık olduğu bir akvaryum var. Kanal puanı gerekmez, her izleyicinin bekleme süresi vardır. **ÖNİZLEME** ile yayın açmadan denenebilir.
+- **Yayın Paneli**: Yayın üstü bütün ayarlar ayrı bir pencerede; ana pencereden ya da tepsi simgesinden açılır.
 - **Maç Odası**: Lobideki herkesin rankı, en yüksek rankı, formu (▲seri / ▼tilt), son maçları, **parti tespiti**, **smurf uyarısı**, daha önce karşılaştığın oyuncular ve takımların güç dengesi.
 - **Rakip hafızası (deneysel)**: Minimap'te senin ya da takımının gördüğü her rakibin son görüldüğü yeri ve ne kadar önce görüldüğünü hatırlar. Minimap'in altında liste olarak, haritanın üstünde ikon olarak ya da ikisi birden gösterilir. Ölen rakipler skor çubuğundan anlaşılıp listeden düşer, her raund sıfırlanır. Varsayılan olarak kapalıdır, **MAÇ ODASI** altından açılır. Rakip vurgu rengi **mor** olmalıdır. Maç sırasında bilgi veren üçüncü taraf araçlar Riot kurallarıyla çelişebilir; kullanım sorumluluğu sana aittir.
 - **16 dil**: Valorant sunucularında konuşulan diller.
