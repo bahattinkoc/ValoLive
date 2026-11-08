@@ -84,21 +84,24 @@ namespace ValoLive
             finally { ticking = 0; }
         }
 
+        Bitmap canvas;
+
+        /// <summary>Tuval tekrar kullanılır ve önceden çarpılmış alfadır (PArgb): GDI+ karışımı orada 2-3 kat hızlı;
+        /// Raw düz alfaya çevirerek okur. Kare dizisi her seferinde yenidir (tüketiciler referansla karşılaştırır,
+        /// boru yazımı uzun sürebilir).</summary>
         byte[] Encode()
         {
-            using (var bmp = new Bitmap(W, H, PixelFormat.Format32bppArgb))
+            if (canvas == null) canvas = new Bitmap(W, H, PixelFormat.Format32bppPArgb);
+            using (var g = Graphics.FromImage(canvas))
             {
-                using (var g = Graphics.FromImage(bmp))
-                {
-                    g.SmoothingMode = SmoothingMode.AntiAlias;
-                    g.TextRenderingHint = TextRenderingHint.AntiAlias;
-                    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                    g.PixelOffsetMode = PixelOffsetMode.HighQuality;
-                    g.Clear(Color.Transparent);
-                    Draw(g, (DateTime.Now - born).TotalSeconds);
-                }
-                return Raw(bmp);
+                g.SmoothingMode = SmoothingMode.AntiAlias;
+                g.TextRenderingHint = TextRenderingHint.AntiAlias;
+                g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                g.Clear(Color.Transparent);
+                Draw(g, (DateTime.Now - born).TotalSeconds);
             }
+            return Raw(canvas);
         }
 
         /// <summary>32 bit ARGB bitmap → satır boşluğu olmadan ham BGRA (ffmpeg rawvideo bgra ile birebir).</summary>
@@ -129,6 +132,7 @@ namespace ValoLive
             disposed = true;
             timer?.Dispose();
             SpinWait.SpinUntil(() => Volatile.Read(ref ticking) == 0, 1000);
+            if (Volatile.Read(ref ticking) == 0) canvas?.Dispose();
         }
 
         // ---------- ortak çizim yardımcıları ----------
@@ -289,12 +293,24 @@ namespace ValoLive
                     g.DrawLine(major ? thick : thin, c + cs * r1, c + sn * r1, c + cs * r2, c + sn * r2);
                 }
 
-            // Merkez disk + nefes alan dış parıltı.
+            // Merkez disk + nefes alan dış parıltı. Üç parıltı dairesinin dışarıda yalnızca halkaları çizilir; diskin
+            // altında kalan üç katman ile disk tek renge birleşir (üst üste bindirme birleşimli): görüntü aynı,
+            // dolu daire çizimi dörtten bire iner.
             float breathe = (float)(0.5 + 0.5 * Math.Sin(t * 2.2));
-            for (int i = 3; i >= 1; i--)
-                using (var br = new SolidBrush(A(tier, 0.05 * breathe)))
-                    g.FillEllipse(br, c - R - P(4 * i), c - R - P(4 * i), (R + P(4 * i)) * 2, (R + P(4 * i)) * 2);
-            using (var br = new SolidBrush(Color.FromArgb(235, 11, 13, 19))) g.FillEllipse(br, c - R, c - R, R * 2, R * 2);
+            var halo = A(tier, 0.05 * breathe);
+            using (var br = new SolidBrush(halo))
+                for (int i = 3; i >= 1; i--)
+                    using (var ring = new GraphicsPath())
+                    {
+                        float o = R + P(4 * i);
+                        ring.AddEllipse(c - o, c - o, o * 2, o * 2);
+                        ring.AddEllipse(c - R, c - R, R * 2, R * 2);
+                        g.FillPath(br, ring);
+                    }
+            double ga = 1 - Math.Pow(1 - halo.A / 255.0, 3), da = 235 / 255.0, oa = da + ga * (1 - da);
+            int Mix(int disk, int gl) => (int)Math.Round((disk * da + gl * ga * (1 - da)) / oa);
+            using (var br = new SolidBrush(Color.FromArgb((int)Math.Round(oa * 255), Mix(11, tier.R), Mix(13, tier.G), Mix(19, tier.B))))
+                g.FillEllipse(br, c - R, c - R, R * 2, R * 2);
 
             // Dönen kesikli halkalar (biri saat yönünde, biri tersine).
             DashedRing(g, c, R * 1.13f, (float)(t * 24), A(tier, 0.55), P(1.6f), new[] { 2f, 5f });

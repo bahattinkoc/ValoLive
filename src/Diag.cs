@@ -38,6 +38,7 @@ namespace ValoLive
                 file = Path.Combine(Dir, $"yayin_{started:yyyyMMdd_HHmmss}.log");
             }
             Write("OTURUM", header);
+            GameFps.Start();
         }
 
         public static void Event(string kind, string text) => Write(kind, text);
@@ -52,12 +53,13 @@ namespace ValoLive
 
         public static void End(string why)
         {
+            string fps = GameFps.Stop();
             string sum;
             lock (lk)
             {
                 if (file == null) return;
                 sum = $"{why} · süre {DateTime.Now - started:hh\\:mm\\:ss} · yakalama yeniden başlama {captureRestarts} " +
-                      $"(toplam kesinti {gapTotalMs / 1000:0.0} sn, en uzun {gapMaxMs:0} ms) · Kick bağlantı kopması {publisherDrops}";
+                      $"(toplam kesinti {gapTotalMs / 1000:0.0} sn, en uzun {gapMaxMs:0} ms) · Kick bağlantı kopması {publisherDrops}{fps}";
             }
             Write("ÖZET", sum);
             lock (lk) file = null;

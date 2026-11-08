@@ -133,7 +133,7 @@ namespace ValoLive
             ValoState st; Banner b; double bt; int pop; bool cov, sum, priv, br; DateTime? qs;
             lock (lk) { st = state; b = banner; bt = (DateTime.Now - bannerStart).TotalMilliseconds; pop = popDelta; cov = cover; sum = summary; priv = privacy; br = brk; qs = queueSince; }
 
-            using (var bmp = new Bitmap(W, H, PixelFormat.Format32bppArgb))
+            using (var bmp = new Bitmap(W, H, PixelFormat.Format32bppPArgb)) // önceden çarpılmış: çizim hızlı, Raw düz alfaya çevirir
             using (var g = Graphics.FromImage(bmp))
             {
                 g.SmoothingMode = SmoothingMode.AntiAlias;
