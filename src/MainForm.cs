@@ -63,7 +63,7 @@ namespace ValoLive
 
         TextBox txtUrl, txtKey, txtName, txtTag, txtHdev, txtTitle, txtTags;
         ComboBox cmbCategory;
-        CheckBox chkWgc, chkAutoLobby, chkAlerts, chkMemory, chkMemoryMap;
+        CheckBox chkWgc, chkGpu, chkAutoLobby, chkAlerts, chkMemory, chkMemoryMap;
         string liveState = "";
         bool autoCovered;                 // perdeyi ajan seçimi açtı (F9 ile açılanı maç başı kapatmaz)
         Control[] appShift; bool appRow = true;
@@ -159,14 +159,14 @@ namespace ValoLive
             // Ölçüler metinlere göre (diller arasında uzunluk çok değişiyor): etiket sütunu en uzun alan etiketine,
             // sütunlar en uzun anahtar yazısına göre genişler.
             string tAutoLobby = L.T("Maç bulununca otomatik aç"), tAlerts = L.T("Bildirimler (tanıdık oyuncu, smurf, parti)"),
-                   tWgc = L.T("Hafif yakalama (yalnızca oyun penceresi)"), tDenoise = L.T("Gürültü filtresi"),
+                   tWgc = L.T("Hafif yakalama (yalnızca oyun penceresi)"), tGpu = L.T("Ekran kartı motoru (deneysel, işlemciyi boşaltır)"), tDenoise = L.T("Gürültü filtresi"),
                    tMemory = L.T("Rakip hafızası: minimap'te son görülen yerler (deneysel)"),
                    tMemoryMap = L.T("Rakip hafızası: harita üstünde ikonlar (deneysel)");
             using (var cap = new Font(L.SansBold, 8.25f))
                 LabelW = Math.Max(104, new[] { "Stream URL", "Stream Key", L.T("Kick hesabı"), L.T("Başlık"), L.T("Kategori"), L.T("Etiketler"), "Riot ID", "HenrikDev key",
                     L.T("Kalite"), L.T("Yakalama"), L.T("Uygulama"), L.T("Mikrofon"), L.T("Oyun sesi") }
                     .Max(s => TextRenderer.MeasureText(Theme.Upper(s), cap).Width) + 12);
-            int toggleW = new[] { tAutoLobby, tAlerts, tWgc, tDenoise, tMemory, tMemoryMap }.Max(s => VToggle.WidthFor(s, Font));
+            int toggleW = new[] { tAutoLobby, tAlerts, tWgc, tGpu, tDenoise, tMemory, tMemoryMap }.Max(s => VToggle.WidthFor(s, Font));
             ColW = Math.Min(560, Math.Max(Math.Max(420, LabelW + 316), toggleW + 4));
 
             var sub = new Label { Text = L.T("Kick için hafif Valorant yayın aracı · RTX NVENC"), ForeColor = Mut, AutoSize = true, Location = new Point(22, 56) };
@@ -281,6 +281,10 @@ namespace ValoLive
             chkWgc = new VToggle { Text = tWgc, ForeColor = Txt, AutoSize = true, Location = new Point(FX, y - 4) };
             Controls.Add(chkWgc); y += 26;
             chkWgc.CheckedChanged += (s, e) => SaveSettings();
+            // Ekran kartı motoru: valocap.exe yanında yoksa seçenek hiç görünmez.
+            chkGpu = new VToggle { Text = tGpu, ForeColor = Txt, AutoSize = true, Location = new Point(FX, y - 4), Visible = Streamer.FindEngine() != null };
+            Controls.Add(chkGpu); if (chkGpu.Visible) y += 26;
+            chkGpu.CheckedChanged += (s, e) => SaveSettings();
             btnApps.Click += (s, e) => FillApps(apps.ElementAtOrDefault(cmbApp.SelectedIndex).Key ?? cfg.CaptureApp);
             cmbCapture.SelectedIndexChanged += (s, e) => ApplyCapture();
             cmbApp.SelectedIndexChanged += (s, e) => ApplyCapture();
@@ -493,6 +497,7 @@ namespace ValoLive
             txtTags.Text = cfg.Tags;
             overlay.RankPanel = !cfg.MapCover;
             chkWgc.Checked = cfg.WindowCapture;
+            chkGpu.Checked = cfg.GpuEngine;
             chkAutoLobby.Checked = cfg.AutoLobby;
             chkAlerts.Checked = cfg.LobbyAlerts;
             chkMemory.Checked = cfg.EnemyMemory;
@@ -521,7 +526,7 @@ namespace ValoLive
             else if (!string.Equals(cmbCategory.Text.Trim(), cfg.CategoryName, StringComparison.OrdinalIgnoreCase)) { cfg.CategoryName = cmbCategory.Text.Trim(); cfg.CategoryId = 0; }
             cfg.Tags = txtTags.Text.Trim();
             // Katman ayarları Yayın Paneli'nden doğrudan cfg'ye yazılır (StreamPanel).
-            if (chkWgc != null) { cfg.WindowCapture = chkWgc.Checked; cfg.AutoLobby = chkAutoLobby.Checked; cfg.LobbyAlerts = chkAlerts.Checked; cfg.EnemyMemory = chkMemory.Checked; cfg.EnemyMemoryMap = chkMemoryMap.Checked; }
+            if (chkWgc != null) { cfg.WindowCapture = chkWgc.Checked; cfg.GpuEngine = chkGpu.Checked; cfg.AutoLobby = chkAutoLobby.Checked; cfg.LobbyAlerts = chkAlerts.Checked; cfg.EnemyMemory = chkMemory.Checked; cfg.EnemyMemoryMap = chkMemoryMap.Checked; }
             cfg.Save();
         }
 
@@ -959,6 +964,7 @@ namespace ValoLive
                 ScreenWidth = screenW, ScreenHeight = screenH,
                 Denoise = cfg.Denoise,
                 WindowCapture = cfg.WindowCapture && guard.Mode == CaptureMode.Valorant,
+                Gpu = cfg.GpuEngine,
                 Overlay = overlay,
             };
             if (m == Mode.Live)
@@ -1107,7 +1113,7 @@ namespace ValoLive
 
         void SetInputsEnabled(bool on)
         {
-            foreach (Control c in new Control[] { txtUrl, txtKey, cmbQuality, cmbCapture, cmbApp, btnApps, cmbMic, chkDenoise, cmbOut, btnTest, chkWgc })
+            foreach (Control c in new Control[] { txtUrl, txtKey, cmbQuality, cmbCapture, cmbApp, btnApps, cmbMic, chkDenoise, cmbOut, btnTest, chkWgc, chkGpu })
                 c.Enabled = on;
             chkWgc.Enabled = on && guard.Mode == CaptureMode.Valorant;
             StreamPanel.Sync();
