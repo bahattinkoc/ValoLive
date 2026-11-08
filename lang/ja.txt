@@ -459,4 +459,4 @@ yok	なし
 Şişe	ボトル
 Şişede mesaj	ボトルメール
 POP!	ポンッ！
-Ekran kartı motoru (deneysel, işlemciyi boşaltır)	GPUエンジン（実験的、CPUの負荷を軽減）
+Ekran kartı motoru (işlemciyi boşaltır)	GPUエンジン（CPUの負荷を軽減）

@@ -159,7 +159,7 @@ namespace ValoLive
             // Ölçüler metinlere göre (diller arasında uzunluk çok değişiyor): etiket sütunu en uzun alan etiketine,
             // sütunlar en uzun anahtar yazısına göre genişler.
             string tAutoLobby = L.T("Maç bulununca otomatik aç"), tAlerts = L.T("Bildirimler (tanıdık oyuncu, smurf, parti)"),
-                   tWgc = L.T("Hafif yakalama (yalnızca oyun penceresi)"), tGpu = L.T("Ekran kartı motoru (deneysel, işlemciyi boşaltır)"), tDenoise = L.T("Gürültü filtresi"),
+                   tWgc = L.T("Hafif yakalama (yalnızca oyun penceresi)"), tGpu = L.T("Ekran kartı motoru (işlemciyi boşaltır)"), tDenoise = L.T("Gürültü filtresi"),
                    tMemory = L.T("Rakip hafızası: minimap'te son görülen yerler (deneysel)"),
                    tMemoryMap = L.T("Rakip hafızası: harita üstünde ikonlar (deneysel)");
             using (var cap = new Font(L.SansBold, 8.25f))

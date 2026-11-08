@@ -44,7 +44,7 @@ namespace ValoLive
         public string FunBlock = "amk, aq, amina, aminakoyim, orospu, pic, siktir, siker, sikim, sik, yarrak, yarak, oc, ibne, kahpe, pezevenk, serefsiz, anani, fuck, shit, bitch, nigger, nigga, faggot, cunt, whore";
         public bool FunOn(string id) => Fun && !("," + FunOff + ",").Contains("," + id + ",");
         public bool WindowCapture;                                   // hafif yakalama: yalnızca Valorant penceresi (deneysel, varsayılan kapalı)
-        public bool GpuEngine;                                       // ekran kartı motoru (valocap.exe): görüntü işlemciye hiç inmez (deneysel, varsayılan kapalı)
+        public bool GpuEngine = true;                                // ekran kartı motoru (valocap.exe): görüntü işlemciye hiç inmez; açılamazsa ffmpeg yoluna dönülür
         public bool BreakScreen = true, AutoLobby = true, LobbyAlerts = true, AutoCover = true, TrayHintShown;
         public bool EnemyMemory;                                     // rakip hafızası: minimap'ten son görülen yerler (deneysel, varsayılan kapalı)
         public bool EnemyMemoryMap;                                  // rakip hafızası: son yerler harita üstünde ikonla (deneysel, varsayılan kapalı)

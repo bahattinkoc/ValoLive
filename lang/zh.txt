@@ -459,4 +459,4 @@ yok	无
 Şişe	漂流瓶
 Şişede mesaj	漂流瓶
 POP!	啵！
-Ekran kartı motoru (deneysel, işlemciyi boşaltır)	显卡引擎（实验性，释放 CPU）
+Ekran kartı motoru (işlemciyi boşaltır)	显卡引擎（释放 CPU）

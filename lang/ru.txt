@@ -459,4 +459,4 @@ yok	нет
 Şişe	Бутылка
 Şişede mesaj	Послание в бутылке
 POP!	ЧПОК!
-Ekran kartı motoru (deneysel, işlemciyi boşaltır)	Движок на видеокарте (экспериментально, разгружает ЦП)
+Ekran kartı motoru (işlemciyi boşaltır)	Движок на видеокарте (разгружает ЦП)

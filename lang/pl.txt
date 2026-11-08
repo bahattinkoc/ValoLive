@@ -459,4 +459,4 @@ yok	brak
 Şişe	Butelka
 Şişede mesaj	List w butelce
 POP!	PYK!
-Ekran kartı motoru (deneysel, işlemciyi boşaltır)	Silnik GPU (eksperymentalny, odciąża procesor)
+Ekran kartı motoru (işlemciyi boşaltır)	Silnik GPU (odciąża procesor)

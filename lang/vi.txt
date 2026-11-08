@@ -459,4 +459,4 @@ yok	không
 Şişe	Chai
 Şişede mesaj	Thư trong chai
 POP!	BỐP!
-Ekran kartı motoru (deneysel, işlemciyi boşaltır)	Bộ máy GPU (thử nghiệm, giảm tải CPU)
+Ekran kartı motoru (işlemciyi boşaltır)	Bộ máy GPU (giảm tải CPU)

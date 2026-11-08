@@ -459,4 +459,4 @@ yok	لا شيء
 Şişe	زجاجة
 Şişede mesaj	رسالة في زجاجة
 POP!	بوب!
-Ekran kartı motoru (deneysel, işlemciyi boşaltır)	محرك بطاقة الرسومات (تجريبي، يخفف عن المعالج)
+Ekran kartı motoru (işlemciyi boşaltır)	محرك بطاقة الرسومات (يخفف عن المعالج)

@@ -459,4 +459,4 @@ yok	keine
 Şişe	Flasche
 Şişede mesaj	Flaschenpost
 POP!	PLOPP!
-Ekran kartı motoru (deneysel, işlemciyi boşaltır)	GPU-Engine (experimentell, entlastet die CPU)
+Ekran kartı motoru (işlemciyi boşaltır)	GPU-Engine (entlastet die CPU)

@@ -459,4 +459,4 @@ yok	tidak ada
 Şişe	Botol
 Şişede mesaj	Pesan dalam botol
 POP!	POP!
-Ekran kartı motoru (deneysel, işlemciyi boşaltır)	Mesin GPU (eksperimental, meringankan CPU)
+Ekran kartı motoru (işlemciyi boşaltır)	Mesin GPU (meringankan CPU)

@@ -25,7 +25,7 @@ Press **START STREAM** and you're streaming: ValoLive captures Valorant, encodes
 
 ### 🎥 One-click streaming to Kick
 - Captures the game and encodes it with **NVENC**, so your CPU stays free for frames.
-- **GPU engine** (toggle in the main window): capture, overlays and encoding all stay on the graphics card, the way OBS does it. It uses about 8× less CPU than the FFmpeg path, and ValoLive falls back to that path by itself if the engine can't start.
+- **GPU engine** (on by default, toggle in the main window): capture, overlays and encoding all stay on the graphics card, the way OBS does it. It uses about 8× less CPU than the FFmpeg path, and ValoLive falls back to that path by itself if the engine can't start. Enemy memory and stream moments read the game frame from the engine too, instead of copying the screen.
 - Sets your Kick **title and category** before you go live.
 - Records your microphone along with the game audio.
 - Optional **chat bot** that answers viewers from your account:
