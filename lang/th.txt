@@ -1,4 +1,4 @@
-# ValoLive Â· th Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+﻿# ValoLive Â· th Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
  (sen)	 (คุณ)
  (şu an kapalı)	 (ปิดอยู่ตอนนี้)
  · BU HARİTADA {0} MAÇI	 · {0} แมตช์ในแมพนี้
@@ -338,3 +338,124 @@ Rakip hafızası: harita üstünde ikonlar (deneysel)	ความจำศั�
 {0} dk	{0} นาที
 {0} sn	{0} วิ
 şimdi	ตอนนี้
+Yayın anları: clutch, ilk kan, seri, ninja defuse, komik ölümler	ช่วงเด็ดในสตรีม: คลัตช์, เฟิร์สบลัด, สตรีค, นินจาดีฟิวส์, ตายฮาๆ
+ilk öldürme bizden	คิลแรกเป็นของเรา
+KUSURSUZ	ไร้ที่ติ
+kimse düşmeden raund alındı	ชนะรอบโดยไม่มีใครตาย
+SON RAKİP	ศัตรูคนสุดท้าย
+rakipte tek kişi kaldı	เหลือศัตรูคนเดียว
+{0} raund üst üste	{0} รอบติดต่อกัน
+GERİ DÖNÜŞ	คัมแบ็ก
+{0} raund geriden eşitlendi	ตามหลัง {0} รอบแล้วตีเสมอ
+MAÇ SAYISI	แมตช์พอยต์
+bir raund kaldı	อีกรอบเดียว
+RAKİP MAÇ SAYISINDA	แมตช์พอยต์ฝั่งศัตรู
+bu raund kritik	รอบนี้สำคัญมาก
+UZATMA	โอเวอร์ไทม์
+iki farkla kazanan alır	ต้องชนะห่างสองรอบ
+DEVRE ARASI	พักครึ่ง
+taraflar değişiyor	สลับฝั่ง
+bir raundda 5 öldürme	5 คิลในรอบเดียว
+bir raundda 4 öldürme	4 คิลในรอบเดียว
+NİNJA DEFUSE	นินจาดีฟิวส์
+{0} rakip ayaktayken imha ettin	ดีฟิวส์ตอนศัตรูยังอยู่ {0} คน
+takım arkadaşın {0} rakip ayaktayken imha etti	เพื่อนร่วมทีมดีฟิวส์ตอนศัตรูยังอยู่ {0} คน
+YER ÇEKİMİ KAZANDI	แรงโน้มถ่วงชนะ
+{0} kez düşerek öldün	ตกตาย {0} ครั้ง
+RAKİP UÇURUMDAN	ศัตรูตกเหว
+{0} rakip düşerek öldü	ศัตรูตกตาย {0} คน
+BIÇAK	มีด
+{0} bıçak öldürmesi	คิลด้วยมีด {0}
+SPIKE'IN DİBİNDE	ใกล้สไปค์เกินไป
+spike patlamasında {0} kez öldün	ตายเพราะสไปค์ระเบิด {0} ครั้ง
+KENDİ KENDİNE	ฆ่าตัวเอง
+kendi yeteneğinle {0} kez öldün	ตายเพราะสกิลตัวเอง {0} ครั้ง
+DOST ATEŞİ	ยิงพวกเดียวกัน
+takım arkadaşın seni {0} kez vurdu	เพื่อนร่วมทีมฆ่าคุณ {0} ครั้ง
+ACE GELİYOR	ACE กำลังมา
+AKVARYUM	ตู้ปลา
+AYARLAR	การตั้งค่า
+Akvaryum: chat'e yazan balık olur	ตู้ปลา: คนที่พิมพ์แชทจะกลายเป็นปลา
+BAŞLA!	ไป!
+Balon	ลูกโป่ง
+Balon: mesaj balonla süzülür, !pop patlatır	ลูกโป่ง: ข้อความลอยไปกับลูกโป่ง, !pop เจาะแตก
+Bu raund ace gelir mi? 🎯	รอบนี้จะเอซไหม? 🎯
+Bugün rank atlıyoruz 💪	วันนี้ขึ้นแรงก์ 💪
+Büyüteç	แว่นขยาย
+Büyüteç: nişangâhı büyütür	แว่นขยาย: ซูมเป้าเล็ง
+CHAT BİRLİKTE	แชทร่วมกัน
+CHAT EĞLENCESİ	แชทสนุก
+CHAT HAVAİ FİŞEK PATLATTI!	แชทจุดพลุแล้ว!
+Chat eğlencesi: izleyici komutları ekranda canlanır	แชทสนุก: คำสั่งของผู้ชมโผล่บนจอ
+Chat'e gidecek duyuru: 	ประกาศในแชท: 
+Chat'e yaz, balık ol!	พิมพ์แชทแล้วกลายเป็นปลา!
+Domates	มะเขือเทศ
+Domates / yumurta fırlat	ปามะเขือเทศ / ไข่
+Duvar yazısı (1 dk kalır)	กราฟฟิตี้ (อยู่ 1 นาที)
+EKRAN ŞAKALARI	แกล้งหน้าจอ
+Emoji yağmuru	ฝนอีโมจิ
+Emoji yağmuru (aynı emojiyi yazınca)	ฝนอีโมจิ (เมื่อหลายคนส่งอีโมจิเดียวกัน)
+Emoji yağmuru eşiği	เกณฑ์ฝนอีโมจิ
+F9: sniper perdesi · F10: yayın özeti	F9: ม่านกันสไนป์ · F10: สรุปสตรีม
+Fişek	พลุ
+Fişek (hepsi)	พลุ (ทั้งหมด)
+Güvercin	นกพิราบ
+Güvercin postası (ve sürprizi)	นกพิราบส่งจดหมาย (พร้อมของแถม)
+Havai fişek hedefi	เป้าหมายพลุ
+Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.	เลเยอร์ (เรดาร์, กล่องแชท, ช่วงเด็ด) และแชทสนุก (ลูกโป่ง, เครื่องบิน, มะเขือเทศ, แข่งเป็ด…) อยู่ในหน้าต่างแยก
+Kağıt uçak	เครื่องบินกระดาษ
+Komutları okumak için ana penceredeki Kick hesabını bağla.	เชื่อมบัญชี Kick ในหน้าต่างหลักเพื่ออ่านคำสั่ง
+MESAJ TAŞIYANLAR	ตัวส่งข้อความ
+Merhaba chat, bu bir deneme!	สวัสดีแชท นี่คือการทดสอบ!
+Ortak havai fişek	พลุรวมพลัง
+PAT!	ปัง!
+RADAR ROZETİ	ป้ายเรดาร์
+SNIPER KORUMASI	กันสไนป์
+Selam chat!	สวัสดีแชท!
+Selam chat! Bu yayın efsane 🔥	สวัสดี! สตรีมนี้ระดับตำนาน 🔥
+Sesli oku	อ่านออกเสียง
+Sesli oku (robot sesi)	อ่านออกเสียง (เสียงหุ่นยนต์)
+Sprey	สเปรย์
+Ters ekran	พลิกจอ
+Ters ekran (3 sn)	พลิกจอ (3 วิ)
+Ters ekran, büyüteç ve sesli okuma yalnızca abone ve modlara	พลิกจอ แว่นขยาย และอ่านออกเสียง เฉพาะซับและม็อด
+Teşekkürler: {0}	ขอบคุณ: {0}
+Uçak	เครื่องบิน
+Uçak pankartı	ป้ายลากเครื่องบิน
+ValoLive — Chat eğlencesi önizleme	ValoLive — ตัวอย่างแชทสนุก
+ValoLive — Yayın Paneli	ValoLive — แผงสตรีม
+Virgülle ayır. Bağlantılar her zaman silinir.	คั่นด้วยจุลภาค ลิงก์จะถูกลบเสมอ
+YAYIN PANELİ	แผงสตรีม
+YAYIN PANELİNİ AÇ	เปิดแผงสตรีม
+YAYIN ÜSTÜ	บนสตรีม
+Yasaklı kelimeler	คำต้องห้าม
+Yayın Paneli	แผงสตรีม
+Yayın açıkken radar, chat kutusu, maç sonu kartı, yayın anları ve chat komutları değiştirilemez; yayın bitince uygulanır.	ระหว่างไลฟ์เปลี่ยนเรดาร์ กล่องแชท การ์ดหลังแมตช์ ช่วงเด็ด และคำสั่งแชทไม่ได้ จะมีผลหลังจบสตรีม
+Yayın bu ayar kapalıyken başladı: açmak için yayını yeniden başlat.	สตรีมเริ่มตอนตัวเลือกนี้ปิดอยู่ เริ่มสตรีมใหม่เพื่อเปิด
+Yeni balık	ปลาตัวใหม่
+Yumurta	ไข่
+katılmak için !race yaz · {0}	พิมพ์ !race เพื่อเข้าร่วม · {0}
+kendiliğinden	อัตโนมัติ
+yok	ไม่มี
+{0} KAZANDI!	{0} ชนะ!
+{0} büyüteçle bakıyor	{0} กำลังส่องแว่นขยาย
+{0} ekranı ters çevirdi!	{0} พลิกจอกลับหัว!
+{0} fişek	{0} ลูก
+{0} kişi	{0} คน
+{0} patlattı	{0} เจาะแตก
+ÇAT!	แป๊ะ!
+Çıkartma	สติกเกอร์
+Çıkartma yapıştır (emoji)	แปะสติกเกอร์ (อีโมจิ)
+ÖNİZLEME	ตัวอย่าง
+ÖRDEK YARIŞI	แข่งเป็ด
+Önizlemede bekleme süresi yok. Kapalı eğlenceler burada da çalışmaz. Sesli okuma bilgisayarının hoparlöründen çıkar.	ในตัวอย่างไม่มีเวลารอ เอฟเฟกต์ที่ปิดไว้ใช้ไม่ได้ที่นี่เช่นกัน เสียงอ่านออกจากลำโพงคอม
+Önizlemede her eğlenceyi kendin dene (yayın gerekmez). Ters ekran ve büyüteç yayın başlarken eklenir: yayın açıkken değiştirilemez.	ลองทุกเอฟเฟกต์ในตัวอย่างได้ (ไม่ต้องสตรีม) พลิกจอและแว่นขยายจะถูกเพิ่มตอนเริ่มสตรีม เปลี่ยนระหว่างไลฟ์ไม่ได้
+Ördek yarışı	แข่งเป็ด
+Ördek yarışını {0} kazandı!	{0} ชนะการแข่งเป็ด!
+İzleyici başına bekleme	เวลารอต่อผู้ชม
+İzleyiciler chat'e komut yazar, ekranda canlanır. Kanal puanı gerekmez; her izleyici için bekleme süresi var.	ผู้ชมพิมพ์คำสั่งในแชทแล้วมันจะโผล่บนจอ ไม่ต้องใช้แต้มช่อง ผู้ชมแต่ละคนมีเวลารอ
+İğne	เข็ม
+ŞLAP!	แปะ!
+Şişe	ขวด
+Şişede mesaj	ข้อความในขวด
+POP!	ป๊อก!

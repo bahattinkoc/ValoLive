@@ -36,6 +36,13 @@ namespace ValoLive
         public int CategoryId;
         // Yayın katmanları
         public bool ChatBox = true, MapCover = true, ChatBot = true, PostMatchCard = true;
+        public bool Moments = true;                                  // yayın anları: clutch, ilk kan, seri, maç sonu komik anlar (animasyon)
+        public bool Fun = true;                                      // chat eğlencesi: izleyici komutlarıyla ekranda balon, uçak, domates… (Fun.cs)
+        public string FunOff = "";                                   // kapatılan eğlenceler (virgüllü kimlikler, FunChat.Defs)
+        public int FunCooldown = 30, FunGoal = 10, FunRain = 5;      // izleyici başına bekleme (sn), havai fişek hedefi, emoji yağmuru eşiği (kişi)
+        public bool FunSubsOnly;                                     // ters ekran, büyüteç, sesli okuma yalnızca abone/mod
+        public string FunBlock = "amk, aq, amina, aminakoyim, orospu, pic, siktir, siker, sikim, sik, yarrak, yarak, oc, ibne, kahpe, pezevenk, serefsiz, anani, fuck, shit, bitch, nigger, nigga, faggot, cunt, whore";
+        public bool FunOn(string id) => Fun && !("," + FunOff + ",").Contains("," + id + ",");
         public bool WindowCapture;                                   // hafif yakalama: yalnızca Valorant penceresi (deneysel, varsayılan kapalı)
         public bool BreakScreen = true, AutoLobby = true, LobbyAlerts = true, AutoCover = true, TrayHintShown;
         public bool EnemyMemory;                                     // rakip hafızası: minimap'ten son görülen yerler (deneysel, varsayılan kapalı)

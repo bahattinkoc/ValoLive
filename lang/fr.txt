@@ -1,4 +1,4 @@
-# ValoLive Â· fr Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+﻿# ValoLive Â· fr Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
  (sen)	 (toi)
  (şu an kapalı)	 (fermée pour l'instant)
  · BU HARİTADA {0} MAÇI	 · {0} MATCHS SUR CETTE CARTE
@@ -338,3 +338,124 @@ Rakip hafızası: harita üstünde ikonlar (deneysel)	Mémoire ennemie : icônes
 {0} dk	{0} min
 {0} sn	{0} s
 şimdi	maintenant
+Yayın anları: clutch, ilk kan, seri, ninja defuse, komik ölümler	Moments du stream : clutch, premier sang, séries, ninja defuse, morts drôles
+ilk öldürme bizden	le premier kill est pour nous
+KUSURSUZ	PARFAIT
+kimse düşmeden raund alındı	manche gagnée sans perte
+SON RAKİP	DERNIER ENNEMI
+rakipte tek kişi kaldı	il reste un ennemi
+{0} raund üst üste	{0} manches d'affilée
+GERİ DÖNÜŞ	REMONTADA
+{0} raund geriden eşitlendi	égalisé après {0} manches de retard
+MAÇ SAYISI	BALLE DE MATCH
+bir raund kaldı	plus qu'une manche
+RAKİP MAÇ SAYISINDA	BALLE DE MATCH ADVERSE
+bu raund kritik	cette manche est cruciale
+UZATMA	PROLONGATIONS
+iki farkla kazanan alır	il faut deux manches d'écart
+DEVRE ARASI	MI-TEMPS
+taraflar değişiyor	changement de côté
+bir raundda 5 öldürme	5 kills en une manche
+bir raundda 4 öldürme	4 kills en une manche
+NİNJA DEFUSE	NINJA DEFUSE
+{0} rakip ayaktayken imha ettin	désamorcé avec {0} ennemis en vie
+takım arkadaşın {0} rakip ayaktayken imha etti	un coéquipier a désamorcé avec {0} ennemis en vie
+YER ÇEKİMİ KAZANDI	LA GRAVITÉ GAGNE
+{0} kez düşerek öldün	mort de chute {0} fois
+RAKİP UÇURUMDAN	ENNEMI DANS LE VIDE
+{0} rakip düşerek öldü	{0} ennemi mort de chute
+BIÇAK	COUTEAU
+{0} bıçak öldürmesi	{0} kill au couteau
+SPIKE'IN DİBİNDE	TROP PRÈS DU SPIKE
+spike patlamasında {0} kez öldün	mort par le spike {0} fois
+KENDİ KENDİNE	AUTO-ÉLIMINATION
+kendi yeteneğinle {0} kez öldün	tué par ta propre compétence {0} fois
+DOST ATEŞİ	TIR AMI
+takım arkadaşın seni {0} kez vurdu	un coéquipier t'a eu {0} fois
+ACE GELİYOR	ACE EN APPROCHE
+AKVARYUM	AQUARIUM
+AYARLAR	RÉGLAGES
+Akvaryum: chat'e yazan balık olur	Aquarium : chaque personne du chat devient un poisson
+BAŞLA!	PARTEZ !
+Balon	Ballon
+Balon: mesaj balonla süzülür, !pop patlatır	Ballon : le message flotte sur un ballon, !pop l'éclate
+Bu raund ace gelir mi? 🎯	Un ace ce round ? 🎯
+Bugün rank atlıyoruz 💪	On rank up aujourd'hui 💪
+Büyüteç	Loupe
+Büyüteç: nişangâhı büyütür	Loupe : zoome sur le viseur
+CHAT BİRLİKTE	LE CHAT ENSEMBLE
+CHAT EĞLENCESİ	FUN DU CHAT
+CHAT HAVAİ FİŞEK PATLATTI!	LE CHAT A LANCÉ UN FEU D'ARTIFICE !
+Chat eğlencesi: izleyici komutları ekranda canlanır	Fun du chat : les commandes des viewers s'animent à l'écran
+Chat'e gidecek duyuru: 	Annonce pour le chat : 
+Chat'e yaz, balık ol!	Écris dans le chat, deviens un poisson !
+Domates	Tomate
+Domates / yumurta fırlat	Lancer une tomate / un œuf
+Duvar yazısı (1 dk kalır)	Graffiti (reste 1 min)
+EKRAN ŞAKALARI	BLAGUES D'ÉCRAN
+Emoji yağmuru	Pluie d'emojis
+Emoji yağmuru (aynı emojiyi yazınca)	Pluie d'emojis (quand beaucoup envoient le même)
+Emoji yağmuru eşiği	Seuil pluie d'emojis
+F9: sniper perdesi · F10: yayın özeti	F9 : rideau anti-sniper · F10 : résumé du stream
+Fişek	Fusée
+Fişek (hepsi)	Fusée (toutes)
+Güvercin	Pigeon
+Güvercin postası (ve sürprizi)	Pigeon voyageur (et sa surprise)
+Havai fişek hedefi	Objectif feu d'artifice
+Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.	Les calques (radar, boîte de chat, moments du stream) et le fun du chat (ballon, avion, tomate, course de canards…) sont dans une fenêtre à part.
+Kağıt uçak	Avion en papier
+Komutları okumak için ana penceredeki Kick hesabını bağla.	Connecte ton compte Kick dans la fenêtre principale pour lire les commandes.
+MESAJ TAŞIYANLAR	PORTEURS DE MESSAGES
+Merhaba chat, bu bir deneme!	Salut le chat, ceci est un test !
+Ortak havai fişek	Feu d'artifice collectif
+PAT!	POP !
+RADAR ROZETİ	BADGE RADAR
+SNIPER KORUMASI	PROTECTION ANTI-SNIPER
+Selam chat!	Salut le chat !
+Selam chat! Bu yayın efsane 🔥	Salut le chat ! Ce stream est légendaire 🔥
+Sesli oku	Lire à voix haute
+Sesli oku (robot sesi)	Lire à voix haute (voix de robot)
+Sprey	Graff
+Ters ekran	Écran retourné
+Ters ekran (3 sn)	Écran retourné (3 s)
+Ters ekran, büyüteç ve sesli okuma yalnızca abone ve modlara	Écran retourné, loupe et lecture vocale réservés aux abonnés et modos
+Teşekkürler: {0}	Merci : {0}
+Uçak	Avion
+Uçak pankartı	Banderole d'avion
+ValoLive — Chat eğlencesi önizleme	ValoLive — Aperçu du fun du chat
+ValoLive — Yayın Paneli	ValoLive — Panneau du stream
+Virgülle ayır. Bağlantılar her zaman silinir.	Sépare par des virgules. Les liens sont toujours supprimés.
+YAYIN PANELİ	PANNEAU DU STREAM
+YAYIN PANELİNİ AÇ	OUVRIR LE PANNEAU
+YAYIN ÜSTÜ	SUR LE STREAM
+Yasaklı kelimeler	Mots interdits
+Yayın Paneli	PANNEAU DU STREAM
+Yayın açıkken radar, chat kutusu, maç sonu kartı, yayın anları ve chat komutları değiştirilemez; yayın bitince uygulanır.	En direct, le radar, la boîte de chat, la carte de fin de match, les moments du stream et les commandes du chat ne peuvent pas changer ; appliqué après le stream.
+Yayın bu ayar kapalıyken başladı: açmak için yayını yeniden başlat.	Le stream a démarré sans cette option : redémarre-le pour l'activer.
+Yeni balık	Nouveau poisson
+Yumurta	Œuf
+katılmak için !race yaz · {0}	tape !race pour participer · {0}
+kendiliğinden	automatique
+yok	aucun
+{0} KAZANDI!	{0} GAGNE !
+{0} büyüteçle bakıyor	{0} sort la loupe
+{0} ekranı ters çevirdi!	{0} a retourné l'écran !
+{0} fişek	{0} fusées
+{0} kişi	{0} personnes
+{0} patlattı	{0} l'a éclaté
+ÇAT!	CRAC !
+Çıkartma	Sticker
+Çıkartma yapıştır (emoji)	Coller un sticker (emoji)
+ÖNİZLEME	APERÇU
+ÖRDEK YARIŞI	COURSE DE CANARDS
+Önizlemede bekleme süresi yok. Kapalı eğlenceler burada da çalışmaz. Sesli okuma bilgisayarının hoparlöründen çıkar.	Pas de délai dans l'aperçu. Les effets désactivés ne marchent pas ici non plus. La synthèse vocale sort des haut-parleurs du PC.
+Önizlemede her eğlenceyi kendin dene (yayın gerekmez). Ters ekran ve büyüteç yayın başlarken eklenir: yayın açıkken değiştirilemez.	Teste chaque effet dans l'aperçu (pas besoin de stream). L'écran retourné et la loupe sont ajoutés au début du stream : non modifiables en direct.
+Ördek yarışı	COURSE DE CANARDS
+Ördek yarışını {0} kazandı!	{0} a gagné la course de canards !
+İzleyici başına bekleme	Délai par viewer
+İzleyiciler chat'e komut yazar, ekranda canlanır. Kanal puanı gerekmez; her izleyici için bekleme süresi var.	Les viewers tapent des commandes dans le chat et elles s'animent à l'écran. Pas besoin de points de chaîne ; chaque viewer a un délai.
+İğne	Épingle
+ŞLAP!	SPLAT !
+Şişe	Bouteille
+Şişede mesaj	Message dans une bouteille
+POP!	POP !

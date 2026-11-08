@@ -30,7 +30,7 @@ namespace ValoLive
         static readonly Color Muted = ColorTranslator.FromHtml("#9aa3b2");
         const int BannerMs = 6500, SlideMs = 450;
 
-        /// <summary>En son çizilen katman (PNG baytları).</summary>
+        /// <summary>En son çizilen katman: W×H ham BGRA.</summary>
         public byte[] Current { get; private set; }
         /// <summary>Panelde hiçbir şey yok (oyun sırasında çoğu zaman). Boş tam ekran katmanı her karede
         /// karıştırmak ffmpeg'de çekirdeğin ~%25'ini yiyordu: Streamer boşken karıştırmayı kapatır.</summary>
@@ -152,11 +152,7 @@ namespace ValoLive
                 }
                 bool blank = !cov && !sum && !priv && !br && !(st != null && st.TierId > 0 && rankPanel) && b == null;
 
-                using (var ms = new MemoryStream())
-                {
-                    bmp.Save(ms, ImageFormat.Png);
-                    Current = ms.ToArray();
-                }
+                Current = Layer.Raw(bmp); // ham BGRA: 1080p PNG sıkıştırması kare başına ~36 ms tutuyordu
                 // Önce yeni kare, sonra bildirim: karıştırma açıldığında ffmpeg eski boş kareyi değil yenisini görür.
                 if (blank != Blank) { Blank = blank; BlankChanged?.Invoke(blank); }
             }

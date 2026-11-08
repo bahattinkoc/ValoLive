@@ -1,4 +1,4 @@
-# ValoLive Â· pt Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+﻿# ValoLive Â· pt Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
  (sen)	 (você)
  (şu an kapalı)	 (fechado agora)
  · BU HARİTADA {0} MAÇI	 · {0} PARTIDAS NESTE MAPA
@@ -338,3 +338,124 @@ Rakip hafızası: harita üstünde ikonlar (deneysel)	Memória de inimigos: íco
 {0} dk	{0} min
 {0} sn	{0} s
 şimdi	agora
+Yayın anları: clutch, ilk kan, seri, ninja defuse, komik ölümler	Momentos da live: clutch, primeiro abate, sequências, ninja defuse, mortes engraçadas
+ilk öldürme bizden	o primeiro abate é nosso
+KUSURSUZ	IMPECÁVEL
+kimse düşmeden raund alındı	rodada vencida sem baixas
+SON RAKİP	ÚLTIMO INIMIGO
+rakipte tek kişi kaldı	resta um inimigo
+{0} raund üst üste	{0} rodadas seguidas
+GERİ DÖNÜŞ	VIRADA
+{0} raund geriden eşitlendi	empatou após estar {0} rodadas atrás
+MAÇ SAYISI	MATCH POINT
+bir raund kaldı	falta uma rodada
+RAKİP MAÇ SAYISINDA	MATCH POINT DO INIMIGO
+bu raund kritik	esta rodada é crucial
+UZATMA	PRORROGAÇÃO
+iki farkla kazanan alır	vence quem abrir dois
+DEVRE ARASI	INTERVALO
+taraflar değişiyor	troca de lado
+bir raundda 5 öldürme	5 abates em uma rodada
+bir raundda 4 öldürme	4 abates em uma rodada
+NİNJA DEFUSE	NINJA DEFUSE
+{0} rakip ayaktayken imha ettin	você desarmou com {0} inimigos vivos
+takım arkadaşın {0} rakip ayaktayken imha etti	um aliado desarmou com {0} inimigos vivos
+YER ÇEKİMİ KAZANDI	A GRAVIDADE VENCEU
+{0} kez düşerek öldün	morreu de queda {0} vezes
+RAKİP UÇURUMDAN	INIMIGO NO ABISMO
+{0} rakip düşerek öldü	{0} inimigo morreu de queda
+BIÇAK	FACA
+{0} bıçak öldürmesi	{0} abate de faca
+SPIKE'IN DİBİNDE	PERTO DEMAIS DA SPIKE
+spike patlamasında {0} kez öldün	morreu para a spike {0} vezes
+KENDİ KENDİNE	AUTOELIMINAÇÃO
+kendi yeteneğinle {0} kez öldün	morto pela própria habilidade {0} vezes
+DOST ATEŞİ	FOGO AMIGO
+takım arkadaşın seni {0} kez vurdu	um aliado te matou {0} vezes
+ACE GELİYOR	VEM ACE AÍ
+AKVARYUM	AQUÁRIO
+AYARLAR	AJUSTES
+Akvaryum: chat'e yazan balık olur	Aquário: quem escreve no chat vira peixe
+BAŞLA!	JÁ!
+Balon	Balão
+Balon: mesaj balonla süzülür, !pop patlatır	Balão: a mensagem flutua num balão, !pop estoura
+Bu raund ace gelir mi? 🎯	Sai ace nesse round? 🎯
+Bugün rank atlıyoruz 💪	Hoje a gente sobe de rank 💪
+Büyüteç	Lupa
+Büyüteç: nişangâhı büyütür	Lupa: amplia a mira
+CHAT BİRLİKTE	CHAT JUNTO
+CHAT EĞLENCESİ	DIVERSÃO DO CHAT
+CHAT HAVAİ FİŞEK PATLATTI!	O CHAT SOLTOU FOGOS!
+Chat eğlencesi: izleyici komutları ekranda canlanır	Diversão do chat: comandos dos espectadores ganham vida na tela
+Chat'e gidecek duyuru: 	Anúncio para o chat: 
+Chat'e yaz, balık ol!	Escreva no chat e vire peixe!
+Domates	Tomate
+Domates / yumurta fırlat	Jogar tomate / ovo
+Duvar yazısı (1 dk kalır)	Grafite (fica 1 min)
+EKRAN ŞAKALARI	PEGADINHAS DE TELA
+Emoji yağmuru	Chuva de emojis
+Emoji yağmuru (aynı emojiyi yazınca)	Chuva de emojis (quando muitos mandam o mesmo)
+Emoji yağmuru eşiği	Limite da chuva de emojis
+F9: sniper perdesi · F10: yayın özeti	F9: cortina anti-sniper · F10: resumo da live
+Fişek	Fogo
+Fişek (hepsi)	Fogo (todos)
+Güvercin	Pombo
+Güvercin postası (ve sürprizi)	Pombo-correio (e a surpresa dele)
+Havai fişek hedefi	Meta dos fogos
+Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.	As camadas (radar, caixa de chat, momentos da live) e a diversão do chat (balão, avião, tomate, corrida de patos…) ficam em outra janela.
+Kağıt uçak	Avião de papel
+Komutları okumak için ana penceredeki Kick hesabını bağla.	Conecte sua conta Kick na janela principal para ler os comandos.
+MESAJ TAŞIYANLAR	PORTADORES DE MENSAGENS
+Merhaba chat, bu bir deneme!	Olá chat, isto é um teste!
+Ortak havai fişek	Fogos em grupo
+PAT!	POW!
+RADAR ROZETİ	EMBLEMA DO RADAR
+SNIPER KORUMASI	PROTEÇÃO ANTI-SNIPER
+Selam chat!	Oi chat!
+Selam chat! Bu yayın efsane 🔥	Oi chat! Essa live é lendária 🔥
+Sesli oku	Ler em voz alta
+Sesli oku (robot sesi)	Ler em voz alta (voz de robô)
+Sprey	Spray
+Ters ekran	Tela virada
+Ters ekran (3 sn)	Tela virada (3 s)
+Ters ekran, büyüteç ve sesli okuma yalnızca abone ve modlara	Virar a tela, lupa e leitura em voz alta só para subs e mods
+Teşekkürler: {0}	Valeu: {0}
+Uçak	Avião
+Uçak pankartı	Faixa de avião
+ValoLive — Chat eğlencesi önizleme	ValoLive — Prévia da diversão do chat
+ValoLive — Yayın Paneli	ValoLive — Painel da live
+Virgülle ayır. Bağlantılar her zaman silinir.	Separe com vírgulas. Links são sempre removidos.
+YAYIN PANELİ	PAINEL DA LIVE
+YAYIN PANELİNİ AÇ	ABRIR PAINEL DA LIVE
+YAYIN ÜSTÜ	NA LIVE
+Yasaklı kelimeler	Palavras proibidas
+Yayın Paneli	PAINEL DA LIVE
+Yayın açıkken radar, chat kutusu, maç sonu kartı, yayın anları ve chat komutları değiştirilemez; yayın bitince uygulanır.	Durante a live não dá para mudar radar, caixa de chat, cartão pós-partida, momentos e comandos do chat; vale depois da live.
+Yayın bu ayar kapalıyken başladı: açmak için yayını yeniden başlat.	A live começou com isso desligado: reinicie a live para ativar.
+Yeni balık	Novo peixe
+Yumurta	Ovo
+katılmak için !race yaz · {0}	digite !race para entrar · {0}
+kendiliğinden	automático
+yok	nenhuma
+{0} KAZANDI!	{0} VENCEU!
+{0} büyüteçle bakıyor	{0} está olhando com a lupa
+{0} ekranı ters çevirdi!	{0} virou a tela!
+{0} fişek	{0} fogos
+{0} kişi	{0} pessoas
+{0} patlattı	{0} estourou
+ÇAT!	CRAC!
+Çıkartma	Adesivo
+Çıkartma yapıştır (emoji)	Colar adesivo (emoji)
+ÖNİZLEME	PRÉVIA
+ÖRDEK YARIŞI	CORRIDA DE PATOS
+Önizlemede bekleme süresi yok. Kapalı eğlenceler burada da çalışmaz. Sesli okuma bilgisayarının hoparlöründen çıkar.	Na prévia não há espera. Efeitos desativados também não funcionam aqui. A leitura em voz alta sai pelos alto-falantes do PC.
+Önizlemede her eğlenceyi kendin dene (yayın gerekmez). Ters ekran ve büyüteç yayın başlarken eklenir: yayın açıkken değiştirilemez.	Teste cada efeito na prévia (sem live). Virar a tela e lupa são adicionados ao iniciar a live: não dá para mudar ao vivo.
+Ördek yarışı	CORRIDA DE PATOS
+Ördek yarışını {0} kazandı!	{0} venceu a corrida de patos!
+İzleyici başına bekleme	Espera por espectador
+İzleyiciler chat'e komut yazar, ekranda canlanır. Kanal puanı gerekmez; her izleyici için bekleme süresi var.	Os espectadores digitam comandos no chat e eles ganham vida na tela. Não precisa de pontos do canal; cada espectador tem um tempo de espera.
+İğne	Alfinete
+ŞLAP!	SPLAT!
+Şişe	Garrafa
+Şişede mesaj	Mensagem na garrafa
+POP!	POP!

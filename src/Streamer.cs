@@ -23,6 +23,7 @@ namespace ValoLive
         public OverlayRenderer Overlay;
         public Func<string> Masks;     // CaptureGuard'ın örtü filtreleri (ekran karesine, panelden önce); her yakalama başlangıcında sorulur
         public List<Layer> Layers = new List<Layer>(); // panelin üstüne bindirilen küçük animasyonlu katmanlar (radar, chat)
+        public bool Flip, Zoom;        // chat eğlencesi: ters ekran ve nişangâh büyüteci (grafikte kapalı durur, canlı komutla açılır)
     }
 
     sealed class Streamer
@@ -60,6 +61,10 @@ namespace ValoLive
 
         static string Inv(double d) => d.ToString("0.###", CultureInfo.InvariantCulture);
 
+        const int PanelFps = 15, HiddenFps = 4;
+        /// <summary>setpts ifadesi: duvar saatinin bir sonraki 1/fps sınırı (girdi ancak o kadar sık okunur).</summary>
+        static string Clock(int fps) => $"(floor(RTCTIME*{fps}/1000000)+1)/{fps}/TB";
+
         static string RawInput(AudioSource s, string epoch, string pipe) =>
             $"-itsoffset {epoch} -f f32le -ar {s.SampleRate} -ac {s.Channels} -thread_queue_size 1024 -i \"{pipe}\" ";
 
@@ -92,19 +97,38 @@ namespace ValoLive
                 : Environment.GetEnvironmentVariable("VALOLIVE_TESTSRC") == "1"
                 ? $"testsrc2=s={o.ScreenWidth}x{o.ScreenHeight}:r=60,realtime,setpts=RTCTIME/1000000/TB,format=bgra"
                 : "ddagrab=output_idx=0:framerate=60:draw_mouse=0,setpts=RTCTIME/1000000/TB,hwdownload,format=bgra";
-            var fc = new StringBuilder(screen + (o.Masks?.Invoke() ?? "") + "[m];");
-            // Panel epoch'tan 15 FPS ilerler: ffmpeg panel karesini ancak video o ana gelince ister
-            // (saniyede ~15 PNG çözümü). probesize=32: açılışta saniyelerce kareyi önden okuyup
-            // tamponlamasın (yoksa panel ilk ~8 sn eski/boş görünür).
+            var fc = new StringBuilder(screen + (o.Masks?.Invoke() ?? ""));
+            // Ters ekran: kapalıyken kareye dokunmadan geçer. Örtülerden sonra: örtüler ekranın gerçek yerine oturur.
+            if (o.Flip) fc.Append(",hflip@fh=enable=0,vflip@fv=enable=0");
+            // Büyüteç: nişangâhın çevresi 2 kat büyütülüp ortaya bindirilir (yalnızca açıkken karışır).
+            // framestep@zs: kapalıyken kolu 30 karede bire indirir; bgra ölçekleme her karede çekirdeğin ~%30'unu yiyordu.
+            if (o.Zoom)
+            {
+                int z = Math.Max(60, (int)(140 * o.ScreenHeight / 1080.0)) * 2;
+                fc.Append($",split[m0][zs];[zs]framestep@zs=step=30:enable=1,crop={z}:{z}:{(o.ScreenWidth - z) / 2}:{(o.ScreenHeight - z) / 2},scale={2 * z}:{2 * z}:flags=bicubic[zm];" +
+                          $"[m0][zm]overlay@zoom=x={(o.ScreenWidth - 2 * z) / 2}:y={(o.ScreenHeight - 2 * z) / 2}:enable=0:format=auto");
+            }
+            fc.Append("[m];");
+            // Panel ve katmanlar ham BGRA borulardan gelir (rawvideo: çözme yok, yalnızca kopya).
+            // Zaman damgası duvar saatinin bir sonraki 1/fps sınırı (ekran karesiyle aynı saat): ffmpeg yeni kareyi
+            // ancak görüntü o ana gelince ister. İfade öncekine bakmadığı için hız canlı değiştirilebilir
+            // (PREV_OUTPTS'li ifade değişince damga donup ffmpeg'i kilitliyordu): görünmeyen katman saniyede 4 kez okunur.
+            // probesize=32: açılışta saniyelerce kareyi önden okuyup tamponlamasın (yoksa ilk saniyeler eski/boş görünür).
             // Filtre sözdiziminde '\' iki kat kaçış ister: \ -> \\\\
-            string Movie(string pipe, int fps, string label) =>
-                $"movie={pipe.Replace(@"\", @"\\\\")}:f=image2pipe:format_opts=probesize=32,setpts=N/({fps}*TB)+{epoch}/TB[{label}];";
-            fc.Append(Movie(ovPipe, 15, "ov"));
-            for (int i = 0; i < layerPipes.Count; i++) fc.Append(Movie(layerPipes[i], o.Layers[i].Fps, "ly" + i));
-            // Panel boşken karıştırma kapalı başlar; sonrasını canlı komutlar açar/kapatır (BlankChanged).
+            string Movie(string pipe, int w, int h, string pts, int fps, string label, int up = 1) =>
+                $"movie={pipe.Replace(@"\", @"\\\\")}:f=rawvideo:format_opts=video_size={w}x{h}\\\\:pixel_format=bgra\\\\:probesize=32," +
+                $"settb=1/1000,setpts@{pts}={Clock(fps)}" +
+                (up > 1 ? $",scale=iw*{up}:ih*{up}:flags=bilinear" : "") + $"[{label}];";
+            fc.Append(Movie(ovPipe, o.ScreenWidth, o.ScreenHeight, "pp", o.Overlay.Blank ? HiddenFps : PanelFps, "ov"));
+            for (int i = 0; i < layerPipes.Count; i++)
+            {
+                var l = o.Layers[i];
+                fc.Append(Movie(layerPipes[i], l.W, l.H, "lp" + i, l.Shown ? l.Fps : HiddenFps, "ly" + i, l.Up));
+            }
+            // Boş panel ve görünmeyen katmanlar karıştırılmaz; sonrasını canlı komutlar açar/kapatır (BlankChanged, ShownChanged).
             fc.Append($"[m][ov]overlay@ov=eof_action=repeat:format=auto:enable={(o.Overlay.Blank ? 0 : 1)}");
             for (int i = 0; i < layerPipes.Count; i++)
-                fc.Append($"[o{i}];[o{i}][ly{i}]overlay=x={o.Layers[i].X}:y={o.Layers[i].Y}:eof_action=repeat:format=auto");
+                fc.Append($"[o{i}];[o{i}][ly{i}]overlay@ly{i}=x={o.Layers[i].X}:y={o.Layers[i].Y}:eof_action=repeat:format=auto:enable={(o.Layers[i].Shown ? 1 : 0)}");
             // RGB→YUV dönüşümü CPU'da değil NVENC'te (CPU'da 1080p60 için çekirdeğin ~%40'ı gidiyordu).
             // NVENC BT.601 sınırlı aralık matrisiyle dönüştürür; akış da öyle etiketlenir (renkler birebir kalır).
             // Etiket şart: yoksa akış "GBR, full range" görünür ve Kick (IVS) bunu yanlış yapılandırılmış sayar.
@@ -261,6 +285,13 @@ namespace ValoLive
             if (opts?.Overlay != null) opts.Overlay.BlankChanged -= OnOverlayBlank;
             opts = o; gameSrc = game; micSrc = mic;
             o.Overlay.BlankChanged += OnOverlayBlank;
+            for (int i = 0; i < o.Layers.Count; i++)
+            {
+                int k = i;
+                // Yeniden bağlanmada aynı katmanlarla tekrar Start çağrılır: bir kez abone ol.
+                var l = o.Layers[i];
+                if (sparseHooked.Add(l)) l.ShownChanged += v => Gate("lp" + k, "ly" + k, v, l.Fps);
+            }
             baseEpochMs = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
             capAttempt = 0;
             restartDue = DateTime.MaxValue;
@@ -273,7 +304,16 @@ namespace ValoLive
             statsTimer = new Timer(_ => Stats(), null, 5000, 5000);
         }
 
-        void OnOverlayBlank(bool blank) => SendCommand("overlay@ov enable " + (blank ? 0 : 1));
+        readonly HashSet<Layer> sparseHooked = new HashSet<Layer>();
+
+        void OnOverlayBlank(bool blank) => Gate("pp", "ov", !blank, PanelFps);
+
+        /// <summary>Açarken önce okuma hızı, sonra karıştırma; kapatırken tersi.</summary>
+        void Gate(string pts, string overlay, bool on, int fps)
+        {
+            if (on) { SendCommand($"setpts@{pts} expr {Clock(fps)}"); SendCommand($"overlay@{overlay} enable 1"); }
+            else { SendCommand($"overlay@{overlay} enable 0"); SendCommand($"setpts@{pts} expr {Clock(HiddenFps)}"); }
+        }
 
         /// <summary>
         /// Her 250 ms: zamanı gelen yeniden başlatmayı yapar; yakalama ölü ama başlatma planlanmamışsa planlar;

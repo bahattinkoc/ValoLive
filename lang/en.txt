@@ -1,4 +1,4 @@
-# ValoLive Â· en Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+﻿# ValoLive Â· en Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
  (sen)	 (you)
  (şu an kapalı)	 (currently closed)
  · BU HARİTADA {0} MAÇI	 · {0} MATCHES ON THIS MAP
@@ -338,3 +338,124 @@ Rakip hafızası: harita üstünde ikonlar (deneysel)	Enemy memory: icons on the
 {0} dk	{0} min
 {0} sn	{0} s
 şimdi	now
+Yayın anları: clutch, ilk kan, seri, ninja defuse, komik ölümler	Stream moments: clutch, first blood, streaks, ninja defuse, funny deaths
+ilk öldürme bizden	first kill is ours
+KUSURSUZ	FLAWLESS
+kimse düşmeden raund alındı	round won with nobody down
+SON RAKİP	LAST ENEMY
+rakipte tek kişi kaldı	one enemy left
+{0} raund üst üste	{0} rounds in a row
+GERİ DÖNÜŞ	COMEBACK
+{0} raund geriden eşitlendi	tied after being {0} rounds down
+MAÇ SAYISI	MATCH POINT
+bir raund kaldı	one round to go
+RAKİP MAÇ SAYISINDA	ENEMY MATCH POINT
+bu raund kritik	this round is critical
+UZATMA	OVERTIME
+iki farkla kazanan alır	win by two
+DEVRE ARASI	HALFTIME
+taraflar değişiyor	switching sides
+bir raundda 5 öldürme	5 kills in one round
+bir raundda 4 öldürme	4 kills in one round
+NİNJA DEFUSE	NINJA DEFUSE
+{0} rakip ayaktayken imha ettin	you defused with {0} enemies alive
+takım arkadaşın {0} rakip ayaktayken imha etti	a teammate defused with {0} enemies alive
+YER ÇEKİMİ KAZANDI	GRAVITY WINS
+{0} kez düşerek öldün	you fell to your death {0}×
+RAKİP UÇURUMDAN	ENEMY OFF THE EDGE
+{0} rakip düşerek öldü	{0} enemy fell to their death
+BIÇAK	KNIFE
+{0} bıçak öldürmesi	{0} knife kill
+SPIKE'IN DİBİNDE	TOO CLOSE TO THE SPIKE
+spike patlamasında {0} kez öldün	you died to the spike {0}×
+KENDİ KENDİNE	SELF-INFLICTED
+kendi yeteneğinle {0} kez öldün	killed by your own ability {0}×
+DOST ATEŞİ	FRIENDLY FIRE
+takım arkadaşın seni {0} kez vurdu	a teammate got you {0}×
+ACE GELİYOR	ACE INCOMING
+AKVARYUM	AQUARIUM
+AYARLAR	SETTINGS
+Akvaryum: chat'e yazan balık olur	Aquarium: everyone who chats becomes a fish
+BAŞLA!	GO!
+Balon	Balloon
+Balon: mesaj balonla süzülür, !pop patlatır	Balloon: message floats on a balloon, !pop bursts it
+Bu raund ace gelir mi? 🎯	Ace this round? 🎯
+Bugün rank atlıyoruz 💪	Ranking up today 💪
+Büyüteç	Magnifier
+Büyüteç: nişangâhı büyütür	Magnifier: zooms in on the crosshair
+CHAT BİRLİKTE	CHAT TOGETHER
+CHAT EĞLENCESİ	CHAT FUN
+CHAT HAVAİ FİŞEK PATLATTI!	CHAT LAUNCHED FIREWORKS!
+Chat eğlencesi: izleyici komutları ekranda canlanır	Chat fun: viewer commands come to life on screen
+Chat'e gidecek duyuru: 	Announcement for chat: 
+Chat'e yaz, balık ol!	Chat to become a fish!
+Domates	Tomato
+Domates / yumurta fırlat	Throw a tomato / egg
+Duvar yazısı (1 dk kalır)	Graffiti (stays 1 min)
+EKRAN ŞAKALARI	SCREEN PRANKS
+Emoji yağmuru	Emoji rain
+Emoji yağmuru (aynı emojiyi yazınca)	Emoji rain (when many send the same emoji)
+Emoji yağmuru eşiği	Emoji rain threshold
+F9: sniper perdesi · F10: yayın özeti	F9: sniper curtain · F10: stream summary
+Fişek	Firework
+Fişek (hepsi)	Firework (all)
+Güvercin	Pigeon
+Güvercin postası (ve sürprizi)	Pigeon post (and its surprise)
+Havai fişek hedefi	Firework goal
+Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.	Overlays (radar, chat box, stream moments) and chat fun (balloon, plane, tomato, duck race…) are in a separate window.
+Kağıt uçak	Paper plane
+Komutları okumak için ana penceredeki Kick hesabını bağla.	Connect your Kick account in the main window so commands can be read.
+MESAJ TAŞIYANLAR	MESSAGE CARRIERS
+Merhaba chat, bu bir deneme!	Hello chat, this is a test!
+Ortak havai fişek	Group fireworks
+PAT!	POP!
+RADAR ROZETİ	RADAR BADGE
+SNIPER KORUMASI	SNIPER PROTECTION
+Selam chat!	Hi chat!
+Selam chat! Bu yayın efsane 🔥	Hi chat! This stream is legendary 🔥
+Sesli oku	Read aloud
+Sesli oku (robot sesi)	Read aloud (robot voice)
+Sprey	Spray
+Ters ekran	Screen flip
+Ters ekran (3 sn)	Screen flip (3 s)
+Ters ekran, büyüteç ve sesli okuma yalnızca abone ve modlara	Screen flip, magnifier and read-aloud for subs and mods only
+Teşekkürler: {0}	Thanks: {0}
+Uçak	Plane
+Uçak pankartı	Plane banner
+ValoLive — Chat eğlencesi önizleme	ValoLive — Chat fun preview
+ValoLive — Yayın Paneli	ValoLive — Stream Panel
+Virgülle ayır. Bağlantılar her zaman silinir.	Separate with commas. Links are always removed.
+YAYIN PANELİ	STREAM PANEL
+YAYIN PANELİNİ AÇ	OPEN STREAM PANEL
+YAYIN ÜSTÜ	ON STREAM
+Yasaklı kelimeler	Banned words
+Yayın Paneli	STREAM PANEL
+Yayın açıkken radar, chat kutusu, maç sonu kartı, yayın anları ve chat komutları değiştirilemez; yayın bitince uygulanır.	While live, radar, chat box, post-match card, stream moments and chat commands can't be changed; changes apply after the stream.
+Yayın bu ayar kapalıyken başladı: açmak için yayını yeniden başlat.	The stream started with this off: restart the stream to turn it on.
+Yeni balık	New fish
+Yumurta	Egg
+katılmak için !race yaz · {0}	type !race to join · {0}
+kendiliğinden	automatic
+yok	none
+{0} KAZANDI!	{0} WINS!
+{0} büyüteçle bakıyor	{0} is using the magnifier
+{0} ekranı ters çevirdi!	{0} flipped the screen!
+{0} fişek	{0} fireworks
+{0} kişi	{0} people
+{0} patlattı	{0} popped it
+ÇAT!	CRACK!
+Çıkartma	Sticker
+Çıkartma yapıştır (emoji)	Slap a sticker (emoji)
+ÖNİZLEME	PREVIEW
+ÖRDEK YARIŞI	DUCK RACE
+Önizlemede bekleme süresi yok. Kapalı eğlenceler burada da çalışmaz. Sesli okuma bilgisayarının hoparlöründen çıkar.	No cooldowns in preview. Disabled effects don't work here either. Text-to-speech plays through your PC speakers.
+Önizlemede her eğlenceyi kendin dene (yayın gerekmez). Ters ekran ve büyüteç yayın başlarken eklenir: yayın açıkken değiştirilemez.	Try every effect yourself in the preview (no stream needed). Screen flip and magnifier are added when the stream starts: they can't be changed while live.
+Ördek yarışı	DUCK RACE
+Ördek yarışını {0} kazandı!	{0} won the duck race!
+İzleyici başına bekleme	Cooldown per viewer
+İzleyiciler chat'e komut yazar, ekranda canlanır. Kanal puanı gerekmez; her izleyici için bekleme süresi var.	Viewers type commands in chat and they come to life on screen. No channel points needed; each viewer has a cooldown.
+İğne	Pin
+ŞLAP!	SPLAT!
+Şişe	Bottle
+Şişede mesaj	Message in a bottle
+POP!	POP!

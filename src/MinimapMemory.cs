@@ -186,7 +186,16 @@ namespace ValoLive
             finally { bmp?.Dispose(); barBmp?.Dispose(); }
         }
 
-        static bool GameWindow(out Rectangle r)
+        /// <summary>Ajan ikonu (Maç Odası ile aynı önbellek; yoksa indirilir).</summary>
+        internal static Bitmap AgentBitmap(string agent)
+        {
+            using (var src = Image.FromFile(Engine.Fetch(OverlayRenderer.AgentIcon(agent), IconFile(agent)))) return new Bitmap(src);
+        }
+
+        /// <summary>Gerçek piksel okuyan iş parçacığı için (Windows ölçeklemesinden bağımsız).</summary>
+        internal static void PerMonitorDpi() { try { SetThreadDpiAwarenessContext(new IntPtr(-4)); } catch { } }
+
+        internal static bool GameWindow(out Rectangle r)
         {
             r = Rectangle.Empty;
             var h = GetForegroundWindow();
@@ -247,7 +256,7 @@ namespace ValoLive
 
             public static string IconFile(string agent) => Path.Combine(Settings.Dir, "cache", "agent_" + agent + ".png");
 
-            static string Fetch(string url, string file)
+            internal static string Fetch(string url, string file)
             {
                 if (!File.Exists(file))
                 {
@@ -631,7 +640,7 @@ namespace ValoLive
         /// şekil eşleşmesi Miks/Reyna gibi ajanları karıştırıyordu), maç boyunca biriken farkla tek tek atama.
         /// Ölçüler 1080p'de, ekran ortasına göre; başka çözünürlükte pencere yüksekliğiyle orantılanır.
         /// </summary>
-        sealed class TopBar
+        internal sealed class TopBar
         {
             const int N = 5, Bins = 4;                   // renk dağılımı: kanal başına 4 → 64 kutu
             const double MaxSame = 45;                   // aynı portrenin iki karesi arasındaki fark bundan küçük kalır
@@ -654,7 +663,7 @@ namespace ValoLive
             static int Bin(int r, int g, int b) => (r * Bins / 256) * Bins * Bins + (g * Bins / 256) * Bins + b * Bins / 256;
 
             /// <summary>İkonun çubukta görünen üst %80'i (alt kenar kesik), opak pikseller.</summary>
-            static double[] IconHist(Bitmap b)
+            internal static double[] IconHist(Bitmap b)
             {
                 var h = new double[Bins * Bins * Bins]; double n = 0; int step = Math.Max(1, b.Width / 256);
                 for (int y = 0; y < b.Height * 8 / 10; y += step)
@@ -668,7 +677,9 @@ namespace ValoLive
             }
 
             /// <summary>Yuvadaki portre pikselleri: şerit renginden (portrelerin iki yanındaki boşluk) belirgin farklı olanlar.</summary>
-            static double[] SlotHist(byte[] px, int st, int s, float k)
+            /// <param name="box">Kendi takım: portrenin arkasında renkli kutu olabilir (ulti hazır: sarı, oyuncu rengi: yeşil);
+            /// üst köşelerdeki renk de zemin sayılıp ayıklanır.</param>
+            internal static double[] SlotHist(byte[] px, int st, int s, float k, bool box = false)
             {
                 int x0 = (int)((8 + 66.5 * s) * k), step = Math.Max(1, (int)Math.Round(k));
                 var br = new List<int>(); var bg = new List<int>(); var bb = new List<int>();
@@ -678,12 +689,25 @@ namespace ValoLive
                         int i = y * st + x * 3; bb.Add(px[i]); bg.Add(px[i + 1]); br.Add(px[i + 2]);
                     }
                 int mr = Median(br), mg = Median(bg), mb = Median(bb);
+                int cr = -999, cg = -999, cb = -999;
+                if (box)
+                {
+                    br.Clear(); bg.Clear(); bb.Clear();
+                    for (int y = (int)(30 * k); y < (int)(35 * k); y += step)
+                        foreach (int x0c in new[] { x0, x0 + (int)(39 * k) })
+                            for (int x = x0c; x < x0c + (int)(5 * k); x += step)
+                            {
+                                int i = y * st + x * 3; bb.Add(px[i]); bg.Add(px[i + 1]); br.Add(px[i + 2]);
+                            }
+                    cr = Median(br); cg = Median(bg); cb = Median(bb);
+                }
                 var h = new double[Bins * Bins * Bins]; double n = 0;
                 for (int y = (int)(30 * k); y < (int)(69 * k); y += step)
                     for (int x = x0; x < x0 + (int)(44 * k); x += step)
                     {
                         int i = y * st + x * 3, r = px[i + 2], g = px[i + 1], b = px[i];
                         if (Math.Abs(r - mr) + Math.Abs(g - mg) + Math.Abs(b - mb) < 45) continue;
+                        if (Math.Abs(r - cr) + Math.Abs(g - cg) + Math.Abs(b - cb) < 45) continue;
                         h[Bin(r, g, b)]++; n++;
                     }
                 for (int i = 0; i < h.Length; i++) h[i] /= Math.Max(1, n);
@@ -693,7 +717,7 @@ namespace ValoLive
             static int Median(List<int> v) { v.Sort(); return v[v.Count / 2]; }
 
             /// <summary>Bhattacharyya uzaklığı (0 = aynı dağılım, 1 = hiç örtüşmüyor).</summary>
-            static double HistDist(double[] p, double[] q) { double s = 0; for (int i = 0; i < p.Length; i++) s += Math.Sqrt(p[i] * q[i]); return Math.Sqrt(Math.Max(0, 1 - s)); }
+            internal static double HistDist(double[] p, double[] q) { double s = 0; for (int i = 0; i < p.Length; i++) s += Math.Sqrt(p[i] * q[i]); return Math.Sqrt(Math.Max(0, 1 - s)); }
 
             /// <summary>Okunacak ekran bölgesi: ekran ortasının 200 px sağından 360 px, üstten 90 px (1080p).</summary>
             public static Rectangle Region(Rectangle win, float k) =>
@@ -709,19 +733,9 @@ namespace ValoLive
             /// <summary>Ölü rakipler (aynı sonuç ~1 sn sürdüyse); emin değilse null.</summary>
             public HashSet<string> Update(Bitmap bmp, float k)
             {
-                var d = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb);
-                var px = new byte[d.Stride * bmp.Height]; Marshal.Copy(d.Scan0, px, 0, px.Length); int st = d.Stride; bmp.UnlockBits(d);
-
-                var on = new bool[N];
-                for (int i = 0; i < N; i++)
-                {
-                    double e = Edges(px, st, i, k);
-                    if (e >= 40 && e < 100) return null; // ne dolu ne boş: geçiş, efekt
-                    on[i] = e >= 100;
-                }
-                int n = 0; while (n < N && on[n]) n++;
-                for (int i = n; i < N; i++) if (on[i]) return null; // canlılar art arda gelir; değilse görüntü bozuk (harita, efekt)
-                if (n == 0) return null;                            // çubuk yok: raund arası, skor tablosu
+                var px = Pixels(bmp, out int st);
+                int n = Alive(px, st, k);
+                if (n <= 0) return null; // belirsiz ya da çubuk yok: raund arası, skor tablosu
 
                 cw = (int)(44 * k); ch = (int)(41 * k);
                 int[] alive;
@@ -760,6 +774,29 @@ namespace ValoLive
                 if (++pendingRuns < (revive ? 9 : 3)) return null;
                 reported = deadSet;
                 return deadSet;
+            }
+
+            internal static byte[] Pixels(Bitmap bmp, out int stride)
+            {
+                var d = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb);
+                var px = new byte[d.Stride * bmp.Height]; Marshal.Copy(d.Scan0, px, 0, px.Length); stride = d.Stride; bmp.UnlockBits(d);
+                return px;
+            }
+
+            /// <summary>Canlı portre sayısı (0..5); geçiş/efekt yüzünden belirsizse -1.
+            /// Rakip tarafı olduğu gibi okunur; kendi takımın (sol yarı) yatay aynalanmış görüntüsüyle aynı ölçüler geçerli.</summary>
+            internal static int Alive(byte[] px, int st, float k)
+            {
+                var on = new bool[N];
+                for (int i = 0; i < N; i++)
+                {
+                    double e = Edges(px, st, i, k);
+                    if (e >= 40 && e < 100) return -1; // ne dolu ne boş: geçiş, efekt
+                    on[i] = e >= 100;
+                }
+                int n = 0; while (n < N && on[n]) n++;
+                for (int i = n; i < N; i++) if (on[i]) return -1; // canlılar art arda gelir; değilse görüntü bozuk (harita, efekt)
+                return n;
             }
 
             static IEnumerable<int[]> Subsets(int n)

@@ -1,4 +1,4 @@
-# ValoLive Â· id Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+﻿# ValoLive Â· id Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
  (sen)	 (kamu)
  (şu an kapalı)	 (sedang tertutup)
  · BU HARİTADA {0} MAÇI	 · {0} MATCH DI MAP INI
@@ -338,3 +338,124 @@ Rakip hafızası: harita üstünde ikonlar (deneysel)	Ingatan musuh: ikon di ata
 {0} dk	{0} mnt
 {0} sn	{0} dtk
 şimdi	sekarang
+Yayın anları: clutch, ilk kan, seri, ninja defuse, komik ölümler	Momen siaran: clutch, first blood, beruntun, ninja defuse, kematian lucu
+ilk öldürme bizden	kill pertama milik kita
+KUSURSUZ	SEMPURNA
+kimse düşmeden raund alındı	ronde dimenangkan tanpa ada yang gugur
+SON RAKİP	MUSUH TERAKHIR
+rakipte tek kişi kaldı	tersisa satu musuh
+{0} raund üst üste	{0} ronde berturut-turut
+GERİ DÖNÜŞ	COMEBACK
+{0} raund geriden eşitlendi	imbang setelah tertinggal {0} ronde
+MAÇ SAYISI	MATCH POINT
+bir raund kaldı	tinggal satu ronde
+RAKİP MAÇ SAYISINDA	MATCH POINT LAWAN
+bu raund kritik	ronde ini krusial
+UZATMA	OVERTIME
+iki farkla kazanan alır	menang dengan selisih dua
+DEVRE ARASI	TURUN MINUM
+taraflar değişiyor	bertukar sisi
+bir raundda 5 öldürme	5 kill dalam satu ronde
+bir raundda 4 öldürme	4 kill dalam satu ronde
+NİNJA DEFUSE	NINJA DEFUSE
+{0} rakip ayaktayken imha ettin	kamu menjinakkan saat {0} musuh hidup
+takım arkadaşın {0} rakip ayaktayken imha etti	rekan tim menjinakkan saat {0} musuh hidup
+YER ÇEKİMİ KAZANDI	GRAVITASI MENANG
+{0} kez düşerek öldün	mati jatuh {0} kali
+RAKİP UÇURUMDAN	MUSUH JATUH
+{0} rakip düşerek öldü	{0} musuh mati jatuh
+BIÇAK	PISAU
+{0} bıçak öldürmesi	{0} kill pisau
+SPIKE'IN DİBİNDE	TERLALU DEKAT SPIKE
+spike patlamasında {0} kez öldün	mati karena spike {0} kali
+KENDİ KENDİNE	BUNUH DIRI
+kendi yeteneğinle {0} kez öldün	mati oleh skill sendiri {0} kali
+DOST ATEŞİ	TEMBAKAN KAWAN
+takım arkadaşın seni {0} kez vurdu	rekan tim membunuhmu {0} kali
+ACE GELİYOR	ACE OTW
+AKVARYUM	AKUARIUM
+AYARLAR	PENGATURAN
+Akvaryum: chat'e yazan balık olur	Akuarium: yang chat jadi ikan
+BAŞLA!	MULAI!
+Balon	Balon
+Balon: mesaj balonla süzülür, !pop patlatır	Balon: pesan melayang dengan balon, !pop memecahkannya
+Bu raund ace gelir mi? 🎯	Ace ronde ini? 🎯
+Bugün rank atlıyoruz 💪	Hari ini naik rank 💪
+Büyüteç	Kaca pembesar
+Büyüteç: nişangâhı büyütür	Kaca pembesar: memperbesar crosshair
+CHAT BİRLİKTE	CHAT BERSAMA
+CHAT EĞLENCESİ	KESERUAN CHAT
+CHAT HAVAİ FİŞEK PATLATTI!	CHAT MENYALAKAN KEMBANG API!
+Chat eğlencesi: izleyici komutları ekranda canlanır	Keseruan chat: perintah penonton muncul di layar
+Chat'e gidecek duyuru: 	Pengumuman ke chat:
+Chat'e yaz, balık ol!	Chat dan jadi ikan!
+Domates	Tomat
+Domates / yumurta fırlat	Lempar tomat / telur
+Duvar yazısı (1 dk kalır)	Grafiti (bertahan 1 mnt)
+EKRAN ŞAKALARI	KEJAHILAN LAYAR
+Emoji yağmuru	Hujan emoji
+Emoji yağmuru (aynı emojiyi yazınca)	Hujan emoji (saat banyak yang kirim emoji sama)
+Emoji yağmuru eşiği	Batas hujan emoji
+F9: sniper perdesi · F10: yayın özeti	F9: tirai anti-sniper · F10: ringkasan siaran
+Fişek	Kembang api
+Fişek (hepsi)	Kembang api (semua)
+Güvercin	Merpati
+Güvercin postası (ve sürprizi)	Pos merpati (plus kejutannya)
+Havai fişek hedefi	Target kembang api
+Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.	Overlay (radar, kotak chat, momen siaran) dan keseruan chat (balon, pesawat, tomat, balap bebek…) ada di jendela terpisah.
+Kağıt uçak	Pesawat kertas
+Komutları okumak için ana penceredeki Kick hesabını bağla.	Hubungkan akun Kick di jendela utama agar perintah bisa dibaca.
+MESAJ TAŞIYANLAR	PEMBAWA PESAN
+Merhaba chat, bu bir deneme!	Halo chat, ini cuma tes!
+Ortak havai fişek	Kembang api bersama
+PAT!	DOR!
+RADAR ROZETİ	LENCANA RADAR
+SNIPER KORUMASI	PERLINDUNGAN SNIPER
+Selam chat!	Halo chat!
+Selam chat! Bu yayın efsane 🔥	Halo chat! Siaran ini legendaris 🔥
+Sesli oku	Bacakan
+Sesli oku (robot sesi)	Bacakan (suara robot)
+Sprey	Semprot
+Ters ekran	Balik layar
+Ters ekran (3 sn)	Balik layar (3 dtk)
+Ters ekran, büyüteç ve sesli okuma yalnızca abone ve modlara	Balik layar, kaca pembesar, dan bacakan hanya untuk sub dan mod
+Teşekkürler: {0}	Terima kasih: {0}
+Uçak	Pesawat
+Uçak pankartı	Spanduk pesawat
+ValoLive — Chat eğlencesi önizleme	ValoLive — Pratinjau keseruan chat
+ValoLive — Yayın Paneli	ValoLive — Panel siaran
+Virgülle ayır. Bağlantılar her zaman silinir.	Pisahkan dengan koma. Tautan selalu dihapus.
+YAYIN PANELİ	PANEL SIARAN
+YAYIN PANELİNİ AÇ	BUKA PANEL SIARAN
+YAYIN ÜSTÜ	DI SIARAN
+Yasaklı kelimeler	Kata terlarang
+Yayın Paneli	PANEL SIARAN
+Yayın açıkken radar, chat kutusu, maç sonu kartı, yayın anları ve chat komutları değiştirilemez; yayın bitince uygulanır.	Saat live, radar, kotak chat, kartu pasca-match, momen, dan perintah chat tidak bisa diubah; berlaku setelah siaran.
+Yayın bu ayar kapalıyken başladı: açmak için yayını yeniden başlat.	Siaran dimulai saat ini mati: mulai ulang siaran untuk menyalakan.
+Yeni balık	Ikan baru
+Yumurta	Telur
+katılmak için !race yaz · {0}	ketik !race untuk ikut · {0}
+kendiliğinden	otomatis
+yok	tidak ada
+{0} KAZANDI!	{0} MENANG!
+{0} büyüteçle bakıyor	{0} sedang memakai kaca pembesar
+{0} ekranı ters çevirdi!	{0} membalik layar!
+{0} fişek	{0} kembang api
+{0} kişi	{0} orang
+{0} patlattı	{0} memecahkannya
+ÇAT!	KRAK!
+Çıkartma	Stiker
+Çıkartma yapıştır (emoji)	Tempel stiker (emoji)
+ÖNİZLEME	PRATINJAU
+ÖRDEK YARIŞI	BALAP BEBEK
+Önizlemede bekleme süresi yok. Kapalı eğlenceler burada da çalışmaz. Sesli okuma bilgisayarının hoparlöründen çıkar.	Pratinjau tanpa jeda. Efek yang dimatikan juga tidak jalan di sini. Suara baca keluar dari speaker PC.
+Önizlemede her eğlenceyi kendin dene (yayın gerekmez). Ters ekran ve büyüteç yayın başlarken eklenir: yayın açıkken değiştirilemez.	Coba semua efek di pratinjau (tanpa siaran). Balik layar dan kaca pembesar ditambahkan saat siaran mulai: tidak bisa diubah saat live.
+Ördek yarışı	BALAP BEBEK
+Ördek yarışını {0} kazandı!	{0} memenangkan balap bebek!
+İzleyici başına bekleme	Jeda per penonton
+İzleyiciler chat'e komut yazar, ekranda canlanır. Kanal puanı gerekmez; her izleyici için bekleme süresi var.	Penonton mengetik perintah di chat dan muncul di layar. Tidak perlu poin channel; tiap penonton ada jedanya.
+İğne	Jarum
+ŞLAP!	CPLAK!
+Şişe	Botol
+Şişede mesaj	Pesan dalam botol
+POP!	POP!

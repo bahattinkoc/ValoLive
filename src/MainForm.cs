@@ -63,9 +63,7 @@ namespace ValoLive
 
         TextBox txtUrl, txtKey, txtName, txtTag, txtHdev, txtTitle, txtTags;
         ComboBox cmbCategory;
-        Button btnAlign;
-        Label lblRadarPos;
-        CheckBox chkRadar, chkChat, chkPost, chkBot, chkWgc, chkBreak, chkAutoLobby, chkAlerts, chkAutoCover, chkMemory, chkMemoryMap;
+        CheckBox chkWgc, chkAutoLobby, chkAlerts, chkMemory, chkMemoryMap;
         string liveState = "";
         bool autoCovered;                 // perdeyi ajan seçimi açtı (F9 ile açılanı maç başı kapatmaz)
         Control[] appShift; bool appRow = true;
@@ -80,12 +78,19 @@ namespace ValoLive
         DateTime memRetry;
         PostMatchLayer postLayer;
         ChatBot bot;
-        Label lblKick, lblChat;
+        Label lblKick;
+        string chatState = ""; Color chatStateColor = Theme.Mut;   // Kick chat bağlantısının canlı durumu (Yayın Paneli'nde görünür)
+        FunChat funChat;
+        FunLayer funLayer;
+        AquariumLayer aquarium;
+        Speaker speaker;
         Button btnKick;
         KickApi kick;
         KickChat kickChat;
         RadarWidget radar;
         ChatLayer chatLayer;
+        MomentWatch moments;
+        MomentLayer momentLayer;
         ValoState lastState;
         System.Threading.CancellationTokenSource categorySearch;
         ComboBox cmbQuality, cmbMic, cmbOut, cmbRegion;
@@ -140,7 +145,7 @@ namespace ValoLive
             Encounters.Start(); // karşılaşma defteri arka planda dolar (Riot istemcisi açıkken)
             live = new LiveInfo(); // canlı skor ve maç sonu özeti (Riot istemcisinin kendi durum bilgisi)
             live.Changed += s => { if (IsHandleCreated) try { BeginInvoke((Action)(() => ApplyLive(s))); } catch { } };
-            live.PostMatchReady += pm => { var l = postLayer; if (l != null && (pm.Queue == "competitive" || pm.Queue == "unrated" || pm.Queue == "swiftplay" || pm.Queue == "premier")) l.Show(pm); };
+            live.PostMatchReady += pm => { moments?.PushHighlights(pm); var l = postLayer; if (l != null && (pm.Queue == "competitive" || pm.Queue == "unrated" || pm.Queue == "swiftplay" || pm.Queue == "premier")) l.Show(pm); };
             memTimer.Tick += (s, e) => TickMemory();
             memTimer.Start();
         }
@@ -155,16 +160,13 @@ namespace ValoLive
             // sütunlar en uzun anahtar yazısına göre genişler.
             string tAutoLobby = L.T("Maç bulununca otomatik aç"), tAlerts = L.T("Bildirimler (tanıdık oyuncu, smurf, parti)"),
                    tWgc = L.T("Hafif yakalama (yalnızca oyun penceresi)"), tDenoise = L.T("Gürültü filtresi"),
-                   tRadar = L.T("Minimap'i radar rozetiyle ört"), tAutoCover = L.T("Ajan seçiminde sniper perdesi (otomatik)"),
-                   tChat = L.T("Yayında chat kutusu"), tPost = L.T("Maç sonu kartı (ısı haritası + özet)"),
-                   tBot = L.F("Chat komutları ({0})", string.Join(" ", ChatBot.Commands)), tBreak = L.T("Menüde bekleme ekranı (sıra sayacı)"),
                    tMemory = L.T("Rakip hafızası: minimap'te son görülen yerler (deneysel)"),
                    tMemoryMap = L.T("Rakip hafızası: harita üstünde ikonlar (deneysel)");
             using (var cap = new Font(L.SansBold, 8.25f))
                 LabelW = Math.Max(104, new[] { "Stream URL", "Stream Key", L.T("Kick hesabı"), L.T("Başlık"), L.T("Kategori"), L.T("Etiketler"), "Riot ID", "HenrikDev key",
-                    L.T("Kalite"), L.T("Yakalama"), L.T("Uygulama"), L.T("Mikrofon"), L.T("Oyun sesi"), L.T("Rozet yeri") }
+                    L.T("Kalite"), L.T("Yakalama"), L.T("Uygulama"), L.T("Mikrofon"), L.T("Oyun sesi") }
                     .Max(s => TextRenderer.MeasureText(Theme.Upper(s), cap).Width) + 12);
-            int toggleW = new[] { tAutoLobby, tAlerts, tWgc, tDenoise, tRadar, tAutoCover, tChat, tPost, tBot, tBreak, tMemory, tMemoryMap }.Max(s => VToggle.WidthFor(s, Font));
+            int toggleW = new[] { tAutoLobby, tAlerts, tWgc, tDenoise, tMemory, tMemoryMap }.Max(s => VToggle.WidthFor(s, Font));
             ColW = Math.Min(560, Math.Max(Math.Max(420, LabelW + 316), toggleW + 4));
 
             var sub = new Label { Text = L.T("Kick için hafif Valorant yayın aracı · RTX NVENC"), ForeColor = Mut, AutoSize = true, Location = new Point(22, 56) };
@@ -295,36 +297,18 @@ namespace ValoLive
             trkGame = AddSlider(ref y, out lblGame);
             trkGame.ValueChanged += (s, e) => { if (audio != null) audio.Volume = trkGame.Value / 100f; };
 
-            y = Section(L.T("KATMANLAR"), y + 8);
-            chkRadar = new VToggle { Text = tRadar, ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
-            Controls.Add(chkRadar); y += 26;
-            chkAutoCover = new VToggle { Text = tAutoCover, ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
-            Controls.Add(chkAutoCover); y += 26;
-            chkAutoCover.CheckedChanged += (s, e) => { SaveSettings(); ApplyLive(live?.Snap); };
-            Caption(L.T("Rozet yeri"), y);
-            int alignW = Theme.ButtonWidth(L.T("Minimap'e hizala"), 25, 120);
-            lblRadarPos = new FitLabel { ForeColor = Txt, Location = new Point(FX, y + 3), Size = new Size(FW - alignW - 8, 20) };
-            btnAlign = new VButton { Text = L.T("Minimap'e hizala"), Bounds = new Rectangle(FX + FW - alignW, y - 1, alignW, 25), BackColor = Field, ForeColor = Txt, FlatStyle = FlatStyle.Flat, Cursor = Cursors.Hand };
-            btnAlign.FlatAppearance.BorderSize = 0;
-            btnAlign.Click += (s, e) => AlignRadar();
-            Controls.AddRange(new Control[] { lblRadarPos, btnAlign }); y += 34;
-            chkChat = new VToggle { Text = tChat, ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
-            int chatX = cx + Math.Max(170, VToggle.WidthFor(tChat, Font) + 12);
-            lblChat = new FitLabel { Text = "", ForeColor = Mut, Location = new Point(chatX, y - 1), Size = new Size(cx + ColW - chatX, 20) };
-            Controls.AddRange(new Control[] { chkChat, lblChat }); y += 26;
-            chkPost = new VToggle { Text = tPost, ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
-            Controls.Add(chkPost); y += 26;
-            chkBot = new VToggle { Text = tBot, ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
-            Controls.Add(chkBot); y += 26;
-            chkBreak = new VToggle { Text = tBreak, ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
-            Controls.Add(chkBreak); y += 26;
-            chkBreak.CheckedChanged += (s, e) => { SaveSettings(); ApplyLive(live?.Snap); };
+            // Yayına binen her şeyin ayarları (katmanlar, chat eğlencesi) ayrı pencerede: StreamPanel.
+            y = Section(L.T("YAYIN PANELİ"), y + 8);
+            var panelNote = new Label { Text = L.T("Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede."),
+                ForeColor = Mut, AutoSize = true, MaximumSize = new Size(ColW, 0), Location = new Point(cx, y - 4) };
+            Controls.Add(panelNote);
+            y += panelNote.GetPreferredSize(new Size(ColW, 0)).Height + 4;
+            var btnPanel = MakeButton(L.T("YAYIN PANELİNİ AÇ"), new Rectangle(cx, y, ColW, 36), Field);
+            btnPanel.Font = new Font(L.SansBold, 10f);
+            btnPanel.Click += (s, e) => StreamPanel.Open(this, cfg);
+            y += 44;
             appShift = Controls.Cast<Control>().Skip(belowApp).ToArray();
             divider.Size = new Size(1, Math.Max(leftBottom, y) - top - 4);
-            chkPost.CheckedChanged += (s, e) => SaveSettings();
-            chkBot.CheckedChanged += (s, e) => SaveSettings();
-            chkRadar.CheckedChanged += (s, e) => { btnAlign.Enabled = chkRadar.Checked; overlay.RankPanel = !chkRadar.Checked; SaveSettings(); };
-            chkChat.CheckedChanged += (s, e) => { SaveSettings(); UpdateChatHint(); };
 
             // ---- Alt şerit: butonlar + durum ----
             y = Math.Max(leftBottom, y) + 10;
@@ -397,7 +381,7 @@ namespace ValoLive
         }
 
         /// <summary>Açılır listeler: koyu öğeler, seçili öğe kırmızımsı.</summary>
-        static void DarkCombo(ComboBox c)
+        internal static void DarkCombo(ComboBox c)
         {
             c.DrawMode = DrawMode.OwnerDrawFixed;
             c.ItemHeight = 20;
@@ -507,18 +491,10 @@ namespace ValoLive
             txtTitle.Text = cfg.StreamTitle;
             cmbCategory.Text = cfg.CategoryName;
             txtTags.Text = cfg.Tags;
-            chkRadar.Checked = cfg.MapCover;
-            btnAlign.Enabled = cfg.MapCover;
-            ShowRadarPos();
             overlay.RankPanel = !cfg.MapCover;
-            chkChat.Checked = cfg.ChatBox;
-            chkPost.Checked = cfg.PostMatchCard;
-            chkBot.Checked = cfg.ChatBot;
             chkWgc.Checked = cfg.WindowCapture;
-            chkBreak.Checked = cfg.BreakScreen;
             chkAutoLobby.Checked = cfg.AutoLobby;
             chkAlerts.Checked = cfg.LobbyAlerts;
-            chkAutoCover.Checked = cfg.AutoCover;
             chkMemory.Checked = cfg.EnemyMemory;
             chkMemoryMap.Checked = cfg.EnemyMemoryMap;
             UpdateKickStatus();
@@ -544,11 +520,31 @@ namespace ValoLive
             if (cmbCategory.SelectedItem is KickApi.Category cat) { cfg.CategoryId = cat.Id; cfg.CategoryName = cat.Name; }
             else if (!string.Equals(cmbCategory.Text.Trim(), cfg.CategoryName, StringComparison.OrdinalIgnoreCase)) { cfg.CategoryName = cmbCategory.Text.Trim(); cfg.CategoryId = 0; }
             cfg.Tags = txtTags.Text.Trim();
-            cfg.MapCover = chkRadar.Checked;
-            cfg.ChatBox = chkChat.Checked;
-            if (chkPost != null) { cfg.PostMatchCard = chkPost.Checked; cfg.ChatBot = chkBot.Checked; }
-            if (chkWgc != null) { cfg.WindowCapture = chkWgc.Checked; cfg.BreakScreen = chkBreak.Checked; cfg.AutoLobby = chkAutoLobby.Checked; cfg.LobbyAlerts = chkAlerts.Checked; cfg.AutoCover = chkAutoCover.Checked; cfg.EnemyMemory = chkMemory.Checked; cfg.EnemyMemoryMap = chkMemoryMap.Checked; }
+            // Katman ayarları Yayın Paneli'nden doğrudan cfg'ye yazılır (StreamPanel).
+            if (chkWgc != null) { cfg.WindowCapture = chkWgc.Checked; cfg.AutoLobby = chkAutoLobby.Checked; cfg.LobbyAlerts = chkAlerts.Checked; cfg.EnemyMemory = chkMemory.Checked; cfg.EnemyMemoryMap = chkMemoryMap.Checked; }
             cfg.Save();
+        }
+
+        // ---------- Yayın Paneli'nin kullandıkları ----------
+
+        internal bool Streaming => mode != Mode.Idle;
+        internal bool FunRunning => funChat != null;
+
+        /// <summary>Panelde bir katman ayarı değişti: kaydet ve hemen uygulananları uygula.</summary>
+        internal void LayerSettingsChanged()
+        {
+            cfg.Save();
+            overlay.RankPanel = !cfg.MapCover;
+            ApplyLive(live?.Snap);
+        }
+
+        /// <summary>Chat kutusunun yanındaki durum yazısı.</summary>
+        internal KeyValuePair<string, Color> ChatHint()
+        {
+            if (!cfg.ChatBox && !cfg.ChatBot && !cfg.Fun) return new KeyValuePair<string, Color>("", Mut);
+            if (cfg.KickSlug == "") return new KeyValuePair<string, Color>(L.T("Kick hesabını bağla"), Mut);
+            if (kickChat == null) return new KeyValuePair<string, Color>(L.T("yayın başlayınca bağlanır"), Mut);
+            return new KeyValuePair<string, Color>("chat: " + chatState, chatStateColor);
         }
 
         // ---------- Kick hesabı: başlık, kategori, etiketler ----------
@@ -559,15 +555,7 @@ namespace ValoLive
             lblKick.Text = on ? "✓ " + (cfg.KickSlug != "" ? "kick.com/" + cfg.KickSlug : L.T("bağlı")) : L.T("Bağlı değil");
             lblKick.ForeColor = on ? Green : Mut;
             btnKick.Text = on ? L.T("Çıkış") : L.T("Bağlan");
-            UpdateChatHint();
-        }
-
-        void UpdateChatHint()
-        {
-            if (lblChat == null) return;
-            if (!chkChat.Checked) lblChat.Text = "";
-            else if (cfg.KickSlug == "") { lblChat.Text = L.T("Kick hesabını bağla"); lblChat.ForeColor = Mut; }
-            else if (kickChat == null) { lblChat.Text = L.T("yayın başlayınca bağlanır"); lblChat.ForeColor = Mut; }
+            StreamPanel.Sync();
         }
 
         void KickConnectClicked()
@@ -696,26 +684,53 @@ namespace ValoLive
                 postLayer = new PostMatchLayer((int)(screenW - 470 * sc), (int)(230 * sc), sc) { Hidden = () => overlay.Cover || overlay.Privacy };
                 list.Add(postLayer);
             }
+            if (cfg.Moments)
+            {
+                moments = new MomentWatch(() => live?.Snap);
+                // Bekleme ekranında gizlenmez: maç bitince "maçın anları" menüdeyken oynar.
+                momentLayer = new MomentLayer(moments, screenW, screenH, sc) { Hidden = () => overlay.Cover || overlay.Summary || overlay.Privacy };
+                list.Add(momentLayer);
+            }
             bool useBot = cfg.ChatBot && kick.Connected;
-            if ((cfg.ChatBox || useBot) && cfg.KickSlug != "")
+            bool useFun = cfg.Fun && cfg.KickSlug != "";
+            if ((cfg.ChatBox || useBot || useFun) && cfg.KickSlug != "")
             {
                 if (cfg.ChatBox) { chatLayer = new ChatLayer(sc); list.Add(chatLayer); }
                 var layer = chatLayer;
                 kickChat = new KickChat(cfg.KickSlug);
+                chatState = L.T("bağlanıyor"); chatStateColor = Mut;
                 if (layer != null) kickChat.Message += m => layer.Add(m);
                 if (useBot) { bot = new ChatBot(kick, () => lastState, () => live); var b = bot; kickChat.Message += m => b.Handle(m); }
+                if (useFun)
+                {
+                    // Chat eğlencesi: en üstte tam ekran katman (boşken bindirilmez) ve sol altta akvaryum.
+                    speaker = new Speaker();
+                    aquarium = new AquariumLayer(sc) { Hidden = () => !cfg.FunOn("aquarium") || overlay.Summary };
+                    funLayer = new FunLayer(screenW, screenH, sc, speaker);
+                    list.Add(aquarium); list.Add(funLayer);
+                    var fc = funChat = new FunChat(cfg, funLayer, aquarium, speaker)
+                    {
+                        Graph = (k, on) =>
+                        {
+                            if (k == "flip") { streamer.SendCommand("hflip@fh enable " + (on ? 1 : 0)); streamer.SendCommand("vflip@fv enable " + (on ? 1 : 0)); }
+                            else { streamer.SendCommand("framestep@zs enable " + (on ? 0 : 1)); streamer.SendCommand("overlay@zoom enable " + (on ? 1 : 0)); }
+                        },
+                        Announce = s => { if (cfg.ChatBot && kick.Connected) Task.Run(() => { try { kick.SendChat(s); } catch { } }); },
+                    };
+                    kickChat.Message += m => fc.Handle(m);
+                }
                 kickChat.Status += s => BeginInvoke((Action)(() =>
                 {
-                    if (lblChat == null) return;
-                    lblChat.Text = "chat: " + s;
-                    lblChat.ForeColor = s == L.T("bağlı") ? Green : Mut;
+                    chatState = s;
+                    chatStateColor = s == L.T("bağlı") ? Green : Mut;
+                    StreamPanel.Sync();
                 }));
             }
             return list;
         }
 
         /// <summary>Rozetin ekrandaki yeri (gerçek piksel); ekranın içine sığdırılır.</summary>
-        Rectangle RadarRect()
+        internal Rectangle RadarRect()
         {
             int d = cfg.MapCoverD > 0 ? cfg.MapCoverD : (int)(360 * screenH / 1080f);
             d = Math.Max(80, Math.Min(Math.Min(screenW, screenH), d));
@@ -723,33 +738,32 @@ namespace ValoLive
             return new Rectangle(x, y, d, d);
         }
 
-        void ShowRadarPos()
-        {
-            var r = RadarRect();
-            string full = L.F("çap {0} px · konum {1}, {2}", r.Width, r.X, r.Y);
-            // Düğme yanında yer dar: uzun dillerde kısa biçim (FitLabel en çok %25 küçültüyor)
-            lblRadarPos.Text = TextRenderer.MeasureText(full, Font).Width * 0.78 <= lblRadarPos.Width ? full : $"Ø {r.Width} px · {r.X}, {r.Y}";
-        }
-
-        void AlignRadar()
+        /// <summary>Rozeti minimap'e hizalama penceresi (Yayın Paneli'nden). Kaydedildiyse true.</summary>
+        internal bool AlignRadar(IWin32Window owner)
         {
             using (var f = new RadarAlignForm(RadarRect(), screenW, screenH))
             {
-                if (f.ShowDialog(this) != DialogResult.OK) return;
+                if (f.ShowDialog(owner) != DialogResult.OK) return false;
                 cfg.MapCoverX = f.Result.X; cfg.MapCoverY = f.Result.Y; cfg.MapCoverD = f.Result.Width;
                 cfg.Save();
-                ShowRadarPos();
+                return true;
             }
         }
 
         void StopLayers()
         {
             kickChat?.Dispose(); kickChat = null;
+            funChat?.Dispose(); funChat = null;
+            funLayer?.Dispose(); funLayer = null;
+            aquarium?.Dispose(); aquarium = null;
+            speaker?.Dispose(); speaker = null;
             radar?.Dispose(); radar = null;
             chatLayer?.Dispose(); chatLayer = null;
             postLayer?.Dispose(); postLayer = null;
+            momentLayer?.Dispose(); momentLayer = null;
+            moments?.Dispose(); moments = null;
             bot = null;
-            UpdateChatHint();
+            StreamPanel.Sync();
         }
 
         // ---------- Yakalama ----------
@@ -960,6 +974,11 @@ namespace ValoLive
                 overlay.ShowBanner(L.T("ZAFER"), "Test · Jett · Ascent 13-9 · 24/12/5 · HS " + L.Pct(31), ColorTranslator.FromHtml("#3ddc97"), OverlayRenderer.AgentIcon("add6443a-41bd-e414-f6ad-e58d267f4e95"));
             }
             o.Layers = StartLayers();
+            if (funChat != null)
+            {
+                o.Flip = funChat.CanFlip = cfg.FunOn("flip");
+                o.Zoom = funChat.CanZoom = cfg.FunOn("zoom");
+            }
             if (m == Mode.Live && kick.Connected) ApplyStreamInfo(false);
             lastOptions = o;
             mode = m;
@@ -1088,10 +1107,10 @@ namespace ValoLive
 
         void SetInputsEnabled(bool on)
         {
-            foreach (Control c in new Control[] { txtUrl, txtKey, cmbQuality, cmbCapture, cmbApp, btnApps, cmbMic, chkDenoise, cmbOut, btnTest, chkRadar, btnAlign, chkChat, chkPost, chkBot, chkWgc })
+            foreach (Control c in new Control[] { txtUrl, txtKey, cmbQuality, cmbCapture, cmbApp, btnApps, cmbMic, chkDenoise, cmbOut, btnTest, chkWgc })
                 c.Enabled = on;
-            btnAlign.Enabled = on && chkRadar.Checked;
             chkWgc.Enabled = on && guard.Mode == CaptureMode.Valorant;
+            StreamPanel.Sync();
         }
 
         void DisposeAudio()
@@ -1164,6 +1183,7 @@ namespace ValoLive
             menu.Items.AddRange(new ToolStripItem[]
             {
                 open, new ToolStripSeparator(), stream, cover,
+                new ToolStripMenuItem(L.T("Yayın Paneli"), null, (s, e) => StreamPanel.Open(this, cfg)),
                 new ToolStripMenuItem(L.T("Maç Odası"), null, (s, e) => OpenLobby()),
                 new ToolStripMenuItem(L.T("Analizim"), null, (s, e) => AnalysisForm.Open()),
                 new ToolStripMenuItem(L.T("Günlükler"), null, (s, e) => { Directory.CreateDirectory(Diag.Dir); Process.Start("explorer.exe", Diag.Dir); }),

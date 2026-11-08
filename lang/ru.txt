@@ -1,4 +1,4 @@
-# ValoLive Â· ru Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+﻿# ValoLive Â· ru Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
  (sen)	 (вы)
  (şu an kapalı)	 (сейчас закрыто)
  · BU HARİTADA {0} MAÇI	 · {0} МАТЧ(ЕЙ) НА ЭТОЙ КАРТЕ
@@ -338,3 +338,124 @@ Rakip hafızası: harita üstünde ikonlar (deneysel)	Память о врага
 {0} dk	{0} мин
 {0} sn	{0} с
 şimdi	сейчас
+Yayın anları: clutch, ilk kan, seri, ninja defuse, komik ölümler	Моменты стрима: клатч, первая кровь, серии, ниндзя-дефьюз, смешные смерти
+ilk öldürme bizden	первое убийство за нами
+KUSURSUZ	БЕЗУПРЕЧНО
+kimse düşmeden raund alındı	раунд выигран без потерь
+SON RAKİP	ПОСЛЕДНИЙ ВРАГ
+rakipte tek kişi kaldı	остался один враг
+{0} raund üst üste	{0} раунда подряд
+GERİ DÖNÜŞ	КАМБЭК
+{0} raund geriden eşitlendi	сравняли счёт, отставая на {0} раунда
+MAÇ SAYISI	МАТЧ-ПОИНТ
+bir raund kaldı	остался один раунд
+RAKİP MAÇ SAYISINDA	МАТЧ-ПОИНТ У СОПЕРНИКА
+bu raund kritik	этот раунд решающий
+UZATMA	ОВЕРТАЙМ
+iki farkla kazanan alır	нужно выиграть с разницей в два
+DEVRE ARASI	ПЕРЕРЫВ
+taraflar değişiyor	смена сторон
+bir raundda 5 öldürme	5 убийств за раунд
+bir raundda 4 öldürme	4 убийства за раунд
+NİNJA DEFUSE	НИНДЗЯ-ДЕФЬЮЗ
+{0} rakip ayaktayken imha ettin	ты обезвредил при {0} живых врагах
+takım arkadaşın {0} rakip ayaktayken imha etti	союзник обезвредил при {0} живых врагах
+YER ÇEKİMİ KAZANDI	ГРАВИТАЦИЯ ПОБЕДИЛА
+{0} kez düşerek öldün	разбился при падении {0} раз
+RAKİP UÇURUMDAN	ВРАГ СОРВАЛСЯ
+{0} rakip düşerek öldü	{0} враг разбился при падении
+BIÇAK	НОЖ
+{0} bıçak öldürmesi	{0} убийство ножом
+SPIKE'IN DİBİNDE	СЛИШКОМ БЛИЗКО К СПАЙКУ
+spike patlamasında {0} kez öldün	погиб от спайка {0} раз
+KENDİ KENDİNE	САМОУБИЙСТВО
+kendi yeteneğinle {0} kez öldün	убит своей способностью {0} раз
+DOST ATEŞİ	ОГОНЬ ПО СВОИМ
+takım arkadaşın seni {0} kez vurdu	союзник убил тебя {0} раз
+ACE GELİYOR	БУДЕТ ЭЙС
+AKVARYUM	АКВАРИУМ
+AYARLAR	НАСТРОЙКИ
+Akvaryum: chat'e yazan balık olur	Аквариум: каждый, кто пишет в чат, становится рыбкой
+BAŞLA!	СТАРТ!
+Balon	Шарик
+Balon: mesaj balonla süzülür, !pop patlatır	Шарик: сообщение летит на шарике, !pop лопает его
+Bu raund ace gelir mi? 🎯	Эйс в этом раунде? 🎯
+Bugün rank atlıyoruz 💪	Сегодня апаем ранг 💪
+Büyüteç	Лупа
+Büyüteç: nişangâhı büyütür	Лупа: увеличивает прицел
+CHAT BİRLİKTE	ЧАТ ВМЕСТЕ
+CHAT EĞLENCESİ	ЧАТ-ВЕСЕЛЬЕ
+CHAT HAVAİ FİŞEK PATLATTI!	ЧАТ ЗАПУСТИЛ САЛЮТ!
+Chat eğlencesi: izleyici komutları ekranda canlanır	Чат-веселье: команды зрителей оживают на экране
+Chat'e gidecek duyuru: 	Объявление в чат: 
+Chat'e yaz, balık ol!	Напиши в чат — стань рыбкой!
+Domates	Помидор
+Domates / yumurta fırlat	Бросить помидор / яйцо
+Duvar yazısı (1 dk kalır)	Граффити (держится 1 мин)
+EKRAN ŞAKALARI	РОЗЫГРЫШИ С ЭКРАНОМ
+Emoji yağmuru	Дождь из эмодзи
+Emoji yağmuru (aynı emojiyi yazınca)	Дождь из эмодзи (когда многие шлют одно и то же)
+Emoji yağmuru eşiği	Порог дождя эмодзи
+F9: sniper perdesi · F10: yayın özeti	F9: шторка от снайпинга · F10: сводка стрима
+Fişek	Салют
+Fişek (hepsi)	Салют (все)
+Güvercin	Голубь
+Güvercin postası (ve sürprizi)	Голубиная почта (и её сюрприз)
+Havai fişek hedefi	Цель салюта
+Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.	Слои (радар, окно чата, моменты стрима) и чат-веселье (шарик, самолёт, помидор, утиные гонки…) — в отдельном окне.
+Kağıt uçak	Бумажный самолётик
+Komutları okumak için ana penceredeki Kick hesabını bağla.	Подключи аккаунт Kick в главном окне, чтобы читать команды.
+MESAJ TAŞIYANLAR	ДОСТАВКА СООБЩЕНИЙ
+Merhaba chat, bu bir deneme!	Привет, чат, это тест!
+Ortak havai fişek	Общий салют
+PAT!	БАХ!
+RADAR ROZETİ	ЗНАЧОК РАДАРА
+SNIPER KORUMASI	ЗАЩИТА ОТ СНАЙПИНГА
+Selam chat!	Привет, чат!
+Selam chat! Bu yayın efsane 🔥	Привет, чат! Этот стрим легендарный 🔥
+Sesli oku	Озвучить
+Sesli oku (robot sesi)	Озвучить (голос робота)
+Sprey	Баллончик
+Ters ekran	Переворот экрана
+Ters ekran (3 sn)	Переворот экрана (3 с)
+Ters ekran, büyüteç ve sesli okuma yalnızca abone ve modlara	Переворот, лупа и озвучка только для сабов и модераторов
+Teşekkürler: {0}	Спасибо: {0}
+Uçak	Самолёт
+Uçak pankartı	Баннер за самолётом
+ValoLive — Chat eğlencesi önizleme	ValoLive — Предпросмотр чат-веселья
+ValoLive — Yayın Paneli	ValoLive — Панель стрима
+Virgülle ayır. Bağlantılar her zaman silinir.	Через запятую. Ссылки всегда удаляются.
+YAYIN PANELİ	ПАНЕЛЬ СТРИМА
+YAYIN PANELİNİ AÇ	ОТКРЫТЬ ПАНЕЛЬ СТРИМА
+YAYIN ÜSTÜ	НА СТРИМЕ
+Yasaklı kelimeler	Запрещённые слова
+Yayın Paneli	ПАНЕЛЬ СТРИМА
+Yayın açıkken radar, chat kutusu, maç sonu kartı, yayın anları ve chat komutları değiştirilemez; yayın bitince uygulanır.	Во время эфира нельзя менять радар, окно чата, карточку после матча, моменты и команды чата; применится после стрима.
+Yayın bu ayar kapalıyken başladı: açmak için yayını yeniden başlat.	Стрим запущен с выключенной опцией: перезапусти стрим, чтобы включить.
+Yeni balık	Новая рыбка
+Yumurta	Яйцо
+katılmak için !race yaz · {0}	напиши !race, чтобы участвовать · {0}
+kendiliğinden	само
+yok	нет
+{0} KAZANDI!	{0} ПОБЕЖДАЕТ!
+{0} büyüteçle bakıyor	{0} смотрит в лупу
+{0} ekranı ters çevirdi!	{0} перевернул экран!
+{0} fişek	{0} фейерверков
+{0} kişi	{0} чел.
+{0} patlattı	{0} лопнул его
+ÇAT!	ХРЯСЬ!
+Çıkartma	Стикер
+Çıkartma yapıştır (emoji)	Налепить стикер (эмодзи)
+ÖNİZLEME	ПРЕДПРОСМОТР
+ÖRDEK YARIŞI	УТИНЫЕ ГОНКИ
+Önizlemede bekleme süresi yok. Kapalı eğlenceler burada da çalışmaz. Sesli okuma bilgisayarının hoparlöründen çıkar.	В предпросмотре нет пауз. Выключенные эффекты здесь тоже не работают. Озвучка идёт из динамиков ПК.
+Önizlemede her eğlenceyi kendin dene (yayın gerekmez). Ters ekran ve büyüteç yayın başlarken eklenir: yayın açıkken değiştirilemez.	Пробуй любой эффект в предпросмотре (стрим не нужен). Переворот экрана и лупа добавляются при старте стрима: во время эфира их не изменить.
+Ördek yarışı	УТИНЫЕ ГОНКИ
+Ördek yarışını {0} kazandı!	{0} выиграл утиные гонки!
+İzleyici başına bekleme	Пауза на зрителя
+İzleyiciler chat'e komut yazar, ekranda canlanır. Kanal puanı gerekmez; her izleyici için bekleme süresi var.	Зрители пишут команды в чат, и они оживают на экране. Баллы канала не нужны; у каждого зрителя есть пауза.
+İğne	Иголка
+ŞLAP!	ШЛЕП!
+Şişe	Бутылка
+Şişede mesaj	Послание в бутылке
+POP!	ЧПОК!

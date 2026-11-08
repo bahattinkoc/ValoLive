@@ -1,4 +1,4 @@
-# ValoLive Â· ar Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+﻿# ValoLive Â· ar Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
  (sen)	 (أنت)
  (şu an kapalı)	 (مغلق حاليًا)
  · BU HARİTADA {0} MAÇI	 · {0} مباريات على هذه الخريطة
@@ -338,3 +338,124 @@ Rakip hafızası: harita üstünde ikonlar (deneysel)	ذاكرة الأعداء:
 {0} dk	{0} د
 {0} sn	{0} ث
 şimdi	الآن
+Yayın anları: clutch, ilk kan, seri, ninja defuse, komik ölümler	لحظات البث: كلاتش، أول دم، سلاسل، تفكيك نينجا، ميتات مضحكة
+ilk öldürme bizden	أول قتل لنا
+KUSURSUZ	بلا خسائر
+kimse düşmeden raund alındı	فزنا بالجولة دون خسارة أحد
+SON RAKİP	آخر خصم
+rakipte tek kişi kaldı	بقي خصم واحد
+{0} raund üst üste	{0} جولات متتالية
+GERİ DÖNÜŞ	عودة قوية
+{0} raund geriden eşitlendi	تعادل بعد التأخر بـ{0} جولات
+MAÇ SAYISI	نقطة الحسم
+bir raund kaldı	بقيت جولة واحدة
+RAKİP MAÇ SAYISINDA	نقطة حسم للخصم
+bu raund kritik	هذه الجولة حاسمة
+UZATMA	وقت إضافي
+iki farkla kazanan alır	يفوز من يتقدم بفارق جولتين
+DEVRE ARASI	استراحة منتصف المباراة
+taraflar değişiyor	تبديل الجهات
+bir raundda 5 öldürme	5 قتلات في جولة واحدة
+bir raundda 4 öldürme	4 قتلات في جولة واحدة
+NİNJA DEFUSE	تفكيك نينجا
+{0} rakip ayaktayken imha ettin	فككت القنبلة و{0} خصوم أحياء
+takım arkadaşın {0} rakip ayaktayken imha etti	زميلك فكك القنبلة و{0} خصوم أحياء
+YER ÇEKİMİ KAZANDI	الجاذبية انتصرت
+{0} kez düşerek öldün	سقطت ومت {0} مرات
+RAKİP UÇURUMDAN	خصم سقط
+{0} rakip düşerek öldü	{0} خصم سقط ومات
+BIÇAK	سكين
+{0} bıçak öldürmesi	{0} قتلة بالسكين
+SPIKE'IN DİBİNDE	قريب جدًا من السبايك
+spike patlamasında {0} kez öldün	مت بانفجار السبايك {0} مرات
+KENDİ KENDİNE	بيدك أنت
+kendi yeteneğinle {0} kez öldün	قتلتك قدرتك {0} مرات
+DOST ATEŞİ	نيران صديقة
+takım arkadaşın seni {0} kez vurdu	زميلك قتلك {0} مرات
+ACE GELİYOR	الآيس قادم
+AKVARYUM	حوض السمك
+AYARLAR	الإعدادات
+Akvaryum: chat'e yazan balık olur	حوض السمك: كل من يكتب في الدردشة يصبح سمكة
+BAŞLA!	انطلق!
+Balon	بالون
+Balon: mesaj balonla süzülür, !pop patlatır	بالون: تطفو الرسالة على بالون، و‎!pop يفجّره
+Bu raund ace gelir mi? 🎯	آيس في هذه الجولة؟ 🎯
+Bugün rank atlıyoruz 💪	اليوم نرفع الرتبة 💪
+Büyüteç	عدسة مكبرة
+Büyüteç: nişangâhı büyütür	عدسة مكبرة: تكبّر منطقة التصويب
+CHAT BİRLİKTE	الدردشة معًا
+CHAT EĞLENCESİ	مرح الدردشة
+CHAT HAVAİ FİŞEK PATLATTI!	الدردشة أطلقت الألعاب النارية!
+Chat eğlencesi: izleyici komutları ekranda canlanır	مرح الدردشة: أوامر المشاهدين تظهر حيّة على الشاشة
+Chat'e gidecek duyuru: 	إعلان للدردشة: 
+Chat'e yaz, balık ol!	اكتب في الدردشة وكن سمكة!
+Domates	طماطم
+Domates / yumurta fırlat	ارمِ طماطم / بيضة
+Duvar yazısı (1 dk kalır)	غرافيتي (يبقى دقيقة)
+EKRAN ŞAKALARI	مقالب الشاشة
+Emoji yağmuru	مطر الإيموجي
+Emoji yağmuru (aynı emojiyi yazınca)	مطر الإيموجي (عندما يرسل كثيرون نفس الإيموجي)
+Emoji yağmuru eşiği	حد مطر الإيموجي
+F9: sniper perdesi · F10: yayın özeti	F9: ستار ضد التجسس · F10: ملخص البث
+Fişek	ألعاب نارية
+Fişek (hepsi)	ألعاب نارية (الكل)
+Güvercin	حمامة
+Güvercin postası (ve sürprizi)	بريد الحمام (ومفاجأته)
+Havai fişek hedefi	هدف الألعاب النارية
+Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.	الطبقات (الرادار، صندوق الدردشة، لحظات البث) ومرح الدردشة (بالون، طائرة، طماطم، سباق البط…) في نافذة منفصلة.
+Kağıt uçak	طائرة ورقية
+Komutları okumak için ana penceredeki Kick hesabını bağla.	اربط حساب Kick في النافذة الرئيسية لقراءة الأوامر.
+MESAJ TAŞIYANLAR	حاملو الرسائل
+Merhaba chat, bu bir deneme!	مرحبًا يا دردشة، هذا اختبار!
+Ortak havai fişek	ألعاب نارية جماعية
+PAT!	بوب!
+RADAR ROZETİ	شارة الرادار
+SNIPER KORUMASI	الحماية من التجسس
+Selam chat!	مرحبًا يا دردشة!
+Selam chat! Bu yayın efsane 🔥	مرحبًا! هذا البث أسطوري 🔥
+Sesli oku	اقرأ بصوت عالٍ
+Sesli oku (robot sesi)	اقرأ بصوت عالٍ (صوت روبوت)
+Sprey	بخاخ
+Ters ekran	قلب الشاشة
+Ters ekran (3 sn)	قلب الشاشة (3 ث)
+Ters ekran, büyüteç ve sesli okuma yalnızca abone ve modlara	قلب الشاشة والعدسة والقراءة الصوتية للمشتركين والمشرفين فقط
+Teşekkürler: {0}	شكرًا: {0}
+Uçak	طائرة
+Uçak pankartı	لافتة طائرة
+ValoLive — Chat eğlencesi önizleme	ValoLive — معاينة مرح الدردشة
+ValoLive — Yayın Paneli	ValoLive — لوحة البث
+Virgülle ayır. Bağlantılar her zaman silinir.	افصل بفواصل. الروابط تُحذف دائمًا.
+YAYIN PANELİ	لوحة البث
+YAYIN PANELİNİ AÇ	افتح لوحة البث
+YAYIN ÜSTÜ	على البث
+Yasaklı kelimeler	كلمات محظورة
+Yayın Paneli	لوحة البث
+Yayın açıkken radar, chat kutusu, maç sonu kartı, yayın anları ve chat komutları değiştirilemez; yayın bitince uygulanır.	أثناء البث لا يمكن تغيير الرادار وصندوق الدردشة وبطاقة نهاية المباراة واللحظات وأوامر الدردشة؛ تُطبّق بعد البث.
+Yayın bu ayar kapalıyken başladı: açmak için yayını yeniden başlat.	بدأ البث وهذا الخيار متوقف: أعد تشغيل البث لتفعيله.
+Yeni balık	سمكة جديدة
+Yumurta	بيضة
+katılmak için !race yaz · {0}	اكتب ‎!race للمشاركة · {0}
+kendiliğinden	تلقائي
+yok	لا شيء
+{0} KAZANDI!	{0} يفوز!
+{0} büyüteçle bakıyor	{0} ينظر بالعدسة المكبرة
+{0} ekranı ters çevirdi!	{0} قلب الشاشة!
+{0} fişek	{0} ألعاب نارية
+{0} kişi	{0} أشخاص
+{0} patlattı	{0} فجّره
+ÇAT!	كراك!
+Çıkartma	ملصق
+Çıkartma yapıştır (emoji)	ألصق ملصقًا (إيموجي)
+ÖNİZLEME	معاينة
+ÖRDEK YARIŞI	سباق البط
+Önizlemede bekleme süresi yok. Kapalı eğlenceler burada da çalışmaz. Sesli okuma bilgisayarının hoparlöründen çıkar.	لا توجد مهلة في المعاينة. المؤثرات المعطلة لا تعمل هنا أيضًا. القراءة الصوتية تخرج من سماعات الحاسوب.
+Önizlemede her eğlenceyi kendin dene (yayın gerekmez). Ters ekran ve büyüteç yayın başlarken eklenir: yayın açıkken değiştirilemez.	جرّب كل مؤثر في المعاينة (بدون بث). قلب الشاشة والعدسة يُضافان عند بدء البث: لا يمكن تغييرهما أثناءه.
+Ördek yarışı	سباق البط
+Ördek yarışını {0} kazandı!	{0} فاز بسباق البط!
+İzleyici başına bekleme	مهلة لكل مشاهد
+İzleyiciler chat'e komut yazar, ekranda canlanır. Kanal puanı gerekmez; her izleyici için bekleme süresi var.	يكتب المشاهدون أوامر في الدردشة فتظهر حيّة على الشاشة. لا حاجة لنقاط القناة؛ لكل مشاهد مهلة.
+İğne	دبوس
+ŞLAP!	سبلات!
+Şişe	زجاجة
+Şişede mesaj	رسالة في زجاجة
+POP!	بوب!

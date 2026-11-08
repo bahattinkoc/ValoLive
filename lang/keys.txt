@@ -18,19 +18,27 @@
 720p60 · 4500 kbps (zayıf internet)
 936p60 · 6000 kbps (keskin + hafif)
 <h2>ValoLive Kick'e bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>
+ACE GELİYOR
 AGRESİF
 AJAN SEÇİMİ
+AKVARYUM
 ANALİZİM
+AYARLAR
 Ajan
 Ajan seçiminde sniper perdesi (otomatik)
+Akvaryum: chat'e yazan balık olur
 Akşam
 Altın
 Analizim
 Atak
 Ayrıntı: %LOCALAPPDATA%\ValoLive\ffmpeg.log
 Açmak için simgeye tıkla; çıkış simgenin sağ tık menüsünde.
+BAŞLA!
 BERABERE
+BIÇAK
 BUGÜN
+Balon
+Balon: mesaj balonla süzülür, !pop patlatır
 Bağlan
 Bağlanılamadı
 Bağlanıyor…
@@ -43,25 +51,48 @@ Bildirimler (tanıdık oyuncu, smurf, parti)
 Bronz
 Bu haritada bomba kurmamış.
 Bu pencere yayına ve kayda girmez · adını gizleyenler aranmaz
+Bu raund ace gelir mi? 🎯
 Bugün henüz rekabetçi maç yok.
+Bugün rank atlıyoruz 💪
 Bugün {0}G {1}M · {2} RR
 Bölge bulunamadı: Valorant'ı bir kez açman gerekiyor
+Büyüteç
+Büyüteç: nişangâhı büyütür
 BİRAZDAN DÖNÜYORUM
 CANLI
 CANLI SKOR
+CHAT BİRLİKTE
+CHAT EĞLENCESİ
+CHAT HAVAİ FİŞEK PATLATTI!
 Canlı skor: {0}-{1} · {2}
+Chat eğlencesi: izleyici komutları ekranda canlanır
 Chat komutları ({0})
+Chat'e gidecek duyuru: 
+Chat'e yaz, balık ol!
 Client ID ve Client Secret gerekli.
+DEVRE ARASI
+DOST ATEŞİ
 Defans
 Demir
 Derecesiz
 Desteklenmeyen ses biçimi ({0} bit).
 Dil, yayın bitince ValoLive yeniden açıldığında değişir.
+Domates
+Domates / yumurta fırlat
+Duvar yazısı (1 dk kalır)
+EKRAN ŞAKALARI
 ESKİ DOST
 Elmas
+Emoji yağmuru
+Emoji yağmuru (aynı emojiyi yazınca)
+Emoji yağmuru eşiği
 Enter: kaydet     Esc: vazgeç\n\n
 Etiketler
 F9  Sniper koruması      F10  Yayın özeti
+F9: sniper perdesi · F10: yayın özeti
+Fişek
+Fişek (hepsi)
+GERİ DÖNÜŞ
 GG, TEŞEKKÜRLER!
 Gece
 Gizli oyuncu
@@ -71,11 +102,14 @@ Gümüş
 Günlükler
 Günün mağazası: {0} · yenilenmesine {1} sa {2} dk
 Gürültü filtresi
+Güvercin
+Güvercin postası (ve sürprizi)
 Güç dengesi (ortalama ranka göre): takımın %{0:0} · rakip %{1:0}
 GİRİŞÇİ
 HARİTA
 HARİTALAR
 Hafif yakalama (yalnızca oyun penceresi)
+Havai fişek hedefi
 Hazırlanıyor…
 HenrikDev anahtarı yok
 Hepsi
@@ -84,13 +118,17 @@ KAFACI
 KATMANLAR
 KAZANMA
 KENDİ ANALİZİM
+KENDİ KENDİNE
 KISA BİR ARA
+KUSURSUZ
 Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.
 Kalite
 Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil
 Kategori
+Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.
 Kaydet ve bağlan
 Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.
+Kağıt uçak
 Kick Stream URL ve Stream Key gerekli.\nKick → Creator Dashboard → Settings bölümünden kopyalayabilirsin.
 Kick hesabı
 Kick hesabı bağlı değil.
@@ -106,13 +144,16 @@ Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):
 Kick'ten URL ve key al
 Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:
 Komutlar: 
+Komutları okumak için ana penceredeki Kick hesabını bağla.
 Kopyala
 Kurduğu bölge: 
 LOBİDE
 MAÇ
 MAÇ ODASI
+MAÇ SAYISI
 MAÇ ÖZETİ
 MAÇTA
+MESAJ TAŞIYANLAR
 Maç Odası
 Maç bekleniyor…
 Maç bulununca otomatik aç
@@ -123,18 +164,26 @@ Maçlar inceleniyor {0}/{1}…
 Maçları inceleniyor…
 Mağaza bilgisi alınamadı.
 Menüde bekleme ekranı (sıra sayacı)
+Merhaba chat, bu bir deneme!
 Mikrofon
 Minimap'e hizala
 Minimap'i radar rozetiyle ört
 NEREDE ÖLÜYORSUN
+NİNJA DEFUSE
 OP'ÇU
 OTURUM
 OYUN STİLİ
+Ortak havai fişek
 Otomatik (Valorant dili)
 Oyun sesi
 PARTİ
+PAT!
+POP!
 Platin
 Profili aç ↗
+RADAR ROZETİ
+RAKİP MAÇ SAYISINDA
+RAKİP UÇURUMDAN
 RAKİPLER
 RANK ATLADIN!
 ROUND AÇILIŞI
@@ -167,12 +216,19 @@ SES
 SIK GÖRÜLEN
 SIRA BEKLENİYOR
 SIRADAKİ MAÇ BİRAZDAN
+SNIPER KORUMASI
 SNIPER KORUMASI AKTİF
 SON MAÇ
 SON MAÇ · maç bekleniyor
+SON RAKİP
+SPIKE'IN DİBİNDE
 Sabah
 Sadece Valorant (önerilen)
+Selam chat!
+Selam chat! Bu yayın efsane 🔥
 Ses cihazı yanıt vermedi.
+Sesli oku
+Sesli oku (robot sesi)
 Seçtiğim uygulama
 Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.
 Sniper koruması (F9)
@@ -180,6 +236,7 @@ Son maç bilgisi yok.
 Son maç: {0} {1} · {2} · {3} · {4} · HS {5}
 Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.
 Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.
+Sprey
 Stil çıkarmak için yeterli round yok (en az 40).
 Stream URL / Stream Key'i Kick panelinden yeniden kopyala
 Sv
@@ -197,31 +254,52 @@ Takım arkadaşın
 Takımında {0} kişilik parti
 Tam ekran (her şey görünür)
 Tarayıcıda Kick onayı bekleniyor…
+Ters ekran
+Ters ekran (3 sn)
+Ters ekran, büyüteç ve sesli okuma yalnızca abone ve modlara
+Teşekkürler: {0}
 TİLT
+UZATMA
 Uygulama
 Uygulamanın Client ID ve Client Secret'ını buraya yapıştır:
+Uçak
+Uçak pankartı
 ValoLive arka planda çalışıyor
+ValoLive — Chat eğlencesi önizleme
 ValoLive — Kendi Analizim
 ValoLive — Maç Odası
 ValoLive — Oyuncu Analizi
 ValoLive — SNIPER KORUMASI AÇIK
 ValoLive — YAYIN ÖZETİ
+ValoLive — Yayın Paneli
 ValoLive'ı aç
 Varsayılan ses çıkışı
 Vazgeç
+Virgülle ayır. Bağlantılar her zaman silinir.
 YALNIZ
 YAYIN BİLGİSİ
+YAYIN PANELİ
+YAYIN PANELİNİ AÇ
 YAYIN ÖZETİ
+YAYIN ÜSTÜ
 YAYINI BAŞLAT
 YAYINI BİTİR
 YENİLGİ
+YER ÇEKİMİ KAZANDI
 Yakalama
+Yasaklı kelimeler
+Yayın Paneli
+Yayın anları: clutch, ilk kan, seri, ninja defuse, komik ölümler
 Yayın açık. Kapatılsın mı?
+Yayın açıkken radar, chat kutusu, maç sonu kartı, yayın anları ve chat komutları değiştirilemez; yayın bitince uygulanır.
 Yayın bilgisi uygulanamadı:\n
+Yayın bu ayar kapalıyken başladı: açmak için yayını yeniden başlat.
 Yayında chat kutusu
 Yayını başlat
 Yayını bitir
+Yeni balık
 Yeni uygulama oluştur. Ad: ValoLive · Redirect URL olarak şunu yaz:
+Yumurta
 Yücelik
 ZAFER
 adını gizliyor — geçmişine bakılmaz
@@ -229,7 +307,11 @@ atak
 bağlanıyor
 bağlı
 berabere
+bir raund kaldı
+bir raundda 4 öldürme
+bir raundda 5 öldürme
 bu pencere yayına girmez
+bu raund kritik
 bugün
 chat odası bulunamadı
 defans
@@ -243,16 +325,22 @@ geçmiş alınamadı
 geçmiş yükleniyor…
 harita
 hasar/round
+iki farkla kazanan alır
 ilk kan / round
 ilk kan senden
+ilk öldürme bizden
 ilk öldüğün round kayıp
 ilk ölen sensin
 ilk ölüm / round
 incelenecek maç bulunamadı
 kafa isabeti
+katılmak için !race yaz · {0}
 kaybettin
 kazandın
 kazanma
+kendi yeteneğinle {0} kez öldün
+kendiliğinden
+kimse düşmeden raund alındı
 koptu: 
 kurma {0} · imha {1}
 maç
@@ -263,28 +351,46 @@ ort.
 oturumun 4.+ maçı ({0})
 rakip
 rakipte
+rakipte tek kişi kaldı
 rank yükleniyor…
 son {0} maç · {1} round incelendi
 son {0} rekabetçi maç
+spike patlamasında {0} kez öldün
 standart
 sunucu sessiz kaldı
 takım arkadaşın
+takım arkadaşın seni {0} kez vurdu
+takım arkadaşın {0} rakip ayaktayken imha etti
 takımında
+taraflar değişiyor
 ulti / maç
 yayın başlayınca bağlanır
+yok
 zirve
 {0:0} ay önce
 {0:0} gün önce
 {0:0} hafta önce
+{0} KAZANDI!
 {0} açılamadı: {1}
 {0} açılınca yayın kendiliğinden devam eder
+{0} büyüteçle bakıyor
+{0} bıçak öldürmesi
 {0} dk
+{0} ekranı ters çevirdi!
+{0} fişek
 {0} fps  ·  {1}  ·  düşen kare: {2}  ·  hız {3}
+{0} kez düşerek öldün
+{0} kişi
 {0} maç · %{1} kazanma · atak round %{2} · defans round %{3}
 {0} maç · düellolar ekleniyor {1}/{2}
 {0} maç · tarama hatası: {1}
 {0} maç · {1}
+{0} patlattı
 {0} portu kullanımda; ValoLive'ı yeniden başlatıp tekrar dene.
+{0} rakip ayaktayken imha ettin
+{0} rakip düşerek öldü
+{0} raund geriden eşitlendi
+{0} raund üst üste
 {0} rekabetçi maç
 {0} sn
 {0} · o maçta {1}/{2}/{3}{4}
@@ -297,13 +403,22 @@ zirve
 · act %{0} ({1})
 · düello sen {0} – {1} o
 · {0} kez aynı maçtaydınız
+ÇAT!
 Çap {0} px · konum {1}, {2}
+Çıkartma
+Çıkartma yapıştır (emoji)
 Çıkış
+ÖNİZLEME
+ÖRDEK YARIŞI
 Öldürmelerinin büyük kısmı Operator ile (%{0}). Uzun açıları kuru peek'leme, flaşla ya da başka yerden gir.
 Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.
 Ölümsüzlük
 Önce Kick hesabını bağla (Yayın Bilgisi → Bağlan).
+Önizlemede bekleme süresi yok. Kapalı eğlenceler burada da çalışmaz. Sesli okuma bilgisayarının hoparlöründen çıkar.
+Önizlemede her eğlenceyi kendin dene (yayın gerekmez). Ters ekran ve büyüteç yayın başlarken eklenir: yayın açıkken değiştirilemez.
+Ördek yarışı
+Ördek yarışını {0} kazandı!
 Öğlen
 Ücretsiz anahtar al
 Üstte tut
@@ -316,6 +431,12 @@ zirve
 İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.
 İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.
 İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.
+İzleyici başına bekleme
+İzleyiciler chat'e komut yazar, ekranda canlanır. Kanal puanı gerekmez; her izleyici için bekleme süresi var.
+İğne
+ŞLAP!
+Şişe
+Şişede mesaj
 Şu an maçta değil.
 şimdi
 …

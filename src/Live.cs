@@ -25,7 +25,11 @@ namespace ValoLive
         public string MatchId, MapUrl, Map, AgentId, Result, Queue;
         public int Ally, Enemy, K, D, A, Acs, Hs, FirstBloods, Plants, Defuses, Rounds;
         public List<PointF> Kills = new List<PointF>(), Deaths = new List<PointF>();   // oyun koordinatı
+        public List<Highlight> Highlights = new List<Highlight>();                      // yayın anları: önem sırasıyla
     }
+
+    /// <summary>Maçın bir anı (ACE, ninja defuse, düşerek ölme...); N: kaç kez / kaç rakip ayaktayken.</summary>
+    sealed class Highlight { public MomentWatch.Kind Kind; public int N; public bool Mine; }
 
     /// <summary>
     /// Canlı bilgi: her 3 sn'de kendi presence kaydın okunur (maçta mısın, harita, skor). Maç bitince
@@ -144,7 +148,48 @@ namespace ValoLive
                 if (S(J(k, "victim")) == me)
                     pm.Deaths.Add(new PointF(I(J(k, "victimLocation", "x")), I(J(k, "victimLocation", "y"))));
             }
+            if (MomentWatch.Target(pm.Queue) > 0) pm.Highlights = Highlights(d, me, team); // ölüm maçında "raund" yok: 5 öldürme ACE değil
             return pm;
+        }
+
+        /// <summary>
+        /// Maçın anları, Riot maç detayından: raundda 5/4 öldürme, rakip ayaktayken imha (ninja defuse) ve komik ölümler
+        /// (finishingDamage.damageType: Fall düşme, Melee bıçak, Bomb spike; öldüren = ölen ve Ability: kendi yeteneğin).
+        /// </summary>
+        static List<Highlight> Highlights(object d, string me, string team)
+        {
+            var list = new List<Highlight>();
+            var teamOf = ((J(d, "players") as object[]) ?? new object[0]).ToDictionary(p => S(J(p, "subject")), p => S(J(p, "teamId")));
+            bool Enemy(string puuid) => teamOf.TryGetValue(puuid, out var t) && t != team;
+            var kills = (J(d, "kills") as object[]) ?? new object[0];
+
+            foreach (var g in kills.Where(k => S(J(k, "killer")) == me && Enemy(S(J(k, "victim")))).GroupBy(k => I(J(k, "round"))).OrderByDescending(g => g.Count()))
+            {
+                if (g.Count() >= 5) list.Add(new Highlight { Kind = MomentWatch.Kind.Ace, N = 5 });
+                else if (g.Count() == 4) list.Add(new Highlight { Kind = MomentWatch.Kind.FourK, N = 4 });
+            }
+            foreach (var r in (J(d, "roundResults") as object[]) ?? new object[0])
+            {
+                string defuser = S(J(r, "bombDefuser"));
+                if (defuser == "" || Enemy(defuser)) continue;
+                int rn = I(J(r, "roundNum")); long at = Convert.ToInt64(J(r, "defuseRoundTime") ?? 0L);
+                int down = kills.Count(k => I(J(k, "round")) == rn && Convert.ToInt64(J(k, "roundTime") ?? 0L) <= at && Enemy(S(J(k, "victim"))));
+                int up = Math.Max(0, 5 - down);
+                if (up >= 1) list.Add(new Highlight { Kind = MomentWatch.Kind.NinjaDefuse, N = up, Mine = defuser == me });
+            }
+            int Count(Func<object, bool> f) => kills.Count(f);
+            string Type(object k) => S(J(k, "finishingDamage", "damageType"));
+            void Add(MomentWatch.Kind kind, int n) { if (n > 0) list.Add(new Highlight { Kind = kind, N = n }); }
+            Add(MomentWatch.Kind.FallDeath, Count(k => S(J(k, "victim")) == me && Type(k) == "Fall"));
+            Add(MomentWatch.Kind.EnemyFell, Count(k => Enemy(S(J(k, "victim"))) && Type(k) == "Fall"));
+            Add(MomentWatch.Kind.KnifeKill, Count(k => S(J(k, "killer")) == me && Enemy(S(J(k, "victim"))) && Type(k) == "Melee"));
+            Add(MomentWatch.Kind.SpikeDeath, Count(k => S(J(k, "victim")) == me && Type(k) == "Bomb"));
+            Add(MomentWatch.Kind.SelfKill, Count(k => S(J(k, "victim")) == me && S(J(k, "killer")) == me && Type(k) == "Ability"));
+            Add(MomentWatch.Kind.FriendlyFire, Count(k => S(J(k, "victim")) == me && S(J(k, "killer")) != me && teamOf.TryGetValue(S(J(k, "killer")), out var t) && t == team));
+            // Önce övünülecekler (ACE, 4K, kendi ninja defuse'un), sonra takımınki, en son komik olanlar.
+            // Her türden bir tane (en çok rakip ayaktayken yapılan ninja defuse kalır).
+            return list.OrderByDescending(h => h.N).GroupBy(h => new { h.Kind, h.Mine }).Select(g => g.First())
+                       .OrderBy(h => h.Kind == MomentWatch.Kind.NinjaDefuse && !h.Mine ? 3 : h.Kind <= MomentWatch.Kind.NinjaDefuse ? (int)h.Kind - (int)MomentWatch.Kind.Ace : 4).ToList();
         }
 
         public void Dispose() => timer.Dispose();

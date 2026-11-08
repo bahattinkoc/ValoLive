@@ -1,4 +1,4 @@
-# ValoLive Â· ko Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+﻿# ValoLive Â· ko Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
  (sen)	 (나)
  (şu an kapalı)	 (현재 닫힘)
  · BU HARİTADA {0} MAÇI	 · 이 맵에서 {0}경기
@@ -338,3 +338,124 @@ Rakip hafızası: harita üstünde ikonlar (deneysel)	적 기억: 미니맵 위 
 {0} dk	{0}분
 {0} sn	{0}초
 şimdi	지금
+Yayın anları: clutch, ilk kan, seri, ninja defuse, komik ölümler	방송 하이라이트: 클러치, 퍼스트 블러드, 연승, 닌자 해체, 웃긴 죽음
+ilk öldürme bizden	첫 킬은 우리 팀
+KUSURSUZ	완벽
+kimse düşmeden raund alındı	아무도 죽지 않고 라운드 승리
+SON RAKİP	마지막 적
+rakipte tek kişi kaldı	적이 한 명 남음
+{0} raund üst üste	{0}라운드 연속
+GERİ DÖNÜŞ	역전
+{0} raund geriden eşitlendi	{0}라운드 뒤지다 동점
+MAÇ SAYISI	매치 포인트
+bir raund kaldı	한 라운드 남음
+RAKİP MAÇ SAYISINDA	상대 매치 포인트
+bu raund kritik	이번 라운드가 중요
+UZATMA	연장전
+iki farkla kazanan alır	2라운드 차로 승리
+DEVRE ARASI	하프타임
+taraflar değişiyor	공수 교대
+bir raundda 5 öldürme	한 라운드 5킬
+bir raundda 4 öldürme	한 라운드 4킬
+NİNJA DEFUSE	닌자 해체
+{0} rakip ayaktayken imha ettin	적 {0}명 생존 중 해체
+takım arkadaşın {0} rakip ayaktayken imha etti	팀원이 적 {0}명 생존 중 해체
+YER ÇEKİMİ KAZANDI	중력 승리
+{0} kez düşerek öldün	낙사 {0}회
+RAKİP UÇURUMDAN	적 낙사
+{0} rakip düşerek öldü	적 {0}명 낙사
+BIÇAK	칼
+{0} bıçak öldürmesi	칼 킬 {0}
+SPIKE'IN DİBİNDE	스파이크 바로 옆
+spike patlamasında {0} kez öldün	스파이크 폭발로 {0}회 사망
+KENDİ KENDİNE	자멸
+kendi yeteneğinle {0} kez öldün	자기 스킬로 {0}회 사망
+DOST ATEŞİ	팀킬
+takım arkadaşın seni {0} kez vurdu	팀원에게 {0}회 당함
+ACE GELİYOR	에이스 간다
+AKVARYUM	수족관
+AYARLAR	설정
+Akvaryum: chat'e yazan balık olur	수족관: 채팅한 사람은 물고기가 됨
+BAŞLA!	출발!
+Balon	풍선
+Balon: mesaj balonla süzülür, !pop patlatır	풍선: 메시지가 풍선에 매달려 떠다님, !pop으로 터뜨림
+Bu raund ace gelir mi? 🎯	이번 라운드 에이스? 🎯
+Bugün rank atlıyoruz 💪	오늘 랭크 올린다 💪
+Büyüteç	돋보기
+Büyüteç: nişangâhı büyütür	돋보기: 조준점을 확대
+CHAT BİRLİKTE	채팅 다 함께
+CHAT EĞLENCESİ	채팅 놀이
+CHAT HAVAİ FİŞEK PATLATTI!	채팅이 불꽃놀이를 쐈다!
+Chat eğlencesi: izleyici komutları ekranda canlanır	채팅 놀이: 시청자 명령어가 화면에서 살아남
+Chat'e gidecek duyuru: 	채팅 공지: 
+Chat'e yaz, balık ol!	채팅하고 물고기가 되자!
+Domates	토마토
+Domates / yumurta fırlat	토마토 / 달걀 던지기
+Duvar yazısı (1 dk kalır)	낙서 (1분 유지)
+EKRAN ŞAKALARI	화면 장난
+Emoji yağmuru	이모지 비
+Emoji yağmuru (aynı emojiyi yazınca)	이모지 비 (같은 이모지를 여럿이 보내면)
+Emoji yağmuru eşiği	이모지 비 기준
+F9: sniper perdesi · F10: yayın özeti	F9: 스나이핑 방지 커튼 · F10: 방송 요약
+Fişek	불꽃
+Fişek (hepsi)	불꽃 (전부)
+Güvercin	비둘기
+Güvercin postası (ve sürprizi)	비둘기 우편 (그리고 깜짝 선물)
+Havai fişek hedefi	불꽃놀이 목표
+Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.	오버레이(레이더, 채팅창, 방송 하이라이트)와 채팅 놀이(풍선, 비행기, 토마토, 오리 경주…)는 별도 창에 있음.
+Kağıt uçak	종이비행기
+Komutları okumak için ana penceredeki Kick hesabını bağla.	명령어를 읽으려면 메인 창에서 Kick 계정을 연결하세요.
+MESAJ TAŞIYANLAR	메시지 배달
+Merhaba chat, bu bir deneme!	안녕 채팅, 이건 테스트야!
+Ortak havai fişek	다 함께 불꽃놀이
+PAT!	펑!
+RADAR ROZETİ	레이더 배지
+SNIPER KORUMASI	스나이핑 방지
+Selam chat!	안녕 채팅!
+Selam chat! Bu yayın efsane 🔥	안녕! 이 방송 전설이다 🔥
+Sesli oku	소리 내어 읽기
+Sesli oku (robot sesi)	소리 내어 읽기 (로봇 목소리)
+Sprey	스프레이
+Ters ekran	화면 뒤집기
+Ters ekran (3 sn)	화면 뒤집기 (3초)
+Ters ekran, büyüteç ve sesli okuma yalnızca abone ve modlara	화면 뒤집기, 돋보기, 음성 읽기는 구독자와 매니저만
+Teşekkürler: {0}	고마워요: {0}
+Uçak	비행기
+Uçak pankartı	비행기 현수막
+ValoLive — Chat eğlencesi önizleme	ValoLive — 채팅 놀이 미리보기
+ValoLive — Yayın Paneli	ValoLive — 방송 패널
+Virgülle ayır. Bağlantılar her zaman silinir.	쉼표로 구분. 링크는 항상 삭제됨.
+YAYIN PANELİ	방송 패널
+YAYIN PANELİNİ AÇ	방송 패널 열기
+YAYIN ÜSTÜ	방송 화면
+Yasaklı kelimeler	금지어
+Yayın Paneli	방송 패널
+Yayın açıkken radar, chat kutusu, maç sonu kartı, yayın anları ve chat komutları değiştirilemez; yayın bitince uygulanır.	방송 중에는 레이더, 채팅창, 경기 후 카드, 하이라이트, 채팅 명령어를 바꿀 수 없음. 방송 후 적용.
+Yayın bu ayar kapalıyken başladı: açmak için yayını yeniden başlat.	이 설정을 끈 채 방송이 시작됨: 켜려면 방송을 다시 시작하세요.
+Yeni balık	새 물고기
+Yumurta	달걀
+katılmak için !race yaz · {0}	!race 입력해서 참가 · {0}
+kendiliğinden	자동
+yok	없음
+{0} KAZANDI!	{0} 우승!
+{0} büyüteçle bakıyor	{0} 님이 돋보기로 보는 중
+{0} ekranı ters çevirdi!	{0} 님이 화면을 뒤집었다!
+{0} fişek	{0}발
+{0} kişi	{0}명
+{0} patlattı	{0} 님이 터뜨림
+ÇAT!	빠직!
+Çıkartma	스티커
+Çıkartma yapıştır (emoji)	스티커 붙이기 (이모지)
+ÖNİZLEME	미리보기
+ÖRDEK YARIŞI	오리 경주
+Önizlemede bekleme süresi yok. Kapalı eğlenceler burada da çalışmaz. Sesli okuma bilgisayarının hoparlöründen çıkar.	미리보기에는 대기 시간이 없음. 꺼둔 효과는 여기서도 작동 안 함. 음성 읽기는 PC 스피커로 나옴.
+Önizlemede her eğlenceyi kendin dene (yayın gerekmez). Ters ekran ve büyüteç yayın başlarken eklenir: yayın açıkken değiştirilemez.	미리보기에서 모든 효과를 직접 시험 (방송 불필요). 화면 뒤집기와 돋보기는 방송 시작 때 추가되므로 방송 중엔 변경 불가.
+Ördek yarışı	오리 경주
+Ördek yarışını {0} kazandı!	오리 경주 우승: {0}!
+İzleyici başına bekleme	시청자별 대기 시간
+İzleyiciler chat'e komut yazar, ekranda canlanır. Kanal puanı gerekmez; her izleyici için bekleme süresi var.	시청자가 채팅에 명령어를 쓰면 화면에서 살아남. 채널 포인트 필요 없음, 시청자마다 대기 시간 있음.
+İğne	바늘
+ŞLAP!	철퍽!
+Şişe	병
+Şişede mesaj	병 속의 편지
+POP!	뽁!

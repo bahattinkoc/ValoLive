@@ -1,4 +1,4 @@
-# ValoLive Â· vi Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+﻿# ValoLive Â· vi Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
  (sen)	 (bạn)
  (şu an kapalı)	 (đang đóng)
  · BU HARİTADA {0} MAÇI	 · {0} TRẬN TRÊN BẢN ĐỒ NÀY
@@ -338,3 +338,124 @@ Rakip hafızası: harita üstünde ikonlar (deneysel)	Ghi nhớ địch: biểu 
 {0} dk	{0} phút
 {0} sn	{0} giây
 şimdi	bây giờ
+Yayın anları: clutch, ilk kan, seri, ninja defuse, komik ölümler	Khoảnh khắc trên stream: clutch, first blood, chuỗi thắng, ninja defuse, pha chết hài hước
+ilk öldürme bizden	mạng đầu tiên là của ta
+KUSURSUZ	HOÀN HẢO
+kimse düşmeden raund alındı	thắng round không mất ai
+SON RAKİP	KẺ ĐỊCH CUỐI
+rakipte tek kişi kaldı	còn một kẻ địch
+{0} raund üst üste	{0} round liên tiếp
+GERİ DÖNÜŞ	LỘI NGƯỢC DÒNG
+{0} raund geriden eşitlendi	gỡ hòa sau khi bị dẫn {0} round
+MAÇ SAYISI	MATCH POINT
+bir raund kaldı	còn một round
+RAKİP MAÇ SAYISINDA	ĐỊCH Ở MATCH POINT
+bu raund kritik	round này cực kỳ quan trọng
+UZATMA	HIỆP PHỤ
+iki farkla kazanan alır	thắng cách biệt hai round
+DEVRE ARASI	NGHỈ GIỮA HIỆP
+taraflar değişiyor	đổi bên
+bir raundda 5 öldürme	5 mạng trong một round
+bir raundda 4 öldürme	4 mạng trong một round
+NİNJA DEFUSE	NINJA DEFUSE
+{0} rakip ayaktayken imha ettin	bạn gỡ bom khi còn {0} kẻ địch
+takım arkadaşın {0} rakip ayaktayken imha etti	đồng đội gỡ bom khi còn {0} kẻ địch
+YER ÇEKİMİ KAZANDI	TRỌNG LỰC THẮNG
+{0} kez düşerek öldün	chết vì rơi {0} lần
+RAKİP UÇURUMDAN	ĐỊCH RƠI VỰC
+{0} rakip düşerek öldü	{0} kẻ địch chết vì rơi
+BIÇAK	DAO
+{0} bıçak öldürmesi	{0} mạng bằng dao
+SPIKE'IN DİBİNDE	QUÁ GẦN SPIKE
+spike patlamasında {0} kez öldün	chết vì spike nổ {0} lần
+KENDİ KENDİNE	TỰ HẠI
+kendi yeteneğinle {0} kez öldün	chết vì chiêu của mình {0} lần
+DOST ATEŞİ	BẮN NHẦM ĐỒNG ĐỘI
+takım arkadaşın seni {0} kez vurdu	đồng đội hạ bạn {0} lần
+ACE GELİYOR	ACE SẮP ĐẾN
+AKVARYUM	BỂ CÁ
+AYARLAR	CÀI ĐẶT
+Akvaryum: chat'e yazan balık olur	Bể cá: ai chat sẽ thành một chú cá
+BAŞLA!	BẮT ĐẦU!
+Balon	Bóng bay
+Balon: mesaj balonla süzülür, !pop patlatır	Bóng bay: tin nhắn bay theo bóng, !pop để chọc nổ
+Bu raund ace gelir mi? 🎯	Round này ace không? 🎯
+Bugün rank atlıyoruz 💪	Hôm nay lên rank 💪
+Büyüteç	Kính lúp
+Büyüteç: nişangâhı büyütür	Kính lúp: phóng to tâm ngắm
+CHAT BİRLİKTE	CẢ CHAT CÙNG CHƠI
+CHAT EĞLENCESİ	CHAT VUI
+CHAT HAVAİ FİŞEK PATLATTI!	CHAT ĐÃ BẮN PHÁO HOA!
+Chat eğlencesi: izleyici komutları ekranda canlanır	Chat vui: lệnh của người xem hiện lên màn hình
+Chat'e gidecek duyuru: 	Thông báo lên chat: 
+Chat'e yaz, balık ol!	Chat để thành cá!
+Domates	Cà chua
+Domates / yumurta fırlat	Ném cà chua / trứng
+Duvar yazısı (1 dk kalır)	Graffiti (giữ 1 phút)
+EKRAN ŞAKALARI	TRÒ ĐÙA MÀN HÌNH
+Emoji yağmuru	Mưa emoji
+Emoji yağmuru (aynı emojiyi yazınca)	Mưa emoji (khi nhiều người gửi cùng emoji)
+Emoji yağmuru eşiği	Ngưỡng mưa emoji
+F9: sniper perdesi · F10: yayın özeti	F9: màn chống snipe · F10: tóm tắt stream
+Fişek	Pháo
+Fişek (hepsi)	Pháo (tất cả)
+Güvercin	Bồ câu
+Güvercin postası (ve sürprizi)	Bồ câu đưa thư (kèm bất ngờ)
+Havai fişek hedefi	Mục tiêu pháo hoa
+Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.	Lớp phủ (radar, khung chat, khoảnh khắc) và chat vui (bóng bay, máy bay, cà chua, đua vịt…) nằm ở cửa sổ riêng.
+Kağıt uçak	Máy bay giấy
+Komutları okumak için ana penceredeki Kick hesabını bağla.	Kết nối tài khoản Kick ở cửa sổ chính để đọc lệnh.
+MESAJ TAŞIYANLAR	VẬT CHỞ TIN NHẮN
+Merhaba chat, bu bir deneme!	Chào chat, đây là thử nghiệm!
+Ortak havai fişek	Pháo hoa chung
+PAT!	BỤP!
+RADAR ROZETİ	HUY HIỆU RADAR
+SNIPER KORUMASI	CHỐNG SNIPE
+Selam chat!	Chào chat!
+Selam chat! Bu yayın efsane 🔥	Chào chat! Stream này đỉnh thật 🔥
+Sesli oku	Đọc to
+Sesli oku (robot sesi)	Đọc to (giọng robot)
+Sprey	Bình xịt
+Ters ekran	Lật màn hình
+Ters ekran (3 sn)	Lật màn hình (3 giây)
+Ters ekran, büyüteç ve sesli okuma yalnızca abone ve modlara	Lật màn hình, kính lúp và đọc to chỉ cho sub và mod
+Teşekkürler: {0}	Cảm ơn: {0}
+Uçak	Máy bay
+Uçak pankartı	Băng rôn máy bay
+ValoLive — Chat eğlencesi önizleme	ValoLive — Xem trước chat vui
+ValoLive — Yayın Paneli	ValoLive — Bảng stream
+Virgülle ayır. Bağlantılar her zaman silinir.	Phân cách bằng dấu phẩy. Liên kết luôn bị xóa.
+YAYIN PANELİ	BẢNG STREAM
+YAYIN PANELİNİ AÇ	MỞ BẢNG STREAM
+YAYIN ÜSTÜ	TRÊN STREAM
+Yasaklı kelimeler	Từ bị cấm
+Yayın Paneli	BẢNG STREAM
+Yayın açıkken radar, chat kutusu, maç sonu kartı, yayın anları ve chat komutları değiştirilemez; yayın bitince uygulanır.	Khi đang live không đổi được radar, khung chat, thẻ sau trận, khoảnh khắc và lệnh chat; áp dụng sau stream.
+Yayın bu ayar kapalıyken başladı: açmak için yayını yeniden başlat.	Stream bắt đầu khi tùy chọn này tắt: khởi động lại stream để bật.
+Yeni balık	Cá mới
+Yumurta	Trứng
+katılmak için !race yaz · {0}	gõ !race để tham gia · {0}
+kendiliğinden	tự động
+yok	không
+{0} KAZANDI!	{0} THẮNG!
+{0} büyüteçle bakıyor	{0} đang soi kính lúp
+{0} ekranı ters çevirdi!	{0} đã lật ngược màn hình!
+{0} fişek	{0} pháo
+{0} kişi	{0} người
+{0} patlattı	{0} đã chọc nổ
+ÇAT!	RẮC!
+Çıkartma	Nhãn dán
+Çıkartma yapıştır (emoji)	Dán nhãn (emoji)
+ÖNİZLEME	XEM TRƯỚC
+ÖRDEK YARIŞI	ĐUA VỊT
+Önizlemede bekleme süresi yok. Kapalı eğlenceler burada da çalışmaz. Sesli okuma bilgisayarının hoparlöründen çıkar.	Xem trước không có thời gian chờ. Hiệu ứng đã tắt cũng không chạy ở đây. Giọng đọc phát qua loa máy tính.
+Önizlemede her eğlenceyi kendin dene (yayın gerekmez). Ters ekran ve büyüteç yayın başlarken eklenir: yayın açıkken değiştirilemez.	Tự thử mọi hiệu ứng trong xem trước (không cần stream). Lật màn hình và kính lúp được thêm khi bắt đầu stream: không đổi được khi đang live.
+Ördek yarışı	ĐUA VỊT
+Ördek yarışını {0} kazandı!	{0} đã thắng cuộc đua vịt!
+İzleyici başına bekleme	Thời gian chờ mỗi người xem
+İzleyiciler chat'e komut yazar, ekranda canlanır. Kanal puanı gerekmez; her izleyici için bekleme süresi var.	Người xem gõ lệnh trong chat và nó hiện lên màn hình. Không cần điểm kênh; mỗi người xem có thời gian chờ.
+İğne	Kim
+ŞLAP!	BẸP!
+Şişe	Chai
+Şişede mesaj	Thư trong chai
+POP!	BỐP!

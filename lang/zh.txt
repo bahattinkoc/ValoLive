@@ -1,4 +1,4 @@
-# ValoLive Â· zh Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+﻿# ValoLive Â· zh Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
  (sen)	 (你)
  (şu an kapalı)	 (目前已關閉)
  · BU HARİTADA {0} MAÇI	 · 此地圖 {0} 場
@@ -338,3 +338,124 @@ Rakip hafızası: harita üstünde ikonlar (deneysel)	敌人记忆：在小地�
 {0} dk	{0} 分
 {0} sn	{0} 秒
 şimdi	现在
+Yayın anları: clutch, ilk kan, seri, ninja defuse, komik ölümler	直播精彩時刻：殘局、首殺、連勝、忍者拆彈、搞笑死亡
+ilk öldürme bizden	首殺是我們的
+KUSURSUZ	零傷亡
+kimse düşmeden raund alındı	無人陣亡拿下回合
+SON RAKİP	最後一名敵人
+rakipte tek kişi kaldı	敵方只剩一人
+{0} raund üst üste	連續 {0} 回合
+GERİ DÖNÜŞ	逆轉
+{0} raund geriden eşitlendi	落後 {0} 回合後追平
+MAÇ SAYISI	賽點
+bir raund kaldı	只差一回合
+RAKİP MAÇ SAYISINDA	對手賽點
+bu raund kritik	這回合很關鍵
+UZATMA	延長賽
+iki farkla kazanan alır	領先兩回合才獲勝
+DEVRE ARASI	中場
+taraflar değişiyor	攻守交換
+bir raundda 5 öldürme	單回合 5 殺
+bir raundda 4 öldürme	單回合 4 殺
+NİNJA DEFUSE	忍者拆彈
+{0} rakip ayaktayken imha ettin	在 {0} 名敵人存活時拆彈
+takım arkadaşın {0} rakip ayaktayken imha etti	隊友在 {0} 名敵人存活時拆彈
+YER ÇEKİMİ KAZANDI	地心引力獲勝
+{0} kez düşerek öldün	摔死 {0} 次
+RAKİP UÇURUMDAN	敵人墜落
+{0} rakip düşerek öldü	{0} 名敵人摔死
+BIÇAK	刀殺
+{0} bıçak öldürmesi	刀殺 {0} 次
+SPIKE'IN DİBİNDE	離炸彈太近
+spike patlamasında {0} kez öldün	被炸彈炸死 {0} 次
+KENDİ KENDİNE	自殺
+kendi yeteneğinle {0} kez öldün	被自己的技能殺死 {0} 次
+DOST ATEŞİ	友軍誤傷
+takım arkadaşın seni {0} kez vurdu	被隊友殺死 {0} 次
+ACE GELİYOR	ACE 要来了
+AKVARYUM	水族箱
+AYARLAR	设置
+Akvaryum: chat'e yazan balık olur	水族箱：在聊天里发言的人会变成鱼
+BAŞLA!	开跑！
+Balon	气球
+Balon: mesaj balonla süzülür, !pop patlatır	气球：消息挂在气球上飘，!pop 戳破
+Bu raund ace gelir mi? 🎯	这局能 ACE 吗？🎯
+Bugün rank atlıyoruz 💪	今天上分 💪
+Büyüteç	放大镜
+Büyüteç: nişangâhı büyütür	放大镜：放大准星
+CHAT BİRLİKTE	聊天一起玩
+CHAT EĞLENCESİ	聊天互动
+CHAT HAVAİ FİŞEK PATLATTI!	聊天放烟花啦！
+Chat eğlencesi: izleyici komutları ekranda canlanır	聊天互动：观众指令在画面上动起来
+Chat'e gidecek duyuru: 	发到聊天的公告：
+Chat'e yaz, balık ol!	发言就能变成鱼！
+Domates	番茄
+Domates / yumurta fırlat	扔番茄 / 鸡蛋
+Duvar yazısı (1 dk kalır)	涂鸦（保留 1 分钟）
+EKRAN ŞAKALARI	屏幕恶作剧
+Emoji yağmuru	表情雨
+Emoji yağmuru (aynı emojiyi yazınca)	表情雨（很多人发同一个表情时）
+Emoji yağmuru eşiği	表情雨门槛
+F9: sniper perdesi · F10: yayın özeti	F9：防窥屏幕 · F10：直播总结
+Fişek	烟花
+Fişek (hepsi)	烟花（全部）
+Güvercin	鸽子
+Güvercin postası (ve sürprizi)	飞鸽传书（附赠惊喜）
+Havai fişek hedefi	烟花目标
+Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.	叠加层（雷达、聊天框、直播精彩时刻）和聊天互动（气球、飞机、番茄、鸭子赛跑…）在单独窗口。
+Kağıt uçak	纸飞机
+Komutları okumak için ana penceredeki Kick hesabını bağla.	请在主窗口连接 Kick 账号以读取指令。
+MESAJ TAŞIYANLAR	传信道具
+Merhaba chat, bu bir deneme!	大家好，这是一个测试！
+Ortak havai fişek	集体放烟花
+PAT!	啪！
+RADAR ROZETİ	雷达徽章
+SNIPER KORUMASI	防窥保护
+Selam chat!	大家好！
+Selam chat! Bu yayın efsane 🔥	大家好！这场直播太神了 🔥
+Sesli oku	朗读
+Sesli oku (robot sesi)	朗读（机器人声音）
+Sprey	喷漆
+Ters ekran	翻转屏幕
+Ters ekran (3 sn)	翻转屏幕（3 秒）
+Ters ekran, büyüteç ve sesli okuma yalnızca abone ve modlara	翻转屏幕、放大镜和朗读仅限订阅者和管理员
+Teşekkürler: {0}	感谢：{0}
+Uçak	飞机
+Uçak pankartı	飞机拉横幅
+ValoLive — Chat eğlencesi önizleme	ValoLive — 聊天互动预览
+ValoLive — Yayın Paneli	ValoLive — 直播面板
+Virgülle ayır. Bağlantılar her zaman silinir.	用逗号分隔。链接总会被删除。
+YAYIN PANELİ	直播面板
+YAYIN PANELİNİ AÇ	打开直播面板
+YAYIN ÜSTÜ	直播画面
+Yasaklı kelimeler	屏蔽词
+Yayın Paneli	直播面板
+Yayın açıkken radar, chat kutusu, maç sonu kartı, yayın anları ve chat komutları değiştirilemez; yayın bitince uygulanır.	直播中无法更改雷达、聊天框、赛后卡片、精彩时刻和聊天指令，下播后生效。
+Yayın bu ayar kapalıyken başladı: açmak için yayını yeniden başlat.	开播时此项是关闭的：重新开播才能启用。
+Yeni balık	新的鱼
+Yumurta	鸡蛋
+katılmak için !race yaz · {0}	输入 !race 参加 · {0}
+kendiliğinden	自动
+yok	无
+{0} KAZANDI!	{0} 获胜！
+{0} büyüteçle bakıyor	{0} 正在用放大镜看
+{0} ekranı ters çevirdi!	{0} 把屏幕翻过来了！
+{0} fişek	{0} 发
+{0} kişi	{0} 人
+{0} patlattı	{0} 戳破了
+ÇAT!	咔嚓！
+Çıkartma	贴纸
+Çıkartma yapıştır (emoji)	贴个贴纸（表情）
+ÖNİZLEME	预览
+ÖRDEK YARIŞI	鸭子赛跑
+Önizlemede bekleme süresi yok. Kapalı eğlenceler burada da çalışmaz. Sesli okuma bilgisayarının hoparlöründen çıkar.	预览中没有冷却。关闭的效果这里也不会触发。语音朗读从电脑扬声器播放。
+Önizlemede her eğlenceyi kendin dene (yayın gerekmez). Ters ekran ve büyüteç yayın başlarken eklenir: yayın açıkken değiştirilemez.	在预览里亲自试每个效果（无需直播）。翻转屏幕和放大镜在开播时加入，直播中无法更改。
+Ördek yarışı	鸭子赛跑
+Ördek yarışını {0} kazandı!	{0} 赢得了鸭子赛跑！
+İzleyici başına bekleme	每位观众冷却
+İzleyiciler chat'e komut yazar, ekranda canlanır. Kanal puanı gerekmez; her izleyici için bekleme süresi var.	观众在聊天输入指令，就会在画面上动起来。不需要频道积分，每位观众有冷却时间。
+İğne	针
+ŞLAP!	啪叽！
+Şişe	漂流瓶
+Şişede mesaj	漂流瓶
+POP!	啵！

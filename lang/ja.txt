@@ -1,4 +1,4 @@
-# ValoLive Â· ja Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+﻿# ValoLive Â· ja Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
  (sen)	 (あなた)
  (şu an kapalı)	 (現在終了中)
  · BU HARİTADA {0} MAÇI	 · このマップで{0}試合
@@ -338,3 +338,124 @@ Rakip hafızası: harita üstünde ikonlar (deneysel)	敵の記憶：ミニマ�
 {0} dk	{0}分
 {0} sn	{0}秒
 şimdi	今
+Yayın anları: clutch, ilk kan, seri, ninja defuse, komik ölümler	配信の見せ場：クラッチ、ファーストブラッド、連勝、忍者解除、おもしろデス
+ilk öldürme bizden	最初のキルはこっち
+KUSURSUZ	パーフェクト
+kimse düşmeden raund alındı	誰も倒れずにラウンド獲得
+SON RAKİP	残り1人
+rakipte tek kişi kaldı	敵は残り1人
+{0} raund üst üste	{0}ラウンド連続
+GERİ DÖNÜŞ	カムバック
+{0} raund geriden eşitlendi	{0}ラウンド差から同点
+MAÇ SAYISI	マッチポイント
+bir raund kaldı	あと1ラウンド
+RAKİP MAÇ SAYISINDA	相手のマッチポイント
+bu raund kritik	このラウンドが勝負
+UZATMA	オーバータイム
+iki farkla kazanan alır	2ラウンド差で勝利
+DEVRE ARASI	ハーフタイム
+taraflar değişiyor	攻守交代
+bir raundda 5 öldürme	1ラウンドで5キル
+bir raundda 4 öldürme	1ラウンドで4キル
+NİNJA DEFUSE	忍者解除
+{0} rakip ayaktayken imha ettin	敵{0}人生存中に解除
+takım arkadaşın {0} rakip ayaktayken imha etti	味方が敵{0}人生存中に解除
+YER ÇEKİMİ KAZANDI	重力の勝ち
+{0} kez düşerek öldün	落下死 {0}回
+RAKİP UÇURUMDAN	敵が落下
+{0} rakip düşerek öldü	敵 {0}人が落下死
+BIÇAK	ナイフ
+{0} bıçak öldürmesi	ナイフキル {0}
+SPIKE'IN DİBİNDE	スパイクの真横
+spike patlamasında {0} kez öldün	スパイク爆発で{0}回死亡
+KENDİ KENDİNE	自滅
+kendi yeteneğinle {0} kez öldün	自分のスキルで{0}回死亡
+DOST ATEŞİ	フレンドリーファイア
+takım arkadaşın seni {0} kez vurdu	味方に{0}回やられた
+ACE GELİYOR	エース来るぞ
+AKVARYUM	水槽
+AYARLAR	設定
+Akvaryum: chat'e yazan balık olur	水槽：チャットした人が魚になる
+BAŞLA!	スタート！
+Balon	風船
+Balon: mesaj balonla süzülür, !pop patlatır	風船：メッセージが風船で浮かぶ、!pop で割れる
+Bu raund ace gelir mi? 🎯	このラウンドでエース？ 🎯
+Bugün rank atlıyoruz 💪	今日はランクアップだ 💪
+Büyüteç	虫眼鏡
+Büyüteç: nişangâhı büyütür	虫眼鏡：照準を拡大
+CHAT BİRLİKTE	みんなで
+CHAT EĞLENCESİ	チャットで遊ぶ
+CHAT HAVAİ FİŞEK PATLATTI!	チャットが花火を打ち上げた！
+Chat eğlencesi: izleyici komutları ekranda canlanır	チャットで遊ぶ：視聴者のコマンドが画面で動き出す
+Chat'e gidecek duyuru: 	チャットへの告知：
+Chat'e yaz, balık ol!	チャットして魚になろう！
+Domates	トマト
+Domates / yumurta fırlat	トマト／卵を投げる
+Duvar yazısı (1 dk kalır)	落書き（1分残る）
+EKRAN ŞAKALARI	画面いたずら
+Emoji yağmuru	絵文字の雨
+Emoji yağmuru (aynı emojiyi yazınca)	絵文字の雨（同じ絵文字が集まると）
+Emoji yağmuru eşiği	絵文字の雨のしきい値
+F9: sniper perdesi · F10: yayın özeti	F9：スナイプ対策カーテン · F10：配信まとめ
+Fişek	花火
+Fişek (hepsi)	花火（全部）
+Güvercin	ハト
+Güvercin postası (ve sürprizi)	ハト便（とおまけ）
+Havai fişek hedefi	花火の目標
+Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.	オーバーレイ（レーダー、チャット欄、配信の見せ場）とチャットで遊ぶ（風船、飛行機、トマト、アヒルレース…）は別ウィンドウ。
+Kağıt uçak	紙飛行機
+Komutları okumak için ana penceredeki Kick hesabını bağla.	コマンドを読むにはメイン画面で Kick アカウントを接続して。
+MESAJ TAŞIYANLAR	メッセージ便
+Merhaba chat, bu bir deneme!	やあチャット、これはテストだよ！
+Ortak havai fişek	みんなで花火
+PAT!	パン！
+RADAR ROZETİ	レーダーバッジ
+SNIPER KORUMASI	スナイプ対策
+Selam chat!	やあチャット！
+Selam chat! Bu yayın efsane 🔥	やあ！この配信は伝説だ 🔥
+Sesli oku	読み上げ
+Sesli oku (robot sesi)	読み上げ（ロボ声）
+Sprey	スプレー
+Ters ekran	画面反転
+Ters ekran (3 sn)	画面反転（3秒）
+Ters ekran, büyüteç ve sesli okuma yalnızca abone ve modlara	画面反転・虫眼鏡・読み上げはサブスクとモデレーターのみ
+Teşekkürler: {0}	ありがとう：{0}
+Uçak	飛行機
+Uçak pankartı	飛行機の垂れ幕
+ValoLive — Chat eğlencesi önizleme	ValoLive — チャットで遊ぶ プレビュー
+ValoLive — Yayın Paneli	ValoLive — 配信パネル
+Virgülle ayır. Bağlantılar her zaman silinir.	カンマ区切り。リンクは常に削除される。
+YAYIN PANELİ	配信パネル
+YAYIN PANELİNİ AÇ	配信パネルを開く
+YAYIN ÜSTÜ	配信画面
+Yasaklı kelimeler	禁止ワード
+Yayın Paneli	配信パネル
+Yayın açıkken radar, chat kutusu, maç sonu kartı, yayın anları ve chat komutları değiştirilemez; yayın bitince uygulanır.	配信中はレーダー、チャット欄、試合後カード、見せ場、チャットコマンドを変更できない。配信後に反映。
+Yayın bu ayar kapalıyken başladı: açmak için yayını yeniden başlat.	この設定がオフのまま配信開始した。オンにするには配信を再開して。
+Yeni balık	新しい魚
+Yumurta	卵
+katılmak için !race yaz · {0}	!race で参加 · {0}
+kendiliğinden	自動
+yok	なし
+{0} KAZANDI!	{0} の勝ち！
+{0} büyüteçle bakıyor	{0} が虫眼鏡でのぞき中
+{0} ekranı ters çevirdi!	{0} が画面をひっくり返した！
+{0} fişek	{0} 発
+{0} kişi	{0} 人
+{0} patlattı	{0} が割った
+ÇAT!	パリッ！
+Çıkartma	ステッカー
+Çıkartma yapıştır (emoji)	ステッカーを貼る（絵文字）
+ÖNİZLEME	プレビュー
+ÖRDEK YARIŞI	アヒルレース
+Önizlemede bekleme süresi yok. Kapalı eğlenceler burada da çalışmaz. Sesli okuma bilgisayarının hoparlöründen çıkar.	プレビューに待ち時間なし。オフの演出はここでも動かない。読み上げはPCのスピーカーから出る。
+Önizlemede her eğlenceyi kendin dene (yayın gerekmez). Ters ekran ve büyüteç yayın başlarken eklenir: yayın açıkken değiştirilemez.	プレビューで全部の演出を試せる（配信不要）。画面反転と虫眼鏡は配信開始時に組み込まれるので配信中は変更不可。
+Ördek yarışı	アヒルレース
+Ördek yarışını {0} kazandı!	アヒルレースは {0} の勝ち！
+İzleyici başına bekleme	視聴者ごとの待ち時間
+İzleyiciler chat'e komut yazar, ekranda canlanır. Kanal puanı gerekmez; her izleyici için bekleme süresi var.	視聴者がチャットにコマンドを書くと画面で動き出す。チャンネルポイント不要、視聴者ごとに待ち時間あり。
+İğne	針
+ŞLAP!	ベチャッ！
+Şişe	ボトル
+Şişede mesaj	ボトルメール
+POP!	ポンッ！

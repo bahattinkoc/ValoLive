@@ -13,23 +13,52 @@ using System.Threading;
 namespace ValoLive
 {
     /// <summary>
-    /// Ekranın küçük bir bölgesine oturan, kendi borusuyla ffmpeg'e giden katman. Tam ekran panel PNG'si
-    /// kare başına ~38 ms tuttuğu için sürekli animasyonlar ayrı, küçük katmanlarda çizilir (~2-4 ms).
+    /// Ekranın küçük bir bölgesine oturan, kendi borusuyla ffmpeg'e giden katman. Kareler ham BGRA olarak gider:
+    /// PNG sıkıştırması kare başına 3-36 ms CPU yiyordu, ham kopya 1 ms'nin altında (ffmpeg tarafı ikisinde de aynı).
     /// </summary>
     abstract class Layer : IDisposable
     {
         public readonly int X, Y, W, H, Fps;
+        /// <summary>En son çizilen kare: W×H ham BGRA (düz alfa).</summary>
         public byte[] Current { get; private set; }
         protected readonly float s;   // 1080p'ye göre ölçek
         readonly Timer timer;
         int ticking;
         protected readonly DateTime born = DateTime.Now;
+        /// <summary>ffmpeg kareyi bu kat büyütüp bindirir: tam ekran katman yarı çözünürlükte çizilir (PNG'si 4 kat ucuz).</summary>
+        public int Up { get; protected set; } = 1;
+        /// <summary>
+        /// ffmpeg katmanı yalnızca Shown iken bindirir ve tam hızda okur; gizliyken saniyede 4 kez okur (boş katmanı
+        /// her karede çekmek, üç katmanda çekirdeğin ~%19'unu yiyordu). Shown varsayılan olarak karenin boş olup
+        /// olmamasından çıkar; Sparse katman (chat eğlencesi) onu kendisi yönetir.
+        /// </summary>
+        public virtual bool Sparse => false;
+        public bool Shown { get; private set; }
+        public event Action<bool> ShownChanged;
 
-        protected Layer(int x, int y, int w, int h, int fps, float scale)
+        /// <summary>run false: önizleme için; zamanlayıcı ve PNG yok, Render ile doğrudan çizilir.</summary>
+        protected Layer(int x, int y, int w, int h, int fps, float scale, bool run = true)
         {
             X = x; Y = y; W = Math.Max(2, w); H = Math.Max(2, h); Fps = fps; s = scale;
-            Current = Encode(null);
-            timer = new Timer(_ => Tick(), null, 0, 1000 / fps);
+            Current = new byte[W * H * 4];
+            if (run) timer = new Timer(_ => Tick(), null, 0, 1000 / fps);
+        }
+
+        protected void SetShown(bool v)
+        {
+            if (v == Shown) return;
+            Shown = v;
+            ShownChanged?.Invoke(v);
+        }
+
+        /// <summary>Önizleme penceresi: katmanı verilen yüzeye çizer.</summary>
+        public void Render(Graphics g)
+        {
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            g.TextRenderingHint = TextRenderingHint.AntiAlias;
+            g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+            Draw(g, (DateTime.Now - born).TotalSeconds);
         }
 
         protected float P(float v) => v * s;
@@ -41,36 +70,63 @@ namespace ValoLive
         void Tick()
         {
             if (Interlocked.Exchange(ref ticking, 1) == 1) return;
-            try { if (NeedsRender()) Current = Encode(this); }
+            try
+            {
+                if (!NeedsRender()) return;
+                var raw = Encode();
+                Current = raw;
+                // Önce yeni kare, sonra bildirim: bindirme açıldığında ffmpeg eski boş kareyi değil yenisini okur.
+                if (!Sparse) SetShown(!Empty(raw));
+            }
             catch (Exception e) { Streamer.Log("katman: " + e.Message); }
             finally { ticking = 0; }
         }
 
-        byte[] Encode(Layer l)
+        byte[] Encode()
         {
             using (var bmp = new Bitmap(W, H, PixelFormat.Format32bppArgb))
             {
-                if (l != null)
-                    using (var g = Graphics.FromImage(bmp))
-                    {
-                        g.SmoothingMode = SmoothingMode.AntiAlias;
-                        g.TextRenderingHint = TextRenderingHint.AntiAlias;
-                        g.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                        g.PixelOffsetMode = PixelOffsetMode.HighQuality;
-                        g.Clear(Color.Transparent);
-                        l.Draw(g, (DateTime.Now - born).TotalSeconds);
-                    }
-                using (var ms = new MemoryStream()) { bmp.Save(ms, ImageFormat.Png); return ms.ToArray(); }
+                using (var g = Graphics.FromImage(bmp))
+                {
+                    g.SmoothingMode = SmoothingMode.AntiAlias;
+                    g.TextRenderingHint = TextRenderingHint.AntiAlias;
+                    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                    g.Clear(Color.Transparent);
+                    Draw(g, (DateTime.Now - born).TotalSeconds);
+                }
+                return Raw(bmp);
             }
         }
 
-        public virtual void Dispose() => timer.Dispose();
+        /// <summary>32 bit ARGB bitmap → satır boşluğu olmadan ham BGRA (ffmpeg rawvideo bgra ile birebir).</summary>
+        internal static byte[] Raw(Bitmap bmp)
+        {
+            int w = bmp.Width, h = bmp.Height;
+            var buf = new byte[w * h * 4];
+            var d = bmp.LockBits(new Rectangle(0, 0, w, h), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
+            try
+            {
+                if (d.Stride == w * 4) System.Runtime.InteropServices.Marshal.Copy(d.Scan0, buf, 0, buf.Length);
+                else for (int y = 0; y < h; y++) System.Runtime.InteropServices.Marshal.Copy(d.Scan0 + y * d.Stride, buf, y * w * 4, w * 4);
+            }
+            finally { bmp.UnlockBits(d); }
+            return buf;
+        }
+
+        static bool Empty(byte[] raw)
+        {
+            for (int i = 3; i < raw.Length; i += 4) if (raw[i] != 0) return false;
+            return true;
+        }
+
+        public virtual void Dispose() => timer?.Dispose();
 
         // ---------- ortak çizim yardımcıları ----------
 
-        protected static Color A(Color c, double a) => Color.FromArgb((int)Math.Max(0, Math.Min(255, a * c.A)), c.R, c.G, c.B);
+        internal static Color A(Color c, double a) => Color.FromArgb((int)Math.Max(0, Math.Min(255, a * c.A)), c.R, c.G, c.B);
 
-        protected static void DrawImage(Graphics g, Image img, RectangleF r, double alpha)
+        internal static void DrawImage(Graphics g, Image img, RectangleF r, double alpha)
         {
             if (img == null || alpha <= 0.01) return;
             // GDI+ resmi aynı anda iki iş parçacığında çizilemez; ikonlar katmanlar arasında paylaşılıyor.
@@ -86,7 +142,7 @@ namespace ValoLive
         }
 
         /// <summary>Ortalı yazı; maxW verilirse uzun çeviri o genişliğe sığacak kadar küçülür (dikey merkez korunur).</summary>
-        protected static void TextCentered(Graphics g, string text, Font f, Color c, float cx, float y, float maxW = float.MaxValue)
+        internal static void TextCentered(Graphics g, string text, Font f, Color c, float cx, float y, float maxW = float.MaxValue)
         {
             var ff = maxW < float.MaxValue ? Theme.Fit(g, text, f, maxW) : f;
             var size = g.MeasureString(text, ff);
@@ -94,7 +150,7 @@ namespace ValoLive
             if (ff != f) ff.Dispose();
         }
 
-        protected static GraphicsPath Rounded(RectangleF r, float rad)
+        internal static GraphicsPath Rounded(RectangleF r, float rad)
         {
             var p = new GraphicsPath();
             float d = rad * 2;
