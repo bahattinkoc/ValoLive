@@ -28,34 +28,34 @@ void Grabber::Finish(LONG r, LONG status)
     if (ready) SetEvent(ready);
 }
 
-void Grabber::Tick(ID3D11Device* dev, ID3D11DeviceContext* ctx, ID3D11Texture2D* frame)
+bool Grabber::Tick(ID3D11Device* dev, ID3D11DeviceContext* ctx, ID3D11Texture2D* frame)
 {
-    if (!hdr) return;
+    if (!hdr) return false;
     if (inflight)
     {
         D3D11_MAPPED_SUBRESOURCE m;
         HRESULT hr = ctx->Map(staging.Get(), 0, D3D11_MAP_READ, D3D11_MAP_FLAG_DO_NOT_WAIT, &m);
-        if (hr == DXGI_ERROR_WAS_STILL_DRAWING) return;   // kopya bitmedi: bir sonraki karede
+        if (hr == DXGI_ERROR_WAS_STILL_DRAWING) return false;   // kopya bitmedi: sonra yeniden bakılır
         LONG r = inflight;
         inflight = 0;
-        if (FAILED(hr)) { Finish(r, 3); return; }
+        if (FAILED(hr)) { Finish(r, 3); return false; }
         for (int y = 0; y < ih; y++) memcpy(data + (size_t)y * iw * 4, (uint8_t*)m.pData + (size_t)y * m.RowPitch, (size_t)iw * 4);
         ctx->Unmap(staging.Get(), 0);
         Finish(r, 0);
-        return;
+        return false;
     }
 
     LONG r = hdr->req;
-    if (r == hdr->done) return;
+    if (r == hdr->done) return false;
     MemoryBarrier();
-    if (!frame) { Finish(r, 1); return; }
+    if (!frame) { Finish(r, 1); return false; }
     D3D11_TEXTURE2D_DESC fd;
     frame->GetDesc(&fd);
     hdr->capW = fd.Width; hdr->capH = fd.Height;
     LONG x = hdr->x, y = hdr->y, w = hdr->w, h = hdr->h;
     if (w <= 0 || h <= 0 || x < 0 || y < 0 || x + w > (LONG)fd.Width || y + h > (LONG)fd.Height ||
         (int64_t)w * h * 4 > hdr->capacity)
-    { Finish(r, 2); return; }
+    { Finish(r, 2); return false; }
 
     // Hazırlama dokusu oyun karesi boyutunda: bölge değişse de (minimap, skor çubuğu) yeniden oluşturulmaz.
     D3D11_TEXTURE2D_DESC sd = {};
@@ -67,9 +67,10 @@ void Grabber::Tick(ID3D11Device* dev, ID3D11DeviceContext* ctx, ID3D11Texture2D*
         d.Width = fd.Width; d.Height = fd.Height; d.MipLevels = 1; d.ArraySize = 1;
         d.Format = DXGI_FORMAT_B8G8R8A8_UNORM; d.SampleDesc.Count = 1;
         d.Usage = D3D11_USAGE_STAGING; d.CPUAccessFlags = D3D11_CPU_ACCESS_READ;
-        if (FAILED(dev->CreateTexture2D(&d, nullptr, &staging))) { Finish(r, 3); return; }
+        if (FAILED(dev->CreateTexture2D(&d, nullptr, &staging))) { Finish(r, 3); return false; }
     }
     D3D11_BOX box = { (UINT)x, (UINT)y, 0, (UINT)(x + w), (UINT)(y + h), 1 };
     ctx->CopySubresourceRegion(staging.Get(), 0, 0, 0, 0, frame, 0, &box);
     inflight = r; iw = w; ih = h;
+    return true;
 }

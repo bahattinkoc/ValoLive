@@ -22,8 +22,8 @@ class Grabber
 public:
     bool Open(const std::wstring& name, std::string& error);
     void Close();
-    // Her karede bir kez, yakalama karesi güncellendikten sonra.
-    void Tick(ID3D11Device* dev, ID3D11DeviceContext* ctx, ID3D11Texture2D* frame);
+    // Her karede bir kez, yakalama karesi güncellendikten sonra. Ekran kartına yeni kopya verdiyse true (Flush gerekir).
+    bool Tick(ID3D11Device* dev, ID3D11DeviceContext* ctx, ID3D11Texture2D* frame);
     // Bekleyen istek ya da yolda kopya var: döngü kareler arasında da Tick çağırsın (bir kare beklemesin).
     bool Busy() const { return hdr && (inflight || hdr->req != hdr->done); }
 

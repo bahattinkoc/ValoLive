@@ -27,6 +27,7 @@ namespace ValoLive
         public List<Layer> Layers = new List<Layer>(); // panelin üstüne bindirilen küçük animasyonlu katmanlar (radar, chat)
         public bool Flip, Zoom;        // chat eğlencesi: ters ekran ve nişangâh büyüteci (grafikte kapalı durur, canlı komutla açılır)
         public bool Gpu;               // ekran kartı motoru (valocap.exe); açılamazsa ffmpeg yoluna dönülür
+        public int GpuPriority;        // motorun ekran kartı önceliği (-7..7, 0 normal)
     }
 
     sealed class Streamer
@@ -408,7 +409,7 @@ namespace ValoLive
             var a = new StringBuilder($"--out \"{videoPipe}\" --epoch {epochMs} --size {o.Width}x{o.Height} --canvas {o.ScreenWidth}x{o.ScreenHeight} " +
                                       $"--fps 60 --bitrate {o.BitrateK} --fill {CaptureGuard.Fill.Substring(2)} ");
             a.Append(window != IntPtr.Zero ? $"--window {window.ToInt64()} " : "--monitor 0 ");
-            a.Append($"--grab {grab} ");
+            a.Append($"--grab {grab} --gpu-priority {o.GpuPriority} ");
             a.Append($"--panel {feed.Add(() => o.Overlay.Current, o.ScreenWidth, o.ScreenHeight)} ");
             foreach (var l in o.Layers)
             {

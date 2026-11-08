@@ -965,7 +965,7 @@ namespace ValoLive
                 ScreenWidth = screenW, ScreenHeight = screenH,
                 Denoise = cfg.Denoise,
                 WindowCapture = cfg.WindowCapture && guard.Mode == CaptureMode.Valorant,
-                Gpu = cfg.GpuEngine,
+                Gpu = cfg.GpuEngine, GpuPriority = cfg.EngineGpuPriority,
                 Overlay = overlay,
             };
             if (m == Mode.Live)
