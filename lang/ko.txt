@@ -92,11 +92,9 @@ Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (
 Kategori	카테고리
 Kaydet ve bağlan	저장 후 연결
 Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.	연패 후에도 흔들리지 않음 — 멘탈이 강합니다.
-Kick Stream URL ve Stream Key gerekli.\nKick → Creator Dashboard → Settings bölümünden kopyalayabilirsin.	Kick Stream URL과 Stream Key가 필요합니다.\nKick → Creator Dashboard → Settings에서 복사할 수 있습니다.
 Kick hesabı	Kick 계정
 Kick hesabı bağlı değil.	Kick 계정이 연결되지 않았습니다.
 Kick hesabını bağla	Kick 계정 연결
-Kick için hafif Valorant yayın aracı · RTX NVENC	Kick용 가벼운 발로란트 방송 도구 · RTX NVENC
 Kick kanal bilgisi alınamadı.	Kick 채널 정보를 가져오지 못했습니다.
 Kick onayı 3 dakika içinde gelmedi.	3분 안에 Kick 승인이 오지 않았습니다.
 Kick onayı reddedildi: 	Kick 승인이 거부되었습니다: 
@@ -180,7 +178,6 @@ Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	지난 경기: {0} {1} · {2} �
 Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.	최근 이 맵을 플레이하지 않았습니다. 위 스타일은 그대로 유효합니다.
 Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.	그다음 브라우저에 Kick 승인 페이지가 열리면 "허용"만 누르면 됩니다.
 Stil çıkarmak için yeterli round yok (en az 40).	스타일을 판단하기에 라운드가 부족합니다 (최소 40).
-Stream URL / Stream Key'i Kick panelinden yeniden kopyala	Kick 대시보드에서 Stream URL / Stream Key를 다시 복사하세요
 Sv	Lv
 Süre: {0:hh\:mm\:ss}	시간: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	드래그: 이동\n마우스 휠: 확대 / 축소 (Shift: 미세)\n방향키: 1 px (Shift: 10 px)\n\n
@@ -323,7 +320,6 @@ zirve	최고
 ● DURDURULUYOR…	● 중지 중…
 ● EKRAN YAKALAMA YENİLENİYOR (yayın açık)	● 화면 캡처 재시작 중 (방송은 계속됨)
 ● HAZIR	● 준비됨
-● KICK BAĞLANTIYI REDDETTİ	● KICK이 연결을 거부함
 ● TEST BAŞARISIZ	● 테스트 실패
 ● TEST KAYDI	● 테스트 녹화
 ● TEST KAYDI HAZIR	● 테스트 녹화 완료
@@ -460,3 +456,26 @@ yok	없음
 Şişede mesaj	병 속의 편지
 POP!	뽁!
 Ekran kartı motoru (işlemciyi boşaltır)	GPU 엔진 (CPU 부담 감소)
+BAĞLANTI	연결
+Başlık, kategori ve küçük resim YouTube Studio'da ayarlanır. Chat katmanları ve chat eğlencesi Kick chat'ini okur.	제목, 카테고리, 썸네일은 YouTube Studio에서 설정합니다. 채팅 레이어와 채팅 이벤트는 Kick 채팅을 읽습니다.
+Bu platforma yayınla	이 플랫폼으로 방송
+GÖRÜNTÜ & SES	영상 및 오디오
+Hiçbir platform açık değil: yalnızca test kaydı alınabilir.	켜진 플랫폼이 없습니다: 테스트 녹화만 가능합니다.
+Kick ve YouTube için hafif Valorant yayın aracı · RTX NVENC	Kick·YouTube용 가벼운 발로란트 방송 도구 · RTX NVENC
+Kick'e yayın kapalı: chat okunmaz	Kick 방송 꺼짐: 채팅을 읽지 않음
+PLATFORMLAR	플랫폼
+RAKİP HAFIZASI	적 기억
+Stream URL / Stream Key'i platformun panelinden yeniden kopyala	플랫폼 대시보드에서 스트림 URL / 키를 다시 복사하세요
+Yayının gideceği platformu seç: Platformlar sekmesinde en az birini aç.	방송할 곳을 고르세요: 플랫폼 탭에서 하나 이상 켜세요.
+YouTube Studio'dan yayın anahtarı al	YouTube Studio에서 스트림 키 받기
+bağlanıyor…	연결 중…
+durdu	중지됨
+hazır	준비됨
+kapalı	꺼짐
+koptu	끊김
+reddetti	거부됨
+yeniden bağlanıyor ({0})	재연결 중 ({0})
+{0} platform × ~{1} kbps → internetin yükleme hızı en az {2} Mbps olmalı (pay ile).	플랫폼 {0}개 × ~{1} kbps → 업로드 속도가 최소 {2} Mbps 이상이어야 합니다(여유 포함).
+{0}: Stream URL ve Stream Key gerekli.	{0}: 스트림 URL과 스트림 키가 필요합니다.
+● canlı	● 방송 중
+● {0} BAĞLANTIYI REDDETTİ	● {0}이(가) 연결을 거부함

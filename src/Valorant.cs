@@ -16,8 +16,9 @@ namespace ValoLive
         public static string Dir => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ValoLive");
         static string FilePath => Path.Combine(Dir, "settings.json");
 
-        public string KickUrl = "";
+        public string KickUrl = "";      // eski sürümlerle uyum: Kick hedefinin aynısı (Destinations'tan yazılır)
         public string KickKeyEnc = "";
+        public List<DestCfg> Destinations;   // yayın platformları (Platforms.cs); null: eski ayar, Kick'ten kurulur
         public int Quality = 1;
         public int Version;              // 2: 7500 seçeneği kaldırıldı, Quality bir aşağı kaydı
         public int Capture = 1;          // CaptureMode: 0 tam ekran, 1 sadece Valorant, 2 seçili uygulama
@@ -59,11 +60,19 @@ namespace ValoLive
             try { s = new JavaScriptSerializer().Deserialize<Settings>(File.ReadAllText(FilePath)) ?? new Settings(); }
             catch { s = new Settings(); }
             if (s.Version < 2) { s.Quality = Math.Max(0, s.Quality - 1); s.Version = 2; }
+            if (s.Destinations == null) s.Destinations = new List<DestCfg> { new DestCfg { Id = "kick", On = true, Url = s.KickUrl, KeyEnc = s.KickKeyEnc } };
+            foreach (var p in Platform.All)
+                if (!s.Destinations.Any(d => d.Id == p.Id)) s.Destinations.Add(new DestCfg { Id = p.Id, Url = p.DefaultUrl });
             return s;
         }
 
+        /// <summary>Platformun kayıtlı ayarı (Load her platform için bir tane olmasını garanti eder).</summary>
+        public DestCfg Dest(string id) => Destinations.First(d => d.Id == id);
+
         public void Save()
         {
+            var k = Destinations?.FirstOrDefault(d => d.Id == "kick");
+            if (k != null) { KickUrl = k.Url; KickKeyEnc = k.KeyEnc; }
             try { Directory.CreateDirectory(Dir); File.WriteAllText(FilePath, new JavaScriptSerializer().Serialize(this)); } catch { }
         }
 

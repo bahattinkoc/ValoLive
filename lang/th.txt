@@ -92,11 +92,9 @@ Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (
 Kategori	หมวดหมู่
 Kaydet ve bağlan	บันทึกและเชื่อมต่อ
 Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.	แพ้ติดแล้วไม่ดรอป — ใจนิ่งมาก
-Kick Stream URL ve Stream Key gerekli.\nKick → Creator Dashboard → Settings bölümünden kopyalayabilirsin.	ต้องใส่ Kick Stream URL และ Stream Key\nคัดลอกได้จาก Kick → Creator Dashboard → Settings
 Kick hesabı	บัญชี Kick
 Kick hesabı bağlı değil.	ยังไม่ได้เชื่อมต่อบัญชี Kick
 Kick hesabını bağla	เชื่อมต่อบัญชี Kick
-Kick için hafif Valorant yayın aracı · RTX NVENC	เครื่องมือสตรีม VALORANT แบบเบาสำหรับ Kick · RTX NVENC
 Kick kanal bilgisi alınamadı.	ดึงข้อมูลช่อง Kick ไม่ได้
 Kick onayı 3 dakika içinde gelmedi.	ไม่ได้รับการอนุมัติจาก Kick ภายใน 3 นาที
 Kick onayı reddedildi: 	Kick ปฏิเสธการอนุมัติ: 
@@ -180,7 +178,6 @@ Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	แมตช์ล่าสุ�
 Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.	ช่วงหลังไม่ได้เล่นแมพนี้ สไตล์ด้านบนยังใช้ได้
 Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.	จากนั้นหน้าอนุมัติของ Kick จะเปิดในเบราว์เซอร์ แค่กด "อนุญาต"
 Stil çıkarmak için yeterli round yok (en az 40).	รอบยังไม่พอจะสรุปสไตล์ (อย่างน้อย 40)
-Stream URL / Stream Key'i Kick panelinden yeniden kopyala	คัดลอก Stream URL / Stream Key จากแดชบอร์ด Kick ใหม่อีกครั้ง
 Sv	Lv
 Süre: {0:hh\:mm\:ss}	ระยะเวลา: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	ลาก: ย้าย\nล้อเมาส์: ขยาย / ย่อ (Shift: ละเอียด)\nปุ่มลูกศร: 1 px (Shift: 10 px)\n\n
@@ -323,7 +320,6 @@ zirve	สูงสุด
 ● DURDURULUYOR…	● กำลังหยุด…
 ● EKRAN YAKALAMA YENİLENİYOR (yayın açık)	● กำลังเริ่มจับภาพหน้าจอใหม่ (สตรีมยังออนอยู่)
 ● HAZIR	● พร้อม
-● KICK BAĞLANTIYI REDDETTİ	● KICK ปฏิเสธการเชื่อมต่อ
 ● TEST BAŞARISIZ	● ทดสอบล้มเหลว
 ● TEST KAYDI	● อัดทดสอบ
 ● TEST KAYDI HAZIR	● อัดทดสอบเสร็จแล้ว
@@ -460,3 +456,26 @@ yok	ไม่มี
 Şişede mesaj	ข้อความในขวด
 POP!	ป๊อก!
 Ekran kartı motoru (işlemciyi boşaltır)	เอนจิน GPU (ลดภาระ CPU)
+BAĞLANTI	การเชื่อมต่อ
+Başlık, kategori ve küçük resim YouTube Studio'da ayarlanır. Chat katmanları ve chat eğlencesi Kick chat'ini okur.	ชื่อ หมวดหมู่ และภาพปกตั้งค่าใน YouTube Studio เลเยอร์แชทและลูกเล่นแชทอ่านแชทของ Kick
+Bu platforma yayınla	สตรีมไปยังแพลตฟอร์มนี้
+GÖRÜNTÜ & SES	ภาพและเสียง
+Hiçbir platform açık değil: yalnızca test kaydı alınabilir.	ไม่มีแพลตฟอร์มที่เปิดอยู่: ทำได้เพียงบันทึกทดสอบ
+Kick ve YouTube için hafif Valorant yayın aracı · RTX NVENC	เครื่องมือสตรีม VALORANT แบบเบาสำหรับ Kick และ YouTube · RTX NVENC
+Kick'e yayın kapalı: chat okunmaz	ปิดการสตรีมไป Kick: ไม่อ่านแชท
+PLATFORMLAR	แพลตฟอร์ม
+RAKİP HAFIZASI	ความจำศัตรู
+Stream URL / Stream Key'i platformun panelinden yeniden kopyala	คัดลอก Stream URL / Stream Key ใหม่จากแดชบอร์ดของแพลตฟอร์ม
+Yayının gideceği platformu seç: Platformlar sekmesinde en az birini aç.	เลือกปลายทางสตรีม: เปิดอย่างน้อยหนึ่งแพลตฟอร์มในแท็บแพลตฟอร์ม
+YouTube Studio'dan yayın anahtarı al	รับสตรีมคีย์จาก YouTube Studio
+bağlanıyor…	กำลังเชื่อมต่อ…
+durdu	หยุดแล้ว
+hazır	พร้อม
+kapalı	ปิด
+koptu	หลุด
+reddetti	ถูกปฏิเสธ
+yeniden bağlanıyor ({0})	กำลังเชื่อมต่อใหม่ ({0})
+{0} platform × ~{1} kbps → internetin yükleme hızı en az {2} Mbps olmalı (pay ile).	{0} แพลตฟอร์ม × ~{1} kbps → ความเร็วอัปโหลดควรอย่างน้อย {2} Mbps (เผื่อไว้)
+{0}: Stream URL ve Stream Key gerekli.	{0}: ต้องมี Stream URL และ Stream Key
+● canlı	● สด
+● {0} BAĞLANTIYI REDDETTİ	● {0} ปฏิเสธการเชื่อมต่อ

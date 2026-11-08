@@ -92,11 +92,9 @@ Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (
 Kategori	الفئة
 Kaydet ve bağlan	حفظ وربط
 Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.	لا تراجع بعد سلاسل الخسارة — أنت محصّن ضد التوتر.
-Kick Stream URL ve Stream Key gerekli.\nKick → Creator Dashboard → Settings bölümünden kopyalayabilirsin.	Kick Stream URL و Stream Key مطلوبان.\nيمكنك نسخهما من Kick → Creator Dashboard → Settings.
 Kick hesabı	حساب Kick
 Kick hesabı bağlı değil.	حساب Kick غير مرتبط.
 Kick hesabını bağla	اربط حساب Kick
-Kick için hafif Valorant yayın aracı · RTX NVENC	أداة خفيفة لبث Valorant على Kick · RTX NVENC
 Kick kanal bilgisi alınamadı.	تعذّر جلب معلومات قناة Kick.
 Kick onayı 3 dakika içinde gelmedi.	لم تصل موافقة Kick خلال 3 دقائق.
 Kick onayı reddedildi: 	رُفضت موافقة Kick: 
@@ -180,7 +178,6 @@ Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	آخر مباراة: {0} {1} ·
 Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.	لم يلعب هذه الخريطة مؤخرًا. الأسلوب أعلاه ما زال صالحًا.
 Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.	بعدها تُفتح صفحة موافقة Kick في المتصفح؛ يكفي أن تضغط "سماح".
 Stil çıkarmak için yeterli round yok (en az 40).	لا توجد جولات كافية لاستنتاج أسلوب (40 على الأقل).
-Stream URL / Stream Key'i Kick panelinden yeniden kopyala	انسخ Stream URL / Stream Key من لوحة Kick مرة أخرى
 Sv	مستوى
 Süre: {0:hh\:mm\:ss}	المدة: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	سحب: تحريك\nعجلة الماوس: تكبير / تصغير (Shift: دقيق)\nالأسهم: 1 px (Shift: 10 px)\n\n
@@ -323,7 +320,6 @@ zirve	الأعلى
 ● DURDURULUYOR…	● جارٍ الإيقاف…
 ● EKRAN YAKALAMA YENİLENİYOR (yayın açık)	● إعادة تشغيل التقاط الشاشة (البث يعمل)
 ● HAZIR	● جاهز
-● KICK BAĞLANTIYI REDDETTİ	● رفض Kick الاتصال
 ● TEST BAŞARISIZ	● فشل الاختبار
 ● TEST KAYDI	● تسجيل اختبار
 ● TEST KAYDI HAZIR	● تسجيل الاختبار جاهز
@@ -460,3 +456,26 @@ yok	لا شيء
 Şişede mesaj	رسالة في زجاجة
 POP!	بوب!
 Ekran kartı motoru (işlemciyi boşaltır)	محرك بطاقة الرسومات (يخفف عن المعالج)
+BAĞLANTI	الاتصال
+Başlık, kategori ve küçük resim YouTube Studio'da ayarlanır. Chat katmanları ve chat eğlencesi Kick chat'ini okur.	يُضبط العنوان والفئة والصورة المصغّرة في YouTube Studio. طبقات الدردشة وتفاعلاتها تقرأ دردشة Kick.
+Bu platforma yayınla	البث على هذه المنصة
+GÖRÜNTÜ & SES	الصورة والصوت
+Hiçbir platform açık değil: yalnızca test kaydı alınabilir.	لا توجد منصة مفعّلة: يمكن إجراء تسجيل تجريبي فقط.
+Kick ve YouTube için hafif Valorant yayın aracı · RTX NVENC	أداة خفيفة لبث Valorant على Kick وYouTube · RTX NVENC
+Kick'e yayın kapalı: chat okunmaz	البث على Kick متوقف: لا تُقرأ الدردشة
+PLATFORMLAR	المنصات
+RAKİP HAFIZASI	ذاكرة الأعداء
+Stream URL / Stream Key'i platformun panelinden yeniden kopyala	انسخ رابط البث / مفتاح البث من لوحة المنصة مجددًا
+Yayının gideceği platformu seç: Platformlar sekmesinde en az birini aç.	اختر وجهة البث: فعّل منصة واحدة على الأقل في تبويب المنصات.
+YouTube Studio'dan yayın anahtarı al	احصل على مفتاح البث من YouTube Studio
+bağlanıyor…	جارٍ الاتصال…
+durdu	متوقف
+hazır	جاهز
+kapalı	مغلق
+koptu	انقطع
+reddetti	مرفوض
+yeniden bağlanıyor ({0})	إعادة الاتصال ({0})
+{0} platform × ~{1} kbps → internetin yükleme hızı en az {2} Mbps olmalı (pay ile).	{0} منصة × ~{1} kbps ← يجب ألا تقل سرعة الرفع عن {2} Mbps (مع هامش).
+{0}: Stream URL ve Stream Key gerekli.	{0}: رابط البث ومفتاح البث مطلوبان.
+● canlı	● مباشر
+● {0} BAĞLANTIYI REDDETTİ	● رفض {0} الاتصال

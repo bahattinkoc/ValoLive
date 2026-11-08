@@ -92,11 +92,9 @@ Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (
 Kategori	分類
 Kaydet ve bağlan	儲存並連接
 Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.	連敗後沒有下滑 — 心態很穩。
-Kick Stream URL ve Stream Key gerekli.\nKick → Creator Dashboard → Settings bölümünden kopyalayabilirsin.	需要 Kick Stream URL 與 Stream Key。\n可在 Kick → Creator Dashboard → Settings 複製。
 Kick hesabı	Kick 帳號
 Kick hesabı bağlı değil.	Kick 帳號未連接。
 Kick hesabını bağla	連接你的 Kick 帳號
-Kick için hafif Valorant yayın aracı · RTX NVENC	Kick 專用輕量 VALORANT 直播工具 · RTX NVENC
 Kick kanal bilgisi alınamadı.	無法取得 Kick 頻道資訊。
 Kick onayı 3 dakika içinde gelmedi.	3 分鐘內未收到 Kick 授權。
 Kick onayı reddedildi: 	Kick 授權被拒絕： 
@@ -180,7 +178,6 @@ Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	上一場：{0} {1} · {2} · {
 Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.	最近沒玩過這張地圖。上面的打法仍然適用。
 Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.	接著瀏覽器會開啟 Kick 授權頁面，按「允許」即可。
 Stil çıkarmak için yeterli round yok (en az 40).	回合數不足，無法判斷打法 (至少 40)。
-Stream URL / Stream Key'i Kick panelinden yeniden kopyala	請從 Kick 後台重新複製 Stream URL / Stream Key
 Sv	Lv
 Süre: {0:hh\:mm\:ss}	時長：{0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	拖曳：移動\n滑鼠滾輪：放大 / 縮小 (Shift：微調)\n方向鍵：1 px (Shift：10 px)\n\n
@@ -323,7 +320,6 @@ zirve	最高
 ● DURDURULUYOR…	● 停止中…
 ● EKRAN YAKALAMA YENİLENİYOR (yayın açık)	● 正在重新啟動螢幕擷取 (直播持續中)
 ● HAZIR	● 就緒
-● KICK BAĞLANTIYI REDDETTİ	● KICK 拒絕了連線
 ● TEST BAŞARISIZ	● 測試失敗
 ● TEST KAYDI	● 測試錄影
 ● TEST KAYDI HAZIR	● 測試錄影完成
@@ -460,3 +456,26 @@ yok	无
 Şişede mesaj	漂流瓶
 POP!	啵！
 Ekran kartı motoru (işlemciyi boşaltır)	显卡引擎（释放 CPU）
+BAĞLANTI	連線
+Başlık, kategori ve küçük resim YouTube Studio'da ayarlanır. Chat katmanları ve chat eğlencesi Kick chat'ini okur.	標題、分類與縮圖請在 YouTube Studio 設定。聊天圖層與聊天互動讀取的是 Kick 聊天室。
+Bu platforma yayınla	直播到此平台
+GÖRÜNTÜ & SES	畫面與音訊
+Hiçbir platform açık değil: yalnızca test kaydı alınabilir.	沒有啟用任何平台：只能進行測試錄影。
+Kick ve YouTube için hafif Valorant yayın aracı · RTX NVENC	Kick 與 YouTube 專用輕量 VALORANT 直播工具 · RTX NVENC
+Kick'e yayın kapalı: chat okunmaz	Kick 直播已關閉：不讀取聊天室
+PLATFORMLAR	平台
+RAKİP HAFIZASI	敵人記憶
+Stream URL / Stream Key'i platformun panelinden yeniden kopyala	請從平台後台重新複製串流網址 / 串流金鑰
+Yayının gideceği platformu seç: Platformlar sekmesinde en az birini aç.	請選擇直播去處：在「平台」分頁至少開啟一個。
+YouTube Studio'dan yayın anahtarı al	從 YouTube Studio 取得串流金鑰
+bağlanıyor…	連線中…
+durdu	已停止
+hazır	就緒
+kapalı	關閉
+koptu	已斷線
+reddetti	被拒絕
+yeniden bağlanıyor ({0})	重新連線中 ({0})
+{0} platform × ~{1} kbps → internetin yükleme hızı en az {2} Mbps olmalı (pay ile).	{0} 個平台 × 約 {1} kbps → 上傳速度至少需 {2} Mbps（含餘裕）。
+{0}: Stream URL ve Stream Key gerekli.	{0}：需要串流網址與串流金鑰。
+● canlı	● 直播中
+● {0} BAĞLANTIYI REDDETTİ	● {0} 拒絕了連線

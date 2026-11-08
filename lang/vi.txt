@@ -92,11 +92,9 @@ Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (
 Kategori	Danh mục
 Kaydet ve bağlan	Lưu và kết nối
 Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.	Không tụt phong độ sau chuỗi thua — bạn miễn nhiễm tilt.
-Kick Stream URL ve Stream Key gerekli.\nKick → Creator Dashboard → Settings bölümünden kopyalayabilirsin.	Cần Kick Stream URL và Stream Key.\nSao chép tại Kick → Creator Dashboard → Settings.
 Kick hesabı	Tài khoản Kick
 Kick hesabı bağlı değil.	Tài khoản Kick chưa kết nối.
 Kick hesabını bağla	Kết nối tài khoản Kick
-Kick için hafif Valorant yayın aracı · RTX NVENC	Công cụ stream Valorant nhẹ cho Kick · RTX NVENC
 Kick kanal bilgisi alınamadı.	Không lấy được thông tin kênh Kick.
 Kick onayı 3 dakika içinde gelmedi.	Không nhận được xác nhận từ Kick trong 3 phút.
 Kick onayı reddedildi: 	Kick từ chối xác nhận: 
@@ -180,7 +178,6 @@ Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	Trận trước: {0} {1} · {2}
 Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.	Gần đây chưa chơi bản đồ này. Lối chơi bên trên vẫn đúng.
 Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.	Sau đó trang xác nhận của Kick sẽ mở trong trình duyệt; chỉ cần bấm "Cho phép".
 Stil çıkarmak için yeterli round yok (en az 40).	Chưa đủ hiệp để rút ra lối chơi (ít nhất 40).
-Stream URL / Stream Key'i Kick panelinden yeniden kopyala	Sao chép lại Stream URL / Stream Key từ bảng điều khiển Kick
 Sv	Cấp
 Süre: {0:hh\:mm\:ss}	Thời lượng: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	Kéo: di chuyển\nLăn chuột: phóng to / thu nhỏ (Shift: tinh chỉnh)\nPhím mũi tên: 1 px (Shift: 10 px)\n\n
@@ -323,7 +320,6 @@ zirve	cao nhất
 ● DURDURULUYOR…	● ĐANG DỪNG…
 ● EKRAN YAKALAMA YENİLENİYOR (yayın açık)	● ĐANG KHỞI ĐỘNG LẠI GHI MÀN HÌNH (stream vẫn bật)
 ● HAZIR	● SẴN SÀNG
-● KICK BAĞLANTIYI REDDETTİ	● KICK TỪ CHỐI KẾT NỐI
 ● TEST BAŞARISIZ	● THỬ THẤT BẠI
 ● TEST KAYDI	● GHI THỬ
 ● TEST KAYDI HAZIR	● BẢN GHI THỬ ĐÃ XONG
@@ -460,3 +456,26 @@ yok	không
 Şişede mesaj	Thư trong chai
 POP!	BỐP!
 Ekran kartı motoru (işlemciyi boşaltır)	Bộ máy GPU (giảm tải CPU)
+BAĞLANTI	KẾT NỐI
+Başlık, kategori ve küçük resim YouTube Studio'da ayarlanır. Chat katmanları ve chat eğlencesi Kick chat'ini okur.	Tiêu đề, danh mục và ảnh thu nhỏ được đặt trong YouTube Studio. Lớp chat và trò vui chat đọc chat Kick.
+Bu platforma yayınla	Phát lên nền tảng này
+GÖRÜNTÜ & SES	HÌNH ẢNH & ÂM THANH
+Hiçbir platform açık değil: yalnızca test kaydı alınabilir.	Chưa bật nền tảng nào: chỉ có thể ghi thử.
+Kick ve YouTube için hafif Valorant yayın aracı · RTX NVENC	Công cụ stream Valorant nhẹ cho Kick và YouTube · RTX NVENC
+Kick'e yayın kapalı: chat okunmaz	Đã tắt phát lên Kick: không đọc chat
+PLATFORMLAR	NỀN TẢNG
+RAKİP HAFIZASI	GHI NHỚ ĐỊCH
+Stream URL / Stream Key'i platformun panelinden yeniden kopyala	Sao chép lại Stream URL / Stream Key từ bảng điều khiển của nền tảng
+Yayının gideceği platformu seç: Platformlar sekmesinde en az birini aç.	Chọn nơi phát: bật ít nhất một nền tảng trong thẻ Nền tảng.
+YouTube Studio'dan yayın anahtarı al	Lấy khóa stream từ YouTube Studio
+bağlanıyor…	đang kết nối…
+durdu	đã dừng
+hazır	sẵn sàng
+kapalı	tắt
+koptu	mất kết nối
+reddetti	bị từ chối
+yeniden bağlanıyor ({0})	đang kết nối lại ({0})
+{0} platform × ~{1} kbps → internetin yükleme hızı en az {2} Mbps olmalı (pay ile).	{0} nền tảng × ~{1} kbps → tốc độ tải lên cần ít nhất {2} Mbps (có dư).
+{0}: Stream URL ve Stream Key gerekli.	{0}: cần Stream URL và Stream Key.
+● canlı	● trực tiếp
+● {0} BAĞLANTIYI REDDETTİ	● {0} TỪ CHỐI KẾT NỐI

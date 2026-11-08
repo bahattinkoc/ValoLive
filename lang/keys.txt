@@ -33,6 +33,7 @@ Analizim
 Atak
 Ayrıntı: %LOCALAPPDATA%\ValoLive\ffmpeg.log
 Açmak için simgeye tıkla; çıkış simgenin sağ tık menüsünde.
+BAĞLANTI
 BAŞLA!
 BERABERE
 BIÇAK
@@ -46,11 +47,13 @@ Bağlı değil
 Başlık
 Başlık uygulanamadı: 
 Başlık, kategori ve etiketler Kick'e uygulandı ✓
+Başlık, kategori ve küçük resim YouTube Studio'da ayarlanır. Chat katmanları ve chat eğlencesi Kick chat'ini okur.
 Belirgin bir alışkanlık yok — dengeli oynuyor.
 Bildirimler (tanıdık oyuncu, smurf, parti)
 Bronz
 Bu haritada bomba kurmamış.
 Bu pencere yayına ve kayda girmez · adını gizleyenler aranmaz
+Bu platforma yayınla
 Bu raund ace gelir mi? 🎯
 Bugün henüz rekabetçi maç yok.
 Bugün rank atlıyoruz 💪
@@ -98,6 +101,7 @@ GG, TEŞEKKÜRLER!
 Gece
 Gizli oyuncu
 GÖRÜNTÜ
+GÖRÜNTÜ & SES
 GÜNÜN MAÇI
 Gümüş
 Günlükler
@@ -114,6 +118,7 @@ Havai fişek hedefi
 Hazırlanıyor…
 HenrikDev anahtarı yok
 Hepsi
+Hiçbir platform açık değil: yalnızca test kaydı alınabilir.
 Hızlı
 KAFACI
 KATMANLAR
@@ -130,16 +135,16 @@ Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak,
 Kaydet ve bağlan
 Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.
 Kağıt uçak
-Kick Stream URL ve Stream Key gerekli.\nKick → Creator Dashboard → Settings bölümünden kopyalayabilirsin.
 Kick hesabı
 Kick hesabı bağlı değil.
 Kick hesabını bağla
-Kick için hafif Valorant yayın aracı · RTX NVENC
 Kick kanal bilgisi alınamadı.
 Kick onayı 3 dakika içinde gelmedi.
 Kick onayı reddedildi: 
 Kick oturumu sona ermiş, yeniden bağlan.
+Kick ve YouTube için hafif Valorant yayın aracı · RTX NVENC
 Kick'e bağlanılamadı:\n
+Kick'e yayın kapalı: chat okunmaz
 Kick'e şimdi uygula
 Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):
 Kick'ten URL ve key al
@@ -179,10 +184,12 @@ Otomatik (Valorant dili)
 Oyun sesi
 PARTİ
 PAT!
+PLATFORMLAR
 POP!
 Platin
 Profili aç ↗
 RADAR ROZETİ
+RAKİP HAFIZASI
 RAKİP MAÇ SAYISINDA
 RAKİP UÇURUMDAN
 RAKİPLER
@@ -239,7 +246,7 @@ Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.
 Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.
 Sprey
 Stil çıkarmak için yeterli round yok (en az 40).
-Stream URL / Stream Key'i Kick panelinden yeniden kopyala
+Stream URL / Stream Key'i platformun panelinden yeniden kopyala
 Sv
 Süre: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n
@@ -298,14 +305,17 @@ Yayın bu ayar kapalıyken başladı: açmak için yayını yeniden başlat.
 Yayında chat kutusu
 Yayını başlat
 Yayını bitir
+Yayının gideceği platformu seç: Platformlar sekmesinde en az birini aç.
 Yeni balık
 Yeni uygulama oluştur. Ad: ValoLive · Redirect URL olarak şunu yaz:
+YouTube Studio'dan yayın anahtarı al
 Yumurta
 Yücelik
 ZAFER
 adını gizliyor — geçmişine bakılmaz
 atak
 bağlanıyor
+bağlanıyor…
 bağlı
 berabere
 bir raund kaldı
@@ -317,6 +327,7 @@ bugün
 chat odası bulunamadı
 defans
 defter dolduruluyor {0}/{1}
+durdu
 dün
 form
 genel kazanma ({0})
@@ -326,6 +337,7 @@ geçmiş alınamadı
 geçmiş yükleniyor…
 harita
 hasar/round
+hazır
 iki farkla kazanan alır
 ilk kan / round
 ilk kan senden
@@ -335,6 +347,7 @@ ilk ölen sensin
 ilk ölüm / round
 incelenecek maç bulunamadı
 kafa isabeti
+kapalı
 katılmak için !race yaz · {0}
 kaybettin
 kazandın
@@ -342,6 +355,7 @@ kazanma
 kendi yeteneğinle {0} kez öldün
 kendiliğinden
 kimse düşmeden raund alındı
+koptu
 koptu: 
 kurma {0} · imha {1}
 maç
@@ -354,6 +368,7 @@ rakip
 rakipte
 rakipte tek kişi kaldı
 rank yükleniyor…
+reddetti
 son {0} maç · {1} round incelendi
 son {0} rekabetçi maç
 spike patlamasında {0} kez öldün
@@ -366,6 +381,7 @@ takımında
 taraflar değişiyor
 ulti / maç
 yayın başlayınca bağlanır
+yeniden bağlanıyor ({0})
 yok
 zirve
 {0:0} ay önce
@@ -387,6 +403,7 @@ zirve
 {0} maç · tarama hatası: {1}
 {0} maç · {1}
 {0} patlattı
+{0} platform × ~{1} kbps → internetin yükleme hızı en az {2} Mbps olmalı (pay ile).
 {0} portu kullanımda; ValoLive'ı yeniden başlatıp tekrar dene.
 {0} rakip ayaktayken imha ettin
 {0} rakip düşerek öldü
@@ -398,6 +415,7 @@ zirve
 {0} · {1} RR
 {0} · {1} {2} · daha önce {3} kez
 {0}. ROUND
+{0}: Stream URL ve Stream Key gerekli.
 {0}: kullanılmamış
 {0}: {1} round · round başı {2:0.00} öldürme · kafa %{3}
 {0}G  {1}M
@@ -449,12 +467,13 @@ zirve
 ● DURDURULUYOR…
 ● EKRAN YAKALAMA YENİLENİYOR (yayın açık)
 ● HAZIR
-● KICK BAĞLANTIYI REDDETTİ
 ● TEST BAŞARISIZ
 ● TEST KAYDI
 ● TEST KAYDI HAZIR
 ● YAYIN BİTTİ
 ● YAYIN DURDU
+● canlı
+● {0} BAĞLANTIYI REDDETTİ
 ⚠  Valorant "Tam ekran" modunda: alt-tab'da yayın takılır.  Valorant → Ayarlar → Video → Genel → Görüntü Modu: "Pencereli Tam Ekran" seç.
 ✗ Bağlantı hatası
 ✗ HenrikDev anahtarı geçersiz

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -61,7 +61,13 @@ namespace ValoLive
         AudioSource audio, micAudio;
         StreamOptions lastOptions;
 
-        TextBox txtUrl, txtKey, txtName, txtTag, txtHdev, txtTitle, txtTags;
+        readonly List<DestUi> dests = new List<DestUi>();   // yayın platformları (Platform.All sırasıyla)
+        Control host;                     // yerleşim yardımcılarının denetim eklediği yer (sekme sayfası ya da form)
+        Page[] pages; Button[] tabs;
+        Page chips;                       // alt şeritte platform durumları
+        Label lblUpload;
+        static readonly Color Amber = ColorTranslator.FromHtml("#ffb547");
+        TextBox txtName, txtTag, txtHdev, txtTitle, txtTags;
         ComboBox cmbCategory;
         CheckBox chkWgc, chkGpu, chkAutoLobby, chkAlerts, chkMemory, chkMemoryMap;
         string liveState = "";
@@ -103,10 +109,6 @@ namespace ValoLive
         enum Mode { Idle, Live, Test }
         Mode mode = Mode.Idle;
         DateTime liveSince;
-        int reconnects;
-        bool everLive;
-        DateTime connectAt;   // son Kick bağlantısının açıldığı an
-        int quickDrops;       // art arda, bağlandıktan kısa süre sonra gelen kopmalar
         readonly Timer clock = new Timer { Interval = 1000 };
 
         public MainForm()
@@ -133,10 +135,11 @@ namespace ValoLive
             kick = new KickApi(cfg);
             BuildUi();
             BuildTray();
-            foreach (var l in Controls.OfType<Label>()) l.UseMnemonic = false; // "&" kısayol harfi sanılmasın
+            foreach (var l in AllControls(this).OfType<Label>()) l.UseMnemonic = false; // "&" kısayol harfi sanılmasın
             LoadSettings();
 
             streamer.Progress += p => BeginInvoke((Action)(() => ShowProgress(p)));
+            streamer.TargetChanged += (t, s, n) => BeginInvoke((Action)(() => OnTargetChanged(t, s, n)));
             streamer.Exited += (unexpected, err) => BeginInvoke((Action)(() => OnStreamExit(unexpected, err)));
             streamer.Recovering += () => BeginInvoke((Action)(() => { if (mode != Mode.Idle) SetStatus(L.T("● EKRAN YAKALAMA YENİLENİYOR (yayın açık)"), Mut); }));
             clock.Tick += (s, e) => UpdateClock();
@@ -154,22 +157,24 @@ namespace ValoLive
 
         void BuildUi()
         {
-            // İki sütun: solda bağlantılar (Kick, Valorant), sağda yayın ayarları (görüntü, ses).
+            // Üstte başlık şeridi, altında sekmeler (Platformlar · Görüntü & Ses · Valorant), en altta her sekmede görünen
+            // yayın şeridi (düğmeler, durum, platform durumları). Her sekme iki sütun.
             // Başlık (VALO + kırmızı LIVE) OnPaint'te çizilir: köşeli yazı tipi uygulamayla gelen bir dosya, GDI+ ister.
             // Ölçüler metinlere göre (diller arasında uzunluk çok değişiyor): etiket sütunu en uzun alan etiketine,
             // sütunlar en uzun anahtar yazısına göre genişler.
             string tAutoLobby = L.T("Maç bulununca otomatik aç"), tAlerts = L.T("Bildirimler (tanıdık oyuncu, smurf, parti)"),
                    tWgc = L.T("Hafif yakalama (yalnızca oyun penceresi)"), tGpu = L.T("Ekran kartı motoru (işlemciyi boşaltır)"), tDenoise = L.T("Gürültü filtresi"),
                    tMemory = L.T("Rakip hafızası: minimap'te son görülen yerler (deneysel)"),
-                   tMemoryMap = L.T("Rakip hafızası: harita üstünde ikonlar (deneysel)");
+                   tMemoryMap = L.T("Rakip hafızası: harita üstünde ikonlar (deneysel)"), tDest = L.T("Bu platforma yayınla");
             using (var cap = new Font(L.SansBold, 8.25f))
                 LabelW = Math.Max(104, new[] { "Stream URL", "Stream Key", L.T("Kick hesabı"), L.T("Başlık"), L.T("Kategori"), L.T("Etiketler"), "Riot ID", "HenrikDev key",
                     L.T("Kalite"), L.T("Yakalama"), L.T("Uygulama"), L.T("Mikrofon"), L.T("Oyun sesi") }
                     .Max(s => TextRenderer.MeasureText(Theme.Upper(s), cap).Width) + 12);
-            int toggleW = new[] { tAutoLobby, tAlerts, tWgc, tGpu, tDenoise, tMemory, tMemoryMap }.Max(s => VToggle.WidthFor(s, Font));
+            int toggleW = new[] { tAutoLobby, tAlerts, tWgc, tGpu, tDenoise, tMemory, tMemoryMap, tDest }.Max(s => VToggle.WidthFor(s, Font));
             ColW = Math.Min(560, Math.Max(Math.Max(420, LabelW + 316), toggleW + 4));
+            host = this;
 
-            var sub = new Label { Text = L.T("Kick için hafif Valorant yayın aracı · RTX NVENC"), ForeColor = Mut, AutoSize = true, Location = new Point(22, 56) };
+            var sub = new Label { Text = L.T("Kick ve YouTube için hafif Valorant yayın aracı · RTX NVENC"), ForeColor = Mut, AutoSize = true, Location = new Point(22, 56) };
             string keysText = L.T("F9  Sniper koruması      F10  Yayın özeti");
             var keys = new Label { Text = keysText, ForeColor = Mut, AutoSize = true };
             keys.Location = new Point(FormW - 20 - TextRenderer.MeasureText(keysText, Font).Width, 56);
@@ -198,15 +203,28 @@ namespace ValoLive
             cmbLang.SelectedIndexChanged += (s, e) => ChangeLanguage(cmbLang.SelectedIndex == 0 ? "auto" : L.Languages[cmbLang.SelectedIndex - 1].Code);
             Controls.Add(cmbLang);
 
-            // ---- Sol sütun ----
-            cx = 20;
-            int y = Section("KICK", top);
-            txtUrl = AddText("Stream URL", ref y, false);
-            txtKey = AddText("Stream Key", ref y, true);
-            var getKey = new LinkLabel { Text = L.T("Kick'ten URL ve key al"), AutoSize = true, LinkColor = Red, ActiveLinkColor = Red, Location = new Point(FX, y - 2) };
-            getKey.LinkClicked += (s, e) => Process.Start("https://dashboard.kick.com/stream");
-            Controls.Add(getKey); y += 22;
+            // ---- Sekmeler ----
+            string[] tabNames = { L.T("PLATFORMLAR"), L.T("GÖRÜNTÜ & SES"), "VALORANT" };
+            int tabW = tabNames.Max(s => Theme.ButtonWidth(s, 34, 150));
+            int pageTop = top + 54;
+            tabs = new Button[tabNames.Length]; pages = new Page[tabNames.Length];
+            for (int i = 0; i < tabNames.Length; i++)
+            {
+                int k = i;
+                tabs[i] = MakeButton(tabNames[i], new Rectangle(20 + i * (tabW + 8), top, tabW, 34), Field);
+                tabs[i].Font = new Font(L.SansBold, 10f);
+                tabs[i].Click += (s, e) => ShowPage(k);
+                // Sayfa hemen forma eklenir: içindeki yazılar formun yazı tipiyle ölçülsün.
+                pages[i] = new Page { Location = new Point(0, pageTop), Width = FormW };
+                Controls.Add(pages[i]);
+            }
+            Controls.Add(new Panel { BackColor = Card, Location = new Point(20, top + 42), Size = new Size(FormW - 40, 1) });
 
+            // ---- PLATFORMLAR: solda Kick (yayın bilgisiyle), sağda YouTube ----
+            host = pages[0];
+            cx = 20;
+            int y = 4;
+            AddDest(Platform.Kick, tDest, ref y);
             y = Section(L.T("YAYIN BİLGİSİ"), y + 8);
             Caption(L.T("Kick hesabı"), y);
             int kickW = Math.Max(Theme.ButtonWidth(L.T("Bağlan"), 25, 92), Theme.ButtonWidth(L.T("Çıkış"), 25, 92));
@@ -214,88 +232,71 @@ namespace ValoLive
             btnKick = new VButton { Text = L.T("Bağlan"), Bounds = new Rectangle(FX + FW - kickW, y - 1, kickW, 25), BackColor = Field, ForeColor = Txt, FlatStyle = FlatStyle.Flat, Cursor = Cursors.Hand };
             btnKick.FlatAppearance.BorderSize = 0;
             btnKick.Click += (s, e) => KickConnectClicked();
-            Controls.AddRange(new Control[] { lblKick, btnKick }); y += 34;
+            host.Controls.AddRange(new Control[] { lblKick, btnKick }); y += 34;
             txtTitle = AddText(L.T("Başlık"), ref y, false);
             txtTitle.MaxLength = 140;
             Caption(L.T("Kategori"), y);
             cmbCategory = new ComboBox { Location = new Point(FX, y), Width = FW, DropDownStyle = ComboBoxStyle.DropDown, FlatStyle = FlatStyle.Flat };
             StyleField(cmbCategory);
             cmbCategory.TextUpdate += (s, e) => SearchCategories();
-            Controls.Add(cmbCategory); y += 34;
+            host.Controls.Add(cmbCategory); y += 34;
             txtTags = AddText(L.T("Etiketler"), ref y, false);
             var applyNow = new LinkLabel { Text = L.T("Kick'e şimdi uygula"), AutoSize = true, LinkColor = Red, ActiveLinkColor = Red, Location = new Point(FX, y - 2) };
             applyNow.LinkClicked += (s, e) => ApplyStreamInfo(true);
-            Controls.Add(applyNow);
+            host.Controls.Add(applyNow);
             y += 22;
-
-            y = Section("VALORANT", y + 8);
-            Caption("Riot ID", y);
-            txtName = new TextBox { Location = new Point(FX, y), Width = FW - 190 };
-            Controls.Add(new Label { Text = "#", ForeColor = Mut, AutoSize = true, Location = new Point(FX + FW - 183, y + 3) });
-            txtTag = new TextBox { Location = new Point(FX + FW - 162, y), Width = 68 };
-            cmbRegion = new ComboBox { Location = new Point(FX + FW - 86, y), Width = 86, DropDownStyle = ComboBoxStyle.DropDownList, FlatStyle = FlatStyle.Flat };
-            cmbRegion.Items.AddRange(new object[] { "EU / TR", "NA", "AP", "KR", "LATAM", "BR" });
-            cmbRegion.SelectedIndex = 0;
-            StyleField(txtName); StyleField(txtTag); StyleField(cmbRegion);
-            Controls.AddRange(new Control[] { txtName, txtTag, cmbRegion }); y += 34;
-            txtHdev = AddText("HenrikDev key", ref y, true);
-            var link = new LinkLabel { Text = L.T("Ücretsiz anahtar al"), AutoSize = true, Location = new Point(FX, y - 2), LinkColor = Red, ActiveLinkColor = Red };
-            link.LinkClicked += (s, e) => Process.Start("https://api.henrikdev.xyz/dashboard/");
-            int valoX = FX + TextRenderer.MeasureText(link.Text, Font).Width + 12; // denetim forma eklenmeden yazı tipini almıyor: formunkiyle ölç
-            lblValo = new FitLabel { Text = "", ForeColor = Mut, Location = new Point(valoX, y - 2), Size = new Size(FX + FW - valoX, 20) };
-            Controls.AddRange(new Control[] { link, lblValo });
-            y += 22;
-            foreach (var t in new[] { txtName, txtTag, txtHdev }) t.Leave += (s, e) => StartTracker();
-            cmbRegion.SelectedIndexChanged += (s, e) => StartTracker();
-
-            y = Section(L.T("MAÇ ODASI"), y + 8);
-            chkAutoLobby = new VToggle { Text = tAutoLobby, ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
-            Controls.Add(chkAutoLobby); y += 26;
-            chkAlerts = new VToggle { Text = tAlerts, ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
-            Controls.Add(chkAlerts); y += 26;
-            chkAutoLobby.CheckedChanged += (s, e) => SaveSettings();
-            chkAlerts.CheckedChanged += (s, e) => { SaveSettings(); if (lobby != null && !lobby.IsDisposed) lobby.Alerts = chkAlerts.Checked; };
-            chkMemory = new VToggle { Text = tMemory, ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
-            Controls.Add(chkMemory); y += 26;
-            chkMemory.CheckedChanged += (s, e) => SaveSettings();
-            chkMemoryMap = new VToggle { Text = tMemoryMap, ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
-            Controls.Add(chkMemoryMap); y += 26;
-            chkMemoryMap.CheckedChanged += (s, e) => SaveSettings();
             int leftBottom = y;
 
-            // ---- Sağ sütun ----
             cx = ColW + 60;
-            var divider = new Panel { BackColor = Card, Location = new Point(ColW + 40, top + 4) };
-            Controls.Add(divider);
-            y = Section(L.T("GÖRÜNTÜ"), top);
+            y = 4;
+            AddDest(Platform.YouTube, tDest, ref y);
+            var ytNote = new Label { Text = L.T("Başlık, kategori ve küçük resim YouTube Studio'da ayarlanır. Chat katmanları ve chat eğlencesi Kick chat'ini okur."),
+                ForeColor = Mut, AutoSize = true, MaximumSize = new Size(ColW, 0), Location = new Point(cx, y) };
+            host.Controls.Add(ytNote);
+            y += ytNote.GetPreferredSize(new Size(ColW, 0)).Height + 4;
+            y = Section(L.T("BAĞLANTI"), y + 8);
+            lblUpload = new Label { ForeColor = Mut, AutoSize = true, MaximumSize = new Size(ColW, 0), Location = new Point(cx, y - 4) };
+            host.Controls.Add(lblUpload);
+            y += 44;
+            AddDivider(Math.Max(leftBottom, y));
+            pages[0].Height = Math.Max(leftBottom, y);
+
+            // ---- GÖRÜNTÜ & SES: solda görüntü, sağda ses ve Yayın Paneli ----
+            host = pages[1];
+            cx = 20;
+            y = Section(L.T("GÖRÜNTÜ"), 4);
             cmbQuality = AddCombo(L.T("Kalite"), ref y, Qualities.Select(q => q.Label).ToArray());
+            cmbQuality.SelectedIndexChanged += (s, e) => { SaveSettings(); UpdateUpload(); };
             cmbCapture = AddCombo(L.T("Yakalama"), ref y, new[] { L.T("Tam ekran (her şey görünür)"), L.T("Sadece Valorant (önerilen)"), L.T("Seçtiğim uygulama") });
             Caption(L.T("Uygulama"), y);
-            lblApp = Controls[Controls.Count - 1];
+            lblApp = host.Controls[host.Controls.Count - 1];
             cmbApp = new ComboBox { Location = new Point(FX, y), Width = FW - 42, DropDownStyle = ComboBoxStyle.DropDownList, FlatStyle = FlatStyle.Flat };
             StyleField(cmbApp);
             btnApps = new VButton { Text = "↻", Bounds = new Rectangle(FX + FW - 36, y - 1, 36, 25), BackColor = Field, ForeColor = Txt, FlatStyle = FlatStyle.Flat };
             btnApps.FlatAppearance.BorderSize = 0;
-            Controls.AddRange(new Control[] { cmbApp, btnApps }); y += 34;
-            int belowApp = Controls.Count; // "Seçtiğim uygulama" değilse bu satır kapanır, altındakiler yukarı kayar
+            host.Controls.AddRange(new Control[] { cmbApp, btnApps }); y += 34;
+            int belowApp = host.Controls.Count; // "Seçtiğim uygulama" değilse bu satır kapanır, altındakiler yukarı kayar
             chkWgc = new VToggle { Text = tWgc, ForeColor = Txt, AutoSize = true, Location = new Point(FX, y - 4) };
-            Controls.Add(chkWgc); y += 26;
+            host.Controls.Add(chkWgc); y += 26;
             chkWgc.CheckedChanged += (s, e) => SaveSettings();
             // Ekran kartı motoru: valocap.exe yanında yoksa seçenek hiç görünmez.
             chkGpu = new VToggle { Text = tGpu, ForeColor = Txt, AutoSize = true, Location = new Point(FX, y - 4), Visible = Streamer.FindEngine() != null };
-            Controls.Add(chkGpu); if (chkGpu.Visible) y += 26;
+            host.Controls.Add(chkGpu); if (chkGpu.Visible) y += 26;
             chkGpu.CheckedChanged += (s, e) => SaveSettings();
+            appShift = host.Controls.Cast<Control>().Skip(belowApp).ToArray();
             btnApps.Click += (s, e) => FillApps(apps.ElementAtOrDefault(cmbApp.SelectedIndex).Key ?? cfg.CaptureApp);
             cmbCapture.SelectedIndexChanged += (s, e) => ApplyCapture();
             cmbApp.SelectedIndexChanged += (s, e) => ApplyCapture();
+            leftBottom = y;
 
-            y = Section(L.T("SES"), y + 8);
+            cx = ColW + 60;
+            y = Section(L.T("SES"), 4);
             inputs = AudioDevices.ListInputs();
             cmbMic = AddCombo(L.T("Mikrofon"), ref y, inputs.Select(o => o.Value).ToArray());
             trkMic = AddSlider(ref y, out lblMic);
             trkMic.ValueChanged += (s, e) => { if (micAudio != null) micAudio.Volume = trkMic.Value / 100f; };
             chkDenoise = new VToggle { Text = tDenoise, ForeColor = Txt, AutoSize = true, Location = new Point(FX, y - 4) };
-            Controls.Add(chkDenoise); y += 26;
+            host.Controls.Add(chkDenoise); y += 26;
             outputs = AudioDevices.ListOutputs();
             cmbOut = AddCombo(L.T("Oyun sesi"), ref y, outputs.Select(o => o.Value).ToArray());
             trkGame = AddSlider(ref y, out lblGame);
@@ -305,17 +306,65 @@ namespace ValoLive
             y = Section(L.T("YAYIN PANELİ"), y + 8);
             var panelNote = new Label { Text = L.T("Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede."),
                 ForeColor = Mut, AutoSize = true, MaximumSize = new Size(ColW, 0), Location = new Point(cx, y - 4) };
-            Controls.Add(panelNote);
+            host.Controls.Add(panelNote);
             y += panelNote.GetPreferredSize(new Size(ColW, 0)).Height + 4;
             var btnPanel = MakeButton(L.T("YAYIN PANELİNİ AÇ"), new Rectangle(cx, y, ColW, 36), Field);
             btnPanel.Font = new Font(L.SansBold, 10f);
             btnPanel.Click += (s, e) => StreamPanel.Open(this, cfg);
             y += 44;
-            appShift = Controls.Cast<Control>().Skip(belowApp).ToArray();
-            divider.Size = new Size(1, Math.Max(leftBottom, y) - top - 4);
+            AddDivider(Math.Max(leftBottom, y));
+            pages[1].Height = Math.Max(leftBottom, y);
 
-            // ---- Alt şerit: butonlar + durum ----
-            y = Math.Max(leftBottom, y) + 10;
+            // ---- VALORANT: solda hesap, sağda maç odası ve rakip hafızası ----
+            host = pages[2];
+            cx = 20;
+            y = Section("VALORANT", 4);
+            Caption("Riot ID", y);
+            txtName = new TextBox { Location = new Point(FX, y), Width = FW - 190 };
+            host.Controls.Add(new Label { Text = "#", ForeColor = Mut, AutoSize = true, Location = new Point(FX + FW - 183, y + 3) });
+            txtTag = new TextBox { Location = new Point(FX + FW - 162, y), Width = 68 };
+            cmbRegion = new ComboBox { Location = new Point(FX + FW - 86, y), Width = 86, DropDownStyle = ComboBoxStyle.DropDownList, FlatStyle = FlatStyle.Flat };
+            cmbRegion.Items.AddRange(new object[] { "EU / TR", "NA", "AP", "KR", "LATAM", "BR" });
+            cmbRegion.SelectedIndex = 0;
+            StyleField(txtName); StyleField(txtTag); StyleField(cmbRegion);
+            host.Controls.AddRange(new Control[] { txtName, txtTag, cmbRegion }); y += 34;
+            txtHdev = AddText("HenrikDev key", ref y, true);
+            var link = new LinkLabel { Text = L.T("Ücretsiz anahtar al"), AutoSize = true, Location = new Point(FX, y - 2), LinkColor = Red, ActiveLinkColor = Red };
+            link.LinkClicked += (s, e) => Process.Start("https://api.henrikdev.xyz/dashboard/");
+            int valoX = FX + TextRenderer.MeasureText(link.Text, Font).Width + 12;
+            lblValo = new FitLabel { Text = "", ForeColor = Mut, Location = new Point(valoX, y - 2), Size = new Size(FX + FW - valoX, 20) };
+            host.Controls.AddRange(new Control[] { link, lblValo });
+            y += 22;
+            foreach (var t in new[] { txtName, txtTag, txtHdev }) t.Leave += (s, e) => StartTracker();
+            cmbRegion.SelectedIndexChanged += (s, e) => StartTracker();
+            leftBottom = y;
+
+            cx = ColW + 60;
+            y = Section(L.T("MAÇ ODASI"), 4);
+            chkAutoLobby = new VToggle { Text = tAutoLobby, ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
+            host.Controls.Add(chkAutoLobby); y += 26;
+            chkAlerts = new VToggle { Text = tAlerts, ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
+            host.Controls.Add(chkAlerts); y += 26;
+            chkAutoLobby.CheckedChanged += (s, e) => SaveSettings();
+            chkAlerts.CheckedChanged += (s, e) => { SaveSettings(); if (lobby != null && !lobby.IsDisposed) lobby.Alerts = chkAlerts.Checked; };
+            y = Section(L.T("RAKİP HAFIZASI"), y + 8);
+            chkMemory = new VToggle { Text = tMemory, ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
+            host.Controls.Add(chkMemory); y += 26;
+            chkMemory.CheckedChanged += (s, e) => SaveSettings();
+            chkMemoryMap = new VToggle { Text = tMemoryMap, ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
+            host.Controls.Add(chkMemoryMap); y += 26;
+            chkMemoryMap.CheckedChanged += (s, e) => SaveSettings();
+            AddDivider(Math.Max(leftBottom, y));
+            pages[2].Height = Math.Max(leftBottom, y);
+
+            // Sayfalar aynı boyda: sekme değişince alttaki yayın şeridi yerinden oynamaz.
+            int pageH = pages.Max(p => p.Height) + 4;
+            foreach (var p in pages) p.Height = pageH;
+
+            // ---- Alt şerit (her sekmede): butonlar + durum + platformlar ----
+            host = this;
+            cx = 20;
+            y = pageTop + pageH + 6;
             Controls.Add(new Panel { BackColor = Card, Location = new Point(20, y), Size = new Size(FormW - 40, 1) });
             y += 16;
             int testW = Math.Min(ColW / 2, Theme.ButtonWidth(L.T("TEST KAYDI (15 sn)"), 50, 170)); // canlı düğmesi geniş kalsın; sığmayan yazı küçülür
@@ -323,45 +372,174 @@ namespace ValoLive
             btnLive = MakeButton(L.T("YAYINI BAŞLAT"), new Rectangle(30 + testW, y, ColW + 10 - testW, 50), Red);
             btnTest.Click += (s, e) => { if (mode == Mode.Idle) Begin(Mode.Test); };
             btnLive.Click += (s, e) => { if (mode == Mode.Idle) Begin(Mode.Live); else if (mode == Mode.Live) StopLive(); };
-            lblStatus = new FitLabel { Text = L.T("● HAZIR"), Font = new Font(L.SansBold, 12f), ForeColor = Mut, Location = new Point(cx, y + 2), Size = new Size(ColW, 26) };
-            lblStats = new Label { Text = "", ForeColor = Mut, AutoSize = true, MaximumSize = new Size(ColW, 0), Location = new Point(cx + 2, y + 29) };
-            Controls.AddRange(new Control[] { lblStatus, lblStats });
-            int bottom = y + 50 + 20;
+            cx = ColW + 60;
+            lblStatus = new FitLabel { Text = L.T("● HAZIR"), Font = new Font(L.SansBold, 12f), ForeColor = Mut, Location = new Point(cx, y - 2), Size = new Size(ColW, 26) };
+            chips = new Page { Location = new Point(cx, y + 26), Size = new Size(ColW, 20) };
+            chips.Paint += PaintChips;
+            lblStats = new Label { Text = "", ForeColor = Mut, AutoSize = true, MaximumSize = new Size(ColW, 0), Location = new Point(cx + 2, y + 50) };
+            Controls.AddRange(new Control[] { lblStatus, chips, lblStats });
+            int bottom = y + 50 + 40;
             // Exclusive tam ekranda her alt-tab ekran modunu değiştirir; ekran yakalama kopar ve yayında takılma olur.
             if (Diag.ValorantFullscreenMode() == 0)
             {
                 var warn = new Label
                 {
                     Text = L.T("⚠  Valorant \"Tam ekran\" modunda: alt-tab'da yayın takılır.  Valorant → Ayarlar → Video → Genel → Görüntü Modu: \"Pencereli Tam Ekran\" seç."),
-                    ForeColor = ColorTranslator.FromHtml("#ffb547"), AutoSize = true, MaximumSize = new Size(FormW - 40, 0), Location = new Point(20, y + 60),
+                    ForeColor = ColorTranslator.FromHtml("#ffb547"), AutoSize = true, MaximumSize = new Size(FormW - 40, 0), Location = new Point(20, y + 86),
                 };
                 Controls.Add(warn);
                 bottom += warn.GetPreferredSize(new Size(FormW - 40, 0)).Height + 6; // uzun dillerde iki satıra iner
             }
             // Anahtar yazıları sütunu aşmasın (çok uzun bir çeviri en kötü "…" ile biter).
-            foreach (var t in Controls.OfType<VToggle>())
+            foreach (var t in AllControls(this).OfType<VToggle>())
                 t.MaximumSize = new Size((t.Left < ColW + 40 ? 20 + ColW : 2 * ColW + 60) - t.Left, 0);
             ClientSize = new Size(FormW, bottom);
             ThemeFields();
+            ShowPage(0);
+        }
+
+        static IEnumerable<Control> AllControls(Control c) => c.Controls.Cast<Control>().SelectMany(x => new[] { x }.Concat(AllControls(x)));
+
+        /// <summary>Platform sütunu: başlık, "yayınla" anahtarı, URL, anahtar ve anahtarın alındığı sayfanın bağlantısı.</summary>
+        void AddDest(Platform p, string toggle, ref int y)
+        {
+            y = Section(p.Name.ToUpperInvariant(), y); // marka adı: Türkçe büyütme "KİCK" yapmasın
+            var d = new DestUi { P = p };
+            d.On = new VToggle { Text = toggle, ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
+            host.Controls.Add(d.On); y += 30;
+            d.Url = AddText("Stream URL", ref y, false);
+            d.Key = AddText("Stream Key", ref y, true);
+            var get = new LinkLabel { Text = p.KeyHint, AutoSize = true, LinkColor = Red, ActiveLinkColor = Red, Location = new Point(FX, y - 2) };
+            get.LinkClicked += (s, e) => Process.Start(p.KeyPage);
+            host.Controls.Add(get); y += 22;
+            d.On.CheckedChanged += (s, e) => { SaveSettings(); UpdateUpload(); chips?.Invalidate(); StreamPanel.Sync(); };
+            dests.Add(d);
+        }
+
+        /// <summary>Sayfanın iki sütunu arasındaki ince çizgi.</summary>
+        void AddDivider(int bottom) => host.Controls.Add(new Panel { BackColor = Card, Location = new Point(ColW + 40, 8), Size = new Size(1, Math.Max(0, bottom - 8)) });
+
+        void ShowPage(int i)
+        {
+            for (int k = 0; k < pages.Length; k++)
+            {
+                pages[k].Visible = k == i;
+                tabs[k].BackColor = k == i ? Red : Field;
+            }
+        }
+
+        /// <summary>Görüntü bir kez kodlanır ama her platforma ayrı gönderilir: gereken yükleme hızı platform sayısıyla katlanır.</summary>
+        void UpdateUpload()
+        {
+            if (lblUpload == null || cmbQuality == null) return;
+            int n = dests.Count(d => d.On.Checked);
+            int kbps = Qualities[Math.Max(0, cmbQuality.SelectedIndex)].Kbps + 160; // + ses
+            lblUpload.Text = n == 0 ? L.T("Hiçbir platform açık değil: yalnızca test kaydı alınabilir.")
+                : L.F("{0} platform × ~{1} kbps → internetin yükleme hızı en az {2} Mbps olmalı (pay ile).", n, kbps, Math.Ceiling(n * kbps * 1.5 / 1000.0));
+            lblUpload.ForeColor = n > 1 ? Txt : Mut;
+        }
+
+        // ---------- Platform durumları (alt şerit) ----------
+
+        void PaintChips(object sender, PaintEventArgs e)
+        {
+            var g = e.Graphics;
+            int x = 0;
+            using (var bold = new Font(L.SansBold, 8.75f))
+            using (var reg = new Font(L.Sans, 8.75f))
+                foreach (var d in dests)
+                {
+                    var (text, color) = ChipText(d);
+                    bool used = d.On.Checked || d.State != null;
+                    using (var b = new SolidBrush(used ? d.P.Brand : Theme.Line)) g.FillRectangle(b, x, 4, 4, 12);
+                    x += 9;
+                    TextRenderer.DrawText(g, d.P.Name, bold, new Point(x, 2), used ? Txt : Mut, TextFormatFlags.NoPrefix);
+                    x += TextRenderer.MeasureText(d.P.Name, bold).Width;
+                    TextRenderer.DrawText(g, text, reg, new Point(x, 2), color, TextFormatFlags.NoPrefix);
+                    x += TextRenderer.MeasureText(text, reg).Width + 16;
+                }
+        }
+
+        (string, Color) ChipText(DestUi d)
+        {
+            // Yayın yokken: açık/kapalı. Yayın bittikten sonra da reddeden/kopan platform öyle görünür (neden bittiği okunsun).
+            var s = d.State;
+            if (s == null || (mode == Mode.Idle && s == TargetState.Stopped))
+                return d.On.Checked ? (L.T("hazır"), Mut) : (L.T("kapalı"), Mut);
+            switch (s.Value)
+            {
+                case TargetState.Connecting: return (L.T("bağlanıyor…"), Mut);
+                case TargetState.Live: return (L.T("● canlı"), Red);
+                case TargetState.Retrying: return (L.F("yeniden bağlanıyor ({0})", d.Attempts), Amber);
+                case TargetState.Rejected: return (L.T("reddetti"), Red);
+                case TargetState.Failed: return (L.T("koptu"), Red);
+                default: return (L.T("durdu"), Mut);
+            }
+        }
+
+        void OnTargetChanged(Target t, TargetState s, int attempts)
+        {
+            var d = dests.FirstOrDefault(x => x.P.Id == t.Id);
+            if (d == null) return; // test kaydının dosya hedefi
+            d.State = s; d.Attempts = attempts;
+            chips.Invalidate();
+            if (mode == Mode.Live) UpdateLiveStatus();
+        }
+
+        /// <summary>Genel durum: bir platform bile canlıysa CANLI; değilse yeniden bağlanan ya da bağlanan.</summary>
+        void UpdateLiveStatus()
+        {
+            var used = dests.Where(d => d.State != null).ToList();
+            if (used.Any(d => d.State == TargetState.Live)) SetStatus(L.T("● CANLI") + "  " + (DateTime.Now - liveSince).ToString(@"hh\:mm\:ss"), Red);
+            else if (used.Any(d => d.State == TargetState.Retrying)) SetStatus(L.F("● BAĞLANTI KOPTU — yeniden bağlanılıyor ({0})", used.Max(d => d.Attempts)), Red);
+            else SetStatus(L.T("● BAĞLANIYOR…"), Mut);
         }
 
         // ---------- Görünüm (Theme.cs) ----------
 
-        // Metin kutularının çerçeveleri: kutunun kendi kenarlığı kaldırılır, form koyu alan + ince çerçeve çizer.
-        readonly List<KeyValuePair<Rectangle, Control>> frames = new List<KeyValuePair<Rectangle, Control>>();
+        /// <summary>Sekme sayfası: metin kutularının çerçevelerini kendisi çizer (kutunun kendi kenarlığı kaldırılır).</summary>
+        sealed class Page : Panel
+        {
+            public readonly List<KeyValuePair<Rectangle, Control>> Frames = new List<KeyValuePair<Rectangle, Control>>();
+
+            public Page() { DoubleBuffered = true; BackColor = Theme.Bg; }
+
+            protected override void OnPaint(PaintEventArgs e)
+            {
+                base.OnPaint(e);
+                foreach (var fr in Frames)
+                {
+                    if (!fr.Value.Visible) continue;
+                    using (var b = new SolidBrush(Theme.Field)) e.Graphics.FillRectangle(b, fr.Key);
+                    using (var p = new Pen(fr.Value.Focused ? Theme.Red : Theme.Line)) e.Graphics.DrawRectangle(p, fr.Key.X, fr.Key.Y, fr.Key.Width - 1, fr.Key.Height - 1);
+                }
+            }
+        }
+
+        /// <summary>Platformun ana penceredeki alanları ve bu yayındaki son durumu (null = yayında yok).</summary>
+        sealed class DestUi
+        {
+            public Platform P;
+            public CheckBox On;
+            public TextBox Url, Key;
+            public TargetState? State;
+            public int Attempts;
+        }
 
         void ThemeFields()
         {
-            foreach (var t in Controls.OfType<TextBox>().ToList())
-            {
-                var r = t.Bounds;
-                t.BorderStyle = BorderStyle.None;
-                frames.Add(new KeyValuePair<Rectangle, Control>(new Rectangle(r.X, r.Y, r.Width, 26), t));
-                t.Location = new Point(r.X + 8, r.Y + (26 - t.Height) / 2);
-                t.Width = r.Width - 16;
-                t.GotFocus += (s, e) => Invalidate();
-                t.LostFocus += (s, e) => Invalidate();
-            }
+            foreach (var pg in pages)
+                foreach (var t in pg.Controls.OfType<TextBox>().ToList())
+                {
+                    var r = t.Bounds;
+                    t.BorderStyle = BorderStyle.None;
+                    pg.Frames.Add(new KeyValuePair<Rectangle, Control>(new Rectangle(r.X, r.Y, r.Width, 26), t));
+                    t.Location = new Point(r.X + 8, r.Y + (26 - t.Height) / 2);
+                    t.Width = r.Width - 16;
+                    var page = pg;
+                    t.GotFocus += (s, e) => page.Invalidate();
+                    t.LostFocus += (s, e) => page.Invalidate();
+                }
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -375,12 +553,6 @@ namespace ValoLive
                 float w = g.MeasureString("VALO", f).Width;
                 using (var b = new SolidBrush(Txt)) g.DrawString("VALO", f, b, 16, 10);
                 using (var b = new SolidBrush(Red)) g.DrawString("LIVE", f, b, 16 + w - 10, 10);
-            }
-            foreach (var fr in frames)
-            {
-                if (!fr.Value.Visible) continue;
-                using (var b = new SolidBrush(Field)) g.FillRectangle(b, fr.Key);
-                using (var p = new Pen(fr.Value.Focused ? Red : Theme.Line)) g.DrawRectangle(p, fr.Key.X, fr.Key.Y, fr.Key.Width - 1, fr.Key.Height - 1);
             }
         }
 
@@ -409,13 +581,13 @@ namespace ValoLive
 
         int Section(string text, int y)
         {
-            Controls.Add(new Panel { BackColor = Red, Location = new Point(cx, y + 4), Size = new Size(4, 13) });
-            Controls.Add(new Label { Text = Theme.Upper(text), ForeColor = Txt, Font = Theme.Display(16), UseCompatibleTextRendering = true, AutoSize = true, Location = new Point(cx + 11, y) });
-            Controls.Add(new Panel { BackColor = Card, Location = new Point(cx, y + 22), Size = new Size(ColW, 1) });
+            host.Controls.Add(new Panel { BackColor = Red, Location = new Point(cx, y + 4), Size = new Size(4, 13) });
+            host.Controls.Add(new Label { Text = Theme.Upper(text), ForeColor = Txt, Font = Theme.Display(16), UseCompatibleTextRendering = true, AutoSize = true, Location = new Point(cx + 11, y) });
+            host.Controls.Add(new Panel { BackColor = Card, Location = new Point(cx, y + 22), Size = new Size(ColW, 1) });
             return y + 32;
         }
 
-        void Caption(string text, int y) => Controls.Add(new Label { Text = Theme.Upper(text), ForeColor = Mut, Font = new Font(L.SansBold, 8.25f), AutoSize = true, Location = new Point(cx, y + 5) });
+        void Caption(string text, int y) => host.Controls.Add(new Label { Text = Theme.Upper(text), ForeColor = Mut, Font = new Font(L.SansBold, 8.25f), AutoSize = true, Location = new Point(cx, y + 5) });
 
         void StyleField(Control c) { c.BackColor = Field; c.ForeColor = Txt; if (c is TextBox t) t.BorderStyle = BorderStyle.FixedSingle; if (c is ComboBox cb) DarkCombo(cb); }
 
@@ -423,7 +595,7 @@ namespace ValoLive
         {
             Caption(label, y);
             var t = new TextBox { Location = new Point(FX, y), Width = FW, UseSystemPasswordChar = secret };
-            StyleField(t); Controls.Add(t); y += 34;
+            StyleField(t); host.Controls.Add(t); y += 34;
             return t;
         }
 
@@ -433,7 +605,7 @@ namespace ValoLive
             var c = new ComboBox { Location = new Point(FX, y), Width = FW, DropDownStyle = ComboBoxStyle.DropDownList, FlatStyle = FlatStyle.Flat };
             StyleField(c); c.Items.AddRange(items); if (items.Length > 0) c.SelectedIndex = 0;
             FitDropDown(c);
-            Controls.Add(c); y += 34;
+            host.Controls.Add(c); y += 34;
             return c;
         }
 
@@ -449,7 +621,7 @@ namespace ValoLive
             var t = new VSlider { Location = new Point(FX, y), Width = FW - 48, Height = 26, Minimum = 0, Maximum = 200 };
             var v = new Label { ForeColor = Txt, AutoSize = true, Location = new Point(FX + FW - 40, y + 3) };
             t.ValueChanged += (s, e) => v.Text = L.Pct(t.Value);
-            Controls.AddRange(new Control[] { t, v });
+            host.Controls.AddRange(new Control[] { t, v });
             value = v; y += 30;
             return t;
         }
@@ -458,7 +630,7 @@ namespace ValoLive
         {
             var b = new VButton { Text = text, Bounds = r, BackColor = color, ForeColor = Color.White, FlatStyle = FlatStyle.Flat, Font = new Font(L.SansBold, 11f), Cursor = Cursors.Hand };
             b.FlatAppearance.BorderSize = 0;
-            Controls.Add(b);
+            host.Controls.Add(b);
             return b;
         }
 
@@ -475,8 +647,11 @@ namespace ValoLive
 
         void LoadSettingsCore()
         {
-            txtUrl.Text = cfg.KickUrl;
-            txtKey.Text = Settings.Unprotect(cfg.KickKeyEnc);
+            foreach (var d in dests)
+            {
+                var c = cfg.Dest(d.P.Id);
+                d.On.Checked = c.On; d.Url.Text = c.Url; d.Key.Text = Settings.Unprotect(c.KeyEnc);
+            }
             cmbQuality.SelectedIndex = Math.Max(0, Math.Min(Qualities.Length - 1, cfg.Quality));
             FillApps(cfg.CaptureApp);
             cmbCapture.SelectedIndex = Math.Max(0, Math.Min(2, cfg.Capture));
@@ -503,13 +678,17 @@ namespace ValoLive
             chkMemory.Checked = cfg.EnemyMemory;
             chkMemoryMap.Checked = cfg.EnemyMemoryMap;
             UpdateKickStatus();
+            UpdateUpload();
         }
 
         void SaveSettings()
         {
             if (loading) return;
-            cfg.KickUrl = txtUrl.Text.Trim();
-            cfg.KickKeyEnc = Settings.Protect(txtKey.Text.Trim());
+            foreach (var d in dests)
+            {
+                var c = cfg.Dest(d.P.Id);
+                c.On = d.On.Checked; c.Url = d.Url.Text.Trim(); c.KeyEnc = Settings.Protect(d.Key.Text.Trim());
+            }
             cfg.Quality = cmbQuality.SelectedIndex;
             cfg.Capture = cmbCapture.SelectedIndex;
             cfg.CaptureApp = apps.ElementAtOrDefault(cmbApp.SelectedIndex).Key ?? cfg.CaptureApp;
@@ -535,6 +714,9 @@ namespace ValoLive
         internal bool Streaming => mode != Mode.Idle;
         internal bool FunRunning => funChat != null;
 
+        /// <summary>Kick'e yayın açık mı (chat katmanları ve yayın bilgisi yalnızca Kick'te).</summary>
+        bool KickOn => dests.First(d => d.P == Platform.Kick).On.Checked;
+
         /// <summary>Panelde bir katman ayarı değişti: kaydet ve hemen uygulananları uygula.</summary>
         internal void LayerSettingsChanged()
         {
@@ -548,6 +730,7 @@ namespace ValoLive
         {
             if (!cfg.ChatBox && !cfg.ChatBot && !cfg.Fun) return new KeyValuePair<string, Color>("", Mut);
             if (cfg.KickSlug == "") return new KeyValuePair<string, Color>(L.T("Kick hesabını bağla"), Mut);
+            if (!KickOn) return new KeyValuePair<string, Color>(L.T("Kick'e yayın kapalı: chat okunmaz"), Mut);
             if (kickChat == null) return new KeyValuePair<string, Color>(L.T("yayın başlayınca bağlanır"), Mut);
             return new KeyValuePair<string, Color>("chat: " + chatState, chatStateColor);
         }
@@ -668,7 +851,8 @@ namespace ValoLive
 
         // ---------- Yayın katmanları: radar rozeti, chat kutusu ----------
 
-        List<Layer> StartLayers()
+        /// <param name="useKick">Kick chat'i okunsun mu (Kick'e yayın açık ya da test kaydı)</param>
+        List<Layer> StartLayers(bool useKick)
         {
             var list = new List<Layer>();
             float sc = screenH / 1080f;
@@ -698,7 +882,7 @@ namespace ValoLive
             }
             bool useBot = cfg.ChatBot && kick.Connected;
             bool useFun = cfg.Fun && cfg.KickSlug != "";
-            if ((cfg.ChatBox || useBot || useFun) && cfg.KickSlug != "")
+            if ((cfg.ChatBox || useBot || useFun) && cfg.KickSlug != "" && useKick)
             {
                 if (cfg.ChatBox) { chatLayer = new ChatLayer(sc); list.Add(chatLayer); }
                 var layer = chatLayer;
@@ -952,10 +1136,22 @@ namespace ValoLive
         void Begin(Mode m)
         {
             SaveSettings();
-            if (m == Mode.Live && (cfg.KickUrl == "" || txtKey.Text.Trim() == ""))
+            var on = dests.Where(d => d.On.Checked).ToList();
+            if (m == Mode.Live)
             {
-                MessageBox.Show(this, L.T("Kick Stream URL ve Stream Key gerekli.\nKick → Creator Dashboard → Settings bölümünden kopyalayabilirsin."), "ValoLive");
-                return;
+                if (on.Count == 0)
+                {
+                    ShowPage(0);
+                    MessageBox.Show(this, L.T("Yayının gideceği platformu seç: Platformlar sekmesinde en az birini aç."), "ValoLive");
+                    return;
+                }
+                var missing = on.FirstOrDefault(d => d.Url.Text.Trim() == "" || d.Key.Text.Trim() == "");
+                if (missing != null)
+                {
+                    ShowPage(0);
+                    MessageBox.Show(this, L.F("{0}: Stream URL ve Stream Key gerekli.", missing.P.Name) + "\n" + missing.P.KeyHint, "ValoLive");
+                    return;
+                }
             }
             var q = Qualities[cfg.Quality];
             GameFrames.Enabled = cfg.EngineRegionReads;
@@ -970,7 +1166,8 @@ namespace ValoLive
             };
             if (m == Mode.Live)
             {
-                o.Output = IngestUrl(cfg.KickUrl) + "/" + txtKey.Text.Trim();
+                // Görüntü bir kez kodlanır; her açık platforma ayrı bağlantı (biri koparsa öbürleri sürer).
+                o.Targets = on.Select(d => new Target { Id = d.P.Id, Name = d.P.Name, Url = d.P.Ingest(d.Url.Text, d.Key.Text) }).ToList();
             }
             else
             {
@@ -978,24 +1175,24 @@ namespace ValoLive
                 Directory.CreateDirectory(dir);
                 o.ToFile = true; o.DurationSec = 15;
                 o.Output = Path.Combine(dir, $"test_{DateTime.Now:yyyyMMdd_HHmmss}.mp4");
+                o.Targets = new List<Target> { new Target { Id = "file", Name = "Kayıt", Url = o.Output } };
                 overlay.ShowBanner(L.T("ZAFER"), "Test · Jett · Ascent 13-9 · 24/12/5 · HS " + L.Pct(31), ColorTranslator.FromHtml("#3ddc97"), OverlayRenderer.AgentIcon("add6443a-41bd-e414-f6ad-e58d267f4e95"));
             }
-            o.Layers = StartLayers();
+            o.Layers = StartLayers(m == Mode.Test || KickOn);
             if (funChat != null)
             {
                 o.Flip = funChat.CanFlip = cfg.FunOn("flip");
                 o.Zoom = funChat.CanZoom = cfg.FunOn("zoom");
             }
-            if (m == Mode.Live && kick.Connected) ApplyStreamInfo(false);
+            if (m == Mode.Live && KickOn && kick.Connected) ApplyStreamInfo(false);
             lastOptions = o;
             mode = m;
-            reconnects = 0;
-            quickDrops = 0;
-            everLive = false;
             liveSince = DateTime.Now;
+            foreach (var d in dests) { d.State = null; d.Attempts = 0; }
+            chips.Invalidate();
             SetInputsEnabled(false);
             int vmode = Diag.ValorantFullscreenMode();
-            Diag.Begin($"{(m == Mode.Live ? "CANLI YAYIN" : "TEST KAYDI")} · ValoLive {File.GetLastWriteTime(Application.ExecutablePath):yyyy-MM-dd HH:mm} · " +
+            Diag.Begin($"{(m == Mode.Live ? "CANLI YAYIN (" + string.Join(" + ", on.Select(d => d.P.Name)) + ")" : "TEST KAYDI")} · ValoLive {File.GetLastWriteTime(Application.ExecutablePath):yyyy-MM-dd HH:mm} · " +
                        $"kalite {q.W}x{q.H} {q.Kbps} kbps · ekran {screenW}x{screenH} · yakalama: {cmbCapture.Text}" +
                        $"{(guard.Mode == CaptureMode.App ? " (" + guard.AppName + ")" : "")} · mikrofon: {(string.IsNullOrEmpty(cfg.Mic) ? "yok" : cmbMic.Text)} · " +
                        $"Valorant görüntü modu: {Diag.ModeName(vmode)}{(vmode == 0 ? " (alt-tab'da ekran modu değişir → yakalama kopar)" : "")}");
@@ -1011,14 +1208,6 @@ namespace ValoLive
             }
         }
 
-        /// <summary>Kick panelindeki URL'de uygulama yolu yok; o olmadan anahtar "app" sanılıp yayın reddediliyor.</summary>
-        static string IngestUrl(string url)
-        {
-            url = url.Trim().TrimEnd('/');
-            int host = url.IndexOf("://", StringComparison.Ordinal);
-            return host >= 0 && url.IndexOf('/', host + 3) < 0 ? url + "/app" : url;
-        }
-
         bool Launch()
         {
             try
@@ -1032,7 +1221,6 @@ namespace ValoLive
                     micAudio.Start(cfg.Mic);
                 }
                 lastOptions.Masks = guard.FilterChain;
-                connectAt = DateTime.Now;
                 streamer.Start(lastOptions, audio, micAudio);
                 return true;
             }
@@ -1055,38 +1243,14 @@ namespace ValoLive
 
         void OnStreamExit(bool unexpected, string err)
         {
-            // Buraya yalnızca yayıncı süreç (Kick bağlantısı) kapanınca gelinir; ekran yakalama kopuşlarını
-            // Streamer kendi içinde toparlar. Beklenmedik kapanış = bağlantı koptu → yeniden bağlan.
-            bool rejected = mode == Mode.Live && !everLive && reconnects >= 2;
-            if (unexpected && !rejected && reconnects < 20 && mode == Mode.Live)
-            {
-                reconnects++;
-                Diag.Event("KICK", $"yeniden bağlanılıyor (deneme {reconnects}) · {Diag.Explain(err)}");
-                // Bağlandıktan sonra 60 sn dolmadan tekrar tekrar kopuyorsa hat (ya da Kick) bu bitrate'i
-                // kaldırmıyor: her iki hızlı kopmada 1000 kbps düş (en az 3500).
-                quickDrops = (DateTime.Now - connectAt).TotalSeconds < 60 ? quickDrops + 1 : 0;
-                if (quickDrops >= 2 && lastOptions.BitrateK > 3500)
-                {
-                    lastOptions.BitrateK = Math.Max(3500, lastOptions.BitrateK - 1000);
-                    quickDrops = 0;
-                    Diag.Event("KICK", $"bağlantı sürekli kopuyor → bitrate {lastOptions.BitrateK} kbps'ye düşürüldü");
-                }
-                SetStatus(L.F("● BAĞLANTI KOPTU — yeniden bağlanılıyor ({0})", reconnects), Red);
-                lblStats.Text = Trim(err);
-                var t = new Timer { Interval = 2000 };
-                t.Tick += (s, e) => { t.Dispose(); if (mode == Mode.Live && !Launch()) Finish(); };
-                t.Start();
-                return;
-            }
+            // Platform kopuşlarını Streamer kendi içinde toparlar (her platform ayrı yeniden bağlanır, ekran yakalama
+            // kopuşları da orada); buraya yayın tamamen bitince gelinir: durduruldu, test bitti ya da bağlı veya
+            // bağlanmaya çalışan hiçbir platform kalmadı.
             var was = mode;
+            var rejected = streamer.TargetStates().Where(s => s.Value == TargetState.Rejected && s.Key.Id != "file").Select(s => s.Key.Name).ToList();
             Finish();
-            Diag.End(rejected ? "Kick bağlantıyı reddetti" : !unexpected ? "normal bitiş" : was == Mode.Live ? "yayın durdu (yeniden bağlanma tükendi)" : "test başarısız");
-            if (rejected)
-            {
-                SetStatus(L.T("● KICK BAĞLANTIYI REDDETTİ"), Red);
-                lblStats.Text = L.T("Stream URL / Stream Key'i Kick panelinden yeniden kopyala");
-                return;
-            }
+            chips.Invalidate();
+            Diag.End(!unexpected ? "normal bitiş" : was == Mode.Test ? "test başarısız" : rejected.Count > 0 ? string.Join(", ", rejected) + " bağlantıyı reddetti" : "yayın durdu (yeniden bağlanma tükendi)");
             if (was == Mode.Test)
             {
                 if (unexpected) { SetStatus(L.T("● TEST BAŞARISIZ"), Red); lblStats.Text = Trim(err); }
@@ -1096,6 +1260,11 @@ namespace ValoLive
                     lblStats.Text = Path.GetFileName(lastOptions.Output);
                     Process.Start("explorer.exe", $"/select,\"{lastOptions.Output}\"");
                 }
+            }
+            else if (unexpected && rejected.Count > 0)
+            {
+                SetStatus(L.F("● {0} BAĞLANTIYI REDDETTİ", string.Join(" + ", rejected).ToUpper(L.Culture)), Red);
+                lblStats.Text = L.T("Stream URL / Stream Key'i platformun panelinden yeniden kopyala");
             }
             else if (unexpected) { SetStatus(L.T("● YAYIN DURDU"), Red); lblStats.Text = Trim(err); }
             else { SetStatus(L.T("● YAYIN BİTTİ"), Mut); lblStats.Text = L.F("Süre: {0:hh\\:mm\\:ss}", DateTime.Now - liveSince); }
@@ -1114,7 +1283,8 @@ namespace ValoLive
 
         void SetInputsEnabled(bool on)
         {
-            foreach (Control c in new Control[] { txtUrl, txtKey, cmbQuality, cmbCapture, cmbApp, btnApps, cmbMic, chkDenoise, cmbOut, btnTest, chkWgc, chkGpu })
+            foreach (var d in dests) d.On.Enabled = d.Url.Enabled = d.Key.Enabled = on;
+            foreach (Control c in new Control[] { cmbQuality, cmbCapture, cmbApp, btnApps, cmbMic, chkDenoise, cmbOut, btnTest, chkWgc, chkGpu })
                 c.Enabled = on;
             chkWgc.Enabled = on && guard.Mode == CaptureMode.Valorant;
             StreamPanel.Sync();
@@ -1131,7 +1301,6 @@ namespace ValoLive
         void ShowProgress(Dictionary<string, string> p)
         {
             if (mode == Mode.Idle) return;
-            if (mode == Mode.Live) { SetStatus(L.T("● CANLI") + "  " + (DateTime.Now - liveSince).ToString(@"hh\:mm\:ss"), Red); reconnects = 0; everLive = true; }
             p.TryGetValue("fps", out var fps);
             p.TryGetValue("bitrate", out var br);
             p.TryGetValue("drop_frames", out var drop);
@@ -1143,8 +1312,7 @@ namespace ValoLive
 
         void UpdateClock()
         {
-            if (mode == Mode.Live && streamer.Running && lblStatus.Text.StartsWith(L.T("● CANLI")))
-                SetStatus(L.T("● CANLI") + "  " + (DateTime.Now - liveSince).ToString(@"hh\:mm\:ss"), Red);
+            if (mode == Mode.Live && streamer.Running) UpdateLiveStatus();
         }
 
         // ---------- Kısayollar ----------

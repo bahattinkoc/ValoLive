@@ -92,11 +92,9 @@ Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (
 Kategori	Catégorie
 Kaydet ve bağlan	Enregistrer et connecter
 Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.	Pas de baisse après une série de défaites — tu résistes au tilt.
-Kick Stream URL ve Stream Key gerekli.\nKick → Creator Dashboard → Settings bölümünden kopyalayabilirsin.	Kick Stream URL et Stream Key requis.\nTu peux les copier depuis Kick → Creator Dashboard → Settings.
 Kick hesabı	Compte Kick
 Kick hesabı bağlı değil.	Compte Kick non connecté.
 Kick hesabını bağla	Connecter ton compte Kick
-Kick için hafif Valorant yayın aracı · RTX NVENC	Outil de stream Valorant léger pour Kick · RTX NVENC
 Kick kanal bilgisi alınamadı.	Impossible de récupérer les infos de la chaîne Kick.
 Kick onayı 3 dakika içinde gelmedi.	La validation Kick n'est pas arrivée en 3 minutes.
 Kick onayı reddedildi: 	Validation Kick refusée : 
@@ -180,7 +178,6 @@ Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	Dernier match : {0} {1} · {2} 
 Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.	N'a pas joué cette carte récemment. Le style ci-dessus reste valable.
 Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.	La page de validation Kick s'ouvre ensuite dans ton navigateur ; clique simplement sur "Autoriser".
 Stil çıkarmak için yeterli round yok (en az 40).	Pas assez de manches pour dégager un style (au moins 40).
-Stream URL / Stream Key'i Kick panelinden yeniden kopyala	Recopie la Stream URL / Stream Key depuis le tableau de bord Kick
 Sv	Niv.
 Süre: {0:hh\:mm\:ss}	Durée : {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	Glisser : déplacer\nMolette : agrandir / réduire (Maj : fin)\nFlèches : 1 px (Maj : 10 px)\n\n
@@ -323,7 +320,6 @@ zirve	pic
 ● DURDURULUYOR…	● ARRÊT…
 ● EKRAN YAKALAMA YENİLENİYOR (yayın açık)	● CAPTURE D'ÉCRAN EN REDÉMARRAGE (stream actif)
 ● HAZIR	● PRÊT
-● KICK BAĞLANTIYI REDDETTİ	● KICK A REFUSÉ LA CONNEXION
 ● TEST BAŞARISIZ	● TEST ÉCHOUÉ
 ● TEST KAYDI	● ENREGISTREMENT TEST
 ● TEST KAYDI HAZIR	● ENREGISTREMENT TEST PRÊT
@@ -460,3 +456,26 @@ yok	aucun
 Şişede mesaj	Message dans une bouteille
 POP!	POP !
 Ekran kartı motoru (işlemciyi boşaltır)	Moteur GPU (libère le CPU)
+BAĞLANTI	CONNEXION
+Başlık, kategori ve küçük resim YouTube Studio'da ayarlanır. Chat katmanları ve chat eğlencesi Kick chat'ini okur.	Le titre, la catégorie et la miniature se règlent dans YouTube Studio. Les calques et le fun du chat lisent le chat Kick.
+Bu platforma yayınla	Diffuser sur cette plateforme
+GÖRÜNTÜ & SES	VIDÉO & AUDIO
+Hiçbir platform açık değil: yalnızca test kaydı alınabilir.	Aucune plateforme activée : seul un enregistrement test est possible.
+Kick ve YouTube için hafif Valorant yayın aracı · RTX NVENC	Outil de stream Valorant léger pour Kick et YouTube · RTX NVENC
+Kick'e yayın kapalı: chat okunmaz	Stream Kick désactivé : le chat n'est pas lu
+PLATFORMLAR	PLATEFORMES
+RAKİP HAFIZASI	MÉMOIRE ENNEMIE
+Stream URL / Stream Key'i platformun panelinden yeniden kopyala	Recopie l'URL / la clé de stream depuis le tableau de bord de la plateforme
+Yayının gideceği platformu seç: Platformlar sekmesinde en az birini aç.	Choisis où diffuser : active au moins une plateforme dans l'onglet Plateformes.
+YouTube Studio'dan yayın anahtarı al	Obtenir la clé de stream dans YouTube Studio
+bağlanıyor…	connexion…
+durdu	arrêté
+hazır	prêt
+kapalı	désactivé
+koptu	coupé
+reddetti	refusé
+yeniden bağlanıyor ({0})	reconnexion ({0})
+{0} platform × ~{1} kbps → internetin yükleme hızı en az {2} Mbps olmalı (pay ile).	{0} plateforme(s) × ~{1} kbps → ton débit montant doit être d'au moins {2} Mbps (avec marge).
+{0}: Stream URL ve Stream Key gerekli.	{0} : URL et clé de stream requises.
+● canlı	● en direct
+● {0} BAĞLANTIYI REDDETTİ	● {0} A REFUSÉ LA CONNEXION
