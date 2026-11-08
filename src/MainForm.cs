@@ -858,7 +858,7 @@ namespace ValoLive
                     BeginInvoke((Action)(() =>
                     {
                         memStarting = false;
-                        if (MemoryWanted && live.Snap.InGame) { memory.Start(st.MapUrl, enemies); memScore = -1; }
+                        if (MemoryWanted && live.Snap.InGame) { memory.Record = cfg.EnemyMemoryDiag; memory.Start(st.MapUrl, enemies); memScore = -1; }
                     }));
                 }
                 catch (Exception e) { MinimapMemory.Log("maç okunamadı: " + e.Message); memStarting = false; }

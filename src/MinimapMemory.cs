@@ -45,6 +45,9 @@ namespace ValoLive
         /// <summary>Son karenin işlenme süresi (ms), tanılama için.</summary>
         public double LastMs { get; private set; }
 
+        /// <summary>Tanı kaydı (ekran kareleri, logs\hafiza-kayit): ayarlarda EnemyMemoryDiag; varsayılan kapalı.</summary>
+        public bool Record;
+
         public void Start(string mapUrl, List<string> enemyAgents)
         {
             Stop();
@@ -107,7 +110,7 @@ namespace ValoLive
             Bitmap bmp = null, barBmp = null;
             var bar = new TopBar(eng.Icons);
             var dead = new HashSet<string>();
-            var diag = new DiagRecorder();
+            var diag = Record ? new DiagRecorder() : null;
             int frames = 0, seenFrames = 0, tick = 0; double totalMs = 0, maxMs = 0; DateTime statAt = DateTime.Now.AddMinutes(1);
             try
             {
@@ -147,11 +150,11 @@ namespace ValoLive
                                     dead = d;
                                     Log("ölü: " + (dead.Count == 0 ? "yok" : string.Join(", ", dead.Select(eng.NameOf))));
                                 }
-                                diag.Bar(barBmp, now);
+                                diag?.Bar(barBmp, now);
                             }
                             catch { }
                         }
-                        if (tick % 20 == 1) diag.Map(bmp, now);
+                        if (tick % 20 == 1) diag?.Map(bmp, now);
                         bool quiet = now.Ticks < quietUntil;
                         lock (lk)
                         {
@@ -571,7 +574,7 @@ namespace ValoLive
         public static string IconFile(string agent) => Engine.IconFile(agent);
 
         /// <summary>
-        /// Deneme sürümü tanı kaydı: maç boyunca saniyede bir üst çubuk (yalnızca rakip portreleri, oyuncu adı yok) ve
+        /// Tanı kaydı (varsayılan kapalı, settings.json'da "EnemyMemoryDiag": true): maç boyunca saniyede bir üst çubuk (yalnızca rakip portreleri, oyuncu adı yok) ve
         /// 2 saniyede bir minimap karesi logs\hafiza-kayit\&lt;maç&gt;\ altına yazılır; hatalar sonradan kare kare incelenebilsin.
         /// Yalnızca son 3 maç tutulur (maç başına ~15 MB).
         /// </summary>

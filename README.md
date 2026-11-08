@@ -80,13 +80,24 @@ Open it during agent select or in game, and every player in the lobby is scouted
 
 Click a player for a detailed analysis, or right-click to open their profile. **MY STATS** runs the same breakdown on your own account: your best maps, agents and recent form.
 
+### 🧠 Enemy memory (experimental)
+Clutching 1v2 and can't remember where you last saw their Jett? ValoLive watches your minimap and remembers it for you.
+- Every enemy you or your team spots is remembered with the **callout** where they were last seen and **how long ago**.
+- Show it as a small list under the minimap, as **icons on the minimap itself**, or both.
+- **Dead enemies are dropped** as soon as they leave the scoreboard bar (Sage revives are picked up too), and the memory resets every round.
+- Works on every current map and reads only what's already on your screen: about 12 ms of work, 10 times a second.
+
+<p align="center"><img src="docs/enemy-memory.png" width="404" alt="Enemy memory on the minimap"></p>
+
+> Off by default; turn it on under **MATCH ROOM**. It needs the enemy highlight color set to **purple** and a minimap that isn't centered on you. This feature gives you information during a match. Third-party tools like that may conflict with Riot's terms, so use it at your own risk.
+
 ### 🌍 16 languages
 English, Türkçe, Deutsch, Español, Français, Italiano, Polski, Português, Русский, العربية, 日本語, 한국어, 中文, ไทย, Tiếng Việt, Bahasa Indonesia. These are the languages spoken across Valorant's servers. Pick one in settings and the whole app, the overlays and the chat bot switch with it.
 
 ### 🔒 Privacy first
 - ValoLive's own windows **never show up on stream or in recordings**, so the Match Room is for your eyes only.
 - Your Kick stream key and API keys are **encrypted on your PC** (Windows DPAPI) and are never sent anywhere else.
-- ValoLive only reads the local Valorant client API. It doesn't inject anything into the game or touch its memory.
+- ValoLive only reads the local Valorant client API and, for enemy memory, the pixels already on your screen. It doesn't inject anything into the game or touch its memory.
 
 ## Requirements
 
@@ -138,8 +149,9 @@ ValoLive isn't endorsed by Riot Games and doesn't reflect the views or opinions 
 - **Radar rozeti**: Köşede dönen küçük bir widget. Sırayla rankını, günün skorunu ve son maçını gösterir.
 - **Maç sonu kartı**: Haritada nerede adam vurduğunu ve nerede öldüğünü gösterir; yanında K/D/A, ACS, HS% ve ilk kanlar yer alır.
 - **Maç Odası**: Lobideki herkesin rankı, en yüksek rankı, formu (▲seri / ▼tilt), son maçları, **parti tespiti**, **smurf uyarısı**, daha önce karşılaştığın oyuncular ve takımların güç dengesi.
+- **Rakip hafızası (deneysel)**: Minimap'te senin ya da takımının gördüğü her rakibin son görüldüğü yeri ve ne kadar önce görüldüğünü hatırlar. Minimap'in altında liste olarak, haritanın üstünde ikon olarak ya da ikisi birden gösterilir. Ölen rakipler skor çubuğundan anlaşılıp listeden düşer, her raund sıfırlanır. Varsayılan olarak kapalıdır, **MAÇ ODASI** altından açılır. Rakip vurgu rengi **mor** olmalıdır. Maç sırasında bilgi veren üçüncü taraf araçlar Riot kurallarıyla çelişebilir; kullanım sorumluluğu sana aittir.
 - **16 dil**: Valorant sunucularında konuşulan diller.
-- **Gizlilik**: ValoLive pencereleri yayına ve kayda girmez. Yayın anahtarın bilgisayarında şifreli (DPAPI) saklanır. Oyuna hiçbir şey enjekte edilmez.
+- **Gizlilik**: ValoLive pencereleri yayına ve kayda girmez. Yayın anahtarın bilgisayarında şifreli (DPAPI) saklanır. Oyuna hiçbir şey enjekte edilmez; rakip hafızası yalnızca ekranda zaten görünen görüntüyü okur.
 
 **Kurulum:** [Releases](https://github.com/bahattinkoc/ValoLive/releases/latest) sayfasından zip'i indirip açın, `winget install Gyan.FFmpeg` ile FFmpeg'i kurun ve `ValoLive.exe`'yi çalıştırın. SmartScreen uyarı verirse **Ek bilgi → Yine de çalıştır** deyin.
 
