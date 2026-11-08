@@ -400,13 +400,15 @@ namespace ValoLive
         /// valocap'ı başlatır ve video pipe'ını oluşturup "ready" diyene kadar bekler (ffmpeg ancak sonra bağlanabilir).
         /// Açılamazsa null: çağıran ffmpeg yoluna döner.
         /// </summary>
-        Process StartEngine(long epochMs, IntPtr window, SharedFeed feed, out string videoPipe)
+        Process StartEngine(long epochMs, IntPtr window, SharedFeed feed, out string videoPipe, out string grab)
         {
             videoPipe = @"\\.\pipe\valolive_v_" + Guid.NewGuid().ToString("N");
+            grab = GameFrames.Attach(window);   // rakip hafızası ve yayın anları oyun karesini motordan okur
             var o = opts;
             var a = new StringBuilder($"--out \"{videoPipe}\" --epoch {epochMs} --size {o.Width}x{o.Height} --canvas {o.ScreenWidth}x{o.ScreenHeight} " +
                                       $"--fps 60 --bitrate {o.BitrateK} --fill {CaptureGuard.Fill.Substring(2)} ");
             a.Append(window != IntPtr.Zero ? $"--window {window.ToInt64()} " : "--monitor 0 ");
+            a.Append($"--grab {grab} ");
             a.Append($"--panel {feed.Add(() => o.Overlay.Current, o.ScreenWidth, o.ScreenHeight)} ");
             foreach (var l in o.Layers)
             {
@@ -440,6 +442,7 @@ namespace ValoLive
             {
                 Diag.Event("MOTOR", "ekran kartı motoru açılamadı, ffmpeg yoluna dönülüyor · " + (firstError ?? (p.HasExited ? "kod " + p.ExitCode : "zaman aşımı")));
                 try { if (!p.HasExited) p.Kill(); } catch { }
+                GameFrames.Detach(grab);
                 return null;
             }
             feed.Start();
@@ -686,13 +689,14 @@ namespace ValoLive
             List<OverlayFeed> layerFeeds = null;
             SharedFeed shared = null;
             Process eng = null;
+            string grab = null;
             List<string> initial = null;
             string args = null;
             if (wantGpu)
             {
                 initial = InitialGpuCommands(opts.Masks?.Invoke());   // sonraki değişiklikler bekleyen komutlara (çevrilmiş) düşer
                 shared = new SharedFeed();
-                eng = StartEngine(epochMs, window, shared, out var videoPipe);
+                eng = StartEngine(epochMs, window, shared, out var videoPipe, out grab);
                 if (eng != null) args = BuildGpuArgs(opts, gameSrc, micSrc, epochMs, baseEpochMs, gamePath, micPath, videoPipe);
                 else
                 {
@@ -731,6 +735,7 @@ namespace ValoLive
                     bool engineDied = eng.HasExited;
                     if (engineDied && !stopping && ++engineFails >= 3) { gpuBroken = true; Diag.Event("MOTOR", "ekran kartı motoru 3 kez düştü, bu yayında ffmpeg yoluna dönülüyor"); }
                     try { if (!eng.HasExited) eng.Kill(); } catch { }
+                    GameFrames.Detach(grab);
                 }
                 try { gamePipe.Dispose(); micPipe?.Dispose(); ovFeed?.Dispose(); layerFeeds?.ForEach(f => f.Dispose()); shared?.Dispose(); } catch { }
                 int code = 0;

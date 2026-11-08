@@ -62,7 +62,14 @@ Engine stats: steady 60 fps, 0 late frames, about 0.4 ms of CPU time per frame. 
 
 Build: `native\build.ps1` needs Visual Studio's "Desktop development with C++" workload (MSVC and the Windows SDK) and writes `valocap.exe` next to `ValoLive.exe`. The toggle only appears when that file exists.
 
+## Region reads (branch `engine-grab`)
+
+Enemy memory and stream moments read the minimap and the score bar through `GameFrames.Copy`. While the engine runs, the region comes from its captured game texture instead of GDI `CopyFromScreen`, which makes DWM read back the whole desktop on every call. The region is taken from the raw capture, so stream masks and flip never affect it.
+
+- Shared memory `valolive_grab_*`: a 64-byte header `{req, done, x, y, w, h, status, capW, capH, capacity}` followed by BGRA data. An event `<name>_ev` wakes ValoLive when the read is done.
+- The engine copies the region into a staging texture the size of the game frame and maps it with `DO_NOT_WAIT`. While a read is pending it wakes every 1 ms between frames, so the render loop never blocks.
+- Measured on a 480×480 region: identical pixels to `CopyFromScreen`, about 17 ms per read (24 ms at most). A region outside the frame, a timeout of 150 ms, or no engine falls back to `CopyFromScreen`.
+
 ## Later
 
-- Feed enemy memory and stream moments from the engine's captured texture: a small staging copy of the minimap or top-bar region instead of GDI `CopyFromScreen`, which forces a DWM sync.
 - GPU scheduling priority, the way OBS does it in admin mode.

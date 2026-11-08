@@ -124,7 +124,7 @@ namespace ValoLive
                         float k = win.Height / 1080f;
                         int size = (int)Math.Ceiling(480 * k);
                         if (bmp == null || bmp.Width != size) { bmp?.Dispose(); bmp = new Bitmap(size, size, PixelFormat.Format24bppRgb); }
-                        try { using (var g = Graphics.FromImage(bmp)) g.CopyFromScreen(win.Left, win.Top, 0, 0, bmp.Size, CopyPixelOperation.SourceCopy); }
+                        try { GameFrames.Copy(bmp, win.Left, win.Top); }
                         catch { Thread.Sleep(500); continue; } // kilit ekranı / güvenli masaüstü
                         var now = DateTime.Now;
                         var seen = eng.Process(bmp, k, now);
@@ -136,7 +136,7 @@ namespace ValoLive
                             if (barBmp == null || barBmp.Size != r.Size) { barBmp?.Dispose(); barBmp = new Bitmap(r.Width, r.Height, PixelFormat.Format24bppRgb); }
                             try
                             {
-                                using (var g = Graphics.FromImage(barBmp)) g.CopyFromScreen(r.Left, r.Top, 0, 0, r.Size, CopyPixelOperation.SourceCopy);
+                                GameFrames.Copy(barBmp, r.Left, r.Top);
                                 var d = bar.Update(barBmp, k);
                                 if (d != null && !d.SetEquals(dead))
                                 {

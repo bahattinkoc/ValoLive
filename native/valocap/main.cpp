@@ -1,7 +1,7 @@
 // valocap: ValoLive'ın ekran kartı motoru. Yakalama → birleştirme → NV12 → NVENC → MPEG-TS; hiçbir kare işlemciye inmez.
 //
 // valocap.exe --out <dosya | \\.\pipe\ad> --epoch <unix ms> [--size 1920x1080] [--canvas 2560x1440] [--fps 60] [--bitrate 6000]
-//             [--window <hwnd> | --monitor <n>] [--fill RRGGBB] [--panel <ad>] [--layer <ad>,x,y,w,h,up]...
+//             [--window <hwnd> | --monitor <n>] [--fill RRGGBB] [--panel <ad>] [--layer <ad>,x,y,w,h,up]... [--grab <ad>]
 //
 // stdin komutları: layer <i> <0|1> · panel <0|1> · mask <i> <x> <y> <w> <h> · cover <0|1> · flip <0|1> · zoom <0|1>
 //                  source window <hwnd> · source monitor <n> · quit
@@ -22,6 +22,7 @@
 #include <thread>
 #include <vector>
 #include "capture.h"
+#include "grab.h"
 #include "nvenc.h"
 #include "render.h"
 #include "ts.h"
@@ -121,6 +122,7 @@ struct Args
     bool hasPanel = false;
     LayerSpec panel;
     std::vector<LayerSpec> layers;
+    std::wstring grab;
 };
 
 static bool Parse(int argc, char** argv, Args& a)
@@ -141,6 +143,7 @@ static bool Parse(int argc, char** argv, Args& a)
             unsigned c = strtoul(v.c_str(), nullptr, 16);
             a.fill[0] = ((c >> 16) & 255) / 255.f; a.fill[1] = ((c >> 8) & 255) / 255.f; a.fill[2] = (c & 255) / 255.f; i++;
         }
+        else if (k == "--grab") { a.grab = Wide(v); i++; }
         else if (k == "--panel") { a.hasPanel = true; a.panel.name = Wide(v); a.panel.w = -1; i++; }
         else if (k == "--layer")
         {
@@ -206,6 +209,9 @@ int main(int argc, char** argv)
     // Pencere yakalanamazsa siyah kare yerine birincil ekran (örtüler zaten ekran koordinatında).
     if (a.window && !cap.StartWindow(a.window, err)) { Say("error " + err); a.window = nullptr; a.monitor = 0; }
     if (!a.window && a.monitor >= 0 && !cap.StartMonitor(a.monitor, err)) Say("error " + err);
+    // Bölge okuma açılamazsa ValoLive ekrandan okumaya devam eder; yayın etkilenmez.
+    Grabber grab;
+    if (!a.grab.empty() && !grab.Open(a.grab, err)) Say("error " + err);
 
     Writer out;
     if (!out.Open(a.out, err)) { Say("error " + err); return 5; }
@@ -265,7 +271,10 @@ int main(int argc, char** argv)
         int64_t d = due(n);
         if (now.QuadPart < d)
         {
+            // Bölge okuması bekliyorsa kareyi beklemeden ilerlet (okuma ~2 kare yerine birkaç ms sürer).
+            if (grab.Busy()) { grab.Tick(dev.Get(), ctx.Get(), capTex.Get()); ctx->Flush(); }
             LARGE_INTEGER rel; rel.QuadPart = -(int64_t)((d - now.QuadPart) * 10000000.0 / qf.QuadPart);
+            if (grab.Busy()) rel.QuadPart = std::max<int64_t>(rel.QuadPart, -10000);   // en çok 1 ms uyu
             SetWaitableTimer(timer, &rel, 0, nullptr, nullptr, FALSE);
             WaitForSingleObject(timer, 100);
             continue;
@@ -289,6 +298,7 @@ int main(int argc, char** argv)
 
         LARGE_INTEGER g0; QueryPerformanceCounter(&g0);
         if (cap.Latest(ctx.Get(), capTex)) statFresh++;
+        grab.Tick(dev.Get(), ctx.Get(), capTex.Get());
         ID3D11Texture2D* target = enc.NextInput();
         ren.Render(ctx.Get(), capTex.Get(), target);
         ctx->Flush();
@@ -312,6 +322,7 @@ int main(int argc, char** argv)
     quit = true;
     enc.Flush(sink);
     cap.Stop();
+    grab.Close();
     out.Close();
     if (input.joinable()) input.detach();   // stdin okuması bloklu kalabilir; süreç zaten bitiyor
     Say("bye");
