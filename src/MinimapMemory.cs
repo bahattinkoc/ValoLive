@@ -559,17 +559,17 @@ namespace ValoLive
         /// Üst orta skor çubuğu, rakip tarafı (sağ yarı): canlı rakiplerin portreleri ortadan başlayarak yan yana durur,
         /// ölen kalkar ve kalanlar kayar.
         /// Kaç kişi canlı: yuvadaki kenar yoğunluğu (portre var/yok). Kim: 5'i de canlıyken alınan portre kopyalarıyla sırası bozulmadan eşleme.
-        /// Hangi sıra hangi ajan: küçültülmüş portre ile ajan ikonu, maç boyunca biriken farkla tek tek atama.
+        /// Hangi sıra hangi ajan: portrenin renk dağılımı ile ajan ikonununki (çubuk çizimi API ikonundan farklı piksel-art,
+        /// şekil eşleşmesi Miks/Reyna gibi ajanları karıştırıyordu), maç boyunca biriken farkla tek tek atama.
         /// Ölçüler 1080p'de, ekran ortasına göre; başka çözünürlükte pencere yüksekliğiyle orantılanır.
         /// </summary>
         sealed class TopBar
         {
-            const int N = 5;
+            const int N = 5, Bins = 4;                   // renk dağılımı: kanal başına 4 → 64 kutu
             const double MaxSame = 45;                   // aynı portrenin iki karesi arasındaki fark bundan küçük kalır
-            sealed class Tpl { public string Agent; public int D; public float[] R, G, B, A; }
 
             readonly List<string> agents;
-            readonly List<Tpl> icons = new List<Tpl>();
+            readonly List<double[]> iconHist;
             byte[][] slots; int cw, ch;                // 5'i de canlıyken portre kopyaları (gerçek piksel)
             readonly double[,] cost = new double[N, N];  // yuva × ajan, birikmiş fark
             int costN, fullReads;
@@ -579,16 +579,52 @@ namespace ValoLive
             public TopBar(Dictionary<string, Bitmap> agentIcons)
             {
                 agents = agentIcons.Keys.Take(N).ToList();
-                foreach (var a in agents)
-                    for (int d = 13; d <= 24; d++)
-                        using (var b = new Bitmap(d, d, PixelFormat.Format32bppArgb))
-                        {
-                            using (var g = Graphics.FromImage(b)) { g.InterpolationMode = InterpolationMode.HighQualityBicubic; g.DrawImage(agentIcons[a], 0, 0, d, d); }
-                            var t = new Tpl { Agent = a, D = d, R = new float[d * d], G = new float[d * d], B = new float[d * d], A = new float[d * d] };
-                            for (int y = 0; y < d; y++) for (int x = 0; x < d; x++) { var p = b.GetPixel(x, y); int i = y * d + x; t.R[i] = p.R; t.G[i] = p.G; t.B[i] = p.B; t.A[i] = p.A / 255f; }
-                            icons.Add(t);
-                        }
+                iconHist = agents.Select(a => IconHist(agentIcons[a])).ToList();
             }
+
+            static int Bin(int r, int g, int b) => (r * Bins / 256) * Bins * Bins + (g * Bins / 256) * Bins + b * Bins / 256;
+
+            /// <summary>İkonun çubukta görünen üst %80'i (alt kenar kesik), opak pikseller.</summary>
+            static double[] IconHist(Bitmap b)
+            {
+                var h = new double[Bins * Bins * Bins]; double n = 0; int step = Math.Max(1, b.Width / 256);
+                for (int y = 0; y < b.Height * 8 / 10; y += step)
+                    for (int x = 0; x < b.Width; x += step)
+                    {
+                        var c = b.GetPixel(x, y); if (c.A < 230) continue;
+                        h[Bin(c.R, c.G, c.B)]++; n++;
+                    }
+                for (int i = 0; i < h.Length; i++) h[i] /= Math.Max(1, n);
+                return h;
+            }
+
+            /// <summary>Yuvadaki portre pikselleri: şerit renginden (portrelerin iki yanındaki boşluk) belirgin farklı olanlar.</summary>
+            static double[] SlotHist(byte[] px, int st, int s, float k)
+            {
+                int x0 = (int)((8 + 66.5 * s) * k), step = Math.Max(1, (int)Math.Round(k));
+                var br = new List<int>(); var bg = new List<int>(); var bb = new List<int>();
+                for (int y = (int)(32 * k); y < (int)(66 * k); y += 2 * step)
+                    foreach (int x in new[] { x0 - (int)(6 * k), x0 + (int)(50 * k) })
+                    {
+                        int i = y * st + x * 3; bb.Add(px[i]); bg.Add(px[i + 1]); br.Add(px[i + 2]);
+                    }
+                int mr = Median(br), mg = Median(bg), mb = Median(bb);
+                var h = new double[Bins * Bins * Bins]; double n = 0;
+                for (int y = (int)(30 * k); y < (int)(69 * k); y += step)
+                    for (int x = x0; x < x0 + (int)(44 * k); x += step)
+                    {
+                        int i = y * st + x * 3, r = px[i + 2], g = px[i + 1], b = px[i];
+                        if (Math.Abs(r - mr) + Math.Abs(g - mg) + Math.Abs(b - mb) < 45) continue;
+                        h[Bin(r, g, b)]++; n++;
+                    }
+                for (int i = 0; i < h.Length; i++) h[i] /= Math.Max(1, n);
+                return h;
+            }
+
+            static int Median(List<int> v) { v.Sort(); return v[v.Count / 2]; }
+
+            /// <summary>Bhattacharyya uzaklığı (0 = aynı dağılım, 1 = hiç örtüşmüyor).</summary>
+            static double HistDist(double[] p, double[] q) { double s = 0; for (int i = 0; i < p.Length; i++) s += Math.Sqrt(p[i] * q[i]); return Math.Sqrt(Math.Max(0, 1 - s)); }
 
             /// <summary>Okunacak ekran bölgesi: ekran ortasının 200 px sağından 360 px, üstten 90 px (1080p).</summary>
             public static Rectangle Region(Rectangle win, float k) =>
@@ -623,10 +659,10 @@ namespace ValoLive
                 if (n == N)
                 {
                     var cur = Enumerable.Range(0, N).Select(i => Crop(px, st, i, k)).ToArray();
-                    // Ölümden sonra boş 5. yuvanın çizgisi bazen dolu okunur; kopyalar yalnızca her portre eskisine hâlâ benziyorsa yenilenir.
+                    // Raund ortasında boş bir yuva yanlışlıkla dolu okunursa kopyalar bozulmasın: yalnızca her portre eskisine hâlâ benziyorsa yenilenir.
                     if (slots != null && Enumerable.Range(0, N).Any(i => Diff(cur[i], slots[i], k) > MaxSame)) return null;
                     slots = cur;
-                    if (fullReads++ % 6 == 0) LearnOrder(bmp, k); // ~2 sn'de bir (saniyede 3 okuma)
+                    if (fullReads++ % 6 == 0) LearnOrder(px, st, k); // ~2 sn'de bir (saniyede 3 okuma)
                     alive = Enumerable.Range(0, N).ToArray();
                 }
                 else
@@ -703,59 +739,35 @@ namespace ValoLive
                 return best;
             }
 
-            /// <summary>5'i de canlıyken: her yuvayı ajan ikonlarıyla 1/3 boyutta karşılaştır, birikmiş farkla en iyi atamayı bul.</summary>
-            void LearnOrder(Bitmap bmp, float k)
+            /// <summary>5'i de canlıyken: her yuvanın renk dağılımını ajan ikonlarınınkiyle karşılaştır, birikmiş farkla en iyi atamayı bul.
+            /// Üç kayıtlı maçta doğru ajan 0,12..0,29, en yakın yanlış en az 0,40 uzaklıkta.</summary>
+            void LearnOrder(byte[] px, int st, float k)
             {
-                int w = (int)(bmp.Width / (3 * k)), h = (int)(bmp.Height / (3 * k));
-                using (var small = new Bitmap(w, h, PixelFormat.Format24bppRgb))
+                for (int s = 0; s < N; s++)
                 {
-                    using (var g = Graphics.FromImage(small)) { g.InterpolationMode = InterpolationMode.HighQualityBicubic; g.DrawImage(bmp, 0, 0, w, h); }
-                    var d = small.LockBits(new Rectangle(0, 0, w, h), ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb);
-                    var px = new byte[d.Stride * h]; Marshal.Copy(d.Scan0, px, 0, px.Length); int st = d.Stride; small.UnlockBits(d);
-                    for (int s = 0; s < N; s++)
-                    {
-                        int cx = (int)((30 + 66.5 * s) / 3), cy = 18; // portre merkezi; çubuğun altı (y 69) kesik
-                        for (int a = 0; a < agents.Count; a++)
-                        {
-                            double best = 999;
-                            foreach (var t in icons.Where(t => t.Agent == agents[a]))
-                                for (int oy = -3; oy <= 3; oy++)
-                                    for (int ox = -3; ox <= 3; ox++)
-                                    {
-                                        int x0 = cx + ox - t.D / 2, y0 = cy + oy - t.D / 2;
-                                        if (x0 < 0 || y0 < 0 || x0 + t.D > w || y0 + t.D > h) continue;
-                                        double sum = 0; int n = 0;
-                                        for (int y = 0; y < t.D && y0 + y <= 23; y++)
-                                            for (int x = 0; x < t.D; x++)
-                                            {
-                                                int i = y * t.D + x; if (t.A[i] < 0.9f) continue;
-                                                int j = (y0 + y) * st + (x0 + x) * 3;
-                                                double dr = px[j + 2] - t.R[i], dg = px[j + 1] - t.G[i], db = px[j] - t.B[i];
-                                                sum += Math.Sqrt(dr * dr + dg * dg + db * db); n++;
-                                            }
-                                        if (n >= 60 && sum / n < best) best = sum / n;
-                                    }
-                            cost[s, a] += best;
-                        }
-                    }
+                    var h = SlotHist(px, st, s, k);
+                    for (int a = 0; a < agents.Count; a++) cost[s, a] += HistDist(h, iconHist[a]);
                 }
                 costN++;
 
                 // En iyi ve ikinci en iyi atama (5! = 120); fark yeterince açıksa sıra kabul edilir.
+                // 5'ten az ajan bilinirse boş kalan yuvaların dizilişi maliyeti değiştirmez: aynı atama ikinci sayılmaz.
                 double b1 = double.MaxValue, b2 = double.MaxValue; int[] bp = null;
                 foreach (var p in Perms(Enumerable.Range(0, N).ToArray(), 0))
                 {
                     double c = 0; for (int a = 0; a < agents.Count; a++) c += cost[p[a], a];
+                    bool same = bp != null && Enumerable.Range(0, agents.Count).All(a => p[a] == bp[a]);
+                    if (same) continue;
                     if (c < b1) { b2 = b1; b1 = c; bp = (int[])p.Clone(); } else if (c < b2) b2 = c;
                 }
-                bool sure = costN >= 3 && (b2 - b1) / costN >= 4;
+                bool sure = costN >= 2 && (b2 - b1) / costN >= 0.15;
                 if (!sure) return;
                 var o = new string[N];
                 for (int a = 0; a < agents.Count; a++) o[bp[a]] = agents[a];
                 if (order == null || !o.SequenceEqual(order))
                 {
                     order = o;
-                    Log("çubuk sırası: " + string.Join(", ", o.Select(x => x == null ? "?" : RiotLocal.Title(ValApi.AgentName(x)))) + $" · pay {(b2 - b1) / costN:0}");
+                    Log("çubuk sırası: " + string.Join(", ", o.Select(x => x == null ? "?" : RiotLocal.Title(ValApi.AgentName(x)))) + $" · pay {(b2 - b1) / costN:0.00}");
                 }
             }
 
