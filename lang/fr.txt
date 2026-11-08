@@ -1,4 +1,4 @@
-﻿# ValoLive Â· fr Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+# ValoLive Â· fr Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
  (sen)	 (toi)
  (şu an kapalı)	 (fermée pour l'instant)
  · BU HARİTADA {0} MAÇI	 · {0} MATCHS SUR CETTE CARTE
@@ -459,3 +459,4 @@ yok	aucun
 Şişe	Bouteille
 Şişede mesaj	Message dans une bouteille
 POP!	POP !
+Ekran kartı motoru (deneysel, işlemciyi boşaltır)	Moteur GPU (expérimental, libère le CPU)

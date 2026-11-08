@@ -16,7 +16,8 @@ struct LayerSpec
 class Renderer
 {
 public:
-    bool Init(ID3D11Device* device, int width, int height, const LayerSpec* panel, const std::vector<LayerSpec>& layers, std::string& error);
+    // width/height: tuval (ekran koordinatları: maskeler, katmanlar); outWidth/outHeight: kodlayıcı.
+    bool Init(ID3D11Device* device, int width, int height, int outWidth, int outHeight, const LayerSpec* panel, const std::vector<LayerSpec>& layers, std::string& error);
     // capture null olabilir (henüz kare yok): siyah.
     void Render(ID3D11DeviceContext* ctx, ID3D11Texture2D* capture, ID3D11Texture2D* nv12);
 
@@ -44,7 +45,7 @@ private:
     };
 
     ID3D11Device* dev = nullptr;
-    int W = 0, H = 0;
+    int W = 0, H = 0, OW = 0, OH = 0;
     Microsoft::WRL::ComPtr<ID3D11VertexShader> vs;
     Microsoft::WRL::ComPtr<ID3D11PixelShader> psTex, psOpaque, psColor, psY, psUV;
     Microsoft::WRL::ComPtr<ID3D11Buffer> cb;

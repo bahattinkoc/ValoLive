@@ -56,9 +56,9 @@ bool Renderer::Target(int w, int h, ComPtr<ID3D11Texture2D>& t, ComPtr<ID3D11Ren
            SUCCEEDED(dev->CreateShaderResourceView(t.Get(), nullptr, &srv));
 }
 
-bool Renderer::Init(ID3D11Device* device, int width, int height, const LayerSpec* panelSpec, const std::vector<LayerSpec>& specs, std::string& error)
+bool Renderer::Init(ID3D11Device* device, int width, int height, int outWidth, int outHeight, const LayerSpec* panelSpec, const std::vector<LayerSpec>& specs, std::string& error)
 {
-    dev = device; W = width; H = height;
+    dev = device; W = width; H = height; OW = outWidth; OH = outHeight;
     ComPtr<ID3DBlob> b;
     if (!Compile(dev, "vs", "vs_5_0", b, error) || FAILED(dev->CreateVertexShader(b->GetBufferPointer(), b->GetBufferSize(), nullptr, &vs))) return false;
     struct { const char* e; ComPtr<ID3D11PixelShader>* ps; } list[] = {
@@ -196,7 +196,7 @@ void Renderer::Render(ID3D11DeviceContext* ctx, ID3D11Texture2D* capture, ID3D11
     }
     ctx->PSSetShaderResources(0, 1, none);
 
-    // 3) NV12: Y tam çözünürlükte, UV yarı çözünürlükte.
+    // 3) NV12: Y tam çözünürlükte, UV yarı çözünürlükte. Kodlayıcı boyutu tuvalden farklıysa (720p yayın) burada ölçeklenir.
     auto& views = nvViews[nv12];
     if (!views.first)
     {
@@ -211,12 +211,15 @@ void Renderer::Render(ID3D11DeviceContext* ctx, ID3D11Texture2D* capture, ID3D11
     ctx->OMSetRenderTargets(1, views.first.GetAddressOf(), nullptr);
     ctx->PSSetShader(psY.Get(), nullptr, 0);
     ctx->PSSetShaderResources(0, 1, outSrv.GetAddressOf());
-    Quad(ctx, 0, 0, fW, fH, 0, 0, 1, 1, nullptr, fW, fH);
-    D3D11_VIEWPORT half = { 0, 0, fW / 2, fH / 2, 0, 1 };
+    float oW = (float)OW, oH = (float)OH;
+    D3D11_VIEWPORT full = { 0, 0, oW, oH, 0, 1 };
+    ctx->RSSetViewports(1, &full);
+    Quad(ctx, 0, 0, oW, oH, 0, 0, 1, 1, nullptr, oW, oH);
+    D3D11_VIEWPORT half = { 0, 0, oW / 2, oH / 2, 0, 1 };
     ctx->RSSetViewports(1, &half);
     ctx->OMSetRenderTargets(1, views.second.GetAddressOf(), nullptr);
     ctx->PSSetShader(psUV.Get(), nullptr, 0);
-    Quad(ctx, 0, 0, fW / 2, fH / 2, 0, 0, 1, 1, nullptr, fW / 2, fH / 2);
+    Quad(ctx, 0, 0, oW / 2, oH / 2, 0, 0, 1, 1, nullptr, oW / 2, oH / 2);
     ctx->PSSetShaderResources(0, 1, none);
     ID3D11RenderTargetView* noRt[] = { nullptr };
     ctx->OMSetRenderTargets(1, noRt, nullptr);

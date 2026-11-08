@@ -22,7 +22,7 @@ namespace ValoLive
     sealed class CaptureGuard : IDisposable
     {
         public const string ValorantExe = "VALORANT-Win64-Shipping";
-        const string Fill = "0x0b0d12";
+        public const string Fill = "0x0b0d12";
 
         [DllImport("user32.dll")] static extern IntPtr GetForegroundWindow();
         [DllImport("user32.dll")] static extern uint GetWindowThreadProcessId(IntPtr h, out int pid);

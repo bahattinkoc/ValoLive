@@ -1,4 +1,4 @@
-﻿# ValoLive Â· ko Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+# ValoLive Â· ko Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
  (sen)	 (나)
  (şu an kapalı)	 (현재 닫힘)
  · BU HARİTADA {0} MAÇI	 · 이 맵에서 {0}경기
@@ -459,3 +459,4 @@ yok	없음
 Şişe	병
 Şişede mesaj	병 속의 편지
 POP!	뽁!
+Ekran kartı motoru (deneysel, işlemciyi boşaltır)	GPU 엔진 (실험적, CPU 부담 감소)

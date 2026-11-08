@@ -1,4 +1,4 @@
-﻿# ValoLive Â· ja Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+# ValoLive Â· ja Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
  (sen)	 (あなた)
  (şu an kapalı)	 (現在終了中)
  · BU HARİTADA {0} MAÇI	 · このマップで{0}試合
@@ -459,3 +459,4 @@ yok	なし
 Şişe	ボトル
 Şişede mesaj	ボトルメール
 POP!	ポンッ！
+Ekran kartı motoru (deneysel, işlemciyi boşaltır)	GPUエンジン（実験的、CPUの負荷を軽減）

@@ -1,6 +1,6 @@
 // valocap: ValoLive'ın ekran kartı motoru. Yakalama → birleştirme → NV12 → NVENC → MPEG-TS; hiçbir kare işlemciye inmez.
 //
-// valocap.exe --out <dosya | \\.\pipe\ad> --epoch <unix ms> [--size 1920x1080] [--fps 60] [--bitrate 6000]
+// valocap.exe --out <dosya | \\.\pipe\ad> --epoch <unix ms> [--size 1920x1080] [--canvas 2560x1440] [--fps 60] [--bitrate 6000]
 //             [--window <hwnd> | --monitor <n>] [--fill RRGGBB] [--panel <ad>] [--layer <ad>,x,y,w,h,up]...
 //
 // stdin komutları: layer <i> <0|1> · panel <0|1> · mask <i> <x> <y> <w> <h> · cover <0|1> · flip <0|1> · zoom <0|1>
@@ -114,6 +114,7 @@ struct Args
     std::string out;
     int64_t epoch = 0;
     int width = 1920, height = 1080, fps = 60, bitrate = 6000;
+    int canvasW = 0, canvasH = 0;   // ekran koordinatları (varsayılan: çıkış boyutu)
     HWND window = nullptr;
     int monitor = -1;
     float fill[4] = { 0.07f, 0.07f, 0.09f, 1 };
@@ -130,6 +131,7 @@ static bool Parse(int argc, char** argv, Args& a)
         if (k == "--out") { a.out = v; i++; }
         else if (k == "--epoch") { a.epoch = _strtoi64(v.c_str(), nullptr, 10); i++; }
         else if (k == "--size") { sscanf_s(v.c_str(), "%dx%d", &a.width, &a.height); i++; }
+        else if (k == "--canvas") { sscanf_s(v.c_str(), "%dx%d", &a.canvasW, &a.canvasH); i++; }
         else if (k == "--fps") { a.fps = atoi(v.c_str()); i++; }
         else if (k == "--bitrate") { a.bitrate = atoi(v.c_str()); i++; }
         else if (k == "--window") { a.window = (HWND)(intptr_t)_strtoi64(v.c_str(), nullptr, 10); i++; }
@@ -149,7 +151,8 @@ static bool Parse(int argc, char** argv, Args& a)
         }
         else return false;
     }
-    if (a.hasPanel) { a.panel.w = a.width; a.panel.h = a.height; }
+    if (a.canvasW <= 0 || a.canvasH <= 0) { a.canvasW = a.width; a.canvasH = a.height; }
+    if (a.hasPanel) { a.panel.w = a.canvasW; a.panel.h = a.canvasH; }
     return !a.out.empty() && a.layers.size() <= 32;
 }
 
@@ -196,12 +199,13 @@ int main(int argc, char** argv)
     NvEncoder enc;
     NvEncoder::Options eo;
     eo.width = a.width; eo.height = a.height; eo.fps = a.fps; eo.bitrateK = a.bitrate; eo.gop = a.fps * 2;
-    if (!cap.Init(dev.Get(), err) || !ren.Init(dev.Get(), a.width, a.height, a.hasPanel ? &a.panel : nullptr, a.layers, err) ||
+    if (!cap.Init(dev.Get(), err) || !ren.Init(dev.Get(), a.canvasW, a.canvasH, a.width, a.height, a.hasPanel ? &a.panel : nullptr, a.layers, err) ||
         !enc.Open(dev.Get(), eo, err))
     { Say("error " + err); return 4; }
     memcpy(ren.state.fill, a.fill, sizeof a.fill);
-    if (a.window && !cap.StartWindow(a.window, err)) Say("error " + err);
-    else if (!a.window && a.monitor >= 0 && !cap.StartMonitor(a.monitor, err)) Say("error " + err);
+    // Pencere yakalanamazsa siyah kare yerine birincil ekran (örtüler zaten ekran koordinatında).
+    if (a.window && !cap.StartWindow(a.window, err)) { Say("error " + err); a.window = nullptr; a.monitor = 0; }
+    if (!a.window && a.monitor >= 0 && !cap.StartMonitor(a.monitor, err)) Say("error " + err);
 
     Writer out;
     if (!out.Open(a.out, err)) { Say("error " + err); return 5; }

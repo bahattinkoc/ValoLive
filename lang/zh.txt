@@ -1,4 +1,4 @@
-﻿# ValoLive Â· zh Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+# ValoLive Â· zh Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
  (sen)	 (你)
  (şu an kapalı)	 (目前已關閉)
  · BU HARİTADA {0} MAÇI	 · 此地圖 {0} 場
@@ -459,3 +459,4 @@ yok	无
 Şişe	漂流瓶
 Şişede mesaj	漂流瓶
 POP!	啵！
+Ekran kartı motoru (deneysel, işlemciyi boşaltır)	显卡引擎（实验性，释放 CPU）

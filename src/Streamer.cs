@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
+using System.IO.MemoryMappedFiles;
 using System.IO.Pipes;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -24,6 +26,7 @@ namespace ValoLive
         public Func<string> Masks;     // CaptureGuard'ın örtü filtreleri (ekran karesine, panelden önce); her yakalama başlangıcında sorulur
         public List<Layer> Layers = new List<Layer>(); // panelin üstüne bindirilen küçük animasyonlu katmanlar (radar, chat)
         public bool Flip, Zoom;        // chat eğlencesi: ters ekran ve nişangâh büyüteci (grafikte kapalı durur, canlı komutla açılır)
+        public bool Gpu;               // ekran kartı motoru (valocap.exe); açılamazsa ffmpeg yoluna dönülür
     }
 
     sealed class Streamer
@@ -87,7 +90,6 @@ namespace ValoLive
             a.Append(RawInput(game, epoch, gamePipe));
             if (mic != null) a.Append(RawInput(mic, epoch, micPipe));
 
-            const string fmt = "aresample=48000,aformat=channel_layouts=stereo";
             // VALOLIVE_TESTSRC=1: ekran yerine yapay test görüntüsü (ekranı kaydetmeden geliştirme testi için).
             // Pencere yakalama (gfxcapture = Windows Graphics Capture): yalnızca oyunun kendi karesi kopyalanır; masaüstü
             // çoğaltması (ddagrab) gibi tüm ekranı her karede birleştirmeye zorlamaz. Kare yalnızca pencere çizildikçe gelir
@@ -135,17 +137,7 @@ namespace ValoLive
             if (o.Height != o.ScreenHeight) fc.Append($",scale={o.Width}:{o.Height}:flags=bicubic");
             fc.Append(",format=bgra,fps=60,setparams=range=tv:colorspace=smpte170m:color_primaries=bt709:color_trc=bt709[v]");
             // Ses ayrı bir filtre grafiğinde: video grafiği ses girişlerini beklemesin.
-            var af = new StringBuilder($"[0:a]{fmt}");
-            if (mic != null)
-            {
-                af.Append($"[g];[1:a]{fmt},highpass=f=90");
-                if (o.Denoise) af.Append(",afftdn=nf=-25");
-                af.Append("[mic];[g][mic]amix=inputs=2:duration=first:normalize=0");
-            }
-            // Ses yolu zaman damgasını sıfırdan başlatıyor; sondaki asetpts onu örnek sayısından
-            // mutlak saate geri çevirir (örnek 0 = epoch, AudioSource bunu garanti eder).
-            af.Append($",asetpts=N/SR/TB+{epoch}/TB[a]");
-            a.Append($"-filter_complex \"{fc}\" -filter_complex \"{af}\" -map [v] -map [a] ");
+            a.Append($"-filter_complex \"{fc}\" -filter_complex \"{AudioGraph(o, mic, epoch)}\" -map [v] -map [a] ");
 
             int b = o.BitrateK;
             a.Append($"-c:v h264_nvenc -preset p5 -tune hq -rc cbr -b:v {b}k -maxrate {b}k -bufsize {b}k ");
@@ -157,9 +149,47 @@ namespace ValoLive
             a.Append("-bf 2 -rc-lookahead 20 -profile:v high -spatial-aq 1 ");
             a.Append("-colorspace smpte170m -color_primaries bt709 -color_trc bt709 -color_range tv ");
             // Çıkış zamanı yayının ilk başladığı ana göre: yakalama yeniden başlasa da zaman ileri akmaya devam eder.
-            a.Append($"-c:a aac -b:a 160k -ar 48000 -output_ts_offset -{Inv(baseEpochMs / 1000.0)} ");
+            a.Append(Tail(baseEpochMs));
+            return a.ToString();
+        }
+
+        static string AudioGraph(StreamOptions o, AudioSource mic, string epoch)
+        {
+            const string fmt = "aresample=48000,aformat=channel_layouts=stereo";
+            var af = new StringBuilder($"[0:a]{fmt}");
+            if (mic != null)
+            {
+                af.Append($"[g];[1:a]{fmt},highpass=f=90");
+                if (o.Denoise) af.Append(",afftdn=nf=-25");
+                af.Append("[mic];[g][mic]amix=inputs=2:duration=first:normalize=0");
+            }
+            // Ses yolu zaman damgasını sıfırdan başlatıyor; sondaki asetpts onu örnek sayısından
+            // mutlak saate geri çevirir (örnek 0 = epoch, AudioSource bunu garanti eder).
+            af.Append($",asetpts=N/SR/TB+{epoch}/TB[a]");
+            return af.ToString();
+        }
+
+        static string Tail(long baseEpochMs) =>
+            // Çıkış zamanı yayının ilk başladığı ana göre: yakalama yeniden başlasa da zaman ileri akmaya devam eder.
+            $"-c:a aac -b:a 160k -ar 48000 -output_ts_offset -{Inv(baseEpochMs / 1000.0)} " +
             // Yayıncı sürece MPEG-TS: her yeni oturumun başı "kesinti" işaretli, ek yerinde bozuk paket uyarısı olmaz.
-            a.Append("-f mpegts -mpegts_flags +initial_discontinuity pipe:1");
+            "-f mpegts -mpegts_flags +initial_discontinuity pipe:1";
+
+        /// <summary>
+        /// Ekran kartı motoru açıkken ffmpeg yalnızca sesi kodlar ve birleştirir: görüntü valocap'tan hazır H.264
+        /// (MPEG-TS) gelir ve dokunulmadan kopyalanır. valocap'ın zaman damgası 10 sn + kare/60'tan başlar ve kare 0
+        /// epoch anındadır; -itsoffset bunu seslerle aynı mutlak saate taşır.
+        /// </summary>
+        static string BuildGpuArgs(StreamOptions o, AudioSource game, AudioSource mic, long epochMs, long baseEpochMs, string gamePipe, string micPipe, string videoPipe)
+        {
+            string epoch = Inv(epochMs / 1000.0);
+            var a = new StringBuilder("-hide_banner -nostats -stats_period 0.05 -progress pipe:2 -copyts ");
+            a.Append(Environment.GetEnvironmentVariable("VALOLIVE_FFDEBUG") == "1" ? "-loglevel info -debug_ts " : "-loglevel error ");
+            a.Append(RawInput(game, epoch, gamePipe));
+            if (mic != null) a.Append(RawInput(mic, epoch, micPipe));
+            a.Append($"-itsoffset {Inv(epochMs / 1000.0 - 10)} -f mpegts -probesize 500000 -analyzeduration 500000 -thread_queue_size 1024 -i \"{videoPipe}\" ");
+            a.Append($"-filter_complex \"{AudioGraph(o, mic, epoch)}\" -map {(mic != null ? 2 : 1)}:v -map [a] -c:v copy ");
+            a.Append(Tail(baseEpochMs));
             return a.ToString();
         }
 
@@ -232,6 +262,64 @@ namespace ValoLive
             }
         }
 
+        /// <summary>
+        /// Ekran kartı motoru için panel ve katmanlar: her biri bir paylaşılan bellek bölgesi ({seq, w, h, 0} + w*h*4 BGRA).
+        /// Tek iş parçacığı yeni çizilmiş kareyi (Current dizisi değişince) bir kez kopyalar; boru, kodlama, tekrar yok.
+        /// Sıra kilidi: seq yazım sırasında tek, bitince çift; valocap tek ya da okurken değişmiş seq'i atlar.
+        /// </summary>
+        sealed class SharedFeed : IDisposable
+        {
+            sealed class Item { public MemoryMappedFile Map; public MemoryMappedViewAccessor View; public Func<byte[]> Current; public byte[] Last; public int Seq; public IntPtr Ptr; }
+            readonly string prefix = "valolive_gpu_" + Guid.NewGuid().ToString("N") + "_";
+            readonly List<Item> items = new List<Item>();
+            volatile bool closed;
+
+            /// <summary>Bölgeyi oluşturur, adını verir (valocap açılmadan önce var olmalı).</summary>
+            public string Add(Func<byte[]> current, int w, int h)
+            {
+                string name = prefix + items.Count;
+                var map = MemoryMappedFile.CreateNew(name, 16 + (long)w * h * 4);
+                var view = map.CreateViewAccessor();
+                var ptr = view.SafeMemoryMappedViewHandle.DangerousGetHandle() + (int)view.PointerOffset;
+                Marshal.WriteInt32(ptr, 4, w);
+                Marshal.WriteInt32(ptr, 8, h);
+                items.Add(new Item { Map = map, View = view, Current = current, Ptr = ptr });
+                return name;
+            }
+
+            public void Start() => new Thread(Run) { IsBackground = true, Name = "gpu-feed" }.Start();
+
+            void Run()
+            {
+                while (!closed)
+                {
+                    foreach (var it in items)
+                    {
+                        var c = it.Current();
+                        if (c == it.Last || c == null) continue;
+                        lock (it)
+                        {
+                            if (closed) return;
+                            int len = (int)Math.Min(c.Length, it.View.Capacity - 16);
+                            Marshal.WriteInt32(it.Ptr, 0, ++it.Seq);
+                            Thread.MemoryBarrier();
+                            Marshal.Copy(c, 0, it.Ptr + 16, len);
+                            Thread.MemoryBarrier();
+                            Marshal.WriteInt32(it.Ptr, 0, ++it.Seq);
+                        }
+                        it.Last = c;
+                    }
+                    Thread.Sleep(8);
+                }
+            }
+
+            public void Dispose()
+            {
+                closed = true;
+                foreach (var it in items) lock (it) { try { it.View.Dispose(); it.Map.Dispose(); } catch { } }
+            }
+        }
+
         /// <summary>mic null ise mikrofonsuz yayın. Sesler pipe'lardan gider; stdin 'q' (düzgün kapat) için boş kalır.</summary>
         readonly object stdinLock = new object();
         List<string> pendingCmds;  // ffmpeg süreci başlamadan gelen komutlar
@@ -243,15 +331,121 @@ namespace ValoLive
         public void SendCommand(string cmd)
         {
             int sp = cmd.IndexOf(' ');
-            string line = "c" + cmd.Substring(0, sp) + " -1" + cmd.Substring(sp) + "\n";
             lock (stdinLock)
             {
+                string line = gpuMode ? Translate(cmd) : "c" + cmd.Substring(0, sp) + " -1" + cmd.Substring(sp) + "\n";
+                if (line == null) return;
                 if (pendingCmds != null) { pendingCmds.Add(line); return; }
-                var p = proc;
+                var p = gpuMode ? engine : proc;
                 if (p == null || p.HasExited || stopping) return;
                 try { p.StandardInput.Write(line); p.StandardInput.Flush(); } catch { }
             }
         }
+
+        // ---------- Ekran kartı motoru (valocap.exe) ----------
+
+        Process engine;                // çalışan valocap (gpuMode iken)
+        volatile bool gpuMode;         // çalışan yakalama motorla mı
+        bool gpuBroken;                // bu yayında motor açılamadı: ffmpeg yoluna dönüldü
+        readonly int[][] gpuMasks = { new int[4], new int[4], new int[4], new int[4] };
+
+        public static string FindEngine()
+        {
+            var p = Path.Combine(Path.GetDirectoryName(typeof(Streamer).Assembly.Location), "valocap.exe");
+            return File.Exists(p) ? p : null;
+        }
+
+        /// <summary>
+        /// Uygulamanın geri kalanı ffmpeg filtre komutları gönderir (CaptureGuard, chat eğlencesi); motor açıkken
+        /// bunlar valocap komutlarına çevrilir. Karşılığı olmayanlar (vflip, framestep, setpts) motorda gereksizdir.
+        /// </summary>
+        string Translate(string cmd)
+        {
+            var p = cmd.Split(' ');
+            if (p.Length < 3) return null;
+            switch (p[0])
+            {
+                case "drawbox@vlc": return $"cover {p[2]}\n";
+                case "hflip@fh": return $"flip {p[2]}\n";
+                case "overlay@zoom": return $"zoom {p[2]}\n";
+            }
+            if (p[0].StartsWith("drawbox@vlm") && int.TryParse(p[0].Substring(11), out int i) && i >= 0 && i < 4 &&
+                "xywh".IndexOf(p[1]) is int k && k >= 0 && p[1].Length == 1 && int.TryParse(p[2], out int v))
+            {
+                gpuMasks[i][k] = v;
+                return $"mask {i} {string.Join(" ", gpuMasks[i])}\n";
+            }
+            return null;
+        }
+
+        /// <summary>CaptureGuard'ın başlangıç filtrelerinden (drawbox) motorun başlangıç komutları.</summary>
+        List<string> InitialGpuCommands(string masks)
+        {
+            var cmds = new List<string>();
+            foreach (Match m in Regex.Matches(masks ?? "", @"drawbox@vlm(\d)=x=(-?\d+):y=(-?\d+):w=(-?\d+):h=(-?\d+)"))
+            {
+                int i = int.Parse(m.Groups[1].Value);
+                if (i > 3) continue;
+                for (int k = 0; k < 4; k++) gpuMasks[i][k] = int.Parse(m.Groups[k + 2].Value);
+                cmds.Add($"mask {i} {string.Join(" ", gpuMasks[i])}\n");
+            }
+            var c = Regex.Match(masks ?? "", @"drawbox@vlc=[^,\[]*enable=(\d)");
+            if (c.Success) cmds.Add($"cover {c.Groups[1].Value}\n");
+            cmds.Add($"panel {(opts.Overlay.Blank ? 0 : 1)}\n");
+            for (int i = 0; i < opts.Layers.Count; i++) cmds.Add($"layer {i} {(opts.Layers[i].Shown ? 1 : 0)}\n");
+            return cmds;
+        }
+
+        /// <summary>
+        /// valocap'ı başlatır ve video pipe'ını oluşturup "ready" diyene kadar bekler (ffmpeg ancak sonra bağlanabilir).
+        /// Açılamazsa null: çağıran ffmpeg yoluna döner.
+        /// </summary>
+        Process StartEngine(long epochMs, IntPtr window, SharedFeed feed, out string videoPipe)
+        {
+            videoPipe = @"\\.\pipe\valolive_v_" + Guid.NewGuid().ToString("N");
+            var o = opts;
+            var a = new StringBuilder($"--out \"{videoPipe}\" --epoch {epochMs} --size {o.Width}x{o.Height} --canvas {o.ScreenWidth}x{o.ScreenHeight} " +
+                                      $"--fps 60 --bitrate {o.BitrateK} --fill {CaptureGuard.Fill.Substring(2)} ");
+            a.Append(window != IntPtr.Zero ? $"--window {window.ToInt64()} " : "--monitor 0 ");
+            a.Append($"--panel {feed.Add(() => o.Overlay.Current, o.ScreenWidth, o.ScreenHeight)} ");
+            foreach (var l in o.Layers)
+            {
+                var layer = l;
+                a.Append($"--layer {feed.Add(() => layer.Current, l.W, l.H)},{l.X},{l.Y},{l.W},{l.H},{l.Up} ");
+            }
+            Log("ENGINE " + a);
+            var p = new Process
+            {
+                StartInfo = new ProcessStartInfo(FindEngine(), a.ToString())
+                {
+                    UseShellExecute = false, CreateNoWindow = true,
+                    RedirectStandardInput = true, RedirectStandardOutput = true,
+                    StandardOutputEncoding = Encoding.UTF8,
+                },
+                EnableRaisingEvents = true,
+            };
+            var ready = new ManualResetEventSlim();
+            string firstError = null;
+            p.OutputDataReceived += (s, e) =>
+            {
+                if (e.Data == null) { ready.Set(); return; }
+                if (e.Data == "ready") { ready.Set(); return; }
+                if (e.Data.StartsWith("error")) firstError = firstError ?? e.Data;
+                Log("[engine] " + e.Data);
+                if (!e.Data.StartsWith("stats") || ++engineStats % 6 == 0) Diag.Event("MOTOR", e.Data); // istatistik 30 sn'de bir
+            };
+            p.Start();
+            p.BeginOutputReadLine();
+            if (!ready.Wait(5000) || p.HasExited)
+            {
+                Diag.Event("MOTOR", "ekran kartı motoru açılamadı, ffmpeg yoluna dönülüyor · " + (firstError ?? (p.HasExited ? "kod " + p.ExitCode : "zaman aşımı")));
+                try { if (!p.HasExited) p.Kill(); } catch { }
+                return null;
+            }
+            feed.Start();
+            return p;
+        }
+        int engineStats, engineFails;
 
         // İki süreç: "yayıncı" (pub) Kick bağlantısını yayın boyunca açık tutar; "yakalama" (proc) ekranı,
         // sesi ve paneli kodlayıp MPEG-TS olarak ona akıtır. Ekran yakalama kopunca (tam ekran oyunu alta alma,
@@ -294,6 +488,7 @@ namespace ValoLive
             }
             baseEpochMs = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
             capAttempt = 0;
+            gpuBroken = false; engineFails = 0;
             restartDue = DateTime.MaxValue;
             planned = false; windowReadySince = DateTime.MaxValue; windowBlockedUntil = DateTime.MinValue;
             winStart = DateTime.Now; winBytes = 0; winMaxWriteMs = 0; winFrameStart = 0; totalFrames = 0;
@@ -311,6 +506,18 @@ namespace ValoLive
         /// <summary>Açarken önce okuma hızı, sonra karıştırma; kapatırken tersi.</summary>
         void Gate(string pts, string overlay, bool on, int fps)
         {
+            if (gpuMode)
+            {
+                // Motor gizli katmanı hiç okumaz/çizmez; hız ayarı gerekmez.
+                string line = (overlay == "ov" ? "panel " : "layer " + overlay.Substring(2) + " ") + (on ? 1 : 0) + "\n";
+                lock (stdinLock)
+                {
+                    if (pendingCmds != null) { pendingCmds.Add(line); return; }
+                    var e = engine;
+                    try { if (e != null && !e.HasExited && !stopping) { e.StandardInput.Write(line); e.StandardInput.Flush(); } } catch { }
+                }
+                return;
+            }
             if (on) { SendCommand($"setpts@{pts} expr {Clock(fps)}"); SendCommand($"overlay@{overlay} enable 1"); }
             else { SendCommand($"overlay@{overlay} enable 0"); SendCommand($"setpts@{pts} expr {Clock(HiddenFps)}"); }
         }
@@ -464,17 +671,43 @@ namespace ValoLive
 
         void StartCapture()
         {
-            lock (stdinLock) pendingCmds = new List<string>();
+            var window = opts.WindowCapture && DateTime.Now >= windowBlockedUntil ? GameWindow() : IntPtr.Zero;
+            capWindow = window;
+            // Test görüntüsü (VALOLIVE_TESTSRC) yalnızca ffmpeg yolunda var: motor ekranı yakalamasın.
+            bool wantGpu = opts.Gpu && !gpuBroken && FindEngine() != null &&
+                           !(Environment.GetEnvironmentVariable("VALOLIVE_TESTSRC") == "1" && window == IntPtr.Zero);
+            lock (stdinLock) { pendingCmds = new List<string>(); gpuMode = wantGpu; }
             lock (lastErrors) lastErrors.Clear(); // kopuş nedeni bu yakalamanın kendi satırlarından okunsun
             long epochMs = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
             string micPath = null;
             var gamePipe = OpenPipe(gameSrc, epochMs, out var gamePath);
             var micPipe = micSrc != null ? OpenPipe(micSrc, epochMs, out micPath) : null;
-            var ovFeed = new OverlayFeed(() => opts.Overlay.Current);
-            var layerFeeds = opts.Layers.Select(l => new OverlayFeed(() => l.Current)).ToList();
-            var window = opts.WindowCapture && DateTime.Now >= windowBlockedUntil ? GameWindow() : IntPtr.Zero;
-            capWindow = window;
-            var args = BuildArgs(opts, gameSrc, micSrc, epochMs, baseEpochMs, gamePath, micPath, ovFeed.Path, layerFeeds.Select(f => f.Path).ToList(), window);
+            OverlayFeed ovFeed = null;
+            List<OverlayFeed> layerFeeds = null;
+            SharedFeed shared = null;
+            Process eng = null;
+            List<string> initial = null;
+            string args = null;
+            if (wantGpu)
+            {
+                initial = InitialGpuCommands(opts.Masks?.Invoke());   // sonraki değişiklikler bekleyen komutlara (çevrilmiş) düşer
+                shared = new SharedFeed();
+                eng = StartEngine(epochMs, window, shared, out var videoPipe);
+                if (eng != null) args = BuildGpuArgs(opts, gameSrc, micSrc, epochMs, baseEpochMs, gamePath, micPath, videoPipe);
+                else
+                {
+                    shared.Dispose(); shared = null; initial = null;
+                    gpuBroken = true;
+                    lock (stdinLock) { gpuMode = false; pendingCmds.Clear(); } // ffmpeg grafiği zaten o anki durumla kurulacak
+                }
+            }
+            if (eng == null)
+            {
+                ovFeed = new OverlayFeed(() => opts.Overlay.Current);
+                layerFeeds = opts.Layers.Select(l => new OverlayFeed(() => l.Current)).ToList();
+                args = BuildArgs(opts, gameSrc, micSrc, epochMs, baseEpochMs, gamePath, micPath, ovFeed.Path, layerFeeds.Select(f => f.Path).ToList(), window);
+            }
+            lock (stdinLock) engine = eng;
             Log("START " + args);
 
             var psi = new ProcessStartInfo(FindFfmpeg(), args)
@@ -492,7 +725,14 @@ namespace ValoLive
                 pump.Join(3000);
                 gameSrc.Detach();
                 micSrc?.Detach();
-                try { gamePipe.Dispose(); micPipe?.Dispose(); ovFeed.Dispose(); layerFeeds.ForEach(f => f.Dispose()); } catch { }
+                if (eng != null)
+                {
+                    // Motor ffmpeg'den önce öldüyse kopuşun nedeni odur; üst üste düşerse bu yayında ffmpeg yoluna dönülür.
+                    bool engineDied = eng.HasExited;
+                    if (engineDied && !stopping && ++engineFails >= 3) { gpuBroken = true; Diag.Event("MOTOR", "ekran kartı motoru 3 kez düştü, bu yayında ffmpeg yoluna dönülüyor"); }
+                    try { if (!eng.HasExited) eng.Kill(); } catch { }
+                }
+                try { gamePipe.Dispose(); micPipe?.Dispose(); ovFeed?.Dispose(); layerFeeds?.ForEach(f => f.Dispose()); shared?.Dispose(); } catch { }
                 int code = 0;
                 try { code = cap.ExitCode; } catch { }
                 string err = Errors();
@@ -526,10 +766,11 @@ namespace ValoLive
             lastFrame = 0;
             cap.Start();
             proc = cap;
-            Diag.Event("YAKALAMA", $"#{attempt} başladı · {(window != IntPtr.Zero ? "Valorant penceresi" : "ekran")}");
+            Diag.Event("YAKALAMA", $"#{attempt} başladı · {(window != IntPtr.Zero ? "Valorant penceresi" : "ekran")}{(eng != null ? " · ekran kartı motoru" : "")}");
             lock (stdinLock)
             {
-                try { foreach (var l in pendingCmds) cap.StandardInput.Write(l); cap.StandardInput.Flush(); } catch { }
+                var target = eng ?? cap;
+                try { foreach (var l in (initial ?? new List<string>()).Concat(pendingCmds)) target.StandardInput.Write(l); target.StandardInput.Flush(); } catch { }
                 pendingCmds = null;
             }
             // Normal öncelik (OBS'in varsayılanı): AboveNormal'da ffmpeg oyunun iş parçacıklarını kesip FPS düşürüyordu.
@@ -568,7 +809,11 @@ namespace ValoLive
             catch { } // yayıncı kapandıysa onun Exited olayı ilgilenir
         }
 
-        void KillCapture() { try { var p = proc; if (p != null && !p.HasExited) p.Kill(); } catch { } }
+        void KillCapture()
+        {
+            try { var p = proc; if (p != null && !p.HasExited) p.Kill(); } catch { }
+            try { var e = engine; if (e != null && !e.HasExited) e.Kill(); } catch { }
+        }
         void KillPublisher() { try { var p = pub; if (p != null && !p.HasExited) p.Kill(); } catch { } }
 
         void OnLine(string line, bool fromPublisher)
@@ -621,9 +866,16 @@ namespace ValoLive
             var cap = proc;
             watchdog?.Dispose(); statsTimer?.Dispose();
             watchdog = statsTimer = null;
+            // Motor önce kapanır (kodlayıcıyı boşaltıp son kareleri yazar); ses girişleri sürdüğü için ffmpeg'e yine 'q' gerekir.
+            var eng = gpuMode ? engine : null;
             lock (stdinLock)
             {
                 stopping = true;
+                try { if (eng != null && !eng.HasExited) { eng.StandardInput.Write("quit\n"); eng.StandardInput.Flush(); } } catch { }
+            }
+            if (eng != null && !eng.WaitForExit(3000)) try { eng.Kill(); } catch { }
+            lock (stdinLock)
+            {
                 try { if (cap != null && !cap.HasExited) { cap.StandardInput.Write('q'); cap.StandardInput.Flush(); } } catch { }
             }
             if (cap != null && !cap.WaitForExit(5000)) KillCapture();

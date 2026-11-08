@@ -1,4 +1,4 @@
-﻿# ValoLive Â· ar Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+# ValoLive Â· ar Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
  (sen)	 (أنت)
  (şu an kapalı)	 (مغلق حاليًا)
  · BU HARİTADA {0} MAÇI	 · {0} مباريات على هذه الخريطة
@@ -459,3 +459,4 @@ yok	لا شيء
 Şişe	زجاجة
 Şişede mesaj	رسالة في زجاجة
 POP!	بوب!
+Ekran kartı motoru (deneysel, işlemciyi boşaltır)	محرك بطاقة الرسومات (تجريبي، يخفف عن المعالج)

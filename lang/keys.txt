@@ -82,6 +82,7 @@ Domates / yumurta fırlat
 Duvar yazısı (1 dk kalır)
 EKRAN ŞAKALARI
 ESKİ DOST
+Ekran kartı motoru (deneysel, işlemciyi boşaltır)
 Elmas
 Emoji yağmuru
 Emoji yağmuru (aynı emojiyi yazınca)

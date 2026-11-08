@@ -1,4 +1,4 @@
-﻿# ValoLive Â· vi Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+# ValoLive Â· vi Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
  (sen)	 (bạn)
  (şu an kapalı)	 (đang đóng)
  · BU HARİTADA {0} MAÇI	 · {0} TRẬN TRÊN BẢN ĐỒ NÀY
@@ -459,3 +459,4 @@ yok	không
 Şişe	Chai
 Şişede mesaj	Thư trong chai
 POP!	BỐP!
+Ekran kartı motoru (deneysel, işlemciyi boşaltır)	Bộ máy GPU (thử nghiệm, giảm tải CPU)

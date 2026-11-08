@@ -1,4 +1,4 @@
-﻿# ValoLive Â· th Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
+# ValoLive Â· th Â· satir: Turkce<TAB>ceviri (lang-sync.ps1 ile denetlenir)
  (sen)	 (คุณ)
  (şu an kapalı)	 (ปิดอยู่ตอนนี้)
  · BU HARİTADA {0} MAÇI	 · {0} แมตช์ในแมพนี้
@@ -459,3 +459,4 @@ yok	ไม่มี
 Şişe	ขวด
 Şişede mesaj	ข้อความในขวด
 POP!	ป๊อก!
+Ekran kartı motoru (deneysel, işlemciyi boşaltır)	เอนจิน GPU (ทดลอง, ลดภาระ CPU)

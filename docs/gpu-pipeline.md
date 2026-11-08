@@ -49,6 +49,19 @@ If valocap fails to start (no NVIDIA GPU, old driver, old Windows), ValoLive use
 3. ValoLive integration: Streamer mode, stats, fallback, setting, build script.
 4. TEST RECORDING, then a real stream test by the user.
 
+Status: phases 1–3 are done and verified on a test window. Phase 4 (the user's TEST RECORDING and a real stream) is still open.
+
+Measured with a real `Streamer` run (1080p60, test window, panel, chat and aquarium layers, file output), as CPU share of one core:
+
+| Path | Run 1 | Run 2 |
+|---|---|---|
+| FFmpeg path | 61% | 57% |
+| GPU engine | 5.4% | 8.7% |
+
+Engine stats: steady 60 fps, 0 late frames, about 0.4 ms of CPU time per frame. Startup takes about 0.4 s.
+
+Build: `native\build.ps1` needs Visual Studio's "Desktop development with C++" workload (MSVC and the Windows SDK) and writes `valocap.exe` next to `ValoLive.exe`. The toggle only appears when that file exists.
+
 ## Later
 
 - Feed enemy memory and stream moments from the engine's captured texture: a small staging copy of the minimap or top-bar region instead of GDI `CopyFromScreen`, which forces a DWM sync.
