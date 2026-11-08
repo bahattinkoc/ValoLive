@@ -18,7 +18,8 @@ static class MinimapRecorder
 
     const int Size = 480; // 1920x1080'de varsayılan minimap bu karenin içinde kalır
     // Üst orta skor çubuğu (ajan portreleri, skor, süre): ölen rakibi okumak için. Sağ üstteki öldürme akışı (oyuncu adları) dışarıda kalır.
-    static readonly Rectangle Top = new Rectangle(480, 0, 960, 140);
+    // İki tarafın 5 portresi de sığar (1080p'de ortadan ±560 px); öldürme akışı x ~1550'den sonra başlar.
+    static readonly Rectangle Top = new Rectangle(400, 0, 1120, 140);
 
     static void Main(string[] args)
     {
