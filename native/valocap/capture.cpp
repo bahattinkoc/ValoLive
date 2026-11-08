@@ -3,6 +3,7 @@
 #include <windows.graphics.directx.direct3d11.interop.h>
 #include <winrt/Windows.Foundation.Metadata.h>
 #include <dxgi.h>
+#include <dwmapi.h>
 #include <algorithm>
 #include <vector>
 
@@ -38,6 +39,7 @@ bool Capture::StartWindow(HWND hwnd, std::string& error)
         auto interop = get_activation_factory<wgc::GraphicsCaptureItem, IGraphicsCaptureItemInterop>();
         check_hresult(interop->CreateForWindow(hwnd, guid_of<ABI::Windows::Graphics::Capture::IGraphicsCaptureItem>(), put_abi(item)));
         what = "pencere";
+        window = hwnd;
         return Begin(error);
     }
     catch (hresult_error const& e) { error = Hr("pencere yakalanamadı", e.code()); item = nullptr; return false; }
@@ -100,6 +102,7 @@ void Capture::Stop()
     catch (...) {}
     closedToken = {};
     session = nullptr; pool = nullptr; item = nullptr;
+    window = nullptr;
 }
 
 bool Capture::Latest(ID3D11DeviceContext* ctx, ComPtr<ID3D11Texture2D>& dst)
@@ -121,6 +124,16 @@ bool Capture::Latest(ID3D11DeviceContext* ctx, ComPtr<ID3D11Texture2D>& dst)
         D3D11_TEXTURE2D_DESC sd;
         src->GetDesc(&sd);
         UINT w = (UINT)std::max(1, std::min((int)sd.Width, size.Width)), h = (UINT)std::max(1, std::min((int)sd.Height, size.Height));
+        // Pencere karesi DWM çerçevesini kapsar; iç alanın (oyunun çizdiği yer) kare içindeki konumu bulunur.
+        UINT ox = 0, oy = 0;
+        RECT fr, cr; POINT o = { 0, 0 };
+        if (window && SUCCEEDED(DwmGetWindowAttribute(window, DWMWA_EXTENDED_FRAME_BOUNDS, &fr, sizeof fr)) &&
+            GetClientRect(window, &cr) && ClientToScreen(window, &o))
+        {
+            int l = std::clamp((int)(o.x - fr.left), 0, (int)w - 1), t = std::clamp((int)(o.y - fr.top), 0, (int)h - 1);
+            int cw = std::min((int)cr.right, (int)w - l), ch = std::min((int)cr.bottom, (int)h - t);
+            if (cw > 0 && ch > 0) { ox = l; oy = t; w = cw; h = ch; }
+        }
 
         D3D11_TEXTURE2D_DESC dd = {};
         if (dst) dst->GetDesc(&dd);
@@ -133,7 +146,7 @@ bool Capture::Latest(ID3D11DeviceContext* ctx, ComPtr<ID3D11Texture2D>& dst)
             d.Usage = D3D11_USAGE_DEFAULT; d.BindFlags = D3D11_BIND_SHADER_RESOURCE;
             check_hresult(dev->CreateTexture2D(&d, nullptr, &dst));
         }
-        D3D11_BOX box = { 0, 0, 0, w, h, 1 };
+        D3D11_BOX box = { ox, oy, 0, ox + w, oy + h, 1 };
         ctx->CopySubresourceRegion(dst.Get(), 0, 0, 0, 0, src.Get(), 0, &box);
         last.Close();
         // Pencere boyutu değiştiyse havuz yeni boyuta göre kurulur (sonraki karelerden itibaren).

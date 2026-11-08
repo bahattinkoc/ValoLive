@@ -27,6 +27,7 @@ private:
     winrt::Windows::Graphics::Capture::GraphicsCaptureSession session{ nullptr };
     winrt::event_token closedToken{};
     winrt::Windows::Graphics::SizeInt32 poolSize{};
+    HWND window = nullptr;   // pencere yakalamada başlık çubuğu/kenarlık kırpılır (gfxcapture gibi yalnız iç alan)
     volatile bool closed = false;
     std::string what;
 

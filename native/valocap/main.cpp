@@ -179,6 +179,7 @@ int main(int argc, char** argv)
 {
     Args a;
     if (!Parse(argc, argv, a)) { Say("error kullanım: valocap --out <yol> --epoch <ms> ..."); return 2; }
+    SetProcessDpiAwarenessContext(DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2);   // pencere koordinatları gerçek piksel olsun
     winrt::init_apartment(winrt::apartment_type::multi_threaded);
     SetPriorityClass(GetCurrentProcess(), ABOVE_NORMAL_PRIORITY_CLASS);   // iş çok küçük; zamanında yapılsın
 
