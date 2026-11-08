@@ -46,6 +46,7 @@ namespace ValoLive
                 ready = new EventWaitHandle(false, EventResetMode.AutoReset, name + "_ev");
                 window = capturedWindow;
                 req = 0; misses = 0; announced = false;
+                if (!Enabled) MinimapMemory.Log("oyun karesi ekrandan okunuyor (EngineRegionReads kapalı)");
                 return current = name;
             }
         }
@@ -67,9 +68,12 @@ namespace ValoLive
                 using (var g = Graphics.FromImage(bmp)) g.CopyFromScreen(left, top, 0, 0, bmp.Size, CopyPixelOperation.SourceCopy);
         }
 
+        /// <summary>settings.json "EngineRegionReads": false iken hep ekrandan okunur (karşılaştırma için).</summary>
+        public static volatile bool Enabled = true;
+
         static bool FromEngine(Bitmap bmp, int left, int top)
         {
-            if (ptr == IntPtr.Zero) return false;
+            if (!Enabled || ptr == IntPtr.Zero) return false;
             lock (lk)
             {
                 if (ptr == IntPtr.Zero) return false;

@@ -958,6 +958,7 @@ namespace ValoLive
                 return;
             }
             var q = Qualities[cfg.Quality];
+            GameFrames.Enabled = cfg.EngineRegionReads;
             var o = new StreamOptions
             {
                 Width = q.W, Height = q.H, BitrateK = q.Kbps,

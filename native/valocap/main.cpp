@@ -262,6 +262,9 @@ int main(int argc, char** argv)
 
     ComPtr<ID3D11Texture2D> capTex;
     int64_t n = 0, statFrames = 0, statFresh = 0, statLate = 0, statSkip = 0;
+    // Takılma: oyundan yeni kare gelmeyen en uzun süre ve 50 ms'yi aşanların sayısı (5 sn ortalaması kısa düşüşleri gizler).
+    LARGE_INTEGER lastFresh; QueryPerformanceCounter(&lastFresh);
+    double statGapMax = 0; int64_t statStalls = 0, statGrabs = 0;
     double statGpu = 0;
     LARGE_INTEGER statAt; QueryPerformanceCounter(&statAt);
     Say("ready");
@@ -297,7 +300,15 @@ int main(int argc, char** argv)
         }
 
         LARGE_INTEGER g0; QueryPerformanceCounter(&g0);
-        if (cap.Latest(ctx.Get(), capTex)) statFresh++;
+        if (cap.Latest(ctx.Get(), capTex))
+        {
+            statFresh++;
+            double gap = (g0.QuadPart - lastFresh.QuadPart) * 1000.0 / qf.QuadPart;
+            statGapMax = std::max(statGapMax, gap);
+            if (gap > 50) statStalls++;
+            lastFresh = g0;
+        }
+        if (grab.Busy()) statGrabs++;
         grab.Tick(dev.Get(), ctx.Get(), capTex.Get());
         ID3D11Texture2D* target = enc.NextInput();
         ren.Render(ctx.Get(), capTex.Get(), target);
@@ -312,11 +323,12 @@ int main(int argc, char** argv)
         {
             double sec = (g1.QuadPart - statAt.QuadPart) / (double)qf.QuadPart;
             char b[256];
-            sprintf_s(b, "stats fps=%.1f fresh=%.1f late=%lld skipped=%lld submit_ms=%.2f queue_kb=%zu pending=%d capture=%s",
+            sprintf_s(b, "stats fps=%.1f fresh=%.1f late=%lld skipped=%lld submit_ms=%.2f queue_kb=%zu pending=%d capture=%s gap_max_ms=%.0f stalls=%lld grabs=%lld",
                       statFrames / sec, statFresh / sec, statLate, statSkip, statGpu / std::max<int64_t>(1, statFrames),
-                      out.Queued() / 1024, enc.Pending(), cap.Active() ? cap.Describe().c_str() : "yok");
+                      out.Queued() / 1024, enc.Pending(), cap.Active() ? cap.Describe().c_str() : "yok", statGapMax, statStalls, statGrabs);
             Say(b);
             statFrames = statFresh = statLate = statSkip = 0; statGpu = 0; statAt = g1;
+            statGapMax = 0; statStalls = statGrabs = 0;
         }
     }
     quit = true;
