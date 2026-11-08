@@ -435,6 +435,12 @@ namespace ValoLive
                 if (e.Data == "ready") { ready.Set(); return; }
                 if (e.Data.StartsWith("error")) firstError = firstError ?? e.Data;
                 Log("[engine] " + e.Data);
+                // Kaynak değişimi yanıtı: başaramadıysa eski yol (yakalamayı yeniden başlat).
+                if (sourcePending && (e.Data.StartsWith("source ") || e.Data.StartsWith("error")))
+                {
+                    sourcePending = false;
+                    if (e.Data.StartsWith("error") && !stopping) { planned = true; KillCapture(); }
+                }
                 if (!e.Data.StartsWith("stats") || ++engineStats % 6 == 0) Diag.Event("MOTOR", e.Data); // istatistik 30 sn'de bir
             };
             p.Start();
@@ -603,18 +609,40 @@ namespace ValoLive
             var hw = GameWindow();
             if (capWindow != IntPtr.Zero)
             {
-                if (hw != capWindow) Switch("Valorant penceresi küçüldü/kapandı, ekran yakalamaya geçiliyor");
+                if (hw != capWindow) Switch("Valorant penceresi küçüldü/kapandı, ekran yakalamaya geçiliyor", IntPtr.Zero);
                 return;
             }
             if (hw == IntPtr.Zero || now < windowBlockedUntil) { windowReadySince = DateTime.MaxValue; return; }
             if (windowReadySince == DateTime.MaxValue) windowReadySince = now;
-            else if ((now - windowReadySince).TotalSeconds >= 2) Switch("Valorant penceresi hazır, pencere yakalamaya geçiliyor");
+            else if ((now - windowReadySince).TotalSeconds >= 2) Switch("Valorant penceresi hazır, pencere yakalamaya geçiliyor", hw);
         }
 
-        void Switch(string why)
+        volatile bool sourcePending;   // motora kaynak değişimi gönderildi, yanıt bekleniyor
+
+        void Switch(string why, IntPtr target)
         {
-            Diag.Event("YAKALAMA", why);
             windowReadySince = DateTime.MaxValue;
+            // Motor kaynağı çalışırken değiştirir: yakalama, ses ve Kick'e giden akış hiç kesilmez.
+            var e = gpuMode ? engine : null;
+            bool testScreen = target == IntPtr.Zero && Environment.GetEnvironmentVariable("VALOLIVE_TESTSRC") == "1"; // testte ekran yakalanmaz
+            if (e != null && !e.HasExited && !sourcePending && !testScreen)
+            {
+                Diag.Event("YAKALAMA", why + " (kesintisiz)");
+                lock (stdinLock)
+                {
+                    try
+                    {
+                        sourcePending = true;
+                        e.StandardInput.Write(target != IntPtr.Zero ? $"source window {target.ToInt64()}\n" : "source monitor 0\n");
+                        e.StandardInput.Flush();
+                        capWindow = target;
+                        GameFrames.SetWindow(target);
+                        return;
+                    }
+                    catch { sourcePending = false; }
+                }
+            }
+            Diag.Event("YAKALAMA", why);
             planned = true;
             KillCapture();
         }
@@ -677,6 +705,7 @@ namespace ValoLive
         {
             var window = opts.WindowCapture && DateTime.Now >= windowBlockedUntil ? GameWindow() : IntPtr.Zero;
             capWindow = window;
+            sourcePending = false;
             // Test görüntüsü (VALOLIVE_TESTSRC) yalnızca ffmpeg yolunda var: motor ekranı yakalamasın.
             bool wantGpu = opts.Gpu && !gpuBroken && FindEngine() != null &&
                            !(Environment.GetEnvironmentVariable("VALOLIVE_TESTSRC") == "1" && window == IntPtr.Zero);

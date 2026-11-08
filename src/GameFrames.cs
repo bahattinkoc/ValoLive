@@ -51,6 +51,9 @@ namespace ValoLive
             }
         }
 
+        /// <summary>Motor kaynağı değiştirdi (pencere ↔ ekran): koordinatlar yeni kaynağa göre çevrilir.</summary>
+        public static void SetWindow(IntPtr capturedWindow) { lock (lk) window = capturedWindow; }
+
         /// <summary>Motor kapandı: okumalar ekrana döner.</summary>
         public static void Detach(string name) { lock (lk) if (name != null && name == current) Close(); }
 
