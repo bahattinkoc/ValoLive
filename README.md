@@ -163,7 +163,9 @@ This produces `ValoLive.exe` in the repo folder. The GPU engine (`valocap.exe`, 
 .\native\build.ps1
 ```
 
-It writes `valocap.exe` next to `ValoLive.exe`. Without it the GPU engine toggle is hidden and ValoLive streams through FFmpeg. Translations are in `lang/`. Run `lang-sync.ps1` to check them for missing keys.
+It writes `valocap.exe` next to `ValoLive.exe`. Without it the GPU engine toggle is hidden and ValoLive streams through FFmpeg.
+
+`.\release.ps1 -Notes notes.md` builds both, packs the zip and publishes the GitHub release for the version in `src\AssemblyInfo.cs` (add `-DryRun` to only build and pack). Translations are in `lang/`. Run `lang-sync.ps1` to check them for missing keys.
 
 ## Disclaimer
 
