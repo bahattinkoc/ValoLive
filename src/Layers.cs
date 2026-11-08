@@ -24,6 +24,7 @@ namespace ValoLive
         protected readonly float s;   // 1080p'ye göre ölçek
         readonly Timer timer;
         int ticking;
+        volatile bool disposed;
         protected readonly DateTime born = DateTime.Now;
         /// <summary>ffmpeg kareyi bu kat büyütüp bindirir: tam ekran katman yarı çözünürlükte çizilir (PNG'si 4 kat ucuz).</summary>
         public int Up { get; protected set; } = 1;
@@ -41,7 +42,8 @@ namespace ValoLive
         {
             X = x; Y = y; W = Math.Max(2, w); H = Math.Max(2, h); Fps = fps; s = scale;
             Current = new byte[W * H * 4];
-            if (run) timer = new Timer(_ => Tick(), null, 0, 1000 / fps);
+            // İlk tik bir periyot sonra: 0 gecikmeyle alt sınıfın kurucusu fontlarını kurmadan çizebiliyordu.
+            if (run) timer = new Timer(_ => Tick(), null, Math.Max(50, 1000 / fps), 1000 / fps);
         }
 
         protected void SetShown(bool v)
@@ -72,7 +74,7 @@ namespace ValoLive
             if (Interlocked.Exchange(ref ticking, 1) == 1) return;
             try
             {
-                if (!NeedsRender()) return;
+                if (disposed || !NeedsRender()) return;
                 var raw = Encode();
                 Current = raw;
                 // Önce yeni kare, sonra bildirim: bindirme açıldığında ffmpeg eski boş kareyi değil yenisini okur.
@@ -120,7 +122,14 @@ namespace ValoLive
             return true;
         }
 
-        public virtual void Dispose() => timer?.Dispose();
+        /// <summary>Alt sınıflar fontlarını base.Dispose'dan sonra bırakır: süren bir çizimin bitmesini bekle,
+        /// yoksa kapanışta "Parametre geçerli değil" düşer.</summary>
+        public virtual void Dispose()
+        {
+            disposed = true;
+            timer?.Dispose();
+            SpinWait.SpinUntil(() => Volatile.Read(ref ticking) == 0, 1000);
+        }
 
         // ---------- ortak çizim yardımcıları ----------
 
