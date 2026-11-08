@@ -25,6 +25,7 @@ Press **START STREAM** and you're streaming: ValoLive captures Valorant, encodes
 
 ### 🎥 One-click streaming to Kick
 - Captures the game and encodes it with **NVENC**, so your CPU stays free for frames.
+- **GPU engine** (toggle in the main window): capture, overlays and encoding all stay on the graphics card, the way OBS does it. It uses about 8× less CPU than the FFmpeg path, and ValoLive falls back to that path by itself if the engine can't start.
 - Sets your Kick **title and category** before you go live.
 - Records your microphone along with the game audio.
 - Optional **chat bot** that answers viewers from your account:
@@ -156,7 +157,13 @@ cd ValoLive
 .\build.ps1
 ```
 
-This produces `ValoLive.exe` in the repo folder. Translations are in `lang/`. Run `lang-sync.ps1` to check them for missing keys.
+This produces `ValoLive.exe` in the repo folder. The GPU engine (`valocap.exe`, C++) needs the **Desktop development with C++** workload (MSVC and the Windows SDK):
+
+```powershell
+.\native\build.ps1
+```
+
+It writes `valocap.exe` next to `ValoLive.exe`. Without it the GPU engine toggle is hidden and ValoLive streams through FFmpeg. Translations are in `lang/`. Run `lang-sync.ps1` to check them for missing keys.
 
 ## Disclaimer
 

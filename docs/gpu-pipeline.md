@@ -49,7 +49,7 @@ If valocap fails to start (no NVIDIA GPU, old driver, old Windows), ValoLive use
 3. ValoLive integration: Streamer mode, stats, fallback, setting, build script.
 4. TEST RECORDING, then a real stream test by the user.
 
-Status: phases 1–3 are done and verified on a test window. Phase 4 (the user's TEST RECORDING and a real stream) is still open.
+Status: all four phases are done and shipped in v1.3.0. The 9-minute Kick test stream ran at a steady 60 fps with 0 late frames, 0 dropped frames and 0 disconnects, and the game stayed above 300 fps.
 
 Measured with a real `Streamer` run (1080p60, test window, panel, chat and aquarium layers, file output), as CPU share of one core:
 
