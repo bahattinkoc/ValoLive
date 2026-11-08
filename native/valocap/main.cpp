@@ -3,6 +3,7 @@
 // valocap.exe --out <dosya | \\.\pipe\ad> --epoch <unix ms> [--size 1920x1080] [--canvas 2560x1440] [--fps 60] [--bitrate 6000]
 //             [--window <hwnd> | --monitor <n>] [--fill RRGGBB] [--panel <ad>] [--layer <ad>,x,y,w,h,up]... [--grab <ad>]
 //             [--gpu-priority -7..7]
+// valocap.exe --fps <oyun.exe>   (ayrı kip: oyunun FPS'ini ETW'den ölçer, bkz. fpsmon.h)
 //
 // stdin komutları: layer <i> <0|1> · panel <0|1> · mask <i> <x> <y> <w> <h> · cover <0|1> · flip <0|1> · zoom <0|1>
 //                  source window <hwnd> · source monitor <n> · quit
@@ -23,6 +24,7 @@
 #include <thread>
 #include <vector>
 #include "capture.h"
+#include "fpsmon.h"
 #include "grab.h"
 #include "nvenc.h"
 #include "render.h"
@@ -186,6 +188,7 @@ static ComPtr<ID3D11Device> MakeDevice(ComPtr<ID3D11DeviceContext>& ctx)
 
 int main(int argc, char** argv)
 {
+    if (argc == 3 && strcmp(argv[1], "--fps") == 0) return RunFpsMonitor(Wide(argv[2]));   // ayrı kip: oyun FPS ölçümü
     Args a;
     if (!Parse(argc, argv, a)) { Say("error kullanım: valocap --out <yol> --epoch <ms> ..."); return 2; }
     SetProcessDpiAwarenessContext(DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2);   // pencere koordinatları gerçek piksel olsun
