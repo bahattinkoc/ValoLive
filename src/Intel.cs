@@ -7,17 +7,24 @@ namespace ValoLive
 {
     /// <summary>
     /// Maç Odası istihbaratı: bir oyuncunun son maçlarından çıkan, maçta işe yarayan bulgular (konum, spike, düo,
-    /// clutch, ajan geçmişi, oturum). Her bulgunun bir önemi var: satırda en önemli ikisi kısa etiket olarak,
-    /// brifingde lobinin en önemlileri tek cümle olarak, oyuncu penceresinde hepsi görünür. Az veriden bulgu çıkmaz.
+    /// clutch, ajan geçmişi, oturum). Her bulgunun bir önemi ve türü var: brifing türe göre gruplar (tehlike, fırsat,
+    /// konum), oyuncu listesinde en önemli ikisi kısa etiket, oyuncu sekmesinde hepsi görünür. Az veriden bulgu çıkmaz.
     /// </summary>
     static class Intel
     {
+        /// <summary>Bulgunun maçtaki anlamı: dikkat edilecek, üstüne gidilecek, konum, yalnızca bilgi.</summary>
+        public enum Kinds { Danger, Chance, Place, Info }
+
         public sealed class Fact
         {
-            public string Puuid, Pill, Text;   // Pill null: satırda etiket olmaz, yalnızca cümle
+            public string Puuid, Pill, Text;   // Pill null: listede etiket olmaz, yalnızca cümle
             public Color Color;
-            public int Score;                  // önem (0-100); rakip bulguları brifingde öne çıkar
-            public bool Style;                 // oyun stili etiketi (oyuncu penceresi bunları zaten ayrı gösterir)
+            public int Score;                  // önem (0-100)
+            public bool Style;                 // oyun stili etiketi (Scout.Tags)
+            public Kinds Kind;
+            // Konum bulgusu: taraf (1 atak, 0 defans), bölge ("A", "Orta"), o bölgedeki ve toplam çatışma sayısı.
+            public int Side = -1, N, Of;
+            public string Zone;
         }
 
         public sealed class Input
@@ -31,11 +38,11 @@ namespace ValoLive
             public Func<string, string> AgentName;
         }
 
+        delegate Fact Adder(int score, string pill, string text, Color c, Kinds kind);
+
         static readonly Color Orange = ColorTranslator.FromHtml("#ffb547"), Blue = ColorTranslator.FromHtml("#7aa2ff"),
             Pink = ColorTranslator.FromHtml("#ff5a6e"), Green = ColorTranslator.FromHtml("#3ddc97"), Purple = ColorTranslator.FromHtml("#c890f5"),
             Teal = ColorTranslator.FromHtml("#4fd1c5");
-
-        static int Pct(int a, int b) => b > 0 ? (int)Math.Round(100.0 * a / b) : 0;
 
         public static List<Fact> For(Input x)
         {
@@ -43,15 +50,21 @@ namespace ValoLive
             var p = x.P;
             if (p == null || p.IsSelf || p.Incognito || p.Puuid == null) return facts; // gizli oyuncu incelenmez
             var ms = x.Ms ?? new List<PMatch>();
-            void Add(int score, string pill, string text, Color c, bool style = false) =>
-                facts.Add(new Fact { Puuid = p.Puuid, Pill = pill, Text = text, Color = c, Score = score, Style = style });
+            Fact Add(int score, string pill, string text, Color c, Kinds kind)
+            {
+                var f = new Fact { Puuid = p.Puuid, Pill = pill, Text = text, Color = c, Score = score, Kind = kind };
+                facts.Add(f);
+                return f;
+            }
 
-            // Oyun stili (Scout.Tags): Operator en tehlikelisi, sonra ilk temas profili.
+            // Oyun stili (Scout.Tags): Operator en tehlikelisi, sonra ilk temas profili. Sık ilk ölen ve yalnız
+            // oynayan rakip bir fırsattır.
             foreach (var t in Scout.Tags(ms))
             {
                 int s = t.Text == L.T("OP'ÇU") ? 90 : t.Text == L.T("GİRİŞÇİ") ? 62 : t.Text == L.T("KAFACI") ? 56 : t.Text == L.T("AGRESİF") ? 52
                       : t.Text == "SHERIFF" ? 46 : t.Text == L.T("SABIRLI") ? 42 : 36;
-                Add(s, t.Text, t.Note, t.Color, true);
+                var kind = t.Text == L.T("AGRESİF") || t.Text == L.T("YALNIZ") ? Kinds.Chance : Kinds.Danger;
+                Add(s, t.Text, t.Note, t.Color, kind).Style = true;
             }
 
             Agent(x, ms, Add);
@@ -63,7 +76,7 @@ namespace ValoLive
         }
 
         /// <summary>Şu anki ajanı: hiç oynamadığı ajan mı, tek ajan mı, asıl ajanı başka mı.</summary>
-        static void Agent(Input x, List<PMatch> ms, Action<int, string, string, Color, bool> add)
+        static void Agent(Input x, List<PMatch> ms, Adder add)
         {
             string cur = x.P.AgentId;
             if (string.IsNullOrEmpty(cur) || ms.Count < 5) return;
@@ -72,19 +85,22 @@ namespace ValoLive
             int[] lv = null;
             x.H?.Mastery?.TryGetValue(cur, out lv);
             if (same == 0 && (lv == null || lv[0] <= 2))
-                add(75, L.T("İLK KEZ?"), L.F("{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.", name, ms.Count), Orange, false);
+                add(75, L.T("İLK KEZ?"), L.F("{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.", name, ms.Count), Orange, Kinds.Chance);
             else if (same >= ms.Count - 1 && ms.Count >= 6)
-                add(68, L.T("TEK AJAN"), L.F("Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.", ms.Count, same, name), Purple, false);
+                add(68, L.T("TEK AJAN"), L.F("Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.", ms.Count, same, name), Purple, Kinds.Danger);
             else
             {
                 var main = ms.GroupBy(m => m.Agent).OrderByDescending(gr => gr.Count()).First();
                 if (main.Count() * 2 > ms.Count && !string.Equals(main.Key, cur, StringComparison.OrdinalIgnoreCase))
-                    add(48, null, L.F("Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.", x.AgentName(main.Key), ms.Count, main.Count(), name), Mut, false);
+                    add(48, null, L.F("Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.", x.AgentName(main.Key), ms.Count, main.Count(), name), Mut, Kinds.Chance);
             }
         }
 
         static readonly Color Mut = Theme.Mut;
         static readonly Dictionary<string, ValApi.Map> maps = new Dictionary<string, ValApi.Map>(StringComparer.OrdinalIgnoreCase);
+
+        /// <summary>Harita bilgisini arka planda önbelleğe alır (ZonesOf çizimde ağ beklemesin).</summary>
+        public static void Warm(string url) => MapOf(url);
 
         static ValApi.Map MapOf(string url)
         {
@@ -96,6 +112,26 @@ namespace ValoLive
             var map = ValApi.MapOf(url); // arka plan iş parçacığında: ağdan bir kez
             lock (maps) maps[url] = map;
             return map;
+        }
+
+        /// <summary>
+        /// Haritanın bölgeleri soldan sağa: siteler (tek harfli bölge adları) ve aralarına orta. Orta, site olmayan
+        /// bölgelerden haritanın merkezine en yakın olanıdır (diğerleri doğuş alanları); dile bağlı değildir.
+        /// Önbellekte yoksa boş döner (çizim ağ beklemez; bulgular hesaplanınca dolar).
+        /// </summary>
+        public static List<string> ZonesOf(string mapUrl)
+        {
+            ValApi.Map mp;
+            lock (maps) if (mapUrl == null || !maps.TryGetValue(mapUrl, out mp) || mp == null) return new List<string>();
+            var groups = mp.Callouts.GroupBy(c => c.Key.Split('/')[0]).ToList();
+            var sites = groups.Where(gr => gr.Key.Length == 1).Select(gr => gr.Key).OrderBy(k => k).ToList();
+            if (sites.Count == 0) return sites;
+            float cx = mp.Callouts.Average(c => c.Value.X), cy = mp.Callouts.Average(c => c.Value.Y);
+            var mid = groups.Where(gr => gr.Key.Length > 1)
+                .Select(gr => new { gr.Key, D = Math.Pow(gr.Average(c => c.Value.X) - cx, 2) + Math.Pow(gr.Average(c => c.Value.Y) - cy, 2) })
+                .OrderBy(m => m.D).FirstOrDefault();
+            if (mid != null && mid.D < 0.03) sites.Insert(Math.Min(1, sites.Count), mid.Key);
+            return sites;
         }
 
         /// <summary>Oyun koordinatı → en yakın bölge ("B", "Site") ya da null.</summary>
@@ -114,7 +150,7 @@ namespace ValoLive
         }
 
         /// <summary>Bu haritada atak ve defansta en çok nerede çatışıyor (öldürdüğü ve öldüğü yerler) ve spike'ı nereye kuruyor.</summary>
-        static void Position(Input x, List<PMatch> ms, Action<int, string, string, Color, bool> add)
+        static void Position(Input x, List<PMatch> ms, Adder add)
         {
             var here = ms.Where(m => string.Equals(m.MapUrl, x.MapUrl, StringComparison.OrdinalIgnoreCase)).ToList();
             if (here.Count < 2) return; // tek maç o maçın takım planıdır, alışkanlık değil
@@ -130,32 +166,38 @@ namespace ValoLive
                 var sub = top.GroupBy(r => r[1]).OrderByDescending(gr => gr.Count()).First();
                 string where = sub.Key != "" && sub.Count() * 2 >= top.Count() ? top.Key + " " + sub.Key : top.Key;
                 string sideName = side == 1 ? L.T("Atakta") : L.T("Defansta");
-                add(side == 0 ? 86 : 80, null, L.F("{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).", sideName, top.Key, spots.Count, top.Count(), where), Teal, false);
+                var f = add(side == 0 ? 86 : 80, null, L.F("{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).", sideName, top.Key, spots.Count, top.Count(), where), Teal, Kinds.Place);
+                f.Side = side; f.Zone = top.Key; f.N = top.Count(); f.Of = spots.Count;
             }
-            var plants = here.SelectMany(m => m.Plants).GroupBy(kv => kv.Key).Select(gr => new { Site = gr.Key, N = gr.Sum(kv => kv.Value) }).OrderByDescending(s => s.N).ToList();
-            int total = plants.Sum(s => s.N);
-            if (total >= 3 && plants[0].N * 100 >= total * 70)
-                add(70, null, L.F("Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).", plants[0].Site, total, plants[0].N), Orange, false);
+            var plants = Plants(here);
+            int total = plants.Sum(s => s.Value);
+            if (total >= 3 && plants[0].Value * 100 >= total * 70)
+                add(70, null, L.F("Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).", plants[0].Key, total, plants[0].Value), Orange, Kinds.Place);
         }
 
-        static void Clutch(List<PMatch> ms, Action<int, string, string, Color, bool> add)
+        /// <summary>Maçlardaki spike kurulumları bölgeye göre, çoktan aza.</summary>
+        public static List<KeyValuePair<string, int>> Plants(IEnumerable<PMatch> ms) =>
+            ms.SelectMany(m => m.Plants).GroupBy(kv => kv.Key).Select(gr => new KeyValuePair<string, int>(gr.Key, gr.Sum(kv => kv.Value)))
+              .OrderByDescending(s => s.Value).ToList();
+
+        static void Clutch(List<PMatch> ms, Adder add)
         {
             // Gerçek veride tek kalınan roundların (1vX) ~%30'u kazanılıyor: %45 üstü belirgin iyi, %10 altı belirgin kötü.
             int n = ms.Sum(m => m.ClutchN), w = ms.Sum(m => m.ClutchW);
             if (n >= 8 && w * 100 >= n * 45)
-                add(78, "CLUTCH", L.F("Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.", n, w), Green, false);
+                add(78, "CLUTCH", L.F("Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.", n, w), Green, Kinds.Danger);
             else if (n >= 10 && w * 10 <= n)
-                add(44, null, L.F("Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.", n, w), Mut, false);
+                add(44, null, L.F("Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.", n, w), Mut, Kinds.Chance);
         }
 
-        static void Duo(Input x, Action<int, string, string, Color, bool> add)
+        static void Duo(Input x, Adder add)
         {
             foreach (var d in x.Duos ?? new List<KeyValuePair<LobbyPlayer, int>>())
             {
                 if (d.Value < 2) continue;
                 var o = d.Key;
                 string who = string.IsNullOrEmpty(o.AgentId) ? (o.Name ?? "?") : x.AgentName(o.AgentId) + (o.Name != null ? " (" + o.Name + ")" : "");
-                add(64, null, L.F("{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.", who, d.Value), Blue, false);
+                add(64, null, L.F("{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.", who, d.Value), Blue, Kinds.Danger);
             }
         }
 
@@ -163,7 +205,7 @@ namespace ValoLive
         /// Şu anki oturum: aralarında 90 dakikadan az boşluk olan son maçları (gece yarısını aşsa da) ve üst üste
         /// kayıp/galibiyet. Son maçı 3 saatten eskiyse oturum yeni başlamıştır.
         /// </summary>
-        static void Session(Input x, List<PMatch> ms, Action<int, string, string, Color, bool> add)
+        static void Session(Input x, List<PMatch> ms, Adder add)
         {
             var st = (x.Starts ?? new List<long>()).OrderByDescending(s => s).ToList();
             long now = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(), gap = 90 * 60000L;
@@ -174,21 +216,11 @@ namespace ValoLive
             int losses = recent.TakeWhile(m => m.Result == "L").Count(), wins = recent.TakeWhile(m => m.Result == "W").Count();
             if (losses >= 3)
                 add(58, null, played >= 2 ? L.F("Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.", played, losses)
-                                          : L.F("Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.", losses), Pink, false);
+                                          : L.F("Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.", losses), Pink, Kinds.Chance);
             else if (wins >= 4)
-                add(54, null, L.F("Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.", wins), Green, false);
+                add(54, null, L.F("Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.", wins), Green, Kinds.Danger);
             else if (played >= 6)
-                add(40, null, L.F("Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.", played), Mut, false);
-        }
-
-        /// <summary>
-        /// Lobinin brifingi: en önemli bulgular, rakipler önde, oyuncu başına en fazla iki. Stil etiketleri satırda
-        /// zaten göründüğü için brifinge yalnızca en güçlüleri (Operator, clutch) girer.
-        /// </summary>
-        public static List<Fact> Briefing(IEnumerable<KeyValuePair<LobbyPlayer, List<Fact>>> all, int count)
-        {
-            return all.SelectMany(kv => kv.Value.Where(f => !f.Style || f.Score >= 80).Take(2).Select(f => new { f, s = f.Score + (kv.Key.Ally ? 0 : 12) }))
-                .Where(a => a.f.Score >= 50).OrderByDescending(a => a.s).Take(count).Select(a => a.f).ToList();
+                add(40, null, L.F("Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.", played), Mut, Kinds.Chance);
         }
     }
 }

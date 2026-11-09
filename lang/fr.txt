@@ -71,7 +71,6 @@ Gümüş	Argent
 Günlükler	Journaux
 Günün mağazası: {0} · yenilenmesine {1} sa {2} dk	Boutique du jour : {0} · renouvellement dans {1} h {2} min
 Gürültü filtresi	Filtre anti-bruit
-Güç dengesi (ortalama ranka göre): takımın %{0:0} · rakip %{1:0}	Rapport de force (rang moyen) : ton équipe {0:0} % · adversaires {1:0} %
 GİRİŞÇİ	ENTRY
 HARİTA	CARTE
 HARİTALAR	CARTES
@@ -534,9 +533,6 @@ Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).
 TEK AJAN	ONE-TRICK
 Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	A gagné {1} rounds sur {0} en étant le dernier en vie : quand il reste seul, entrez à plusieurs, ne le gardez pas pour la fin.
 Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	N'a gagné que {1} des {0} rounds en étant le dernier en vie : mets-lui la pression quand il est seul, il panique.
-en önemli {0} bilgi	les {0} infos clés
-gizle (B)	masquer (B)
-göster (B)	afficher (B)
 {0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0} il joue surtout {1} : {3} de ses {2} duels sur cette carte y ont eu lieu (surtout {4}).
 {0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	Duo avec {0} : dans la même équipe sur {1} de leurs derniers matchs, ils se couvrent.
 {0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	N'a pas joué {0} lors des {1} derniers matchs : pas habitué à cet agent, peut utiliser ses compétences tard ou mal.
@@ -544,3 +540,34 @@ göster (B)	afficher (B)
 Öne çıkan başka bir bilgi yok.	Rien d'autre de marquant.
 İLK KEZ?	1RE FOIS ?
 İSTİHBARAT	RENSEIGNEMENTS
+FIRSAT	OPPORTUNITÉ
+Harita	Carte
+Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.	Très fort pour son niveau de compte (Niv {0}, {1}) : peut-être un nouveau compte, ne le sous-estime pas.
+KONUM	POSITION
+Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.	La plupart des plants sont sur {0} : en défense, mets-y un joueur de plus.
+Kısayollar: 1-4 sekmeler · B brifing · Esc oyuncu sekmesini kapat · tekerlek kaydırır	Raccourcis : 1-4 onglets · B briefing · Échap ferme l'onglet joueur · molette pour défiler
+Profil	Profil
+RAKİP	ENNEMI
+RAKİPLER NEREDE OYNUYOR	OÙ JOUENT LES ENNEMIS
+Rakip	Ennemi
+Rakipler	Ennemis
+SON MAÇLAR	DERNIERS MATCHS
+Spike kurulumları	Plants du spike
+SİLAH GÖRÜNÜMLERİ	SKINS D'ARMES
+TAKIM	ÉQUIPE
+TAKIMIN AJAN HAVUZU	POOL D'AGENTS DE TON ÉQUIPE
+TAM ANALİZ · ISI HARİTASI	ANALYSE COMPLÈTE · CARTE DE CHALEUR
+TANIDIKLAR	JOUEURS CONNUS
+TEHLİKE	DANGER
+Takımın	Ton équipe
+daha önce aynı maçtaydınız	vous avez déjà joué un match ensemble
+dikkat et	attention
+kilitledi	verrouillé
+nerede oynuyorlar	où ils jouent
+rakiplerin bu haritadaki son maçları	les derniers matchs des ennemis sur cette carte
+seçti	choisi
+son maçlarında oynadıkları	agents de leurs derniers matchs
+takım arkadaşların	tes coéquipiers
+tümü Harita sekmesinde	tout dans l'onglet Carte
+{0} çatışmanın {1} tanesi	{1} combats sur {0}
+üstüne git	fonce

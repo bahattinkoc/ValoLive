@@ -71,7 +71,6 @@ Gümüş	銀牌
 Günlükler	記錄檔
 Günün mağazası: {0} · yenilenmesine {1} sa {2} dk	今日商店：{0} · {1} 小時 {2} 分後刷新
 Gürültü filtresi	降噪
-Güç dengesi (ortalama ranka göre): takımın %{0:0} · rakip %{1:0}	實力對比 (依平均牌位)：我方 {0:0}% · 敵方 {1:0}%
 GİRİŞÇİ	突破手
 HARİTA	地圖
 HARİTALAR	各地圖
@@ -534,9 +533,6 @@ Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).
 TEK AJAN	專精
 Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	剩自己一人時贏了 {0} 回合中的 {1} 回合：他落單時一起進攻，別留他到最後。
 Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	剩自己一人的 {0} 回合只贏了 {1} 場：他落單時施壓，他會慌。
-en önemli {0} bilgi	重點資訊 {0} 則
-gizle (B)	隱藏 (B)
-göster (B)	顯示 (B)
 {0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0}通常在 {1} 一帶：這張地圖的 {2} 次交火中有 {3} 次在那裡（最常在 {4}）。
 {0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	與{0}雙排：最近對戰中有 {1} 場同隊伍，會互相掩護。
 {0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	最近 {1} 場沒用過{0}：不熟悉這個特務，技能可能放太晚或用錯。
@@ -544,3 +540,34 @@ göster (B)	顯示 (B)
 Öne çıkan başka bir bilgi yok.	沒有其他值得注意的資訊。
 İLK KEZ?	第一次？
 İSTİHBARAT	情報
+FIRSAT	機會
+Harita	地圖
+Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.	以帳號等級來說過強（等級 {0}，{1}）：可能是新帳號，別輕敵。
+KONUM	位置
+Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.	多數下包在 {0}：防守時那裡多放一人。
+Kısayollar: 1-4 sekmeler · B brifing · Esc oyuncu sekmesini kapat · tekerlek kaydırır	快捷鍵：1-4 分頁 · B 簡報 · Esc 關閉玩家分頁 · 滾輪捲動
+Profil	個人檔案
+RAKİP	敵方
+RAKİPLER NEREDE OYNUYOR	敵方在哪裡打
+Rakip	敵方
+Rakipler	敵方
+SON MAÇLAR	最近對戰
+Spike kurulumları	下包紀錄
+SİLAH GÖRÜNÜMLERİ	武器造型
+TAKIM	隊伍
+TAKIMIN AJAN HAVUZU	我方特務池
+TAM ANALİZ · ISI HARİTASI	完整分析 · 熱度圖
+TANIDIKLAR	認識的玩家
+TEHLİKE	危險
+Takımın	我方
+daha önce aynı maçtaydınız	你們曾在同一場對戰
+dikkat et	注意
+kilitledi	已鎖定
+nerede oynuyorlar	在哪裡打
+rakiplerin bu haritadaki son maçları	敵方在此地圖的最近對戰
+seçti	已選
+son maçlarında oynadıkları	最近對戰使用的特務
+takım arkadaşların	你的隊友
+tümü Harita sekmesinde	全部在地圖分頁
+{0} çatışmanın {1} tanesi	{0} 次交火中 {1} 次
+üstüne git	把握機會

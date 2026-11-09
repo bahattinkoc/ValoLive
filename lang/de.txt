@@ -71,7 +71,6 @@ Gümüş	Silber
 Günlükler	Protokolle
 Günün mağazası: {0} · yenilenmesine {1} sa {2} dk	Heutiger Shop: {0} · erneuert sich in {1} Std. {2} Min.
 Gürültü filtresi	Rauschfilter
-Güç dengesi (ortalama ranka göre): takımın %{0:0} · rakip %{1:0}	Kräfteverhältnis (nach Durchschnittsrang): dein Team {0:0} % · Gegner {1:0} %
 GİRİŞÇİ	ENTRY
 HARİTA	MAP
 HARİTALAR	MAPS
@@ -534,9 +533,6 @@ Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).
 TEK AJAN	ONE-TRICK
 Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	Hat als Letzter am Leben {1} von {0} Runden gewonnen: ist er der Letzte, geht gemeinsam rein, lasst ihn nicht bis zum Schluss.
 Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	Hat als Letzter am Leben nur {1} von {0} Runden gewonnen: allein unter Druck setzen, er gerät in Panik.
-en önemli {0} bilgi	Top {0} Fakten
-gizle (B)	ausblenden (B)
-göster (B)	anzeigen (B)
 {0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0} spielt meist {1}: {3} seiner {2} Duelle auf dieser Map waren dort (am häufigsten {4}).
 {0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	Duo mit {0}: in {1} ihrer letzten Matches in derselben Party, sie decken sich gegenseitig.
 {0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	Hat {0} in den letzten {1} Matches nicht gespielt: nicht an diesen Agenten gewöhnt, setzt Fähigkeiten evtl. spät oder falsch ein.
@@ -544,3 +540,34 @@ göster (B)	anzeigen (B)
 Öne çıkan başka bir bilgi yok.	Sonst fällt nichts auf.
 İLK KEZ?	ERSTES MAL?
 İSTİHBARAT	INTEL
+FIRSAT	CHANCE
+Harita	Karte
+Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.	Sehr stark für das Kontolevel (Lv {0}, {1}): evtl. neuer Account, nicht unterschätzen.
+KONUM	POSITION
+Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.	Die meisten Plants auf {0}: in der Verteidigung dort einen Spieler mehr hinstellen.
+Kısayollar: 1-4 sekmeler · B brifing · Esc oyuncu sekmesini kapat · tekerlek kaydırır	Kürzel: 1-4 Tabs · B Briefing · Esc Spieler-Tab schließen · Mausrad scrollt
+Profil	Profil
+RAKİP	GEGNER
+RAKİPLER NEREDE OYNUYOR	WO DIE GEGNER SPIELEN
+Rakip	Gegner
+Rakipler	Gegner
+SON MAÇLAR	LETZTE MATCHES
+Spike kurulumları	Spike-Plants
+SİLAH GÖRÜNÜMLERİ	WAFFENSKINS
+TAKIM	TEAM
+TAKIMIN AJAN HAVUZU	AGENTENPOOL DEINES TEAMS
+TAM ANALİZ · ISI HARİTASI	VOLLANALYSE · HEATMAP
+TANIDIKLAR	BEKANNTE SPIELER
+TEHLİKE	GEFAHR
+Takımın	Dein Team
+daha önce aynı maçtaydınız	ihr wart schon zusammen in einem Match
+dikkat et	aufpassen
+kilitledi	gelockt
+nerede oynuyorlar	wo sie spielen
+rakiplerin bu haritadaki son maçları	die letzten Matches der Gegner auf dieser Karte
+seçti	gewählt
+son maçlarında oynadıkları	Agenten in ihren letzten Matches
+takım arkadaşların	deine Mitspieler
+tümü Harita sekmesinde	alles im Karten-Tab
+{0} çatışmanın {1} tanesi	{1} von {0} Kämpfen
+üstüne git	nutze es aus

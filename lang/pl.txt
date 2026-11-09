@@ -71,7 +71,6 @@ Gümüş	Srebro
 Günlükler	Logi
 Günün mağazası: {0} · yenilenmesine {1} sa {2} dk	Dzisiejszy sklep: {0} · odświeży się za {1} godz. {2} min
 Gürültü filtresi	Filtr szumów
-Güç dengesi (ortalama ranka göre): takımın %{0:0} · rakip %{1:0}	Układ sił (wg średniej rangi): twoja drużyna {0:0}% · przeciwnik {1:0}%
 GİRİŞÇİ	ENTRY
 HARİTA	MAPA
 HARİTALAR	MAPY
@@ -534,9 +533,6 @@ Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).
 TEK AJAN	ONE-TRICK
 Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	Wygrał {1} z {0} rund jako ostatni żywy: gdy zostanie sam, wchodźcie razem, nie zostawiajcie go na koniec.
 Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	Wygrał tylko {1} z {0} rund jako ostatni żywy: naciskaj go, gdy jest sam, panikuje.
-en önemli {0} bilgi	{0} najważniejszych informacji
-gizle (B)	ukryj (B)
-göster (B)	pokaż (B)
 {0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0} gra głównie na {1}: {3} z {2} jego starć na tej mapie było tam (najczęściej {4}).
 {0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	Duo z {0}: w tej samej drużynie w {1} ostatnich meczach, osłaniają się nawzajem.
 {0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	Nie grał {0} w ostatnich {1} meczach: nie zna tego agenta, może używać umiejętności późno lub źle.
@@ -544,3 +540,34 @@ göster (B)	pokaż (B)
 Öne çıkan başka bir bilgi yok.	Nic więcej się nie wyróżnia.
 İLK KEZ?	PIERWSZY RAZ?
 İSTİHBARAT	WYWIAD
+FIRSAT	OKAZJA
+Harita	Mapa
+Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.	Bardzo mocny jak na poziom konta (Poz. {0}, {1}): może to nowe konto, nie lekceważ.
+KONUM	POZYCJA
+Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.	Większość podłożeń na {0}: w obronie postaw tam dodatkowego gracza.
+Kısayollar: 1-4 sekmeler · B brifing · Esc oyuncu sekmesini kapat · tekerlek kaydırır	Skróty: 1-4 karty · B odprawa · Esc zamyka kartę gracza · kółko przewija
+Profil	Profil
+RAKİP	WRÓG
+RAKİPLER NEREDE OYNUYOR	GDZIE GRAJĄ PRZECIWNICY
+Rakip	Wróg
+Rakipler	Przeciwnicy
+SON MAÇLAR	OSTATNIE MECZE
+Spike kurulumları	Podłożenia spike'a
+SİLAH GÖRÜNÜMLERİ	SKINY BRONI
+TAKIM	DRUŻYNA
+TAKIMIN AJAN HAVUZU	PULA AGENTÓW TWOJEJ DRUŻYNY
+TAM ANALİZ · ISI HARİTASI	PEŁNA ANALIZA · MAPA CIEPŁA
+TANIDIKLAR	ZNANI GRACZE
+TEHLİKE	ZAGROŻENIE
+Takımın	Twoja drużyna
+daha önce aynı maçtaydınız	byliście już razem w meczu
+dikkat et	uważaj
+kilitledi	zablokował
+nerede oynuyorlar	gdzie grają
+rakiplerin bu haritadaki son maçları	ostatnie mecze przeciwników na tej mapie
+seçti	wybrał
+son maçlarında oynadıkları	agenci z ich ostatnich meczów
+takım arkadaşların	twoi koledzy z drużyny
+tümü Harita sekmesinde	wszystko w karcie Mapa
+{0} çatışmanın {1} tanesi	{1} z {0} walk
+üstüne git	wykorzystaj to

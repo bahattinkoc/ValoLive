@@ -107,6 +107,7 @@ Enter: kaydet     Esc: vazgeç\n\n
 Etiketler
 F9  Sniper koruması      F10  Yayın özeti
 F9: sniper perdesi · F10: yayın özeti
+FIRSAT
 Fişek
 Fişek (hepsi)
 GERİ DÖNÜŞ
@@ -126,16 +127,17 @@ Günün mağazası: {0} · yenilenmesine {1} sa {2} dk
 Gürültü filtresi
 Güvercin
 Güvercin postası (ve sürprizi)
-Güç dengesi (ortalama ranka göre): takımın %{0:0} · rakip %{1:0}
 GİRİŞÇİ
 HARİTA
 HARİTALAR
 Hafif yakalama (yalnızca oyun penceresi)
+Harita
 Havai fişek hedefi
 Hazırlanıyor…
 HenrikDev anahtarı yok
 Hepsi
 Hesabı bağlı platforma yayın kapalı: chat okunmaz
+Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.
 Hiçbir platform açık değil: yalnızca test kaydı alınabilir.
 Hızlı
 KAFACI
@@ -144,6 +146,7 @@ KAZANMA
 KENDİ ANALİZİM
 KENDİ KENDİNE
 KISA BİR ARA
+KONUM
 KUSURSUZ
 Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.
 Kalite
@@ -171,6 +174,8 @@ Komutlar:
 Komutları okumak için ana pencerede Kick ya da YouTube hesabını bağla.
 Kopyala
 Kurduğu bölge: 
+Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.
+Kısayollar: 1-4 sekmeler · B brifing · Esc oyuncu sekmesini kapat · tekerlek kaydırır
 LOBİDE
 MAÇ
 MAÇ ODASI
@@ -207,19 +212,24 @@ PAT!
 PLATFORMLAR
 POP!
 Platin
+Profil
 Profili aç ↗
 RADAR ROZETİ
+RAKİP
 RAKİP HAFIZASI
 RAKİP MAÇ SAYISINDA
 RAKİP UÇURUMDAN
 RAKİPLER
+RAKİPLER NEREDE OYNUYOR
 RANK ATLADIN!
 ROUND AÇILIŞI
 ROZETİ MİNİMAP'E HİZALA\n\n
 Radyant
 Rakibin
+Rakip
 Rakip hafızası: harita üstünde ikonlar (deneysel)
 Rakip hafızası: minimap'te son görülen yerler (deneysel)
+Rakipler
 Rakipler maç başlayınca görünür (ajan seçiminde Riot göstermez).
 Rakipte {0} kişilik parti
 Rank bilgisi henüz yok.
@@ -248,6 +258,7 @@ SNIPER KORUMASI
 SNIPER KORUMASI AKTİF
 SON MAÇ
 SON MAÇ · maç bekleniyor
+SON MAÇLAR
 SON RAKİP
 SPIKE'IN DİBİNDE
 Sabah
@@ -268,6 +279,7 @@ Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.
 Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.
 Sonra tarayıcıda Google onayı açılır. "Google bu uygulamayı doğrulamadı" derse Gelişmiş → ValoLive'a git: uygulama senin kendi projen.
 Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.
+Spike kurulumları
 Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).
 Sprey
 Stil çıkarmak için yeterli round yok (en az 40).
@@ -276,15 +288,22 @@ Sv
 Süre: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n
 SİLAH
+SİLAH GÖRÜNÜMLERİ
 Sık ilk ölüyor (roundların %{0}). Erken peek atar; sabırlı bekle, sana gelir.
 Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz
 Sıraya girilince sayaç başlar
+TAKIM
 TAKIMIN
+TAKIMIN AJAN HAVUZU
+TAM ANALİZ · ISI HARİTASI
 TANIDIK
+TANIDIKLAR
+TEHLİKE
 TEK AJAN
 TEST KAYDEDİLİYOR…
 TEST KAYDI (15 sn)
 Takım arkadaşın
+Takımın
 Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.
 Takımında {0} kişilik parti
 Tam ekran (her şey görünür)
@@ -372,19 +391,18 @@ bu raund kritik
 bugün
 chat bulunamadı
 chat odası bulunamadı
+daha önce aynı maçtaydınız
 defans
 defter dolduruluyor {0}/{1}
+dikkat et
 durdu
 dün
-en önemli {0} bilgi
 form
 genel kazanma ({0})
 gerçek zamanlı sunucu bilgisi yok
 geçersiz yanıt
 geçmiş alınamadı
 geçmiş yükleniyor…
-gizle (B)
-göster (B)
 harita
 hasar/round
 hazır
@@ -404,6 +422,7 @@ kazandın
 kazanma
 kendi yeteneğinle {0} kez öldün
 kendiliğinden
+kilitledi
 kimse düşmeden raund alındı
 koptu
 koptu: 
@@ -411,24 +430,30 @@ kurma {0} · imha {1}
 maç
 maçları inceleniyor…
 misafir erişimi alınamadı
+nerede oynuyorlar
 noktalar: öldürdüğü anda durduğu yer
 ort.
 oturumun 4.+ maçı ({0})
 rakip
+rakiplerin bu haritadaki son maçları
 rakipte
 rakipte tek kişi kaldı
 rank yükleniyor…
 reddetti
+seçti
+son maçlarında oynadıkları
 son {0} maç · {1} round incelendi
 son {0} rekabetçi maç
 spike patlamasında {0} kez öldün
 standart
 sunucu sessiz kaldı
+takım arkadaşların
 takım arkadaşın
 takım arkadaşın seni {0} kez vurdu
 takım arkadaşın {0} rakip ayaktayken imha etti
 takımında
 taraflar değişiyor
+tümü Harita sekmesinde
 ulti / maç
 yayın başlayınca bağlanır
 yayın bekleniyor
@@ -473,6 +498,7 @@ zirve
 {0} · o maçta {1}/{2}/{3}{4}
 {0} · {1} RR
 {0} · {1} {2} · daha önce {3} kez
+{0} çatışmanın {1} tanesi
 {0}. ROUND
 {0}: Stream URL ve Stream Key gerekli.
 {0}: internet yetişmiyor, yayın takılabilir
@@ -507,6 +533,7 @@ zirve
 öldüğün yerler
 ölümü trade edilen
 ölümün trade edildi
+üstüne git
 İLK KAN
 İLK KEZ?
 İSTİHBARAT

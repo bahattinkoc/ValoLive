@@ -71,7 +71,6 @@ Gümüş	فضي
 Günlükler	السجلات
 Günün mağazası: {0} · yenilenmesine {1} sa {2} dk	متجر اليوم: {0} · يتجدد بعد {1} س {2} د
 Gürültü filtresi	تنقية الضوضاء
-Güç dengesi (ortalama ranka göre): takımın %{0:0} · rakip %{1:0}	ميزان القوى (حسب متوسط الرتبة): فريقك {0:0}% · الخصم {1:0}%
 GİRİŞÇİ	مقتحم
 HARİTA	الخريطة
 HARİTALAR	الخرائط
@@ -534,9 +533,6 @@ Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).
 TEK AJAN	عميل واحد
 Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	فاز بـ {1} من {0} جولات حين بقي آخر حيّ: إذا بقي وحده فادخلوا معًا ولا تتركوه للنهاية.
 Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	فاز بـ {1} فقط من {0} جولات حين بقي آخر حيّ: اضغط عليه وهو وحده، يرتبك.
-en önemli {0} bilgi	أهم {0} معلومات
-gizle (B)	إخفاء (B)
-göster (B)	إظهار (B)
 {0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0} يلعب غالبًا في {1}: {3} من {2} مواجهات له على هذه الخريطة كانت هناك (أكثرها في {4}).
 {0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	ثنائي مع {0}: في نفس الفريق في {1} من مبارياتهما الأخيرة، يغطي كل منهما الآخر.
 {0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	لم يلعب {0} في آخر {1} مباريات: غير معتاد على هذا العميل، قد يستخدم قدراته متأخرًا أو بشكل خاطئ.
@@ -544,3 +540,34 @@ göster (B)	إظهار (B)
 Öne çıkan başka bir bilgi yok.	لا شيء آخر لافت.
 İLK KEZ?	أول مرة؟
 İSTİHBARAT	استخبارات
+FIRSAT	فرصة
+Harita	الخريطة
+Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.	قوي جدًا بالنسبة لمستوى الحساب (مستوى {0}، {1}): قد يكون حسابًا جديدًا، لا تستهن به.
+KONUM	الموقع
+Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.	معظم الزرع في {0}: في الدفاع ضع لاعبًا إضافيًا هناك.
+Kısayollar: 1-4 sekmeler · B brifing · Esc oyuncu sekmesini kapat · tekerlek kaydırır	اختصارات: 1-4 التبويبات · B الإحاطة · Esc إغلاق تبويب اللاعب · العجلة للتمرير
+Profil	الملف
+RAKİP	الخصم
+RAKİPLER NEREDE OYNUYOR	أين يلعب الخصوم
+Rakip	الخصم
+Rakipler	الخصوم
+SON MAÇLAR	آخر المباريات
+Spike kurulumları	زرع السبايك
+SİLAH GÖRÜNÜMLERİ	أشكال الأسلحة
+TAKIM	الفريق
+TAKIMIN AJAN HAVUZU	مجموعة عملاء فريقك
+TAM ANALİZ · ISI HARİTASI	تحليل كامل · خريطة حرارية
+TANIDIKLAR	لاعبون تعرفهم
+TEHLİKE	خطر
+Takımın	فريقك
+daha önce aynı maçtaydınız	كنتم معًا في مباراة من قبل
+dikkat et	انتبه
+kilitledi	ثبّت
+nerede oynuyorlar	أين يلعبون
+rakiplerin bu haritadaki son maçları	آخر مباريات الخصوم على هذه الخريطة
+seçti	اختار
+son maçlarında oynadıkları	العملاء في آخر مبارياته
+takım arkadaşların	زملاؤك
+tümü Harita sekmesinde	الكل في تبويب الخريطة
+{0} çatışmanın {1} tanesi	{1} من {0} اشتباك
+üstüne git	استغلها

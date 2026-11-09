@@ -71,7 +71,6 @@ Gümüş	シルバー
 Günlükler	ログ
 Günün mağazası: {0} · yenilenmesine {1} sa {2} dk	本日のストア: {0} · 更新まで {1}時間{2}分
 Gürültü filtresi	ノイズ除去
-Güç dengesi (ortalama ranka göre): takımın %{0:0} · rakip %{1:0}	戦力差 (平均ランク): 味方 {0:0}% · 敵 {1:0}%
 GİRİŞÇİ	エントリー
 HARİTA	マップ
 HARİTALAR	マップ
@@ -534,9 +533,6 @@ Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).
 TEK AJAN	専用キャラ
 Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	最後の1人になったラウンドで{0}回中{1}回勝利：1人残ったら全員で詰めよう、最後まで残さないこと。
 Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	最後の1人になった{0}ラウンドで{1}回しか勝てていない：1人のときに圧をかければ焦る。
-en önemli {0} bilgi	重要な情報 {0}件
-gizle (B)	隠す (B)
-göster (B)	表示 (B)
 {0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0}は主に{1}側でプレイ：このマップでの交戦{2}回中{3}回がそこ（最多は{4}）。
 {0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	{0}とデュオ：直近の試合のうち{1}試合で同じパーティー、互いにカバーし合う。
 {0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	直近{1}試合で{0}を使っていない：このエージェントに不慣れ、アビリティの使い方が遅れたり誤ったりしやすい。
@@ -544,3 +540,34 @@ göster (B)	表示 (B)
 Öne çıkan başka bir bilgi yok.	他に目立つ情報はありません。
 İLK KEZ?	初使用？
 İSTİHBARAT	インテル
+FIRSAT	チャンス
+Harita	マップ
+Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.	アカウントレベルの割に強すぎる（Lv {0}、{1}）：新しいアカウントかも、油断しない。
+KONUM	ポジション
+Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.	設置の多くは{0}：守りではそこに1人多く置く。
+Kısayollar: 1-4 sekmeler · B brifing · Esc oyuncu sekmesini kapat · tekerlek kaydırır	ショートカット：1-4 タブ · B ブリーフィング · Esc プレイヤータブを閉じる · ホイールでスクロール
+Profil	プロフィール
+RAKİP	敵
+RAKİPLER NEREDE OYNUYOR	敵がプレイする場所
+Rakip	敵
+Rakipler	敵チーム
+SON MAÇLAR	最近の試合
+Spike kurulumları	スパイク設置
+SİLAH GÖRÜNÜMLERİ	武器スキン
+TAKIM	チーム
+TAKIMIN AJAN HAVUZU	味方のエージェントプール
+TAM ANALİZ · ISI HARİTASI	詳細分析 · ヒートマップ
+TANIDIKLAR	知っているプレイヤー
+TEHLİKE	危険
+Takımın	味方
+daha önce aynı maçtaydınız	以前同じ試合にいた
+dikkat et	注意
+kilitledi	ロック済み
+nerede oynuyorlar	どこでプレイするか
+rakiplerin bu haritadaki son maçları	このマップでの敵の最近の試合
+seçti	選択中
+son maçlarında oynadıkları	最近の試合で使ったエージェント
+takım arkadaşların	味方のプレイヤー
+tümü Harita sekmesinde	すべてマップタブに
+{0} çatışmanın {1} tanesi	{0}回の撃ち合いのうち{1}回
+üstüne git	狙い目

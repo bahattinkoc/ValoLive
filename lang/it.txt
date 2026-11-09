@@ -71,7 +71,6 @@ Gümüş	Argento
 Günlükler	Log
 Günün mağazası: {0} · yenilenmesine {1} sa {2} dk	Negozio di oggi: {0} · si rinnova tra {1} h {2} min
 Gürültü filtresi	Filtro rumore
-Güç dengesi (ortalama ranka göre): takımın %{0:0} · rakip %{1:0}	Equilibrio (per rango medio): la tua squadra {0:0}% · avversari {1:0}%
 GİRİŞÇİ	ENTRY
 HARİTA	MAPPA
 HARİTALAR	MAPPE
@@ -534,9 +533,6 @@ Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).
 TEK AJAN	ONE-TRICK
 Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	Ha vinto {1} round su {0} da ultimo in vita: quando resta solo, entrate insieme, non lasciatelo per ultimo.
 Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	Ha vinto solo {1} dei {0} round da ultimo in vita: mettilo sotto pressione quando è solo, va nel panico.
-en önemli {0} bilgi	le {0} info principali
-gizle (B)	nascondi (B)
-göster (B)	mostra (B)
 {0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0} gioca soprattutto {1}: {3} dei suoi {2} scontri su questa mappa sono stati lì (soprattutto {4}).
 {0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	Duo con {0}: nello stesso gruppo in {1} delle ultime partite, si coprono a vicenda.
 {0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	Non ha giocato {0} nelle ultime {1} partite: non è abituato a questo agente, può usare le abilità tardi o male.
@@ -544,3 +540,34 @@ göster (B)	mostra (B)
 Öne çıkan başka bir bilgi yok.	Nient'altro di rilevante.
 İLK KEZ?	PRIMA VOLTA?
 İSTİHBARAT	INTEL
+FIRSAT	OPPORTUNITÀ
+Harita	Mappa
+Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.	Molto forte per il livello dell'account (Lv {0}, {1}): potrebbe essere un nuovo account, non sottovalutarlo.
+KONUM	POSIZIONE
+Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.	La maggior parte dei plant è su {0}: in difesa mettici un giocatore in più.
+Kısayollar: 1-4 sekmeler · B brifing · Esc oyuncu sekmesini kapat · tekerlek kaydırır	Scorciatoie: 1-4 schede · B briefing · Esc chiude la scheda giocatore · rotellina per scorrere
+Profil	Profilo
+RAKİP	NEMICO
+RAKİPLER NEREDE OYNUYOR	DOVE GIOCANO I NEMICI
+Rakip	Nemico
+Rakipler	Nemici
+SON MAÇLAR	ULTIME PARTITE
+Spike kurulumları	Plant della spike
+SİLAH GÖRÜNÜMLERİ	SKIN DELLE ARMI
+TAKIM	SQUADRA
+TAKIMIN AJAN HAVUZU	POOL DI AGENTI DELLA TUA SQUADRA
+TAM ANALİZ · ISI HARİTASI	ANALISI COMPLETA · MAPPA DI CALORE
+TANIDIKLAR	GIOCATORI NOTI
+TEHLİKE	PERICOLO
+Takımın	La tua squadra
+daha önce aynı maçtaydınız	siete già stati nella stessa partita
+dikkat et	attenzione
+kilitledi	bloccato
+nerede oynuyorlar	dove giocano
+rakiplerin bu haritadaki son maçları	le ultime partite dei nemici su questa mappa
+seçti	scelto
+son maçlarında oynadıkları	agenti delle loro ultime partite
+takım arkadaşların	i tuoi compagni
+tümü Harita sekmesinde	tutto nella scheda Mappa
+{0} çatışmanın {1} tanesi	{1} scontri su {0}
+üstüne git	approfittane
