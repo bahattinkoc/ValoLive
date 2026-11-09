@@ -533,7 +533,7 @@ Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	Menang {0} 
 Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	Di map ini biasanya menanam spike di {0} ({2} dari {1} kali tanam).
 TEK AJAN	ONE-TRICK
 Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	Menang {1} dari {0} ronde saat tersisa sendirian: kalau dia tinggal sendiri, masuk bareng, jangan sisakan dia sampai akhir.
-Tek kaldığı {0} roundun hiçbirini kazanamamış: yalnız kalınca baskı kur, panikler.	Tidak menang satu pun dari {0} ronde saat tersisa sendirian: tekan saat dia sendiri, dia panik.
+Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	Hanya menang {1} dari {0} ronde saat tersisa sendirian: tekan saat dia sendiri, dia panik.
 en önemli {0} bilgi	{0} info utama
 gizle (B)	sembunyikan (B)
 göster (B)	tampilkan (B)

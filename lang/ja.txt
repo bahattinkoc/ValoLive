@@ -533,7 +533,7 @@ Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	直近{0}�
 Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	このマップではスパイクを主に{0}に設置（{1}回中{2}回）。
 TEK AJAN	専用キャラ
 Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	最後の1人になったラウンドで{0}回中{1}回勝利：1人残ったら全員で詰めよう、最後まで残さないこと。
-Tek kaldığı {0} roundun hiçbirini kazanamamış: yalnız kalınca baskı kur, panikler.	最後の1人になった{0}ラウンドで1度も勝てていない：1人のときに圧をかければ焦る。
+Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	最後の1人になった{0}ラウンドで{1}回しか勝てていない：1人のときに圧をかければ焦る。
 en önemli {0} bilgi	重要な情報 {0}件
 gizle (B)	隠す (B)
 göster (B)	表示 (B)

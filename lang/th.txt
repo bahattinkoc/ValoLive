@@ -533,7 +533,7 @@ Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	ชนะ�
 Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	ในแมปนี้มักวางสไปค์ที่ {0} ({2} จาก {1} ครั้ง)
 TEK AJAN	เล่นตัวเดียว
 Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	ชนะ {1} จาก {0} รอบเมื่อเหลือคนสุดท้าย: ถ้าเขาเหลือคนเดียวให้บุกพร้อมกัน อย่าปล่อยไว้ท้ายสุด
-Tek kaldığı {0} roundun hiçbirini kazanamamış: yalnız kalınca baskı kur, panikler.	ไม่ชนะเลยใน {0} รอบที่เหลือคนสุดท้าย: กดดันตอนเขาอยู่คนเดียว เขาจะตื่นตระหนก
+Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	ชนะแค่ {1} จาก {0} รอบที่เหลือคนสุดท้าย: กดดันตอนเขาอยู่คนเดียว เขาจะตื่นตระหนก
 en önemli {0} bilgi	ข้อมูลสำคัญ {0} ข้อ
 gizle (B)	ซ่อน (B)
 göster (B)	แสดง (B)

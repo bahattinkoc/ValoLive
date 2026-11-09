@@ -117,7 +117,7 @@ namespace ValoLive
         static void Position(Input x, List<PMatch> ms, Action<int, string, string, Color, bool> add)
         {
             var here = ms.Where(m => string.Equals(m.MapUrl, x.MapUrl, StringComparison.OrdinalIgnoreCase)).ToList();
-            if (here.Count == 0) return;
+            if (here.Count < 2) return; // tek maç o maçın takım planıdır, alışkanlık değil
             var mp = MapOf(x.MapUrl);
             if (mp == null || mp.Callouts.Count == 0) return;
             foreach (int side in new[] { 1, 0 })
@@ -140,11 +140,12 @@ namespace ValoLive
 
         static void Clutch(List<PMatch> ms, Action<int, string, string, Color, bool> add)
         {
+            // Gerçek veride tek kalınan roundların (1vX) ~%30'u kazanılıyor: %45 üstü belirgin iyi, %10 altı belirgin kötü.
             int n = ms.Sum(m => m.ClutchN), w = ms.Sum(m => m.ClutchW);
-            if (n >= 4 && w * 2 >= n)
+            if (n >= 8 && w * 100 >= n * 45)
                 add(78, "CLUTCH", L.F("Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.", n, w), Green, false);
-            else if (n >= 5 && w == 0)
-                add(44, null, L.F("Tek kaldığı {0} roundun hiçbirini kazanamamış: yalnız kalınca baskı kur, panikler.", n), Mut, false);
+            else if (n >= 10 && w * 10 <= n)
+                add(44, null, L.F("Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.", n, w), Mut, false);
         }
 
         static void Duo(Input x, Action<int, string, string, Color, bool> add)
@@ -158,11 +159,17 @@ namespace ValoLive
             }
         }
 
-        /// <summary>Bugünkü oturum: kaç maç oynadığı ve üst üste kayıp/galibiyet.</summary>
+        /// <summary>
+        /// Şu anki oturum: aralarında 90 dakikadan az boşluk olan son maçları (gece yarısını aşsa da) ve üst üste
+        /// kayıp/galibiyet. Son maçı 3 saatten eskiyse oturum yeni başlamıştır.
+        /// </summary>
         static void Session(Input x, List<PMatch> ms, Action<int, string, string, Color, bool> add)
         {
-            var today = DateTime.Now.Date;
-            int played = (x.Starts ?? new List<long>()).Count(s => DateTimeOffset.FromUnixTimeMilliseconds(s).LocalDateTime.Date == today);
+            var st = (x.Starts ?? new List<long>()).OrderByDescending(s => s).ToList();
+            long now = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(), gap = 90 * 60000L;
+            int played = 0;
+            if (st.Count > 0 && now - st[0] < 3 * 3600000L)
+                for (played = 1; played < st.Count && st[played - 1] - st[played] < gap; played++) { }
             var recent = ms.OrderByDescending(m => m.Start).ToList();
             int losses = recent.TakeWhile(m => m.Result == "L").Count(), wins = recent.TakeWhile(m => m.Result == "W").Count();
             if (losses >= 3)

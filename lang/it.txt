@@ -533,7 +533,7 @@ Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	Ha vinto le
 Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	Su questa mappa di solito pianta la spike su {0} ({2} piazzamenti su {1}).
 TEK AJAN	ONE-TRICK
 Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	Ha vinto {1} round su {0} da ultimo in vita: quando resta solo, entrate insieme, non lasciatelo per ultimo.
-Tek kaldığı {0} roundun hiçbirini kazanamamış: yalnız kalınca baskı kur, panikler.	Non ha vinto nessuno dei {0} round da ultimo in vita: mettilo sotto pressione quando è solo, va nel panico.
+Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	Ha vinto solo {1} dei {0} round da ultimo in vita: mettilo sotto pressione quando è solo, va nel panico.
 en önemli {0} bilgi	le {0} info principali
 gizle (B)	nascondi (B)
 göster (B)	mostra (B)

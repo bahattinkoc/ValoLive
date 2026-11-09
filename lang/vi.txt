@@ -533,7 +533,7 @@ Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	Thắng li�
 Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	Trên bản đồ này thường cắm spike ở {0} ({2} trên {1} lần cắm).
 TEK AJAN	CHUYÊN 1 TƯỚNG
 Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	Thắng {1} trên {0} vòng khi còn sống cuối cùng: khi họ còn một mình, vào cùng nhau, đừng để họ đến cuối.
-Tek kaldığı {0} roundun hiçbirini kazanamamış: yalnız kalınca baskı kur, panikler.	Không thắng vòng nào trong {0} vòng khi còn sống cuối cùng: ép khi họ một mình, họ sẽ hoảng.
+Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	Chỉ thắng {1} trong {0} vòng khi còn sống cuối cùng: ép khi họ một mình, họ sẽ hoảng.
 en önemli {0} bilgi	{0} thông tin chính
 gizle (B)	ẩn (B)
 göster (B)	hiện (B)

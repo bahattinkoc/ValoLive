@@ -533,7 +533,7 @@ Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	Hat die let
 Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	Pflanzt den Spike auf dieser Map meist auf {0} ({2} von {1} Plants).
 TEK AJAN	ONE-TRICK
 Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	Hat als Letzter am Leben {1} von {0} Runden gewonnen: ist er der Letzte, geht gemeinsam rein, lasst ihn nicht bis zum Schluss.
-Tek kaldığı {0} roundun hiçbirini kazanamamış: yalnız kalınca baskı kur, panikler.	Hat als Letzter am Leben keine von {0} Runden gewonnen: allein unter Druck setzen, er gerät in Panik.
+Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	Hat als Letzter am Leben nur {1} von {0} Runden gewonnen: allein unter Druck setzen, er gerät in Panik.
 en önemli {0} bilgi	Top {0} Fakten
 gizle (B)	ausblenden (B)
 göster (B)	anzeigen (B)

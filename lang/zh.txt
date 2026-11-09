@@ -533,7 +533,7 @@ Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	最近連�
 Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	在這張地圖通常把炸彈裝在 {0}（{1} 次中有 {2} 次）。
 TEK AJAN	專精
 Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	剩自己一人時贏了 {0} 回合中的 {1} 回合：他落單時一起進攻，別留他到最後。
-Tek kaldığı {0} roundun hiçbirini kazanamamış: yalnız kalınca baskı kur, panikler.	剩自己一人的 {0} 回合一場都沒贏：他落單時施壓，他會慌。
+Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	剩自己一人的 {0} 回合只贏了 {1} 場：他落單時施壓，他會慌。
 en önemli {0} bilgi	重點資訊 {0} 則
 gizle (B)	隱藏 (B)
 göster (B)	顯示 (B)

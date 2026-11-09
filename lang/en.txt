@@ -533,7 +533,7 @@ Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	Won the las
 Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	Usually plants the spike on {0} on this map ({2} of {1} plants).
 TEK AJAN	ONE-TRICK
 Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	Won {1} of {0} rounds when last alive: when they're the last one, go in together, don't leave them for the end.
-Tek kaldığı {0} roundun hiçbirini kazanamamış: yalnız kalınca baskı kur, panikler.	Won none of {0} rounds when last alive: pressure them when alone, they panic.
+Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	Won only {1} of {0} rounds when last alive: pressure them when alone, they panic.
 en önemli {0} bilgi	top {0} facts
 gizle (B)	hide (B)
 göster (B)	show (B)

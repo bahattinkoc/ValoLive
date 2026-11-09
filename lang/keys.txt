@@ -290,7 +290,7 @@ Takımında {0} kişilik parti
 Tam ekran (her şey görünür)
 Tarayıcıda Google onayı bekleniyor…
 Tarayıcıda Kick onayı bekleniyor…
-Tek kaldığı {0} roundun hiçbirini kazanamamış: yalnız kalınca baskı kur, panikler.
+Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.
 Ters ekran
 Ters ekran (3 sn)
 Ters ekran, büyüteç ve sesli okuma yalnızca abone ve modlara
