@@ -18,6 +18,7 @@
 720p60 · 4500 kbps (zayıf internet)
 936p60 · 6000 kbps (keskin + hafif)
 <h2>ValoLive Kick'e bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>
+<h2>ValoLive YouTube'a bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>
 ACE GELİYOR
 AGRESİF
 AJAN SEÇİMİ
@@ -44,16 +45,18 @@ Bağlan
 Bağlanılamadı
 Bağlanıyor…
 Bağlı değil
+Bağlı hesaplara şimdi uygula
 Başlık
 Başlık uygulanamadı: 
-Başlık, kategori ve etiketler Kick'e uygulandı ✓
-Başlık, kategori ve küçük resim YouTube Studio'da ayarlanır. Chat katmanları ve chat eğlencesi Kick chat'ini okur.
+Başlık ve etiketler bağlı her hesaba gider, yayın başlarken kendiliğinden. Kategori yalnızca Kick'te; YouTube'da yayın Oyun kategorisinde açılır, küçük resim Studio'dan. Chat kutusu ve chat eğlencesi iki chat'i birlikte okur.
 Belirgin bir alışkanlık yok — dengeli oynuyor.
 Bildirimler (tanıdık oyuncu, smurf, parti)
 Bronz
+Bu Google hesabında YouTube kanalı yok.
 Bu haritada bomba kurmamış.
 Bu pencere yayına ve kayda girmez · adını gizleyenler aranmaz
 Bu platforma yayınla
+Bu projede "YouTube Data API v3"ü etkinleştir (Enable):
 Bu raund ace gelir mi? 🎯
 Bugün henüz rekabetçi maç yok.
 Bugün rank atlıyoruz 💪
@@ -73,6 +76,8 @@ Chat komutları ({0})
 Chat'e gidecek duyuru: 
 Chat'e yaz, balık ol!
 Client ID ve Client Secret gerekli.
+Client ID ve Client Secret'ı yeniden girmek için Evet'e bas.
+Clients → Create client → Application type: Desktop app → Create. Client ID ve Client secret'ı buraya yapıştır:
 DEVRE ARASI
 DOST ATEŞİ
 Defans
@@ -100,6 +105,8 @@ GERİ DÖNÜŞ
 GG, TEŞEKKÜRLER!
 Gece
 Gizli oyuncu
+Google Auth Platform → Get started: uygulama adı ValoLive, kitle External. Sonra Audience sayfasında "Publish app" de (yoksa giriş 7 günde bir düşer).
+Google Cloud'da yeni bir proje oluştur (ad: ValoLive):
 GÖRÜNTÜ
 GÖRÜNTÜ & SES
 GÜNÜN MAÇI
@@ -118,6 +125,7 @@ Havai fişek hedefi
 Hazırlanıyor…
 HenrikDev anahtarı yok
 Hepsi
+Hesabı bağlı platforma yayın kapalı: chat okunmaz
 Hiçbir platform açık değil: yalnızca test kaydı alınabilir.
 Hızlı
 KAFACI
@@ -143,14 +151,14 @@ Kick onayı 3 dakika içinde gelmedi.
 Kick onayı reddedildi: 
 Kick oturumu sona ermiş, yeniden bağlan.
 Kick ve YouTube için hafif Valorant yayın aracı · RTX NVENC
+Kick ya da YouTube hesabını bağla
 Kick'e bağlanılamadı:\n
-Kick'e yayın kapalı: chat okunmaz
-Kick'e şimdi uygula
 Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):
 Kick'ten URL ve key al
 Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:
+Kick: başlık, kategori ve etiketler uygulandı ✓
 Komutlar: 
-Komutları okumak için ana penceredeki Kick hesabını bağla.
+Komutları okumak için ana pencerede Kick ya da YouTube hesabını bağla.
 Kopyala
 Kurduğu bölge: 
 LOBİDE
@@ -243,6 +251,7 @@ Sniper koruması (F9)
 Son maç bilgisi yok.
 Son maç: {0} {1} · {2} · {3} · {4} · HS {5}
 Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.
+Sonra tarayıcıda Google onayı açılır. "Google bu uygulamayı doğrulamadı" derse Gelişmiş → ValoLive'a git: uygulama senin kendi projen.
 Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.
 Sprey
 Stil çıkarmak için yeterli round yok (en az 40).
@@ -261,6 +270,7 @@ TEST KAYDI (15 sn)
 Takım arkadaşın
 Takımında {0} kişilik parti
 Tam ekran (her şey görünür)
+Tarayıcıda Google onayı bekleniyor…
 Tarayıcıda Kick onayı bekleniyor…
 Ters ekran
 Ters ekran (3 sn)
@@ -300,7 +310,6 @@ Yayın Paneli
 Yayın anları: clutch, ilk kan, seri, ninja defuse, komik ölümler
 Yayın açık. Kapatılsın mı?
 Yayın açıkken radar, chat kutusu, maç sonu kartı, yayın anları ve chat komutları değiştirilemez; yayın bitince uygulanır.
-Yayın bilgisi uygulanamadı:\n
 Yayın bu ayar kapalıyken başladı: açmak için yayını yeniden başlat.
 Yayında chat kutusu
 Yayını başlat
@@ -309,6 +318,19 @@ Yayının gideceği platformu seç: Platformlar sekmesinde en az birini aç.
 Yeni balık
 Yeni uygulama oluştur. Ad: ValoLive · Redirect URL olarak şunu yaz:
 YouTube Studio'dan yayın anahtarı al
+YouTube başlığı uygulanamadı: 
+YouTube hesabı
+YouTube hesabı bağlı değil.
+YouTube hesabını bağla
+YouTube onayı 3 dakika içinde gelmedi.
+YouTube onayı reddedildi: 
+YouTube oturumu sona ermiş, yeniden bağlan.
+YouTube yayını 5 dakikada açılmadı
+YouTube yayını bulunamadı.
+YouTube'a bağlanılamadı:\n
+YouTube, başlığı değiştirmek ve chat'e bot cevabı yazmak için Google Cloud'da kendi uygulamanı ister.\nBir kerelik, 5 dakikalık bir iş:
+YouTube: başlık ve etiketler uygulandı ✓
+YouTube: şu an açık ya da planlanmış yayın yok; başlık yayın başlayınca uygulanır.
 Yumurta
 Yücelik
 ZAFER
@@ -324,6 +346,7 @@ bir raundda 5 öldürme
 bu pencere yayına girmez
 bu raund kritik
 bugün
+chat bulunamadı
 chat odası bulunamadı
 defans
 defter dolduruluyor {0}/{1}
@@ -381,6 +404,7 @@ takımında
 taraflar değişiyor
 ulti / maç
 yayın başlayınca bağlanır
+yayın bekleniyor
 yeniden bağlanıyor ({0})
 yok
 zirve
@@ -433,7 +457,7 @@ zirve
 Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.
 Ölümsüzlük
-Önce Kick hesabını bağla (Yayın Bilgisi → Bağlan).
+Önce Kick ya da YouTube hesabını bağla (Platformlar → Bağlan).
 Önizlemede bekleme süresi yok. Kapalı eğlenceler burada da çalışmaz. Sesli okuma bilgisayarının hoparlöründen çıkar.
 Önizlemede her eğlenceyi kendin dene (yayın gerekmez). Ters ekran ve büyüteç yayın başlarken eklenir: yayın açıkken değiştirilemez.
 Ördek yarışı

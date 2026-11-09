@@ -38,7 +38,6 @@ Bağlanıyor…	Đang kết nối…
 Bağlı değil	Chưa kết nối
 Başlık	Tiêu đề
 Başlık uygulanamadı: 	Không áp dụng được tiêu đề: 
-Başlık, kategori ve etiketler Kick'e uygulandı ✓	Đã áp dụng tiêu đề, danh mục và thẻ lên Kick ✓
 Belirgin bir alışkanlık yok — dengeli oynuyor.	Không có thói quen rõ rệt — chơi cân bằng.
 Bildirimler (tanıdık oyuncu, smurf, parti)	Thông báo (người quen, smurf, nhóm)
 Bronz	Đồng
@@ -100,7 +99,6 @@ Kick onayı 3 dakika içinde gelmedi.	Không nhận được xác nhận từ Ki
 Kick onayı reddedildi: 	Kick từ chối xác nhận: 
 Kick oturumu sona ermiş, yeniden bağlan.	Phiên Kick đã hết hạn, hãy kết nối lại.
 Kick'e bağlanılamadı:\n	Không kết nối được Kick:\n
-Kick'e şimdi uygula	Áp dụng lên Kick ngay
 Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):	Mở trang nhà phát triển của Kick (cần đăng nhập):
 Kick'ten URL ve key al	Lấy URL và key từ Kick
 Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:	Kick yêu cầu "ứng dụng nhà phát triển" riêng của bạn để đổi tiêu đề và danh mục.\nChỉ một lần, mất 2 phút:
@@ -213,7 +211,6 @@ YAYINI BİTİR	KẾT THÚC STREAM
 YENİLGİ	THẤT BẠI
 Yakalama	Ghi hình
 Yayın açık. Kapatılsın mı?	Đang stream. Đóng luôn?
-Yayın bilgisi uygulanamadı:\n	Không áp dụng được thông tin stream:\n
 Yayında chat kutusu	Khung chat trên stream
 Yayını başlat	Bắt đầu stream
 Yayını bitir	Kết thúc stream
@@ -297,7 +294,6 @@ zirve	cao nhất
 Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	Hiếm khi được trade khi chết ({0}%). Chơi một mình, xa đồng đội.
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	Đội bạn thường không trade kịp: bạn bị cô lập. Hãy chơi cùng khu vực với đồng đội.
 Ölümsüzlük	Bất Tử
-Önce Kick hesabını bağla (Yayın Bilgisi → Bağlan).	Hãy kết nối tài khoản Kick trước (Thông tin stream → Kết nối).
 Öğlen	Buổi trưa
 Ücretsiz anahtar al	Lấy khóa miễn phí
 Üstte tut	Luôn ở trên cùng
@@ -400,7 +396,6 @@ Güvercin postası (ve sürprizi)	Bồ câu đưa thư (kèm bất ngờ)
 Havai fişek hedefi	Mục tiêu pháo hoa
 Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.	Lớp phủ (radar, khung chat, khoảnh khắc) và chat vui (bóng bay, máy bay, cà chua, đua vịt…) nằm ở cửa sổ riêng.
 Kağıt uçak	Máy bay giấy
-Komutları okumak için ana penceredeki Kick hesabını bağla.	Kết nối tài khoản Kick ở cửa sổ chính để đọc lệnh.
 MESAJ TAŞIYANLAR	VẬT CHỞ TIN NHẮN
 Merhaba chat, bu bir deneme!	Chào chat, đây là thử nghiệm!
 Ortak havai fişek	Pháo hoa chung
@@ -457,12 +452,10 @@ yok	không
 POP!	BỐP!
 Ekran kartı motoru (işlemciyi boşaltır)	Bộ máy GPU (giảm tải CPU)
 BAĞLANTI	KẾT NỐI
-Başlık, kategori ve küçük resim YouTube Studio'da ayarlanır. Chat katmanları ve chat eğlencesi Kick chat'ini okur.	Tiêu đề, danh mục và ảnh thu nhỏ được đặt trong YouTube Studio. Lớp chat và trò vui chat đọc chat Kick.
 Bu platforma yayınla	Phát lên nền tảng này
 GÖRÜNTÜ & SES	HÌNH ẢNH & ÂM THANH
 Hiçbir platform açık değil: yalnızca test kaydı alınabilir.	Chưa bật nền tảng nào: chỉ có thể ghi thử.
 Kick ve YouTube için hafif Valorant yayın aracı · RTX NVENC	Công cụ stream Valorant nhẹ cho Kick và YouTube · RTX NVENC
-Kick'e yayın kapalı: chat okunmaz	Đã tắt phát lên Kick: không đọc chat
 PLATFORMLAR	NỀN TẢNG
 RAKİP HAFIZASI	GHI NHỚ ĐỊCH
 Stream URL / Stream Key'i platformun panelinden yeniden kopyala	Sao chép lại Stream URL / Stream Key từ bảng điều khiển của nền tảng
@@ -479,3 +472,34 @@ yeniden bağlanıyor ({0})	đang kết nối lại ({0})
 {0}: Stream URL ve Stream Key gerekli.	{0}: cần Stream URL và Stream Key.
 ● canlı	● trực tiếp
 ● {0} BAĞLANTIYI REDDETTİ	● {0} TỪ CHỐI KẾT NỐI
+<h2>ValoLive YouTube'a bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>	<h2>ValoLive đã kết nối với YouTube ✓</h2><p>Bạn có thể đóng tab này.</p>
+Bağlı hesaplara şimdi uygula	Áp dụng ngay cho các tài khoản đã kết nối
+Başlık ve etiketler bağlı her hesaba gider, yayın başlarken kendiliğinden. Kategori yalnızca Kick'te; YouTube'da yayın Oyun kategorisinde açılır, küçük resim Studio'dan. Chat kutusu ve chat eğlencesi iki chat'i birlikte okur.	Tiêu đề và thẻ được gửi tới mọi tài khoản đã kết nối, tự động khi bắt đầu phát. Danh mục chỉ dành cho Kick; trên YouTube buổi phát mở trong danh mục Trò chơi, ảnh thu nhỏ đặt trong Studio. Khung chat và chat vui đọc cả hai kênh chat cùng lúc.
+Bu Google hesabında YouTube kanalı yok.	Tài khoản Google này không có kênh YouTube.
+Bu projede "YouTube Data API v3"ü etkinleştir (Enable):	Bật "YouTube Data API v3" trong dự án này (Enable):
+Client ID ve Client Secret'ı yeniden girmek için Evet'e bas.	Nhấn Có để nhập lại Client ID và Client Secret.
+Clients → Create client → Application type: Desktop app → Create. Client ID ve Client secret'ı buraya yapıştır:	Clients → Create client → Application type: Desktop app → Create. Dán Client ID và Client secret vào đây:
+Google Auth Platform → Get started: uygulama adı ValoLive, kitle External. Sonra Audience sayfasında "Publish app" de (yoksa giriş 7 günde bir düşer).	Google Auth Platform → Get started: tên ứng dụng ValoLive, đối tượng External. Sau đó ở trang Audience nhấn "Publish app" (nếu không, đăng nhập sẽ mất sau mỗi 7 ngày).
+Google Cloud'da yeni bir proje oluştur (ad: ValoLive):	Tạo dự án mới trong Google Cloud (tên: ValoLive):
+Hesabı bağlı platforma yayın kapalı: chat okunmaz	Đang tắt phát lên các nền tảng có tài khoản đã kết nối: không đọc chat
+Kick ya da YouTube hesabını bağla	Kết nối tài khoản Kick hoặc YouTube
+Kick: başlık, kategori ve etiketler uygulandı ✓	Kick: đã áp dụng tiêu đề, danh mục và thẻ ✓
+Komutları okumak için ana pencerede Kick ya da YouTube hesabını bağla.	Kết nối tài khoản Kick hoặc YouTube ở cửa sổ chính để đọc lệnh.
+Sonra tarayıcıda Google onayı açılır. "Google bu uygulamayı doğrulamadı" derse Gelişmiş → ValoLive'a git: uygulama senin kendi projen.	Sau đó trang cấp quyền của Google mở trong trình duyệt. Nếu thấy "Google chưa xác minh ứng dụng này", nhấn Nâng cao → Truy cập ValoLive: ứng dụng là dự án của chính bạn.
+Tarayıcıda Google onayı bekleniyor…	Đang chờ Google cấp quyền trong trình duyệt…
+YouTube hesabı	Tài khoản YouTube
+YouTube hesabı bağlı değil.	Chưa kết nối tài khoản YouTube.
+YouTube hesabını bağla	Kết nối tài khoản YouTube
+YouTube onayı 3 dakika içinde gelmedi.	Không nhận được quyền YouTube trong 3 phút.
+YouTube oturumu sona ermiş, yeniden bağlan.	Phiên YouTube đã hết hạn, hãy kết nối lại.
+YouTube yayını 5 dakikada açılmadı	Buổi phát YouTube không mở trong 5 phút
+YouTube yayını bulunamadı.	Không tìm thấy buổi phát YouTube.
+YouTube'a bağlanılamadı:\n	Không kết nối được với YouTube:\n
+YouTube, başlığı değiştirmek ve chat'e bot cevabı yazmak için Google Cloud'da kendi uygulamanı ister.\nBir kerelik, 5 dakikalık bir iş:	YouTube cần ứng dụng riêng của bạn trên Google Cloud để đổi tiêu đề và gửi trả lời của bot vào chat.\nChỉ một lần, mất 5 phút:
+YouTube: başlık ve etiketler uygulandı ✓	YouTube: đã áp dụng tiêu đề và thẻ ✓
+YouTube: şu an açık ya da planlanmış yayın yok; başlık yayın başlayınca uygulanır.	YouTube: hiện không có buổi phát đang diễn ra hoặc đã lên lịch; tiêu đề sẽ được áp dụng khi bắt đầu phát.
+chat bulunamadı	không tìm thấy chat
+yayın bekleniyor	đang chờ buổi phát
+Önce Kick ya da YouTube hesabını bağla (Platformlar → Bağlan).	Hãy kết nối tài khoản Kick hoặc YouTube trước (Nền tảng → Kết nối).
+YouTube başlığı uygulanamadı: 	Không áp dụng được tiêu đề YouTube: 
+YouTube onayı reddedildi: 	YouTube từ chối cấp quyền: 

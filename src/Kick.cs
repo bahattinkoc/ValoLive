@@ -4,9 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Net.Sockets;
 using System.Net.WebSockets;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -45,24 +43,15 @@ namespace ValoLive
         public Channel Login()
         {
             string clientId = Settings.Unprotect(cfg.KickClientIdEnc);
-            string verifier = B64(RandomBytes(48));
-            string challenge;
-            using (var sha = SHA256.Create()) challenge = B64(sha.ComputeHash(Encoding.ASCII.GetBytes(verifier)));
-            string state = B64(RandomBytes(16));
-
-            // localhost tarayıcıda ::1 ya da 127.0.0.1'e gidebilir: ikisini de dinle.
-            var listeners = new List<TcpListener>();
-            foreach (var ip in new[] { IPAddress.Loopback, IPAddress.IPv6Loopback })
-            {
-                try { var l = new TcpListener(ip, RedirectPort); l.Start(); listeners.Add(l); } catch { }
-            }
-            if (listeners.Count == 0) throw new Exception(L.F("{0} portu kullanımda; ValoLive'ı yeniden başlatıp tekrar dene.", RedirectPort));
+            string verifier = OAuth.Verifier(), state = OAuth.State();
+            var listeners = OAuth.Listen(RedirectPort, true);
             try
             {
                 Process.Start($"{Id}/oauth/authorize?response_type=code&client_id={Uri.EscapeDataString(clientId)}" +
                               $"&redirect_uri={Uri.EscapeDataString(RedirectUri)}&scope={Uri.EscapeDataString(Scopes)}" +
-                              $"&code_challenge={challenge}&code_challenge_method=S256&state={state}");
-                string code = WaitForCode(listeners, state, TimeSpan.FromMinutes(3));
+                              $"&code_challenge={OAuth.Challenge(verifier)}&code_challenge_method=S256&state={state}");
+                string code = OAuth.WaitForCode(listeners, state, TimeSpan.FromMinutes(3), L.T("<h2>ValoLive Kick'e bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>"),
+                                                L.T("Kick onayı reddedildi: "), L.T("Kick onayı 3 dakika içinde gelmedi."));
                 var tok = PostForm($"{Id}/oauth/token", new Dictionary<string, string>
                 {
                     ["grant_type"] = "authorization_code", ["code"] = code, ["client_id"] = clientId,
@@ -70,51 +59,8 @@ namespace ValoLive
                 });
                 SaveTokens(tok);
             }
-            finally { foreach (var l in listeners) try { l.Stop(); } catch { } }
+            finally { OAuth.Stop(listeners); }
             return GetChannel();
-        }
-
-        static string WaitForCode(List<TcpListener> listeners, string state, TimeSpan timeout)
-        {
-            var end = DateTime.Now + timeout;
-            while (DateTime.Now < end)
-            {
-                var l = listeners.FirstOrDefault(x => x.Pending());
-                if (l == null) { Thread.Sleep(100); continue; }
-                using (var c = l.AcceptTcpClient())
-                using (var ns = c.GetStream())
-                {
-                    ns.ReadTimeout = 5000;
-                    var buf = new byte[8192];
-                    int n = ns.Read(buf, 0, buf.Length);
-                    string req = Encoding.ASCII.GetString(buf, 0, n);
-                    string target = req.Split(' ').ElementAtOrDefault(1) ?? "";
-                    var q = ParseQuery(target);
-                    bool ok = q.TryGetValue("code", out var code) && q.TryGetValue("state", out var st) && st == state;
-                    string err = q.TryGetValue("error", out var e) ? e : null;
-                    string html = ok ? L.T("<h2>ValoLive Kick'e bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>")
-                                     : $"<h2>{L.T("Bağlanılamadı")}</h2><p>{WebUtility.HtmlEncode(err ?? L.T("geçersiz yanıt"))}</p>";
-                    var body = Encoding.UTF8.GetBytes($"<!doctype html><meta charset=utf-8><body style=\"font-family:Segoe UI;background:#0b0d12;color:#e8eaf0;padding:40px\">{html}</body>");
-                    var head = Encoding.ASCII.GetBytes($"HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8\r\nContent-Length: {body.Length}\r\nConnection: close\r\n\r\n");
-                    ns.Write(head, 0, head.Length); ns.Write(body, 0, body.Length);
-                    if (ok) return code;
-                    if (err != null) throw new Exception(L.T("Kick onayı reddedildi: ") + err);
-                }
-            }
-            throw new Exception(L.T("Kick onayı 3 dakika içinde gelmedi."));
-        }
-
-        static Dictionary<string, string> ParseQuery(string target)
-        {
-            var d = new Dictionary<string, string>();
-            int i = target.IndexOf('?');
-            if (i < 0) return d;
-            foreach (var kv in target.Substring(i + 1).Split('&'))
-            {
-                int eq = kv.IndexOf('=');
-                if (eq > 0) d[Uri.UnescapeDataString(kv.Substring(0, eq))] = Uri.UnescapeDataString(kv.Substring(eq + 1).Replace('+', ' '));
-            }
-            return d;
         }
 
         public void Logout()
@@ -249,15 +195,13 @@ namespace ValoLive
                 throw new KickError((int)r.StatusCode, $"Kick {(int)r.StatusCode}: {(msg != "" ? msg : r.StatusDescription)}");
             }
         }
-
-        static byte[] RandomBytes(int n) { var b = new byte[n]; using (var r = RandomNumberGenerator.Create()) r.GetBytes(b); return b; }
-        static string B64(byte[] b) => Convert.ToBase64String(b).TrimEnd('=').Replace('+', '-').Replace('/', '_');
     }
 
     sealed class ChatMessage
     {
         public string User, Color, Text;
         public bool Sub, Mod, Broadcaster;
+        public Platform From = Platform.Kick;   // mesajın geldiği chat (bot cevabı oraya gider)
         public DateTime At = DateTime.Now;
     }
 

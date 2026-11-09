@@ -38,7 +38,6 @@ Bağlanıyor…	接続中…
 Bağlı değil	未接続
 Başlık	タイトル
 Başlık uygulanamadı: 	タイトルを適用できませんでした: 
-Başlık, kategori ve etiketler Kick'e uygulandı ✓	タイトル・カテゴリー・タグを Kick に適用しました ✓
 Belirgin bir alışkanlık yok — dengeli oynuyor.	目立った癖なし — バランス型。
 Bildirimler (tanıdık oyuncu, smurf, parti)	通知 (知り合い、スマーフ、パーティー)
 Bronz	ブロンズ
@@ -100,7 +99,6 @@ Kick onayı 3 dakika içinde gelmedi.	3 分以内に Kick の承認がありま�
 Kick onayı reddedildi: 	Kick の承認が拒否されました: 
 Kick oturumu sona ermiş, yeniden bağlan.	Kick のセッションが切れました。再接続してください。
 Kick'e bağlanılamadı:\n	Kick に接続できませんでした:\n
-Kick'e şimdi uygula	今すぐ Kick に適用
 Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):	Kick の開発者ページを開く (ログインが必要):
 Kick'ten URL ve key al	Kick で URL とキーを取得
 Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:	タイトルとカテゴリーを変更するには、Kick で自分の「開発者アプリ」が必要です。\n最初の 1 回だけ、2 分で終わります:
@@ -213,7 +211,6 @@ YAYINI BİTİR	配信終了
 YENİLGİ	敗北
 Yakalama	キャプチャ
 Yayın açık. Kapatılsın mı?	配信中です。閉じますか？
-Yayın bilgisi uygulanamadı:\n	配信情報を適用できませんでした:\n
 Yayında chat kutusu	配信にチャット欄を表示
 Yayını başlat	配信開始
 Yayını bitir	配信終了
@@ -297,7 +294,6 @@ zirve	最高
 Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	倒れてもトレードされにくい ({0}%)。味方から離れて単独行動。
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	倒れても味方がトレードできていない: 孤立しています。味方と同じエリアでプレイしよう。
 Ölümsüzlük	イモータル
-Önce Kick hesabını bağla (Yayın Bilgisi → Bağlan).	先に Kick アカウントを接続してください (配信情報 → 接続)。
 Öğlen	昼
 Ücretsiz anahtar al	無料キーを取得
 Üstte tut	常に手前に表示
@@ -400,7 +396,6 @@ Güvercin postası (ve sürprizi)	ハト便（とおまけ）
 Havai fişek hedefi	花火の目標
 Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.	オーバーレイ（レーダー、チャット欄、配信の見せ場）とチャットで遊ぶ（風船、飛行機、トマト、アヒルレース…）は別ウィンドウ。
 Kağıt uçak	紙飛行機
-Komutları okumak için ana penceredeki Kick hesabını bağla.	コマンドを読むにはメイン画面で Kick アカウントを接続して。
 MESAJ TAŞIYANLAR	メッセージ便
 Merhaba chat, bu bir deneme!	やあチャット、これはテストだよ！
 Ortak havai fişek	みんなで花火
@@ -457,12 +452,10 @@ yok	なし
 POP!	ポンッ！
 Ekran kartı motoru (işlemciyi boşaltır)	GPUエンジン（CPUの負荷を軽減）
 BAĞLANTI	接続
-Başlık, kategori ve küçük resim YouTube Studio'da ayarlanır. Chat katmanları ve chat eğlencesi Kick chat'ini okur.	タイトル・カテゴリ・サムネイルは YouTube Studio で設定します。チャットレイヤーとチャット演出は Kick のチャットを読み取ります。
 Bu platforma yayınla	このプラットフォームに配信
 GÖRÜNTÜ & SES	映像と音声
 Hiçbir platform açık değil: yalnızca test kaydı alınabilir.	有効なプラットフォームがありません：テスト録画のみ可能です。
 Kick ve YouTube için hafif Valorant yayın aracı · RTX NVENC	Kick・YouTube 向け軽量 VALORANT 配信ツール · RTX NVENC
-Kick'e yayın kapalı: chat okunmaz	Kick への配信がオフ：チャットは読み取りません
 PLATFORMLAR	プラットフォーム
 RAKİP HAFIZASI	敵の記憶
 Stream URL / Stream Key'i platformun panelinden yeniden kopyala	プラットフォームのダッシュボードからストリーム URL / キーをコピーし直してください
@@ -479,3 +472,34 @@ yeniden bağlanıyor ({0})	再接続中 ({0})
 {0}: Stream URL ve Stream Key gerekli.	{0}：ストリーム URL とストリームキーが必要です。
 ● canlı	● 配信中
 ● {0} BAĞLANTIYI REDDETTİ	● {0} が接続を拒否しました
+<h2>ValoLive YouTube'a bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>	<h2>ValoLive が YouTube に接続されました ✓</h2><p>このタブは閉じて構いません。</p>
+Bağlı hesaplara şimdi uygula	接続中のアカウントに今すぐ適用
+Başlık ve etiketler bağlı her hesaba gider, yayın başlarken kendiliğinden. Kategori yalnızca Kick'te; YouTube'da yayın Oyun kategorisinde açılır, küçük resim Studio'dan. Chat kutusu ve chat eğlencesi iki chat'i birlikte okur.	タイトルとタグは接続中のすべてのアカウントに、配信開始時に自動で反映されます。カテゴリは Kick のみ。YouTube ではゲームカテゴリで配信され、サムネイルは Studio で設定します。チャット欄とチャット演出は両方のチャットをまとめて読みます。
+Bu Google hesabında YouTube kanalı yok.	この Google アカウントには YouTube チャンネルがありません。
+Bu projede "YouTube Data API v3"ü etkinleştir (Enable):	このプロジェクトで「YouTube Data API v3」を有効にする (Enable):
+Client ID ve Client Secret'ı yeniden girmek için Evet'e bas.	Client ID と Client Secret を入力し直すには「はい」を押してください。
+Clients → Create client → Application type: Desktop app → Create. Client ID ve Client secret'ı buraya yapıştır:	Clients → Create client → Application type: Desktop app → Create。Client ID と Client secret をここに貼り付け:
+Google Auth Platform → Get started: uygulama adı ValoLive, kitle External. Sonra Audience sayfasında "Publish app" de (yoksa giriş 7 günde bir düşer).	Google Auth Platform → Get started: アプリ名 ValoLive、対象 External。次に Audience ページで「Publish app」を押す（しないと 7 日ごとにログインが切れます）。
+Google Cloud'da yeni bir proje oluştur (ad: ValoLive):	Google Cloud で新しいプロジェクトを作成 (名前: ValoLive):
+Hesabı bağlı platforma yayın kapalı: chat okunmaz	アカウント接続済みのプラットフォームへの配信がオフ: チャットは読まれません
+Kick ya da YouTube hesabını bağla	Kick または YouTube アカウントを接続してください
+Kick: başlık, kategori ve etiketler uygulandı ✓	Kick: タイトル・カテゴリ・タグを適用しました ✓
+Komutları okumak için ana pencerede Kick ya da YouTube hesabını bağla.	コマンドを読むには、メインウィンドウで Kick または YouTube アカウントを接続してください。
+Sonra tarayıcıda Google onayı açılır. "Google bu uygulamayı doğrulamadı" derse Gelişmiş → ValoLive'a git: uygulama senin kendi projen.	その後ブラウザで Google の同意画面が開きます。「このアプリは Google で確認されていません」と出たら、詳細 → ValoLive（安全ではないページ）に移動: アプリはあなた自身のプロジェクトです。
+Tarayıcıda Google onayı bekleniyor…	ブラウザで Google の同意を待っています…
+YouTube hesabı	YouTube アカウント
+YouTube hesabı bağlı değil.	YouTube アカウントが接続されていません。
+YouTube hesabını bağla	YouTube アカウントを接続してください
+YouTube onayı 3 dakika içinde gelmedi.	YouTube の同意が 3 分以内に届きませんでした。
+YouTube oturumu sona ermiş, yeniden bağlan.	YouTube のセッションが切れました。もう一度接続してください。
+YouTube yayını 5 dakikada açılmadı	YouTube の配信が 5 分以内に始まりませんでした
+YouTube yayını bulunamadı.	YouTube の配信が見つかりません。
+YouTube'a bağlanılamadı:\n	YouTube に接続できませんでした:\n
+YouTube, başlığı değiştirmek ve chat'e bot cevabı yazmak için Google Cloud'da kendi uygulamanı ister.\nBir kerelik, 5 dakikalık bir iş:	YouTube でタイトル変更やチャットへの Bot 返信を行うには、Google Cloud に自分のアプリが必要です。\n一度だけ、5 分の作業です:
+YouTube: başlık ve etiketler uygulandı ✓	YouTube: タイトルとタグを適用しました ✓
+YouTube: şu an açık ya da planlanmış yayın yok; başlık yayın başlayınca uygulanır.	YouTube: 現在、配信中または予約済みの配信がありません。配信開始時にタイトルが適用されます。
+chat bulunamadı	チャットが見つかりません
+yayın bekleniyor	配信を待っています
+Önce Kick ya da YouTube hesabını bağla (Platformlar → Bağlan).	まず Kick または YouTube アカウントを接続してください (プラットフォーム → 接続)。
+YouTube başlığı uygulanamadı: 	YouTube のタイトルを適用できませんでした: 
+YouTube onayı reddedildi: 	YouTube の同意が拒否されました: 

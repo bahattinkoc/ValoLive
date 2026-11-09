@@ -38,7 +38,6 @@ Bağlanıyor…	連線中…
 Bağlı değil	未連接
 Başlık	標題
 Başlık uygulanamadı: 	無法套用標題： 
-Başlık, kategori ve etiketler Kick'e uygulandı ✓	已將標題、分類與標籤套用到 Kick ✓
 Belirgin bir alışkanlık yok — dengeli oynuyor.	沒有明顯習慣 — 打法平衡。
 Bildirimler (tanıdık oyuncu, smurf, parti)	通知 (熟人、小號、組隊)
 Bronz	銅牌
@@ -100,7 +99,6 @@ Kick onayı 3 dakika içinde gelmedi.	3 分鐘內未收到 Kick 授權。
 Kick onayı reddedildi: 	Kick 授權被拒絕： 
 Kick oturumu sona ermiş, yeniden bağlan.	Kick 登入已過期，請重新連接。
 Kick'e bağlanılamadı:\n	無法連接 Kick：\n
-Kick'e şimdi uygula	立即套用到 Kick
 Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):	開啟 Kick 開發者頁面 (需先登入)：
 Kick'ten URL ve key al	從 Kick 取得 URL 與金鑰
 Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:	Kick 需要你自己的「開發者應用程式」才能修改標題與分類。\n只需一次，約 2 分鐘：
@@ -213,7 +211,6 @@ YAYINI BİTİR	結束直播
 YENİLGİ	敗北
 Yakalama	擷取
 Yayın açık. Kapatılsın mı?	直播進行中。確定要關閉嗎？
-Yayın bilgisi uygulanamadı:\n	無法套用直播資訊：\n
 Yayında chat kutusu	直播中顯示聊天框
 Yayını başlat	開始直播
 Yayını bitir	結束直播
@@ -297,7 +294,6 @@ zirve	最高
 Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	陣亡時很少被補槍 ({0}%)。單獨行動，遠離隊友。
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	你陣亡時隊友常常補不到槍：你太孤立了。和隊友在同一區域行動。
 Ölümsüzlük	神話
-Önce Kick hesabını bağla (Yayın Bilgisi → Bağlan).	請先連接 Kick 帳號 (直播資訊 → 連接)。
 Öğlen	下午
 Ücretsiz anahtar al	取得免費金鑰
 Üstte tut	保持在最上層
@@ -400,7 +396,6 @@ Güvercin postası (ve sürprizi)	飞鸽传书（附赠惊喜）
 Havai fişek hedefi	烟花目标
 Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.	叠加层（雷达、聊天框、直播精彩时刻）和聊天互动（气球、飞机、番茄、鸭子赛跑…）在单独窗口。
 Kağıt uçak	纸飞机
-Komutları okumak için ana penceredeki Kick hesabını bağla.	请在主窗口连接 Kick 账号以读取指令。
 MESAJ TAŞIYANLAR	传信道具
 Merhaba chat, bu bir deneme!	大家好，这是一个测试！
 Ortak havai fişek	集体放烟花
@@ -457,12 +452,10 @@ yok	无
 POP!	啵！
 Ekran kartı motoru (işlemciyi boşaltır)	显卡引擎（释放 CPU）
 BAĞLANTI	連線
-Başlık, kategori ve küçük resim YouTube Studio'da ayarlanır. Chat katmanları ve chat eğlencesi Kick chat'ini okur.	標題、分類與縮圖請在 YouTube Studio 設定。聊天圖層與聊天互動讀取的是 Kick 聊天室。
 Bu platforma yayınla	直播到此平台
 GÖRÜNTÜ & SES	畫面與音訊
 Hiçbir platform açık değil: yalnızca test kaydı alınabilir.	沒有啟用任何平台：只能進行測試錄影。
 Kick ve YouTube için hafif Valorant yayın aracı · RTX NVENC	Kick 與 YouTube 專用輕量 VALORANT 直播工具 · RTX NVENC
-Kick'e yayın kapalı: chat okunmaz	Kick 直播已關閉：不讀取聊天室
 PLATFORMLAR	平台
 RAKİP HAFIZASI	敵人記憶
 Stream URL / Stream Key'i platformun panelinden yeniden kopyala	請從平台後台重新複製串流網址 / 串流金鑰
@@ -479,3 +472,34 @@ yeniden bağlanıyor ({0})	重新連線中 ({0})
 {0}: Stream URL ve Stream Key gerekli.	{0}：需要串流網址與串流金鑰。
 ● canlı	● 直播中
 ● {0} BAĞLANTIYI REDDETTİ	● {0} 拒絕了連線
+<h2>ValoLive YouTube'a bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>	<h2>ValoLive 已連接到 YouTube ✓</h2><p>可以關閉此分頁。</p>
+Bağlı hesaplara şimdi uygula	立即套用到已連接的帳號
+Başlık ve etiketler bağlı her hesaba gider, yayın başlarken kendiliğinden. Kategori yalnızca Kick'te; YouTube'da yayın Oyun kategorisinde açılır, küçük resim Studio'dan. Chat kutusu ve chat eğlencesi iki chat'i birlikte okur.	標題和標籤會在開播時自動傳送到每個已連接的帳號。分類僅適用於 Kick；在 YouTube 上直播使用遊戲分類，縮圖在 Studio 中設定。聊天框和聊天互動會同時讀取兩個聊天室。
+Bu Google hesabında YouTube kanalı yok.	此 Google 帳號沒有 YouTube 頻道。
+Bu projede "YouTube Data API v3"ü etkinleştir (Enable):	在此專案中啟用 "YouTube Data API v3"（Enable）：
+Client ID ve Client Secret'ı yeniden girmek için Evet'e bas.	按「是」重新輸入 Client ID 和 Client Secret。
+Clients → Create client → Application type: Desktop app → Create. Client ID ve Client secret'ı buraya yapıştır:	Clients → Create client → Application type: Desktop app → Create。將 Client ID 和 Client secret 貼到這裡：
+Google Auth Platform → Get started: uygulama adı ValoLive, kitle External. Sonra Audience sayfasında "Publish app" de (yoksa giriş 7 günde bir düşer).	Google Auth Platform → Get started：應用程式名稱 ValoLive，目標對象 External。接著在 Audience 頁面點選 "Publish app"（否則每 7 天登入會失效）。
+Google Cloud'da yeni bir proje oluştur (ad: ValoLive):	在 Google Cloud 中建立新專案（名稱：ValoLive）：
+Hesabı bağlı platforma yayın kapalı: chat okunmaz	已連接帳號的平台未開啟直播：不讀取聊天
+Kick ya da YouTube hesabını bağla	請連接 Kick 或 YouTube 帳號
+Kick: başlık, kategori ve etiketler uygulandı ✓	Kick：已套用標題、分類和標籤 ✓
+Komutları okumak için ana pencerede Kick ya da YouTube hesabını bağla.	請在主視窗連接 Kick 或 YouTube 帳號以讀取指令。
+Sonra tarayıcıda Google onayı açılır. "Google bu uygulamayı doğrulamadı" derse Gelişmiş → ValoLive'a git: uygulama senin kendi projen.	之後瀏覽器會開啟 Google 授權頁。若顯示「Google 尚未驗證這個應用程式」，請點選進階 → 前往 ValoLive：這是你自己的專案。
+Tarayıcıda Google onayı bekleniyor…	正在等待瀏覽器中的 Google 授權…
+YouTube hesabı	YouTube 帳號
+YouTube hesabı bağlı değil.	YouTube 帳號未連接。
+YouTube hesabını bağla	請連接 YouTube 帳號
+YouTube onayı 3 dakika içinde gelmedi.	3 分鐘內未收到 YouTube 授權。
+YouTube oturumu sona ermiş, yeniden bağlan.	YouTube 工作階段已過期，請重新連接。
+YouTube yayını 5 dakikada açılmadı	YouTube 直播 5 分鐘內未開啟
+YouTube yayını bulunamadı.	找不到 YouTube 直播。
+YouTube'a bağlanılamadı:\n	無法連線到 YouTube：\n
+YouTube, başlığı değiştirmek ve chat'e bot cevabı yazmak için Google Cloud'da kendi uygulamanı ister.\nBir kerelik, 5 dakikalık bir iş:	YouTube 需要你在 Google Cloud 中有自己的應用程式，才能修改標題並在聊天室發送機器人回覆。\n一次性設定，約 5 分鐘：
+YouTube: başlık ve etiketler uygulandı ✓	YouTube：已套用標題和標籤 ✓
+YouTube: şu an açık ya da planlanmış yayın yok; başlık yayın başlayınca uygulanır.	YouTube：目前沒有進行中或已排定的直播；開播時會套用標題。
+chat bulunamadı	找不到聊天室
+yayın bekleniyor	等待直播
+Önce Kick ya da YouTube hesabını bağla (Platformlar → Bağlan).	請先連接 Kick 或 YouTube 帳號（平台 → 連接）。
+YouTube başlığı uygulanamadı: 	無法套用 YouTube 標題： 
+YouTube onayı reddedildi: 	YouTube 授權遭拒： 

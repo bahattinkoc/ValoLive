@@ -303,7 +303,7 @@ namespace ValoLive
             chkFun.Enabled = !streaming || host.FunRunning;
             foreach (var kv in funToggles) kv.Value.Enabled = cfg.Fun && (!streaming || !FunChat.Defs.First(d => d.Id == kv.Key).Graph);
             chkSubs.Enabled = cmbCooldown.Enabled = cmbGoal.Enabled = cmbRain.Enabled = txtBlock.Enabled = cfg.Fun;
-            if (cfg.KickSlug == "") { lblFunHint.Text = L.T("Komutları okumak için ana penceredeki Kick hesabını bağla."); lblFunHint.ForeColor = Theme.Red; }
+            if (!host.HasChatAccount) { lblFunHint.Text = L.T("Komutları okumak için ana pencerede Kick ya da YouTube hesabını bağla."); lblFunHint.ForeColor = Theme.Red; }
             else if (streaming && !host.FunRunning) { lblFunHint.Text = L.T("Yayın bu ayar kapalıyken başladı: açmak için yayını yeniden başlat."); lblFunHint.ForeColor = Theme.Red; }
             else { lblFunHint.Text = L.T("İzleyiciler chat'e komut yazar, ekranda canlanır. Kanal puanı gerekmez; her izleyici için bekleme süresi var."); lblFunHint.ForeColor = Theme.Mut; }
         }

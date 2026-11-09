@@ -93,6 +93,12 @@ namespace ValoLive
         Button btnKick;
         KickApi kick;
         KickChat kickChat;
+        Label lblYt; Button btnYt;
+        YouTubeApi yt;
+        YouTubeChat ytChat;
+        string ytChatState = ""; Color ytChatStateColor = Theme.Mut;
+        volatile YouTubeApi.Broadcast ytLive;   // chat'i okunan YouTube yayını (bot cevapları onun chat'ine)
+        System.Threading.CancellationTokenSource ytInfo;   // yayın başında YouTube başlığını bekleyen iş
         RadarWidget radar;
         ChatLayer chatLayer;
         MomentWatch moments;
@@ -133,6 +139,7 @@ namespace ValoLive
             try { Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath); } catch { }
             HandleCreated += (s, e) => Theme.DarkTitle(this);
             kick = new KickApi(cfg);
+            yt = new YouTubeApi(cfg);
             BuildUi();
             BuildTray();
             foreach (var l in AllControls(this).OfType<Label>()) l.UseMnemonic = false; // "&" kısayol harfi sanılmasın
@@ -167,7 +174,7 @@ namespace ValoLive
                    tMemory = L.T("Rakip hafızası: minimap'te son görülen yerler (deneysel)"),
                    tMemoryMap = L.T("Rakip hafızası: harita üstünde ikonlar (deneysel)"), tDest = L.T("Bu platforma yayınla");
             using (var cap = new Font(L.SansBold, 8.25f))
-                LabelW = Math.Max(104, new[] { "Stream URL", "Stream Key", L.T("Kick hesabı"), L.T("Başlık"), L.T("Kategori"), L.T("Etiketler"), "Riot ID", "HenrikDev key",
+                LabelW = Math.Max(104, new[] { "Stream URL", "Stream Key", L.T("Kick hesabı"), L.T("YouTube hesabı"), L.T("Başlık"), L.T("Kategori"), L.T("Etiketler"), "Riot ID", "HenrikDev key",
                     L.T("Kalite"), L.T("Yakalama"), L.T("Uygulama"), L.T("Mikrofon"), L.T("Oyun sesi") }
                     .Max(s => TextRenderer.MeasureText(Theme.Upper(s), cap).Width) + 12);
             int toggleW = new[] { tAutoLobby, tAlerts, tWgc, tGpu, tDenoise, tMemory, tMemoryMap, tDest }.Max(s => VToggle.WidthFor(s, Font));
@@ -220,19 +227,24 @@ namespace ValoLive
             }
             Controls.Add(new Panel { BackColor = Card, Location = new Point(20, top + 42), Size = new Size(FormW - 40, 1) });
 
-            // ---- PLATFORMLAR: solda Kick (yayın bilgisiyle), sağda YouTube ----
+            // ---- PLATFORMLAR: üstte iki platform yan yana (yayın anahtarı + hesap), altta ortak yayın bilgisi ----
             host = pages[0];
             cx = 20;
             int y = 4;
             AddDest(Platform.Kick, tDest, ref y);
-            y = Section(L.T("YAYIN BİLGİSİ"), y + 8);
-            Caption(L.T("Kick hesabı"), y);
-            int kickW = Math.Max(Theme.ButtonWidth(L.T("Bağlan"), 25, 92), Theme.ButtonWidth(L.T("Çıkış"), 25, 92));
-            lblKick = new FitLabel { Text = L.T("Bağlı değil"), ForeColor = Mut, Location = new Point(FX, y + 3), Size = new Size(FW - kickW - 8, 20) };
-            btnKick = new VButton { Text = L.T("Bağlan"), Bounds = new Rectangle(FX + FW - kickW, y - 1, kickW, 25), BackColor = Field, ForeColor = Txt, FlatStyle = FlatStyle.Flat, Cursor = Cursors.Hand };
-            btnKick.FlatAppearance.BorderSize = 0;
+            AccountRow(L.T("Kick hesabı"), ref y, out lblKick, out btnKick);
             btnKick.Click += (s, e) => KickConnectClicked();
-            host.Controls.AddRange(new Control[] { lblKick, btnKick }); y += 34;
+            int leftBottom = y;
+
+            cx = ColW + 60;
+            y = 4;
+            AddDest(Platform.YouTube, tDest, ref y);
+            AccountRow(L.T("YouTube hesabı"), ref y, out lblYt, out btnYt);
+            btnYt.Click += (s, e) => YouTubeConnectClicked();
+
+            int infoTop = Math.Max(leftBottom, y) + 8;
+            cx = 20;
+            y = Section(L.T("YAYIN BİLGİSİ"), infoTop);
             txtTitle = AddText(L.T("Başlık"), ref y, false);
             txtTitle.MaxLength = 140;
             Caption(L.T("Kategori"), y);
@@ -241,23 +253,21 @@ namespace ValoLive
             cmbCategory.TextUpdate += (s, e) => SearchCategories();
             host.Controls.Add(cmbCategory); y += 34;
             txtTags = AddText(L.T("Etiketler"), ref y, false);
-            var applyNow = new LinkLabel { Text = L.T("Kick'e şimdi uygula"), AutoSize = true, LinkColor = Red, ActiveLinkColor = Red, Location = new Point(FX, y - 2) };
+            var applyNow = new LinkLabel { Text = L.T("Bağlı hesaplara şimdi uygula"), AutoSize = true, LinkColor = Red, ActiveLinkColor = Red, Location = new Point(FX, y - 2) };
             applyNow.LinkClicked += (s, e) => ApplyStreamInfo(true);
             host.Controls.Add(applyNow);
             y += 22;
-            int leftBottom = y;
+            leftBottom = y;
 
             cx = ColW + 60;
-            y = 4;
-            AddDest(Platform.YouTube, tDest, ref y);
-            var ytNote = new Label { Text = L.T("Başlık, kategori ve küçük resim YouTube Studio'da ayarlanır. Chat katmanları ve chat eğlencesi Kick chat'ini okur."),
-                ForeColor = Mut, AutoSize = true, MaximumSize = new Size(ColW, 0), Location = new Point(cx, y) };
-            host.Controls.Add(ytNote);
-            y += ytNote.GetPreferredSize(new Size(ColW, 0)).Height + 4;
-            y = Section(L.T("BAĞLANTI"), y + 8);
+            y = Section(L.T("BAĞLANTI"), infoTop);
             lblUpload = new Label { ForeColor = Mut, AutoSize = true, MaximumSize = new Size(ColW, 0), Location = new Point(cx, y - 4) };
             host.Controls.Add(lblUpload);
             y += 44;
+            var infoNote = new Label { Text = L.T("Başlık ve etiketler bağlı her hesaba gider, yayın başlarken kendiliğinden. Kategori yalnızca Kick'te; YouTube'da yayın Oyun kategorisinde açılır, küçük resim Studio'dan. Chat kutusu ve chat eğlencesi iki chat'i birlikte okur."),
+                ForeColor = Mut, AutoSize = true, MaximumSize = new Size(ColW, 0), Location = new Point(cx, y) };
+            host.Controls.Add(infoNote);
+            y += infoNote.GetPreferredSize(new Size(ColW, 0)).Height + 4;
             AddDivider(Math.Max(leftBottom, y));
             pages[0].Height = Math.Max(leftBottom, y);
 
@@ -414,6 +424,17 @@ namespace ValoLive
             host.Controls.Add(get); y += 22;
             d.On.CheckedChanged += (s, e) => { SaveSettings(); UpdateUpload(); chips?.Invalidate(); StreamPanel.Sync(); };
             dests.Add(d);
+        }
+
+        /// <summary>Hesap satırı: bağlantı durumu ve Bağlan/Çıkış düğmesi.</summary>
+        void AccountRow(string caption, ref int y, out Label status, out Button button)
+        {
+            Caption(caption, y);
+            int w = Math.Max(Theme.ButtonWidth(L.T("Bağlan"), 25, 92), Theme.ButtonWidth(L.T("Çıkış"), 25, 92));
+            status = new FitLabel { Text = L.T("Bağlı değil"), ForeColor = Mut, Location = new Point(FX, y + 3), Size = new Size(FW - w - 8, 20) };
+            button = new VButton { Text = L.T("Bağlan"), Bounds = new Rectangle(FX + FW - w, y - 1, w, 25), BackColor = Field, ForeColor = Txt, FlatStyle = FlatStyle.Flat, Cursor = Cursors.Hand };
+            button.FlatAppearance.BorderSize = 0;
+            host.Controls.AddRange(new Control[] { status, button }); y += 34;
         }
 
         /// <summary>Sayfanın iki sütunu arasındaki ince çizgi.</summary>
@@ -678,6 +699,7 @@ namespace ValoLive
             chkMemory.Checked = cfg.EnemyMemory;
             chkMemoryMap.Checked = cfg.EnemyMemoryMap;
             UpdateKickStatus();
+            UpdateYouTubeStatus();
             UpdateUpload();
         }
 
@@ -714,8 +736,13 @@ namespace ValoLive
         internal bool Streaming => mode != Mode.Idle;
         internal bool FunRunning => funChat != null;
 
-        /// <summary>Kick'e yayın açık mı (chat katmanları ve yayın bilgisi yalnızca Kick'te).</summary>
-        bool KickOn => dests.First(d => d.P == Platform.Kick).On.Checked;
+        /// <summary>Platforma yayın açık mı (o platformun chat'i ve yayın bilgisi yalnızca o zaman).</summary>
+        bool DestOn(Platform p) => dests.First(d => d.P == p).On.Checked;
+        bool KickOn => DestOn(Platform.Kick);
+        bool YouTubeOn => DestOn(Platform.YouTube);
+
+        /// <summary>Chat'i okunabilecek bir hesap var mı (Kick kanalı ya da bağlı YouTube hesabı).</summary>
+        internal bool HasChatAccount => cfg.KickSlug != "" || yt.Connected;
 
         /// <summary>Panelde bir katman ayarı değişti: kaydet ve hemen uygulananları uygula.</summary>
         internal void LayerSettingsChanged()
@@ -729,13 +756,23 @@ namespace ValoLive
         internal KeyValuePair<string, Color> ChatHint()
         {
             if (!cfg.ChatBox && !cfg.ChatBot && !cfg.Fun) return new KeyValuePair<string, Color>("", Mut);
-            if (cfg.KickSlug == "") return new KeyValuePair<string, Color>(L.T("Kick hesabını bağla"), Mut);
-            if (!KickOn) return new KeyValuePair<string, Color>(L.T("Kick'e yayın kapalı: chat okunmaz"), Mut);
-            if (kickChat == null) return new KeyValuePair<string, Color>(L.T("yayın başlayınca bağlanır"), Mut);
-            return new KeyValuePair<string, Color>("chat: " + chatState, chatStateColor);
+            if (!HasChatAccount) return new KeyValuePair<string, Color>(L.T("Kick ya da YouTube hesabını bağla"), Mut);
+            if (kickChat == null && ytChat == null)
+            {
+                var will = new List<string>();
+                if (cfg.KickSlug != "" && KickOn) will.Add("Kick");
+                if (yt.Connected && YouTubeOn) will.Add("YouTube");
+                return will.Count == 0 ? new KeyValuePair<string, Color>(L.T("Hesabı bağlı platforma yayın kapalı: chat okunmaz"), Mut)
+                                       : new KeyValuePair<string, Color>(L.T("yayın başlayınca bağlanır") + ": " + string.Join(" + ", will), Mut);
+            }
+            var parts = new List<string>();
+            bool all = true;
+            if (kickChat != null) { parts.Add("Kick " + chatState); all &= chatStateColor == Green; }
+            if (ytChat != null) { parts.Add("YouTube " + ytChatState); all &= ytChatStateColor == Green; }
+            return new KeyValuePair<string, Color>("chat: " + string.Join(" · ", parts), all ? Green : Mut);
         }
 
-        // ---------- Kick hesabı: başlık, kategori, etiketler ----------
+        // ---------- Hesaplar: başlık, kategori, etiketler ----------
 
         void UpdateKickStatus()
         {
@@ -754,7 +791,7 @@ namespace ValoLive
                 UpdateKickStatus();
                 return;
             }
-            if (!kick.HasApp && !KickAppDialog.Ask(this, cfg)) return;
+            if (!kick.HasApp && !AppDialog.AskKick(this, cfg)) return;
             btnKick.Enabled = false;
             lblKick.Text = L.T("Tarayıcıda Kick onayı bekleniyor…"); lblKick.ForeColor = Mut;
             Task.Run(() => kick.Login()).ContinueWith(t => BeginInvoke((Action)(() =>
@@ -778,6 +815,38 @@ namespace ValoLive
                 if (txtTags.Text.Trim() == "") txtTags.Text = string.Join(", ", ch.Tags);
                 SaveSettings();
                 UpdateKickStatus();
+            })));
+        }
+
+        void UpdateYouTubeStatus()
+        {
+            bool on = yt.Connected;
+            lblYt.Text = on ? "✓ " + (cfg.YtChannel != "" ? cfg.YtChannel : L.T("bağlı")) : L.T("Bağlı değil");
+            lblYt.ForeColor = on ? Green : Mut;
+            btnYt.Text = on ? L.T("Çıkış") : L.T("Bağlan");
+            StreamPanel.Sync();
+        }
+
+        void YouTubeConnectClicked()
+        {
+            if (yt.Connected)
+            {
+                yt.Logout();
+                UpdateYouTubeStatus();
+                return;
+            }
+            if (!yt.HasApp && !AppDialog.AskYouTube(this, cfg)) return;
+            btnYt.Enabled = false;
+            lblYt.Text = L.T("Tarayıcıda Google onayı bekleniyor…"); lblYt.ForeColor = Mut;
+            Task.Run(() => yt.Login()).ContinueWith(t => BeginInvoke((Action)(() =>
+            {
+                btnYt.Enabled = true;
+                UpdateYouTubeStatus();
+                if (!t.IsFaulted) return;
+                // Yanlış yapıştırılmış Client ID/Secret bir daha sorulmadan takılı kalmasın.
+                var r = MessageBox.Show(this, L.T("YouTube'a bağlanılamadı:\n") + t.Exception.GetBaseException().Message + "\n\n" +
+                                        L.T("Client ID ve Client Secret'ı yeniden girmek için Evet'e bas."), "ValoLive", MessageBoxButtons.YesNo);
+                if (r == DialogResult.Yes) { cfg.YtClientIdEnc = cfg.YtSecretEnc = ""; cfg.Save(); }
             })));
         }
 
@@ -809,50 +878,97 @@ namespace ValoLive
         static string[] ParseTags(string s) =>
             s.Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim()).Where(x => x != "").Distinct(StringComparer.OrdinalIgnoreCase).Take(10).ToArray();
 
-        /// <summary>Başlık/kategori/etiketleri Kick'e gönderir (arka planda; yayını bekletmez).</summary>
+        /// <summary>
+        /// Başlık ve etiketleri bağlı hesaplara (Kick'e kategoriyle) gönderir; arka planda, yayını bekletmez.
+        /// interactive: "şimdi uygula" (bağlı her hesap, sonuç pencerede). Değilse yayın başı: yalnızca yayın açılan
+        /// platformlar; YouTube yayını görüntü gidince açıldığından onun için ayrıca beklenir (WaitYouTubeInfo).
+        /// </summary>
         void ApplyStreamInfo(bool interactive)
         {
             SaveSettings();
-            if (!kick.Connected)
+            bool toKick = kick.Connected && (interactive || KickOn), toYt = yt.Connected && (interactive || YouTubeOn);
+            if (interactive && !toKick && !toYt)
             {
-                if (interactive) MessageBox.Show(this, L.T("Önce Kick hesabını bağla (Yayın Bilgisi → Bağlan)."), "ValoLive");
+                MessageBox.Show(this, L.T("Önce Kick ya da YouTube hesabını bağla (Platformlar → Bağlan)."), "ValoLive");
                 return;
             }
-            string title = cfg.StreamTitle, catName = cfg.CategoryName, tags = cfg.Tags;
+            string title = cfg.StreamTitle, catName = cfg.CategoryName;
+            var tags = ParseTags(cfg.Tags);
             int catId = cfg.CategoryId;
+            if (toYt && !interactive) WaitYouTubeInfo(title, tags);
+            if (!toKick && !(toYt && interactive)) return;
             Task.Run(() =>
             {
-                if (catId == 0 && catName != "")
-                {
-                    // Elle yazılmış kategori: tam eşleşeni bul (yoksa ilk sonuç).
-                    var found = kick.SearchCategories(catName);
-                    var hit = found.FirstOrDefault(c => string.Equals(c.Name, catName, StringComparison.OrdinalIgnoreCase)) ?? found.FirstOrDefault();
-                    if (hit == null) throw new Exception(L.F("\"{0}\" adında kategori bulunamadı.", catName));
-                    catId = hit.Id; catName = hit.Name;
-                }
-                kick.UpdateChannel(title, catId, ParseTags(tags));
-                return new KickApi.Category { Id = catId, Name = catName };
+                var lines = new List<string>();
+                KickApi.Category cat = null;
+                if (toKick)
+                    try { cat = ApplyKickInfo(title, catId, catName, tags); lines.Add(L.T("Kick: başlık, kategori ve etiketler uygulandı ✓")); }
+                    catch (Exception e) { lines.Add("Kick: " + e.Message); Diag.Event("KICK", "yayın bilgisi uygulanamadı: " + e.Message); }
+                if (toYt && interactive)
+                    try
+                    {
+                        var b = yt.Find("active") ?? yt.Find("upcoming");
+                        if (b == null) lines.Add(L.T("YouTube: şu an açık ya da planlanmış yayın yok; başlık yayın başlayınca uygulanır."));
+                        else { yt.SetInfo(b.Id, title, tags); lines.Add(L.T("YouTube: başlık ve etiketler uygulandı ✓")); Diag.Event("YT", "yayın bilgisi uygulandı"); }
+                    }
+                    catch (Exception e) { lines.Add("YouTube: " + e.Message); Diag.Event("YT", "yayın bilgisi uygulanamadı: " + e.Message); }
+                return (cat, lines);
             }).ContinueWith(t => BeginInvoke((Action)(() =>
             {
-                if (t.IsFaulted)
-                {
-                    string msg = t.Exception.GetBaseException().Message;
-                    Diag.Event("KICK", "yayın bilgisi uygulanamadı: " + msg);
-                    if (interactive) MessageBox.Show(this, L.T("Yayın bilgisi uygulanamadı:\n") + msg, "ValoLive");
-                    else lblStats.Text = L.T("Başlık uygulanamadı: ") + msg;
-                    UpdateKickStatus();
-                    return;
-                }
-                cfg.CategoryId = t.Result.Id; cfg.CategoryName = t.Result.Name; cfg.Save();
-                Diag.Event("KICK", $"yayın bilgisi uygulandı · kategori {t.Result.Name}");
-                if (interactive) MessageBox.Show(this, L.T("Başlık, kategori ve etiketler Kick'e uygulandı ✓"), "ValoLive");
+                var (cat, lines) = t.Result;
+                if (cat != null) { cfg.CategoryId = cat.Id; cfg.CategoryName = cat.Name; cfg.Save(); Diag.Event("KICK", $"yayın bilgisi uygulandı · kategori {cat.Name}"); }
+                if (interactive) MessageBox.Show(this, string.Join("\n", lines), "ValoLive");
+                else if (cat == null) lblStats.Text = L.T("Başlık uygulanamadı: ") + lines.FirstOrDefault();
+                UpdateKickStatus(); UpdateYouTubeStatus(); // oturum düşmüşse görünsün
             })));
+        }
+
+        KickApi.Category ApplyKickInfo(string title, int catId, string catName, string[] tags)
+        {
+            if (catId == 0 && catName != "")
+            {
+                // Elle yazılmış kategori: tam eşleşeni bul (yoksa ilk sonuç).
+                var found = kick.SearchCategories(catName);
+                var hit = found.FirstOrDefault(c => string.Equals(c.Name, catName, StringComparison.OrdinalIgnoreCase)) ?? found.FirstOrDefault();
+                if (hit == null) throw new Exception(L.F("\"{0}\" adında kategori bulunamadı.", catName));
+                catId = hit.Id; catName = hit.Name;
+            }
+            kick.UpdateChannel(title, catId, tags);
+            return new KickApi.Category { Id = catId, Name = catName };
+        }
+
+        /// <summary>YouTube yayını görüntü gitmeye başlayınca açılır (10-60 sn): 15 sn'de bir bakar, açılınca başlığı yazar (en fazla 5 dk).</summary>
+        void WaitYouTubeInfo(string title, string[] tags)
+        {
+            ytInfo?.Cancel();
+            var cts = ytInfo = new System.Threading.CancellationTokenSource();
+            Task.Run(() =>
+            {
+                var end = DateTime.Now.AddMinutes(5);
+                while (!cts.IsCancellationRequested && DateTime.Now < end)
+                {
+                    try
+                    {
+                        var b = yt.Find("active");
+                        if (b != null) { yt.SetInfo(b.Id, title, tags); Diag.Event("YT", "yayın bilgisi uygulandı"); return null; }
+                    }
+                    catch (Exception e) { Diag.Event("YT", "yayın bilgisi uygulanamadı: " + e.Message); return e.Message; }
+                    cts.Token.WaitHandle.WaitOne(15000);
+                }
+                if (cts.IsCancellationRequested) return null;
+                Diag.Event("YT", "5 dk içinde açık YouTube yayını görünmedi; başlık uygulanmadı");
+                return L.T("YouTube yayını 5 dakikada açılmadı");
+            }).ContinueWith(t =>
+            {
+                if (t.Result != null && !cts.IsCancellationRequested) BeginInvoke((Action)(() => lblStats.Text = L.T("YouTube başlığı uygulanamadı: ") + t.Result));
+            });
         }
 
         // ---------- Yayın katmanları: radar rozeti, chat kutusu ----------
 
         /// <param name="useKick">Kick chat'i okunsun mu (Kick'e yayın açık ya da test kaydı)</param>
-        List<Layer> StartLayers(bool useKick)
+        /// <param name="useYt">YouTube chat'i okunsun mu (YouTube'a yayın açık ya da test kaydı)</param>
+        List<Layer> StartLayers(bool useKick, bool useYt)
         {
             var list = new List<Layer>();
             float sc = screenH / 1080f;
@@ -880,17 +996,15 @@ namespace ValoLive
                 momentLayer = new MomentLayer(moments, screenW, screenH, sc) { Hidden = () => overlay.Cover || overlay.Summary || overlay.Privacy };
                 list.Add(momentLayer);
             }
-            bool useBot = cfg.ChatBot && kick.Connected;
-            bool useFun = cfg.Fun && cfg.KickSlug != "";
-            if ((cfg.ChatBox || useBot || useFun) && cfg.KickSlug != "" && useKick)
+            // İki chat aynı yerlere akar: chat kutusu, bot, chat eğlencesi. Bot cevabı mesajın geldiği chat'e gider.
+            bool readKick = useKick && cfg.KickSlug != "", readYt = useYt && yt.Connected;
+            bool useBot = cfg.ChatBot && ((readKick && kick.Connected) || readYt);
+            if ((cfg.ChatBox || useBot || cfg.Fun) && (readKick || readYt))
             {
-                if (cfg.ChatBox) { chatLayer = new ChatLayer(sc); list.Add(chatLayer); }
-                var layer = chatLayer;
-                kickChat = new KickChat(cfg.KickSlug);
-                chatState = L.T("bağlanıyor"); chatStateColor = Mut;
-                if (layer != null) kickChat.Message += m => layer.Add(m);
-                if (useBot) { bot = new ChatBot(kick, () => lastState, () => live); var b = bot; kickChat.Message += m => b.Handle(m); }
-                if (useFun)
+                var handlers = new List<Action<ChatMessage>>();
+                if (cfg.ChatBox) { chatLayer = new ChatLayer(sc) { ShowSource = readKick && readYt }; list.Add(chatLayer); handlers.Add(chatLayer.Add); }
+                if (useBot) { bot = new ChatBot(SendChat, () => lastState, () => live); handlers.Add(bot.Handle); }
+                if (cfg.Fun)
                 {
                     // Chat eğlencesi: en üstte tam ekran katman (boşken bindirilmez) ve sol altta akvaryum.
                     speaker = new Speaker();
@@ -904,18 +1018,52 @@ namespace ValoLive
                             if (k == "flip") { streamer.SendCommand("hflip@fh enable " + (on ? 1 : 0)); streamer.SendCommand("vflip@fv enable " + (on ? 1 : 0)); }
                             else { streamer.SendCommand("framestep@zs enable " + (on ? 0 : 1)); streamer.SendCommand("overlay@zoom enable " + (on ? 1 : 0)); }
                         },
-                        Announce = s => { if (cfg.ChatBot && kick.Connected) Task.Run(() => { try { kick.SendChat(s); } catch { } }); },
+                        Announce = s =>
+                        {
+                            if (!cfg.ChatBot) return;
+                            foreach (var p in Platform.All) Task.Run(() => { try { SendChat(p, s); } catch { } });
+                        },
                     };
-                    kickChat.Message += m => fc.Handle(m);
+                    handlers.Add(fc.Handle);
                 }
-                kickChat.Status += s => BeginInvoke((Action)(() =>
+                Action<ChatMessage> onMessage = m => { foreach (var h in handlers) h(m); };
+                if (readKick)
                 {
-                    chatState = s;
-                    chatStateColor = s == L.T("bağlı") ? Green : Mut;
-                    StreamPanel.Sync();
-                }));
+                    kickChat = new KickChat(cfg.KickSlug);
+                    chatState = L.T("bağlanıyor"); chatStateColor = Mut;
+                    kickChat.Message += onMessage;
+                    kickChat.Status += s => BeginInvoke((Action)(() =>
+                    {
+                        chatState = s;
+                        chatStateColor = s == L.T("bağlı") ? Green : Mut;
+                        StreamPanel.Sync();
+                    }));
+                }
+                if (readYt)
+                {
+                    ytChat = new YouTubeChat(() => (ytLive = yt.Find("active"))?.Id);
+                    ytChatState = L.T("yayın bekleniyor"); ytChatStateColor = Mut;
+                    ytChat.Message += onMessage;
+                    ytChat.Status += s => BeginInvoke((Action)(() =>
+                    {
+                        ytChatState = s;
+                        ytChatStateColor = s == L.T("bağlı") ? Green : Mut;
+                        StreamPanel.Sync();
+                    }));
+                }
             }
             return list;
+        }
+
+        /// <summary>Bot cevabı ve duyurular: platformun chat'ine yayıncı hesabından (hesap bağlı ve o chat okunuyorsa).</summary>
+        void SendChat(Platform p, string text)
+        {
+            if (p == Platform.YouTube)
+            {
+                var b = ytLive;
+                if (ytChat != null && b != null && b.ChatId != "" && yt.Connected) yt.SendChat(b.ChatId, text);
+            }
+            else if (kickChat != null && kick.Connected) kick.SendChat(text);
         }
 
         /// <summary>Rozetin ekrandaki yeri (gerçek piksel); ekranın içine sığdırılır.</summary>
@@ -942,6 +1090,8 @@ namespace ValoLive
         void StopLayers()
         {
             kickChat?.Dispose(); kickChat = null;
+            ytChat?.Dispose(); ytChat = null; ytLive = null;
+            ytInfo?.Cancel(); ytInfo = null;
             funChat?.Dispose(); funChat = null;
             funLayer?.Dispose(); funLayer = null;
             aquarium?.Dispose(); aquarium = null;
@@ -1178,13 +1328,13 @@ namespace ValoLive
                 o.Targets = new List<Target> { new Target { Id = "file", Name = "Kayıt", Url = o.Output } };
                 overlay.ShowBanner(L.T("ZAFER"), "Test · Jett · Ascent 13-9 · 24/12/5 · HS " + L.Pct(31), ColorTranslator.FromHtml("#3ddc97"), OverlayRenderer.AgentIcon("add6443a-41bd-e414-f6ad-e58d267f4e95"));
             }
-            o.Layers = StartLayers(m == Mode.Test || KickOn);
+            o.Layers = StartLayers(m == Mode.Test || KickOn, m == Mode.Test || YouTubeOn);
             if (funChat != null)
             {
                 o.Flip = funChat.CanFlip = cfg.FunOn("flip");
                 o.Zoom = funChat.CanZoom = cfg.FunOn("zoom");
             }
-            if (m == Mode.Live && KickOn && kick.Connected) ApplyStreamInfo(false);
+            if (m == Mode.Live) ApplyStreamInfo(false);
             lastOptions = o;
             mode = m;
             liveSince = DateTime.Now;
@@ -1263,7 +1413,7 @@ namespace ValoLive
             }
             else if (unexpected && rejected.Count > 0)
             {
-                SetStatus(L.F("● {0} BAĞLANTIYI REDDETTİ", string.Join(" + ", rejected).ToUpper(L.Culture)), Red);
+                SetStatus(L.F("● {0} BAĞLANTIYI REDDETTİ", L.Upper(string.Join(" + ", rejected))), Red);
                 lblStats.Text = L.T("Stream URL / Stream Key'i platformun panelinden yeniden kopyala");
             }
             else if (unexpected) { SetStatus(L.T("● YAYIN DURDU"), Red); lblStats.Text = Trim(err); }

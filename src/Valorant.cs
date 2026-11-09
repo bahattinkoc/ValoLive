@@ -33,7 +33,9 @@ namespace ValoLive
         public string HdevKeyEnc = "";
         // Kick hesabı (resmi API): geliştirici uygulaması + yenileme tokenı, hepsi DPAPI ile şifreli
         public string KickClientIdEnc = "", KickSecretEnc = "", KickRefreshEnc = "", KickSlug = "";
-        public string StreamTitle = "", CategoryName = "VALORANT", Tags = "";
+        // YouTube hesabı (Data API): Google Cloud masaüstü istemcisi + yenileme tokenı, hepsi DPAPI ile şifreli
+        public string YtClientIdEnc = "", YtSecretEnc = "", YtRefreshEnc = "", YtChannel = "";
+        public string StreamTitle = "", CategoryName = "VALORANT", Tags = "";   // başlık ve etiketler bağlı her hesaba, kategori yalnızca Kick'e
         public int CategoryId;
         // Yayın katmanları
         public bool ChatBox = true, MapCover = true, ChatBot = true, PostMatchCard = true;

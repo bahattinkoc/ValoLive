@@ -38,7 +38,6 @@ Bağlanıyor…	جارٍ الاتصال…
 Bağlı değil	غير مرتبط
 Başlık	العنوان
 Başlık uygulanamadı: 	تعذّر تطبيق العنوان: 
-Başlık, kategori ve etiketler Kick'e uygulandı ✓	تم تطبيق العنوان والفئة والوسوم على Kick ✓
 Belirgin bir alışkanlık yok — dengeli oynuyor.	لا توجد عادة واضحة — يلعب بتوازن.
 Bildirimler (tanıdık oyuncu, smurf, parti)	تنبيهات (لاعب معروف، سمرف، فريق)
 Bronz	برونزي
@@ -100,7 +99,6 @@ Kick onayı 3 dakika içinde gelmedi.	لم تصل موافقة Kick خلال 3 �
 Kick onayı reddedildi: 	رُفضت موافقة Kick: 
 Kick oturumu sona ermiş, yeniden bağlan.	انتهت جلسة Kick، أعد الربط.
 Kick'e bağlanılamadı:\n	تعذّر الاتصال بـ Kick:\n
-Kick'e şimdi uygula	طبّق على Kick الآن
 Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):	افتح صفحة مطوري Kick (يجب أن تكون مسجّل الدخول):
 Kick'ten URL ve key al	احصل على الرابط والمفتاح من Kick
 Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:	يتطلب Kick "تطبيق مطوّر" خاصًا بك لتغيير العنوان والفئة.\nمرة واحدة، دقيقتان فقط:
@@ -213,7 +211,6 @@ YAYINI BİTİR	أنهِ البث
 YENİLGİ	خسارة
 Yakalama	الالتقاط
 Yayın açık. Kapatılsın mı?	البث يعمل. هل تريد الإغلاق؟
-Yayın bilgisi uygulanamadı:\n	تعذّر تطبيق معلومات البث:\n
 Yayında chat kutusu	صندوق الدردشة في البث
 Yayını başlat	ابدأ البث
 Yayını bitir	أنهِ البث
@@ -297,7 +294,6 @@ zirve	الأعلى
 Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	نادرًا ما يُثأر له عند موته ({0}%). يلعب وحيدًا بعيدًا عن فريقه.
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	فريقك لا يستطيع غالبًا الثأر لك: تبقى وحيدًا. العب في المنطقة نفسها مع زميل.
 Ölümsüzlük	خالد
-Önce Kick hesabını bağla (Yayın Bilgisi → Bağlan).	اربط حساب Kick أولًا (معلومات البث → ربط).
 Öğlen	الظهيرة
 Ücretsiz anahtar al	احصل على مفتاح مجاني
 Üstte tut	دائمًا في المقدمة
@@ -400,7 +396,6 @@ Güvercin postası (ve sürprizi)	بريد الحمام (ومفاجأته)
 Havai fişek hedefi	هدف الألعاب النارية
 Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.	الطبقات (الرادار، صندوق الدردشة، لحظات البث) ومرح الدردشة (بالون، طائرة، طماطم، سباق البط…) في نافذة منفصلة.
 Kağıt uçak	طائرة ورقية
-Komutları okumak için ana penceredeki Kick hesabını bağla.	اربط حساب Kick في النافذة الرئيسية لقراءة الأوامر.
 MESAJ TAŞIYANLAR	حاملو الرسائل
 Merhaba chat, bu bir deneme!	مرحبًا يا دردشة، هذا اختبار!
 Ortak havai fişek	ألعاب نارية جماعية
@@ -457,12 +452,10 @@ yok	لا شيء
 POP!	بوب!
 Ekran kartı motoru (işlemciyi boşaltır)	محرك بطاقة الرسومات (يخفف عن المعالج)
 BAĞLANTI	الاتصال
-Başlık, kategori ve küçük resim YouTube Studio'da ayarlanır. Chat katmanları ve chat eğlencesi Kick chat'ini okur.	يُضبط العنوان والفئة والصورة المصغّرة في YouTube Studio. طبقات الدردشة وتفاعلاتها تقرأ دردشة Kick.
 Bu platforma yayınla	البث على هذه المنصة
 GÖRÜNTÜ & SES	الصورة والصوت
 Hiçbir platform açık değil: yalnızca test kaydı alınabilir.	لا توجد منصة مفعّلة: يمكن إجراء تسجيل تجريبي فقط.
 Kick ve YouTube için hafif Valorant yayın aracı · RTX NVENC	أداة خفيفة لبث Valorant على Kick وYouTube · RTX NVENC
-Kick'e yayın kapalı: chat okunmaz	البث على Kick متوقف: لا تُقرأ الدردشة
 PLATFORMLAR	المنصات
 RAKİP HAFIZASI	ذاكرة الأعداء
 Stream URL / Stream Key'i platformun panelinden yeniden kopyala	انسخ رابط البث / مفتاح البث من لوحة المنصة مجددًا
@@ -479,3 +472,34 @@ yeniden bağlanıyor ({0})	إعادة الاتصال ({0})
 {0}: Stream URL ve Stream Key gerekli.	{0}: رابط البث ومفتاح البث مطلوبان.
 ● canlı	● مباشر
 ● {0} BAĞLANTIYI REDDETTİ	● رفض {0} الاتصال
+<h2>ValoLive YouTube'a bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>	<h2>تم ربط ValoLive بـ YouTube ✓</h2><p>يمكنك إغلاق هذه الصفحة.</p>
+Bağlı hesaplara şimdi uygula	طبّق الآن على الحسابات المربوطة
+Başlık ve etiketler bağlı her hesaba gider, yayın başlarken kendiliğinden. Kategori yalnızca Kick'te; YouTube'da yayın Oyun kategorisinde açılır, küçük resim Studio'dan. Chat kutusu ve chat eğlencesi iki chat'i birlikte okur.	يذهب العنوان والوسوم إلى كل حساب مربوط، تلقائيًا عند بدء البث. الفئة لـ Kick فقط؛ على YouTube يُفتح البث في فئة الألعاب، والصورة المصغّرة من Studio. صندوق الدردشة ومرح الدردشة يقرآن الدردشتين معًا.
+Bu Google hesabında YouTube kanalı yok.	لا توجد قناة YouTube في حساب Google هذا.
+Bu projede "YouTube Data API v3"ü etkinleştir (Enable):	فعّل "YouTube Data API v3" في هذا المشروع (Enable):
+Client ID ve Client Secret'ı yeniden girmek için Evet'e bas.	اضغط نعم لإدخال Client ID و Client Secret من جديد.
+Clients → Create client → Application type: Desktop app → Create. Client ID ve Client secret'ı buraya yapıştır:	Clients → Create client → Application type: Desktop app → Create. الصق Client ID و Client secret هنا:
+Google Auth Platform → Get started: uygulama adı ValoLive, kitle External. Sonra Audience sayfasında "Publish app" de (yoksa giriş 7 günde bir düşer).	Google Auth Platform → Get started: اسم التطبيق ValoLive، الجمهور External. ثم في صفحة Audience اضغط "Publish app" (وإلا يسقط تسجيل الدخول كل 7 أيام).
+Google Cloud'da yeni bir proje oluştur (ad: ValoLive):	أنشئ مشروعًا جديدًا في Google Cloud (الاسم: ValoLive):
+Hesabı bağlı platforma yayın kapalı: chat okunmaz	البث متوقف للمنصات ذات الحساب المربوط: لا تُقرأ الدردشة
+Kick ya da YouTube hesabını bağla	اربط حساب Kick أو YouTube
+Kick: başlık, kategori ve etiketler uygulandı ✓	Kick: تم تطبيق العنوان والفئة والوسوم ✓
+Komutları okumak için ana pencerede Kick ya da YouTube hesabını bağla.	اربط حساب Kick أو YouTube في النافذة الرئيسية لقراءة الأوامر.
+Sonra tarayıcıda Google onayı açılır. "Google bu uygulamayı doğrulamadı" derse Gelişmiş → ValoLive'a git: uygulama senin kendi projen.	بعدها تُفتح موافقة Google في المتصفح. إذا ظهر "لم تتحقق Google من هذا التطبيق" فاضغط خيارات متقدمة → الانتقال إلى ValoLive: التطبيق مشروعك الخاص.
+Tarayıcıda Google onayı bekleniyor…	بانتظار موافقة Google في المتصفح…
+YouTube hesabı	حساب YouTube
+YouTube hesabı bağlı değil.	حساب YouTube غير مربوط.
+YouTube hesabını bağla	اربط حساب YouTube
+YouTube onayı 3 dakika içinde gelmedi.	لم تصل موافقة YouTube خلال 3 دقائق.
+YouTube oturumu sona ermiş, yeniden bağlan.	انتهت جلسة YouTube، اربط من جديد.
+YouTube yayını 5 dakikada açılmadı	لم يُفتح بث YouTube خلال 5 دقائق
+YouTube yayını bulunamadı.	لم يُعثر على بث YouTube.
+YouTube'a bağlanılamadı:\n	تعذّر الاتصال بـ YouTube:\n
+YouTube, başlığı değiştirmek ve chat'e bot cevabı yazmak için Google Cloud'da kendi uygulamanı ister.\nBir kerelik, 5 dakikalık bir iş:	يتطلب YouTube تطبيقك الخاص في Google Cloud لتغيير العنوان وكتابة ردود البوت في الدردشة.\nمرة واحدة، 5 دقائق:
+YouTube: başlık ve etiketler uygulandı ✓	YouTube: تم تطبيق العنوان والوسوم ✓
+YouTube: şu an açık ya da planlanmış yayın yok; başlık yayın başlayınca uygulanır.	YouTube: لا يوجد بث جارٍ أو مجدول الآن؛ سيُطبّق العنوان عند بدء البث.
+chat bulunamadı	لم يُعثر على الدردشة
+yayın bekleniyor	بانتظار البث
+Önce Kick ya da YouTube hesabını bağla (Platformlar → Bağlan).	اربط حساب Kick أو YouTube أولًا (المنصات ← ربط).
+YouTube başlığı uygulanamadı: 	تعذّر تطبيق عنوان YouTube: 
+YouTube onayı reddedildi: 	رُفضت موافقة YouTube: 

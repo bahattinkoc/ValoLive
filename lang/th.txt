@@ -38,7 +38,6 @@ Bağlanıyor…	กำลังเชื่อมต่อ…
 Bağlı değil	ยังไม่เชื่อมต่อ
 Başlık	ชื่อสตรีม
 Başlık uygulanamadı: 	ใช้ชื่อสตรีมไม่สำเร็จ: 
-Başlık, kategori ve etiketler Kick'e uygulandı ✓	ใช้ชื่อสตรีม หมวดหมู่ และแท็กบน Kick แล้ว ✓
 Belirgin bir alışkanlık yok — dengeli oynuyor.	ไม่มีนิสัยเด่น — เล่นสมดุล
 Bildirimler (tanıdık oyuncu, smurf, parti)	การแจ้งเตือน (ผู้เล่นที่รู้จัก, สเมิร์ฟ, ปาร์ตี้)
 Bronz	บรอนซ์
@@ -100,7 +99,6 @@ Kick onayı 3 dakika içinde gelmedi.	ไม่ได้รับการอน
 Kick onayı reddedildi: 	Kick ปฏิเสธการอนุมัติ: 
 Kick oturumu sona ermiş, yeniden bağlan.	เซสชัน Kick หมดอายุ เชื่อมต่อใหม่
 Kick'e bağlanılamadı:\n	เชื่อมต่อ Kick ไม่ได้:\n
-Kick'e şimdi uygula	ใช้กับ Kick ตอนนี้
 Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):	เปิดหน้านักพัฒนาของ Kick (ต้องล็อกอินก่อน):
 Kick'ten URL ve key al	รับ URL และคีย์จาก Kick
 Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:	Kick ต้องใช้ "แอปนักพัฒนา" ของคุณเองเพื่อเปลี่ยนชื่อสตรีมและหมวดหมู่\nทำครั้งเดียว ใช้เวลา 2 นาที:
@@ -213,7 +211,6 @@ YAYINI BİTİR	จบสตรีม
 YENİLGİ	แพ้
 Yakalama	การจับภาพ
 Yayın açık. Kapatılsın mı?	กำลังสตรีมอยู่ ปิดเลยไหม?
-Yayın bilgisi uygulanamadı:\n	ใช้ข้อมูลสตรีมไม่สำเร็จ:\n
 Yayında chat kutusu	กล่องแชทบนสตรีม
 Yayını başlat	เริ่มสตรีม
 Yayını bitir	จบสตรีม
@@ -297,7 +294,6 @@ zirve	สูงสุด
 Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	ตายแล้วไม่ค่อยมีคนเทรด ({0}%) เล่นคนเดียวห่างจากทีม
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	ทีมมักเทรดคุณไม่ทัน: คุณอยู่คนเดียว เล่นโซนเดียวกับเพื่อนร่วมทีม
 Ölümsüzlük	อิมมอร์ทัล
-Önce Kick hesabını bağla (Yayın Bilgisi → Bağlan).	เชื่อมต่อบัญชี Kick ก่อน (ข้อมูลสตรีม → เชื่อมต่อ)
 Öğlen	ตอนบ่าย
 Ücretsiz anahtar al	รับคีย์ฟรี
 Üstte tut	อยู่บนสุดเสมอ
@@ -400,7 +396,6 @@ Güvercin postası (ve sürprizi)	นกพิราบส่งจดหมา�
 Havai fişek hedefi	เป้าหมายพลุ
 Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.	เลเยอร์ (เรดาร์, กล่องแชท, ช่วงเด็ด) และแชทสนุก (ลูกโป่ง, เครื่องบิน, มะเขือเทศ, แข่งเป็ด…) อยู่ในหน้าต่างแยก
 Kağıt uçak	เครื่องบินกระดาษ
-Komutları okumak için ana penceredeki Kick hesabını bağla.	เชื่อมบัญชี Kick ในหน้าต่างหลักเพื่ออ่านคำสั่ง
 MESAJ TAŞIYANLAR	ตัวส่งข้อความ
 Merhaba chat, bu bir deneme!	สวัสดีแชท นี่คือการทดสอบ!
 Ortak havai fişek	พลุรวมพลัง
@@ -457,12 +452,10 @@ yok	ไม่มี
 POP!	ป๊อก!
 Ekran kartı motoru (işlemciyi boşaltır)	เอนจิน GPU (ลดภาระ CPU)
 BAĞLANTI	การเชื่อมต่อ
-Başlık, kategori ve küçük resim YouTube Studio'da ayarlanır. Chat katmanları ve chat eğlencesi Kick chat'ini okur.	ชื่อ หมวดหมู่ และภาพปกตั้งค่าใน YouTube Studio เลเยอร์แชทและลูกเล่นแชทอ่านแชทของ Kick
 Bu platforma yayınla	สตรีมไปยังแพลตฟอร์มนี้
 GÖRÜNTÜ & SES	ภาพและเสียง
 Hiçbir platform açık değil: yalnızca test kaydı alınabilir.	ไม่มีแพลตฟอร์มที่เปิดอยู่: ทำได้เพียงบันทึกทดสอบ
 Kick ve YouTube için hafif Valorant yayın aracı · RTX NVENC	เครื่องมือสตรีม VALORANT แบบเบาสำหรับ Kick และ YouTube · RTX NVENC
-Kick'e yayın kapalı: chat okunmaz	ปิดการสตรีมไป Kick: ไม่อ่านแชท
 PLATFORMLAR	แพลตฟอร์ม
 RAKİP HAFIZASI	ความจำศัตรู
 Stream URL / Stream Key'i platformun panelinden yeniden kopyala	คัดลอก Stream URL / Stream Key ใหม่จากแดชบอร์ดของแพลตฟอร์ม
@@ -479,3 +472,34 @@ yeniden bağlanıyor ({0})	กำลังเชื่อมต่อใหม�
 {0}: Stream URL ve Stream Key gerekli.	{0}: ต้องมี Stream URL และ Stream Key
 ● canlı	● สด
 ● {0} BAĞLANTIYI REDDETTİ	● {0} ปฏิเสธการเชื่อมต่อ
+<h2>ValoLive YouTube'a bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>	<h2>ValoLive เชื่อมต่อกับ YouTube แล้ว ✓</h2><p>ปิดแท็บนี้ได้เลย</p>
+Bağlı hesaplara şimdi uygula	ใช้กับบัญชีที่เชื่อมต่อทันที
+Başlık ve etiketler bağlı her hesaba gider, yayın başlarken kendiliğinden. Kategori yalnızca Kick'te; YouTube'da yayın Oyun kategorisinde açılır, küçük resim Studio'dan. Chat kutusu ve chat eğlencesi iki chat'i birlikte okur.	ชื่อและแท็กจะส่งไปทุกบัญชีที่เชื่อมต่อโดยอัตโนมัติเมื่อเริ่มสตรีม หมวดหมู่ใช้กับ Kick เท่านั้น บน YouTube สตรีมจะเปิดในหมวดเกม ภาพปกตั้งใน Studio กล่องแชทและแชทสนุกอ่านทั้งสองแชทพร้อมกัน
+Bu Google hesabında YouTube kanalı yok.	บัญชี Google นี้ไม่มีช่อง YouTube
+Bu projede "YouTube Data API v3"ü etkinleştir (Enable):	เปิดใช้ "YouTube Data API v3" ในโปรเจกต์นี้ (Enable):
+Client ID ve Client Secret'ı yeniden girmek için Evet'e bas.	กด ใช่ เพื่อกรอก Client ID และ Client Secret ใหม่
+Clients → Create client → Application type: Desktop app → Create. Client ID ve Client secret'ı buraya yapıştır:	Clients → Create client → Application type: Desktop app → Create วาง Client ID และ Client secret ที่นี่:
+Google Auth Platform → Get started: uygulama adı ValoLive, kitle External. Sonra Audience sayfasında "Publish app" de (yoksa giriş 7 günde bir düşer).	Google Auth Platform → Get started: ชื่อแอป ValoLive กลุ่มผู้ใช้ External จากนั้นในหน้า Audience กด "Publish app" (ไม่เช่นนั้นการล็อกอินจะหลุดทุก 7 วัน)
+Google Cloud'da yeni bir proje oluştur (ad: ValoLive):	สร้างโปรเจกต์ใหม่ใน Google Cloud (ชื่อ: ValoLive):
+Hesabı bağlı platforma yayın kapalı: chat okunmaz	ปิดการสตรีมไปยังแพลตฟอร์มที่เชื่อมบัญชีไว้: ไม่อ่านแชท
+Kick ya da YouTube hesabını bağla	เชื่อมต่อบัญชี Kick หรือ YouTube
+Kick: başlık, kategori ve etiketler uygulandı ✓	Kick: ใช้ชื่อ หมวดหมู่ และแท็กแล้ว ✓
+Komutları okumak için ana pencerede Kick ya da YouTube hesabını bağla.	เชื่อมต่อบัญชี Kick หรือ YouTube ในหน้าต่างหลักเพื่ออ่านคำสั่ง
+Sonra tarayıcıda Google onayı açılır. "Google bu uygulamayı doğrulamadı" derse Gelişmiş → ValoLive'a git: uygulama senin kendi projen.	จากนั้นหน้ายินยอมของ Google จะเปิดในเบราว์เซอร์ ถ้าขึ้นว่า "Google ไม่ได้ยืนยันแอปนี้" ให้กด ขั้นสูง → ไปที่ ValoLive: แอปนี้คือโปรเจกต์ของคุณเอง
+Tarayıcıda Google onayı bekleniyor…	กำลังรอการยินยอมจาก Google ในเบราว์เซอร์…
+YouTube hesabı	บัญชี YouTube
+YouTube hesabı bağlı değil.	ยังไม่ได้เชื่อมต่อบัญชี YouTube
+YouTube hesabını bağla	เชื่อมต่อบัญชี YouTube
+YouTube onayı 3 dakika içinde gelmedi.	ไม่ได้รับการยินยอมจาก YouTube ภายใน 3 นาที
+YouTube oturumu sona ermiş, yeniden bağlan.	เซสชัน YouTube หมดอายุ โปรดเชื่อมต่อใหม่
+YouTube yayını 5 dakikada açılmadı	สตรีม YouTube ไม่เปิดภายใน 5 นาที
+YouTube yayını bulunamadı.	ไม่พบสตรีม YouTube
+YouTube'a bağlanılamadı:\n	เชื่อมต่อ YouTube ไม่ได้:\n
+YouTube, başlığı değiştirmek ve chat'e bot cevabı yazmak için Google Cloud'da kendi uygulamanı ister.\nBir kerelik, 5 dakikalık bir iş:	YouTube ต้องใช้แอปของคุณเองใน Google Cloud เพื่อเปลี่ยนชื่อและให้บอทตอบในแชท\nทำครั้งเดียว ใช้เวลา 5 นาที:
+YouTube: başlık ve etiketler uygulandı ✓	YouTube: ใช้ชื่อและแท็กแล้ว ✓
+YouTube: şu an açık ya da planlanmış yayın yok; başlık yayın başlayınca uygulanır.	YouTube: ตอนนี้ไม่มีสตรีมที่กำลังออกอากาศหรือตั้งเวลาไว้ ชื่อจะถูกใช้เมื่อเริ่มสตรีม
+chat bulunamadı	ไม่พบแชท
+yayın bekleniyor	กำลังรอสตรีม
+Önce Kick ya da YouTube hesabını bağla (Platformlar → Bağlan).	เชื่อมต่อบัญชี Kick หรือ YouTube ก่อน (แพลตฟอร์ม → เชื่อมต่อ)
+YouTube başlığı uygulanamadı: 	ใช้ชื่อ YouTube ไม่ได้: 
+YouTube onayı reddedildi: 	YouTube ปฏิเสธการยินยอม: 
