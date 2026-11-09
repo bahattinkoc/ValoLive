@@ -518,3 +518,29 @@ Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	Stream dropped to {0} FPS: the
 Yeni sürüm {0} hazır · güncelle	New version {0} available · update
 İndirilen pakette ValoLive.exe yok	The downloaded package has no ValoLive.exe
 İndiriliyor… %{0}	Downloading… {0}%
+Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.	Main agent is {0} ({2} of the last {1} matches), playing {3} this match.
+Atakta	On attack
+Brifing	Briefing
+Bu lobide öne çıkan bir bilgi yok.	Nothing stands out in this lobby.
+Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Played {0} matches today and lost the last {1} in a row: may be tilted, push early.
+Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.	Played {0} matches today: focus drops late in a long session.
+Defansta	On defense
+Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	Once a match is found, the most useful facts from players' recent matches are summed up here.
+Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	Scouting players' recent matches; findings appear here as they come in.
+Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.	Played {2} in {1} of the last {0} matches: very experienced on this agent, plays a rehearsed game.
+Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Lost the last {0} matches in a row: may be tilted, push early.
+Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	Won the last {0} matches in a row: confident, plays aggressive.
+Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	Usually plants the spike on {0} on this map ({2} of {1} plants).
+TEK AJAN	ONE-TRICK
+Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	Won {1} of {0} rounds when last alive: when they're the last one, go in together, don't leave them for the end.
+Tek kaldığı {0} roundun hiçbirini kazanamamış: yalnız kalınca baskı kur, panikler.	Won none of {0} rounds when last alive: pressure them when alone, they panic.
+en önemli {0} bilgi	top {0} facts
+gizle (B)	hide (B)
+göster (B)	show (B)
+{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0} they mostly play {1}: {3} of their {2} fights on this map were there (most at {4}).
+{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	Duo with {0}: in the same party in {1} of their recent matches, they cover each other.
+{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	Hasn't played {0} in the last {1} matches: not used to this agent, may use utility late or wrong.
+{0} oyuncu inceleniyor…	scouting {0} players…
+Öne çıkan başka bir bilgi yok.	Nothing else stands out.
+İLK KEZ?	FIRST TIME?
+İSTİHBARAT	INTEL

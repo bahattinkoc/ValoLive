@@ -518,3 +518,29 @@ Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	방송이 {0} FPS로 떨어짐
 Yeni sürüm {0} hazır · güncelle	새 버전 {0} 사용 가능 · 업데이트
 İndirilen pakette ValoLive.exe yok	다운로드한 패키지에 ValoLive.exe가 없습니다
 İndiriliyor… %{0}	다운로드 중… {0}%
+Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.	주 요원은 {0} (최근 {1}경기 중 {2}경기), 이번 경기는 {3} 플레이.
+Atakta	공격 시
+Brifing	브리핑
+Bu lobide öne çıkan bir bilgi yok.	이 로비에서 눈에 띄는 정보가 없습니다.
+Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	오늘 {0}경기를 했고 최근 {1}연패 중: 멘탈이 흔들렸을 수 있으니 초반부터 압박하세요.
+Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.	오늘 {0}경기 플레이: 긴 세션 막바지에는 집중력이 떨어집니다.
+Defansta	수비 시
+Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	매치가 잡히면 플레이어들의 최근 경기에서 가장 유용한 정보가 여기에 요약됩니다.
+Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	플레이어들의 최근 경기를 분석 중이며, 결과가 나오는 대로 여기에 표시됩니다.
+Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.	최근 {0}경기 중 {1}경기에서 {2} 플레이: 이 요원에 매우 능숙하고 익숙한 플레이를 합니다.
+Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	최근 {0}연패 중: 멘탈이 흔들렸을 수 있으니 초반부터 압박하세요.
+Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	최근 {0}연승 중: 자신감 있고 공격적으로 플레이합니다.
+Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	이 맵에서는 주로 {0}에 스파이크 설치 ({1}번 중 {2}번).
+TEK AJAN	원챔
+Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	혼자 남았을 때 {0}라운드 중 {1}라운드 승리: 혼자 남으면 함께 들어가고 마지막까지 남겨두지 마세요.
+Tek kaldığı {0} roundun hiçbirini kazanamamış: yalnız kalınca baskı kur, panikler.	혼자 남은 {0}라운드에서 한 번도 이기지 못함: 혼자일 때 압박하면 당황합니다.
+en önemli {0} bilgi	핵심 정보 {0}개
+gizle (B)	숨기기 (B)
+göster (B)	보기 (B)
+{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0} 주로 {1}에서 플레이: 이 맵 교전 {2}번 중 {3}번이 그곳 (가장 많이 {4}).
+{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	{0}와(과) 듀오: 최근 경기 중 {1}경기에서 같은 파티, 서로를 커버합니다.
+{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	최근 {1}경기에서 {0}을(를) 플레이하지 않음: 이 요원에 익숙하지 않아 스킬을 늦거나 잘못 쓸 수 있습니다.
+{0} oyuncu inceleniyor…	{0}명 분석 중…
+Öne çıkan başka bir bilgi yok.	그 밖에 눈에 띄는 정보가 없습니다.
+İLK KEZ?	처음?
+İSTİHBARAT	정보

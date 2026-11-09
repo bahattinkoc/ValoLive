@@ -518,3 +518,29 @@ Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	انخفض البث إلى {0}
 Yeni sürüm {0} hazır · güncelle	إصدار جديد {0} متاح · تحديث
 İndirilen pakette ValoLive.exe yok	الحزمة التي نُزّلت لا تحتوي على ValoLive.exe
 İndiriliyor… %{0}	جارٍ التنزيل… {0}%
+Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.	عميله الأساسي {0} ({2} من آخر {1} مباريات)، ويلعب {3} في هذه المباراة.
+Atakta	في الهجوم
+Brifing	الموجز
+Bu lobide öne çıkan bir bilgi yok.	لا شيء لافت في هذه الردهة.
+Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	لعب {0} مباريات اليوم وخسر آخر {1} على التوالي: قد يكون متوترًا، اضغط مبكرًا.
+Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.	لعب {0} مباريات اليوم: يقل التركيز في آخر الجلسة الطويلة.
+Defansta	في الدفاع
+Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	عند العثور على مباراة تُلخَّص هنا أهم المعلومات من آخر مباريات اللاعبين.
+Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	جارٍ تحليل آخر مباريات اللاعبين؛ تظهر النتائج هنا تباعًا.
+Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.	لعب {2} في {1} من آخر {0} مباريات: خبير جدًا بهذا العميل ويلعب خطة محفوظة.
+Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	خسر آخر {0} مباريات على التوالي: قد يكون متوترًا، اضغط مبكرًا.
+Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	فاز بآخر {0} مباريات على التوالي: واثق ويلعب بهجومية.
+Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	يزرع السبايك عادة في {0} على هذه الخريطة ({2} من {1} زرعات).
+TEK AJAN	عميل واحد
+Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	فاز بـ {1} من {0} جولات حين بقي آخر حيّ: إذا بقي وحده فادخلوا معًا ولا تتركوه للنهاية.
+Tek kaldığı {0} roundun hiçbirini kazanamamış: yalnız kalınca baskı kur, panikler.	لم يفز بأي من {0} جولات حين بقي آخر حيّ: اضغط عليه وهو وحده، يرتبك.
+en önemli {0} bilgi	أهم {0} معلومات
+gizle (B)	إخفاء (B)
+göster (B)	إظهار (B)
+{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0} يلعب غالبًا في {1}: {3} من {2} مواجهات له على هذه الخريطة كانت هناك (أكثرها في {4}).
+{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	ثنائي مع {0}: في نفس الفريق في {1} من مبارياتهما الأخيرة، يغطي كل منهما الآخر.
+{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	لم يلعب {0} في آخر {1} مباريات: غير معتاد على هذا العميل، قد يستخدم قدراته متأخرًا أو بشكل خاطئ.
+{0} oyuncu inceleniyor…	جارٍ تحليل {0} لاعبين…
+Öne çıkan başka bir bilgi yok.	لا شيء آخر لافت.
+İLK KEZ?	أول مرة؟
+İSTİHBARAT	استخبارات

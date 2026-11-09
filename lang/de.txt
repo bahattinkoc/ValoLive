@@ -518,3 +518,29 @@ Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	Stream auf {0} FPS gefallen: d
 Yeni sürüm {0} hazır · güncelle	Neue Version {0} verfügbar · aktualisieren
 İndirilen pakette ValoLive.exe yok	Im heruntergeladenen Paket fehlt ValoLive.exe
 İndiriliyor… %{0}	Wird heruntergeladen… {0} %
+Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.	Hauptagent ist {0} ({2} der letzten {1} Matches), spielt diesmal {3}.
+Atakta	Im Angriff
+Brifing	Briefing
+Bu lobide öne çıkan bir bilgi yok.	In dieser Lobby fällt nichts auf.
+Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Hat heute {0} Matches gespielt und die letzten {1} in Folge verloren: vielleicht getiltet, früh Druck machen.
+Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.	Hat heute {0} Matches gespielt: am Ende einer langen Session lässt die Konzentration nach.
+Defansta	In der Verteidigung
+Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	Sobald ein Match gefunden ist, stehen hier die nützlichsten Fakten aus den letzten Matches der Spieler.
+Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	Die letzten Matches der Spieler werden analysiert; Ergebnisse erscheinen hier nach und nach.
+Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.	Hat {2} in {1} der letzten {0} Matches gespielt: sehr erfahren auf diesem Agenten, spielt ein eingeübtes Spiel.
+Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Hat die letzten {0} Matches in Folge verloren: vielleicht getiltet, früh Druck machen.
+Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	Hat die letzten {0} Matches in Folge gewonnen: selbstbewusst, spielt aggressiv.
+Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	Pflanzt den Spike auf dieser Map meist auf {0} ({2} von {1} Plants).
+TEK AJAN	ONE-TRICK
+Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	Hat als Letzter am Leben {1} von {0} Runden gewonnen: ist er der Letzte, geht gemeinsam rein, lasst ihn nicht bis zum Schluss.
+Tek kaldığı {0} roundun hiçbirini kazanamamış: yalnız kalınca baskı kur, panikler.	Hat als Letzter am Leben keine von {0} Runden gewonnen: allein unter Druck setzen, er gerät in Panik.
+en önemli {0} bilgi	Top {0} Fakten
+gizle (B)	ausblenden (B)
+göster (B)	anzeigen (B)
+{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0} spielt meist {1}: {3} seiner {2} Duelle auf dieser Map waren dort (am häufigsten {4}).
+{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	Duo mit {0}: in {1} ihrer letzten Matches in derselben Party, sie decken sich gegenseitig.
+{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	Hat {0} in den letzten {1} Matches nicht gespielt: nicht an diesen Agenten gewöhnt, setzt Fähigkeiten evtl. spät oder falsch ein.
+{0} oyuncu inceleniyor…	{0} Spieler werden analysiert…
+Öne çıkan başka bir bilgi yok.	Sonst fällt nichts auf.
+İLK KEZ?	ERSTES MAL?
+İSTİHBARAT	INTEL

@@ -518,3 +518,29 @@ Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	สตรีมลดลงเ
 Yeni sürüm {0} hazır · güncelle	มีเวอร์ชันใหม่ {0} · อัปเดต
 İndirilen pakette ValoLive.exe yok	แพ็กเกจที่ดาวน์โหลดไม่มี ValoLive.exe
 İndiriliyor… %{0}	กำลังดาวน์โหลด… {0}%
+Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.	เอเจนต์หลักคือ {0} ({2} จาก {1} แมตช์ล่าสุด) แมตช์นี้เล่น {3}
+Atakta	ฝั่งบุก
+Brifing	บรีฟฟิง
+Bu lobide öne çıkan bir bilgi yok.	ล็อบบี้นี้ไม่มีอะไรโดดเด่น
+Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	วันนี้เล่นไป {0} แมตช์ และแพ้ติดกัน {1} แมตช์ล่าสุด: อาจกำลังเสียสมาธิ กดดันตั้งแต่ต้น
+Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.	วันนี้เล่นไป {0} แมตช์: ช่วงท้ายของเซสชันยาวสมาธิจะลดลง
+Defansta	ฝั่งป้องกัน
+Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	เมื่อเจอแมตช์ ข้อมูลที่มีประโยชน์ที่สุดจากแมตช์ล่าสุดของผู้เล่นจะสรุปไว้ที่นี่
+Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	กำลังวิเคราะห์แมตช์ล่าสุดของผู้เล่น ผลจะปรากฏที่นี่เมื่อพร้อม
+Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.	เล่น {2} ใน {1} จาก {0} แมตช์ล่าสุด: เชี่ยวชาญเอเจนต์นี้มาก เล่นตามแบบที่ซ้อมมา
+Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	แพ้ติดกัน {0} แมตช์ล่าสุด: อาจกำลังเสียสมาธิ กดดันตั้งแต่ต้น
+Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	ชนะติดกัน {0} แมตช์ล่าสุด: มั่นใจ เล่นดุดัน
+Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	ในแมปนี้มักวางสไปค์ที่ {0} ({2} จาก {1} ครั้ง)
+TEK AJAN	เล่นตัวเดียว
+Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	ชนะ {1} จาก {0} รอบเมื่อเหลือคนสุดท้าย: ถ้าเขาเหลือคนเดียวให้บุกพร้อมกัน อย่าปล่อยไว้ท้ายสุด
+Tek kaldığı {0} roundun hiçbirini kazanamamış: yalnız kalınca baskı kur, panikler.	ไม่ชนะเลยใน {0} รอบที่เหลือคนสุดท้าย: กดดันตอนเขาอยู่คนเดียว เขาจะตื่นตระหนก
+en önemli {0} bilgi	ข้อมูลสำคัญ {0} ข้อ
+gizle (B)	ซ่อน (B)
+göster (B)	แสดง (B)
+{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0} มักเล่นที่ {1}: การปะทะ {3} จาก {2} ครั้งในแมปนี้อยู่ที่นั่น (มากที่สุดที่ {4})
+{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	ดูโอกับ {0}: อยู่ปาร์ตี้เดียวกันใน {1} แมตช์ล่าสุด คอยคุ้มกันกัน
+{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	ไม่ได้เล่น {0} ใน {1} แมตช์ล่าสุด: ไม่คุ้นกับเอเจนต์นี้ อาจใช้สกิลช้าหรือผิดจังหวะ
+{0} oyuncu inceleniyor…	กำลังวิเคราะห์ผู้เล่น {0} คน…
+Öne çıkan başka bir bilgi yok.	ไม่มีอะไรโดดเด่นอีก
+İLK KEZ?	ครั้งแรก?
+İSTİHBARAT	ข่าวกรอง

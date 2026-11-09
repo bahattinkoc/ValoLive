@@ -518,3 +518,29 @@ Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	Трансляция упал�
 Yeni sürüm {0} hazır · güncelle	Доступна новая версия {0} · обновить
 İndirilen pakette ValoLive.exe yok	В скачанном пакете нет ValoLive.exe
 İndiriliyor… %{0}	Загрузка… {0}%
+Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.	Основной агент — {0} ({2} из последних {1} матчей), в этом матче играет на {3}.
+Atakta	В атаке
+Brifing	Сводка
+Bu lobide öne çıkan bir bilgi yok.	В этом лобби ничего примечательного.
+Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Сегодня сыграл {0} матчей и проиграл последние {1} подряд: возможно, тильтует, дави с самого начала.
+Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.	Сегодня сыграл {0} матчей: к концу долгой сессии внимание падает.
+Defansta	В защите
+Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	Когда матч найден, здесь собирается самое полезное из последних матчей игроков.
+Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	Изучаются последние матчи игроков; находки появляются здесь по мере поступления.
+Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.	Играл на {2} в {1} из последних {0} матчей: очень опытен на этом агенте, играет заученную игру.
+Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Проиграл последние {0} матчей подряд: возможно, тильтует, дави с самого начала.
+Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	Выиграл последние {0} матчей подряд: уверен в себе, играет агрессивно.
+Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	На этой карте обычно ставит спайк на {0} ({2} из {1} установок).
+TEK AJAN	ВАНТРИК
+Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	Выиграл {1} из {0} раундов, оставшись последним: когда он один, заходите вместе, не оставляйте его напоследок.
+Tek kaldığı {0} roundun hiçbirini kazanamamış: yalnız kalınca baskı kur, panikler.	Не выиграл ни одного из {0} раундов, оставшись последним: дави, когда он один, он паникует.
+en önemli {0} bilgi	главное: {0}
+gizle (B)	скрыть (B)
+göster (B)	показать (B)
+{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0} обычно играет на {1}: {3} из {2} его стычек на этой карте были там (чаще всего {4}).
+{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	Дуо с {0}: в одной группе в {1} последних матчах, прикрывают друг друга.
+{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	Не играл на {0} в последних {1} матчах: не привык к этому агенту, может применять умения поздно или неправильно.
+{0} oyuncu inceleniyor…	изучаются игроки: {0}…
+Öne çıkan başka bir bilgi yok.	Больше ничего примечательного.
+İLK KEZ?	ВПЕРВЫЕ?
+İSTİHBARAT	РАЗВЕДКА

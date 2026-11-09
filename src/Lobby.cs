@@ -514,7 +514,7 @@ XWehWA==
             BackColor = Bg; ForeColor = Txt;
             Font = new Font(L.Sans, 9.5f);
             FormBorderStyle = FormBorderStyle.FixedSingle; MaximizeBox = false;
-            ClientSize = new Size(SkinX + SkinW + 16, 800); // 5 + 5 oyuncu satırı sığar
+            ClientSize = new Size(SkinX + SkinW + 16, BaseHeight + BriefHeight); // 5 + 5 oyuncu satırı ve brifing sığar
             StartPosition = FormStartPosition.CenterScreen;
             DoubleBuffered = true;
             try { Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath); } catch { }
@@ -625,6 +625,9 @@ XWehWA==
             base.OnMouseMove(e);
             var hit = rows.FirstOrDefault(r => r.Key.Contains(e.Location)).Value;
             if (hit != hover) { hover = hit; Invalidate(); }
+            var bh = briefRows.FirstOrDefault(r => r.Key.Contains(e.Location)).Key;
+            if (bh != briefHover) { briefHover = bh; Invalidate(); }
+            Cursor = briefHeader.Contains(e.Location) || bh != Rectangle.Empty || hit != null ? Cursors.Hand : Cursors.Default;
         }
 
         protected override void OnMouseLeave(EventArgs e)
@@ -732,6 +735,7 @@ XWehWA==
                     try { var sk = riot.Skins(st.MatchId); lock (history) { skins = sk; skinsMatch = st.MatchId; } }
                     catch (Exception e) { Diag.Event("ODA", "görünümler alınamadı: " + e.Message); skinsMatch = st.MatchId; }
                 }
+                RefreshFacts();
             }
             catch (WebException e) { status = L.T("Riot bağlantı hatası: ") + e.Message; }
             catch (Exception e) { status = e.Message; }
@@ -864,6 +868,130 @@ XWehWA==
 
         List<PMatch> ScoutedOf(string puuid) { if (puuid == null) return null; lock (history) return scouted.TryGetValue(puuid, out var l) ? l : null; }
 
+        // ---------- İstihbarat (Intel.cs): satırda iki etiket, üstte brifing, oyuncu penceresinde hepsi ----------
+
+        readonly Dictionary<string, List<long>> starts = new Dictionary<string, List<long>>();
+        Dictionary<string, List<Intel.Fact>> facts = new Dictionary<string, List<Intel.Fact>>();
+
+        List<Intel.Fact> FactsOf(string puuid) { if (puuid == null) return new List<Intel.Fact>(); lock (history) return facts.TryGetValue(puuid, out var f) ? f : new List<Intel.Fact>(); }
+
+        /// <summary>Arka planda (Poll): bulgular çizimde değil burada hesaplanır; ajan seçimi değişince de güncellenir.</summary>
+        void RefreshFacts()
+        {
+            List<LobbyPlayer> players; string map;
+            lock (history) { players = state.Players.ToList(); map = state.MapUrl; }
+            List<List<string>> parts;
+            lock (scoutParties) parts = scoutParties.Select(l => l.ToList()).ToList();
+            var res = new Dictionary<string, List<Intel.Fact>>();
+            foreach (var p in players)
+            {
+                if (p.Puuid == null || p.Incognito || p.IsSelf) continue;
+                PlayerHistory h; List<long> st;
+                lock (history) { h = history.TryGetValue(p.Puuid, out var hh) ? hh.Copy() : null; starts.TryGetValue(p.Puuid, out st); }
+                var duos = players.Where(o => o != p && o.Puuid != null && !o.Incognito && !o.IsSelf)
+                    .Select(o => new KeyValuePair<LobbyPlayer, int>(o, parts.Count(gr => gr.Contains(p.Puuid) && gr.Contains(o.Puuid))))
+                    .Where(kv => kv.Value > 0).ToList();
+                try
+                {
+                    res[p.Puuid] = Intel.For(new Intel.Input { P = p, H = h, Ms = ScoutedOf(p.Puuid), MapUrl = map, Starts = st, Duos = duos, AgentName = ValApi.AgentName });
+                }
+                catch (Exception e) { Diag.Event("ODA", "istihbarat çıkarılamadı: " + e.Message); }
+            }
+            lock (history) facts = res;
+        }
+
+        // Brifing: başlığa tıklayınca ya da B tuşuyla katlanır; seçim uygulama açık kaldıkça hatırlanır.
+        static bool briefOpen = true;
+        const int BriefLines = 3, BriefLineH = 24;
+        Rectangle briefHeader;
+        readonly List<KeyValuePair<Rectangle, LobbyPlayer>> briefRows = new List<KeyValuePair<Rectangle, LobbyPlayer>>();
+        Rectangle briefHover;
+
+        int BriefHeight => 30 + (briefOpen ? BriefLines * BriefLineH + 8 : 0);
+
+        void ToggleBrief()
+        {
+            briefOpen = !briefOpen;
+            ClientSize = new Size(ClientSize.Width, BaseHeight + BriefHeight);
+            Invalidate();
+        }
+
+        const int BaseHeight = 800; // 5 + 5 oyuncu satırı
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.B) { ToggleBrief(); return true; }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        int DrawBriefing(Graphics g, LobbyState st, int y)
+        {
+            int W = ClientSize.Width;
+            briefRows.Clear();
+            List<Intel.Fact> list;
+            var byId = st.Players.Where(p => p.Puuid != null).GroupBy(p => p.Puuid).ToDictionary(gr => gr.Key, gr => gr.First());
+            lock (history) list = Intel.Briefing(facts.Where(kv => byId.ContainsKey(kv.Key)).Select(kv => new KeyValuePair<LobbyPlayer, List<Intel.Fact>>(byId[kv.Key], kv.Value)), BriefLines * 2);
+            int pendingN; lock (history) pendingN = scoutBusy.Count;
+
+            // Başlık: tıklanabilir şerit
+            using (var b = new SolidBrush(Red)) g.FillRectangle(b, 16, y + 3, 4, 13);
+            float hx;
+            using (var f = Theme.Display(15)) { string t = Theme.Upper(L.T("Brifing")); Draw(g, t, f, Txt, 26, y); hx = 26 + g.MeasureString(t, f).Width + 6; }
+            using (var f = new Font(L.Sans, 8.5f))
+            {
+                string info = (list.Count > 0 ? L.F("en önemli {0} bilgi", list.Count) : "") + (pendingN > 0 ? (list.Count > 0 ? " · " : "") + L.F("{0} oyuncu inceleniyor…", pendingN) : "");
+                string hint = briefOpen ? L.T("gizle (B)") + " ▴" : L.T("göster (B)") + " ▾";
+                float hw = g.MeasureString(hint, f).Width;
+                Draw(g, hint, f, Mut, W - 16 - hw, y + 4);
+                Theme.DrawFit(g, info, f, pendingN > 0 ? Warn : Mut, hx, y + 4, W - 16 - hw - 12 - hx);
+            }
+            briefHeader = new Rectangle(0, y, W, 24);
+            using (var b = new SolidBrush(Card)) g.FillRectangle(b, 16, y + 22, W - 32, 1);
+            y += 30;
+            if (!briefOpen) return y;
+
+            if (list.Count == 0)
+            {
+                using (var f = new Font(L.Sans, 9f))
+                    Theme.DrawFit(g, st.Players.Count == 0 ? L.T("Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.")
+                        : pendingN > 0 ? L.T("Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.") : L.T("Bu lobide öne çıkan bir bilgi yok."), f, Mut, 18, y + 4, W - 36);
+                return y + BriefLines * BriefLineH + 8;
+            }
+            // İki sütun, sütun başına üç satır: soldan sağa önem sırası.
+            int colW = (W - 32 - 16) / 2;
+            using (var f = new Font(L.Sans, 9f))
+                for (int i = 0; i < list.Count; i++)
+                {
+                    var fct = list[i];
+                    var p = byId.TryGetValue(fct.Puuid, out var pp) ? pp : null;
+                    int cx = 16 + (i % 2) * (colW + 16), cy = y + (i / 2) * BriefLineH;
+                    var r = new Rectangle(cx, cy, colW, BriefLineH - 2);
+                    if (p != null) briefRows.Add(new KeyValuePair<Rectangle, LobbyPlayer>(r, p));
+                    if (r == briefHover) using (var b = new SolidBrush(Field)) g.FillRectangle(b, r);
+                    using (var b = new SolidBrush(fct.Color)) g.FillRectangle(b, cx, cy + 4, 3, BriefLineH - 10);
+                    var icon = p != null ? AgentIcon(p.AgentId) : null;
+                    if (icon != null) g.DrawImage(icon, cx + 8, cy + 2, 18, 18);
+                    // Rakip mi takım arkadaşı mı: ikonun altında ince çizgi.
+                    if (p != null) using (var b = new SolidBrush(p.Ally ? Win : Loss)) g.FillRectangle(b, cx + 8, cy + 20, 18, 2);
+                    BriefText(g, fct.Text, f, new RectangleF(cx + 32, cy + 3, colW - 36, BriefLineH - 4));
+                }
+            return y + BriefLines * BriefLineH + 8;
+        }
+
+        static readonly StringFormat Ellipsis = new StringFormat(StringFormatFlags.NoWrap) { Trimming = StringTrimming.EllipsisCharacter };
+
+        /// <summary>Brifing satırı tek boy yazıyla: bulgu (ilk ":" ya da "." öncesi) parlak, gerisi (öneri) soluk; sığmayan "…" olur.</summary>
+        static void BriefText(Graphics g, string text, Font f, RectangleF r)
+        {
+            int cut = new[] { text.IndexOf(": ", StringComparison.Ordinal), text.IndexOf(". ", StringComparison.Ordinal), text.IndexOf("：", StringComparison.Ordinal) }
+                .Where(i => i > 0).DefaultIfEmpty(-1).Min();
+            string head = cut > 0 ? text.Substring(0, cut + 1) : text, tail = cut > 0 ? text.Substring(cut + 1).TrimStart() : "";
+            using (var b = new SolidBrush(Txt)) g.DrawString(head, f, b, r, Ellipsis);
+            float hw = g.MeasureString(head, f, (int)r.Width, Ellipsis).Width;
+            if (tail == "" || hw + 30 > r.Width) return;
+            using (var b = new SolidBrush(Mut)) g.DrawString(tail, f, b, new RectangleF(r.X + hw, r.Y, r.Width - hw, r.Height), Ellipsis);
+        }
+
         /// <summary>Geçmişi yüklenen oyuncuları incelemeye sıraya koyar: önce rakipler, kendin hariç.</summary>
         void EnqueueScout(List<string> batch)
         {
@@ -883,8 +1011,10 @@ XWehWA==
             var list = new List<PMatch>();
             try
             {
-                var ids = ((J(WithRetry(() => riot.History(puuid, 15)), "History") as object[]) ?? new object[0])
-                    .Where(m => Scout.Queues.Contains(S(J(m, "QueueID")))).Select(m => S(J(m, "MatchID"))).Take(8).ToList();
+                var hist = (J(WithRetry(() => riot.History(puuid, 15)), "History") as object[]) ?? new object[0];
+                // Maç saatleri (tüm modlar): bugünkü oturumun uzunluğu için.
+                lock (history) starts[puuid] = hist.Select(m => Convert.ToInt64(J(m, "GameStartTime") ?? 0L)).Where(t => t > 0).ToList();
+                var ids = hist.Where(m => Scout.Queues.Contains(S(J(m, "QueueID")))).Select(m => S(J(m, "MatchID"))).Take(8).ToList();
                 foreach (var id in ids)
                 {
                     if (closed) return;
@@ -927,7 +1057,8 @@ XWehWA==
         protected override void OnMouseClick(MouseEventArgs e)
         {
             base.OnMouseClick(e);
-            var p = rows.FirstOrDefault(r => r.Key.Contains(e.Location)).Value;
+            if (briefHeader.Contains(e.Location)) { ToggleBrief(); return; }
+            var p = briefRows.FirstOrDefault(r => r.Key.Contains(e.Location)).Value ?? rows.FirstOrDefault(r => r.Key.Contains(e.Location)).Value;
             if (p == null || p.Incognito || p.Puuid == null) return;
             if (e.Button == MouseButtons.Right) { Scout.OpenProfile(p.Name, p.Tag); return; }
             if (p.IsSelf) { AnalysisForm.Open(); return; }
@@ -942,7 +1073,7 @@ XWehWA==
                 else if (!scouted.ContainsKey(p.Puuid) && history.ContainsKey(p.Puuid) && scoutBusy.Add(p.Puuid)) { scoutPending.Enqueue(p.Puuid); Monitor.PulseAll(history); }
             }
             if (scoutForm == null || scoutForm.IsDisposed)
-                scoutForm = new ScoutForm(ScoutedOf, id => { lock (history) return scoutBusy.Contains(id); });
+                scoutForm = new ScoutForm(ScoutedOf, id => { lock (history) return scoutBusy.Contains(id); }, FactsOf);
             string mapUrl; lock (history) mapUrl = state.MapUrl;
             scoutForm.ShowPlayer(p, mapUrl);
         }
@@ -1028,7 +1159,7 @@ XWehWA==
             }
 
             rows.Clear();
-            int y = 86;
+            int y = DrawBriefing(g, st, 86);
             var allies = st.Players.Where(p => p.Ally).OrderByDescending(p => p.IsSelf).ToList();
             var enemies = st.Players.Where(p => !p.Ally).ToList();
             parties = PartyGroups(st.Players);
@@ -1194,10 +1325,9 @@ XWehWA==
                         if (Smurf(p, h)) x = Pill(g, "SMURF?", t, Warn, Bg, x, y + 7);
                         if (h != null && h.Leaderboard > 0) x = Pill(g, "#" + h.Leaderboard, t, Tiers.Color(27), Bg, x, y + 7);
                         if (p.Puuid != null && parties.TryGetValue(p.Puuid, out int pi)) x = Pill(g, L.T("PARTİ"), t, PartyColors[pi % PartyColors.Length], Bg, x, y + 7);
-                        // En belirgin oyun stili: yalnızca yer varsa (ayrıntısı tıklayınca açılan pencerede).
-                        var style = ScoutedOf(p.Puuid);
-                        var top = style != null ? Scout.Tags(style).FirstOrDefault() : null;
-                        if (top != null && x + g.MeasureString(top.Text, t).Width + 8 < ChipX - 8) x = Pill(g, top.Text, t, Color.FromArgb(200, top.Color), Bg, x, y + 7);
+                        // En önemli iki bulgu (etiketi olanlar), yalnızca yer varsa: ayrıntısı brifingde ve tıklayınca açılan pencerede.
+                        foreach (var fct in FactsOf(p.Puuid).Where(fc => fc.Pill != null).Take(2))
+                            if (x + g.MeasureString(fct.Pill, t).Width + 8 < ChipX - 8) x = Pill(g, fct.Pill, t, Color.FromArgb(200, fct.Color), Bg, x, y + 7);
                     }
                 }
             }

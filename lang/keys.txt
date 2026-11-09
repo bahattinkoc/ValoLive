@@ -31,7 +31,9 @@ Akvaryum: chat'e yazan balık olur
 Akşam
 Altın
 Analizim
+Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.
 Atak
+Atakta
 Ayrıntı: %LOCALAPPDATA%\ValoLive\ffmpeg.log
 Açmak için simgeye tıkla; çıkış simgenin sağ tık menüsünde.
 BAĞLANTI
@@ -51,15 +53,19 @@ Başlık uygulanamadı:
 Başlık ve etiketler bağlı her hesaba gider, yayın başlarken kendiliğinden. Kategori yalnızca Kick'te; YouTube'da yayın Oyun kategorisinde açılır, küçük resim Studio'dan. Chat kutusu ve chat eğlencesi iki chat'i birlikte okur.
 Belirgin bir alışkanlık yok — dengeli oynuyor.
 Bildirimler (tanıdık oyuncu, smurf, parti)
+Brifing
 Bronz
 Bu Google hesabında YouTube kanalı yok.
 Bu haritada bomba kurmamış.
+Bu lobide öne çıkan bir bilgi yok.
 Bu pencere yayına ve kayda girmez · adını gizleyenler aranmaz
 Bu platforma yayınla
 Bu projede "YouTube Data API v3"ü etkinleştir (Enable):
 Bu raund ace gelir mi? 🎯
 Bugün henüz rekabetçi maç yok.
 Bugün rank atlıyoruz 💪
+Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.
+Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.
 Bugün {0}G {1}M · {2} RR
 Bölge bulunamadı: Valorant'ı bir kez açman gerekiyor
 Büyüteç
@@ -81,6 +87,7 @@ Clients → Create client → Application type: Desktop app → Create. Client I
 DEVRE ARASI
 DOST ATEŞİ
 Defans
+Defansta
 Demir
 Derecesiz
 Desteklenmeyen ses biçimi ({0} bit).
@@ -174,6 +181,7 @@ MESAJ TAŞIYANLAR
 Maç Odası
 Maç bekleniyor…
 Maç bulununca otomatik aç
+Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.
 Maç bulununca takımın burada listelenir.
 Maç bulununca yayın kendiliğinden oyuna döner
 Maç sonu kartı (ısı haritası + özet)
@@ -193,6 +201,7 @@ OYUN STİLİ
 Ortak havai fişek
 Otomatik (Valorant dili)
 Oyun sesi
+Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.
 PARTİ
 PAT!
 PLATFORMLAR
@@ -254,8 +263,12 @@ Sniper koruması (F9)
 Son maç bilgisi yok.
 Son maç: {0} {1} · {2} · {3} · {4} · HS {5}
 Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.
+Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.
+Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.
+Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.
 Sonra tarayıcıda Google onayı açılır. "Google bu uygulamayı doğrulamadı" derse Gelişmiş → ValoLive'a git: uygulama senin kendi projen.
 Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.
+Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).
 Sprey
 Stil çıkarmak için yeterli round yok (en az 40).
 Stream URL / Stream Key'i platformun panelinden yeniden kopyala
@@ -268,13 +281,16 @@ Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz
 Sıraya girilince sayaç başlar
 TAKIMIN
 TANIDIK
+TEK AJAN
 TEST KAYDEDİLİYOR…
 TEST KAYDI (15 sn)
 Takım arkadaşın
+Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.
 Takımında {0} kişilik parti
 Tam ekran (her şey görünür)
 Tarayıcıda Google onayı bekleniyor…
 Tarayıcıda Kick onayı bekleniyor…
+Tek kaldığı {0} roundun hiçbirini kazanamamış: yalnız kalınca baskı kur, panikler.
 Ters ekran
 Ters ekran (3 sn)
 Ters ekran, büyüteç ve sesli okuma yalnızca abone ve modlara
@@ -360,12 +376,15 @@ defans
 defter dolduruluyor {0}/{1}
 durdu
 dün
+en önemli {0} bilgi
 form
 genel kazanma ({0})
 gerçek zamanlı sunucu bilgisi yok
 geçersiz yanıt
 geçmiş alınamadı
 geçmiş yükleniyor…
+gizle (B)
+göster (B)
 harita
 hasar/round
 hazır
@@ -430,12 +449,16 @@ zirve
 {0} ekranı ters çevirdi!
 {0} fişek
 {0} fps  ·  {1}  ·  düşen kare: {2}  ·  hız {3}
+{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).
+{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.
+{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.
 {0} kez düşerek öldün
 {0} kişi
 {0} maç · %{1} kazanma · atak round %{2} · defans round %{3}
 {0} maç · düellolar ekleniyor {1}/{2}
 {0} maç · tarama hatası: {1}
 {0} maç · {1}
+{0} oyuncu inceleniyor…
 {0} patlattı
 {0} platform × ~{1} kbps → internetin yükleme hızı en az {2} Mbps olmalı (pay ile).
 {0} portu kullanımda; ValoLive'ı yeniden başlatıp tekrar dene.
@@ -471,6 +494,7 @@ zirve
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.
 Ölümsüzlük
 Önce Kick ya da YouTube hesabını bağla (Platformlar → Bağlan).
+Öne çıkan başka bir bilgi yok.
 Önizlemede bekleme süresi yok. Kapalı eğlenceler burada da çalışmaz. Sesli okuma bilgisayarının hoparlöründen çıkar.
 Önizlemede her eğlenceyi kendin dene (yayın gerekmez). Ters ekran ve büyüteç yayın başlarken eklenir: yayın açıkken değiştirilemez.
 Ördek yarışı
@@ -484,6 +508,8 @@ zirve
 ölümü trade edilen
 ölümün trade edildi
 İLK KAN
+İLK KEZ?
+İSTİHBARAT
 İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.
 İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.
 İndirilen pakette ValoLive.exe yok

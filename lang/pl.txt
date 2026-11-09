@@ -518,3 +518,29 @@ Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	Stream spadł do {0} FPS: komp
 Yeni sürüm {0} hazır · güncelle	Nowa wersja {0} dostępna · aktualizuj
 İndirilen pakette ValoLive.exe yok	W pobranym pakiecie brak ValoLive.exe
 İndiriliyor… %{0}	Pobieranie… {0}%
+Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.	Główny agent to {0} ({2} z ostatnich {1} meczów), w tym meczu gra {3}.
+Atakta	W ataku
+Brifing	Odprawa
+Bu lobide öne çıkan bir bilgi yok.	W tym lobby nic się nie wyróżnia.
+Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Zagrał dziś {0} meczów i przegrał ostatnie {1} z rzędu: może mieć tilta, naciskaj wcześnie.
+Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.	Zagrał dziś {0} meczów: pod koniec długiej sesji spada koncentracja.
+Defansta	W obronie
+Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	Po znalezieniu meczu tu pojawią się najprzydatniejsze informacje z ostatnich meczów graczy.
+Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	Analiza ostatnich meczów graczy; wyniki pojawiają się tu na bieżąco.
+Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.	Grał {2} w {1} z ostatnich {0} meczów: bardzo doświadczony na tym agencie, gra wyuczony schemat.
+Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Przegrał ostatnie {0} mecze z rzędu: może mieć tilta, naciskaj wcześnie.
+Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	Wygrał ostatnie {0} mecze z rzędu: pewny siebie, gra agresywnie.
+Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	Na tej mapie zwykle podkłada spike na {0} ({2} z {1} podłożeń).
+TEK AJAN	ONE-TRICK
+Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	Wygrał {1} z {0} rund jako ostatni żywy: gdy zostanie sam, wchodźcie razem, nie zostawiajcie go na koniec.
+Tek kaldığı {0} roundun hiçbirini kazanamamış: yalnız kalınca baskı kur, panikler.	Nie wygrał żadnej z {0} rund jako ostatni żywy: naciskaj go, gdy jest sam, panikuje.
+en önemli {0} bilgi	{0} najważniejszych informacji
+gizle (B)	ukryj (B)
+göster (B)	pokaż (B)
+{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0} gra głównie na {1}: {3} z {2} jego starć na tej mapie było tam (najczęściej {4}).
+{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	Duo z {0}: w tej samej drużynie w {1} ostatnich meczach, osłaniają się nawzajem.
+{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	Nie grał {0} w ostatnich {1} meczach: nie zna tego agenta, może używać umiejętności późno lub źle.
+{0} oyuncu inceleniyor…	analiza {0} graczy…
+Öne çıkan başka bir bilgi yok.	Nic więcej się nie wyróżnia.
+İLK KEZ?	PIERWSZY RAZ?
+İSTİHBARAT	WYWIAD

@@ -21,6 +21,7 @@ namespace ValoLive
         public long Start;
         public int Rounds, Kills, Deaths, FirstKills, FirstDeaths, FirstDeathLost, Traded, Ults, OpKills, SheriffKills, Hs, Shots;
         public int AtkRounds, AtkWon, DefRounds, DefWon, AtkDmg, DefDmg;
+        public int ClutchN, ClutchW;                                              // takımında tek kaldığı (rakip ayaktayken) roundlar / kazandıkları
         public Dictionary<string, int> Plants = new Dictionary<string, int>();   // kurduğu bölge → kaç kez
         public List<int[]> KillSpots = new List<int[]>(), DeathSpots = new List<int[]>(); // {x, y, atak ise 1}
         public Dictionary<string, int[]> Guns = new Dictionary<string, int[]>(); // "Vandal"/"Phantom" → {round, kill, kafa, isabet}
@@ -105,6 +106,19 @@ namespace ValoLive
             {
                 var list = round.ToList();
                 bool atk = atkOf.TryGetValue(round.Key, out var a) && a;
+                // Clutch: bir ölümle takımında yalnız o kaldıysa ve rakipten ayakta olan varsa (dirilme yok sayılır).
+                var alive = new HashSet<string>(teamOf.Keys);
+                foreach (var k in list)
+                {
+                    alive.Remove(S(J(k, "victim")));
+                    if (!alive.Contains(puuid)) break;
+                    if (alive.Count(x => teamOf[x] == team) == 1 && alive.Any(x => teamOf[x] != team))
+                    {
+                        pm.ClutchN++;
+                        if (roundWon.TryGetValue(round.Key, out var cw) && cw) pm.ClutchW++;
+                        break;
+                    }
+                }
                 var first = list[0];
                 if (S(J(first, "killer")) == puuid) pm.FirstKills++;
                 if (S(J(first, "victim")) == puuid) { pm.FirstDeaths++; if (roundWon.TryGetValue(round.Key, out var w) && !w) pm.FirstDeathLost++; }
@@ -323,15 +337,17 @@ namespace ValoLive
     {
         readonly Func<string, List<PMatch>> data;   // puuid → çözümlenmiş maçları (yükleniyorsa eksik)
         readonly Func<string, bool> loading;
+        readonly Func<string, List<Intel.Fact>> facts;
         LobbyPlayer player;
         string mapUrl;
         int side;
+        const float IntelY = 476; const int IntelLines = 6, IntelLineH = 24;
 
-        public ScoutForm(Func<string, List<PMatch>> data, Func<string, bool> loading)
+        public ScoutForm(Func<string, List<PMatch>> data, Func<string, bool> loading, Func<string, List<Intel.Fact>> facts)
         {
-            this.data = data; this.loading = loading;
+            this.data = data; this.loading = loading; this.facts = facts;
             Text = L.T("ValoLive — Oyuncu Analizi");
-            ClientSize = new Size(860, 520);
+            ClientSize = new Size(860, (int)IntelY + 32 + IntelLines * IntelLineH + 12);
             StartPosition = FormStartPosition.CenterScreen;
         }
 
@@ -407,6 +423,23 @@ namespace ValoLive
             };
             for (int i = 0; i < cells.Length; i++)
                 Stat(g, ms.Count > 0 ? cells[i].Item1 : "—", cells[i].Item2, Txt, Lx + (i % 3) * (LW / 3), y + (i / 3) * 62, LW / 3);
+
+            // ---- Alt: istihbarat (stil etiketleri yukarıda; burada geri kalan bulgular, önem sırasıyla) ----
+            float iy = Section(g, L.T("İSTİHBARAT"), Lx, IntelY, ClientSize.Width - 2 * Lx);
+            var intel = facts(player.Puuid).Where(f => !f.Style).Take(IntelLines).ToList();
+            using (var f = new Font(L.Sans, 9.5f))
+            {
+                if (intel.Count == 0)
+                    Theme.DrawFit(g, busy ? L.T("Maçları inceleniyor…") : L.T("Öne çıkan başka bir bilgi yok."), f, Mut, Lx, iy, ClientSize.Width - 2 * Lx);
+                foreach (var fct in intel)
+                {
+                    using (var b = new SolidBrush(fct.Color)) g.FillRectangle(b, Lx, iy + 3, 3, IntelLineH - 10);
+                    float tx = Lx + 12;
+                    if (fct.Pill != null) using (var pf = new Font(L.SansBold, 8f)) tx = Pill(g, fct.Pill, pf, fct.Color, Bg, tx, iy + 2);
+                    Theme.DrawFit(g, fct.Text, f, Txt, tx, iy + 1, ClientSize.Width - Lx - tx);
+                    iy += IntelLineH;
+                }
+            }
 
             // ---- Sağ sütun: bu haritada nereden öldürüyor ----
             const float R = 450, RW = 390;
