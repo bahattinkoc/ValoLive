@@ -501,6 +501,9 @@ namespace ValoLive
         /// <summary>Yakalama kendini toparlarken (yayın açık kalır) bildirilir.</summary>
         public event Action Recovering;
 
+        /// <summary>5 sn'de bir: kare hızı, platform başına en uzun gönderim beklemesi (ms), yakalama süreci yok mu.</summary>
+        public event Action<double, Dictionary<Target, double>, bool> Health;
+
         public void Start(StreamOptions o, AudioSource game, AudioSource mic)
         {
             stopping = false;
@@ -690,15 +693,19 @@ namespace ValoLive
             long frames = totalFrames - winFrameStart;
             string p(string k) => progress.TryGetValue(k, out var v) ? v : "?";
             // Platform başına: gönderilen hız ve en uzun yazma beklemesi (uzarsa o platformun ağı yetişmiyor).
+            var waits = new Dictionary<Target, double>();
             var sent = string.Join(" · ", pubs.Select(x =>
             {
                 long b = Interlocked.Exchange(ref x.Bytes, 0); double w = x.MaxWriteMs; x.MaxWriteMs = 0;
+                waits[x.Target] = w;
                 return $"{x.Target.Name} {b * 8 / secs / 1000:0} kbps (bekleme en çok {w:0} ms)";
             }));
+            bool noCapture = proc == null || proc.HasExited;
             Diag.Event("İSTAT", $"fps {frames / secs:0.0} · {(sent == "" ? "platform bağlantısı yok" : sent)}" +
                                 $" · düşen kare {p("drop_frames")} · çoğaltılan {p("dup_frames")} · yakalama #{capAttempt}" +
-                                (proc == null || proc.HasExited ? " · YAKALAMA YOK" : ""));
+                                (noCapture ? " · YAKALAMA YOK" : ""));
             winStart = now; winFrameStart = totalFrames;
+            Health?.Invoke(frames / secs, waits, noCapture);
         }
 
         void ScheduleRestart()

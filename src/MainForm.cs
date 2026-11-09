@@ -18,6 +18,7 @@ namespace ValoLive
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             L.Init(Settings.Load().Language); // arayüz metinleri kurulmadan önce
+            Updater.Cleanup();
             Application.Run(new MainForm());
         }
     }
@@ -148,9 +149,11 @@ namespace ValoLive
             streamer.Progress += p => BeginInvoke((Action)(() => ShowProgress(p)));
             streamer.TargetChanged += (t, s, n) => BeginInvoke((Action)(() => OnTargetChanged(t, s, n)));
             streamer.Exited += (unexpected, err) => BeginInvoke((Action)(() => OnStreamExit(unexpected, err)));
+            streamer.Health += (fps, waits, noCap) => BeginInvoke((Action)(() => OnHealth(fps, waits, noCap)));
             streamer.Recovering += () => BeginInvoke((Action)(() => { if (mode != Mode.Idle) SetStatus(L.T("● EKRAN YAKALAMA YENİLENİYOR (yayın açık)"), Mut); }));
             clock.Tick += (s, e) => UpdateClock();
             clock.Start();
+            updateTimer = new System.Threading.Timer(_ => CheckUpdate(), null, 5000, 6 * 3600 * 1000); // açılıştan 5 sn sonra, sonra 6 saatte bir
             StartTracker();
             Encounters.Start(); // karşılaşma defteri arka planda dolar (Riot istemcisi açıkken)
             live = new LiveInfo(); // canlı skor ve maç sonu özeti (Riot istemcisinin kendi durum bilgisi)
@@ -188,6 +191,11 @@ namespace ValoLive
             int top = 92;
             if (sub.Left + TextRenderer.MeasureText(sub.Text, Font).Width + 24 > keys.Left) { keys.Location = new Point(22, 76); top = 112; } // yan yana sığmıyor: alt alta
             Controls.AddRange(new Control[] { sub, keys });
+            // Yeni sürüm bulununca alt başlığın yerini alır.
+            lblSub = sub;
+            lnkUpdate = new LinkLabel { AutoSize = true, Location = sub.Location, Visible = false, LinkColor = Green, ActiveLinkColor = Txt, Font = new Font(L.SansBold, Font.Size) };
+            lnkUpdate.LinkClicked += (s, e) => UpdateClicked();
+            Controls.Add(lnkUpdate);
             int lobbyW = Theme.ButtonWidth(L.T("MAÇ ODASI"), 32, 130), selfW = Theme.ButtonWidth(L.T("ANALİZİM"), 32, 110);
             var btnLobby = MakeButton(L.T("MAÇ ODASI"), new Rectangle(FormW - 20 - lobbyW, 16, lobbyW, 32), Field);
             btnLobby.Font = new Font(L.SansBold, 9.5f);
@@ -502,9 +510,60 @@ namespace ValoLive
         {
             var d = dests.FirstOrDefault(x => x.P.Id == t.Id);
             if (d == null) return; // test kaydının dosya hedefi
+            var old = d.State;
             d.State = s; d.Attempts = attempts;
             chips.Invalidate();
-            if (mode == Mode.Live) UpdateLiveStatus();
+            if (mode != Mode.Live) return;
+            UpdateLiveStatus();
+            if (old == s) return;
+            string name = d.P.Name;
+            if (s == TargetState.Retrying && old == TargetState.Live) { dropped.Add(t.Id); Alert("drop:" + t.Id, L.F("{0} bağlantısı koptu, yeniden bağlanılıyor", name), Red); }
+            else if (s == TargetState.Rejected) Alert("rej:" + t.Id, L.F("{0} yayını reddetti: Stream Key'i kontrol et", name), Red);
+            else if (s == TargetState.Failed) Alert("fail:" + t.Id, L.F("{0} bağlantısı koptu, yeniden bağlanılamadı", name), Red);
+            else if (s == TargetState.Live && dropped.Remove(t.Id)) Alert("up:" + t.Id, L.F("{0} yeniden bağlandı", name), Green);
+        }
+
+        // ---------- Yayın sağlığı uyarıları ----------
+        // Oyun tam ekranken ValoLive penceresi görünmez: kopma, düşük FPS, yetişmeyen internet oyunun üstünde
+        // yayına girmeyen bildirimle (ve sesle) söylenir. Kısa dalgalanmalar için iki ardışık 5 sn'lik pencere gerekir.
+
+        readonly HashSet<string> dropped = new HashSet<string>();
+        readonly Dictionary<string, int> slowNet = new Dictionary<string, int>();
+        readonly Dictionary<string, DateTime> alertedAt = new Dictionary<string, DateTime>();
+        int lowFps, noCapture;
+
+        void ResetHealth()
+        {
+            dropped.Clear(); slowNet.Clear(); alertedAt.Clear();
+            lowFps = noCapture = 0;
+        }
+
+        void OnHealth(double fps, Dictionary<Target, double> waits, bool noCap)
+        {
+            if (mode != Mode.Live || (DateTime.Now - liveSince).TotalSeconds < 20) return; // açılışta fps ve bağlantı oturuyor
+            noCapture = noCap ? noCapture + 1 : 0;
+            if (noCapture == 2) Alert("cap", L.T("Ekran yakalanamıyor: yayındaki görüntü donmuş olabilir"), Red);
+            else if (noCapture == 0)
+            {
+                lowFps = fps < 50 ? lowFps + 1 : 0;
+                if (lowFps == 2) Alert("fps", L.F("Yayın {0} FPS'e düştü: bilgisayar yetişmiyor", (int)fps), Amber);
+            }
+            foreach (var kv in waits)
+            {
+                if (kv.Key.Id == "file") continue;
+                slowNet.TryGetValue(kv.Key.Id, out int n);
+                slowNet[kv.Key.Id] = n = kv.Value >= 1000 ? n + 1 : 0;
+                if (n == 2) Alert("net:" + kv.Key.Id, L.F("{0}: internet yetişmiyor, yayın takılabilir", kv.Key.Name), Amber);
+            }
+        }
+
+        /// <summary>Aynı uyarı 2 dk içinde tekrar çıkmaz (gidip gelen bağlantı oyunu bildirime boğmasın).</summary>
+        void Alert(string key, string text, Color color)
+        {
+            if (alertedAt.TryGetValue(key, out var at) && (DateTime.Now - at).TotalMinutes < 2) return;
+            alertedAt[key] = DateTime.Now;
+            Diag.Event("UYARI", text);
+            Toast.Show(L.T("YAYIN"), new List<KeyValuePair<string, Color>> { new KeyValuePair<string, Color>(text, color) });
         }
 
         /// <summary>Genel durum: bir platform bile canlıysa CANLI; değilse yeniden bağlanan ya da bağlanan.</summary>
@@ -1339,6 +1398,7 @@ namespace ValoLive
             mode = m;
             liveSince = DateTime.Now;
             foreach (var d in dests) { d.State = null; d.Attempts = 0; }
+            ResetHealth();
             chips.Invalidate();
             SetInputsEnabled(false);
             int vmode = Diag.ValorantFullscreenMode();
@@ -1418,6 +1478,7 @@ namespace ValoLive
                 lblStats.Text = L.T("Stream URL / Stream Key'i platformun panelinden yeniden kopyala");
             }
             else if (unexpected) { SetStatus(L.T("● YAYIN DURDU"), Red); lblStats.Text = Trim(err); }
+            if (was == Mode.Live && unexpected) Alert("stop", L.T("Yayın durdu: hiçbir platforma bağlanılamıyor"), Red);
             else { SetStatus(L.T("● YAYIN BİTTİ"), Mut); lblStats.Text = L.F("Süre: {0:hh\\:mm\\:ss}", DateTime.Now - liveSince); }
         }
 
@@ -1493,6 +1554,65 @@ namespace ValoLive
             if (mode != Mode.Idle) { MessageBox.Show(this, L.T("Dil, yayın bitince ValoLive yeniden açıldığında değişir."), "ValoLive"); return; }
             exiting = true;
             Application.Restart();
+        }
+
+        // ---------- Güncelleme (Updater.cs) ----------
+
+        System.Threading.Timer updateTimer;
+        Label lblSub;
+        LinkLabel lnkUpdate;
+        Updater.Release update;
+
+        void CheckUpdate()
+        {
+            Updater.Cleanup(); // yeniden başlarken eski süreç exe'yi henüz bırakmamış olabilir: açılıştakini tamamlar
+            try
+            {
+                var r = Updater.Check();
+                if (r == null || !IsHandleCreated) return;
+                BeginInvoke((Action)(() =>
+                {
+                    if (update != null && update.Version >= r.Version) return;
+                    update = r;
+                    Diag.Event("GÜNCELLEME", $"yeni sürüm {r.Tag} (bu sürüm {Updater.Current})");
+                    lnkUpdate.Text = L.F("Yeni sürüm {0} hazır · güncelle", r.Tag);
+                    lnkUpdate.Visible = true; lblSub.Visible = false;
+                }));
+            }
+            catch { } // çevrimdışı ya da GitHub yanıt vermedi: sonraki denemede
+        }
+
+        void UpdateClicked()
+        {
+            var r = update;
+            if (r == null) return;
+            if (mode != Mode.Idle) { MessageBox.Show(this, L.T("Güncelleme yayın bitince yapılabilir."), "ValoLive"); return; }
+            // Paket yoksa ya da klasöre yazılamıyorsa (ör. Program Files) sürüm sayfası açılır, elle indirilir.
+            if (string.IsNullOrEmpty(r.ZipUrl) || !Updater.CanWrite()) { Process.Start(r.Page); return; }
+            if (MessageBox.Show(this, L.F("ValoLive {0} indirilip kurulsun mu? Uygulama kapanır ve yeni sürümle yeniden açılır.", r.Tag), "ValoLive",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
+            lnkUpdate.Enabled = false;
+            btnLive.Enabled = btnTest.Enabled = false; // kurulum sürerken yayın başlamasın
+            Task.Run(() =>
+            {
+                try
+                {
+                    Updater.Install(r, p => BeginInvoke((Action)(() => lnkUpdate.Text = L.F("İndiriliyor… %{0}", p))));
+                    Diag.Event("GÜNCELLEME", $"{r.Tag} kuruldu, yeniden başlatılıyor");
+                    BeginInvoke((Action)(() => { exiting = true; Application.Restart(); }));
+                }
+                catch (Exception e)
+                {
+                    Diag.Event("GÜNCELLEME", "kurulamadı: " + e.Message);
+                    BeginInvoke((Action)(() =>
+                    {
+                        lnkUpdate.Enabled = true; btnLive.Enabled = btnTest.Enabled = true;
+                        lnkUpdate.Text = L.F("Yeni sürüm {0} hazır · güncelle", r.Tag);
+                        if (MessageBox.Show(this, L.F("Güncelleme kurulamadı: {0}\n\nSürüm sayfası açılsın mı? Oradan elle indirebilirsin.", e.Message), "ValoLive",
+                                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) Process.Start(r.Page);
+                    }));
+                }
+            });
         }
 
         void UpdateTitle() => Text = overlay.Cover ? L.T("ValoLive — SNIPER KORUMASI AÇIK") : overlay.Summary ? L.T("ValoLive — YAYIN ÖZETİ") : "ValoLive";

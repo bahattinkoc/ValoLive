@@ -503,3 +503,18 @@ yayın bekleniyor	กำลังรอสตรีม
 Önce Kick ya da YouTube hesabını bağla (Platformlar → Bağlan).	เชื่อมต่อบัญชี Kick หรือ YouTube ก่อน (แพลตฟอร์ม → เชื่อมต่อ)
 YouTube başlığı uygulanamadı: 	ใช้ชื่อ YouTube ไม่ได้: 
 YouTube onayı reddedildi: 	YouTube ปฏิเสธการยินยอม: 
+Ekran yakalanamıyor: yayındaki görüntü donmuş olabilir	จับภาพหน้าจอไม่ได้: ภาพในสตรีมอาจค้าง
+Güncelleme kurulamadı: {0}\n\nSürüm sayfası açılsın mı? Oradan elle indirebilirsin.	อัปเดตไม่สำเร็จ: {0}\n\nเปิดหน้ารีลีสไหม? ดาวน์โหลดเองได้จากที่นั่น
+Güncelleme yayın bitince yapılabilir.	อัปเดตได้หลังสตรีมจบ
+ValoLive {0} indirilip kurulsun mu? Uygulama kapanır ve yeni sürümle yeniden açılır.	ดาวน์โหลดและติดตั้ง ValoLive {0} ไหม? แอปจะปิดแล้วเปิดใหม่ด้วยเวอร์ชันใหม่
+YAYIN	สตรีม
+Yayın durdu: hiçbir platforma bağlanılamıyor	สตรีมหยุด: เชื่อมต่อแพลตฟอร์มใดไม่ได้เลย
+Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	สตรีมลดลงเหลือ {0} FPS: คอมพิวเตอร์ทำงานไม่ทัน
+{0} bağlantısı koptu, yeniden bağlanılıyor	{0} หลุดการเชื่อมต่อ กำลังเชื่อมต่อใหม่
+{0} yayını reddetti: Stream Key'i kontrol et	{0} ปฏิเสธสตรีม: ตรวจสอบ Stream Key
+{0} bağlantısı koptu, yeniden bağlanılamadı	{0} หลุดการเชื่อมต่อ เชื่อมต่อใหม่ไม่ได้
+{0} yeniden bağlandı	{0} เชื่อมต่อใหม่แล้ว
+{0}: internet yetişmiyor, yayın takılabilir	{0}: อัปโหลดไม่ทัน สตรีมอาจกระตุก
+Yeni sürüm {0} hazır · güncelle	มีเวอร์ชันใหม่ {0} · อัปเดต
+İndirilen pakette ValoLive.exe yok	แพ็กเกจที่ดาวน์โหลดไม่มี ValoLive.exe
+İndiriliyor… %{0}	กำลังดาวน์โหลด… {0}%

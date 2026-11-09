@@ -503,3 +503,18 @@ yayın bekleniyor	đang chờ buổi phát
 Önce Kick ya da YouTube hesabını bağla (Platformlar → Bağlan).	Hãy kết nối tài khoản Kick hoặc YouTube trước (Nền tảng → Kết nối).
 YouTube başlığı uygulanamadı: 	Không áp dụng được tiêu đề YouTube: 
 YouTube onayı reddedildi: 	YouTube từ chối cấp quyền: 
+Ekran yakalanamıyor: yayındaki görüntü donmuş olabilir	Không thể chụp màn hình: hình ảnh stream có thể bị đứng
+Güncelleme kurulamadı: {0}\n\nSürüm sayfası açılsın mı? Oradan elle indirebilirsin.	Cập nhật thất bại: {0}\n\nMở trang phát hành? Bạn có thể tải thủ công ở đó.
+Güncelleme yayın bitince yapılabilir.	Bạn có thể cập nhật sau khi stream kết thúc.
+ValoLive {0} indirilip kurulsun mu? Uygulama kapanır ve yeni sürümle yeniden açılır.	Tải và cài đặt ValoLive {0}? Ứng dụng sẽ đóng và mở lại với phiên bản mới.
+YAYIN	STREAM
+Yayın durdu: hiçbir platforma bağlanılamıyor	Stream đã dừng: không kết nối được nền tảng nào
+Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	Stream giảm xuống {0} FPS: máy tính không theo kịp
+{0} bağlantısı koptu, yeniden bağlanılıyor	{0} mất kết nối, đang kết nối lại
+{0} yayını reddetti: Stream Key'i kontrol et	{0} từ chối stream: kiểm tra Stream Key
+{0} bağlantısı koptu, yeniden bağlanılamadı	{0} mất kết nối, không thể kết nối lại
+{0} yeniden bağlandı	{0} đã kết nối lại
+{0}: internet yetişmiyor, yayın takılabilir	{0}: tốc độ tải lên không đủ, stream có thể giật
+Yeni sürüm {0} hazır · güncelle	Có phiên bản mới {0} · cập nhật
+İndirilen pakette ValoLive.exe yok	Gói đã tải không có ValoLive.exe
+İndiriliyor… %{0}	Đang tải… {0}%

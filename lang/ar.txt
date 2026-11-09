@@ -503,3 +503,18 @@ yayın bekleniyor	بانتظار البث
 Önce Kick ya da YouTube hesabını bağla (Platformlar → Bağlan).	اربط حساب Kick أو YouTube أولًا (المنصات ← ربط).
 YouTube başlığı uygulanamadı: 	تعذّر تطبيق عنوان YouTube: 
 YouTube onayı reddedildi: 	رُفضت موافقة YouTube: 
+Ekran yakalanamıyor: yayındaki görüntü donmuş olabilir	تعذّر التقاط الشاشة: قد تكون صورة البث متجمّدة
+Güncelleme kurulamadı: {0}\n\nSürüm sayfası açılsın mı? Oradan elle indirebilirsin.	تعذّر التحديث: {0}\n\nفتح صفحة الإصدار؟ يمكنك تنزيله يدويًا من هناك.
+Güncelleme yayın bitince yapılabilir.	يمكنك التحديث بعد انتهاء البث.
+ValoLive {0} indirilip kurulsun mu? Uygulama kapanır ve yeni sürümle yeniden açılır.	تنزيل ValoLive {0} وتثبيته؟ سيُغلق التطبيق ثم يُعاد فتحه بالإصدار الجديد.
+YAYIN	البث
+Yayın durdu: hiçbir platforma bağlanılamıyor	توقف البث: تعذّر الاتصال بأي منصة
+Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	انخفض البث إلى {0} إطارًا/ث: الجهاز لا يواكب
+{0} bağlantısı koptu, yeniden bağlanılıyor	انقطع الاتصال بـ {0}، جارٍ إعادة الاتصال
+{0} yayını reddetti: Stream Key'i kontrol et	رفض {0} البث: تحقّق من مفتاح البث
+{0} bağlantısı koptu, yeniden bağlanılamadı	انقطع الاتصال بـ {0}، تعذّرت إعادة الاتصال
+{0} yeniden bağlandı	أُعيد الاتصال بـ {0}
+{0}: internet yetişmiyor, yayın takılabilir	{0}: سرعة الرفع غير كافية، قد يتقطّع البث
+Yeni sürüm {0} hazır · güncelle	إصدار جديد {0} متاح · تحديث
+İndirilen pakette ValoLive.exe yok	الحزمة التي نُزّلت لا تحتوي على ValoLive.exe
+İndiriliyor… %{0}	جارٍ التنزيل… {0}%

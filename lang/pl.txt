@@ -503,3 +503,18 @@ yayın bekleniyor	czekam na transmisję
 Önce Kick ya da YouTube hesabını bağla (Platformlar → Bağlan).	Najpierw połącz konto Kick lub YouTube (Platformy → Połącz).
 YouTube başlığı uygulanamadı: 	Nie udało się zastosować tytułu YouTube: 
 YouTube onayı reddedildi: 	Odmowa zgody YouTube: 
+Ekran yakalanamıyor: yayındaki görüntü donmuş olabilir	Nie można przechwycić ekranu: obraz streamu może być zamrożony
+Güncelleme kurulamadı: {0}\n\nSürüm sayfası açılsın mı? Oradan elle indirebilirsin.	Aktualizacja nie powiodła się: {0}\n\nOtworzyć stronę wydania? Możesz tam pobrać ją ręcznie.
+Güncelleme yayın bitince yapılabilir.	Aktualizację możesz wykonać po zakończeniu streamu.
+ValoLive {0} indirilip kurulsun mu? Uygulama kapanır ve yeni sürümle yeniden açılır.	Pobrać i zainstalować ValoLive {0}? Aplikacja zamknie się i uruchomi ponownie w nowej wersji.
+YAYIN	STREAM
+Yayın durdu: hiçbir platforma bağlanılamıyor	Stream zatrzymany: brak połączenia z żadną platformą
+Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	Stream spadł do {0} FPS: komputer nie nadąża
+{0} bağlantısı koptu, yeniden bağlanılıyor	{0} rozłączony, ponowne łączenie
+{0} yayını reddetti: Stream Key'i kontrol et	{0} odrzucił stream: sprawdź Stream Key
+{0} bağlantısı koptu, yeniden bağlanılamadı	{0} rozłączony, nie udało się połączyć ponownie
+{0} yeniden bağlandı	{0} połączony ponownie
+{0}: internet yetişmiyor, yayın takılabilir	{0}: za wolny upload, stream może się przycinać
+Yeni sürüm {0} hazır · güncelle	Nowa wersja {0} dostępna · aktualizuj
+İndirilen pakette ValoLive.exe yok	W pobranym pakiecie brak ValoLive.exe
+İndiriliyor… %{0}	Pobieranie… {0}%

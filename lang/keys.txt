@@ -91,6 +91,7 @@ Duvar yazısı (1 dk kalır)
 EKRAN ŞAKALARI
 ESKİ DOST
 Ekran kartı motoru (işlemciyi boşaltır)
+Ekran yakalanamıyor: yayındaki görüntü donmuş olabilir
 Elmas
 Emoji yağmuru
 Emoji yağmuru (aynı emojiyi yazınca)
@@ -111,6 +112,8 @@ GÖRÜNTÜ
 GÖRÜNTÜ & SES
 GÜNÜN MAÇI
 Gümüş
+Güncelleme kurulamadı: {0}\n\nSürüm sayfası açılsın mı? Oradan elle indirebilirsin.
+Güncelleme yayın bitince yapılabilir.
 Günlükler
 Günün mağazası: {0} · yenilenmesine {1} sa {2} dk
 Gürültü filtresi
@@ -283,6 +286,7 @@ Uygulamanın Client ID ve Client Secret'ını buraya yapıştır:
 Uçak
 Uçak pankartı
 ValoLive arka planda çalışıyor
+ValoLive {0} indirilip kurulsun mu? Uygulama kapanır ve yeni sürümle yeniden açılır.
 ValoLive — Chat eğlencesi önizleme
 ValoLive — Kendi Analizim
 ValoLive — Maç Odası
@@ -295,6 +299,7 @@ Varsayılan ses çıkışı
 Vazgeç
 Virgülle ayır. Bağlantılar her zaman silinir.
 YALNIZ
+YAYIN
 YAYIN BİLGİSİ
 YAYIN PANELİ
 YAYIN PANELİNİ AÇ
@@ -311,11 +316,14 @@ Yayın anları: clutch, ilk kan, seri, ninja defuse, komik ölümler
 Yayın açık. Kapatılsın mı?
 Yayın açıkken radar, chat kutusu, maç sonu kartı, yayın anları ve chat komutları değiştirilemez; yayın bitince uygulanır.
 Yayın bu ayar kapalıyken başladı: açmak için yayını yeniden başlat.
+Yayın durdu: hiçbir platforma bağlanılamıyor
+Yayın {0} FPS'e düştü: bilgisayar yetişmiyor
 Yayında chat kutusu
 Yayını başlat
 Yayını bitir
 Yayının gideceği platformu seç: Platformlar sekmesinde en az birini aç.
 Yeni balık
+Yeni sürüm {0} hazır · güncelle
 Yeni uygulama oluştur. Ad: ValoLive · Redirect URL olarak şunu yaz:
 YouTube Studio'dan yayın anahtarı al
 YouTube başlığı uygulanamadı: 
@@ -414,6 +422,8 @@ zirve
 {0} KAZANDI!
 {0} açılamadı: {1}
 {0} açılınca yayın kendiliğinden devam eder
+{0} bağlantısı koptu, yeniden bağlanılamadı
+{0} bağlantısı koptu, yeniden bağlanılıyor
 {0} büyüteçle bakıyor
 {0} bıçak öldürmesi
 {0} dk
@@ -435,11 +445,14 @@ zirve
 {0} raund üst üste
 {0} rekabetçi maç
 {0} sn
+{0} yayını reddetti: Stream Key'i kontrol et
+{0} yeniden bağlandı
 {0} · o maçta {1}/{2}/{3}{4}
 {0} · {1} RR
 {0} · {1} {2} · daha önce {3} kez
 {0}. ROUND
 {0}: Stream URL ve Stream Key gerekli.
+{0}: internet yetişmiyor, yayın takılabilir
 {0}: kullanılmamış
 {0}: {1} round · round başı {2:0.00} öldürme · kafa %{3}
 {0}G  {1}M
@@ -473,6 +486,8 @@ zirve
 İLK KAN
 İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.
 İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.
+İndirilen pakette ValoLive.exe yok
+İndiriliyor… %{0}
 İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.
 İzleyici başına bekleme
 İzleyiciler chat'e komut yazar, ekranda canlanır. Kanal puanı gerekmez; her izleyici için bekleme süresi var.

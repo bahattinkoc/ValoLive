@@ -503,3 +503,18 @@ yayın bekleniyor	等待直播
 Önce Kick ya da YouTube hesabını bağla (Platformlar → Bağlan).	請先連接 Kick 或 YouTube 帳號（平台 → 連接）。
 YouTube başlığı uygulanamadı: 	無法套用 YouTube 標題： 
 YouTube onayı reddedildi: 	YouTube 授權遭拒： 
+Ekran yakalanamıyor: yayındaki görüntü donmuş olabilir	無法擷取畫面：直播畫面可能已凍結
+Güncelleme kurulamadı: {0}\n\nSürüm sayfası açılsın mı? Oradan elle indirebilirsin.	更新失敗：{0}\n\n要開啟版本頁面嗎？你可以在那裡手動下載。
+Güncelleme yayın bitince yapılabilir.	直播結束後才能更新。
+ValoLive {0} indirilip kurulsun mu? Uygulama kapanır ve yeni sürümle yeniden açılır.	要下載並安裝 ValoLive {0} 嗎？程式會關閉並以新版本重新開啟。
+YAYIN	直播
+Yayın durdu: hiçbir platforma bağlanılamıyor	直播已停止：無法連線到任何平台
+Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	直播降到 {0} FPS：電腦跟不上
+{0} bağlantısı koptu, yeniden bağlanılıyor	{0} 連線中斷，正在重新連線
+{0} yayını reddetti: Stream Key'i kontrol et	{0} 拒絕了直播：請檢查串流金鑰
+{0} bağlantısı koptu, yeniden bağlanılamadı	{0} 連線中斷，無法重新連線
+{0} yeniden bağlandı	{0} 已重新連線
+{0}: internet yetişmiyor, yayın takılabilir	{0}：上傳速度不足，直播可能卡頓
+Yeni sürüm {0} hazır · güncelle	有新版本 {0} · 更新
+İndirilen pakette ValoLive.exe yok	下載的套件中沒有 ValoLive.exe
+İndiriliyor… %{0}	下載中… {0}%

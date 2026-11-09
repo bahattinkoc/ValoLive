@@ -503,3 +503,18 @@ yayın bekleniyor	menunggu siaran
 Önce Kick ya da YouTube hesabını bağla (Platformlar → Bağlan).	Hubungkan dulu akun Kick atau YouTube (Platform → Hubungkan).
 YouTube başlığı uygulanamadı: 	Judul YouTube gagal diterapkan: 
 YouTube onayı reddedildi: 	Izin YouTube ditolak: 
+Ekran yakalanamıyor: yayındaki görüntü donmuş olabilir	Gagal menangkap layar: gambar stream mungkin membeku
+Güncelleme kurulamadı: {0}\n\nSürüm sayfası açılsın mı? Oradan elle indirebilirsin.	Gagal memperbarui: {0}\n\nBuka halaman rilis? Kamu bisa mengunduhnya secara manual di sana.
+Güncelleme yayın bitince yapılabilir.	Kamu bisa memperbarui setelah stream selesai.
+ValoLive {0} indirilip kurulsun mu? Uygulama kapanır ve yeni sürümle yeniden açılır.	Unduh dan pasang ValoLive {0}? Aplikasi akan tertutup dan terbuka lagi dengan versi baru.
+YAYIN	STREAM
+Yayın durdu: hiçbir platforma bağlanılamıyor	Stream berhenti: tidak bisa terhubung ke platform mana pun
+Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	Stream turun ke {0} FPS: PC tidak sanggup
+{0} bağlantısı koptu, yeniden bağlanılıyor	{0} terputus, menyambung ulang
+{0} yayını reddetti: Stream Key'i kontrol et	{0} menolak stream: periksa Stream Key
+{0} bağlantısı koptu, yeniden bağlanılamadı	{0} terputus, gagal menyambung ulang
+{0} yeniden bağlandı	{0} tersambung lagi
+{0}: internet yetişmiyor, yayın takılabilir	{0}: unggahan terlalu lambat, stream bisa patah-patah
+Yeni sürüm {0} hazır · güncelle	Versi baru {0} tersedia · perbarui
+İndirilen pakette ValoLive.exe yok	Paket yang diunduh tidak berisi ValoLive.exe
+İndiriliyor… %{0}	Mengunduh… {0}%

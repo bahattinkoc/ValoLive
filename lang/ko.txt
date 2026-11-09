@@ -503,3 +503,18 @@ yayın bekleniyor	방송 대기 중
 Önce Kick ya da YouTube hesabını bağla (Platformlar → Bağlan).	먼저 Kick 또는 YouTube 계정을 연결하세요 (플랫폼 → 연결).
 YouTube başlığı uygulanamadı: 	YouTube 제목을 적용하지 못했습니다: 
 YouTube onayı reddedildi: 	YouTube 동의가 거부됨: 
+Ekran yakalanamıyor: yayındaki görüntü donmuş olabilir	화면을 캡처할 수 없음: 방송 화면이 멈췄을 수 있습니다
+Güncelleme kurulamadı: {0}\n\nSürüm sayfası açılsın mı? Oradan elle indirebilirsin.	업데이트 실패: {0}\n\n릴리스 페이지를 열까요? 거기서 직접 다운로드할 수 있습니다.
+Güncelleme yayın bitince yapılabilir.	방송이 끝난 후 업데이트할 수 있습니다.
+ValoLive {0} indirilip kurulsun mu? Uygulama kapanır ve yeni sürümle yeniden açılır.	ValoLive {0}을(를) 다운로드해 설치할까요? 앱이 종료된 뒤 새 버전으로 다시 열립니다.
+YAYIN	방송
+Yayın durdu: hiçbir platforma bağlanılamıyor	방송 중지: 어떤 플랫폼에도 연결할 수 없음
+Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	방송이 {0} FPS로 떨어짐: PC가 따라가지 못함
+{0} bağlantısı koptu, yeniden bağlanılıyor	{0} 연결 끊김, 다시 연결 중
+{0} yayını reddetti: Stream Key'i kontrol et	{0}에서 방송을 거부함: 스트림 키를 확인하세요
+{0} bağlantısı koptu, yeniden bağlanılamadı	{0} 연결 끊김, 다시 연결하지 못함
+{0} yeniden bağlandı	{0} 다시 연결됨
+{0}: internet yetişmiyor, yayın takılabilir	{0}: 업로드 속도 부족, 방송이 끊길 수 있음
+Yeni sürüm {0} hazır · güncelle	새 버전 {0} 사용 가능 · 업데이트
+İndirilen pakette ValoLive.exe yok	다운로드한 패키지에 ValoLive.exe가 없습니다
+İndiriliyor… %{0}	다운로드 중… {0}%
