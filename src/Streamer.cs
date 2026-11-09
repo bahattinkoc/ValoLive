@@ -15,7 +15,8 @@ namespace ValoLive
 {
     sealed class StreamOptions
     {
-        public string Output;          // rtmps://... ya da .mp4 dosya yolu
+        public List<Target> Targets = new List<Target>(); // yayının gittiği platformlar (test kaydında tek hedef: dosya)
+        public string Output;          // test kaydının .mp4 dosya yolu
         public bool ToFile;
         public int DurationSec;        // sadece test kaydı için; uygulama bu sürede durdurur
         public int Width, Height, BitrateK;
@@ -41,7 +42,10 @@ namespace ValoLive
         /// <summary>(beklenmedik mi, son hata satırları)</summary>
         public event Action<bool, string> Exited;
 
-        public bool Running => pub != null && !pub.HasExited;
+        /// <summary>Yayın sürüyor: en az bir platform bağlı ya da yeniden bağlanıyor.</summary>
+        public bool Running => !exitFired && opts != null && (pubs.Any(p => p.Alive) || Active().Any());
+
+        IEnumerable<TargetRun> Active() { lock (runs) return runs.Values.Where(r => r.State == TargetState.Connecting || r.State == TargetState.Live || r.State == TargetState.Retrying).ToList(); }
         /// <summary>Şu anki yakalama yalnızca oyun penceresini alıyor (ekranın geri kalanı görüntüye girmiyor).</summary>
         public bool WindowOnly => capWindow != IntPtr.Zero && Running;
 
@@ -195,14 +199,14 @@ namespace ValoLive
         }
 
         /// <summary>Yayıncı süreç: yakalamadan gelen MPEG-TS'i yeniden kodlamadan Kick'e (ya da dosyaya) iletir.</summary>
-        static string PublisherArgs(StreamOptions o)
+        static string PublisherArgs(StreamOptions o, string output)
         {
             // -readrate KULLANMA: gerçek yayında (6000 kbps, gerçek ses kaynaklarıyla) akış Kick'te ~5 fps
             // donuk göründü; test görüntüsüyle yeniden üretilemedi. Açılıştaki ~3 sn'lik birikmiş gönderim
             // 6000'de Kick'in sınırı içinde kalıyor (yalnızca kaldırılan 7500 seçeneğinde bağlantı kopuyordu).
             var a = new StringBuilder("-hide_banner -nostats -loglevel error -probesize 2000000 -analyzeduration 2000000 -f mpegts -i pipe:0 -map 0 -c copy ");
-            if (o.ToFile) a.Append($"-movflags +faststart -y \"{o.Output}\"");
-            else a.Append($"-flvflags no_duration_filesize -f flv \"{o.Output}\"");
+            if (o.ToFile) a.Append($"-movflags +faststart -y \"{output}\"");
+            else a.Append($"-flvflags no_duration_filesize -f flv \"{output}\"");
             return a.ToString();
         }
 
@@ -457,11 +461,13 @@ namespace ValoLive
         }
         int engineStats, engineFails;
 
-        // İki süreç: "yayıncı" (pub) Kick bağlantısını yayın boyunca açık tutar; "yakalama" (proc) ekranı,
-        // sesi ve paneli kodlayıp MPEG-TS olarak ona akıtır. Ekran yakalama kopunca (tam ekran oyunu alta alma,
-        // UAC: DXGI ACCESS_LOST) yalnızca yakalama yeniden başlar; Kick bağlantısı hiç kapanmaz.
-        Process pub;
-        Stream pubIn;
+        // Süreçler: her platform için bir "yayıncı" (Publisher) bağlantıyı yayın boyunca açık tutar; tek "yakalama"
+        // (proc) ekranı, sesi ve paneli bir kez kodlayıp MPEG-TS olarak hepsine akıtır. Ekran yakalama kopunca
+        // (UAC, mod değişimi: DXGI ACCESS_LOST) yalnızca yakalama yeniden başlar; platform bağlantıları kapanmaz.
+        // Bir platform koparsa yalnızca onun yayıncısı yeniden bağlanır, ötekiler ve yakalama sürer.
+        volatile Publisher[] pubs = new Publisher[0];
+        readonly Dictionary<string, TargetRun> runs = new Dictionary<string, TargetRun>();
+        volatile bool fatal, exitFired;
         StreamOptions opts;
         AudioSource gameSrc, micSrc;
         long baseEpochMs;
@@ -476,7 +482,21 @@ namespace ValoLive
         long lastFrame, totalFrames, capAttempt;
         volatile bool awaitingFirstFrame, capDone;
         // 5 sn'lik istatistik penceresi (pompa ve ilerleme satırlarından)
-        long winBytes; double winMaxWriteMs; long winFrameStart; DateTime winStart;
+        long winFrameStart; DateTime winStart;
+
+        /// <summary>Bir platformun bu yayındaki bağlantı geçmişi (yeniden bağlanma kararları için).</summary>
+        sealed class TargetRun
+        {
+            public Target Target;
+            public TargetState State;
+            public int Attempts;     // art arda başarısız bağlantı
+            public bool EverUp;      // en az bir kez 10 sn ayakta kaldı
+            public int QuickDrops;   // ayağa kalktıktan sonra 60 sn dolmadan kopma (üst üste)
+            public Timer Retry;
+        }
+
+        /// <summary>Platform durumu değişti: (hedef, durum, deneme sayısı).</summary>
+        public event Action<Target, TargetState, int> TargetChanged;
 
         /// <summary>Yakalama kendini toparlarken (yayın açık kalır) bildirilir.</summary>
         public event Action Recovering;
@@ -501,8 +521,16 @@ namespace ValoLive
             gpuBroken = false; engineFails = 0;
             restartDue = DateTime.MaxValue;
             planned = false; windowReadySince = DateTime.MaxValue; windowBlockedUntil = DateTime.MinValue;
-            winStart = DateTime.Now; winBytes = 0; winMaxWriteMs = 0; winFrameStart = 0; totalFrames = 0;
-            StartPublisher();
+            winStart = DateTime.Now; winFrameStart = 0; totalFrames = 0;
+            fatal = exitFired = false;
+            lock (runs)
+            {
+                foreach (var r in runs.Values) r.Retry?.Dispose();
+                runs.Clear();
+                foreach (var t in o.Targets) runs[t.Id] = new TargetRun { Target = t };
+            }
+            pubs = new Publisher[0];
+            foreach (var t in o.Targets) StartPublisher(t, false);
             StartCapture();
             watchdog?.Dispose(); statsTimer?.Dispose();
             watchdog = new Timer(_ => Watch(), null, 250, 250);
@@ -538,9 +566,16 @@ namespace ValoLive
         /// </summary>
         void Watch()
         {
-            if (stopping || pub == null || pub.HasExited) return;
-            var cap = proc;
+            if (stopping || exitFired) return;
             var now = DateTime.Now;
+            // Bağlantısı 5 sn ayakta kalan platform canlı sayılır (ffmpeg reddedilen bağlantıda hemen kapanır).
+            foreach (var p in pubs)
+            {
+                TargetRun r;
+                lock (runs) runs.TryGetValue(p.Target.Id, out r);
+                if (r != null && r.State == TargetState.Connecting && p.Alive && (now - p.StartedAt).TotalSeconds >= 5) SetState(r, TargetState.Live);
+            }
+            var cap = proc;
             if (cap == null || cap.HasExited)
             {
                 // Eski yakalamanın temizliği (ses kaynaklarını ayırma) bitmeden yenisi başlamasın;
@@ -654,10 +689,16 @@ namespace ValoLive
             double secs = Math.Max(0.001, (now - winStart).TotalSeconds);
             long frames = totalFrames - winFrameStart;
             string p(string k) => progress.TryGetValue(k, out var v) ? v : "?";
-            Diag.Event("İSTAT", $"fps {frames / secs:0.0} · Kick'e {winBytes * 8 / secs / 1000:0} kbps · en uzun gönderim bekleme {winMaxWriteMs:0} ms" +
+            // Platform başına: gönderilen hız ve en uzun yazma beklemesi (uzarsa o platformun ağı yetişmiyor).
+            var sent = string.Join(" · ", pubs.Select(x =>
+            {
+                long b = Interlocked.Exchange(ref x.Bytes, 0); double w = x.MaxWriteMs; x.MaxWriteMs = 0;
+                return $"{x.Target.Name} {b * 8 / secs / 1000:0} kbps (bekleme en çok {w:0} ms)";
+            }));
+            Diag.Event("İSTAT", $"fps {frames / secs:0.0} · {(sent == "" ? "platform bağlantısı yok" : sent)}" +
                                 $" · düşen kare {p("drop_frames")} · çoğaltılan {p("dup_frames")} · yakalama #{capAttempt}" +
                                 (proc == null || proc.HasExited ? " · YAKALAMA YOK" : ""));
-            winStart = now; winBytes = 0; winMaxWriteMs = 0; winFrameStart = totalFrames;
+            winStart = now; winFrameStart = totalFrames;
         }
 
         void ScheduleRestart()
@@ -668,37 +709,117 @@ namespace ValoLive
             restartDue = DateTime.Now.AddMilliseconds(ms);
         }
 
-        void StartPublisher()
+        static string Tag(Target t) => t.Id == "file" ? "KAYIT" : t.Name.ToUpperInvariant();
+
+        /// <summary>joinMidStream: yakalama zaten akıyor (yeniden bağlanma); yayıncı bir sonraki anahtar kareden katılır.</summary>
+        void StartPublisher(Target t, bool joinMidStream)
         {
-            var args = PublisherArgs(opts);
-            Log("PUB " + args);
-            var psi = new ProcessStartInfo(FindFfmpeg(), args)
+            var args = PublisherArgs(opts, t.Url);
+            Log($"PUB {t.Name} {args}");
+            var p = new Publisher(t) { Line = line => OnLine(line, true, t) };
+            p.Exited += OnPublisherExit;
+            TargetRun r;
+            lock (runs) runs.TryGetValue(t.Id, out r);
+            p.Start(FindFfmpeg(), args, joinMidStream);
+            lock (runs) pubs = pubs.Where(x => x.Target.Id != t.Id).Concat(new[] { p }).ToArray();
+            if (r != null) SetState(r, TargetState.Connecting);
+            Diag.Event(Tag(t), opts.ToFile ? "dosyaya kayıt başladı" : $"yayıncı süreç başladı ({t.Name} bağlantısı açılıyor{(joinMidStream ? ", akışa bir sonraki anahtar karede katılır" : "")})");
+        }
+
+        void SetState(TargetRun r, TargetState s)
+        {
+            if (r.State == s && s != TargetState.Retrying) return;
+            r.State = s;
+            TargetChanged?.Invoke(r.Target, s, r.Attempts);
+        }
+
+        /// <summary>
+        /// Bir platformun yayıncısı kapandı. Durdururken: hepsi kapanınca yayın biter. Beklenmedik: yalnızca o platform
+        /// yeniden bağlanır (yakalama ve öteki platformlar sürer). Hiç ayağa kalkamadan 3 kez kopan platform reddedilmiş
+        /// sayılır (URL/anahtar yanlış), 20 denemede toparlanamayan bırakılır. Hiçbir platform kalmazsa yayın biter.
+        /// </summary>
+        void OnPublisherExit(Publisher p, int code, string err)
+        {
+            var t = p.Target;
+            Log($"PUB EXIT {t.Name} code={code} stopping={stopping} {err}");
+            TargetRun r;
+            lock (runs) runs.TryGetValue(t.Id, out r);
+            if (stopping)
             {
-                UseShellExecute = false, CreateNoWindow = true,
-                RedirectStandardInput = true, RedirectStandardError = true,
-                StandardErrorEncoding = Encoding.UTF8,
-            };
-            var p = new Process { StartInfo = psi, EnableRaisingEvents = true };
-            p.ErrorDataReceived += (s, e) => OnLine(e.Data, true);
-            p.Exited += (s, e) =>
+                if (r != null) SetState(r, TargetState.Stopped);
+                if (!pubs.Any(x => x.Alive)) FireExited(false, err);
+                return;
+            }
+            Diag.PublisherDropped();
+            Diag.Event(Tag(t), $"bağlantı koptu (kod {code}) · {Diag.Explain(err + " " + code)} · son satırlar: {err}");
+            if (r == null || opts.ToFile || fatal)
             {
-                int code = 0;
-                try { code = p.ExitCode; } catch { }
-                string err = Errors();
-                Log($"PUB EXIT code={code} stopping={stopping} {err}");
-                if (!stopping)
-                {
-                    Diag.PublisherDropped();
-                    Diag.Event("KICK", $"bağlantı koptu (kod {code}) · {Diag.Explain(err + " " + code)} · son satırlar: {err}");
-                }
-                if (!stopping) KillCapture(); // bağlantı koptu: yakalamanın sürmesinin anlamı yok
-                Exited?.Invoke(!stopping, err); // durdurmadan kapandıysa bağlantı kopmuştur
-            };
-            p.Start();
-            p.BeginErrorReadLine();
-            pub = p;
-            pubIn = p.StandardInput.BaseStream;
-            Diag.Event("KICK", opts.ToFile ? "dosyaya kayıt başladı" : "yayıncı süreç başladı (Kick bağlantısı açılıyor)");
+                if (r != null) SetState(r, TargetState.Failed);
+                GiveUpIfNone(err);
+                return;
+            }
+            var now = DateTime.Now;
+            double up = (now - p.StartedAt).TotalSeconds;
+            if (up >= 10) { r.EverUp = true; r.Attempts = 0; }
+            r.Attempts++;
+            // Ayağa kalktıktan sonra 60 sn dolmadan tekrar tekrar kopuyorsa hat (ya da platform) bu bitrate'i
+            // kaldırmıyor: her iki hızlı kopmada 1000 kbps düş (en az 3500). Görüntü tek kodlandığı için hepsine uygulanır.
+            r.QuickDrops = up >= 10 && up < 60 ? r.QuickDrops + 1 : up >= 60 ? 0 : r.QuickDrops;
+            if (r.QuickDrops >= 2 && opts.BitrateK > 3500)
+            {
+                r.QuickDrops = 0;
+                opts.BitrateK = Math.Max(3500, opts.BitrateK - 1000);
+                Diag.Event(Tag(t), $"bağlantı sürekli kopuyor → bitrate {opts.BitrateK} kbps'ye düşürüldü (yakalama yeni değerle yeniden başlıyor)");
+                planned = true;
+                KillCapture();
+            }
+            if (!r.EverUp && r.Attempts >= 3)
+            {
+                Diag.Event(Tag(t), "bağlantı reddedildi (hiç açılamadı): URL / anahtar yanlış olabilir, bu yayında bırakıldı");
+                SetState(r, TargetState.Rejected);
+                GiveUpIfNone(err);
+                return;
+            }
+            if (r.Attempts > 20)
+            {
+                Diag.Event(Tag(t), "20 denemede toparlanamadı, bu yayında bırakıldı");
+                SetState(r, TargetState.Failed);
+                GiveUpIfNone(err);
+                return;
+            }
+            SetState(r, TargetState.Retrying);
+            int delay = Math.Min(10000, 2000 * r.Attempts);
+            Diag.Event(Tag(t), $"yeniden bağlanılıyor (deneme {r.Attempts}, {delay / 1000} sn sonra)");
+            r.Retry?.Dispose();
+            r.Retry = new Timer(_ =>
+            {
+                if (stopping || fatal || exitFired) return;
+                try { StartPublisher(t, true); }
+                catch (Exception ex) { Diag.Event(Tag(t), "yayıncı başlatılamadı: " + ex.Message); OnPublisherExit(p, -1, ex.Message); }
+            }, null, delay, Timeout.Infinite);
+        }
+
+        /// <summary>Bağlı ya da bağlanmaya çalışan platform kalmadıysa yayın biter.</summary>
+        void GiveUpIfNone(string err)
+        {
+            if (Active().Any()) return;
+            // Yayın burada biter (Stop çağrılmaz): bekçi ve istatistik dursun, yakalama yeniden başlatılmasın.
+            stopping = true;
+            watchdog?.Dispose(); statsTimer?.Dispose();
+            KillCapture();
+            FireExited(true, err);
+        }
+
+        void FireExited(bool unexpected, string err)
+        {
+            lock (runs) { if (exitFired) return; exitFired = true; }
+            Exited?.Invoke(unexpected, err);
+        }
+
+        /// <summary>Platformların son durumu (yayın bitince arayüz neden bittiğini buradan yazar).</summary>
+        public List<KeyValuePair<Target, TargetState>> TargetStates()
+        {
+            lock (runs) return runs.Values.Select(r => new KeyValuePair<Target, TargetState>(r.Target, r.State)).ToList();
         }
 
         void StartCapture()
@@ -772,7 +893,7 @@ namespace ValoLive
                 try { code = cap.ExitCode; } catch { }
                 string err = Errors();
                 Log($"EXIT code={code} stopping={stopping} {err}");
-                if (stopping || pub == null || pub.HasExited) { capDone = true; return; }
+                if (stopping || exitFired) { capDone = true; return; }
                 if (planned)
                 {
                     // Mod geçişi: kopuş sayılmaz, toparlanma bildirilmez, hemen yeniden başlar.
@@ -790,7 +911,7 @@ namespace ValoLive
                                        $"{(Diag.Explain(err) is string x && x != "" ? x : "neden: " + err)}");
                 recent.Enqueue(capDiedAt);
                 while (recent.Count > 0 && (capDiedAt - recent.Peek()).TotalSeconds > 60) recent.Dequeue();
-                if (recent.Count > 30) { Diag.Event("HATA", "yakalama 1 dakikada 30'dan fazla koptu, yayın kapatılıyor"); capDone = true; KillPublisher(); return; }
+                if (recent.Count > 30) { Diag.Event("HATA", "yakalama 1 dakikada 30'dan fazla koptu, yayın kapatılıyor"); fatal = true; capDone = true; KillPublishers(); return; }
                 Recovering?.Invoke();
                 ScheduleRestart();
                 capDone = true; // bekçi artık yenisini başlatabilir
@@ -830,18 +951,13 @@ namespace ValoLive
                     fill += n;
                     int whole = fill - fill % 188;
                     if (whole == 0) continue;
-                    var t0 = Stopwatch.GetTimestamp();
-                    pubIn.Write(buf, 0, whole);
-                    pubIn.Flush();
-                    // Yazma beklemesi uzarsa yayıncı (dolayısıyla ağ / Kick) veriyi yetiştiremiyor demektir.
-                    double ms = (Stopwatch.GetTimestamp() - t0) * 1000.0 / Stopwatch.Frequency;
-                    winBytes += whole;
-                    if (ms > winMaxWriteMs) winMaxWriteMs = ms;
+                    // Her platformun kendi kuyruğu var: yazma burada beklemez (bekleme istatistiği Publisher'da).
+                    foreach (var p in pubs) p.Feed(buf, whole);
                     Buffer.BlockCopy(buf, whole, buf, 0, fill - whole);
                     fill -= whole;
                 }
             }
-            catch { } // yayıncı kapandıysa onun Exited olayı ilgilenir
+            catch { } // yakalama kapandı: onun Exited olayı ilgilenir
         }
 
         void KillCapture()
@@ -849,9 +965,9 @@ namespace ValoLive
             try { var p = proc; if (p != null && !p.HasExited) p.Kill(); } catch { }
             try { var e = engine; if (e != null && !e.HasExited) e.Kill(); } catch { }
         }
-        void KillPublisher() { try { var p = pub; if (p != null && !p.HasExited) p.Kill(); } catch { } }
+        void KillPublishers() { foreach (var p in pubs) p.Kill(); }
 
-        void OnLine(string line, bool fromPublisher)
+        void OnLine(string line, bool fromPublisher, Target target = null)
         {
             if (string.IsNullOrEmpty(line)) return;
             // Canlı komut yankısı ("Command reply for stream 1: ret:-40" = ses grafiğinde o filtre yok,
@@ -885,19 +1001,20 @@ namespace ValoLive
             }
             // Canlı komut yankıları hata değildir; hata kuyruğunu ve günlüğü kirletmesin.
             if (line.StartsWith("Enter command") || line.Contains("Command reply")) return;
-            lock (lastErrors) { lastErrors.Enqueue(Mask(line.Trim())); while (lastErrors.Count > 4) lastErrors.Dequeue(); }
-            Log((fromPublisher ? "[pub] " : "") + line);
-            Diag.Event(fromPublisher ? "KICK-ffmpeg" : "YAKALAMA-ffmpeg", line.Trim());
+            // Yayıncı satırlarının kendi hata kuyruğu var (Publisher): kopuş nedeni platforma göre ayrı okunur.
+            if (!fromPublisher) lock (lastErrors) { lastErrors.Enqueue(Mask(line.Trim())); while (lastErrors.Count > 4) lastErrors.Dequeue(); }
+            Log((fromPublisher ? $"[pub {target?.Name}] " : "") + line);
+            Diag.Event(fromPublisher ? (target != null ? Tag(target) : "KICK") + "-ffmpeg" : "YAKALAMA-ffmpeg", line.Trim());
         }
 
         /// <summary>
-        /// Düzgün kapatma: yakalamaya 'q' (kodlayıcıyı boşaltır), sonra yayıncının girişini kapatır
+        /// Düzgün kapatma: yakalamaya 'q' (kodlayıcıyı boşaltır), sonra yayıncıların girişini kapatır
         /// (dosyayı/yayını sonlandırır). Süreçler 5 sn içinde kapanmazsa sonlandırılır.
         /// </summary>
         public void Stop()
         {
-            var p = pub;
-            if (p == null || p.HasExited) return;
+            if (opts == null || exitFired) return;
+            lock (runs) foreach (var r in runs.Values) { r.Retry?.Dispose(); r.Retry = null; }
             var cap = proc;
             watchdog?.Dispose(); statsTimer?.Dispose();
             watchdog = statsTimer = null;
@@ -914,9 +1031,12 @@ namespace ValoLive
                 try { if (cap != null && !cap.HasExited) { cap.StandardInput.Write('q'); cap.StandardInput.Flush(); } } catch { }
             }
             if (cap != null && !cap.WaitForExit(5000)) KillCapture();
-            pumpThread?.Join(3000); // son paketler yayıncıya geçsin
-            try { pubIn.Close(); } catch { }
-            if (!p.WaitForExit(5000)) KillPublisher();
+            pumpThread?.Join(3000); // son paketler yayıncılara geçsin
+            var all = pubs;
+            foreach (var p in all) p.Finish();
+            foreach (var p in all) if (!p.WaitForExit(5000)) p.Kill();
+            // Hiçbir yayıncı ayakta değildi (hepsi yeniden bağlanmayı bekliyordu): bitişi burada bildir.
+            if (!all.Any(p => p.Alive)) FireExited(false, "");
         }
 
         string Errors() { lock (lastErrors) return string.Join(" | ", lastErrors); }

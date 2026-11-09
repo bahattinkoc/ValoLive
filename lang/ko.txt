@@ -38,7 +38,6 @@ Bağlanıyor…	연결 중…
 Bağlı değil	연결 안 됨
 Başlık	제목
 Başlık uygulanamadı: 	제목을 적용하지 못했습니다: 
-Başlık, kategori ve etiketler Kick'e uygulandı ✓	제목, 카테고리, 태그를 Kick에 적용했습니다 ✓
 Belirgin bir alışkanlık yok — dengeli oynuyor.	뚜렷한 습관 없음 — 균형 잡힌 플레이.
 Bildirimler (tanıdık oyuncu, smurf, parti)	알림 (아는 플레이어, 부계정, 파티)
 Bronz	브론즈
@@ -92,17 +91,14 @@ Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (
 Kategori	카테고리
 Kaydet ve bağlan	저장 후 연결
 Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.	연패 후에도 흔들리지 않음 — 멘탈이 강합니다.
-Kick Stream URL ve Stream Key gerekli.\nKick → Creator Dashboard → Settings bölümünden kopyalayabilirsin.	Kick Stream URL과 Stream Key가 필요합니다.\nKick → Creator Dashboard → Settings에서 복사할 수 있습니다.
 Kick hesabı	Kick 계정
 Kick hesabı bağlı değil.	Kick 계정이 연결되지 않았습니다.
 Kick hesabını bağla	Kick 계정 연결
-Kick için hafif Valorant yayın aracı · RTX NVENC	Kick용 가벼운 발로란트 방송 도구 · RTX NVENC
 Kick kanal bilgisi alınamadı.	Kick 채널 정보를 가져오지 못했습니다.
 Kick onayı 3 dakika içinde gelmedi.	3분 안에 Kick 승인이 오지 않았습니다.
 Kick onayı reddedildi: 	Kick 승인이 거부되었습니다: 
 Kick oturumu sona ermiş, yeniden bağlan.	Kick 세션이 만료되었습니다. 다시 연결하세요.
 Kick'e bağlanılamadı:\n	Kick에 연결하지 못했습니다:\n
-Kick'e şimdi uygula	지금 Kick에 적용
 Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):	Kick 개발자 페이지 열기 (로그인 필요):
 Kick'ten URL ve key al	Kick에서 URL과 키 받기
 Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:	제목과 카테고리를 바꾸려면 Kick에서 본인의 "개발자 앱"이 필요합니다.\n한 번만, 2분이면 됩니다:
@@ -180,7 +176,6 @@ Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	지난 경기: {0} {1} · {2} �
 Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.	최근 이 맵을 플레이하지 않았습니다. 위 스타일은 그대로 유효합니다.
 Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.	그다음 브라우저에 Kick 승인 페이지가 열리면 "허용"만 누르면 됩니다.
 Stil çıkarmak için yeterli round yok (en az 40).	스타일을 판단하기에 라운드가 부족합니다 (최소 40).
-Stream URL / Stream Key'i Kick panelinden yeniden kopyala	Kick 대시보드에서 Stream URL / Stream Key를 다시 복사하세요
 Sv	Lv
 Süre: {0:hh\:mm\:ss}	시간: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	드래그: 이동\n마우스 휠: 확대 / 축소 (Shift: 미세)\n방향키: 1 px (Shift: 10 px)\n\n
@@ -216,7 +211,6 @@ YAYINI BİTİR	방송 종료
 YENİLGİ	패배
 Yakalama	캡처
 Yayın açık. Kapatılsın mı?	방송 중입니다. 닫을까요?
-Yayın bilgisi uygulanamadı:\n	방송 정보를 적용하지 못했습니다:\n
 Yayında chat kutusu	방송에 채팅창 표시
 Yayını başlat	방송 시작
 Yayını bitir	방송 종료
@@ -300,7 +294,6 @@ zirve	최고
 Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	죽어도 트레이드되는 경우가 드묾 ({0}%). 팀과 떨어져 혼자 플레이합니다.
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	내가 죽어도 팀이 트레이드하지 못합니다: 고립되고 있어요. 팀원과 같은 구역에서 플레이하세요.
 Ölümsüzlük	불멸
-Önce Kick hesabını bağla (Yayın Bilgisi → Bağlan).	먼저 Kick 계정을 연결하세요 (방송 정보 → 연결).
 Öğlen	오후
 Ücretsiz anahtar al	무료 키 받기
 Üstte tut	항상 위에
@@ -323,7 +316,6 @@ zirve	최고
 ● DURDURULUYOR…	● 중지 중…
 ● EKRAN YAKALAMA YENİLENİYOR (yayın açık)	● 화면 캡처 재시작 중 (방송은 계속됨)
 ● HAZIR	● 준비됨
-● KICK BAĞLANTIYI REDDETTİ	● KICK이 연결을 거부함
 ● TEST BAŞARISIZ	● 테스트 실패
 ● TEST KAYDI	● 테스트 녹화
 ● TEST KAYDI HAZIR	● 테스트 녹화 완료
@@ -404,7 +396,6 @@ Güvercin postası (ve sürprizi)	비둘기 우편 (그리고 깜짝 선물)
 Havai fişek hedefi	불꽃놀이 목표
 Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.	오버레이(레이더, 채팅창, 방송 하이라이트)와 채팅 놀이(풍선, 비행기, 토마토, 오리 경주…)는 별도 창에 있음.
 Kağıt uçak	종이비행기
-Komutları okumak için ana penceredeki Kick hesabını bağla.	명령어를 읽으려면 메인 창에서 Kick 계정을 연결하세요.
 MESAJ TAŞIYANLAR	메시지 배달
 Merhaba chat, bu bir deneme!	안녕 채팅, 이건 테스트야!
 Ortak havai fişek	다 함께 불꽃놀이
@@ -460,3 +451,55 @@ yok	없음
 Şişede mesaj	병 속의 편지
 POP!	뽁!
 Ekran kartı motoru (işlemciyi boşaltır)	GPU 엔진 (CPU 부담 감소)
+BAĞLANTI	연결
+Bu platforma yayınla	이 플랫폼으로 방송
+GÖRÜNTÜ & SES	영상 및 오디오
+Hiçbir platform açık değil: yalnızca test kaydı alınabilir.	켜진 플랫폼이 없습니다: 테스트 녹화만 가능합니다.
+Kick ve YouTube için hafif Valorant yayın aracı · RTX NVENC	Kick·YouTube용 가벼운 발로란트 방송 도구 · RTX NVENC
+PLATFORMLAR	플랫폼
+RAKİP HAFIZASI	적 기억
+Stream URL / Stream Key'i platformun panelinden yeniden kopyala	플랫폼 대시보드에서 스트림 URL / 키를 다시 복사하세요
+Yayının gideceği platformu seç: Platformlar sekmesinde en az birini aç.	방송할 곳을 고르세요: 플랫폼 탭에서 하나 이상 켜세요.
+YouTube Studio'dan yayın anahtarı al	YouTube Studio에서 스트림 키 받기
+bağlanıyor…	연결 중…
+durdu	중지됨
+hazır	준비됨
+kapalı	꺼짐
+koptu	끊김
+reddetti	거부됨
+yeniden bağlanıyor ({0})	재연결 중 ({0})
+{0} platform × ~{1} kbps → internetin yükleme hızı en az {2} Mbps olmalı (pay ile).	플랫폼 {0}개 × ~{1} kbps → 업로드 속도가 최소 {2} Mbps 이상이어야 합니다(여유 포함).
+{0}: Stream URL ve Stream Key gerekli.	{0}: 스트림 URL과 스트림 키가 필요합니다.
+● canlı	● 방송 중
+● {0} BAĞLANTIYI REDDETTİ	● {0}이(가) 연결을 거부함
+<h2>ValoLive YouTube'a bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>	<h2>ValoLive가 YouTube에 연결되었습니다 ✓</h2><p>이 탭을 닫아도 됩니다.</p>
+Bağlı hesaplara şimdi uygula	연결된 계정에 지금 적용
+Başlık ve etiketler bağlı her hesaba gider, yayın başlarken kendiliğinden. Kategori yalnızca Kick'te; YouTube'da yayın Oyun kategorisinde açılır, küçük resim Studio'dan. Chat kutusu ve chat eğlencesi iki chat'i birlikte okur.	제목과 태그는 연결된 모든 계정에 방송 시작 시 자동으로 적용됩니다. 카테고리는 Kick 전용이며, YouTube에서는 게임 카테고리로 열리고 썸네일은 Studio에서 설정합니다. 채팅 박스와 채팅 놀이는 두 채팅을 함께 읽습니다.
+Bu Google hesabında YouTube kanalı yok.	이 Google 계정에는 YouTube 채널이 없습니다.
+Bu projede "YouTube Data API v3"ü etkinleştir (Enable):	이 프로젝트에서 "YouTube Data API v3"를 사용 설정하세요 (Enable):
+Client ID ve Client Secret'ı yeniden girmek için Evet'e bas.	Client ID와 Client Secret을 다시 입력하려면 예를 누르세요.
+Clients → Create client → Application type: Desktop app → Create. Client ID ve Client secret'ı buraya yapıştır:	Clients → Create client → Application type: Desktop app → Create. Client ID와 Client secret을 여기에 붙여넣으세요:
+Google Auth Platform → Get started: uygulama adı ValoLive, kitle External. Sonra Audience sayfasında "Publish app" de (yoksa giriş 7 günde bir düşer).	Google Auth Platform → Get started: 앱 이름 ValoLive, 대상 External. 그다음 Audience 페이지에서 "Publish app"을 누르세요 (아니면 7일마다 로그인이 풀립니다).
+Google Cloud'da yeni bir proje oluştur (ad: ValoLive):	Google Cloud에서 새 프로젝트를 만드세요 (이름: ValoLive):
+Hesabı bağlı platforma yayın kapalı: chat okunmaz	계정이 연결된 플랫폼의 방송이 꺼져 있음: 채팅을 읽지 않음
+Kick ya da YouTube hesabını bağla	Kick 또는 YouTube 계정을 연결하세요
+Kick: başlık, kategori ve etiketler uygulandı ✓	Kick: 제목, 카테고리, 태그 적용됨 ✓
+Komutları okumak için ana pencerede Kick ya da YouTube hesabını bağla.	명령어를 읽으려면 메인 창에서 Kick 또는 YouTube 계정을 연결하세요.
+Sonra tarayıcıda Google onayı açılır. "Google bu uygulamayı doğrulamadı" derse Gelişmiş → ValoLive'a git: uygulama senin kendi projen.	그다음 브라우저에서 Google 동의 화면이 열립니다. "Google에서 확인하지 않은 앱"이라고 나오면 고급 → ValoLive(으)로 이동: 앱은 내 프로젝트입니다.
+Tarayıcıda Google onayı bekleniyor…	브라우저에서 Google 동의를 기다리는 중…
+YouTube hesabı	YouTube 계정
+YouTube hesabı bağlı değil.	YouTube 계정이 연결되어 있지 않습니다.
+YouTube hesabını bağla	YouTube 계정을 연결하세요
+YouTube onayı 3 dakika içinde gelmedi.	YouTube 동의가 3분 안에 오지 않았습니다.
+YouTube oturumu sona ermiş, yeniden bağlan.	YouTube 세션이 만료되었습니다. 다시 연결하세요.
+YouTube yayını 5 dakikada açılmadı	YouTube 방송이 5분 안에 열리지 않았습니다
+YouTube yayını bulunamadı.	YouTube 방송을 찾을 수 없습니다.
+YouTube'a bağlanılamadı:\n	YouTube에 연결하지 못했습니다:\n
+YouTube, başlığı değiştirmek ve chat'e bot cevabı yazmak için Google Cloud'da kendi uygulamanı ister.\nBir kerelik, 5 dakikalık bir iş:	YouTube에서 제목을 바꾸고 채팅에 봇 답변을 쓰려면 Google Cloud에 내 앱이 필요합니다.\n한 번만, 5분이면 됩니다:
+YouTube: başlık ve etiketler uygulandı ✓	YouTube: 제목과 태그 적용됨 ✓
+YouTube: şu an açık ya da planlanmış yayın yok; başlık yayın başlayınca uygulanır.	YouTube: 지금 진행 중이거나 예약된 방송이 없습니다. 방송이 시작되면 제목이 적용됩니다.
+chat bulunamadı	채팅을 찾을 수 없음
+yayın bekleniyor	방송 대기 중
+Önce Kick ya da YouTube hesabını bağla (Platformlar → Bağlan).	먼저 Kick 또는 YouTube 계정을 연결하세요 (플랫폼 → 연결).
+YouTube başlığı uygulanamadı: 	YouTube 제목을 적용하지 못했습니다: 
+YouTube onayı reddedildi: 	YouTube 동의가 거부됨: 

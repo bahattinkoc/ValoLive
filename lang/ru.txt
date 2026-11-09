@@ -38,7 +38,6 @@ Bağlanıyor…	Подключение…
 Bağlı değil	Не подключено
 Başlık	Название
 Başlık uygulanamadı: 	Не удалось применить название: 
-Başlık, kategori ve etiketler Kick'e uygulandı ✓	Название, категория и теги применены на Kick ✓
 Belirgin bir alışkanlık yok — dengeli oynuyor.	Явных привычек нет — играет ровно.
 Bildirimler (tanıdık oyuncu, smurf, parti)	Уведомления (знакомый игрок, смурф, пати)
 Bronz	Бронза
@@ -92,17 +91,14 @@ Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (
 Kategori	Категория
 Kaydet ve bağlan	Сохранить и подключить
 Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.	После серий поражений спада нет — вы устойчивы к тилту.
-Kick Stream URL ve Stream Key gerekli.\nKick → Creator Dashboard → Settings bölümünden kopyalayabilirsin.	Нужны Kick Stream URL и Stream Key.\nСкопируйте их в Kick → Creator Dashboard → Settings.
 Kick hesabı	Аккаунт Kick
 Kick hesabı bağlı değil.	Аккаунт Kick не подключён.
 Kick hesabını bağla	Подключите аккаунт Kick
-Kick için hafif Valorant yayın aracı · RTX NVENC	Лёгкий инструмент для стримов Valorant на Kick · RTX NVENC
 Kick kanal bilgisi alınamadı.	Не удалось получить данные канала Kick.
 Kick onayı 3 dakika içinde gelmedi.	Подтверждение Kick не пришло за 3 минуты.
 Kick onayı reddedildi: 	Kick отклонил подтверждение: 
 Kick oturumu sona ermiş, yeniden bağlan.	Сессия Kick истекла, подключитесь снова.
 Kick'e bağlanılamadı:\n	Не удалось подключиться к Kick:\n
-Kick'e şimdi uygula	Применить на Kick сейчас
 Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):	Откройте страницу разработчика Kick (нужно войти в аккаунт):
 Kick'ten URL ve key al	Взять URL и ключ на Kick
 Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:	Чтобы менять название и категорию, Kick требует ваше "приложение разработчика".\nОдин раз, 2 минуты:
@@ -180,7 +176,6 @@ Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	Последний матч: {0
 Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.	Недавно не играл эту карту. Стиль выше всё равно актуален.
 Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.	Затем в браузере откроется страница подтверждения Kick; просто нажмите "Разрешить".
 Stil çıkarmak için yeterli round yok (en az 40).	Мало раундов, чтобы определить стиль (нужно минимум 40).
-Stream URL / Stream Key'i Kick panelinden yeniden kopyala	Скопируйте Stream URL / Stream Key заново из панели Kick
 Sv	Ур.
 Süre: {0:hh\:mm\:ss}	Длительность: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	Перетаскивание: сдвиг\nКолесо мыши: больше / меньше (Shift: точно)\nСтрелки: 1 px (Shift: 10 px)\n\n
@@ -216,7 +211,6 @@ YAYINI BİTİR	ЗАВЕРШИТЬ СТРИМ
 YENİLGİ	ПОРАЖЕНИЕ
 Yakalama	Захват
 Yayın açık. Kapatılsın mı?	Стрим идёт. Закрыть?
-Yayın bilgisi uygulanamadı:\n	Не удалось применить информацию о стриме:\n
 Yayında chat kutusu	Окно чата на стриме
 Yayını başlat	Начать стрим
 Yayını bitir	Завершить стрим
@@ -300,7 +294,6 @@ zirve	пик
 Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	Его редко трейдят после смерти ({0}%). Играет один, вдали от команды.
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	Команда обычно не может вас разменять: вы остаётесь один. Играйте в той же зоне, что и тиммейт.
 Ölümsüzlük	Бессмертие
-Önce Kick hesabını bağla (Yayın Bilgisi → Bağlan).	Сначала подключите аккаунт Kick (Информация о стриме → Подключить).
 Öğlen	День
 Ücretsiz anahtar al	Получить бесплатный ключ
 Üstte tut	Поверх окон
@@ -323,7 +316,6 @@ zirve	пик
 ● DURDURULUYOR…	● ОСТАНОВКА…
 ● EKRAN YAKALAMA YENİLENİYOR (yayın açık)	● ЗАХВАТ ЭКРАНА ПЕРЕЗАПУСКАЕТСЯ (стрим идёт)
 ● HAZIR	● ГОТОВО
-● KICK BAĞLANTIYI REDDETTİ	● KICK ОТКЛОНИЛ ПОДКЛЮЧЕНИЕ
 ● TEST BAŞARISIZ	● ТЕСТ НЕ УДАЛСЯ
 ● TEST KAYDI	● ТЕСТОВАЯ ЗАПИСЬ
 ● TEST KAYDI HAZIR	● ТЕСТОВАЯ ЗАПИСЬ ГОТОВА
@@ -404,7 +396,6 @@ Güvercin postası (ve sürprizi)	Голубиная почта (и её сюр�
 Havai fişek hedefi	Цель салюта
 Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.	Слои (радар, окно чата, моменты стрима) и чат-веселье (шарик, самолёт, помидор, утиные гонки…) — в отдельном окне.
 Kağıt uçak	Бумажный самолётик
-Komutları okumak için ana penceredeki Kick hesabını bağla.	Подключи аккаунт Kick в главном окне, чтобы читать команды.
 MESAJ TAŞIYANLAR	ДОСТАВКА СООБЩЕНИЙ
 Merhaba chat, bu bir deneme!	Привет, чат, это тест!
 Ortak havai fişek	Общий салют
@@ -460,3 +451,55 @@ yok	нет
 Şişede mesaj	Послание в бутылке
 POP!	ЧПОК!
 Ekran kartı motoru (işlemciyi boşaltır)	Движок на видеокарте (разгружает ЦП)
+BAĞLANTI	ПОДКЛЮЧЕНИЕ
+Bu platforma yayınla	Транслировать на эту платформу
+GÖRÜNTÜ & SES	ВИДЕО И ЗВУК
+Hiçbir platform açık değil: yalnızca test kaydı alınabilir.	Ни одна платформа не включена: доступна только тестовая запись.
+Kick ve YouTube için hafif Valorant yayın aracı · RTX NVENC	Лёгкий инструмент для стримов Valorant на Kick и YouTube · RTX NVENC
+PLATFORMLAR	ПЛАТФОРМЫ
+RAKİP HAFIZASI	ПАМЯТЬ О ВРАГАХ
+Stream URL / Stream Key'i platformun panelinden yeniden kopyala	Скопируйте URL / ключ трансляции заново из панели платформы
+Yayının gideceği platformu seç: Platformlar sekmesinde en az birini aç.	Выберите, куда транслировать: включите хотя бы одну платформу на вкладке «Платформы».
+YouTube Studio'dan yayın anahtarı al	Получить ключ трансляции в YouTube Studio
+bağlanıyor…	подключение…
+durdu	остановлено
+hazır	готово
+kapalı	выкл.
+koptu	обрыв
+reddetti	отклонено
+yeniden bağlanıyor ({0})	переподключение ({0})
+{0} platform × ~{1} kbps → internetin yükleme hızı en az {2} Mbps olmalı (pay ile).	{0} платформ(ы) × ~{1} кбит/с → скорость отдачи должна быть не ниже {2} Мбит/с (с запасом).
+{0}: Stream URL ve Stream Key gerekli.	{0}: нужны URL и ключ трансляции.
+● canlı	● в эфире
+● {0} BAĞLANTIYI REDDETTİ	● {0} ОТКЛОНИЛ ПОДКЛЮЧЕНИЕ
+<h2>ValoLive YouTube'a bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>	<h2>ValoLive подключён к YouTube ✓</h2><p>Эту вкладку можно закрыть.</p>
+Bağlı hesaplara şimdi uygula	Применить к подключённым аккаунтам сейчас
+Başlık ve etiketler bağlı her hesaba gider, yayın başlarken kendiliğinden. Kategori yalnızca Kick'te; YouTube'da yayın Oyun kategorisinde açılır, küçük resim Studio'dan. Chat kutusu ve chat eğlencesi iki chat'i birlikte okur.	Название и теги уходят на каждый подключённый аккаунт, автоматически при старте трансляции. Категория — только для Kick; на YouTube трансляция открывается в категории «Игры», превью — из Studio. Окно чата и чат-развлечения читают оба чата вместе.
+Bu Google hesabında YouTube kanalı yok.	У этого аккаунта Google нет канала YouTube.
+Bu projede "YouTube Data API v3"ü etkinleştir (Enable):	Включите в этом проекте "YouTube Data API v3" (Enable):
+Client ID ve Client Secret'ı yeniden girmek için Evet'e bas.	Нажмите «Да», чтобы заново ввести Client ID и Client Secret.
+Clients → Create client → Application type: Desktop app → Create. Client ID ve Client secret'ı buraya yapıştır:	Clients → Create client → Application type: Desktop app → Create. Вставьте сюда Client ID и Client secret:
+Google Auth Platform → Get started: uygulama adı ValoLive, kitle External. Sonra Audience sayfasında "Publish app" de (yoksa giriş 7 günde bir düşer).	Google Auth Platform → Get started: имя приложения ValoLive, аудитория External. Затем на странице Audience нажмите "Publish app" (иначе вход слетает каждые 7 дней).
+Google Cloud'da yeni bir proje oluştur (ad: ValoLive):	Создайте новый проект в Google Cloud (имя: ValoLive):
+Hesabı bağlı platforma yayın kapalı: chat okunmaz	Трансляция на платформы с подключённым аккаунтом выключена: чат не читается
+Kick ya da YouTube hesabını bağla	Подключите аккаунт Kick или YouTube
+Kick: başlık, kategori ve etiketler uygulandı ✓	Kick: название, категория и теги применены ✓
+Komutları okumak için ana pencerede Kick ya da YouTube hesabını bağla.	Подключите аккаунт Kick или YouTube в главном окне, чтобы читать команды.
+Sonra tarayıcıda Google onayı açılır. "Google bu uygulamayı doğrulamadı" derse Gelişmiş → ValoLive'a git: uygulama senin kendi projen.	Затем в браузере откроется разрешение Google. Если там написано «Приложение не проверено Google», нажмите «Дополнительные настройки» → «Перейти на страницу ValoLive»: это ваш собственный проект.
+Tarayıcıda Google onayı bekleniyor…	Ожидание разрешения Google в браузере…
+YouTube hesabı	Аккаунт YouTube
+YouTube hesabı bağlı değil.	Аккаунт YouTube не подключён.
+YouTube hesabını bağla	Подключите аккаунт YouTube
+YouTube onayı 3 dakika içinde gelmedi.	Разрешение YouTube не пришло за 3 минуты.
+YouTube oturumu sona ermiş, yeniden bağlan.	Сессия YouTube истекла, подключитесь заново.
+YouTube yayını 5 dakikada açılmadı	Трансляция YouTube не открылась за 5 минут
+YouTube yayını bulunamadı.	Трансляция YouTube не найдена.
+YouTube'a bağlanılamadı:\n	Не удалось подключиться к YouTube:\n
+YouTube, başlığı değiştirmek ve chat'e bot cevabı yazmak için Google Cloud'da kendi uygulamanı ister.\nBir kerelik, 5 dakikalık bir iş:	YouTube требует ваше собственное приложение в Google Cloud, чтобы менять название и писать ответы бота в чат.\nОдин раз, 5 минут:
+YouTube: başlık ve etiketler uygulandı ✓	YouTube: название и теги применены ✓
+YouTube: şu an açık ya da planlanmış yayın yok; başlık yayın başlayınca uygulanır.	YouTube: сейчас нет активной или запланированной трансляции; название применится при старте трансляции.
+chat bulunamadı	чат не найден
+yayın bekleniyor	ожидание трансляции
+Önce Kick ya da YouTube hesabını bağla (Platformlar → Bağlan).	Сначала подключите аккаунт Kick или YouTube (Платформы → Подключить).
+YouTube başlığı uygulanamadı: 	Не удалось применить название YouTube: 
+YouTube onayı reddedildi: 	Разрешение YouTube отклонено: 

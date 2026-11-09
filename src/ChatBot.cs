@@ -7,21 +7,22 @@ using System.Threading;
 namespace ValoLive
 {
     /// <summary>
-    /// Kick chat komutları: izleyici "!rank" yazınca yayıncı hesabından kısa bir cevap gider.
-    /// Her komut 20 sn'de en fazla bir kez cevaplanır (chat'i doldurmasın). Riot/Kick hatası olursa sessiz kalır.
+    /// Chat komutları: izleyici "!rank" yazınca yayıncı hesabından, mesajın geldiği chat'e kısa bir cevap gider.
+    /// Her komut platform başına 20 sn'de (YouTube'da 60 sn: her cevap günlük kotadan 50 birim) en fazla bir kez
+    /// cevaplanır. Riot/platform hatası olursa sessiz kalır.
     /// </summary>
     sealed class ChatBot
     {
         static readonly CultureInfo Tr = new CultureInfo("tr-TR");
-        const int CooldownSec = 20;
+        const int CooldownSec = 20, YouTubeCooldownSec = 60;
 
-        readonly KickApi kick;
+        readonly Action<Platform, string> send;   // cevabı o platformun chat'ine yazar (hesap bağlı değilse atlar)
         readonly Func<ValoState> state;
         readonly Func<LiveInfo> live;
         readonly RiotLocal riot = new RiotLocal();
         readonly Dictionary<string, DateTime> lastUse = new Dictionary<string, DateTime>();
 
-        public ChatBot(KickApi kick, Func<ValoState> state, Func<LiveInfo> live) { this.kick = kick; this.state = state; this.live = live; }
+        public ChatBot(Action<Platform, string> send, Func<ValoState> state, Func<LiveInfo> live) { this.send = send; this.state = state; this.live = live; }
 
         // Türkçe ve İngilizce adlar her dilde çalışır; listede arayüz diline uygun olanlar görünür.
         public static string[] Commands => L.Code == "tr"
@@ -45,17 +46,19 @@ namespace ValoLive
                 case "!komutlar": case "!komut": case "!commands": answer = () => L.T("Komutlar: ") + string.Join(" ", Commands); break;
                 default: return;
             }
+            var from = m.From ?? Platform.Kick;
+            string useKey = from.Id + cmd;
             lock (lastUse)
             {
-                if (lastUse.TryGetValue(cmd, out var t) && (DateTime.Now - t).TotalSeconds < CooldownSec) return;
-                lastUse[cmd] = DateTime.Now;
+                if (lastUse.TryGetValue(useKey, out var t) && (DateTime.Now - t).TotalSeconds < (from == Platform.YouTube ? YouTubeCooldownSec : CooldownSec)) return;
+                lastUse[useKey] = DateTime.Now;
             }
             ThreadPool.QueueUserWorkItem(_ =>
             {
                 try
                 {
                     var reply = answer();
-                    if (!string.IsNullOrEmpty(reply)) kick.SendChat("🤖 " + reply);
+                    if (!string.IsNullOrEmpty(reply)) send(from, "🤖 " + reply);
                 }
                 catch (Exception e) { Diag.Event("CHAT", $"komut {cmd} cevaplanamadı: {e.Message}"); }
             });

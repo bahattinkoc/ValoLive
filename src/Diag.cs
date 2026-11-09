@@ -9,7 +9,7 @@ namespace ValoLive
 {
     /// <summary>
     /// Yayın başına tanılama günlüğü (%LOCALAPPDATA%\ValoLive\logs\yayin_*.log). Kopma ve takılmaların
-    /// nedenini sonradan kesin görmek için: olaylar (yakalama kopuşu, yeniden başlama süresi, Kick bağlantısı,
+    /// nedenini sonradan kesin görmek için: olaylar (yakalama kopuşu, yeniden başlama süresi, platform bağlantıları,
     /// ön plan değişimi, örtü) ve 5 sn'de bir istatistik satırı (FPS, düşen kare, Kick'e giden veri, ağ tıkanması).
     /// Hata kodları Türkçe açıklamasıyla yazılır. Stream key hiçbir satıra girmez.
     /// </summary>
@@ -59,7 +59,7 @@ namespace ValoLive
             {
                 if (file == null) return;
                 sum = $"{why} · süre {DateTime.Now - started:hh\\:mm\\:ss} · yakalama yeniden başlama {captureRestarts} " +
-                      $"(toplam kesinti {gapTotalMs / 1000:0.0} sn, en uzun {gapMaxMs:0} ms) · Kick bağlantı kopması {publisherDrops}{fps}";
+                      $"(toplam kesinti {gapTotalMs / 1000:0.0} sn, en uzun {gapMaxMs:0} ms) · platform bağlantı kopması {publisherDrops}{fps}";
             }
             Write("ÖZET", sum);
             lock (lk) file = null;
@@ -84,11 +84,11 @@ namespace ValoLive
                 ("887a0027", "DXGI_ERROR_WAIT_TIMEOUT: ekran kartı kare vermedi"),
                 ("887a0001", "DXGI_ERROR_INVALID_CALL: ekran yakalama başlatılamadı (genelde mod geçişi sürüyor)"),
                 ("887a0004", "DXGI_ERROR_UNSUPPORTED: masaüstü çoğaltma desteklenmiyor (başka bir uygulama tam ekranı tutuyor olabilir)"),
-                ("-10053", "WSAECONNABORTED: Kick bağlantısı ağ ya da sunucu tarafında koparıldı"),
+                ("-10053", "WSAECONNABORTED: platform bağlantısı ağ ya da sunucu tarafında koparıldı"),
                 ("-10054", "WSAECONNRESET: Kick sunucusu bağlantıyı sıfırladı"),
                 ("-10060", "WSAETIMEDOUT: Kick sunucusuna ulaşılamadı (zaman aşımı)"),
                 ("-10051", "WSAENETUNREACH: ağ erişilemez (internet bağlantısı yok)"),
-                ("Error opening output", "Kick bağlantıyı açmadı (URL/anahtar ya da ağ)"),
+                ("Error opening output", "platform bağlantıyı açmadı (URL/anahtar ya da ağ)"),
                 ("session has been invalidated", "TLS oturumu sunucu tarafından kapatıldı"),
                 ("NVENC", "NVIDIA kodlayıcı hatası"),
             };

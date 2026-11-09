@@ -38,7 +38,6 @@ Bağlanıyor…	Conectando…
 Bağlı değil	Não conectado
 Başlık	Título
 Başlık uygulanamadı: 	Não foi possível aplicar o título: 
-Başlık, kategori ve etiketler Kick'e uygulandı ✓	Título, categoria e tags aplicados na Kick ✓
 Belirgin bir alışkanlık yok — dengeli oynuyor.	Sem hábito marcante — joga equilibrado.
 Bildirimler (tanıdık oyuncu, smurf, parti)	Alertas (jogador conhecido, smurf, grupo)
 Bronz	Bronze
@@ -92,17 +91,14 @@ Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (
 Kategori	Categoria
 Kaydet ve bağlan	Salvar e conectar
 Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.	Sem queda depois de derrotas seguidas — você é à prova de tilt.
-Kick Stream URL ve Stream Key gerekli.\nKick → Creator Dashboard → Settings bölümünden kopyalayabilirsin.	Kick Stream URL e Stream Key são obrigatórios.\nCopie em Kick → Creator Dashboard → Settings.
 Kick hesabı	Conta da Kick
 Kick hesabı bağlı değil.	A conta da Kick não está conectada.
 Kick hesabını bağla	Conecte sua conta da Kick
-Kick için hafif Valorant yayın aracı · RTX NVENC	Ferramenta leve para fazer live de Valorant na Kick · RTX NVENC
 Kick kanal bilgisi alınamadı.	Não foi possível obter as informações do canal na Kick.
 Kick onayı 3 dakika içinde gelmedi.	A aprovação da Kick não chegou em 3 minutos.
 Kick onayı reddedildi: 	A Kick recusou a aprovação: 
 Kick oturumu sona ermiş, yeniden bağlan.	A sessão da Kick expirou, conecte de novo.
 Kick'e bağlanılamadı:\n	Não foi possível conectar à Kick:\n
-Kick'e şimdi uygula	Aplicar na Kick agora
 Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):	Abra a página de desenvolvedor da Kick (precisa estar logado):
 Kick'ten URL ve key al	Pegar URL e chave na Kick
 Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:	A Kick exige seu próprio "app de desenvolvedor" para mudar título e categoria.\nSó uma vez, 2 minutos:
@@ -180,7 +176,6 @@ Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	Última partida: {0} {1} · {2}
 Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.	Não jogou este mapa recentemente. O estilo acima continua valendo.
 Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.	Depois a página de aprovação da Kick abre no navegador; é só clicar em "Permitir".
 Stil çıkarmak için yeterli round yok (en az 40).	Rounds insuficientes para identificar um estilo (mínimo 40).
-Stream URL / Stream Key'i Kick panelinden yeniden kopyala	Copie de novo a Stream URL / Stream Key no painel da Kick
 Sv	Nv
 Süre: {0:hh\:mm\:ss}	Duração: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	Arrastar: mover\nRoda do mouse: aumentar / diminuir (Shift: fino)\nSetas: 1 px (Shift: 10 px)\n\n
@@ -216,7 +211,6 @@ YAYINI BİTİR	ENCERRAR LIVE
 YENİLGİ	DERROTA
 Yakalama	Captura
 Yayın açık. Kapatılsın mı?	A live está no ar. Fechar mesmo assim?
-Yayın bilgisi uygulanamadı:\n	Não foi possível aplicar as informações da live:\n
 Yayında chat kutusu	Caixa de chat na live
 Yayını başlat	Iniciar live
 Yayını bitir	Encerrar live
@@ -300,7 +294,6 @@ zirve	pico
 Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	Raramente dão trade quando ele morre ({0}%). Joga sozinho, longe do time.
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	Seu time quase nunca te dá trade: você fica sozinho. Jogue na mesma área que um aliado.
 Ölümsüzlük	Imortal
-Önce Kick hesabını bağla (Yayın Bilgisi → Bağlan).	Conecte primeiro sua conta da Kick (Info da live → Conectar).
 Öğlen	Tarde
 Ücretsiz anahtar al	Pegar chave grátis
 Üstte tut	Manter no topo
@@ -323,7 +316,6 @@ zirve	pico
 ● DURDURULUYOR…	● PARANDO…
 ● EKRAN YAKALAMA YENİLENİYOR (yayın açık)	● REINICIANDO CAPTURA DE TELA (live no ar)
 ● HAZIR	● PRONTO
-● KICK BAĞLANTIYI REDDETTİ	● A KICK RECUSOU A CONEXÃO
 ● TEST BAŞARISIZ	● TESTE FALHOU
 ● TEST KAYDI	● GRAVAÇÃO DE TESTE
 ● TEST KAYDI HAZIR	● GRAVAÇÃO DE TESTE PRONTA
@@ -404,7 +396,6 @@ Güvercin postası (ve sürprizi)	Pombo-correio (e a surpresa dele)
 Havai fişek hedefi	Meta dos fogos
 Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.	As camadas (radar, caixa de chat, momentos da live) e a diversão do chat (balão, avião, tomate, corrida de patos…) ficam em outra janela.
 Kağıt uçak	Avião de papel
-Komutları okumak için ana penceredeki Kick hesabını bağla.	Conecte sua conta Kick na janela principal para ler os comandos.
 MESAJ TAŞIYANLAR	PORTADORES DE MENSAGENS
 Merhaba chat, bu bir deneme!	Olá chat, isto é um teste!
 Ortak havai fişek	Fogos em grupo
@@ -460,3 +451,55 @@ yok	nenhuma
 Şişede mesaj	Mensagem na garrafa
 POP!	POP!
 Ekran kartı motoru (işlemciyi boşaltır)	Motor de GPU (libera a CPU)
+BAĞLANTI	CONEXÃO
+Bu platforma yayınla	Transmitir nesta plataforma
+GÖRÜNTÜ & SES	VÍDEO E ÁUDIO
+Hiçbir platform açık değil: yalnızca test kaydı alınabilir.	Nenhuma plataforma ativa: só é possível uma gravação de teste.
+Kick ve YouTube için hafif Valorant yayın aracı · RTX NVENC	Ferramenta leve para fazer live de Valorant na Kick e no YouTube · RTX NVENC
+PLATFORMLAR	PLATAFORMAS
+RAKİP HAFIZASI	MEMÓRIA DE INIMIGOS
+Stream URL / Stream Key'i platformun panelinden yeniden kopyala	Copie de novo a URL / chave de transmissão no painel da plataforma
+Yayının gideceği platformu seç: Platformlar sekmesinde en az birini aç.	Escolha onde transmitir: ative pelo menos uma plataforma na aba Plataformas.
+YouTube Studio'dan yayın anahtarı al	Pegar a chave de transmissão no YouTube Studio
+bağlanıyor…	conectando…
+durdu	parado
+hazır	pronto
+kapalı	desligado
+koptu	caiu
+reddetti	recusado
+yeniden bağlanıyor ({0})	reconectando ({0})
+{0} platform × ~{1} kbps → internetin yükleme hızı en az {2} Mbps olmalı (pay ile).	{0} plataforma(s) × ~{1} kbps → seu upload deve ser de pelo menos {2} Mbps (com folga).
+{0}: Stream URL ve Stream Key gerekli.	{0}: URL e chave de transmissão são obrigatórias.
+● canlı	● ao vivo
+● {0} BAĞLANTIYI REDDETTİ	● {0} RECUSOU A CONEXÃO
+<h2>ValoLive YouTube'a bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>	<h2>ValoLive conectado ao YouTube ✓</h2><p>Você pode fechar esta aba.</p>
+Bağlı hesaplara şimdi uygula	Aplicar agora às contas conectadas
+Başlık ve etiketler bağlı her hesaba gider, yayın başlarken kendiliğinden. Kategori yalnızca Kick'te; YouTube'da yayın Oyun kategorisinde açılır, küçük resim Studio'dan. Chat kutusu ve chat eğlencesi iki chat'i birlikte okur.	Título e tags vão para cada conta conectada, automaticamente quando a live começa. A categoria vale só para a Kick; no YouTube a live abre na categoria Jogos, miniatura pelo Studio. A caixa de chat e a diversão do chat leem os dois chats juntos.
+Bu Google hesabında YouTube kanalı yok.	Esta conta Google não tem canal no YouTube.
+Bu projede "YouTube Data API v3"ü etkinleştir (Enable):	Ative "YouTube Data API v3" neste projeto (Enable):
+Client ID ve Client Secret'ı yeniden girmek için Evet'e bas.	Clique em Sim para digitar de novo o Client ID e o Client Secret.
+Clients → Create client → Application type: Desktop app → Create. Client ID ve Client secret'ı buraya yapıştır:	Clients → Create client → Application type: Desktop app → Create. Cole aqui o Client ID e o Client secret:
+Google Auth Platform → Get started: uygulama adı ValoLive, kitle External. Sonra Audience sayfasında "Publish app" de (yoksa giriş 7 günde bir düşer).	Google Auth Platform → Get started: nome do app ValoLive, público External. Depois, na página Audience, clique em "Publish app" (senão o login cai a cada 7 dias).
+Google Cloud'da yeni bir proje oluştur (ad: ValoLive):	Crie um novo projeto no Google Cloud (nome: ValoLive):
+Hesabı bağlı platforma yayın kapalı: chat okunmaz	A live está desligada nas plataformas com conta conectada: o chat não é lido
+Kick ya da YouTube hesabını bağla	Conecte sua conta da Kick ou do YouTube
+Kick: başlık, kategori ve etiketler uygulandı ✓	Kick: título, categoria e tags aplicados ✓
+Komutları okumak için ana pencerede Kick ya da YouTube hesabını bağla.	Conecte sua conta da Kick ou do YouTube na janela principal para ler comandos.
+Sonra tarayıcıda Google onayı açılır. "Google bu uygulamayı doğrulamadı" derse Gelişmiş → ValoLive'a git: uygulama senin kendi projen.	Depois a autorização do Google abre no navegador. Se aparecer "O Google não verificou este app", clique em Avançado → Acessar ValoLive: o app é o seu próprio projeto.
+Tarayıcıda Google onayı bekleniyor…	Aguardando a autorização do Google no navegador…
+YouTube hesabı	Conta do YouTube
+YouTube hesabı bağlı değil.	A conta do YouTube não está conectada.
+YouTube hesabını bağla	Conecte sua conta do YouTube
+YouTube onayı 3 dakika içinde gelmedi.	A autorização do YouTube não chegou em 3 minutos.
+YouTube oturumu sona ermiş, yeniden bağlan.	A sessão do YouTube expirou, conecte de novo.
+YouTube yayını 5 dakikada açılmadı	A live do YouTube não abriu em 5 minutos
+YouTube yayını bulunamadı.	Live do YouTube não encontrada.
+YouTube'a bağlanılamadı:\n	Não foi possível conectar ao YouTube:\n
+YouTube, başlığı değiştirmek ve chat'e bot cevabı yazmak için Google Cloud'da kendi uygulamanı ister.\nBir kerelik, 5 dakikalık bir iş:	O YouTube exige seu próprio app no Google Cloud para mudar o título e escrever respostas do bot no chat.\nUma vez só, 5 minutos:
+YouTube: başlık ve etiketler uygulandı ✓	YouTube: título e tags aplicados ✓
+YouTube: şu an açık ya da planlanmış yayın yok; başlık yayın başlayınca uygulanır.	YouTube: nenhuma live ativa ou agendada agora; o título será aplicado quando a live começar.
+chat bulunamadı	chat não encontrado
+yayın bekleniyor	aguardando a live
+Önce Kick ya da YouTube hesabını bağla (Platformlar → Bağlan).	Primeiro conecte sua conta da Kick ou do YouTube (Plataformas → Conectar).
+YouTube başlığı uygulanamadı: 	Não foi possível aplicar o título do YouTube: 
+YouTube onayı reddedildi: 	Autorização do YouTube recusada: 

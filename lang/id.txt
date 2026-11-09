@@ -38,7 +38,6 @@ Bağlanıyor…	Menghubungkan…
 Bağlı değil	Belum terhubung
 Başlık	Judul
 Başlık uygulanamadı: 	Gagal menerapkan judul: 
-Başlık, kategori ve etiketler Kick'e uygulandı ✓	Judul, kategori, dan tag diterapkan ke Kick ✓
 Belirgin bir alışkanlık yok — dengeli oynuyor.	Tidak ada kebiasaan menonjol — main seimbang.
 Bildirimler (tanıdık oyuncu, smurf, parti)	Notifikasi (pemain dikenal, smurf, party)
 Bronz	Bronze
@@ -92,17 +91,14 @@ Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (
 Kategori	Kategori
 Kaydet ve bağlan	Simpan dan hubungkan
 Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.	Tidak drop setelah kalah beruntun — kamu kebal tilt.
-Kick Stream URL ve Stream Key gerekli.\nKick → Creator Dashboard → Settings bölümünden kopyalayabilirsin.	Kick Stream URL dan Stream Key wajib diisi.\nSalin dari Kick → Creator Dashboard → Settings.
 Kick hesabı	Akun Kick
 Kick hesabı bağlı değil.	Akun Kick belum terhubung.
 Kick hesabını bağla	Hubungkan akun Kick
-Kick için hafif Valorant yayın aracı · RTX NVENC	Alat streaming Valorant ringan untuk Kick · RTX NVENC
 Kick kanal bilgisi alınamadı.	Gagal mengambil info channel Kick.
 Kick onayı 3 dakika içinde gelmedi.	Persetujuan Kick tidak datang dalam 3 menit.
 Kick onayı reddedildi: 	Persetujuan Kick ditolak: 
 Kick oturumu sona ermiş, yeniden bağlan.	Sesi Kick kedaluwarsa, hubungkan lagi.
 Kick'e bağlanılamadı:\n	Gagal terhubung ke Kick:\n
-Kick'e şimdi uygula	Terapkan ke Kick sekarang
 Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):	Buka halaman developer Kick (harus sudah login):
 Kick'ten URL ve key al	Ambil URL dan key dari Kick
 Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:	Kick butuh "aplikasi developer" milikmu sendiri untuk mengubah judul dan kategori.\nSekali saja, 2 menit:
@@ -180,7 +176,6 @@ Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	Match terakhir: {0} {1} · {2} 
 Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.	Belakangan tidak memainkan map ini. Gaya main di atas tetap berlaku.
 Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.	Lalu halaman persetujuan Kick terbuka di browser; cukup klik "Izinkan".
 Stil çıkarmak için yeterli round yok (en az 40).	Ronde belum cukup untuk membaca gaya main (minimal 40).
-Stream URL / Stream Key'i Kick panelinden yeniden kopyala	Salin ulang Stream URL / Stream Key dari dasbor Kick
 Sv	Lv
 Süre: {0:hh\:mm\:ss}	Durasi: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	Seret: pindah\nRoda mouse: perbesar / perkecil (Shift: halus)\nTombol panah: 1 px (Shift: 10 px)\n\n
@@ -216,7 +211,6 @@ YAYINI BİTİR	AKHIRI STREAM
 YENİLGİ	KALAH
 Yakalama	Capture
 Yayın açık. Kapatılsın mı?	Stream sedang live. Tutup sekarang?
-Yayın bilgisi uygulanamadı:\n	Gagal menerapkan info stream:\n
 Yayında chat kutusu	Kotak chat di stream
 Yayını başlat	Mulai stream
 Yayını bitir	Akhiri stream
@@ -300,7 +294,6 @@ zirve	tertinggi
 Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	Jarang di-trade saat mati ({0}%). Main sendiri, jauh dari tim.
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	Timmu biasanya tidak bisa men-trade kamu: kamu sendirian. Main di area yang sama dengan rekan tim.
 Ölümsüzlük	Immortal
-Önce Kick hesabını bağla (Yayın Bilgisi → Bağlan).	Hubungkan akun Kick dulu (Info Stream → Hubungkan).
 Öğlen	Siang
 Ücretsiz anahtar al	Dapatkan key gratis
 Üstte tut	Selalu di atas
@@ -323,7 +316,6 @@ zirve	tertinggi
 ● DURDURULUYOR…	● MENGHENTIKAN…
 ● EKRAN YAKALAMA YENİLENİYOR (yayın açık)	● MEMULAI ULANG CAPTURE LAYAR (stream tetap jalan)
 ● HAZIR	● SIAP
-● KICK BAĞLANTIYI REDDETTİ	● KICK MENOLAK KONEKSI
 ● TEST BAŞARISIZ	● UJI GAGAL
 ● TEST KAYDI	● REKAMAN UJI
 ● TEST KAYDI HAZIR	● REKAMAN UJI SIAP
@@ -404,7 +396,6 @@ Güvercin postası (ve sürprizi)	Pos merpati (plus kejutannya)
 Havai fişek hedefi	Target kembang api
 Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.	Overlay (radar, kotak chat, momen siaran) dan keseruan chat (balon, pesawat, tomat, balap bebek…) ada di jendela terpisah.
 Kağıt uçak	Pesawat kertas
-Komutları okumak için ana penceredeki Kick hesabını bağla.	Hubungkan akun Kick di jendela utama agar perintah bisa dibaca.
 MESAJ TAŞIYANLAR	PEMBAWA PESAN
 Merhaba chat, bu bir deneme!	Halo chat, ini cuma tes!
 Ortak havai fişek	Kembang api bersama
@@ -460,3 +451,55 @@ yok	tidak ada
 Şişede mesaj	Pesan dalam botol
 POP!	POP!
 Ekran kartı motoru (işlemciyi boşaltır)	Mesin GPU (meringankan CPU)
+BAĞLANTI	KONEKSI
+Bu platforma yayınla	Streaming ke platform ini
+GÖRÜNTÜ & SES	VIDEO & AUDIO
+Hiçbir platform açık değil: yalnızca test kaydı alınabilir.	Tidak ada platform yang aktif: hanya rekaman uji yang bisa dibuat.
+Kick ve YouTube için hafif Valorant yayın aracı · RTX NVENC	Alat streaming Valorant ringan untuk Kick dan YouTube · RTX NVENC
+PLATFORMLAR	PLATFORM
+RAKİP HAFIZASI	INGATAN MUSUH
+Stream URL / Stream Key'i platformun panelinden yeniden kopyala	Salin ulang Stream URL / Stream Key dari dasbor platform
+Yayının gideceği platformu seç: Platformlar sekmesinde en az birini aç.	Pilih tujuan streaming: aktifkan minimal satu platform di tab Platform.
+YouTube Studio'dan yayın anahtarı al	Ambil stream key dari YouTube Studio
+bağlanıyor…	menghubungkan…
+durdu	berhenti
+hazır	siap
+kapalı	mati
+koptu	terputus
+reddetti	ditolak
+yeniden bağlanıyor ({0})	menghubungkan ulang ({0})
+{0} platform × ~{1} kbps → internetin yükleme hızı en az {2} Mbps olmalı (pay ile).	{0} platform × ~{1} kbps → kecepatan unggah minimal {2} Mbps (dengan cadangan).
+{0}: Stream URL ve Stream Key gerekli.	{0}: Stream URL dan Stream Key wajib diisi.
+● canlı	● live
+● {0} BAĞLANTIYI REDDETTİ	● {0} MENOLAK KONEKSI
+<h2>ValoLive YouTube'a bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>	<h2>ValoLive terhubung ke YouTube ✓</h2><p>Tab ini boleh ditutup.</p>
+Bağlı hesaplara şimdi uygula	Terapkan sekarang ke akun yang terhubung
+Başlık ve etiketler bağlı her hesaba gider, yayın başlarken kendiliğinden. Kategori yalnızca Kick'te; YouTube'da yayın Oyun kategorisinde açılır, küçük resim Studio'dan. Chat kutusu ve chat eğlencesi iki chat'i birlikte okur.	Judul dan tag dikirim ke setiap akun yang terhubung, otomatis saat siaran dimulai. Kategori hanya untuk Kick; di YouTube siaran dibuka di kategori Game, thumbnail dari Studio. Kotak chat dan chat seru membaca kedua chat sekaligus.
+Bu Google hesabında YouTube kanalı yok.	Akun Google ini tidak punya channel YouTube.
+Bu projede "YouTube Data API v3"ü etkinleştir (Enable):	Aktifkan "YouTube Data API v3" di proyek ini (Enable):
+Client ID ve Client Secret'ı yeniden girmek için Evet'e bas.	Tekan Ya untuk memasukkan ulang Client ID dan Client Secret.
+Clients → Create client → Application type: Desktop app → Create. Client ID ve Client secret'ı buraya yapıştır:	Clients → Create client → Application type: Desktop app → Create. Tempel Client ID dan Client secret di sini:
+Google Auth Platform → Get started: uygulama adı ValoLive, kitle External. Sonra Audience sayfasında "Publish app" de (yoksa giriş 7 günde bir düşer).	Google Auth Platform → Get started: nama aplikasi ValoLive, audiens External. Lalu di halaman Audience klik "Publish app" (kalau tidak, login lepas setiap 7 hari).
+Google Cloud'da yeni bir proje oluştur (ad: ValoLive):	Buat proyek baru di Google Cloud (nama: ValoLive):
+Hesabı bağlı platforma yayın kapalı: chat okunmaz	Siaran ke platform dengan akun terhubung mati: chat tidak dibaca
+Kick ya da YouTube hesabını bağla	Hubungkan akun Kick atau YouTube
+Kick: başlık, kategori ve etiketler uygulandı ✓	Kick: judul, kategori, dan tag diterapkan ✓
+Komutları okumak için ana pencerede Kick ya da YouTube hesabını bağla.	Hubungkan akun Kick atau YouTube di jendela utama untuk membaca perintah.
+Sonra tarayıcıda Google onayı açılır. "Google bu uygulamayı doğrulamadı" derse Gelişmiş → ValoLive'a git: uygulama senin kendi projen.	Lalu halaman izin Google terbuka di browser. Jika muncul "Google belum memverifikasi aplikasi ini", klik Lanjutan → Buka ValoLive: aplikasi ini proyekmu sendiri.
+Tarayıcıda Google onayı bekleniyor…	Menunggu izin Google di browser…
+YouTube hesabı	Akun YouTube
+YouTube hesabı bağlı değil.	Akun YouTube belum terhubung.
+YouTube hesabını bağla	Hubungkan akun YouTube
+YouTube onayı 3 dakika içinde gelmedi.	Izin YouTube tidak datang dalam 3 menit.
+YouTube oturumu sona ermiş, yeniden bağlan.	Sesi YouTube habis, hubungkan lagi.
+YouTube yayını 5 dakikada açılmadı	Siaran YouTube tidak terbuka dalam 5 menit
+YouTube yayını bulunamadı.	Siaran YouTube tidak ditemukan.
+YouTube'a bağlanılamadı:\n	Tidak bisa terhubung ke YouTube:\n
+YouTube, başlığı değiştirmek ve chat'e bot cevabı yazmak için Google Cloud'da kendi uygulamanı ister.\nBir kerelik, 5 dakikalık bir iş:	YouTube memerlukan aplikasimu sendiri di Google Cloud untuk mengganti judul dan menulis balasan bot di chat.\nSekali saja, 5 menit:
+YouTube: başlık ve etiketler uygulandı ✓	YouTube: judul dan tag diterapkan ✓
+YouTube: şu an açık ya da planlanmış yayın yok; başlık yayın başlayınca uygulanır.	YouTube: saat ini tidak ada siaran aktif atau terjadwal; judul akan diterapkan saat siaran dimulai.
+chat bulunamadı	chat tidak ditemukan
+yayın bekleniyor	menunggu siaran
+Önce Kick ya da YouTube hesabını bağla (Platformlar → Bağlan).	Hubungkan dulu akun Kick atau YouTube (Platform → Hubungkan).
+YouTube başlığı uygulanamadı: 	Judul YouTube gagal diterapkan: 
+YouTube onayı reddedildi: 	Izin YouTube ditolak: 

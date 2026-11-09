@@ -528,6 +528,8 @@ namespace ValoLive
         readonly List<Item> items = new List<Item>();
         readonly object lk = new object();
         bool dirty = true, wasAnimating;
+        /// <summary>İki chat birden okunuyor: adın önünde platform rengiyle küçük nokta (Kick yeşil, YouTube kırmızı).</summary>
+        public bool ShowSource;
 
         public ChatLayer(float scale)
             : base((int)(14 * scale), (int)(590 * scale), (int)(420 * scale), (int)(300 * scale), 30, scale) { }
@@ -610,6 +612,7 @@ namespace ValoLive
             var toks = new List<Tok>();
             Color nameCol;
             try { nameCol = string.IsNullOrEmpty(m.Color) ? Color.White : ColorTranslator.FromHtml(m.Color); } catch { nameCol = Color.White; }
+            if (ShowSource && m.From != null) toks.Add(new Tok { Text = "●", Font = textFont, Color = m.From.Brand });
             toks.Add(new Tok { Text = m.User + ":", Font = nameFont, Color = nameCol });
             int last = 0;
             foreach (Match e in Emote.Matches(m.Text))

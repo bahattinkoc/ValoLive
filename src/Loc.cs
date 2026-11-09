@@ -88,7 +88,8 @@ namespace ValoLive
         /// <summary>Yüzde: Türkçede %45, İngilizcede 45%, Fransızcada 45 % (sıra çeviriden gelir).</summary>
         public static string Pct(object n) => L.F("%{0}", n);
 
-        public static string Upper(string s) => (s ?? "").ToUpper(Culture);
+        // Marka adı Türkçe büyütmede "KİCK" olmasın.
+        public static string Upper(string s) => (s ?? "").ToUpper(Culture).Replace("KİCK", "KICK");
 
         // ---------- Yazı tipleri ----------
 
