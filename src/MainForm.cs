@@ -123,7 +123,7 @@ namespace ValoLive
             screenW = GetDeviceCaps(dc, 118); // DESKTOPHORZRES: DPI ölçeğinden bağımsız gerçek çözünürlük
             screenH = GetDeviceCaps(dc, 117);
             ReleaseDC(IntPtr.Zero, dc);
-            overlay = new OverlayRenderer(screenW, screenH);
+            overlay = new OverlayRenderer(screenW, screenH) { Needed = () => mode != Mode.Idle };
             guard = new CaptureGuard(screenW, screenH) { Send = streamer.SendCommand, WindowOnly = () => streamer.WindowOnly };
             guard.CoveredChanged += c =>
             {
@@ -1362,6 +1362,7 @@ namespace ValoLive
         {
             try
             {
+                overlay.Refresh(); // boştayken bekletilen kareyi tazele: Streamer başlarken Current ve Blank'i okur
                 DisposeAudio();
                 audio = new AudioSource(true) { Volume = trkGame.Value / 100f };
                 audio.Start(cfg.OutputId);

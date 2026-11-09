@@ -25,6 +25,11 @@ namespace ValoLive
         [DllImport("user32.dll")] static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint pid);
         [DllImport("user32.dll")] static extern bool GetWindowRect(IntPtr hWnd, out RECT r);
         [DllImport("user32.dll")] static extern IntPtr SetThreadDpiAwarenessContext(IntPtr ctx);
+        [DllImport("kernel32.dll")] static extern IntPtr GetCurrentThread();
+        [DllImport("kernel32.dll")] static extern bool GetThreadTimes(IntPtr h, out long create, out long exit, out long kernel, out long user);
+
+        /// <summary>Bu iş parçacığının harcadığı işlemci süresi (ms): kare süresi motoru beklemeyi de içerir.</summary>
+        static double ThreadCpuMs() => GetThreadTimes(GetCurrentThread(), out _, out _, out var k, out var u) ? (k + u) / 10000.0 : 0;
         [StructLayout(LayoutKind.Sequential)] struct RECT { public int Left, Top, Right, Bottom; }
 
         /// <summary>U, V: minimap kutusu içinde son görülen yer (0..1, ekrandaki yönüyle).</summary>
@@ -111,7 +116,7 @@ namespace ValoLive
             var bar = new TopBar(eng.Icons);
             var dead = new HashSet<string>();
             var diag = Record ? new DiagRecorder() : null;
-            int frames = 0, seenFrames = 0, tick = 0; double totalMs = 0, maxMs = 0; DateTime statAt = DateTime.Now.AddMinutes(1);
+            int frames = 0, seenFrames = 0, tick = 0; double totalMs = 0, maxMs = 0, cpuAt = ThreadCpuMs(); DateTime statAt = DateTime.Now.AddMinutes(1);
             try
             {
                 while (gen == generation)
@@ -173,9 +178,10 @@ namespace ValoLive
                         frames++; totalMs += LastMs; if (LastMs > maxMs) maxMs = LastMs; if (seen.Count > 0) seenFrames++;
                         if (now >= statAt)
                         {
-                            Log($"son 1 dk: {frames} kare · ort {totalMs / Math.Max(1, frames):0.0} ms · en uzun {maxMs:0} ms · rakip görülen kare {seenFrames} · " +
+                            double cpu = ThreadCpuMs();
+                            Log($"son 1 dk: {frames} kare · ort {totalMs / Math.Max(1, frames):0.0} ms (işlemci {(cpu - cpuAt) / Math.Max(1, frames):0.0} ms, çekirdeğin %{(cpu - cpuAt) / 600:0.0}) · en uzun {maxMs:0} ms · rakip görülen kare {seenFrames} · " +
                                 (eng.Calibrated ? $"minimap {eng.MapS}px @ {eng.MapX},{eng.MapY}" : "kalibre değil"));
-                            frames = seenFrames = 0; totalMs = maxMs = 0; statAt = now.AddMinutes(1);
+                            frames = seenFrames = 0; totalMs = maxMs = 0; cpuAt = cpu; statAt = now.AddMinutes(1);
                         }
                     }
                     int wait = (GameFront ? 100 : 500) - (int)sw.ElapsedMilliseconds;

@@ -45,6 +45,8 @@ namespace ValoLive
         readonly Queue<Banner> queue = new Queue<Banner>();
         readonly Dictionary<string, Image> icons = new Dictionary<string, Image>();
         readonly string cacheDir;
+        readonly Bitmap canvas;
+        readonly object canvasLk = new object();
 
         ValoState state;
         public string PlayerName = "";
@@ -77,9 +79,21 @@ namespace ValoLive
             Directory.CreateDirectory(cacheDir);
 
             family = L.DisplayFamily(out style);
+            canvas = new Bitmap(W, H, PixelFormat.Format32bppPArgb); // önceden çarpılmış: çizim hızlı, Raw düz alfaya çevirir
 
             Render();
             timer = new Timer(_ => Tick(), null, 66, 66);
+        }
+
+        /// <summary>Kareyi okuyan var mı (yayın/test açık). Yokken menüdeki bekleme ekranı bile saniyede bir
+        /// tam ekran çiziliyordu (çizim ~20 ms): boşta çekirdeğin ~%3'ü.</summary>
+        public Func<bool> Needed = () => true;
+
+        /// <summary>Yayın başlarken: bekletilen çizimi hemen yap, Streamer güncel Current ve Blank'i okusun.</summary>
+        public void Refresh()
+        {
+            lock (lk) dirty = false;
+            try { Render(); } catch (Exception e) { Streamer.Log("overlay: " + e.Message); }
         }
 
         public void SetState(ValoState st) { lock (lk) { state = st; dirty = true; } }
@@ -118,7 +132,7 @@ namespace ValoLive
                 if (popDelta != 0 && (now - popStart).TotalSeconds > 4) { popDelta = 0; dirty = true; }
                 if ((cover || summary || privacy || brk) && now.Millisecond < 70) dirty = true; // saniyede bir "canlı" noktası
                 if (phase != lastPhase) { lastPhase = phase; dirty = true; }
-                if (!dirty) return;
+                if (!dirty || !Needed()) return; // yayın kapalıyken çizim bekler (dirty kalır), açılınca Refresh tazeler
                 dirty = false;
             }
             try { Render(); } catch (Exception e) { Streamer.Log("overlay: " + e.Message); }
@@ -133,8 +147,8 @@ namespace ValoLive
             ValoState st; Banner b; double bt; int pop; bool cov, sum, priv, br; DateTime? qs;
             lock (lk) { st = state; b = banner; bt = (DateTime.Now - bannerStart).TotalMilliseconds; pop = popDelta; cov = cover; sum = summary; priv = privacy; br = brk; qs = queueSince; }
 
-            using (var bmp = new Bitmap(W, H, PixelFormat.Format32bppPArgb)) // önceden çarpılmış: çizim hızlı, Raw düz alfaya çevirir
-            using (var g = Graphics.FromImage(bmp))
+            lock (canvasLk) // Refresh ve zamanlayıcı aynı anda çizebilir: tuval tek
+            using (var g = Graphics.FromImage(canvas))
             {
                 g.SmoothingMode = SmoothingMode.AntiAlias;
                 g.TextRenderingHint = TextRenderingHint.AntiAlias;
@@ -152,7 +166,7 @@ namespace ValoLive
                 }
                 bool blank = !cov && !sum && !priv && !br && !(st != null && st.TierId > 0 && rankPanel) && b == null;
 
-                Current = Layer.Raw(bmp); // ham BGRA: 1080p PNG sıkıştırması kare başına ~36 ms tutuyordu
+                Current = Layer.Raw(canvas); // ham BGRA: 1080p PNG sıkıştırması kare başına ~36 ms tutuyordu
                 // Önce yeni kare, sonra bildirim: karıştırma açıldığında ffmpeg eski boş kareyi değil yenisini görür.
                 if (blank != Blank) { Blank = blank; BlankChanged?.Invoke(blank); }
             }
@@ -391,6 +405,7 @@ namespace ValoLive
         {
             timer.Dispose();
             lock (icons) foreach (var i in icons.Values) i?.Dispose();
+            lock (canvasLk) canvas.Dispose();
         }
     }
 }
