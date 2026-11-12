@@ -101,11 +101,14 @@ Open it during agent select or in game, and every player in the lobby is scouted
 - **Smurf warnings** for low-level accounts with suspiciously good stats.
 - **Encounter log**: a colored ring shows players you've met before, and whether they were teammates or enemies.
 - **Balance of power**: your team's average rank against theirs.
+- **Briefing**: the most useful findings grouped as Danger, Chance, Position, Your team and Familiar faces: one-trick and first-time agents, Operator players, clutch and tilt patterns, duos, long sessions.
+- **Map tab**: where the enemies usually fight on this map on defense and attack, and where their team plants the spike.
+- **Agent select view**: your team's agent pools and who has locked in, before the enemies are known.
 - Players with hidden names stay hidden. ValoLive doesn't look them up.
 
 <p align="center"><img src="docs/lobby.png" width="820" alt="Match Room"></p>
 
-Click a player for a detailed analysis, or right-click to open their profile. **MY STATS** runs the same breakdown on your own account: your best maps, agents and recent form.
+Everything fits in a compact tabbed window (Briefing, Map, Enemies, Team) with all ten agents in a strip at the bottom. Click a player to open their own tab with every detail, or right-click to open their profile. **MY STATS** runs the same breakdown on your own account: your best maps, agents and recent form.
 
 ### 🧠 Enemy memory (experimental)
 Clutching 1v2 and can't remember where you last saw their Jett? ValoLive watches your minimap and remembers it for you.
@@ -186,7 +189,7 @@ ValoLive isn't endorsed by Riot Games and doesn't reflect the views or opinions 
 - **Yayın anları**: İlk kan, clutch denemeleri ve sonucu, son rakip, kusursuz raundlar, raund serileri, geri dönüşler, maç sayısı ve uzatma yayında anında duyurulur. Maç bitince en iyi (ve en komik) anlar kısa bir bantla gösterilir: ace, 4K, ninja defuse, bıçak kill, düşerek ölme…
 - **Chat eğlencesi**: İzleyiciler chat'e komut yazar, ekranda canlanır: `!balloon`, `!plane`, `!bottle`, `!pigeon`, `!paper`, `!spray`, `!tomato`, `!egg`, `!sticker`, `!firework`, `!race`, `!say`, `!flip`, `!zoom`. Ayrıca emoji yağmuru ve chat'e yazanların balık olduğu bir akvaryum var. Kanal puanı gerekmez, her izleyicinin bekleme süresi vardır. **ÖNİZLEME** ile yayın açmadan denenebilir.
 - **Yayın Paneli**: Yayın üstü bütün ayarlar ayrı bir pencerede; ana pencereden ya da tepsi simgesinden açılır.
-- **Maç Odası**: Lobideki herkesin rankı, en yüksek rankı, formu (▲seri / ▼tilt), son maçları, **parti tespiti**, **smurf uyarısı**, daha önce karşılaştığın oyuncular ve takımların güç dengesi.
+- **Maç Odası**: Lobideki herkesin rankı, en yüksek rankı, formu (▲seri / ▼tilt), son maçları, **parti tespiti**, **smurf uyarısı**, daha önce karşılaştığın oyuncular ve takımların güç dengesi. Sekmeli küçük pencerede gruplu **brifing** (tehlike, fırsat, konum), rakiplerin haritada nerede oynadığını gösteren **Harita** sekmesi ve ajan seçiminde takımının ajan havuzu.
 - **Rakip hafızası (deneysel)**: Minimap'te senin ya da takımının gördüğü her rakibin son görüldüğü yeri ve ne kadar önce görüldüğünü hatırlar. Minimap'in altında liste olarak, haritanın üstünde ikon olarak ya da ikisi birden gösterilir. Ölen rakipler skor çubuğundan anlaşılıp listeden düşer, her raund sıfırlanır. Varsayılan olarak kapalıdır, **MAÇ ODASI** altından açılır. Rakip vurgu rengi **mor** olmalıdır. Maç sırasında bilgi veren üçüncü taraf araçlar Riot kurallarıyla çelişebilir; kullanım sorumluluğu sana aittir.
 - **16 dil**: Valorant sunucularında konuşulan diller.
 - **Gizlilik**: ValoLive pencereleri yayına ve kayda girmez. Yayın anahtarın bilgisayarında şifreli (DPAPI) saklanır. Oyuna hiçbir şey enjekte edilmez; rakip hafızası yalnızca ekranda zaten görünen görüntüyü okur.
