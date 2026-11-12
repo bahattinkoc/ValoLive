@@ -106,14 +106,14 @@ namespace ValoLive
                 {
                     col.Item(i, out var dev);
                     dev.GetId(out string id);
-                    list.Add(new KeyValuePair<string, string>(id, Name(dev)));
+                    list.Add(new KeyValuePair<string, string>(id, NameOf(dev)));
                 }
             }
             catch { }
             return list;
         }
 
-        static string Name(IMMDevice dev)
+        public static string NameOf(IMMDevice dev)
         {
             dev.OpenPropertyStore(0, out var store);
             var key = new PropertyKey { fmtid = FriendlyNameFmt, pid = 14 };
@@ -202,116 +202,191 @@ namespace ValoLive
             return NowMs() - (long)((nowQpc - qpc100ns) / 10000);
         }
 
+        /// <summary>
+        /// Cihazı açar ve okur. "Varsayılan" seçiliyse (boş id) Windows'un varsayılan cihazı değişince (ör. hoparlörden
+        /// kulaklığa geçince) yeni cihaza geçer; cihaz çıkarılınca da yeniden bağlanır. Önceden yalnızca yayın başındaki
+        /// cihaz dinleniyordu: çıkış değişince yayına ses gitmiyordu.
+        /// </summary>
         void Run(object arg)
         {
-            IAudioClient cap = null, ren = null;
-            try
+            var id = arg as string;
+            bool follow = string.IsNullOrEmpty(id);
+            var flow = loopback ? EDataFlow.Render : EDataFlow.Capture;
+            string name = loopback ? "oyun sesi" : "mikrofon";
+            IMMDeviceEnumerator en;
+            try { en = (IMMDeviceEnumerator)new MMDeviceEnumeratorCom(); }
+            catch (Exception e) { error = e; ready.Set(); return; }
+
+            bool opened = false, lostLogged = false;
+            while (running)
             {
-                var en = (IMMDeviceEnumerator)new MMDeviceEnumeratorCom();
-                IMMDevice dev;
-                var id = arg as string;
-                var flow = loopback ? EDataFlow.Render : EDataFlow.Capture;
-                if (string.IsNullOrEmpty(id)) en.GetDefaultAudioEndpoint(flow, 0, out dev);
-                else en.GetDevice(id, out dev);
-
-                var iid = typeof(IAudioClient).GUID;
-                dev.Activate(ref iid, 23, IntPtr.Zero, out object o1);
-                cap = (IAudioClient)o1;
-                cap.GetMixFormat(out IntPtr fmt);
-                ReadFormat(fmt);
-                // 2 sn tampon: oyun ya da sistem bir an takılıp okuma gecikse de cihaz veriyi kaybetmesin.
-                cap.Initialize(0, loopback ? AUDCLNT_STREAMFLAGS_LOOPBACK : 0, 20000000, 0, fmt, IntPtr.Zero);
-
-                IAudioRenderClient render = null;
-                uint renSize = 0;
-                if (loopback)
+                IAudioClient cap = null, ren = null;
+                try
                 {
-                    dev.Activate(ref iid, 23, IntPtr.Zero, out object o2);
-                    ren = (IAudioClient)o2;
-                    ren.Initialize(0, 0, 2000000, 0, fmt, IntPtr.Zero);
-                    var rid = typeof(IAudioRenderClient).GUID;
-                    ren.GetService(ref rid, out object rs);
-                    render = (IAudioRenderClient)rs;
-                    ren.GetBufferSize(out renSize);
-                    render.GetBuffer(renSize, out _);
-                    render.ReleaseBuffer(renSize, AUDCLNT_BUFFERFLAGS_SILENT);
-                    ren.Start();
+                    IMMDevice dev;
+                    if (follow) en.GetDefaultAudioEndpoint(flow, 0, out dev);
+                    else en.GetDevice(id, out dev);
+                    dev.GetId(out string devId);
+
+                    var iid = typeof(IAudioClient).GUID;
+                    dev.Activate(ref iid, 23, IntPtr.Zero, out object o1);
+                    cap = (IAudioClient)o1;
+                    cap.GetMixFormat(out IntPtr fmt);
+                    ReadFormat(fmt);
+                    // ffmpeg'in biçimi ilk cihazla sabitlenir; sonraki cihaz farklıysa kanal ve hız dönüştürülür.
+                    if (!opened) { Channels = devChannels; SampleRate = devRate; }
+                    resPos = 0; resLast = new float[Channels];
+                    // 2 sn tampon: oyun ya da sistem bir an takılıp okuma gecikse de cihaz veriyi kaybetmesin.
+                    cap.Initialize(0, loopback ? AUDCLNT_STREAMFLAGS_LOOPBACK : 0, 20000000, 0, fmt, IntPtr.Zero);
+
+                    IAudioRenderClient render = null;
+                    uint renSize = 0;
+                    if (loopback)
+                    {
+                        dev.Activate(ref iid, 23, IntPtr.Zero, out object o2);
+                        ren = (IAudioClient)o2;
+                        ren.Initialize(0, 0, 2000000, 0, fmt, IntPtr.Zero);
+                        var rid = typeof(IAudioRenderClient).GUID;
+                        ren.GetService(ref rid, out object rs);
+                        render = (IAudioRenderClient)rs;
+                        ren.GetBufferSize(out renSize);
+                        render.GetBuffer(renSize, out _);
+                        render.ReleaseBuffer(renSize, AUDCLNT_BUFFERFLAGS_SILENT);
+                        ren.Start();
+                    }
+                    Marshal.FreeCoTaskMem(fmt);
+
+                    var cid = typeof(IAudioCaptureClient).GUID;
+                    cap.GetService(ref cid, out object cs);
+                    var capture = (IAudioCaptureClient)cs;
+                    cap.Start();
+                    if (!opened) { opened = true; ready.Set(); }
+                    else { lostLogged = false; string dn = "?"; try { dn = AudioDevices.NameOf(dev); } catch { } Diag.Event("SES", $"{name} yeni cihaza geçti: {dn} ({devRate / 1000.0:0.#} kHz {devChannels} kanal)"); }
+
+                    Pump(en, flow, follow, devId, capture, ren, render, renSize);
                 }
-                Marshal.FreeCoTaskMem(fmt);
+                catch (Exception e)
+                {
+                    if (!opened) { error = e; ready.Set(); return; }
+                    // Cihaz çıkarıldı ya da geçersizleşti: kısa bekleyip (varsayılan) cihazı yeniden aç.
+                    if (!lostLogged) { lostLogged = true; Diag.Event("SES", $"{name} cihazı kayboldu, yeniden bağlanıyor: {e.Message}"); }
+                    for (int i = 0; i < 10 && running; i++) Thread.Sleep(100);
+                }
+                finally
+                {
+                    try { cap?.Stop(); } catch { }
+                    try { ren?.Stop(); } catch { }
+                }
+            }
+        }
 
-                var cid = typeof(IAudioCaptureClient).GUID;
-                cap.GetService(ref cid, out object cs);
-                var capture = (IAudioCaptureClient)cs;
-                cap.Start();
-                ready.Set();
+        float[] samples = new float[0], conv = new float[0];
+        short[] shorts = new short[0];
+        byte[] bytes = new byte[0];
 
-                var samples = new float[0];
-                var shorts = new short[0];
-                var bytes = new byte[0];
+        /// <summary>Açık cihazı okur; durdurulunca ya da (follow) varsayılan cihaz değişince döner.</summary>
+        void Pump(IMMDeviceEnumerator en, EDataFlow flow, bool follow, string devId, IAudioCaptureClient capture,
+                  IAudioClient ren, IAudioRenderClient render, uint renSize)
+        {
+            var checkAt = Stopwatch.StartNew();
+            while (running)
+            {
+                Thread.Sleep(10);
+                if (follow && checkAt.ElapsedMilliseconds >= 1000)
+                {
+                    checkAt.Restart();
+                    string now = null;
+                    try { en.GetDefaultAudioEndpoint(flow, 0, out var d); d.GetId(out now); } catch { }
+                    if (now != null && now != devId) return; // varsayılan cihaz değişti
+                }
+                if (render != null)
+                {
+                    ren.GetCurrentPadding(out uint pad);
+                    uint free = renSize - pad;
+                    if (free > 0) { render.GetBuffer(free, out _); render.ReleaseBuffer(free, AUDCLNT_BUFFERFLAGS_SILENT); }
+                }
+
                 while (running)
                 {
-                    Thread.Sleep(10);
-                    if (render != null)
+                    capture.GetNextPacketSize(out uint packet);
+                    if (packet == 0) break;
+                    capture.GetBuffer(out IntPtr data, out uint frames, out uint flags, out _, out ulong qpc);
+                    int n = (int)frames * devChannels;
+                    if (samples.Length < n) { samples = new float[n]; shorts = new short[n]; }
+
+                    if ((flags & AUDCLNT_BUFFERFLAGS_SILENT) != 0) Array.Clear(samples, 0, n);
+                    else if (isFloat) Marshal.Copy(data, samples, 0, n);
+                    else
                     {
-                        ren.GetCurrentPadding(out uint pad);
-                        uint free = renSize - pad;
-                        if (free > 0) { render.GetBuffer(free, out _); render.ReleaseBuffer(free, AUDCLNT_BUFFERFLAGS_SILENT); }
+                        Marshal.Copy(data, shorts, 0, n);
+                        for (int i = 0; i < n; i++) samples[i] = shorts[i] / 32768f;
+                    }
+                    capture.ReleaseBuffer(frames);
+
+                    float vol = Volume, max = 0;
+                    int clip = 0;
+                    for (int i = 0; i < n; i++)
+                    {
+                        float v = samples[i] *= vol, a = Math.Abs(v);
+                        if (a > max) max = a;
+                        if (a >= 1f) clip++;
+                    }
+                    lock (statLock)
+                    {
+                        if (max > peak) peak = max;
+                        clipped += clip;
+                        if ((flags & AUDCLNT_BUFFERFLAGS_DATA_DISCONTINUITY) != 0 && written >= 0) discontinuities++;
                     }
 
-                    while (running)
-                    {
-                        capture.GetNextPacketSize(out uint packet);
-                        if (packet == 0) break;
-                        capture.GetBuffer(out IntPtr data, out uint frames, out uint flags, out _, out ulong qpc);
-                        int n = (int)frames * Channels;
-                        if (samples.Length < n) { samples = new float[n]; shorts = new short[n]; bytes = new byte[n * 4]; }
-
-                        if ((flags & AUDCLNT_BUFFERFLAGS_SILENT) != 0) Array.Clear(samples, 0, n);
-                        else if (isFloat) Marshal.Copy(data, samples, 0, n);
-                        else
-                        {
-                            Marshal.Copy(data, shorts, 0, n);
-                            for (int i = 0; i < n; i++) samples[i] = shorts[i] / 32768f;
-                        }
-                        capture.ReleaseBuffer(frames);
-
-                        float vol = Volume, max = 0;
-                        int clip = 0;
-                        for (int i = 0; i < n; i++)
-                        {
-                            float v = samples[i] *= vol, a = Math.Abs(v);
-                            if (a > max) max = a;
-                            if (a >= 1f) clip++;
-                        }
-                        lock (statLock)
-                        {
-                            if (max > peak) peak = max;
-                            clipped += clip;
-                            if ((flags & AUDCLNT_BUFFERFLAGS_DATA_DISCONTINUITY) != 0 && written >= 0) discontinuities++;
-                        }
-
-                        var o = output;
-                        if (o == null) continue;
-                        Buffer.BlockCopy(samples, 0, bytes, 0, n * 4);
-                        // Paketin ilk örneğinin gerçek yakalanma anı (cihazın saati). Okuma geciktiyse (oyun takıldı)
-                        // birikmiş paketler yine doğru yere oturur; şimdiki zamana göre hizalamak araya sessizlik
-                        // ekleyip ardından ses atıyordu (yayında çıt/patlama).
-                        long startMs = qpc != 0 ? QpcToUnixMs(qpc) : NowMs() - frames * 1000L / SampleRate;
-                        try { WriteAligned(o, bytes, (int)frames, startMs); }
-                        catch { output = null; }
-                    }
+                    var o = output;
+                    if (o == null) continue;
+                    // Paketin ilk örneğinin gerçek yakalanma anı (cihazın saati). Okuma geciktiyse (oyun takıldı)
+                    // birikmiş paketler yine doğru yere oturur; şimdiki zamana göre hizalamak araya sessizlik
+                    // ekleyip ardından ses atıyordu (yayında çıt/patlama).
+                    long startMs = qpc != 0 ? QpcToUnixMs(qpc) : NowMs() - frames * 1000L / devRate;
+                    int outFrames = Convert((int)frames);
+                    if (outFrames == 0) continue;
+                    if (bytes.Length < outFrames * Channels * 4) bytes = new byte[outFrames * Channels * 4];
+                    Buffer.BlockCopy(conv, 0, bytes, 0, outFrames * Channels * 4);
+                    try { WriteAligned(o, bytes, outFrames, startMs); }
+                    catch { output = null; }
                 }
             }
-            catch (Exception e)
+        }
+
+        // Cihaz biçimi (ffmpeg'e giden Channels/SampleRate ilk cihazınkidir) ve doğrusal yeniden örnekleme durumu.
+        int devChannels, devRate;
+        double resPos;
+        float[] resLast;
+
+        /// <summary>samples (cihaz biçimi) → conv (ffmpeg biçimi): kanal eşleme (ilk iki kanal; mono çoğaltılır) ve hız.</summary>
+        int Convert(int frames)
+        {
+            int C = Channels;
+            float Src(int f, int c) => f < 0 ? resLast[c] : samples[f * devChannels + Math.Min(c, devChannels - 1)];
+            if (devRate == SampleRate)
             {
-                error = e;
-                ready.Set();
+                if (conv.Length < frames * C) conv = new float[frames * C];
+                if (devChannels == C) Array.Copy(samples, conv, frames * C);
+                else for (int f = 0; f < frames; f++) for (int c = 0; c < C; c++) conv[f * C + c] = Src(f, c);
+                return frames;
             }
-            finally
+            double step = (double)devRate / SampleRate;
+            int cap = (int)(frames / step) + 2;
+            if (conv.Length < cap * C) conv = new float[cap * C];
+            int k = 0;
+            while (true)
             {
-                try { cap?.Stop(); } catch { }
-                try { ren?.Stop(); } catch { }
+                int i0 = (int)Math.Floor(resPos);
+                if (i0 + 1 >= frames) break;
+                float t = (float)(resPos - i0);
+                for (int c = 0; c < C; c++) conv[k * C + c] = Src(i0, c) + (Src(i0 + 1, c) - Src(i0, c)) * t;
+                k++;
+                resPos += step;
             }
+            resPos -= frames;
+            for (int c = 0; c < C; c++) resLast[c] = Src(frames - 1, c);
+            return k;
         }
 
         /// <summary>Yazılan örnek sayısını gerçek zamana (epoch'tan beri geçen süre) hizalı tutar.</summary>
@@ -351,8 +426,8 @@ namespace ValoLive
         void ReadFormat(IntPtr fmt)
         {
             ushort tag = (ushort)Marshal.ReadInt16(fmt, 0);
-            Channels = Marshal.ReadInt16(fmt, 2);
-            SampleRate = Marshal.ReadInt32(fmt, 4);
+            devChannels = Marshal.ReadInt16(fmt, 2);
+            devRate = Marshal.ReadInt32(fmt, 4);
             bits = Marshal.ReadInt16(fmt, 14);
             if (tag == 0xFFFE)
             {
