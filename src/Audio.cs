@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -133,6 +134,7 @@ namespace ValoLive
     sealed class AudioSource : IDisposable
     {
         const int AUDCLNT_STREAMFLAGS_LOOPBACK = 0x00020000;
+        const uint AUDCLNT_BUFFERFLAGS_DATA_DISCONTINUITY = 0x1;
         const uint AUDCLNT_BUFFERFLAGS_SILENT = 0x2;
         const double DriftToleranceSec = 0.08;
         static readonly Guid FloatSubFormat = new Guid("00000003-0000-0010-8000-00aa00389b71");
@@ -151,6 +153,12 @@ namespace ValoLive
         Thread thread;
         Exception error;
         readonly ManualResetEventSlim ready = new ManualResetEventSlim();
+
+        // Tanılama (günlükteki SES satırı): son okumadan beri en yüksek seviye, 1.0'ı aşan örnek, cihazın
+        // kaçırdığı veri (biz geç okuyunca), hizalamanın eklediği sessizlik ve attığı ses.
+        readonly object statLock = new object();
+        float peak;
+        long clipped, discontinuities, padFrames, dropFrames;
 
         public AudioSource(bool loopback) { this.loopback = loopback; }
 
@@ -175,6 +183,25 @@ namespace ValoLive
 
         static long NowMs() => DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
 
+        /// <summary>Son çağrıdan beri: "zirve -3,1 dB · kırpılan 0 · kopuş 0 · eklenen 0 ms · atılan 0 ms" (sıfırlar).</summary>
+        public string TakeStats()
+        {
+            lock (statLock)
+            {
+                string db = peak > 0 ? $"{20 * Math.Log10(peak):0.0} dB" : "sessiz";
+                string s = $"{SampleRate / 1000.0:0.#} kHz {Channels} kanal · zirve {db} · kırpılan {clipped} · kopuş {discontinuities} · eklenen {padFrames * 1000 / Math.Max(1, SampleRate)} ms · atılan {dropFrames * 1000 / Math.Max(1, SampleRate)} ms";
+                peak = 0; clipped = discontinuities = padFrames = dropFrames = 0;
+                return s;
+            }
+        }
+
+        /// <summary>QPC zamanını (100 ns) duvar saatine (Unix ms) çevirir: paket ne kadar önce yakalandıysa o kadar geri.</summary>
+        static long QpcToUnixMs(ulong qpc100ns)
+        {
+            double nowQpc = Stopwatch.GetTimestamp() * (1e7 / Stopwatch.Frequency);
+            return NowMs() - (long)((nowQpc - qpc100ns) / 10000);
+        }
+
         void Run(object arg)
         {
             IAudioClient cap = null, ren = null;
@@ -192,7 +219,8 @@ namespace ValoLive
                 cap = (IAudioClient)o1;
                 cap.GetMixFormat(out IntPtr fmt);
                 ReadFormat(fmt);
-                cap.Initialize(0, loopback ? AUDCLNT_STREAMFLAGS_LOOPBACK : 0, 10000000, 0, fmt, IntPtr.Zero);
+                // 2 sn tampon: oyun ya da sistem bir an takılıp okuma gecikse de cihaz veriyi kaybetmesin.
+                cap.Initialize(0, loopback ? AUDCLNT_STREAMFLAGS_LOOPBACK : 0, 20000000, 0, fmt, IntPtr.Zero);
 
                 IAudioRenderClient render = null;
                 uint renSize = 0;
@@ -234,7 +262,7 @@ namespace ValoLive
                     {
                         capture.GetNextPacketSize(out uint packet);
                         if (packet == 0) break;
-                        capture.GetBuffer(out IntPtr data, out uint frames, out uint flags, out _, out _);
+                        capture.GetBuffer(out IntPtr data, out uint frames, out uint flags, out _, out ulong qpc);
                         int n = (int)frames * Channels;
                         if (samples.Length < n) { samples = new float[n]; shorts = new short[n]; bytes = new byte[n * 4]; }
 
@@ -247,13 +275,29 @@ namespace ValoLive
                         }
                         capture.ReleaseBuffer(frames);
 
-                        float vol = Volume;
-                        if (vol != 1f) for (int i = 0; i < n; i++) samples[i] *= vol;
+                        float vol = Volume, max = 0;
+                        int clip = 0;
+                        for (int i = 0; i < n; i++)
+                        {
+                            float v = samples[i] *= vol, a = Math.Abs(v);
+                            if (a > max) max = a;
+                            if (a >= 1f) clip++;
+                        }
+                        lock (statLock)
+                        {
+                            if (max > peak) peak = max;
+                            clipped += clip;
+                            if ((flags & AUDCLNT_BUFFERFLAGS_DATA_DISCONTINUITY) != 0 && written >= 0) discontinuities++;
+                        }
 
                         var o = output;
                         if (o == null) continue;
                         Buffer.BlockCopy(samples, 0, bytes, 0, n * 4);
-                        try { WriteAligned(o, bytes, (int)frames); }
+                        // Paketin ilk örneğinin gerçek yakalanma anı (cihazın saati). Okuma geciktiyse (oyun takıldı)
+                        // birikmiş paketler yine doğru yere oturur; şimdiki zamana göre hizalamak araya sessizlik
+                        // ekleyip ardından ses atıyordu (yayında çıt/patlama).
+                        long startMs = qpc != 0 ? QpcToUnixMs(qpc) : NowMs() - frames * 1000L / SampleRate;
+                        try { WriteAligned(o, bytes, (int)frames, startMs); }
                         catch { output = null; }
                     }
                 }
@@ -271,11 +315,11 @@ namespace ValoLive
         }
 
         /// <summary>Yazılan örnek sayısını gerçek zamana (epoch'tan beri geçen süre) hizalı tutar.</summary>
-        void WriteAligned(Stream o, byte[] bytes, int frames)
+        void WriteAligned(Stream o, byte[] bytes, int frames, long startMs)
         {
             int frameBytes = Channels * 4;
-            // Bu paketin son örneği "şimdi" yakalandı; ilk örneğinin olması gereken konumu:
-            long expectedStart = (NowMs() - epochMs) * SampleRate / 1000 - frames;
+            // Bu paketin ilk örneğinin olması gereken konumu:
+            long expectedStart = (startMs - epochMs) * SampleRate / 1000;
             if (written < 0)
             {
                 // İlk paket: epoch ile şimdi arasını sessizlikle doldur.
@@ -285,8 +329,8 @@ namespace ValoLive
             long diff = expectedStart - written;
             long tol = (long)(SampleRate * DriftToleranceSec);
             int skip = 0;
-            if (diff > tol) WriteSilence(o, diff, frameBytes);        // cihaz geride kaldı: boşluğu doldur
-            else if (diff < -tol) skip = (int)Math.Min(frames, -diff); // cihaz önde: fazlayı at
+            if (diff > tol) { WriteSilence(o, diff, frameBytes); lock (statLock) padFrames += diff; } // cihaz geride kaldı: boşluğu doldur
+            else if (diff < -tol) { skip = (int)Math.Min(frames, -diff); lock (statLock) dropFrames += skip; } // cihaz önde: fazlayı at
             if (skip >= frames) return;
             o.Write(bytes, skip * frameBytes, (frames - skip) * frameBytes);
             written += frames - skip;

@@ -168,6 +168,9 @@ namespace ValoLive
                 if (o.Denoise) af.Append(",afftdn=nf=-25");
                 af.Append("[mic];[g][mic]amix=inputs=2:duration=first:normalize=0");
             }
+            // Sınırlayıcı: oyun ve mikrofon tavansız toplanıyor; silah sesiyle konuşma üst üste binince 1.0 aşılıp
+            // yayında patlayan cızırtı oluyordu. Zirveler -1 dB'de yumuşakça bastırılır, altındaki ses değişmez.
+            af.Append(",alimiter=limit=0.89:attack=5:release=50:level=disabled");
             // Ses yolu zaman damgasını sıfırdan başlatıyor; sondaki asetpts onu örnek sayısından
             // mutlak saate geri çevirir (örnek 0 = epoch, AudioSource bunu garanti eder).
             af.Append($",asetpts=N/SR/TB+{epoch}/TB[a]");
@@ -482,7 +485,7 @@ namespace ValoLive
         long lastFrame, totalFrames, capAttempt;
         volatile bool awaitingFirstFrame, capDone;
         // 5 sn'lik istatistik penceresi (pompa ve ilerleme satırlarından)
-        long winFrameStart; DateTime winStart;
+        long winFrameStart; DateTime winStart, audioStatAt;
 
         /// <summary>Bir platformun bu yayındaki bağlantı geçmişi (yeniden bağlanma kararları için).</summary>
         sealed class TargetRun
@@ -524,7 +527,7 @@ namespace ValoLive
             gpuBroken = false; engineFails = 0;
             restartDue = DateTime.MaxValue;
             planned = false; windowReadySince = DateTime.MaxValue; windowBlockedUntil = DateTime.MinValue;
-            winStart = DateTime.Now; winFrameStart = 0; totalFrames = 0;
+            winStart = audioStatAt = DateTime.Now; winFrameStart = 0; totalFrames = 0;
             fatal = exitFired = false;
             lock (runs)
             {
@@ -705,6 +708,12 @@ namespace ValoLive
                                 $" · düşen kare {p("drop_frames")} · çoğaltılan {p("dup_frames")} · yakalama #{capAttempt}" +
                                 (noCapture ? " · YAKALAMA YOK" : ""));
             winStart = now; winFrameStart = totalFrames;
+            // Dakikada bir ses kaynaklarının durumu: kırpılma, cihaz kopuşu ve hizalama düzeltmeleri (cızırtı/çıt teşhisi).
+            if ((now - audioStatAt).TotalSeconds >= 60)
+            {
+                audioStatAt = now;
+                Diag.Event("SES", $"oyun: {gameSrc?.TakeStats()}" + (micSrc != null ? $" | mikrofon: {micSrc.TakeStats()}" : ""));
+            }
             Health?.Invoke(frames / secs, waits, noCapture);
         }
 
