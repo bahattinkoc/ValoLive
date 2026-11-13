@@ -458,7 +458,7 @@ namespace ValoLive
                 tabs[k].BackColor = k == i ? Red : Field;
             }
             // Sanal mikrofon yoktuysa: kullanıcı az önce kurmuş olabilir, sekmeye her dönüşte yeniden bakılır.
-            if (i == 3 && voiceOuts != null && voiceOuts.Count == 0) { FillVoiceDevices(); if (voiceOuts.Count > 0) RestartVoice(); }
+            if (i == 3 && voiceOuts != null && !GoodCable) { FillVoiceDevices(); if (GoodCable) RestartVoice(); }
         }
 
         /// <summary>Görüntü bir kez kodlanır ama her platforma ayrı gönderilir: gereken yükleme hızı platform sayısıyla katlanır.</summary>

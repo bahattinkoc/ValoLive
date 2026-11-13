@@ -609,3 +609,4 @@ Yaşlı	Idoso
 ● Sanal mikrofon bulunamadı	● Nenhum microfone virtual encontrado
 ● Sorun: {0}	● Problema: {0}
 ● Çalışıyor: {0}	● Ativo: {0}
+Uyarı: Steam'in sanal mikrofonu Valorant'ta boğuk duyulur. Ücretsiz VB-CABLE'ı kur, ValoLive onu kendiliğinden seçer.	Atenção: o microfone virtual da Steam fica abafado no Valorant. Instale o VB-CABLE (grátis); o ValoLive escolhe ele sozinho.

@@ -340,6 +340,7 @@ Ters ekran, büyüteç ve sesli okuma yalnızca abone ve modlara
 Teşekkürler: {0}
 TİLT
 UZATMA
+Uyarı: Steam'in sanal mikrofonu Valorant'ta boğuk duyulur. Ücretsiz VB-CABLE'ı kur, ValoLive onu kendiliğinden seçer.
 Uygulama
 Uygulamanın Client ID ve Client Secret'ını buraya yapıştır:
 Uzaylı

@@ -33,8 +33,9 @@ namespace ValoLive
             lnkCable = new LinkLabel { AutoSize = true, LinkColor = Red, ActiveLinkColor = Red, Location = new Point(FX, y - 2) };
             lnkCable.LinkClicked += (s, e) =>
             {
-                if (voiceOuts.Count == 0) Process.Start("https://vb-audio.com/Cable/");
-                else { FillVoiceDevices(); RestartVoice(); }
+                FillVoiceDevices();
+                if (!GoodCable) Process.Start("https://vb-audio.com/Cable/");
+                else RestartVoice();
             };
             host.Controls.Add(lnkCable); y += 26;
             lblVoiceHelp = new Label { ForeColor = Mut, AutoSize = true, MaximumSize = new Size(ColW, 0), Location = new Point(cx, y) };
@@ -85,7 +86,14 @@ namespace ValoLive
             return a >= 0 && b > a + 1 ? n.Substring(a + 1, b - a - 1) : n;
         }
 
-        static string VoiceHelp(string captureName) =>
+        // Steam'in sanal mikrofonu kendi testlerimizde temiz ama Valorant'ta her efekti aynı boğuk sese çeviriyor
+        // (Valorant o cihazı okuyor; nedeni bilinmiyor). VB-CABLE sorunsuz: Steam varsa bile indirme önerilir.
+        static bool IsSteam(string n) => n != null && n.IndexOf("Steam Streaming", StringComparison.OrdinalIgnoreCase) >= 0;
+        bool GoodCable => voiceOuts != null && voiceOuts.Any(d => !IsSteam(d.Value));
+
+        static string VoiceHelp(string captureName) => IsSteam(captureName) ? VoiceHelpText(captureName) + " " + L.T("Uyarı: Steam'in sanal mikrofonu Valorant'ta boğuk duyulur. Ücretsiz VB-CABLE'ı kur, ValoLive onu kendiliğinden seçer.") : VoiceHelpText(captureName);
+
+        static string VoiceHelpText(string captureName) =>
             L.F("Valorant → Ayarlar → Ses → Ses Sohbeti → Giriş cihazı: \"{0}\" seç. ValoLive kapalıyken takımın seni duymaz; o zaman giriş cihazını eski mikrofonuna geri al.", captureName);
 
         /// <summary>Mikrofon ve sanal kablo listelerini doldurur (sekme açılınca da: yeni kurulan kablo görünsün).</summary>
@@ -112,7 +120,7 @@ namespace ValoLive
                 else cmbVoiceOut.Items.AddRange(voiceOuts.Select(d => (object)CableName(d.Value)).ToArray());
                 cmbVoiceOut.SelectedIndex = Math.Max(0, voiceOuts.FindIndex(d => d.Key == cfg.VoiceOut));
                 FitDropDown(cmbVoiceOut);
-                lnkCable.Text = voiceOuts.Count == 0 ? L.T("Ücretsiz sanal mikrofonu indir (VB-CABLE); kurduktan sonra buraya tıkla") : L.T("Cihazları yenile");
+                lnkCable.Text = !GoodCable ? L.T("Ücretsiz sanal mikrofonu indir (VB-CABLE); kurduktan sonra buraya tıkla") : L.T("Cihazları yenile");
                 lblVoiceHelp.Text = voiceOuts.Count == 0
                     ? L.T("Sanal mikrofon, ValoLive'ın değiştirdiği sesi Valorant'a mikrofon gibi verir. Kurulumdan sonra bilgisayarı yeniden başlatman gerekebilir.")
                     : VoiceHelp(VoiceChanger.CaptureSideOf(SelectedVoiceOut().Value));

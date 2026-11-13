@@ -609,3 +609,4 @@ Yaşlı	คนแก่
 ● Sanal mikrofon bulunamadı	● ไม่พบไมโครโฟนเสมือน
 ● Sorun: {0}	● ปัญหา: {0}
 ● Çalışıyor: {0}	● กำลังทำงาน: {0}
+Uyarı: Steam'in sanal mikrofonu Valorant'ta boğuk duyulur. Ücretsiz VB-CABLE'ı kur, ValoLive onu kendiliğinden seçer.	คำเตือน: ไมค์เสมือนของ Steam จะฟังดูอู้อี้ใน Valorant ติดตั้ง VB-CABLE ฟรี แล้ว ValoLive จะเลือกให้อัตโนมัติ
