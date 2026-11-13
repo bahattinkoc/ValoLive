@@ -571,3 +571,41 @@ takım arkadaşların	seus colegas de time
 tümü Harita sekmesinde	tudo na aba Mapa
 {0} çatışmanın {1} tanesi	{1} de {0} confrontos
 üstüne git	aproveite
+(sanal mikrofon bulunamadı)	(nenhum microfone virtual encontrado)
+Canavar	Monstro
+Cihazları yenile	Atualizar dispositivos
+Ctrl+Alt+V  efekti aç/kapat      Ctrl+Alt+B  sonraki efekt	Ctrl+Alt+V  liga/desliga efeito      Ctrl+Alt+B  próximo efeito
+Dev	Gigante
+EFEKTLER	EFEITOS
+Hayalet	Fantasma
+Kadın	Mulher
+Kalın	Grossa
+Kapalı: ValoLive → Ses Değiştirici sekmesinden aç.	Desligado: ative em ValoLive → aba Modificador de voz.
+Kendi sesimi kulaklıktan duy	Ouvir minha voz no fone
+Mağara	Caverna
+Megafon	Megafone
+Normal	Normal
+Robot	Robô
+SES DEĞİŞTİRİCİ	MODIFICADOR DE VOZ
+Sanal mikrofon	Microfone virtual
+Sanal mikrofon, ValoLive'ın değiştirdiği sesi Valorant'a mikrofon gibi verir. Kurulumdan sonra bilgisayarı yeniden başlatman gerekebilir.	Um microfone virtual entrega ao Valorant a voz modificada pelo ValoLive como se fosse um microfone. Pode ser preciso reiniciar o PC após instalar.
+Sarhoş	Bêbado
+Ses değiştiriciyi aç (Valorant sesli sohbeti)	Ativar o modificador de voz (chat de voz do Valorant)
+Sincap	Esquilo
+Su altı	Debaixo d'água
+Telefon	Telefone
+Telsiz	Rádio
+Uzaylı	Alienígena
+Valorant → Ayarlar → Ses → Ses Sohbeti → Giriş cihazı: "{0}" seç. ValoLive kapalıyken takımın seni duymaz; o zaman giriş cihazını eski mikrofonuna geri al.	Valorant → Configurações → Áudio → Chat de voz → Dispositivo de entrada: escolha "{0}". Com o ValoLive fechado seu time não te ouve; aí volte para o seu microfone antigo.
+Varsayılan mikrofon	Microfone padrão
+Yayında da değişmiş sesim duyulsun	Os espectadores também ouvem a voz modificada
+Yaşlı	Idoso
+Çocuk	Criança
+Ücretsiz sanal mikrofonu indir (VB-CABLE); kurduktan sonra buraya tıkla	Baixar o microfone virtual grátis (VB-CABLE); clique aqui depois de instalar
+İblis	Demônio
+İnce	Fina
+● Hata: {0}	● Erro: {0}
+● Kapalı	● Desligado
+● Sanal mikrofon bulunamadı	● Nenhum microfone virtual encontrado
+● Sorun: {0}	● Problema: {0}
+● Çalışıyor: {0}	● Ativo: {0}

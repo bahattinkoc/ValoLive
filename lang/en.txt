@@ -571,3 +571,41 @@ takım arkadaşların	your teammates
 tümü Harita sekmesinde	all on the Map tab
 {0} çatışmanın {1} tanesi	{1} of {0} fights
 üstüne git	go for it
+(sanal mikrofon bulunamadı)	(no virtual microphone found)
+Canavar	Monster
+Cihazları yenile	Refresh devices
+Ctrl+Alt+V  efekti aç/kapat      Ctrl+Alt+B  sonraki efekt	Ctrl+Alt+V  effect on/off      Ctrl+Alt+B  next effect
+Dev	Giant
+EFEKTLER	EFFECTS
+Hayalet	Ghost
+Kadın	Female
+Kalın	Deep
+Kapalı: ValoLive → Ses Değiştirici sekmesinden aç.	Off: turn it on in ValoLive → Voice Changer tab.
+Kendi sesimi kulaklıktan duy	Hear my own voice in headphones
+Mağara	Cave
+Megafon	Megaphone
+Normal	Normal
+Robot	Robot
+SES DEĞİŞTİRİCİ	VOICE CHANGER
+Sanal mikrofon	Virtual mic
+Sanal mikrofon, ValoLive'ın değiştirdiği sesi Valorant'a mikrofon gibi verir. Kurulumdan sonra bilgisayarı yeniden başlatman gerekebilir.	A virtual microphone hands the voice ValoLive changes to Valorant as if it were a microphone. You may need to restart your PC after installing it.
+Sarhoş	Drunk
+Ses değiştiriciyi aç (Valorant sesli sohbeti)	Turn on the voice changer (Valorant voice chat)
+Sincap	Chipmunk
+Su altı	Underwater
+Telefon	Phone
+Telsiz	Radio
+Uzaylı	Alien
+Valorant → Ayarlar → Ses → Ses Sohbeti → Giriş cihazı: "{0}" seç. ValoLive kapalıyken takımın seni duymaz; o zaman giriş cihazını eski mikrofonuna geri al.	Valorant → Settings → Audio → Voice Chat → Input Device: pick "{0}". While ValoLive is closed your team can't hear you; switch the input device back to your old mic then.
+Varsayılan mikrofon	Default microphone
+Yayında da değişmiş sesim duyulsun	Viewers hear my changed voice too
+Yaşlı	Old man
+Çocuk	Kid
+Ücretsiz sanal mikrofonu indir (VB-CABLE); kurduktan sonra buraya tıkla	Download the free virtual mic (VB-CABLE); click here after installing
+İblis	Demon
+İnce	High
+● Hata: {0}	● Error: {0}
+● Kapalı	● Off
+● Sanal mikrofon bulunamadı	● No virtual microphone found
+● Sorun: {0}	● Problem: {0}
+● Çalışıyor: {0}	● Running: {0}

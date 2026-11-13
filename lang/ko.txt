@@ -571,3 +571,41 @@ takım arkadaşların	팀원들
 tümü Harita sekmesinde	전체는 맵 탭에
 {0} çatışmanın {1} tanesi	교전 {0}회 중 {1}회
 üstüne git	노려라
+(sanal mikrofon bulunamadı)	(가상 마이크를 찾을 수 없음)
+Canavar	괴물
+Cihazları yenile	장치 새로 고침
+Ctrl+Alt+V  efekti aç/kapat      Ctrl+Alt+B  sonraki efekt	Ctrl+Alt+V  효과 켜기/끄기      Ctrl+Alt+B  다음 효과
+Dev	거인
+EFEKTLER	효과
+Hayalet	유령
+Kadın	여자
+Kalın	굵은 목소리
+Kapalı: ValoLive → Ses Değiştirici sekmesinden aç.	꺼짐: ValoLive → 음성 변조 탭에서 켜세요.
+Kendi sesimi kulaklıktan duy	내 목소리를 헤드폰으로 듣기
+Mağara	동굴
+Megafon	확성기
+Normal	기본
+Robot	로봇
+SES DEĞİŞTİRİCİ	음성 변조
+Sanal mikrofon	가상 마이크
+Sanal mikrofon, ValoLive'ın değiştirdiği sesi Valorant'a mikrofon gibi verir. Kurulumdan sonra bilgisayarı yeniden başlatman gerekebilir.	가상 마이크는 ValoLive가 바꾼 목소리를 마이크처럼 Valorant에 전달합니다. 설치 후 PC를 다시 시작해야 할 수도 있습니다.
+Sarhoş	취객
+Ses değiştiriciyi aç (Valorant sesli sohbeti)	음성 변조 켜기 (Valorant 음성 채팅)
+Sincap	다람쥐
+Su altı	물속
+Telefon	전화
+Telsiz	무전기
+Uzaylı	외계인
+Valorant → Ayarlar → Ses → Ses Sohbeti → Giriş cihazı: "{0}" seç. ValoLive kapalıyken takımın seni duymaz; o zaman giriş cihazını eski mikrofonuna geri al.	Valorant → 설정 → 오디오 → 음성 채팅 → 입력 장치: "{0}" 선택. ValoLive가 꺼져 있으면 팀이 당신의 목소리를 듣지 못합니다. 그때는 원래 마이크로 되돌리세요.
+Varsayılan mikrofon	기본 마이크
+Yayında da değişmiş sesim duyulsun	시청자도 바뀐 목소리를 듣기
+Yaşlı	노인
+Çocuk	아이
+Ücretsiz sanal mikrofonu indir (VB-CABLE); kurduktan sonra buraya tıkla	무료 가상 마이크(VB-CABLE) 다운로드. 설치 후 여기를 클릭
+İblis	악마
+İnce	가는 목소리
+● Hata: {0}	● 오류: {0}
+● Kapalı	● 꺼짐
+● Sanal mikrofon bulunamadı	● 가상 마이크를 찾을 수 없음
+● Sorun: {0}	● 문제: {0}
+● Çalışıyor: {0}	● 작동 중: {0}

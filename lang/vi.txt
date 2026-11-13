@@ -571,3 +571,41 @@ takım arkadaşların	đồng đội của bạn
 tümü Harita sekmesinde	tất cả ở thẻ Bản đồ
 {0} çatışmanın {1} tanesi	{1} trên {0} pha giao tranh
 üstüne git	tận dụng
+(sanal mikrofon bulunamadı)	(không tìm thấy micro ảo)
+Canavar	Quái vật
+Cihazları yenile	Làm mới thiết bị
+Ctrl+Alt+V  efekti aç/kapat      Ctrl+Alt+B  sonraki efekt	Ctrl+Alt+V  bật/tắt hiệu ứng      Ctrl+Alt+B  hiệu ứng tiếp theo
+Dev	Người khổng lồ
+EFEKTLER	HIỆU ỨNG
+Hayalet	Ma
+Kadın	Nữ
+Kalın	Giọng trầm
+Kapalı: ValoLive → Ses Değiştirici sekmesinden aç.	Đang tắt: bật trong ValoLive → thẻ Đổi giọng.
+Kendi sesimi kulaklıktan duy	Nghe giọng mình qua tai nghe
+Mağara	Hang động
+Megafon	Loa phóng thanh
+Normal	Bình thường
+Robot	Robot
+SES DEĞİŞTİRİCİ	ĐỔI GIỌNG
+Sanal mikrofon	Micro ảo
+Sanal mikrofon, ValoLive'ın değiştirdiği sesi Valorant'a mikrofon gibi verir. Kurulumdan sonra bilgisayarı yeniden başlatman gerekebilir.	Micro ảo chuyển giọng đã được ValoLive đổi vào Valorant như một micro. Có thể cần khởi động lại máy sau khi cài.
+Sarhoş	Say rượu
+Ses değiştiriciyi aç (Valorant sesli sohbeti)	Bật đổi giọng (chat thoại Valorant)
+Sincap	Sóc chuột
+Su altı	Dưới nước
+Telefon	Điện thoại
+Telsiz	Bộ đàm
+Uzaylı	Người ngoài hành tinh
+Valorant → Ayarlar → Ses → Ses Sohbeti → Giriş cihazı: "{0}" seç. ValoLive kapalıyken takımın seni duymaz; o zaman giriş cihazını eski mikrofonuna geri al.	Valorant → Cài đặt → Âm thanh → Chat thoại → Thiết bị đầu vào: chọn "{0}". Khi ValoLive tắt, đồng đội không nghe thấy bạn; khi đó hãy chuyển lại micro cũ.
+Varsayılan mikrofon	Micro mặc định
+Yayında da değişmiş sesim duyulsun	Người xem cũng nghe giọng đã đổi
+Yaşlı	Ông già
+Çocuk	Trẻ em
+Ücretsiz sanal mikrofonu indir (VB-CABLE); kurduktan sonra buraya tıkla	Tải micro ảo miễn phí (VB-CABLE); cài xong bấm vào đây
+İblis	Ác quỷ
+İnce	Giọng cao
+● Hata: {0}	● Lỗi: {0}
+● Kapalı	● Đang tắt
+● Sanal mikrofon bulunamadı	● Không tìm thấy micro ảo
+● Sorun: {0}	● Sự cố: {0}
+● Çalışıyor: {0}	● Đang chạy: {0}

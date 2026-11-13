@@ -571,3 +571,41 @@ takım arkadaşların	tes coéquipiers
 tümü Harita sekmesinde	tout dans l'onglet Carte
 {0} çatışmanın {1} tanesi	{1} combats sur {0}
 üstüne git	fonce
+(sanal mikrofon bulunamadı)	(aucun micro virtuel trouvé)
+Canavar	Monstre
+Cihazları yenile	Actualiser les appareils
+Ctrl+Alt+V  efekti aç/kapat      Ctrl+Alt+B  sonraki efekt	Ctrl+Alt+V  effet on/off      Ctrl+Alt+B  effet suivant
+Dev	Géant
+EFEKTLER	EFFETS
+Hayalet	Fantôme
+Kadın	Femme
+Kalın	Grave
+Kapalı: ValoLive → Ses Değiştirici sekmesinden aç.	Désactivé : active-le dans ValoLive → onglet Modificateur de voix.
+Kendi sesimi kulaklıktan duy	M'entendre dans le casque
+Mağara	Grotte
+Megafon	Mégaphone
+Normal	Normal
+Robot	Robot
+SES DEĞİŞTİRİCİ	MODIFICATEUR DE VOIX
+Sanal mikrofon	Micro virtuel
+Sanal mikrofon, ValoLive'ın değiştirdiği sesi Valorant'a mikrofon gibi verir. Kurulumdan sonra bilgisayarı yeniden başlatman gerekebilir.	Un micro virtuel transmet à Valorant la voix modifiée par ValoLive, comme un vrai micro. Un redémarrage peut être nécessaire après l'installation.
+Sarhoş	Ivre
+Ses değiştiriciyi aç (Valorant sesli sohbeti)	Activer le modificateur de voix (chat vocal Valorant)
+Sincap	Écureuil
+Su altı	Sous l'eau
+Telefon	Téléphone
+Telsiz	Radio
+Uzaylı	Alien
+Valorant → Ayarlar → Ses → Ses Sohbeti → Giriş cihazı: "{0}" seç. ValoLive kapalıyken takımın seni duymaz; o zaman giriş cihazını eski mikrofonuna geri al.	Valorant → Paramètres → Audio → Chat vocal → Périphérique d'entrée : choisis "{0}". Quand ValoLive est fermé, ton équipe ne t'entend pas ; remets alors ton ancien micro.
+Varsayılan mikrofon	Micro par défaut
+Yayında da değişmiş sesim duyulsun	Les viewers entendent aussi ma voix modifiée
+Yaşlı	Vieux
+Çocuk	Enfant
+Ücretsiz sanal mikrofonu indir (VB-CABLE); kurduktan sonra buraya tıkla	Télécharger le micro virtuel gratuit (VB-CABLE) ; clique ici après l'installation
+İblis	Démon
+İnce	Aigu
+● Hata: {0}	● Erreur : {0}
+● Kapalı	● Désactivé
+● Sanal mikrofon bulunamadı	● Aucun micro virtuel trouvé
+● Sorun: {0}	● Problème : {0}
+● Çalışıyor: {0}	● Actif : {0}

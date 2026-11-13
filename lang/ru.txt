@@ -571,3 +571,41 @@ takım arkadaşların	твои союзники
 tümü Harita sekmesinde	всё на вкладке «Карта»
 {0} çatışmanın {1} tanesi	{1} из {0} стычек
 üstüne git	используй это
+(sanal mikrofon bulunamadı)	(виртуальный микрофон не найден)
+Canavar	Монстр
+Cihazları yenile	Обновить устройства
+Ctrl+Alt+V  efekti aç/kapat      Ctrl+Alt+B  sonraki efekt	Ctrl+Alt+V  вкл/выкл эффект      Ctrl+Alt+B  следующий эффект
+Dev	Великан
+EFEKTLER	ЭФФЕКТЫ
+Hayalet	Призрак
+Kadın	Женский
+Kalın	Низкий
+Kapalı: ValoLive → Ses Değiştirici sekmesinden aç.	Выключено: включи в ValoLive → вкладка «Смена голоса».
+Kendi sesimi kulaklıktan duy	Слышать свой голос в наушниках
+Mağara	Пещера
+Megafon	Мегафон
+Normal	Обычный
+Robot	Робот
+SES DEĞİŞTİRİCİ	СМЕНА ГОЛОСА
+Sanal mikrofon	Вирт. микрофон
+Sanal mikrofon, ValoLive'ın değiştirdiği sesi Valorant'a mikrofon gibi verir. Kurulumdan sonra bilgisayarı yeniden başlatman gerekebilir.	Виртуальный микрофон передаёт в Valorant голос, изменённый ValoLive, как обычный микрофон. После установки может потребоваться перезагрузка.
+Sarhoş	Пьяный
+Ses değiştiriciyi aç (Valorant sesli sohbeti)	Включить смену голоса (голосовой чат Valorant)
+Sincap	Бурундук
+Su altı	Под водой
+Telefon	Телефон
+Telsiz	Рация
+Uzaylı	Пришелец
+Valorant → Ayarlar → Ses → Ses Sohbeti → Giriş cihazı: "{0}" seç. ValoLive kapalıyken takımın seni duymaz; o zaman giriş cihazını eski mikrofonuna geri al.	Valorant → Настройки → Звук → Голосовой чат → Устройство ввода: выбери "{0}". Пока ValoLive закрыт, команда тебя не слышит; тогда верни свой прежний микрофон.
+Varsayılan mikrofon	Микрофон по умолчанию
+Yayında da değişmiş sesim duyulsun	Зрители тоже слышат изменённый голос
+Yaşlı	Старик
+Çocuk	Ребёнок
+Ücretsiz sanal mikrofonu indir (VB-CABLE); kurduktan sonra buraya tıkla	Скачать бесплатный виртуальный микрофон (VB-CABLE); после установки нажми сюда
+İblis	Демон
+İnce	Высокий
+● Hata: {0}	● Ошибка: {0}
+● Kapalı	● Выключено
+● Sanal mikrofon bulunamadı	● Виртуальный микрофон не найден
+● Sorun: {0}	● Проблема: {0}
+● Çalışıyor: {0}	● Работает: {0}

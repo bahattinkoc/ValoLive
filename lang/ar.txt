@@ -571,3 +571,41 @@ takım arkadaşların	زملاؤك
 tümü Harita sekmesinde	الكل في تبويب الخريطة
 {0} çatışmanın {1} tanesi	{1} من {0} اشتباك
 üstüne git	استغلها
+(sanal mikrofon bulunamadı)	(لم يُعثر على ميكروفون افتراضي)
+Canavar	وحش
+Cihazları yenile	تحديث الأجهزة
+Ctrl+Alt+V  efekti aç/kapat      Ctrl+Alt+B  sonraki efekt	Ctrl+Alt+V  تشغيل/إيقاف المؤثر      Ctrl+Alt+B  المؤثر التالي
+Dev	عملاق
+EFEKTLER	المؤثرات
+Hayalet	شبح
+Kadın	امرأة
+Kalın	عميق
+Kapalı: ValoLive → Ses Değiştirici sekmesinden aç.	متوقف: شغّله من ValoLive ← تبويب مغيّر الصوت.
+Kendi sesimi kulaklıktan duy	أسمع صوتي في السماعات
+Mağara	كهف
+Megafon	مكبّر صوت
+Normal	عادي
+Robot	روبوت
+SES DEĞİŞTİRİCİ	مغيّر الصوت
+Sanal mikrofon	ميكروفون افتراضي
+Sanal mikrofon, ValoLive'ın değiştirdiği sesi Valorant'a mikrofon gibi verir. Kurulumdan sonra bilgisayarı yeniden başlatman gerekebilir.	الميكروفون الافتراضي يمرّر إلى Valorant الصوت الذي يغيّره ValoLive كأنه ميكروفون. قد تحتاج إلى إعادة تشغيل الكمبيوتر بعد التثبيت.
+Sarhoş	سكران
+Ses değiştiriciyi aç (Valorant sesli sohbeti)	تشغيل مغيّر الصوت (الدردشة الصوتية في Valorant)
+Sincap	سنجاب
+Su altı	تحت الماء
+Telefon	هاتف
+Telsiz	لاسلكي
+Uzaylı	فضائي
+Valorant → Ayarlar → Ses → Ses Sohbeti → Giriş cihazı: "{0}" seç. ValoLive kapalıyken takımın seni duymaz; o zaman giriş cihazını eski mikrofonuna geri al.	Valorant ← الإعدادات ← الصوت ← الدردشة الصوتية ← جهاز الإدخال: اختر "{0}". عندما يكون ValoLive مغلقًا لا يسمعك فريقك؛ أعد عندها ميكروفونك السابق.
+Varsayılan mikrofon	الميكروفون الأساسي
+Yayında da değişmiş sesim duyulsun	المشاهدون يسمعون صوتي المعدّل أيضًا
+Yaşlı	عجوز
+Çocuk	طفل
+Ücretsiz sanal mikrofonu indir (VB-CABLE); kurduktan sonra buraya tıkla	نزّل الميكروفون الافتراضي المجاني (VB-CABLE)، ثم اضغط هنا بعد التثبيت
+İblis	شيطان
+İnce	حاد
+● Hata: {0}	● خطأ: {0}
+● Kapalı	● متوقف
+● Sanal mikrofon bulunamadı	● لم يُعثر على ميكروفون افتراضي
+● Sorun: {0}	● مشكلة: {0}
+● Çalışıyor: {0}	● يعمل: {0}

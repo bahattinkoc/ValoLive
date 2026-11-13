@@ -571,3 +571,41 @@ takım arkadaşların	twoi koledzy z drużyny
 tümü Harita sekmesinde	wszystko w karcie Mapa
 {0} çatışmanın {1} tanesi	{1} z {0} walk
 üstüne git	wykorzystaj to
+(sanal mikrofon bulunamadı)	(nie znaleziono wirtualnego mikrofonu)
+Canavar	Potwór
+Cihazları yenile	Odśwież urządzenia
+Ctrl+Alt+V  efekti aç/kapat      Ctrl+Alt+B  sonraki efekt	Ctrl+Alt+V  efekt wł./wył.      Ctrl+Alt+B  następny efekt
+Dev	Olbrzym
+EFEKTLER	EFEKTY
+Hayalet	Duch
+Kadın	Kobieta
+Kalın	Niski
+Kapalı: ValoLive → Ses Değiştirici sekmesinden aç.	Wyłączone: włącz w ValoLive → karta Zmieniacz głosu.
+Kendi sesimi kulaklıktan duy	Słysz swój głos w słuchawkach
+Mağara	Jaskinia
+Megafon	Megafon
+Normal	Normalny
+Robot	Robot
+SES DEĞİŞTİRİCİ	ZMIENIACZ GŁOSU
+Sanal mikrofon	Wirtualny mikrofon
+Sanal mikrofon, ValoLive'ın değiştirdiği sesi Valorant'a mikrofon gibi verir. Kurulumdan sonra bilgisayarı yeniden başlatman gerekebilir.	Wirtualny mikrofon przekazuje do Valoranta głos zmieniony przez ValoLive tak jak mikrofon. Po instalacji może być potrzebny restart komputera.
+Sarhoş	Pijany
+Ses değiştiriciyi aç (Valorant sesli sohbeti)	Włącz zmieniacz głosu (czat głosowy Valoranta)
+Sincap	Wiewiórka
+Su altı	Pod wodą
+Telefon	Telefon
+Telsiz	Krótkofalówka
+Uzaylı	Kosmita
+Valorant → Ayarlar → Ses → Ses Sohbeti → Giriş cihazı: "{0}" seç. ValoLive kapalıyken takımın seni duymaz; o zaman giriş cihazını eski mikrofonuna geri al.	Valorant → Ustawienia → Dźwięk → Czat głosowy → Urządzenie wejściowe: wybierz "{0}". Gdy ValoLive jest zamknięty, drużyna cię nie słyszy; przełącz wtedy z powrotem na swój mikrofon.
+Varsayılan mikrofon	Domyślny mikrofon
+Yayında da değişmiş sesim duyulsun	Widzowie też słyszą zmieniony głos
+Yaşlı	Starzec
+Çocuk	Dziecko
+Ücretsiz sanal mikrofonu indir (VB-CABLE); kurduktan sonra buraya tıkla	Pobierz darmowy wirtualny mikrofon (VB-CABLE); po instalacji kliknij tutaj
+İblis	Demon
+İnce	Wysoki
+● Hata: {0}	● Błąd: {0}
+● Kapalı	● Wyłączone
+● Sanal mikrofon bulunamadı	● Nie znaleziono wirtualnego mikrofonu
+● Sorun: {0}	● Problem: {0}
+● Çalışıyor: {0}	● Działa: {0}

@@ -121,6 +121,12 @@ Clutching 1v2 and can't remember where you last saw their Jett? ValoLive watches
 
 > Off by default; turn it on under **MATCH ROOM**. It needs the enemy highlight color set to **purple** and a minimap that isn't centered on you. This feature gives you information during a match. Third-party tools like that may conflict with Riot's terms, so use it at your own risk.
 
+### 🎙️ Voice changer
+Your teammates hear you as a robot, a monster, a chipmunk, from underwater, over a radio… 18 effects, switched in game with **Ctrl+Alt+V** (on/off) and **Ctrl+Alt+B** (next effect).
+- Works through a virtual microphone: ValoLive changes your voice and plays it into the virtual mic, and you pick that mic as the input device in Valorant's voice chat. Nothing touches the game.
+- Uses Steam's virtual microphone if you have Steam, or the free [VB-CABLE](https://vb-audio.com/Cable/).
+- Optional: hear yourself in your headphones, and let viewers hear the changed voice too.
+
 ### 🌍 16 languages
 English, Türkçe, Deutsch, Español, Français, Italiano, Polski, Português, Русский, العربية, 日本語, 한국어, 中文, ไทย, Tiếng Việt, Bahasa Indonesia. These are the languages spoken across Valorant's servers. Pick one in settings and the whole app, the overlays and the chat bot switch with it.
 
@@ -188,6 +194,7 @@ ValoLive isn't endorsed by Riot Games and doesn't reflect the views or opinions 
 - **Maç sonu kartı**: Haritada nerede adam vurduğunu ve nerede öldüğünü gösterir; yanında K/D/A, ACS, HS% ve ilk kanlar yer alır.
 - **Yayın anları**: İlk kan, clutch denemeleri ve sonucu, son rakip, kusursuz raundlar, raund serileri, geri dönüşler, maç sayısı ve uzatma yayında anında duyurulur. Maç bitince en iyi (ve en komik) anlar kısa bir bantla gösterilir: ace, 4K, ninja defuse, bıçak kill, düşerek ölme…
 - **Chat eğlencesi**: İzleyiciler chat'e komut yazar, ekranda canlanır: `!balloon`, `!plane`, `!bottle`, `!pigeon`, `!paper`, `!spray`, `!tomato`, `!egg`, `!sticker`, `!firework`, `!race`, `!say`, `!flip`, `!zoom`. Ayrıca emoji yağmuru ve chat'e yazanların balık olduğu bir akvaryum var. Kanal puanı gerekmez, her izleyicinin bekleme süresi vardır. **ÖNİZLEME** ile yayın açmadan denenebilir.
+- **Ses değiştirici**: Takımın seni robot, canavar, sincap, su altından, telsizden… duyar; 18 efekt, oyunda **Ctrl+Alt+V** (aç/kapa) ve **Ctrl+Alt+B** (sonraki efekt). Sanal mikrofonla çalışır (Steam'in sanal mikrofonu ya da ücretsiz VB-CABLE): Valorant'ta giriş cihazı olarak o seçilir, oyuna dokunulmaz.
 - **Yayın Paneli**: Yayın üstü bütün ayarlar ayrı bir pencerede; ana pencereden ya da tepsi simgesinden açılır.
 - **Maç Odası**: Lobideki herkesin rankı, en yüksek rankı, formu (▲seri / ▼tilt), son maçları, **parti tespiti**, **smurf uyarısı**, daha önce karşılaştığın oyuncular ve takımların güç dengesi. Sekmeli küçük pencerede gruplu **brifing** (tehlike, fırsat, konum), rakiplerin haritada nerede oynadığını gösteren **Harita** sekmesi ve ajan seçiminde takımının ajan havuzu.
 - **Rakip hafızası (deneysel)**: Minimap'te senin ya da takımının gördüğü her rakibin son görüldüğü yeri ve ne kadar önce görüldüğünü hatırlar. Minimap'in altında liste olarak, haritanın üstünde ikon olarak ya da ikisi birden gösterilir. Ölen rakipler skor çubuğundan anlaşılıp listeden düşer, her raund sıfırlanır. Varsayılan olarak kapalıdır, **MAÇ ODASI** altından açılır. Rakip vurgu rengi **mor** olmalıdır. Maç sırasında bilgi veren üçüncü taraf araçlar Riot kurallarıyla çelişebilir; kullanım sorumluluğu sana aittir.

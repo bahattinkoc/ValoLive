@@ -55,6 +55,10 @@ namespace ValoLive
         public bool EngineRegionReads = true;                        // hafıza/anlar oyun karesini motordan okur; false: ekrandan (arayüzde yok, karşılaştırma için)
         public int EngineGpuPriority;                                // motorun ekran kartı önceliği -7..7 (0 normal; 7 oyunun FPS'ini düşürüyordu; arayüzde yok)
         public int MapCoverX = 10, MapCoverY = 10, MapCoverD; // rozetin ekran pikselinde konumu/çapı (D=0: varsayılan)
+        // Ses değiştirici (Voice.cs): mikrofon → efekt → sanal mikrofon (Valorant sesli sohbeti)
+        public bool VoiceOn, VoiceMonitor, VoiceStream;
+        public string VoiceMic, VoiceOut;                            // null/"": varsayılan mikrofon / ilk bulunan sanal kablo
+        public string VoicePreset = "normal", VoiceLast = "robot";   // seçili ses ve Ctrl+Alt+V ile dönülecek son efekt
 
         public static Settings Load()
         {

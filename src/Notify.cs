@@ -24,9 +24,9 @@ namespace ValoLive
         readonly Timer close = new Timer { Interval = ShowMs };
         static Toast current;
 
-        Toast(string title, List<KeyValuePair<string, Color>> lines)
+        Toast(string title, List<KeyValuePair<string, Color>> lines, int ms)
         {
-            this.title = title; this.lines = lines;
+            this.title = title; this.lines = lines; close.Interval = ms;
             FormBorderStyle = FormBorderStyle.None;
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.Manual;
@@ -90,13 +90,13 @@ namespace ValoLive
         }
 
         /// <summary>UI iş parçacığından çağrılmalı. Açık bir bildirim varsa yenisi onun yerini alır.</summary>
-        public static void Show(string title, List<KeyValuePair<string, Color>> lines)
+        public static void Show(string title, List<KeyValuePair<string, Color>> lines, int ms = ShowMs, bool sound = true)
         {
             if (lines.Count == 0) return;
             current?.Close();
-            current = new Toast(title, lines);
+            current = new Toast(title, lines, ms);
             current.Show();
-            System.Media.SystemSounds.Asterisk.Play();
+            if (sound) System.Media.SystemSounds.Asterisk.Play();
         }
     }
 }

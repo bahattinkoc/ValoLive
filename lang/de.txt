@@ -571,3 +571,41 @@ takım arkadaşların	deine Mitspieler
 tümü Harita sekmesinde	alles im Karten-Tab
 {0} çatışmanın {1} tanesi	{1} von {0} Kämpfen
 üstüne git	nutze es aus
+(sanal mikrofon bulunamadı)	(kein virtuelles Mikrofon gefunden)
+Canavar	Monster
+Cihazları yenile	Geräte aktualisieren
+Ctrl+Alt+V  efekti aç/kapat      Ctrl+Alt+B  sonraki efekt	Strg+Alt+V  Effekt an/aus      Strg+Alt+B  nächster Effekt
+Dev	Riese
+EFEKTLER	EFFEKTE
+Hayalet	Geist
+Kadın	Frau
+Kalın	Tief
+Kapalı: ValoLive → Ses Değiştirici sekmesinden aç.	Aus: im Tab ValoLive → Stimmverzerrer einschalten.
+Kendi sesimi kulaklıktan duy	Eigene Stimme im Kopfhörer hören
+Mağara	Höhle
+Megafon	Megafon
+Normal	Normal
+Robot	Roboter
+SES DEĞİŞTİRİCİ	STIMMVERZERRER
+Sanal mikrofon	Virtuelles Mikro
+Sanal mikrofon, ValoLive'ın değiştirdiği sesi Valorant'a mikrofon gibi verir. Kurulumdan sonra bilgisayarı yeniden başlatman gerekebilir.	Ein virtuelles Mikrofon gibt die von ValoLive veränderte Stimme wie ein Mikrofon an Valorant weiter. Nach der Installation ist evtl. ein Neustart nötig.
+Sarhoş	Betrunken
+Ses değiştiriciyi aç (Valorant sesli sohbeti)	Stimmverzerrer einschalten (Valorant-Sprachchat)
+Sincap	Streifenhörnchen
+Su altı	Unter Wasser
+Telefon	Telefon
+Telsiz	Funk
+Uzaylı	Alien
+Valorant → Ayarlar → Ses → Ses Sohbeti → Giriş cihazı: "{0}" seç. ValoLive kapalıyken takımın seni duymaz; o zaman giriş cihazını eski mikrofonuna geri al.	Valorant → Einstellungen → Audio → Sprachchat → Eingabegerät: "{0}" wählen. Solange ValoLive geschlossen ist, hört dich dein Team nicht; stell dann das Eingabegerät auf dein altes Mikro zurück.
+Varsayılan mikrofon	Standardmikrofon
+Yayında da değişmiş sesim duyulsun	Zuschauer hören die veränderte Stimme auch
+Yaşlı	Opa
+Çocuk	Kind
+Ücretsiz sanal mikrofonu indir (VB-CABLE); kurduktan sonra buraya tıkla	Kostenloses virtuelles Mikro laden (VB-CABLE); nach der Installation hier klicken
+İblis	Dämon
+İnce	Hoch
+● Hata: {0}	● Fehler: {0}
+● Kapalı	● Aus
+● Sanal mikrofon bulunamadı	● Kein virtuelles Mikrofon gefunden
+● Sorun: {0}	● Problem: {0}
+● Çalışıyor: {0}	● Läuft: {0}

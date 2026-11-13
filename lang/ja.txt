@@ -571,3 +571,41 @@ takım arkadaşların	味方のプレイヤー
 tümü Harita sekmesinde	すべてマップタブに
 {0} çatışmanın {1} tanesi	{0}回の撃ち合いのうち{1}回
 üstüne git	狙い目
+(sanal mikrofon bulunamadı)	(仮想マイクが見つかりません)
+Canavar	モンスター
+Cihazları yenile	デバイスを更新
+Ctrl+Alt+V  efekti aç/kapat      Ctrl+Alt+B  sonraki efekt	Ctrl+Alt+V  エフェクトのオン/オフ      Ctrl+Alt+B  次のエフェクト
+Dev	巨人
+EFEKTLER	エフェクト
+Hayalet	幽霊
+Kadın	女性
+Kalın	低い声
+Kapalı: ValoLive → Ses Değiştirici sekmesinden aç.	オフ: ValoLive → ボイスチェンジャータブでオンにしてください。
+Kendi sesimi kulaklıktan duy	自分の声をヘッドホンで聞く
+Mağara	洞窟
+Megafon	メガホン
+Normal	ノーマル
+Robot	ロボット
+SES DEĞİŞTİRİCİ	ボイスチェンジャー
+Sanal mikrofon	仮想マイク
+Sanal mikrofon, ValoLive'ın değiştirdiği sesi Valorant'a mikrofon gibi verir. Kurulumdan sonra bilgisayarı yeniden başlatman gerekebilir.	仮想マイクは、ValoLiveが変えた声をマイクとしてValorantに渡します。インストール後にPCの再起動が必要な場合があります。
+Sarhoş	酔っぱらい
+Ses değiştiriciyi aç (Valorant sesli sohbeti)	ボイスチェンジャーをオン (Valorantボイスチャット)
+Sincap	リス
+Su altı	水中
+Telefon	電話
+Telsiz	無線
+Uzaylı	宇宙人
+Valorant → Ayarlar → Ses → Ses Sohbeti → Giriş cihazı: "{0}" seç. ValoLive kapalıyken takımın seni duymaz; o zaman giriş cihazını eski mikrofonuna geri al.	Valorant → 設定 → オーディオ → ボイスチャット → 入力デバイス: 「{0}」を選択。ValoLiveを閉じているとチームに声が届きません。その場合は元のマイクに戻してください。
+Varsayılan mikrofon	既定のマイク
+Yayında da değişmiş sesim duyulsun	視聴者にも変えた声が聞こえる
+Yaşlı	おじいさん
+Çocuk	子ども
+Ücretsiz sanal mikrofonu indir (VB-CABLE); kurduktan sonra buraya tıkla	無料の仮想マイク (VB-CABLE) をダウンロード。インストール後にここをクリック
+İblis	悪魔
+İnce	高い声
+● Hata: {0}	● エラー: {0}
+● Kapalı	● オフ
+● Sanal mikrofon bulunamadı	● 仮想マイクが見つかりません
+● Sorun: {0}	● 問題: {0}
+● Çalışıyor: {0}	● 動作中: {0}

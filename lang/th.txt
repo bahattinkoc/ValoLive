@@ -571,3 +571,41 @@ takım arkadaşların	เพื่อนร่วมทีมของคุณ
 tümü Harita sekmesinde	ทั้งหมดในแท็บแผนที่
 {0} çatışmanın {1} tanesi	{1} จาก {0} การปะทะ
 üstüne git	ใช้ให้เป็นประโยชน์
+(sanal mikrofon bulunamadı)	(ไม่พบไมโครโฟนเสมือน)
+Canavar	สัตว์ประหลาด
+Cihazları yenile	รีเฟรชอุปกรณ์
+Ctrl+Alt+V  efekti aç/kapat      Ctrl+Alt+B  sonraki efekt	Ctrl+Alt+V  เปิด/ปิดเอฟเฟกต์      Ctrl+Alt+B  เอฟเฟกต์ถัดไป
+Dev	ยักษ์
+EFEKTLER	เอฟเฟกต์
+Hayalet	ผี
+Kadın	ผู้หญิง
+Kalın	เสียงทุ้ม
+Kapalı: ValoLive → Ses Değiştirici sekmesinden aç.	ปิดอยู่: เปิดได้ที่ ValoLive → แท็บเปลี่ยนเสียง
+Kendi sesimi kulaklıktan duy	ได้ยินเสียงตัวเองในหูฟัง
+Mağara	ถ้ำ
+Megafon	โทรโข่ง
+Normal	ปกติ
+Robot	หุ่นยนต์
+SES DEĞİŞTİRİCİ	เปลี่ยนเสียง
+Sanal mikrofon	ไมค์เสมือน
+Sanal mikrofon, ValoLive'ın değiştirdiği sesi Valorant'a mikrofon gibi verir. Kurulumdan sonra bilgisayarı yeniden başlatman gerekebilir.	ไมโครโฟนเสมือนจะส่งเสียงที่ ValoLive เปลี่ยนแล้วให้ Valorant เหมือนเป็นไมโครโฟน หลังติดตั้งอาจต้องรีสตาร์ทเครื่อง
+Sarhoş	คนเมา
+Ses değiştiriciyi aç (Valorant sesli sohbeti)	เปิดตัวเปลี่ยนเสียง (แชทเสียง Valorant)
+Sincap	กระรอก
+Su altı	ใต้น้ำ
+Telefon	โทรศัพท์
+Telsiz	วิทยุสื่อสาร
+Uzaylı	มนุษย์ต่างดาว
+Valorant → Ayarlar → Ses → Ses Sohbeti → Giriş cihazı: "{0}" seç. ValoLive kapalıyken takımın seni duymaz; o zaman giriş cihazını eski mikrofonuna geri al.	Valorant → การตั้งค่า → เสียง → แชทเสียง → อุปกรณ์อินพุต: เลือก "{0}" ขณะที่ ValoLive ปิดอยู่ ทีมจะไม่ได้ยินคุณ ให้เปลี่ยนกลับเป็นไมโครโฟนเดิม
+Varsayılan mikrofon	ไมโครโฟนเริ่มต้น
+Yayında da değişmiş sesim duyulsun	ผู้ชมได้ยินเสียงที่เปลี่ยนด้วย
+Yaşlı	คนแก่
+Çocuk	เด็ก
+Ücretsiz sanal mikrofonu indir (VB-CABLE); kurduktan sonra buraya tıkla	ดาวน์โหลดไมค์เสมือนฟรี (VB-CABLE) ติดตั้งแล้วคลิกที่นี่
+İblis	ปีศาจ
+İnce	เสียงแหลม
+● Hata: {0}	● ข้อผิดพลาด: {0}
+● Kapalı	● ปิดอยู่
+● Sanal mikrofon bulunamadı	● ไม่พบไมโครโฟนเสมือน
+● Sorun: {0}	● ปัญหา: {0}
+● Çalışıyor: {0}	● กำลังทำงาน: {0}

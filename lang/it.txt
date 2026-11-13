@@ -571,3 +571,41 @@ takım arkadaşların	i tuoi compagni
 tümü Harita sekmesinde	tutto nella scheda Mappa
 {0} çatışmanın {1} tanesi	{1} scontri su {0}
 üstüne git	approfittane
+(sanal mikrofon bulunamadı)	(nessun microfono virtuale trovato)
+Canavar	Mostro
+Cihazları yenile	Aggiorna dispositivi
+Ctrl+Alt+V  efekti aç/kapat      Ctrl+Alt+B  sonraki efekt	Ctrl+Alt+V  effetto on/off      Ctrl+Alt+B  effetto successivo
+Dev	Gigante
+EFEKTLER	EFFETTI
+Hayalet	Fantasma
+Kadın	Donna
+Kalın	Profonda
+Kapalı: ValoLive → Ses Değiştirici sekmesinden aç.	Disattivato: attivalo in ValoLive → scheda Modificatore vocale.
+Kendi sesimi kulaklıktan duy	Sentire la mia voce in cuffia
+Mağara	Caverna
+Megafon	Megafono
+Normal	Normale
+Robot	Robot
+SES DEĞİŞTİRİCİ	MODIFICATORE VOCALE
+Sanal mikrofon	Microfono virtuale
+Sanal mikrofon, ValoLive'ın değiştirdiği sesi Valorant'a mikrofon gibi verir. Kurulumdan sonra bilgisayarı yeniden başlatman gerekebilir.	Un microfono virtuale passa a Valorant la voce modificata da ValoLive come se fosse un microfono. Dopo l'installazione potrebbe servire un riavvio.
+Sarhoş	Ubriaco
+Ses değiştiriciyi aç (Valorant sesli sohbeti)	Attiva il modificatore vocale (chat vocale di Valorant)
+Sincap	Scoiattolo
+Su altı	Sott'acqua
+Telefon	Telefono
+Telsiz	Radio
+Uzaylı	Alieno
+Valorant → Ayarlar → Ses → Ses Sohbeti → Giriş cihazı: "{0}" seç. ValoLive kapalıyken takımın seni duymaz; o zaman giriş cihazını eski mikrofonuna geri al.	Valorant → Impostazioni → Audio → Chat vocale → Dispositivo di input: scegli "{0}". Con ValoLive chiuso la squadra non ti sente; in quel caso rimetti il tuo microfono di prima.
+Varsayılan mikrofon	Microfono predefinito
+Yayında da değişmiş sesim duyulsun	Anche gli spettatori sentono la voce modificata
+Yaşlı	Anziano
+Çocuk	Bambino
+Ücretsiz sanal mikrofonu indir (VB-CABLE); kurduktan sonra buraya tıkla	Scarica il microfono virtuale gratuito (VB-CABLE); clicca qui dopo l'installazione
+İblis	Demone
+İnce	Acuta
+● Hata: {0}	● Errore: {0}
+● Kapalı	● Disattivato
+● Sanal mikrofon bulunamadı	● Nessun microfono virtuale trovato
+● Sorun: {0}	● Problema: {0}
+● Çalışıyor: {0}	● Attivo: {0}

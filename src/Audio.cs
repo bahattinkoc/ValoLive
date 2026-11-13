@@ -91,6 +91,14 @@ namespace ValoLive
         /// <summary>Aktif ses çıkışları (oyun sesi): (id, ad). Boş id = Windows varsayılanı.</summary>
         public static List<KeyValuePair<string, string>> ListOutputs() => List(EDataFlow.Render, L.T("Varsayılan ses çıkışı"));
 
+        /// <summary>Aktif çıkışlar (render) ya da girişler: (id, ad), varsayılan seçeneği olmadan.</summary>
+        public static List<KeyValuePair<string, string>> Endpoints(bool render)
+        {
+            var l = List(render ? EDataFlow.Render : EDataFlow.Capture, "");
+            l.RemoveAt(0);
+            return l;
+        }
+
         /// <summary>Aktif mikrofonlar: (id, ad). Boş id = mikrofon yok.</summary>
         public static List<KeyValuePair<string, string>> ListInputs() => List(EDataFlow.Capture, L.T("(mikrofon yok)"));
 
@@ -143,6 +151,8 @@ namespace ValoLive
         public int Channels { get; private set; }
         public int SampleRate { get; private set; }
         public volatile float Volume = 1f;
+        /// <summary>Ses değiştirici (Voice.cs): "yayında da" açıksa mikrofona seçili efekt uygulanır.</summary>
+        public VoiceRunner Effect;
 
         volatile bool running;
         volatile Stream output;
@@ -344,6 +354,7 @@ namespace ValoLive
                     // birikmiş paketler yine doğru yere oturur; şimdiki zamana göre hizalamak araya sessizlik
                     // ekleyip ardından ses atıyordu (yayında çıt/patlama).
                     long startMs = qpc != 0 ? QpcToUnixMs(qpc) : NowMs() - frames * 1000L / devRate;
+                    if (Effect != null && VoiceFx.OnStream) Effect.Interleaved(samples, (int)frames, devChannels, devRate);
                     int outFrames = Convert((int)frames);
                     if (outFrames == 0) continue;
                     if (bytes.Length < outFrames * Channels * 4) bytes = new byte[outFrames * Channels * 4];

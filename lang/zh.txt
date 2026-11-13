@@ -571,3 +571,41 @@ takım arkadaşların	你的隊友
 tümü Harita sekmesinde	全部在地圖分頁
 {0} çatışmanın {1} tanesi	{0} 次交火中 {1} 次
 üstüne git	把握機會
+(sanal mikrofon bulunamadı)	(找不到虛擬麥克風)
+Canavar	怪物
+Cihazları yenile	重新整理裝置
+Ctrl+Alt+V  efekti aç/kapat      Ctrl+Alt+B  sonraki efekt	Ctrl+Alt+V  開關效果      Ctrl+Alt+B  下一個效果
+Dev	巨人
+EFEKTLER	效果
+Hayalet	幽靈
+Kadın	女聲
+Kalın	低沉
+Kapalı: ValoLive → Ses Değiştirici sekmesinden aç.	已關閉：在 ValoLive → 變聲器分頁開啟。
+Kendi sesimi kulaklıktan duy	用耳機聽自己的聲音
+Mağara	洞穴
+Megafon	大聲公
+Normal	原聲
+Robot	機器人
+SES DEĞİŞTİRİCİ	變聲器
+Sanal mikrofon	虛擬麥克風
+Sanal mikrofon, ValoLive'ın değiştirdiği sesi Valorant'a mikrofon gibi verir. Kurulumdan sonra bilgisayarı yeniden başlatman gerekebilir.	虛擬麥克風會把 ValoLive 改變後的聲音當作麥克風交給 Valorant。安裝後可能需要重新開機。
+Sarhoş	醉漢
+Ses değiştiriciyi aç (Valorant sesli sohbeti)	開啟變聲器（Valorant 語音聊天）
+Sincap	花栗鼠
+Su altı	水底
+Telefon	電話
+Telsiz	無線電
+Uzaylı	外星人
+Valorant → Ayarlar → Ses → Ses Sohbeti → Giriş cihazı: "{0}" seç. ValoLive kapalıyken takımın seni duymaz; o zaman giriş cihazını eski mikrofonuna geri al.	Valorant → 設定 → 音訊 → 語音聊天 → 輸入裝置：選擇「{0}」。ValoLive 關閉時隊友聽不到你；請改回原本的麥克風。
+Varsayılan mikrofon	預設麥克風
+Yayında da değişmiş sesim duyulsun	觀眾也聽到變聲後的聲音
+Yaşlı	老人
+Çocuk	小孩
+Ücretsiz sanal mikrofonu indir (VB-CABLE); kurduktan sonra buraya tıkla	下載免費虛擬麥克風（VB-CABLE），安裝後點這裡
+İblis	惡魔
+İnce	尖細
+● Hata: {0}	● 錯誤：{0}
+● Kapalı	● 已關閉
+● Sanal mikrofon bulunamadı	● 找不到虛擬麥克風
+● Sorun: {0}	● 問題：{0}
+● Çalışıyor: {0}	● 運作中：{0}

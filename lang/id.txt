@@ -571,3 +571,41 @@ takım arkadaşların	rekan setimmu
 tümü Harita sekmesinde	semua di tab Peta
 {0} çatışmanın {1} tanesi	{1} dari {0} duel
 üstüne git	manfaatkan
+(sanal mikrofon bulunamadı)	(mikrofon virtual tidak ditemukan)
+Canavar	Monster
+Cihazları yenile	Muat ulang perangkat
+Ctrl+Alt+V  efekti aç/kapat      Ctrl+Alt+B  sonraki efekt	Ctrl+Alt+V  efek nyala/mati      Ctrl+Alt+B  efek berikutnya
+Dev	Raksasa
+EFEKTLER	EFEK
+Hayalet	Hantu
+Kadın	Wanita
+Kalın	Berat
+Kapalı: ValoLive → Ses Değiştirici sekmesinden aç.	Mati: nyalakan di ValoLive → tab Pengubah Suara.
+Kendi sesimi kulaklıktan duy	Dengar suaraku di headphone
+Mağara	Gua
+Megafon	Megafon
+Normal	Normal
+Robot	Robot
+SES DEĞİŞTİRİCİ	PENGUBAH SUARA
+Sanal mikrofon	Mikrofon virtual
+Sanal mikrofon, ValoLive'ın değiştirdiği sesi Valorant'a mikrofon gibi verir. Kurulumdan sonra bilgisayarı yeniden başlatman gerekebilir.	Mikrofon virtual meneruskan suara yang diubah ValoLive ke Valorant seperti mikrofon. Mungkin perlu restart PC setelah memasang.
+Sarhoş	Mabuk
+Ses değiştiriciyi aç (Valorant sesli sohbeti)	Nyalakan pengubah suara (voice chat Valorant)
+Sincap	Tupai
+Su altı	Bawah air
+Telefon	Telepon
+Telsiz	Radio
+Uzaylı	Alien
+Valorant → Ayarlar → Ses → Ses Sohbeti → Giriş cihazı: "{0}" seç. ValoLive kapalıyken takımın seni duymaz; o zaman giriş cihazını eski mikrofonuna geri al.	Valorant → Pengaturan → Audio → Voice Chat → Perangkat Input: pilih "{0}". Saat ValoLive tertutup timmu tidak bisa mendengarmu; kembalikan ke mikrofon lamamu.
+Varsayılan mikrofon	Mikrofon bawaan
+Yayında da değişmiş sesim duyulsun	Penonton juga mendengar suaraku yang diubah
+Yaşlı	Kakek
+Çocuk	Anak
+Ücretsiz sanal mikrofonu indir (VB-CABLE); kurduktan sonra buraya tıkla	Unduh mikrofon virtual gratis (VB-CABLE); klik di sini setelah memasang
+İblis	Iblis
+İnce	Tinggi
+● Hata: {0}	● Galat: {0}
+● Kapalı	● Mati
+● Sanal mikrofon bulunamadı	● Mikrofon virtual tidak ditemukan
+● Sorun: {0}	● Masalah: {0}
+● Çalışıyor: {0}	● Berjalan: {0}

@@ -9,6 +9,7 @@
 "{0}" adında kategori bulunamadı.
 %{0}
 (mikrofon yok)
+(sanal mikrofon bulunamadı)
 +{0} karşılaşma daha
 , ilk ölüm %{0}
 . İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.
@@ -76,14 +77,17 @@ CANLI SKOR
 CHAT BİRLİKTE
 CHAT EĞLENCESİ
 CHAT HAVAİ FİŞEK PATLATTI!
+Canavar
 Canlı skor: {0}-{1} · {2}
 Chat eğlencesi: izleyici komutları ekranda canlanır
 Chat komutları ({0})
 Chat'e gidecek duyuru: 
 Chat'e yaz, balık ol!
+Cihazları yenile
 Client ID ve Client Secret gerekli.
 Client ID ve Client Secret'ı yeniden girmek için Evet'e bas.
 Clients → Create client → Application type: Desktop app → Create. Client ID ve Client secret'ı buraya yapıştır:
+Ctrl+Alt+V  efekti aç/kapat      Ctrl+Alt+B  sonraki efekt
 DEVRE ARASI
 DOST ATEŞİ
 Defans
@@ -91,10 +95,12 @@ Defansta
 Demir
 Derecesiz
 Desteklenmeyen ses biçimi ({0} bit).
+Dev
 Dil, yayın bitince ValoLive yeniden açıldığında değişir.
 Domates
 Domates / yumurta fırlat
 Duvar yazısı (1 dk kalır)
+EFEKTLER
 EKRAN ŞAKALARI
 ESKİ DOST
 Ekran kartı motoru (işlemciyi boşaltır)
@@ -133,6 +139,7 @@ HARİTALAR
 Hafif yakalama (yalnızca oyun penceresi)
 Harita
 Havai fişek hedefi
+Hayalet
 Hazırlanıyor…
 HenrikDev anahtarı yok
 Hepsi
@@ -148,14 +155,18 @@ KENDİ KENDİNE
 KISA BİR ARA
 KONUM
 KUSURSUZ
+Kadın
 Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.
 Kalite
+Kalın
+Kapalı: ValoLive → Ses Değiştirici sekmesinden aç.
 Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil
 Kategori
 Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.
 Kaydet ve bağlan
 Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.
 Kağıt uçak
+Kendi sesimi kulaklıktan duy
 Kick hesabı
 Kick hesabı bağlı değil.
 Kick hesabını bağla
@@ -192,13 +203,16 @@ Maç bulununca yayın kendiliğinden oyuna döner
 Maç sonu kartı (ısı haritası + özet)
 Maçlar inceleniyor {0}/{1}…
 Maçları inceleniyor…
+Mağara
 Mağaza bilgisi alınamadı.
+Megafon
 Menüde bekleme ekranı (sıra sayacı)
 Merhaba chat, bu bir deneme!
 Mikrofon
 Minimap'e hizala
 Minimap'i radar rozetiyle ört
 NEREDE ÖLÜYORSUN
+Normal
 NİNJA DEFUSE
 OP'ÇU
 OTURUM
@@ -241,6 +255,7 @@ Riot istemcisi açılıyor…
 Riot istemcisi kapalı
 Riot istemcisine ulaşılamadı: 
 Riot yavaşlattı, bekleniyor… {0}/{1}
+Robot
 Round açılışların dengeli.
 Roundu o açıyor: ilk kan %{0}
 Roundu sık sık ilk ölerek açıyorsun (ortalama ~%10). İlk teması takım arkadaşına ver ya da fayda ile gir.
@@ -251,6 +266,7 @@ SABIRLI
 SAYILAR
 SERİ
 SES
+SES DEĞİŞTİRİCİ
 SIK GÖRÜLEN
 SIRA BEKLENİYOR
 SIRADAKİ MAÇ BİRAZDAN
@@ -263,13 +279,18 @@ SON RAKİP
 SPIKE'IN DİBİNDE
 Sabah
 Sadece Valorant (önerilen)
+Sanal mikrofon
+Sanal mikrofon, ValoLive'ın değiştirdiği sesi Valorant'a mikrofon gibi verir. Kurulumdan sonra bilgisayarı yeniden başlatman gerekebilir.
+Sarhoş
 Selam chat!
 Selam chat! Bu yayın efsane 🔥
 Ses cihazı yanıt vermedi.
+Ses değiştiriciyi aç (Valorant sesli sohbeti)
 Sesli oku
 Sesli oku (robot sesi)
 Seçtiğim uygulama
 Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.
+Sincap
 Sniper koruması (F9)
 Son maç bilgisi yok.
 Son maç: {0} {1} · {2} · {3} · {4} · HS {5}
@@ -284,6 +305,7 @@ Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).
 Sprey
 Stil çıkarmak için yeterli round yok (en az 40).
 Stream URL / Stream Key'i platformun panelinden yeniden kopyala
+Su altı
 Sv
 Süre: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n
@@ -310,6 +332,8 @@ Tam ekran (her şey görünür)
 Tarayıcıda Google onayı bekleniyor…
 Tarayıcıda Kick onayı bekleniyor…
 Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.
+Telefon
+Telsiz
 Ters ekran
 Ters ekran (3 sn)
 Ters ekran, büyüteç ve sesli okuma yalnızca abone ve modlara
@@ -318,6 +342,7 @@ TİLT
 UZATMA
 Uygulama
 Uygulamanın Client ID ve Client Secret'ını buraya yapıştır:
+Uzaylı
 Uçak
 Uçak pankartı
 ValoLive arka planda çalışıyor
@@ -330,6 +355,8 @@ ValoLive — SNIPER KORUMASI AÇIK
 ValoLive — YAYIN ÖZETİ
 ValoLive — Yayın Paneli
 ValoLive'ı aç
+Valorant → Ayarlar → Ses → Ses Sohbeti → Giriş cihazı: "{0}" seç. ValoLive kapalıyken takımın seni duymaz; o zaman giriş cihazını eski mikrofonuna geri al.
+Varsayılan mikrofon
 Varsayılan ses çıkışı
 Vazgeç
 Virgülle ayır. Bağlantılar her zaman silinir.
@@ -354,9 +381,11 @@ Yayın bu ayar kapalıyken başladı: açmak için yayını yeniden başlat.
 Yayın durdu: hiçbir platforma bağlanılamıyor
 Yayın {0} FPS'e düştü: bilgisayar yetişmiyor
 Yayında chat kutusu
+Yayında da değişmiş sesim duyulsun
 Yayını başlat
 Yayını bitir
 Yayının gideceği platformu seç: Platformlar sekmesinde en az birini aç.
+Yaşlı
 Yeni balık
 Yeni sürüm {0} hazır · güncelle
 Yeni uygulama oluştur. Ad: ValoLive · Redirect URL olarak şunu yaz:
@@ -510,6 +539,7 @@ zirve
 · {0} kez aynı maçtaydınız
 ÇAT!
 Çap {0} px · konum {1}, {2}
+Çocuk
 Çıkartma
 Çıkartma yapıştır (emoji)
 Çıkış
@@ -527,6 +557,7 @@ zirve
 Ördek yarışını {0} kazandı!
 Öğlen
 Ücretsiz anahtar al
+Ücretsiz sanal mikrofonu indir (VB-CABLE); kurduktan sonra buraya tıkla
 Üstte tut
 çap {0} px · konum {1}, {2}
 öldürdüğün yerler
@@ -537,8 +568,10 @@ zirve
 İLK KAN
 İLK KEZ?
 İSTİHBARAT
+İblis
 İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.
 İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.
+İnce
 İndirilen pakette ValoLive.exe yok
 İndiriliyor… %{0}
 İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.
@@ -559,6 +592,10 @@ zirve
 ● DURDURULUYOR…
 ● EKRAN YAKALAMA YENİLENİYOR (yayın açık)
 ● HAZIR
+● Hata: {0}
+● Kapalı
+● Sanal mikrofon bulunamadı
+● Sorun: {0}
 ● TEST BAŞARISIZ
 ● TEST KAYDI
 ● TEST KAYDI HAZIR
@@ -566,6 +603,7 @@ zirve
 ● YAYIN DURDU
 ● canlı
 ● {0} BAĞLANTIYI REDDETTİ
+● Çalışıyor: {0}
 ⚠  Valorant "Tam ekran" modunda: alt-tab'da yayın takılır.  Valorant → Ayarlar → Video → Genel → Görüntü Modu: "Pencereli Tam Ekran" seç.
 ✗ Bağlantı hatası
 ✗ HenrikDev anahtarı geçersiz

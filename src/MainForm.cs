@@ -23,7 +23,7 @@ namespace ValoLive
         }
     }
 
-    sealed class MainForm : Form
+    sealed partial class MainForm : Form
     {
         [DllImport("user32.dll")] static extern bool RegisterHotKey(IntPtr hWnd, int id, int mods, int vk);
         [DllImport("user32.dll")] static extern bool UnregisterHotKey(IntPtr hWnd, int id);
@@ -219,7 +219,7 @@ namespace ValoLive
             Controls.Add(cmbLang);
 
             // ---- Sekmeler ----
-            string[] tabNames = { L.T("PLATFORMLAR"), L.T("GÖRÜNTÜ & SES"), "VALORANT" };
+            string[] tabNames = { L.T("PLATFORMLAR"), L.T("GÖRÜNTÜ & SES"), "VALORANT", L.T("SES DEĞİŞTİRİCİ") };
             int tabW = tabNames.Max(s => Theme.ButtonWidth(s, 34, 150));
             int pageTop = top + 54;
             tabs = new Button[tabNames.Length]; pages = new Page[tabNames.Length];
@@ -375,6 +375,8 @@ namespace ValoLive
             AddDivider(Math.Max(leftBottom, y));
             pages[2].Height = Math.Max(leftBottom, y);
 
+            BuildVoicePage(pages[3]); // VoiceUi.cs
+
             // Sayfalar aynı boyda: sekme değişince alttaki yayın şeridi yerinden oynamaz.
             int pageH = pages.Max(p => p.Height) + 4;
             foreach (var p in pages) p.Height = pageH;
@@ -455,6 +457,8 @@ namespace ValoLive
                 pages[k].Visible = k == i;
                 tabs[k].BackColor = k == i ? Red : Field;
             }
+            // Sanal mikrofon yoktuysa: kullanıcı az önce kurmuş olabilir, sekmeye her dönüşte yeniden bakılır.
+            if (i == 3 && voiceOuts != null && voiceOuts.Count == 0) { FillVoiceDevices(); if (voiceOuts.Count > 0) RestartVoice(); }
         }
 
         /// <summary>Görüntü bir kez kodlanır ama her platforma ayrı gönderilir: gereken yükleme hızı platform sayısıyla katlanır.</summary>
@@ -757,6 +761,7 @@ namespace ValoLive
             chkAlerts.Checked = cfg.LobbyAlerts;
             chkMemory.Checked = cfg.EnemyMemory;
             chkMemoryMap.Checked = cfg.EnemyMemoryMap;
+            LoadVoice();
             UpdateKickStatus();
             UpdateYouTubeStatus();
             UpdateUpload();
@@ -1430,6 +1435,7 @@ namespace ValoLive
                 {
                     micAudio = new AudioSource(false) { Volume = trkMic.Value / 100f };
                     micAudio.Start(cfg.Mic);
+                    micAudio.Effect = new VoiceRunner(); // ses değiştirici "yayında da" açıksa (VoiceFx.OnStream)
                 }
                 lastOptions.Masks = guard.FilterChain;
                 streamer.Start(lastOptions, audio, micAudio);
@@ -1534,6 +1540,8 @@ namespace ValoLive
             base.OnHandleCreated(e);
             RegisterHotKey(Handle, 1, 0x4000, (int)Keys.F9);
             RegisterHotKey(Handle, 2, 0x4000, (int)Keys.F10);
+            RegisterHotKey(Handle, 3, 0x4000 | 0x0003, (int)Keys.V); // Ctrl+Alt+V: ses efekti aç/kapa
+            RegisterHotKey(Handle, 4, 0x4000 | 0x0003, (int)Keys.B); // Ctrl+Alt+B: sonraki ses efekti
         }
 
         protected override void WndProc(ref Message m)
@@ -1542,6 +1550,7 @@ namespace ValoLive
             {
                 if ((int)m.WParam == 1) { overlay.Cover = !overlay.Cover; autoCovered = false; } // elle dokunulan perde artık elle yönetilir
                 if ((int)m.WParam == 2) overlay.Summary = !overlay.Summary;
+                if ((int)m.WParam == 3 || (int)m.WParam == 4) VoiceHotkey((int)m.WParam == 4);
                 UpdateTitle();
             }
             base.WndProc(ref m);
@@ -1692,6 +1701,9 @@ namespace ValoLive
             SaveSettings();
             UnregisterHotKey(Handle, 1);
             UnregisterHotKey(Handle, 2);
+            UnregisterHotKey(Handle, 3);
+            UnregisterHotKey(Handle, 4);
+            StopVoice();
             tracker?.Dispose();
             live?.Dispose();
             memory.Dispose();
