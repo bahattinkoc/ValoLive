@@ -614,3 +614,26 @@ Lejyon	Legiun
 Fısıltı	Bisikan
 Autotune	Autotune
 Şarkıcı robot	Robot penyanyi
+Ad	Nama
+Banyo	Kamar mandi
+Değişiklikleri anında duyarsın: "Kendi sesimi kulaklıktan duy" açıkken konuşarak dene. Kalın ses için perde ve rengi birlikte indir, ince ses için birlikte artır.	Perubahan langsung terdengar: nyalakan "Dengar suaraku di headphone" lalu bicara. Untuk suara lebih berat turunkan nada dan warna suara bersamaan; untuk suara lebih tipis naikkan keduanya.
+KENDİ SESİN	SUARAMU SENDIRI
+Kaydet	Simpan
+Kendi sesin	Suaramu sendiri
+Kendi sesini yap: "+ Yeni ses" · düzenlemek için sesine sağ tıkla	Buat suaramu sendiri: "+ Suara baru" · klik kanan suaramu untuk mengedit
+Oda	Ruangan
+Ortam	Tempat
+Ortam miktarı	Kadar tempat
+Perde	Nada
+Rastgele	Acak
+Salon	Aula
+Ses rengi	Warna suara
+Sesim	Suaraku
+Sesim {0}	Suaraku {0}
+Sil	Hapus
+Stadyum	Stadion
+Titreme	Gemetar
+Yeni ses	Suara baru
+Yok	Tidak ada
+{0} yarım ton	{0} semiton
+İptal	Batal

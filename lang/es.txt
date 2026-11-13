@@ -614,3 +614,26 @@ Lejyon	Legión
 Fısıltı	Susurro
 Autotune	Autotune
 Şarkıcı robot	Robot cantante
+Ad	Nombre
+Banyo	Baño
+Değişiklikleri anında duyarsın: "Kendi sesimi kulaklıktan duy" açıkken konuşarak dene. Kalın ses için perde ve rengi birlikte indir, ince ses için birlikte artır.	Oyes los cambios al instante: activa «Escuchar mi voz en los auriculares» y habla. Para una voz más grave baja el tono y el timbre juntos; para una más fina, sube ambos.
+KENDİ SESİN	TU PROPIA VOZ
+Kaydet	Guardar
+Kendi sesin	Tu propia voz
+Kendi sesini yap: "+ Yeni ses" · düzenlemek için sesine sağ tıkla	Crea tu propia voz: «+ Nueva voz» · clic derecho en tu voz para editarla
+Oda	Habitación
+Ortam	Lugar
+Ortam miktarı	Cantidad de lugar
+Perde	Tono
+Rastgele	Aleatorio
+Salon	Salón
+Ses rengi	Timbre
+Sesim	Mi voz
+Sesim {0}	Mi voz {0}
+Sil	Eliminar
+Stadyum	Estadio
+Titreme	Temblor
+Yeni ses	Nueva voz
+Yok	Ninguno
+{0} yarım ton	{0} semitonos
+İptal	Cancelar

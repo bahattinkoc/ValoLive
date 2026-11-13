@@ -26,6 +26,7 @@ AJAN SEÇİMİ
 AKVARYUM
 ANALİZİM
 AYARLAR
+Ad
 Ajan
 Ajan seçiminde sniper perdesi (otomatik)
 Akvaryum: chat'e yazan balık olur
@@ -45,6 +46,7 @@ BIÇAK
 BUGÜN
 Balon
 Balon: mesaj balonla süzülür, !pop patlatır
+Banyo
 Bağlan
 Bağlanılamadı
 Bağlanıyor…
@@ -97,6 +99,7 @@ Demir
 Derecesiz
 Desteklenmeyen ses biçimi ({0} bit).
 Dev
+Değişiklikleri anında duyarsın: "Kendi sesimi kulaklıktan duy" açıkken konuşarak dene. Kalın ses için perde ve rengi birlikte indir, ince ses için birlikte artır.
 Dil, yayın bitince ValoLive yeniden açıldığında değişir.
 Domates
 Domates / yumurta fırlat
@@ -154,6 +157,7 @@ KATMANLAR
 KAZANMA
 KENDİ ANALİZİM
 KENDİ KENDİNE
+KENDİ SESİN
 KISA BİR ARA
 KONUM
 KUSURSUZ
@@ -165,10 +169,13 @@ Kapalı: ValoLive → Ses Değiştirici sekmesinden aç.
 Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil
 Kategori
 Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.
+Kaydet
 Kaydet ve bağlan
 Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.
 Kağıt uçak
 Kendi sesimi kulaklıktan duy
+Kendi sesin
+Kendi sesini yap: "+ Yeni ses" · düzenlemek için sesine sağ tıkla
 Kick hesabı
 Kick hesabı bağlı değil.
 Kick hesabını bağla
@@ -220,7 +227,10 @@ NİNJA DEFUSE
 OP'ÇU
 OTURUM
 OYUN STİLİ
+Oda
 Ortak havai fişek
+Ortam
+Ortam miktarı
 Otomatik (Valorant dili)
 Oyun sesi
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.
@@ -228,6 +238,7 @@ PARTİ
 PAT!
 PLATFORMLAR
 POP!
+Perde
 Platin
 Profil
 Profili aç ↗
@@ -250,6 +261,7 @@ Rakipler
 Rakipler maç başlayınca görünür (ajan seçiminde Riot göstermez).
 Rakipte {0} kişilik parti
 Rank bilgisi henüz yok.
+Rastgele
 Rekabetçi
 Riot ID + anahtar gerekli
 Riot bağlantı hatası: 
@@ -282,6 +294,7 @@ SON RAKİP
 SPIKE'IN DİBİNDE
 Sabah
 Sadece Valorant (önerilen)
+Salon
 Sanal mikrofon
 Sanal mikrofon, ValoLive'ın değiştirdiği sesi Valorant'a mikrofon gibi verir. Kurulumdan sonra bilgisayarı yeniden başlatman gerekebilir.
 Sarhoş
@@ -289,10 +302,14 @@ Selam chat!
 Selam chat! Bu yayın efsane 🔥
 Ses cihazı yanıt vermedi.
 Ses değiştiriciyi aç (Valorant sesli sohbeti)
+Ses rengi
+Sesim
+Sesim {0}
 Sesli oku
 Sesli oku (robot sesi)
 Seçtiğim uygulama
 Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.
+Sil
 Sincap
 Sniper koruması (F9)
 Son maç bilgisi yok.
@@ -306,6 +323,7 @@ Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.
 Spike kurulumları
 Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).
 Sprey
+Stadyum
 Stil çıkarmak için yeterli round yok (en az 40).
 Stream URL / Stream Key'i platformun panelinden yeniden kopyala
 Su altı
@@ -341,6 +359,7 @@ Ters ekran
 Ters ekran (3 sn)
 Ters ekran, büyüteç ve sesli okuma yalnızca abone ve modlara
 Teşekkürler: {0}
+Titreme
 TİLT
 UZATMA
 Uyarı: Steam'in sanal mikrofonu Valorant'ta boğuk duyulur. Ücretsiz VB-CABLE'ı kur, ValoLive onu kendiliğinden seçer.
@@ -391,8 +410,10 @@ Yayını bitir
 Yayının gideceği platformu seç: Platformlar sekmesinde en az birini aç.
 Yaşlı
 Yeni balık
+Yeni ses
 Yeni sürüm {0} hazır · güncelle
 Yeni uygulama oluştur. Ad: ValoLive · Redirect URL olarak şunu yaz:
+Yok
 YouTube Studio'dan yayın anahtarı al
 YouTube başlığı uygulanamadı: 
 YouTube hesabı
@@ -526,6 +547,7 @@ zirve
 {0} raund üst üste
 {0} rekabetçi maç
 {0} sn
+{0} yarım ton
 {0} yayını reddetti: Stream Key'i kontrol et
 {0} yeniden bağlandı
 {0} · o maçta {1}/{2}/{3}{4}
@@ -578,6 +600,7 @@ zirve
 İnce
 İndirilen pakette ValoLive.exe yok
 İndiriliyor… %{0}
+İptal
 İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.
 İzleyici başına bekleme
 İzleyiciler chat'e komut yazar, ekranda canlanır. Kanal puanı gerekmez; her izleyici için bekleme süresi var.

@@ -614,3 +614,26 @@ Lejyon	กองทัพ
 Fısıltı	กระซิบ
 Autotune	ออโต้จูน
 Şarkıcı robot	หุ่นยนต์ร้องเพลง
+Ad	ชื่อ
+Banyo	ห้องน้ำ
+Değişiklikleri anında duyarsın: "Kendi sesimi kulaklıktan duy" açıkken konuşarak dene. Kalın ses için perde ve rengi birlikte indir, ince ses için birlikte artır.	ได้ยินการเปลี่ยนแปลงทันที: เปิด "ได้ยินเสียงตัวเองในหูฟัง" แล้วลองพูด อยากได้เสียงทุ้มให้ลดระดับเสียงและโทนเสียงพร้อมกัน อยากได้เสียงเล็กให้เพิ่มทั้งสองอย่าง
+KENDİ SESİN	เสียงของคุณเอง
+Kaydet	บันทึก
+Kendi sesin	เสียงของคุณเอง
+Kendi sesini yap: "+ Yeni ses" · düzenlemek için sesine sağ tıkla	สร้างเสียงของคุณ: "+ เสียงใหม่" · คลิกขวาที่เสียงเพื่อแก้ไข
+Oda	ห้อง
+Ortam	สถานที่
+Ortam miktarı	ความแรงของสถานที่
+Perde	ระดับเสียง
+Rastgele	สุ่ม
+Salon	ห้องโถง
+Ses rengi	โทนเสียง
+Sesim	เสียงของฉัน
+Sesim {0}	เสียงของฉัน {0}
+Sil	ลบ
+Stadyum	สนามกีฬา
+Titreme	สั่น
+Yeni ses	เสียงใหม่
+Yok	ไม่มี
+{0} yarım ton	{0} ครึ่งเสียง
+İptal	ยกเลิก

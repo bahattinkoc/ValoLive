@@ -288,6 +288,20 @@ namespace ValoLive
         }
     }
 
+    /// <summary>Kullanıcının kendi sesi (ayarlarda saklanır).</summary>
+    public sealed class VoiceCustom
+    {
+        public string Id, Name;
+        public int Pitch;            // yarım ton, -12..12
+        public int Formant;          // ses rengi, yüzde: -30..50
+        public int Robot, Breath;    // 0..100
+        public int Shake;            // titreme 0..100
+        public string Place = "yok"; // VoiceFx.Places
+        public int Amount = 40;      // ortam miktarı 0..100
+
+        public VoiceCustom Clone() => (VoiceCustom)MemberwiseClone();
+    }
+
     /// <summary>Hazır sesler ve şu an seçili olan.</summary>
     static class VoiceFx
     {
@@ -295,11 +309,12 @@ namespace ValoLive
         {
             public string Id, Name;
             public Func<int, Fx[]> Make;   // örnekleme hızı → zincir (boş: değişmeden geçer)
+            public VoiceCustom Custom;     // kullanıcının kendi sesi (değilse null)
         }
 
         static Preset P(string id, string name, Func<int, Fx[]> make) => new Preset { Id = id, Name = name, Make = make };
 
-        public static readonly Preset[] All =
+        static readonly Preset[] Builtin =
         {
             P("normal", L.T("Normal"), sr => new Fx[0]),
             P("robot", L.T("Robot"), sr => new Fx[] { new Gate(sr), new Lpc(sr, Lpc.Source.Pulse, 98), new ModDelay(sr, 5, 0, 0, 0.45f, 0.75f, 0.45f), new Gain(0.5) }),
@@ -308,23 +323,96 @@ namespace ValoLive
             P("ince", L.T("İnce"), sr => new Fx[] { new Psola(sr, 3, 1.25), Biquad.Highpass(sr, 250), Biquad.Peak(sr, 1600, 1.2, 3), new Gain(1) }),
             P("cocuk", L.T("Çocuk"), sr => new Fx[] { new Psola(sr, 9, 1.3), Biquad.Highpass(sr, 250), new Gain(3) }),
             P("sincap", L.T("Sincap"), sr => new Fx[] { new Psola(sr, 12, 1.55), Biquad.Highpass(sr, 300), new Gain(3) }),
-            P("dev", L.T("Dev"), sr => new Fx[] { new Psola(sr, -7, 0.78), Biquad.Shelf(sr, 200, 3, false), new Verb(sr, 0.3f, 0.15f), new Gain(-0.5) }),
+            P("dev", L.T("Dev"), sr => new Fx[] { new Psola(sr, -7, 0.78), Biquad.Shelf(sr, 200, 3, false), new ConvVerb(sr, Room.Salon, 0.3f), new Gain(-0.5) }),
             P("canavar", L.T("Canavar"), sr => new Fx[] { new Gate(sr), new Psola(sr, -10, 0.72), new Tremolo(sr, 33, 0.35f), new Drive(3), Biquad.Lowpass(sr, 3400), new Verb(sr, 0.4f, 0.18f), new Gain(-7) }),
             P("iblis", L.T("İblis"), sr => new Fx[] { new Gate(sr), new Parallel(new[] { 0.8f, 0.55f }, new Fx[] { new Psola(sr, -12, 0.7) }, new Fx[] { new Psola(sr, -5, 0.85) }), new Drive(2), new Verb(sr, 0.6f, 0.28f), new Gain(-6.5) }),
             P("lejyon", L.T("Lejyon"), sr => new Fx[] { new Gate(sr), new Parallel(new[] { 0.6f, 0.5f, 0.45f }, new Fx[] { new Psola(sr, -12, 0.75) }, new Fx[] { new Psola(sr, 0.15, 1) }, new Fx[] { new Psola(sr, 7, 1.12) }), new Verb(sr, 0.7f, 0.3f), new Gain(-1) }),
             P("fisilti", L.T("Fısıltı"), sr => new Fx[] { new Gate(sr), new Lpc(sr, Lpc.Source.Noise), Biquad.Highpass(sr, 200), new Gain(2) }),
             P("autotune", L.T("Autotune"), sr => new Fx[] { new Psola(sr, 0, 1, Scale.Snap()), new Verb(sr, 0.3f, 0.12f) }),
             P("robotsarki", L.T("Şarkıcı robot"), sr => new Fx[] { new Gate(sr), new Lpc(sr, Lpc.Source.Tuned, tune: Scale.Snap()), new ModDelay(sr, 12, 4, 0.8, 0, 0.8f, 0.5f), new Gain(1) }),
-            P("sualti", L.T("Su altı"), sr => new Fx[] { new ModDelay(sr, 4, 3, 1.3, 0, 0, 1), new Wobble(sr, 520, 260, 0.7), new Verb(sr, 0.5f, 0.35f, 0.6f), new Gain(-1) }),
-            P("telsiz", L.T("Telsiz"), sr => new Fx[] { new Gate(sr), Biquad.Highpass(sr, 500), Biquad.Lowpass(sr, 2800), new Drive(5), new Crush(8, 3), new Gain(-6) }),
+            P("sualti", L.T("Su altı"), sr => new Fx[] { new ModDelay(sr, 4, 3, 1.3, 0, 0, 1), new Wobble(sr, 520, 260, 0.7), new Verb(sr, 0.5f, 0.35f, 0.6f), new Bubbles(sr), new Gain(-1) }),
+            P("telsiz", L.T("Telsiz"), sr => new Fx[] { new Gate(sr), Biquad.Highpass(sr, 500), Biquad.Lowpass(sr, 2800), new Drive(5), new Crush(8, 3), new Gain(-6), new Radio(sr) }),
             P("megafon", L.T("Megafon"), sr => new Fx[] { Biquad.Highpass(sr, 650), Biquad.Lowpass(sr, 4000), Biquad.Peak(sr, 1800, 1, 6), new Drive(3), new Gain(-5) }),
             P("telefon", L.T("Telefon"), sr => new Fx[] { Biquad.Highpass(sr, 400), Biquad.Lowpass(sr, 3200), new Crush(12, Math.Max(1, sr / 8000)), new Gain(4.5) }),
-            P("magara", L.T("Mağara"), sr => new Fx[] { new Echo(sr, 300, 0.45f, 0.5f), new Verb(sr, 0.9f, 0.4f, 0.2f), new Gain(-2) }),
+            P("magara", L.T("Mağara"), sr => new Fx[] { new Echo(sr, 300, 0.45f, 0.5f), new ConvVerb(sr, Room.Magara, 0.55f), new Gain(-2) }),
             P("uzayli", L.T("Uzaylı"), sr => new Fx[] { new Psola(sr, 3, 1.35), new Ring(sr, 320, 0.25f), new ModDelay(sr, 2, 2, 0.25, 0.6f, 0.6f, 0.6f), new Gain(3) }),
-            P("hayalet", L.T("Hayalet"), sr => new Fx[] { new Gate(sr), new Lpc(sr, Lpc.Source.Noise), Biquad.Highpass(sr, 300), new ModDelay(sr, 3, 2, 0.5, 0, 0, 1), new Tremolo(sr, 0.8, 0.4f), new Verb(sr, 1, 0.7f, 0.2f, 0.6f), new Gain(6.5) }),
+            P("hayalet", L.T("Hayalet"), sr => new Fx[] { new Gate(sr), new Lpc(sr, Lpc.Source.Noise), Biquad.Highpass(sr, 300), new ModDelay(sr, 3, 2, 0.5, 0, 0, 1), new Tremolo(sr, 0.8, 0.4f), new ConvVerb(sr, Room.Salon, 0.9f, 0.6f), new Gain(6.5) }),
             P("yasli", L.T("Yaşlı"), sr => new Fx[] { new Psola(sr, -1.5, 0.95, vibratoHz: 5.5, vibratoSt: 0.45), Biquad.Highpass(sr, 220), Biquad.Lowpass(sr, 3800), new Gain(2) }),
             P("sarhos", L.T("Sarhoş"), sr => new Fx[] { new Psola(sr, -1, 0.97, vibratoHz: 0.3, vibratoSt: 1.3), new Echo(sr, 120, 0.2f, 0.2f) }),
         };
+
+        static volatile Preset[] all = Builtin;
+        static int version;
+
+        /// <summary>Hazır sesler + kullanıcının kendi sesleri.</summary>
+        public static Preset[] All => all;
+        public static int BuiltinCount => Builtin.Length;
+        public const int MaxCustom = 4;
+
+        /// <summary>Ayarlar değişince artar; işleyiciler zinciri yeniden kurar (özel ses düzenlenirken canlı duyulsun).</summary>
+        public static int Version => Volatile.Read(ref version);
+        public static void Changed() => Interlocked.Increment(ref version);
+
+        public static void SetCustom(IEnumerable<VoiceCustom> list)
+        {
+            all = Builtin.Concat(list.Take(MaxCustom).Select(c => new Preset { Id = c.Id, Name = c.Name, Make = sr => CustomChain(sr, c), Custom = c })).ToArray();
+            Changed();
+        }
+
+        /// <summary>Özel ses seçenekleri: ortam kimliği → ad.</summary>
+        public static readonly KeyValuePair<string, string>[] Places =
+        {
+            new KeyValuePair<string, string>("yok", L.T("Yok")),
+            new KeyValuePair<string, string>("oda", L.T("Oda")),
+            new KeyValuePair<string, string>("banyo", L.T("Banyo")),
+            new KeyValuePair<string, string>("salon", L.T("Salon")),
+            new KeyValuePair<string, string>("magara", L.T("Mağara")),
+            new KeyValuePair<string, string>("stadyum", L.T("Stadyum")),
+            new KeyValuePair<string, string>("telsiz", L.T("Telsiz")),
+            new KeyValuePair<string, string>("telefon", L.T("Telefon")),
+            new KeyValuePair<string, string>("megafon", L.T("Megafon")),
+            new KeyValuePair<string, string>("sualti", L.T("Su altı")),
+        };
+
+        static Fx[] CustomChain(int sr, VoiceCustom c)
+        {
+            var l = new List<Fx> { new Gate(sr) };
+            double st = c.Pitch, fm = 1 + c.Formant / 100.0;
+            if (st != 0 || c.Formant != 0 || c.Shake > 0) l.Add(new Psola(sr, st, fm, vibratoHz: 5.5, vibratoSt: c.Shake / 100.0 * 0.8));
+            // Robot ve nefes: aynı ağız şekli, gırtlak yerine darbe/gürültü; normal sesle karışır.
+            float rb = c.Robot / 100f, br = c.Breath / 100f, sum = rb + br;
+            if (sum > 1) { rb /= sum; br /= sum; sum = 1; }
+            if (sum > 0)
+                l.Add(new Parallel(new[] { 1 - sum, rb, br * 1.25f }, new Fx[0],
+                    new Fx[] { new Lpc(sr, Lpc.Source.Pulse, 100 * Math.Pow(2, st / 12)) }, new Fx[] { new Lpc(sr, Lpc.Source.Noise) }));
+            float mix = Math.Max(0, Math.Min(100, c.Amount)) / 100f;
+            switch (c.Place)
+            {
+                case "oda": l.Add(new ConvVerb(sr, Room.Oda, 0.1f + 0.6f * mix)); break;
+                case "banyo": l.Add(new ConvVerb(sr, Room.Banyo, 0.1f + 0.6f * mix)); break;
+                case "salon": l.Add(new ConvVerb(sr, Room.Salon, 0.1f + 0.6f * mix)); break;
+                case "magara": l.Add(new ConvVerb(sr, Room.Magara, 0.1f + 0.6f * mix)); break;
+                case "stadyum": l.Add(new ConvVerb(sr, Room.Stadyum, 0.1f + 0.6f * mix)); break;
+                case "telsiz": l.AddRange(new Fx[] { Biquad.Highpass(sr, 500), Biquad.Lowpass(sr, 2800), new Drive(5), new Crush(8, 3), new Gain(-6), new Radio(sr) }); break;
+                case "telefon": l.AddRange(new Fx[] { Biquad.Highpass(sr, 400), Biquad.Lowpass(sr, 3200), new Crush(12, Math.Max(1, sr / 8000)), new Gain(4.5) }); break;
+                case "megafon": l.AddRange(new Fx[] { Biquad.Highpass(sr, 650), Biquad.Lowpass(sr, 4000), Biquad.Peak(sr, 1800, 1, 6), new Drive(3), new Gain(-5) }); break;
+                case "sualti": l.AddRange(new Fx[] { new ModDelay(sr, 4, 3, 1.3, 0, 0, 1), new Wobble(sr, 520, 260, 0.7), new Verb(sr, 0.5f, 0.35f, 0.6f), new Bubbles(sr) }); break;
+            }
+            return l.ToArray();
+        }
+
+        /// <summary>Rastgele ama kulağa makul gelen bir özel ses.</summary>
+        public static void Randomize(VoiceCustom c, Random r)
+        {
+            c.Pitch = r.Next(-10, 11);
+            // Renk çoğunlukla perdeyle aynı yönde (doğal); bazen ters (tuhaf karakter).
+            c.Formant = Math.Max(-30, Math.Min(50, (int)(c.Pitch * (r.NextDouble() < 0.8 ? 3.5 : -2.5)) + r.Next(-8, 9)));
+            c.Robot = r.NextDouble() < 0.25 ? r.Next(30, 101) : 0;
+            c.Breath = c.Robot == 0 && r.NextDouble() < 0.25 ? r.Next(30, 101) : 0;
+            c.Shake = r.NextDouble() < 0.3 ? r.Next(20, 80) : 0;
+            c.Place = r.NextDouble() < 0.5 ? "yok" : Places[r.Next(1, Places.Length)].Key;
+            c.Amount = r.Next(20, 80);
+        }
 
         public static Preset Find(string id) => All.FirstOrDefault(p => p.Id == id) ?? All[0];
 
@@ -341,20 +429,44 @@ namespace ValoLive
     {
         Fx[] chain = new Fx[0];
         string id;
-        int rate;
+        int rate, ver = -1;
         float[] mono = new float[0];
+        // Seviye eşitleyici: efektli ses, konuşma sırasında kendi sesin kadar yüksek kalsın (±6 dB).
+        double inPow, outPow, level = 1;
 
         /// <summary>Tek kanal, yerinde.</summary>
         public void Mono(float[] buf, int n, int sampleRate)
         {
             string want = VoiceFx.Current;
-            if (want != id || sampleRate != rate) { id = want; rate = sampleRate; chain = VoiceFx.Find(want).Make(sampleRate); }
-            if (chain.Length == 0) return;
+            int v0 = VoiceFx.Version;
+            if (want != id || sampleRate != rate || v0 != ver)
+            {
+                bool same = want == id;
+                id = want; rate = sampleRate; ver = v0; chain = VoiceFx.Find(want).Make(sampleRate);
+                if (!same) { inPow = outPow = 0; level = 1; }
+            }
+            if (chain.Length == 0 || n == 0) return;
             var c = chain;
+            double pi = 0, po = 0;
             for (int i = 0; i < n; i++)
             {
                 float v = buf[i];
+                pi += v * v;
                 for (int k = 0; k < c.Length; k++) v = c[k].Run(v);
+                po += v * v;
+                buf[i] = v;
+            }
+            pi /= n; po /= n;
+            double from = level;
+            if (pi > 1e-6) // ~-60 dB üstü: konuşma
+            {
+                inPow = inPow == 0 ? pi : inPow * 0.97 + pi * 0.03;
+                outPow = outPow == 0 ? po : outPow * 0.97 + po * 0.03;
+                if (outPow > 1e-9) level += (Math.Max(0.5, Math.Min(2, Math.Sqrt(inPow / outPow))) - level) * 0.05;
+            }
+            for (int i = 0; i < n; i++)
+            {
+                float v = buf[i] * (float)(from + (level - from) * (i + 1) / n);
                 // Yumuşak tavan: efektler (yankı, bozulma) sesi yükseltse de kırpılmasın.
                 float a = Math.Abs(v);
                 if (a > 0.8f) v = Math.Sign(v) * (0.8f + 0.2f * (float)Math.Tanh((a - 0.8f) / 0.2f));

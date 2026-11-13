@@ -614,3 +614,26 @@ Lejyon	レギオン
 Fısıltı	ささやき
 Autotune	オートチューン
 Şarkıcı robot	歌うロボット
+Ad	名前
+Banyo	浴室
+Değişiklikleri anında duyarsın: "Kendi sesimi kulaklıktan duy" açıkken konuşarak dene. Kalın ses için perde ve rengi birlikte indir, ince ses için birlikte artır.	変更はすぐに聞こえます。「自分の声をヘッドホンで聞く」をオンにして話してみてください。低い声にはピッチと声色を一緒に下げ、細い声には両方を上げます。
+KENDİ SESİN	自分だけの声
+Kaydet	保存
+Kendi sesin	自分だけの声
+Kendi sesini yap: "+ Yeni ses" · düzenlemek için sesine sağ tıkla	自分の声を作る:「+ 新しい声」・右クリックで編集
+Oda	部屋
+Ortam	場所
+Ortam miktarı	場所の強さ
+Perde	ピッチ
+Rastgele	ランダム
+Salon	ホール
+Ses rengi	声色
+Sesim	マイボイス
+Sesim {0}	マイボイス {0}
+Sil	削除
+Stadyum	スタジアム
+Titreme	震え
+Yeni ses	新しい声
+Yok	なし
+{0} yarım ton	{0} 半音
+İptal	キャンセル

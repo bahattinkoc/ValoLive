@@ -614,3 +614,26 @@ Lejyon	Легион
 Fısıltı	Шёпот
 Autotune	Автотюн
 Şarkıcı robot	Поющий робот
+Ad	Имя
+Banyo	Ванная
+Değişiklikleri anında duyarsın: "Kendi sesimi kulaklıktan duy" açıkken konuşarak dene. Kalın ses için perde ve rengi birlikte indir, ince ses için birlikte artır.	Изменения слышны сразу: включи «Слышать свой голос в наушниках» и говори. Для более низкого голоса опускай высоту и тембр вместе, для более тонкого — поднимай оба.
+KENDİ SESİN	ТВОЙ СОБСТВЕННЫЙ ГОЛОС
+Kaydet	Сохранить
+Kendi sesin	Твой собственный голос
+Kendi sesini yap: "+ Yeni ses" · düzenlemek için sesine sağ tıkla	Создай свой голос: «+ Новый голос» · правый клик по голосу — изменить
+Oda	Комната
+Ortam	Место
+Ortam miktarı	Сила эффекта места
+Perde	Высота
+Rastgele	Случайно
+Salon	Зал
+Ses rengi	Тембр
+Sesim	Мой голос
+Sesim {0}	Мой голос {0}
+Sil	Удалить
+Stadyum	Стадион
+Titreme	Дрожь
+Yeni ses	Новый голос
+Yok	Нет
+{0} yarım ton	{0} полутонов
+İptal	Отмена

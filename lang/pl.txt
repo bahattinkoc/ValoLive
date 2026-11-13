@@ -614,3 +614,26 @@ Lejyon	Legion
 Fısıltı	Szept
 Autotune	Autotune
 Şarkıcı robot	Śpiewający robot
+Ad	Nazwa
+Banyo	Łazienka
+Değişiklikleri anında duyarsın: "Kendi sesimi kulaklıktan duy" açıkken konuşarak dene. Kalın ses için perde ve rengi birlikte indir, ince ses için birlikte artır.	Zmiany słyszysz od razu: włącz „Słysz swój głos w słuchawkach” i mów. Dla grubszego głosu obniż razem wysokość i barwę, dla cieńszego podnieś obie.
+KENDİ SESİN	TWÓJ WŁASNY GŁOS
+Kaydet	Zapisz
+Kendi sesin	Twój własny głos
+Kendi sesini yap: "+ Yeni ses" · düzenlemek için sesine sağ tıkla	Zrób własny głos: „+ Nowy głos” · kliknij prawym przyciskiem swój głos, by go edytować
+Oda	Pokój
+Ortam	Otoczenie
+Ortam miktarı	Siła otoczenia
+Perde	Wysokość
+Rastgele	Losowo
+Salon	Sala
+Ses rengi	Barwa głosu
+Sesim	Mój głos
+Sesim {0}	Mój głos {0}
+Sil	Usuń
+Stadyum	Stadion
+Titreme	Drżenie
+Yeni ses	Nowy głos
+Yok	Brak
+{0} yarım ton	{0} półtonów
+İptal	Anuluj

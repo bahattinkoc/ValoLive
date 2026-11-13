@@ -17,6 +17,7 @@ namespace ValoLive
         LinkLabel lnkCable;
         Label lblVoiceHelp, lblVoiceState;
         VoiceGrid voiceGrid;
+        Control[] voiceBelow; // ızgaranın altındakiler: özel ses eklenip silindikçe ızgarayla birlikte kayar
         VoiceMeter voiceMeter;
         List<KeyValuePair<string, string>> voiceMics, voiceOuts;
         readonly Timer voiceTimer = new Timer { Interval = 80 };
@@ -55,6 +56,8 @@ namespace ValoLive
             voiceGrid.Height = voiceGrid.HeightFor(ColW);
             // Kapalıyken efekte tıklamak açar: yoksa seçim görünür ama hiçbir ses işlenmez (sanal mikrofon sessiz kalır).
             voiceGrid.Picked += id => { PickVoice(id); if (!chkVoice.Checked) chkVoice.Checked = true; };
+            voiceGrid.AddNew += () => EditVoice(null);
+            voiceGrid.Edit += id => EditVoice(cfg.VoiceCustoms.FirstOrDefault(v => v.Id == id));
             host.Controls.Add(voiceGrid);
             y += voiceGrid.Height + 8;
             chkVoiceMon = new VToggle { Text = L.T("Kendi sesimi kulaklıktan duy"), ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
@@ -64,6 +67,11 @@ namespace ValoLive
             var keys = new Label { Text = L.T("Ctrl+Alt+V  efekti aç/kapat      Ctrl+Alt+B  sonraki efekt"), ForeColor = Mut, AutoSize = true, MaximumSize = new Size(ColW, 0), Location = new Point(cx, y) };
             host.Controls.Add(keys);
             y += keys.GetPreferredSize(new Size(ColW, 0)).Height + 4;
+            var own = new Label { Text = L.T("Kendi sesini yap: \"+ Yeni ses\" · düzenlemek için sesine sağ tıkla"), ForeColor = Mut, AutoSize = true, MaximumSize = new Size(ColW, 0), Location = new Point(cx, y) };
+            host.Controls.Add(own);
+            y += own.GetPreferredSize(new Size(ColW, 0)).Height + 4;
+            voiceBelow = new Control[] { chkVoiceMon, chkVoiceStream, keys, own };
+            foreach (var c in voiceBelow) c.Tag = c.Top - voiceGrid.Bottom;
             AddDivider(Math.Max(leftBottom, y));
             page.Height = Math.Max(leftBottom, y);
 
@@ -136,11 +144,23 @@ namespace ValoLive
             chkVoice.Checked = cfg.VoiceOn;
             chkVoiceMon.Checked = cfg.VoiceMonitor;
             chkVoiceStream.Checked = cfg.VoiceStream;
+            if (cfg.VoiceCustoms == null) cfg.VoiceCustoms = new List<VoiceCustom>();
+            VoiceFx.SetCustom(cfg.VoiceCustoms);
             VoiceFx.Current = cfg.VoicePreset;
+            LayoutVoiceGrid();
             FillVoiceDevices();
             RestartVoice();
         }
 
+
+        /// <summary>Izgara gerçek satır sayısına iner, altındakiler hemen altına kayar (yer en çok özel sesle dolu hâline göre ayrılmıştı).</summary>
+        void LayoutVoiceGrid()
+        {
+            int used = voiceGrid.UsedHeight;
+            voiceGrid.Height = used;
+            foreach (var c in voiceBelow) c.Top = voiceGrid.Top + used + (int)c.Tag;
+            voiceGrid.Invalidate();
+        }
         void ApplyVoiceFlags()
         {
             VoiceFx.OnStream = cfg.VoiceOn && cfg.VoiceStream;
@@ -217,17 +237,24 @@ namespace ValoLive
             Toast.Show(L.T("SES DEĞİŞTİRİCİ"), new List<KeyValuePair<string, Color>> { new KeyValuePair<string, Color>(p0.Name, p0.Id == "normal" ? Mut : Green) }, 1500, false);
         }
 
-        /// <summary>Efekt düğmeleri: dört sütun; seçili olan kırmızı. Ses değiştirici kapalıyken soluk.</summary>
+        /// <summary>Efekt düğmeleri: dört sütun; seçili olan kırmızı. Ses değiştirici kapalıyken soluk. Sonda kullanıcının kendi
+        /// sesleri (sağ tık: düzenle) ve yer varsa "+ Yeni ses".</summary>
         sealed class VoiceGrid : Control
         {
             const int Cols = 4, RowH = 36, Gap = 8;
             int hover = -1;
             public bool Active;
-            public event Action<string> Picked;
+            public event Action<string> Picked, Edit;
+            public event Action AddNew;
 
             public VoiceGrid() { DoubleBuffered = true; BackColor = Theme.Bg; Cursor = Cursors.Hand; }
 
-            public int HeightFor(int w) => (VoiceFx.All.Length + Cols - 1) / Cols * (RowH + Gap) - Gap;
+            // Yer, en çok özel sesle dolu hâline göre ayrılır (sayfa yüksekliği sonradan değişmesin).
+            public int HeightFor(int w) => (VoiceFx.BuiltinCount + VoiceFx.MaxCustom + Cols - 1) / Cols * (RowH + Gap) - Gap;
+            public int UsedHeight => (Count + Cols - 1) / Cols * (RowH + Gap) - Gap;
+
+            static bool CanAdd => VoiceFx.All.Length - VoiceFx.BuiltinCount < VoiceFx.MaxCustom;
+            static int Count => VoiceFx.All.Length + (CanAdd ? 1 : 0);
 
             Rectangle Cell(int i)
             {
@@ -237,30 +264,48 @@ namespace ValoLive
 
             int At(Point p)
             {
-                for (int i = 0; i < VoiceFx.All.Length; i++) if (Cell(i).Contains(p)) return i;
+                for (int i = 0; i < Count; i++) if (Cell(i).Contains(p)) return i;
                 return -1;
             }
 
             protected override void OnMouseMove(MouseEventArgs e) { int h = At(e.Location); if (h != hover) { hover = h; Invalidate(); } }
             protected override void OnMouseLeave(EventArgs e) { hover = -1; Invalidate(); }
-            protected override void OnMouseClick(MouseEventArgs e) { int i = At(e.Location); if (i >= 0) Picked?.Invoke(VoiceFx.All[i].Id); }
+            protected override void OnMouseClick(MouseEventArgs e)
+            {
+                int i = At(e.Location);
+                var all = VoiceFx.All;
+                if (i < 0) return;
+                if (i >= all.Length) { AddNew?.Invoke(); return; }
+                if (e.Button == MouseButtons.Right) { if (all[i].Custom != null) Edit?.Invoke(all[i].Id); }
+                else Picked?.Invoke(all[i].Id);
+            }
 
             protected override void OnPaint(PaintEventArgs e)
             {
                 var g = e.Graphics;
                 g.SmoothingMode = SmoothingMode.AntiAlias;
                 g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+                var all = VoiceFx.All;
                 using (var f = new Font(L.SansBold, 9.5f))
-                    for (int i = 0; i < VoiceFx.All.Length; i++)
+                    for (int i = 0; i < Count; i++)
                     {
-                        var p = VoiceFx.All[i];
                         var r = Cell(i);
+                        if (i >= all.Length)
+                        {
+                            using (var b = new SolidBrush(i == hover ? Theme.Line : Theme.Bg)) g.FillRectangle(b, r);
+                            using (var pen = new Pen(Theme.Line) { DashStyle = DashStyle.Dash }) g.DrawRectangle(pen, r.X, r.Y, r.Width - 1, r.Height - 1);
+                            string add = "+ " + L.T("Yeni ses");
+                            float aw = Math.Min(g.MeasureString(add, f).Width, r.Width - 12);
+                            Theme.DrawFit(g, add, f, Active ? Theme.Txt : Theme.Mut, r.X + (r.Width - aw) / 2, r.Y + (RowH - f.Height) / 2f, r.Width - 12);
+                            continue;
+                        }
+                        var p = all[i];
                         bool sel = p.Id == VoiceFx.Current;
                         Color fill = sel ? (Active ? Theme.Red : ColorTranslator.FromHtml("#5b2430")) : i == hover ? Theme.Line : Theme.Field;
                         using (var b = new SolidBrush(fill)) g.FillRectangle(b, r);
-                        if (!sel) using (var pen = new Pen(Theme.Line)) g.DrawRectangle(pen, r.X, r.Y, r.Width - 1, r.Height - 1);
+                        if (!sel) using (var pen = new Pen(p.Custom != null ? ColorTranslator.FromHtml("#6b5a2a") : Theme.Line)) g.DrawRectangle(pen, r.X, r.Y, r.Width - 1, r.Height - 1);
                         var c = sel ? Color.White : Active ? Theme.Txt : Theme.Mut;
-                        string t = p.Name;
+                        string t = p.Custom != null ? "★ " + p.Name : p.Name;
                         float tw = Math.Min(g.MeasureString(t, f).Width, r.Width - 12);
                         Theme.DrawFit(g, t, f, c, r.X + (r.Width - tw) / 2, r.Y + (RowH - f.Height) / 2f, r.Width - 12);
                     }

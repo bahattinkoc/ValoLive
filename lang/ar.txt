@@ -614,3 +614,26 @@ Lejyon	فيلق
 Fısıltı	همس
 Autotune	أوتوتيون
 Şarkıcı robot	روبوت مغنٍّ
+Ad	الاسم
+Banyo	حمّام
+Değişiklikleri anında duyarsın: "Kendi sesimi kulaklıktan duy" açıkken konuşarak dene. Kalın ses için perde ve rengi birlikte indir, ince ses için birlikte artır.	تسمع التغييرات فورًا: فعّل "أسمع صوتي في السماعات" وتكلّم. لصوت أعمق اخفض طبقة الصوت ولونه معًا، ولصوت أرفع ارفعهما معًا.
+KENDİ SESİN	صوتك الخاص
+Kaydet	حفظ
+Kendi sesin	صوتك الخاص
+Kendi sesini yap: "+ Yeni ses" · düzenlemek için sesine sağ tıkla	اصنع صوتك: "+ صوت جديد" · انقر بزر الفأرة الأيمن على صوتك لتعديله
+Oda	غرفة
+Ortam	المكان
+Ortam miktarı	شدة المكان
+Perde	طبقة الصوت
+Rastgele	عشوائي
+Salon	قاعة
+Ses rengi	لون الصوت
+Sesim	صوتي
+Sesim {0}	صوتي {0}
+Sil	حذف
+Stadyum	ملعب
+Titreme	ارتجاف
+Yeni ses	صوت جديد
+Yok	لا شيء
+{0} yarım ton	{0} نصف نغمة
+İptal	إلغاء

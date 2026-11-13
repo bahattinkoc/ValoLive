@@ -614,3 +614,26 @@ Lejyon	Légion
 Fısıltı	Murmure
 Autotune	Autotune
 Şarkıcı robot	Robot chanteur
+Ad	Nom
+Banyo	Salle de bain
+Değişiklikleri anında duyarsın: "Kendi sesimi kulaklıktan duy" açıkken konuşarak dene. Kalın ses için perde ve rengi birlikte indir, ince ses için birlikte artır.	Tu entends les changements tout de suite : active « M'entendre dans le casque » et parle. Pour une voix plus grave, baisse la hauteur et le timbre ensemble ; pour une voix plus fine, monte les deux.
+KENDİ SESİN	TA PROPRE VOIX
+Kaydet	Enregistrer
+Kendi sesin	Ta propre voix
+Kendi sesini yap: "+ Yeni ses" · düzenlemek için sesine sağ tıkla	Crée ta propre voix : « + Nouvelle voix » · clic droit sur ta voix pour la modifier
+Oda	Pièce
+Ortam	Lieu
+Ortam miktarı	Intensité du lieu
+Perde	Hauteur
+Rastgele	Aléatoire
+Salon	Salle
+Ses rengi	Timbre
+Sesim	Ma voix
+Sesim {0}	Ma voix {0}
+Sil	Supprimer
+Stadyum	Stade
+Titreme	Tremblement
+Yeni ses	Nouvelle voix
+Yok	Aucun
+{0} yarım ton	{0} demi-tons
+İptal	Annuler

@@ -614,3 +614,26 @@ Lejyon	레기온
 Fısıltı	속삭임
 Autotune	오토튠
 Şarkıcı robot	노래하는 로봇
+Ad	이름
+Banyo	욕실
+Değişiklikleri anında duyarsın: "Kendi sesimi kulaklıktan duy" açıkken konuşarak dene. Kalın ses için perde ve rengi birlikte indir, ince ses için birlikte artır.	변경 사항은 바로 들립니다. "내 목소리를 헤드폰으로 듣기"를 켜고 말해 보세요. 더 굵은 목소리는 음높이와 음색을 함께 낮추고, 더 가는 목소리는 둘 다 올리세요.
+KENDİ SESİN	나만의 목소리
+Kaydet	저장
+Kendi sesin	나만의 목소리
+Kendi sesini yap: "+ Yeni ses" · düzenlemek için sesine sağ tıkla	나만의 목소리 만들기: "+ 새 목소리" · 오른쪽 클릭으로 편집
+Oda	방
+Ortam	장소
+Ortam miktarı	장소 강도
+Perde	음높이
+Rastgele	무작위
+Salon	홀
+Ses rengi	음색
+Sesim	내 목소리
+Sesim {0}	내 목소리 {0}
+Sil	삭제
+Stadyum	경기장
+Titreme	떨림
+Yeni ses	새 목소리
+Yok	없음
+{0} yarım ton	{0} 반음
+İptal	취소

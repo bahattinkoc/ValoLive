@@ -59,6 +59,7 @@ namespace ValoLive
         public bool VoiceOn, VoiceMonitor, VoiceStream;
         public string VoiceMic, VoiceOut;                            // null/"": varsayılan mikrofon / ilk bulunan sanal kablo
         public string VoicePreset = "normal", VoiceLast = "robot";   // seçili ses ve Ctrl+Alt+V ile dönülecek son efekt
+        public List<VoiceCustom> VoiceCustoms = new List<VoiceCustom>(); // kullanıcının kendi sesleri (en çok 4)
 
         public static Settings Load()
         {

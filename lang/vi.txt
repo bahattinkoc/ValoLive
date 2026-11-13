@@ -614,3 +614,26 @@ Lejyon	Quân đoàn
 Fısıltı	Thì thầm
 Autotune	Autotune
 Şarkıcı robot	Robot hát
+Ad	Tên
+Banyo	Phòng tắm
+Değişiklikleri anında duyarsın: "Kendi sesimi kulaklıktan duy" açıkken konuşarak dene. Kalın ses için perde ve rengi birlikte indir, ince ses için birlikte artır.	Bạn nghe thay đổi ngay: bật "Nghe giọng mình qua tai nghe" rồi nói thử. Muốn giọng trầm hơn thì hạ cao độ và âm sắc cùng lúc; muốn giọng mảnh hơn thì tăng cả hai.
+KENDİ SESİN	GIỌNG CỦA RIÊNG BẠN
+Kaydet	Lưu
+Kendi sesin	Giọng của riêng bạn
+Kendi sesini yap: "+ Yeni ses" · düzenlemek için sesine sağ tıkla	Tạo giọng của bạn: "+ Giọng mới" · nhấp chuột phải vào giọng để sửa
+Oda	Phòng
+Ortam	Không gian
+Ortam miktarı	Mức không gian
+Perde	Cao độ
+Rastgele	Ngẫu nhiên
+Salon	Hội trường
+Ses rengi	Âm sắc
+Sesim	Giọng của tôi
+Sesim {0}	Giọng của tôi {0}
+Sil	Xóa
+Stadyum	Sân vận động
+Titreme	Run rẩy
+Yeni ses	Giọng mới
+Yok	Không
+{0} yarım ton	{0} nửa cung
+İptal	Hủy

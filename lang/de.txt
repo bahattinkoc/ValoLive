@@ -614,3 +614,26 @@ Lejyon	Legion
 Fısıltı	Flüstern
 Autotune	Autotune
 Şarkıcı robot	Singender Roboter
+Ad	Name
+Banyo	Badezimmer
+Değişiklikleri anında duyarsın: "Kendi sesimi kulaklıktan duy" açıkken konuşarak dene. Kalın ses için perde ve rengi birlikte indir, ince ses için birlikte artır.	Änderungen hörst du sofort: Schalte „Eigene Stimme im Kopfhörer hören“ ein und sprich. Für eine tiefere Stimme Tonhöhe und Klangfarbe gemeinsam senken, für eine dünnere beide erhöhen.
+KENDİ SESİN	DEINE EIGENE STIMME
+Kaydet	Speichern
+Kendi sesin	Deine eigene Stimme
+Kendi sesini yap: "+ Yeni ses" · düzenlemek için sesine sağ tıkla	Eigene Stimme erstellen: „+ Neue Stimme“ · Rechtsklick auf deine Stimme zum Bearbeiten
+Oda	Zimmer
+Ortam	Umgebung
+Ortam miktarı	Umgebungsanteil
+Perde	Tonhöhe
+Rastgele	Zufall
+Salon	Halle
+Ses rengi	Klangfarbe
+Sesim	Meine Stimme
+Sesim {0}	Meine Stimme {0}
+Sil	Löschen
+Stadyum	Stadion
+Titreme	Zittern
+Yeni ses	Neue Stimme
+Yok	Keine
+{0} yarım ton	{0} Halbtöne
+İptal	Abbrechen

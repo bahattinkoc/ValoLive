@@ -614,3 +614,26 @@ Lejyon	軍團
 Fısıltı	耳語
 Autotune	自動調音
 Şarkıcı robot	唱歌機器人
+Ad	名稱
+Banyo	浴室
+Değişiklikleri anında duyarsın: "Kendi sesimi kulaklıktan duy" açıkken konuşarak dene. Kalın ses için perde ve rengi birlikte indir, ince ses için birlikte artır.	變更會立即聽到：開啟「用耳機聽自己的聲音」後說話試試。想要更低沉的聲音，就把音高和音色一起降低；想要更細的聲音，就一起提高。
+KENDİ SESİN	你的專屬聲音
+Kaydet	儲存
+Kendi sesin	你的專屬聲音
+Kendi sesini yap: "+ Yeni ses" · düzenlemek için sesine sağ tıkla	製作專屬聲音：「+ 新聲音」· 在聲音上按右鍵即可編輯
+Oda	房間
+Ortam	場所
+Ortam miktarı	場所強度
+Perde	音高
+Rastgele	隨機
+Salon	大廳
+Ses rengi	音色
+Sesim	我的聲音
+Sesim {0}	我的聲音 {0}
+Sil	刪除
+Stadyum	體育場
+Titreme	顫抖
+Yeni ses	新聲音
+Yok	無
+{0} yarım ton	{0} 個半音
+İptal	取消

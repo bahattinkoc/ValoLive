@@ -614,3 +614,26 @@ Lejyon	Legion
 Fısıltı	Whisper
 Autotune	Autotune
 Şarkıcı robot	Singing robot
+Ad	Name
+Banyo	Bathroom
+Değişiklikleri anında duyarsın: "Kendi sesimi kulaklıktan duy" açıkken konuşarak dene. Kalın ses için perde ve rengi birlikte indir, ince ses için birlikte artır.	You hear changes right away: turn on "Hear my own voice in headphones" and talk. For a deeper voice lower pitch and color together; for a thinner one raise both.
+KENDİ SESİN	YOUR OWN VOICE
+Kaydet	Save
+Kendi sesin	Your own voice
+Kendi sesini yap: "+ Yeni ses" · düzenlemek için sesine sağ tıkla	Make your own voice: "+ New voice" · right-click your voice to edit it
+Oda	Room
+Ortam	Place
+Ortam miktarı	Place amount
+Perde	Pitch
+Rastgele	Random
+Salon	Hall
+Ses rengi	Voice color
+Sesim	My voice
+Sesim {0}	My voice {0}
+Sil	Delete
+Stadyum	Stadium
+Titreme	Tremble
+Yeni ses	New voice
+Yok	None
+{0} yarım ton	{0} semitones
+İptal	Cancel
