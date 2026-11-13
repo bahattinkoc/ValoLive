@@ -637,3 +637,11 @@ Yeni ses	صوت جديد
 Yok	لا شيء
 {0} yarım ton	{0} نصف نغمة
 İptal	إلغاء
+Kaydedildi. Bir tane daha?	تم الحفظ. واحدة أخرى؟
+Kayıt için ses değiştiricinin çalışması gerekiyor.	يجب تشغيل مغيّر الصوت للتسجيل.
+Klasörü aç	فتح المجلد
+Konuş… {0}	تكلّم… {0}
+Ses duyulmadı, tekrar dene.	لم يُسمع صوت، حاول مجددًا.
+İnternet kafe	مقهى إنترنت
+İnternet kafe: {0} bağırış, {1} ortam kaydı. Bağırışlar her seferinde başka biri gibi çalar. Kendi kayıtlarını (wav, mp3) klasördeki "sesler" ve "ortam" içine at.	مقهى إنترنت: {0} صرخات، {1} تسجيلات خلفية. كل صرخة تبدو كشخص مختلف. ضع تسجيلاتك (wav، mp3) في مجلدي "sesler" و"ortam".
+● Bağırış kaydet (4 sn)	● سجّل صرخة (4 ث)

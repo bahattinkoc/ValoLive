@@ -169,9 +169,11 @@ Kapalı: ValoLive → Ses Değiştirici sekmesinden aç.
 Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil
 Kategori
 Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.
+Kaydedildi. Bir tane daha?
 Kaydet
 Kaydet ve bağlan
 Kayıp serisinden sonra düşüş görünmüyor — tilt'e dayanıklısın.
+Kayıt için ses değiştiricinin çalışması gerekiyor.
 Kağıt uçak
 Kendi sesimi kulaklıktan duy
 Kendi sesin
@@ -190,8 +192,10 @@ Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):
 Kick'ten URL ve key al
 Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:
 Kick: başlık, kategori ve etiketler uygulandı ✓
+Klasörü aç
 Komutlar: 
 Komutları okumak için ana pencerede Kick ya da YouTube hesabını bağla.
+Konuş… {0}
 Kopyala
 Kurduğu bölge: 
 Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.
@@ -302,6 +306,7 @@ Selam chat!
 Selam chat! Bu yayın efsane 🔥
 Ses cihazı yanıt vermedi.
 Ses değiştiriciyi aç (Valorant sesli sohbeti)
+Ses duyulmadı, tekrar dene.
 Ses rengi
 Sesim
 Sesim {0}
@@ -600,6 +605,8 @@ zirve
 İnce
 İndirilen pakette ValoLive.exe yok
 İndiriliyor… %{0}
+İnternet kafe
+İnternet kafe: {0} bağırış, {1} ortam kaydı. Bağırışlar her seferinde başka biri gibi çalar. Kendi kayıtlarını (wav, mp3) klasördeki "sesler" ve "ortam" içine at.
 İptal
 İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.
 İzleyici başına bekleme
@@ -616,6 +623,7 @@ zirve
 ● BAĞLANIYOR…
 ● BAĞLANTI KOPTU — yeniden bağlanılıyor ({0})
 ● BAŞLATILAMADI
+● Bağırış kaydet (4 sn)
 ● CANLI
 ● DURDURULUYOR…
 ● EKRAN YAKALAMA YENİLENİYOR (yayın açık)

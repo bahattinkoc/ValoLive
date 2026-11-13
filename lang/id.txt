@@ -637,3 +637,11 @@ Yeni ses	Suara baru
 Yok	Tidak ada
 {0} yarım ton	{0} semiton
 İptal	Batal
+Kaydedildi. Bir tane daha?	Tersimpan. Satu lagi?
+Kayıt için ses değiştiricinin çalışması gerekiyor.	Pengubah suara harus berjalan untuk merekam.
+Klasörü aç	Buka folder
+Konuş… {0}	Bicara… {0}
+Ses duyulmadı, tekrar dene.	Tidak ada suara, coba lagi.
+İnternet kafe	Warnet
+İnternet kafe: {0} bağırış, {1} ortam kaydı. Bağırışlar her seferinde başka biri gibi çalar. Kendi kayıtlarını (wav, mp3) klasördeki "sesler" ve "ortam" içine at.	Warnet: {0} teriakan, {1} rekaman suasana. Setiap teriakan terdengar seperti orang lain. Taruh rekamanmu sendiri (wav, mp3) di folder "sesler" dan "ortam".
+● Bağırış kaydet (4 sn)	● Rekam teriakan (4 dtk)

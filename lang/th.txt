@@ -637,3 +637,11 @@ Yeni ses	เสียงใหม่
 Yok	ไม่มี
 {0} yarım ton	{0} ครึ่งเสียง
 İptal	ยกเลิก
+Kaydedildi. Bir tane daha?	บันทึกแล้ว อีกอันไหม?
+Kayıt için ses değiştiricinin çalışması gerekiyor.	ต้องเปิดตัวเปลี่ยนเสียงไว้จึงจะอัดได้
+Klasörü aç	เปิดโฟลเดอร์
+Konuş… {0}	พูดเลย… {0}
+Ses duyulmadı, tekrar dene.	ไม่ได้ยินเสียง ลองอีกครั้ง
+İnternet kafe	ร้านเน็ต
+İnternet kafe: {0} bağırış, {1} ortam kaydı. Bağırışlar her seferinde başka biri gibi çalar. Kendi kayıtlarını (wav, mp3) klasördeki "sesler" ve "ortam" içine at.	ร้านเน็ต: เสียงตะโกน {0} อัน, เสียงบรรยากาศ {1} อัน เสียงตะโกนแต่ละครั้งจะฟังเหมือนคนละคน ใส่ไฟล์อัดเสียงของคุณ (wav, mp3) ในโฟลเดอร์ "sesler" และ "ortam"
+● Bağırış kaydet (4 sn)	● อัดเสียงตะโกน (4 วิ)

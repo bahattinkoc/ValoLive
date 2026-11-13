@@ -637,3 +637,11 @@ Yeni ses	Nuova voce
 Yok	Nessuno
 {0} yarım ton	{0} semitoni
 İptal	Annulla
+Kaydedildi. Bir tane daha?	Salvato. Un altro?
+Kayıt için ses değiştiricinin çalışması gerekiyor.	Il modificatore vocale deve essere attivo per registrare.
+Klasörü aç	Apri cartella
+Konuş… {0}	Parla… {0}
+Ses duyulmadı, tekrar dene.	Nessun suono, riprova.
+İnternet kafe	Internet café
+İnternet kafe: {0} bağırış, {1} ortam kaydı. Bağırışlar her seferinde başka biri gibi çalar. Kendi kayıtlarını (wav, mp3) klasördeki "sesler" ve "ortam" içine at.	Internet café: {0} urla, {1} registrazioni d'ambiente. Ogni urlo suona come un'altra persona. Metti le tue registrazioni (wav, mp3) nelle cartelle «sesler» e «ortam».
+● Bağırış kaydet (4 sn)	● Registra un urlo (4 s)

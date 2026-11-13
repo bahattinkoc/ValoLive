@@ -637,3 +637,11 @@ Yeni ses	Новый голос
 Yok	Нет
 {0} yarım ton	{0} полутонов
 İptal	Отмена
+Kaydedildi. Bir tane daha?	Сохранено. Ещё один?
+Kayıt için ses değiştiricinin çalışması gerekiyor.	Для записи должен работать преобразователь голоса.
+Klasörü aç	Открыть папку
+Konuş… {0}	Говори… {0}
+Ses duyulmadı, tekrar dene.	Звука не было, попробуй ещё раз.
+İnternet kafe	Интернет-кафе
+İnternet kafe: {0} bağırış, {1} ortam kaydı. Bağırışlar her seferinde başka biri gibi çalar. Kendi kayıtlarını (wav, mp3) klasördeki "sesler" ve "ortam" içine at.	Интернет-кафе: криков — {0}, фоновых записей — {1}. Каждый крик звучит как другой человек. Клади свои записи (wav, mp3) в папки «sesler» и «ortam».
+● Bağırış kaydet (4 sn)	● Записать крик (4 с)

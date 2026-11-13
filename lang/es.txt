@@ -637,3 +637,11 @@ Yeni ses	Nueva voz
 Yok	Ninguno
 {0} yarım ton	{0} semitonos
 İptal	Cancelar
+Kaydedildi. Bir tane daha?	Guardado. ¿Otro?
+Kayıt için ses değiştiricinin çalışması gerekiyor.	El cambiador de voz debe estar activo para grabar.
+Klasörü aç	Abrir carpeta
+Konuş… {0}	Habla… {0}
+Ses duyulmadı, tekrar dene.	No se oyó nada, inténtalo de nuevo.
+İnternet kafe	Cibercafé
+İnternet kafe: {0} bağırış, {1} ortam kaydı. Bağırışlar her seferinde başka biri gibi çalar. Kendi kayıtlarını (wav, mp3) klasördeki "sesler" ve "ortam" içine at.	Cibercafé: {0} gritos, {1} ambientes. Cada grito suena como otra persona. Pon tus propias grabaciones (wav, mp3) en las carpetas «sesler» y «ortam».
+● Bağırış kaydet (4 sn)	● Grabar un grito (4 s)

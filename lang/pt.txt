@@ -637,3 +637,11 @@ Yeni ses	Nova voz
 Yok	Nenhum
 {0} yarım ton	{0} semitons
 İptal	Cancelar
+Kaydedildi. Bir tane daha?	Salvo. Mais um?
+Kayıt için ses değiştiricinin çalışması gerekiyor.	O modificador de voz precisa estar ativo para gravar.
+Klasörü aç	Abrir pasta
+Konuş… {0}	Fale… {0}
+Ses duyulmadı, tekrar dene.	Nenhum som ouvido, tente de novo.
+İnternet kafe	Lan house
+İnternet kafe: {0} bağırış, {1} ortam kaydı. Bağırışlar her seferinde başka biri gibi çalar. Kendi kayıtlarını (wav, mp3) klasördeki "sesler" ve "ortam" içine at.	Lan house: {0} gritos, {1} gravações de ambiente. Cada grito soa como outra pessoa. Coloque suas gravações (wav, mp3) nas pastas "sesler" e "ortam".
+● Bağırış kaydet (4 sn)	● Gravar um grito (4 s)

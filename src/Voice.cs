@@ -339,6 +339,7 @@ namespace ValoLive
             P("hayalet", L.T("Hayalet"), sr => new Fx[] { new Gate(sr), new Lpc(sr, Lpc.Source.Noise), Biquad.Highpass(sr, 300), new ModDelay(sr, 3, 2, 0.5, 0, 0, 1), new Tremolo(sr, 0.8, 0.4f), new ConvVerb(sr, Room.Salon, 0.9f, 0.6f), new Gain(6.5) }),
             P("yasli", L.T("Yaşlı"), sr => new Fx[] { new Psola(sr, -1.5, 0.95, vibratoHz: 5.5, vibratoSt: 0.45), Biquad.Highpass(sr, 220), Biquad.Lowpass(sr, 3800), new Gain(2) }),
             P("sarhos", L.T("Sarhoş"), sr => new Fx[] { new Psola(sr, -1, 0.97, vibratoHz: 0.3, vibratoSt: 1.3), new Echo(sr, 120, 0.2f, 0.2f) }),
+            P("kafe", L.T("İnternet kafe"), sr => new Fx[] { new Cafe(sr) }),
         };
 
         static volatile Preset[] all = Builtin;
@@ -372,6 +373,7 @@ namespace ValoLive
             new KeyValuePair<string, string>("telefon", L.T("Telefon")),
             new KeyValuePair<string, string>("megafon", L.T("Megafon")),
             new KeyValuePair<string, string>("sualti", L.T("Su altı")),
+            new KeyValuePair<string, string>("kafe", L.T("İnternet kafe")),
         };
 
         static Fx[] CustomChain(int sr, VoiceCustom c)
@@ -397,6 +399,7 @@ namespace ValoLive
                 case "telefon": l.AddRange(new Fx[] { Biquad.Highpass(sr, 400), Biquad.Lowpass(sr, 3200), new Crush(12, Math.Max(1, sr / 8000)), new Gain(4.5) }); break;
                 case "megafon": l.AddRange(new Fx[] { Biquad.Highpass(sr, 650), Biquad.Lowpass(sr, 4000), Biquad.Peak(sr, 1800, 1, 6), new Drive(3), new Gain(-5) }); break;
                 case "sualti": l.AddRange(new Fx[] { new ModDelay(sr, 4, 3, 1.3, 0, 0, 1), new Wobble(sr, 520, 260, 0.7), new Verb(sr, 0.5f, 0.35f, 0.6f), new Bubbles(sr) }); break;
+                case "kafe": l.Add(new Cafe(sr, mix)); break;
             }
             return l.ToArray();
         }
@@ -736,6 +739,7 @@ namespace ValoLive
                                     mono[f] = s / ch;
                                     inPk = Math.Max(inPk, Math.Abs(mono[f]));
                                 }
+                                CafeBank.Tap(mono, n, rate);
                                 runner.Mono(mono, n, rate);
                                 for (int f = 0; f < n; f++) outPk = Math.Max(outPk, Math.Abs(mono[f]));
                                 InLevel = Math.Max(inPk, InLevel * 0.85f);

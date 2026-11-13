@@ -637,3 +637,11 @@ Yeni ses	Nowy głos
 Yok	Brak
 {0} yarım ton	{0} półtonów
 İptal	Anuluj
+Kaydedildi. Bir tane daha?	Zapisano. Jeszcze jeden?
+Kayıt için ses değiştiricinin çalışması gerekiyor.	Do nagrywania zmieniacz głosu musi działać.
+Klasörü aç	Otwórz folder
+Konuş… {0}	Mów… {0}
+Ses duyulmadı, tekrar dene.	Nic nie słychać, spróbuj ponownie.
+İnternet kafe	Kafejka internetowa
+İnternet kafe: {0} bağırış, {1} ortam kaydı. Bağırışlar her seferinde başka biri gibi çalar. Kendi kayıtlarını (wav, mp3) klasördeki "sesler" ve "ortam" içine at.	Kafejka internetowa: {0} okrzyków, {1} nagrań tła. Każdy okrzyk brzmi jak ktoś inny. Wrzuć własne nagrania (wav, mp3) do folderów „sesler” i „ortam”.
+● Bağırış kaydet (4 sn)	● Nagraj okrzyk (4 s)

@@ -637,3 +637,11 @@ Yeni ses	Giọng mới
 Yok	Không
 {0} yarım ton	{0} nửa cung
 İptal	Hủy
+Kaydedildi. Bir tane daha?	Đã lưu. Thêm cái nữa?
+Kayıt için ses değiştiricinin çalışması gerekiyor.	Bộ đổi giọng phải đang chạy mới ghi âm được.
+Klasörü aç	Mở thư mục
+Konuş… {0}	Nói đi… {0}
+Ses duyulmadı, tekrar dene.	Không nghe thấy gì, thử lại nhé.
+İnternet kafe	Quán net
+İnternet kafe: {0} bağırış, {1} ortam kaydı. Bağırışlar her seferinde başka biri gibi çalar. Kendi kayıtlarını (wav, mp3) klasördeki "sesler" ve "ortam" içine at.	Quán net: {0} tiếng la, {1} bản ghi nền. Mỗi tiếng la nghe như một người khác. Bỏ bản ghi của bạn (wav, mp3) vào thư mục "sesler" và "ortam".
+● Bağırış kaydet (4 sn)	● Ghi tiếng la (4 giây)
