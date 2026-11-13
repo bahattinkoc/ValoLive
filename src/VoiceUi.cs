@@ -52,7 +52,8 @@ namespace ValoLive
             y = Section(L.T("EFEKTLER"), 4);
             voiceGrid = new VoiceGrid { Location = new Point(cx, y - 2), Width = ColW };
             voiceGrid.Height = voiceGrid.HeightFor(ColW);
-            voiceGrid.Picked += PickVoice;
+            // Kapalıyken efekte tıklamak açar: yoksa seçim görünür ama hiçbir ses işlenmez (sanal mikrofon sessiz kalır).
+            voiceGrid.Picked += id => { PickVoice(id); if (!chkVoice.Checked) chkVoice.Checked = true; };
             host.Controls.Add(voiceGrid);
             y += voiceGrid.Height + 8;
             chkVoiceMon = new VToggle { Text = L.T("Kendi sesimi kulaklıktan duy"), ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
