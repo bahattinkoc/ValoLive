@@ -35,6 +35,7 @@ Analizim
 Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.
 Atak
 Atakta
+Autotune
 Ayrıntı: %LOCALAPPDATA%\ValoLive\ffmpeg.log
 Açmak için simgeye tıkla; çıkış simgenin sağ tık menüsünde.
 BAĞLANTI
@@ -116,6 +117,7 @@ F9: sniper perdesi · F10: yayın özeti
 FIRSAT
 Fişek
 Fişek (hepsi)
+Fısıltı
 GERİ DÖNÜŞ
 GG, TEŞEKKÜRLER!
 Gece
@@ -188,6 +190,7 @@ Kurduğu bölge:
 Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.
 Kısayollar: 1-4 sekmeler · B brifing · Esc oyuncu sekmesini kapat · tekerlek kaydırır
 LOBİDE
+Lejyon
 MAÇ
 MAÇ ODASI
 MAÇ SAYISI
@@ -580,6 +583,7 @@ zirve
 İzleyiciler chat'e komut yazar, ekranda canlanır. Kanal puanı gerekmez; her izleyici için bekleme süresi var.
 İğne
 ŞLAP!
+Şarkıcı robot
 Şişe
 Şişede mesaj
 Şu an maçta değil.

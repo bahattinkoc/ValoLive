@@ -610,3 +610,7 @@ Yaşlı	Kakek
 ● Sorun: {0}	● Masalah: {0}
 ● Çalışıyor: {0}	● Berjalan: {0}
 Uyarı: Steam'in sanal mikrofonu Valorant'ta boğuk duyulur. Ücretsiz VB-CABLE'ı kur, ValoLive onu kendiliğinden seçer.	Perhatian: mikrofon virtual Steam terdengar teredam di Valorant. Pasang VB-CABLE gratis; ValoLive akan memilihnya otomatis.
+Lejyon	Legiun
+Fısıltı	Bisikan
+Autotune	Autotune
+Şarkıcı robot	Robot penyanyi

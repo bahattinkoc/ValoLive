@@ -610,3 +610,7 @@ Yaşlı	Opa
 ● Sorun: {0}	● Problem: {0}
 ● Çalışıyor: {0}	● Läuft: {0}
 Uyarı: Steam'in sanal mikrofonu Valorant'ta boğuk duyulur. Ücretsiz VB-CABLE'ı kur, ValoLive onu kendiliğinden seçer.	Achtung: Steams virtuelles Mikro klingt in Valorant dumpf. Installiere das kostenlose VB-CABLE; ValoLive wählt es automatisch.
+Lejyon	Legion
+Fısıltı	Flüstern
+Autotune	Autotune
+Şarkıcı robot	Singender Roboter

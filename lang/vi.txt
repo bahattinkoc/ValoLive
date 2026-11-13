@@ -610,3 +610,7 @@ Yaşlı	Ông già
 ● Sorun: {0}	● Sự cố: {0}
 ● Çalışıyor: {0}	● Đang chạy: {0}
 Uyarı: Steam'in sanal mikrofonu Valorant'ta boğuk duyulur. Ücretsiz VB-CABLE'ı kur, ValoLive onu kendiliğinden seçer.	Lưu ý: micro ảo của Steam nghe bị rè, nghẹt trong Valorant. Hãy cài VB-CABLE miễn phí; ValoLive sẽ tự chọn nó.
+Lejyon	Quân đoàn
+Fısıltı	Thì thầm
+Autotune	Autotune
+Şarkıcı robot	Robot hát

@@ -610,3 +610,7 @@ Yaşlı	노인
 ● Sorun: {0}	● 문제: {0}
 ● Çalışıyor: {0}	● 작동 중: {0}
 Uyarı: Steam'in sanal mikrofonu Valorant'ta boğuk duyulur. Ücretsiz VB-CABLE'ı kur, ValoLive onu kendiliğinden seçer.	주의: Steam 가상 마이크는 Valorant에서 먹먹하게 들립니다. 무료 VB-CABLE을 설치하면 ValoLive가 자동으로 선택합니다.
+Lejyon	레기온
+Fısıltı	속삭임
+Autotune	오토튠
+Şarkıcı robot	노래하는 로봇

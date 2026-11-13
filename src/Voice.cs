@@ -9,7 +9,7 @@ namespace ValoLive
     // ---------- Ses değiştirici ----------
     // Valorant mikrofonu bir ses cihazından okur. Oyuna dokunmadan (Vanguard) sesi değiştirmenin yolu sanal mikrofon:
     // ValoLive gerçek mikrofonu okur, efekti uygular ve sonucu sanal bir kablonun "hoparlör" ucuna çalar; Valorant'ta giriş
-    // cihazı olarak kablonun "mikrofon" ucu seçilir. Efektler burada, örnek örnek (gecikme ~40 ms).
+    // cihazı olarak kablonun "mikrofon" ucu seçilir. Efektler burada, örnek örnek; gerçekçi sesler VoiceEngine.cs içinde (toplam gecikme ~60 ms).
 
     /// <summary>Tek kanallı, örnek başına çalışan efekt.</summary>
     abstract class Fx
@@ -302,24 +302,28 @@ namespace ValoLive
         public static readonly Preset[] All =
         {
             P("normal", L.T("Normal"), sr => new Fx[0]),
-            P("robot", L.T("Robot"), sr => new Fx[] { new Gate(sr), Biquad.Highpass(sr, 120), new Ring(sr, 50), new ModDelay(sr, 7, 0, 0, 0.6f, 0.6f, 0.6f), new Crush(10, 2), new Gain(3) }),
-            P("kadin", L.T("Kadın"), sr => new Fx[] { new Pitch(sr, 5), Biquad.Highpass(sr, 170), Biquad.Shelf(sr, 3500, 3, true) }),
-            P("kalin", L.T("Kalın"), sr => new Fx[] { new Pitch(sr, -4, 50), Biquad.Shelf(sr, 220, 3, false), new Gain(-1.5) }),
-            P("ince", L.T("İnce"), sr => new Fx[] { new Pitch(sr, 7), Biquad.Highpass(sr, 200) }),
-            P("cocuk", L.T("Çocuk"), sr => new Fx[] { new Pitch(sr, 9, 30), Biquad.Highpass(sr, 280), Biquad.Peak(sr, 2600, 1, 3) }),
-            P("sincap", L.T("Sincap"), sr => new Fx[] { new Pitch(sr, 12, 25), Biquad.Highpass(sr, 300), new Gain(1.5) }),
-            P("dev", L.T("Dev"), sr => new Fx[] { new Pitch(sr, -8, 60), Biquad.Shelf(sr, 200, 4, false), new Verb(sr, 0.3f, 0.18f), new Gain(-3) }),
-            P("canavar", L.T("Canavar"), sr => new Fx[] { new Gate(sr), new Pitch(sr, -10, 60), Biquad.Shelf(sr, 180, 6, false), new Drive(4), Biquad.Lowpass(sr, 3200), new Verb(sr, 0.4f, 0.2f), new Gain(-13) }),
-            P("iblis", L.T("İblis"), sr => new Fx[] { new Gate(sr), new Parallel(new[] { 0.8f, 0.6f }, new Fx[] { new Pitch(sr, -12, 60) }, new Fx[] { new Pitch(sr, -5, 50) }), new Drive(2), new Verb(sr, 0.6f, 0.3f), new Gain(-8) }),
+            P("robot", L.T("Robot"), sr => new Fx[] { new Gate(sr), new Lpc(sr, Lpc.Source.Pulse, 98), new ModDelay(sr, 5, 0, 0, 0.45f, 0.75f, 0.45f), new Gain(0.5) }),
+            P("kadin", L.T("Kadın"), sr => new Fx[] { new Psola(sr, 7, 1.17), Biquad.Highpass(sr, 150), Biquad.Shelf(sr, 4000, 2, true), new Gain(2.5) }),
+            P("kalin", L.T("Kalın"), sr => new Fx[] { new Psola(sr, -4, 0.88), Biquad.Shelf(sr, 220, 2, false) }),
+            P("ince", L.T("İnce"), sr => new Fx[] { new Psola(sr, 3, 1.25), Biquad.Highpass(sr, 250), Biquad.Peak(sr, 1600, 1.2, 3), new Gain(1) }),
+            P("cocuk", L.T("Çocuk"), sr => new Fx[] { new Psola(sr, 9, 1.3), Biquad.Highpass(sr, 250), new Gain(3) }),
+            P("sincap", L.T("Sincap"), sr => new Fx[] { new Psola(sr, 12, 1.55), Biquad.Highpass(sr, 300), new Gain(3) }),
+            P("dev", L.T("Dev"), sr => new Fx[] { new Psola(sr, -7, 0.78), Biquad.Shelf(sr, 200, 3, false), new Verb(sr, 0.3f, 0.15f), new Gain(-0.5) }),
+            P("canavar", L.T("Canavar"), sr => new Fx[] { new Gate(sr), new Psola(sr, -10, 0.72), new Tremolo(sr, 33, 0.35f), new Drive(3), Biquad.Lowpass(sr, 3400), new Verb(sr, 0.4f, 0.18f), new Gain(-7) }),
+            P("iblis", L.T("İblis"), sr => new Fx[] { new Gate(sr), new Parallel(new[] { 0.8f, 0.55f }, new Fx[] { new Psola(sr, -12, 0.7) }, new Fx[] { new Psola(sr, -5, 0.85) }), new Drive(2), new Verb(sr, 0.6f, 0.28f), new Gain(-6.5) }),
+            P("lejyon", L.T("Lejyon"), sr => new Fx[] { new Gate(sr), new Parallel(new[] { 0.6f, 0.5f, 0.45f }, new Fx[] { new Psola(sr, -12, 0.75) }, new Fx[] { new Psola(sr, 0.15, 1) }, new Fx[] { new Psola(sr, 7, 1.12) }), new Verb(sr, 0.7f, 0.3f), new Gain(-1) }),
+            P("fisilti", L.T("Fısıltı"), sr => new Fx[] { new Gate(sr), new Lpc(sr, Lpc.Source.Noise), Biquad.Highpass(sr, 200), new Gain(2) }),
+            P("autotune", L.T("Autotune"), sr => new Fx[] { new Psola(sr, 0, 1, Scale.Snap()), new Verb(sr, 0.3f, 0.12f) }),
+            P("robotsarki", L.T("Şarkıcı robot"), sr => new Fx[] { new Gate(sr), new Lpc(sr, Lpc.Source.Tuned, tune: Scale.Snap()), new ModDelay(sr, 12, 4, 0.8, 0, 0.8f, 0.5f), new Gain(1) }),
             P("sualti", L.T("Su altı"), sr => new Fx[] { new ModDelay(sr, 4, 3, 1.3, 0, 0, 1), new Wobble(sr, 520, 260, 0.7), new Verb(sr, 0.5f, 0.35f, 0.6f), new Gain(-1) }),
             P("telsiz", L.T("Telsiz"), sr => new Fx[] { new Gate(sr), Biquad.Highpass(sr, 500), Biquad.Lowpass(sr, 2800), new Drive(5), new Crush(8, 3), new Gain(-6) }),
             P("megafon", L.T("Megafon"), sr => new Fx[] { Biquad.Highpass(sr, 650), Biquad.Lowpass(sr, 4000), Biquad.Peak(sr, 1800, 1, 6), new Drive(3), new Gain(-5) }),
             P("telefon", L.T("Telefon"), sr => new Fx[] { Biquad.Highpass(sr, 400), Biquad.Lowpass(sr, 3200), new Crush(12, Math.Max(1, sr / 8000)), new Gain(4.5) }),
             P("magara", L.T("Mağara"), sr => new Fx[] { new Echo(sr, 300, 0.45f, 0.5f), new Verb(sr, 0.9f, 0.4f, 0.2f), new Gain(-2) }),
-            P("uzayli", L.T("Uzaylı"), sr => new Fx[] { new Pitch(sr, 4), new Ring(sr, 320, 0.35f), new ModDelay(sr, 2, 2, 0.25, 0.6f, 0.6f, 0.6f), new Gain(1) }),
-            P("hayalet", L.T("Hayalet"), sr => new Fx[] { new Pitch(sr, -2), Biquad.Highpass(sr, 300), new ModDelay(sr, 3, 2, 0.5, 0, 0, 1), new Tremolo(sr, 0.8, 0.4f), new Verb(sr, 1, 0.7f, 0.2f, 0.6f), new Gain(9) }),
-            P("yasli", L.T("Yaşlı"), sr => new Fx[] { new ModDelay(sr, 2, 1.2, 6.5, 0, 0, 1), new Pitch(sr, -1), Biquad.Highpass(sr, 250), Biquad.Lowpass(sr, 3600), new Gain(3) }),
-            P("sarhos", L.T("Sarhoş"), sr => new Fx[] { new ModDelay(sr, 3, 14, 0.35, 0, 0, 1), new Echo(sr, 120, 0.2f, 0.2f) }),
+            P("uzayli", L.T("Uzaylı"), sr => new Fx[] { new Psola(sr, 3, 1.35), new Ring(sr, 320, 0.25f), new ModDelay(sr, 2, 2, 0.25, 0.6f, 0.6f, 0.6f), new Gain(3) }),
+            P("hayalet", L.T("Hayalet"), sr => new Fx[] { new Gate(sr), new Lpc(sr, Lpc.Source.Noise), Biquad.Highpass(sr, 300), new ModDelay(sr, 3, 2, 0.5, 0, 0, 1), new Tremolo(sr, 0.8, 0.4f), new Verb(sr, 1, 0.7f, 0.2f, 0.6f), new Gain(6.5) }),
+            P("yasli", L.T("Yaşlı"), sr => new Fx[] { new Psola(sr, -1.5, 0.95, vibratoHz: 5.5, vibratoSt: 0.45), Biquad.Highpass(sr, 220), Biquad.Lowpass(sr, 3800), new Gain(2) }),
+            P("sarhos", L.T("Sarhoş"), sr => new Fx[] { new Psola(sr, -1, 0.97, vibratoHz: 0.3, vibratoSt: 1.3), new Echo(sr, 120, 0.2f, 0.2f) }),
         };
 
         public static Preset Find(string id) => All.FirstOrDefault(p => p.Id == id) ?? All[0];

@@ -610,3 +610,7 @@ Yaşlı	Anziano
 ● Sorun: {0}	● Problema: {0}
 ● Çalışıyor: {0}	● Attivo: {0}
 Uyarı: Steam'in sanal mikrofonu Valorant'ta boğuk duyulur. Ücretsiz VB-CABLE'ı kur, ValoLive onu kendiliğinden seçer.	Attenzione: il microfono virtuale di Steam suona ovattato in Valorant. Installa VB-CABLE (gratis); ValoLive lo sceglie da solo.
+Lejyon	Legione
+Fısıltı	Sussurro
+Autotune	Autotune
+Şarkıcı robot	Robot cantante
