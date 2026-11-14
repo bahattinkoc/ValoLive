@@ -670,7 +670,7 @@ Bas-konuş açıkken Valorant → Ayarlar → Ses → Ses Sohbeti → Parti ses 
 Bas-konuş tuşu	Клавиша рации
 Fare yan tuşu (geri)	Боковая кнопка мыши (назад)
 Fare yan tuşu (ileri)	Боковая кнопка мыши (вперёд)
-Panel tuşları	Клавиши саундборда
+Panel tuşları	Клавиши
 ValoLive bas-konuş (panel sesleri tuşsuz gider)	Рация ValoLive (звуки саундборда идут без клавиши)
 Henüz ses yok	Звуков пока нет
 Oyunda kopya kâğıdı göster (Ctrl+Alt+N)	Показывать шпаргалку в игре (Ctrl+Alt+N)

@@ -667,10 +667,10 @@ myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	Tidak bisa terh
 ✓ Eklendi	✓ Ditambahkan
 "Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sürükleyip sırala, sağ tıkla kaldır. Oyunda 1…9 numaralı tuşlar çalar, 0 susturur (Alt ya da Numpad: sağdaki ayar).	Tambahkan dari myinstants lewat "Cari suara" atau taruh mp3 di folder. Seret untuk mengurutkan, klik kanan untuk menghapus. Di game, tombol 1…9 memutar dan 0 menghentikan (Alt atau Numpad: pengaturan di kanan).
 Bas-konuş açıkken Valorant → Ayarlar → Ses → Ses Sohbeti → Parti ses sohbeti etkinleştirme modu: Otomatik yap; arkadaşların sesleri tuşsuz duyar. Takım sohbeti yalnızca Valorant'ın bas-konuşuyla çalışır: rastgele takımda V'yi tutup paneli Numpad ile çalmak en rahatı.	Saat push-to-talk aktif, atur Valorant → Pengaturan → Audio → Obrolan Suara → Mode Aktivasi Obrolan Suara Party ke Otomatis; temanmu mendengar suara tanpa tombol. Obrolan tim hanya bisa dengan push-to-talk Valorant: dengan pemain acak, tahan V dan putar suara lewat Numpad.
-Bas-konuş tuşu	Tombol push-to-talk
+Bas-konuş tuşu	Tombol PTT
 Fare yan tuşu (geri)	Tombol samping mouse (mundur)
 Fare yan tuşu (ileri)	Tombol samping mouse (maju)
-Panel tuşları	Tombol papan suara
+Panel tuşları	Tombol
 ValoLive bas-konuş (panel sesleri tuşsuz gider)	Push-to-talk ValoLive (suara papan tanpa tombol)
 Henüz ses yok	Belum ada suara
 Oyunda kopya kâğıdı göster (Ctrl+Alt+N)	Tampilkan contekan di game (Ctrl+Alt+N)

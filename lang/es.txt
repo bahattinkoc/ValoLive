@@ -667,10 +667,10 @@ myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	No se pudo cone
 ✓ Eklendi	✓ Añadido
 "Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sürükleyip sırala, sağ tıkla kaldır. Oyunda 1…9 numaralı tuşlar çalar, 0 susturur (Alt ya da Numpad: sağdaki ayar).	Añade desde myinstants con «Buscar sonidos» o pon mp3 en la carpeta. Arrastra para ordenar, clic derecho para quitar. En el juego, las teclas 1…9 reproducen y 0 detiene (Alt o teclado numérico: ajuste a la derecha).
 Bas-konuş açıkken Valorant → Ayarlar → Ses → Ses Sohbeti → Parti ses sohbeti etkinleştirme modu: Otomatik yap; arkadaşların sesleri tuşsuz duyar. Takım sohbeti yalnızca Valorant'ın bas-konuşuyla çalışır: rastgele takımda V'yi tutup paneli Numpad ile çalmak en rahatı.	Con pulsar para hablar activado, pon Valorant → Ajustes → Audio → Chat de voz → Modo de activación del chat de voz de grupo en Automático; tus amigos oyen los sonidos sin tecla. El chat de equipo solo funciona con el pulsar para hablar de Valorant: con desconocidos, mantén V y reproduce sonidos con el teclado numérico.
-Bas-konuş tuşu	Tecla de pulsar para hablar
+Bas-konuş tuşu	Tecla PTT
 Fare yan tuşu (geri)	Botón lateral del ratón (atrás)
 Fare yan tuşu (ileri)	Botón lateral del ratón (adelante)
-Panel tuşları	Teclas del panel
+Panel tuşları	Teclas
 ValoLive bas-konuş (panel sesleri tuşsuz gider)	Pulsar para hablar de ValoLive (los sonidos del panel no necesitan tecla)
 Henüz ses yok	Aún no hay sonidos
 Oyunda kopya kâğıdı göster (Ctrl+Alt+N)	Mostrar chuleta en el juego (Ctrl+Alt+N)

@@ -667,10 +667,10 @@ myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	myinstants に�
 ✓ Eklendi	✓ 追加済み
 "Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sürükleyip sırala, sağ tıkla kaldır. Oyunda 1…9 numaralı tuşlar çalar, 0 susturur (Alt ya da Numpad: sağdaki ayar).	「サウンドを探す」で myinstants から追加するか、mp3 をフォルダーに入れてください。ドラッグで並べ替え、右クリックで削除。ゲーム中は 1…9 キーで再生、0 で停止 (Alt かテンキー: 右の設定)。
 Bas-konuş açıkken Valorant → Ayarlar → Ses → Ses Sohbeti → Parti ses sohbeti etkinleştirme modu: Otomatik yap; arkadaşların sesleri tuşsuz duyar. Takım sohbeti yalnızca Valorant'ın bas-konuşuyla çalışır: rastgele takımda V'yi tutup paneli Numpad ile çalmak en rahatı.	プッシュトゥトークをオンにしたら、Valorant → 設定 → オーディオ → ボイスチャット → パーティーボイスチャットの起動モードを「自動」にしてください。友達にはキーなしでサウンドが聞こえます。チームチャットは Valorant のプッシュトゥトークでしか使えません。野良では V を押したままテンキーでサウンドを鳴らすのが楽です。
-Bas-konuş tuşu	プッシュトゥトークキー
+Bas-konuş tuşu	PTTキー
 Fare yan tuşu (geri)	マウスのサイドボタン (戻る)
 Fare yan tuşu (ileri)	マウスのサイドボタン (進む)
-Panel tuşları	サウンドボードのキー
+Panel tuşları	キー
 ValoLive bas-konuş (panel sesleri tuşsuz gider)	ValoLive のプッシュトゥトーク (サウンドボードはキー不要)
 Henüz ses yok	まだサウンドがありません
 Oyunda kopya kâğıdı göster (Ctrl+Alt+N)	ゲーム内にカンペを表示 (Ctrl+Alt+N)

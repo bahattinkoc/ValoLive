@@ -178,7 +178,7 @@ namespace ValoLive
                    tMemoryMap = L.T("Rakip hafızası: harita üstünde ikonlar (deneysel)"), tDest = L.T("Bu platforma yayınla");
             using (var cap = new Font(L.SansBold, 8.25f))
                 LabelW = Math.Max(104, new[] { "Stream URL", "Stream Key", L.T("Kick hesabı"), L.T("YouTube hesabı"), L.T("Başlık"), L.T("Kategori"), L.T("Etiketler"), "Riot ID", "HenrikDev key",
-                    L.T("Kalite"), L.T("Yakalama"), L.T("Uygulama"), L.T("Mikrofon"), L.T("Oyun sesi") }
+                    L.T("Kalite"), L.T("Yakalama"), L.T("Uygulama"), L.T("Mikrofon"), L.T("Oyun sesi"), L.T("Sanal mikrofon"), L.T("Bas-konuş tuşu"), L.T("Panel tuşları"), L.T("Yeri") }
                     .Max(s => TextRenderer.MeasureText(Theme.Upper(s), cap).Width) + 12);
             int toggleW = new[] { tAutoLobby, tAlerts, tWgc, tGpu, tDenoise, tMemory, tMemoryMap, tDest }.Max(s => VToggle.WidthFor(s, Font));
             ColW = Math.Min(560, Math.Max(Math.Max(420, LabelW + 316), toggleW + 4));

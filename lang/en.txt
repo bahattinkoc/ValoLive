@@ -667,7 +667,7 @@ myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	Couldn't reach 
 ✓ Eklendi	✓ Added
 "Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sürükleyip sırala, sağ tıkla kaldır. Oyunda 1…9 numaralı tuşlar çalar, 0 susturur (Alt ya da Numpad: sağdaki ayar).	Add from myinstants with "Find sounds" or drop mp3s into the folder. Drag to reorder, right-click to remove. In game, keys 1…9 play and 0 stops (Alt or Numpad: setting on the right).
 Bas-konuş açıkken Valorant → Ayarlar → Ses → Ses Sohbeti → Parti ses sohbeti etkinleştirme modu: Otomatik yap; arkadaşların sesleri tuşsuz duyar. Takım sohbeti yalnızca Valorant'ın bas-konuşuyla çalışır: rastgele takımda V'yi tutup paneli Numpad ile çalmak en rahatı.	With push-to-talk on, set Valorant → Settings → Audio → Voice Chat → Party Voice Activation Mode to Automatic; your friends hear sounds without a key. Team chat only works with Valorant's own push-to-talk: with random teammates, hold V and play sounds with the Numpad.
-Bas-konuş tuşu	Push-to-talk key
+Bas-konuş tuşu	PTT key
 Fare yan tuşu (geri)	Mouse side button (back)
 Fare yan tuşu (ileri)	Mouse side button (forward)
 Panel tuşları	Board keys

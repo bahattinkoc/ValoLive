@@ -667,10 +667,10 @@ myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	Impossibile rag
 ✓ Eklendi	✓ Aggiunto
 "Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sürükleyip sırala, sağ tıkla kaldır. Oyunda 1…9 numaralı tuşlar çalar, 0 susturur (Alt ya da Numpad: sağdaki ayar).	Aggiungi da myinstants con «Trova suoni» o metti mp3 nella cartella. Trascina per riordinare, clic destro per rimuovere. In gioco i tasti 1…9 riproducono e 0 ferma (Alt o tastierino: impostazione a destra).
 Bas-konuş açıkken Valorant → Ayarlar → Ses → Ses Sohbeti → Parti ses sohbeti etkinleştirme modu: Otomatik yap; arkadaşların sesleri tuşsuz duyar. Takım sohbeti yalnızca Valorant'ın bas-konuşuyla çalışır: rastgele takımda V'yi tutup paneli Numpad ile çalmak en rahatı.	Con il push-to-talk attivo, imposta Valorant → Impostazioni → Audio → Chat vocale → Modalità di attivazione chat vocale del gruppo su Automatica; gli amici sentono i suoni senza tasto. La chat di squadra funziona solo col push-to-talk di Valorant: con sconosciuti tieni premuto V e usa il tastierino.
-Bas-konuş tuşu	Tasto push-to-talk
+Bas-konuş tuşu	Tasto PTT
 Fare yan tuşu (geri)	Tasto laterale del mouse (indietro)
 Fare yan tuşu (ileri)	Tasto laterale del mouse (avanti)
-Panel tuşları	Tasti del soundboard
+Panel tuşları	Tasti
 ValoLive bas-konuş (panel sesleri tuşsuz gider)	Push-to-talk di ValoLive (i suoni del soundboard non servono tasti)
 Henüz ses yok	Ancora nessun suono
 Oyunda kopya kâğıdı göster (Ctrl+Alt+N)	Mostra il promemoria in gioco (Ctrl+Alt+N)
