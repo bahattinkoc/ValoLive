@@ -638,9 +638,31 @@ Yok	Aucun
 {0} yarım ton	{0} demi-tons
 İptal	Annuler
 Henüz ses yok: "Klasörü aç" ile ekle.	Aucun son pour l'instant : ajoutes-en avec « Ouvrir le dossier ».
-Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Mets des fichiers son (mp3, wav) dans le dossier, ils deviennent des boutons ici. En jeu, Alt+1…9 les joue, Alt+0 coupe. Garde ta touche push-to-talk enfoncée pour que ton équipe entende.
 SES PANELİ	SOUNDBOARD
 Ses	Volume
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	Les sons passent par le micro virtuel : active d'abord le modificateur de voix.
 Sustur	Couper
 Klasörü aç	Ouvrir le dossier
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Ajoute depuis myinstants avec « Trouver des sons » ou mets des mp3 dans le dossier. Clic droit pour retirer. En jeu, Alt+1…9 joue, Alt+0 coupe. Garde ta touche push-to-talk enfoncée pour que ton équipe entende.
++ Ekle	+ Ajouter
+Ara	Rechercher
+Arama	Recherche
+Aramak için bir şey yaz.	Écris quelque chose à rechercher.
+Bu ses açılamadı.	Impossible d'ouvrir ce son.
+Daha fazla	Plus
+Dünyada popüler	Populaires dans le monde
+Hepsi bu kadar.	C'est tout.
+Kapat	Fermer
+Liste	Liste
+Panel dolu ({0}): bir sesi kaldırmak için düğmesine sağ tıkla.	Soundboard plein ({0}) : clic droit sur un bouton pour le retirer.
+Panelde {0}/{1} ses.	{0}/{1} sons dans le soundboard.
+Panelden kaldır	Retirer du soundboard
+SES BUL	TROUVER DES SONS
+Ses bul	Trouver des sons
+Sesler myinstants.com'dan gelir ve başkalarına aittir; yalnızca kendi oyunun için kullan.	Les sons viennent de myinstants.com et appartiennent à d'autres ; utilise-les seulement dans tes propres parties.
+Sonuç yok.	Aucun résultat.
+Türkiye'de popüler	Populaires en Turquie
+Yükleniyor…	Chargement…
+myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	Impossible de joindre myinstants. Vérifie ta connexion internet.
+İndirilemedi, tekrar dene.	Échec du téléchargement, réessaie.
+✓ Eklendi	✓ Ajouté

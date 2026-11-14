@@ -638,9 +638,31 @@ Yok	Keine
 {0} yarım ton	{0} Halbtöne
 İptal	Abbrechen
 Henüz ses yok: "Klasörü aç" ile ekle.	Noch keine Sounds: füge welche über „Ordner öffnen“ hinzu.
-Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Lege Sounddateien (mp3, wav) in den Ordner, hier werden sie zu Knöpfen. Im Spiel spielt Alt+1…9 ab, Alt+0 stoppt. Halte deine Push-to-Talk-Taste, damit dein Team es hört.
 SES PANELİ	SOUNDBOARD
 Ses	Lautstärke
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	Sounds laufen über das virtuelle Mikrofon: schalte zuerst den Stimmverzerrer ein.
 Sustur	Stopp
 Klasörü aç	Ordner öffnen
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Mit „Sounds finden“ von myinstants hinzufügen oder mp3s in den Ordner legen. Rechtsklick entfernt. Im Spiel spielt Alt+1…9 ab, Alt+0 stoppt. Halte deine Push-to-Talk-Taste, damit dein Team es hört.
++ Ekle	+ Hinzufügen
+Ara	Suchen
+Arama	Suche
+Aramak için bir şey yaz.	Gib etwas zum Suchen ein.
+Bu ses açılamadı.	Dieser Sound ließ sich nicht öffnen.
+Daha fazla	Mehr
+Dünyada popüler	Weltweit beliebt
+Hepsi bu kadar.	Das war alles.
+Kapat	Schließen
+Liste	Liste
+Panel dolu ({0}): bir sesi kaldırmak için düğmesine sağ tıkla.	Soundboard ist voll ({0}): Rechtsklick auf einen Knopf, um ihn zu entfernen.
+Panelde {0}/{1} ses.	{0}/{1} Sounds im Soundboard.
+Panelden kaldır	Aus dem Soundboard entfernen
+SES BUL	SOUNDS FINDEN
+Ses bul	Sounds finden
+Sesler myinstants.com'dan gelir ve başkalarına aittir; yalnızca kendi oyunun için kullan.	Die Sounds stammen von myinstants.com und gehören anderen; nutze sie nur in deinen eigenen Spielen.
+Sonuç yok.	Keine Ergebnisse.
+Türkiye'de popüler	Beliebt in der Türkei
+Yükleniyor…	Lädt…
+myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	myinstants nicht erreichbar. Prüfe deine Internetverbindung.
+İndirilemedi, tekrar dene.	Download fehlgeschlagen, versuch es nochmal.
+✓ Eklendi	✓ Hinzugefügt

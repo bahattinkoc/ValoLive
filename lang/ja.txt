@@ -638,9 +638,31 @@ Yok	なし
 {0} yarım ton	{0} 半音
 İptal	キャンセル
 Henüz ses yok: "Klasörü aç" ile ekle.	まだサウンドがありません:「フォルダーを開く」から追加してください。
-Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	サウンドファイル (mp3, wav) をフォルダーに入れると、ここにボタンとして表示されます。ゲーム中は Alt+1…9 で再生、Alt+0 で停止。チームに聞こえるようにプッシュトゥトークキーを押したままにしてください。
 SES PANELİ	サウンドボード
 Ses	音量
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	サウンドは仮想マイクから流れます。先にボイスチェンジャーをオンにしてください。
 Sustur	停止
 Klasörü aç	フォルダーを開く
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	「サウンドを探す」で myinstants から追加するか、mp3 をフォルダーに入れてください。右クリックで削除。ゲーム中は Alt+1…9 で再生、Alt+0 で停止。チームに聞こえるようにプッシュトゥトークキーを押したままにしてください。
++ Ekle	+ 追加
+Ara	検索
+Arama	検索
+Aramak için bir şey yaz.	検索する言葉を入力してください。
+Bu ses açılamadı.	このサウンドを開けませんでした。
+Daha fazla	もっと見る
+Dünyada popüler	世界で人気
+Hepsi bu kadar.	これで全部です。
+Kapat	閉じる
+Liste	リスト
+Panel dolu ({0}): bir sesi kaldırmak için düğmesine sağ tıkla.	サウンドボードがいっぱいです ({0}):ボタンを右クリックして削除してください。
+Panelde {0}/{1} ses.	サウンドボード: {0}/{1}
+Panelden kaldır	サウンドボードから削除
+SES BUL	サウンドを探す
+Ses bul	サウンドを探す
+Sesler myinstants.com'dan gelir ve başkalarına aittir; yalnızca kendi oyunun için kullan.	サウンドは myinstants.com のもので、他人の作品です。自分のゲーム内だけで使ってください。
+Sonuç yok.	結果なし。
+Türkiye'de popüler	トルコで人気
+Yükleniyor…	読み込み中…
+myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	myinstants に接続できません。インターネット接続を確認してください。
+İndirilemedi, tekrar dene.	ダウンロードに失敗しました。もう一度お試しください。
+✓ Eklendi	✓ 追加済み

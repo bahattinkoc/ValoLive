@@ -100,17 +100,19 @@ namespace ValoLive
             y = Section(L.T("SES PANELİ"), y);
             var hint = new Label
             {
-                Text = L.T("Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut."),
+                Text = L.T("\"Ses bul\" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut."),
                 ForeColor = Mut, AutoSize = true, MaximumSize = new Size(ColW, 0), Location = new Point(cx, y),
             };
             host.Controls.Add(hint);
             y += hint.GetPreferredSize(new Size(ColW, 0)).Height + 8;
             // Önce denetim satırı, altında düğmeler: az ses varken boşluk en altta kalır.
-            int ow = Theme.ButtonWidth(L.T("Klasörü aç"), 24, 90), sw = Theme.ButtonWidth(L.T("Sustur"), 24, 70);
-            var open = MakeButton(L.T("Klasörü aç"), new Rectangle(cx, y, ow, 30), Field);
-            var stop = MakeButton(L.T("Sustur"), new Rectangle(cx + ow + 8, y, sw, 30), Field);
-            open.Font = stop.Font = new Font(L.SansBold, 9f);
-            int vx = cx + ow + sw + 24;
+            int fw = Theme.ButtonWidth(L.T("Ses bul"), 24, 80), ow = Theme.ButtonWidth(L.T("Klasörü aç"), 24, 90), sw = Theme.ButtonWidth(L.T("Sustur"), 24, 70);
+            var find = MakeButton(L.T("Ses bul"), new Rectangle(cx, y, fw, 30), Red);
+            var open = MakeButton(L.T("Klasörü aç"), new Rectangle(cx + fw + 8, y, ow, 30), Field);
+            var stop = MakeButton(L.T("Sustur"), new Rectangle(cx + fw + ow + 16, y, sw, 30), Field);
+            find.Font = open.Font = stop.Font = new Font(L.SansBold, 9f);
+            find.Click += (s, e) => FindSounds();
+            int vx = cx + fw + ow + sw + 30;
             var volCap = new Label { Text = Theme.Upper(L.T("Ses")), ForeColor = Mut, Font = new Font(L.SansBold, 8.25f), AutoSize = true, Location = new Point(vx, y + 8) };
             host.Controls.Add(volCap);
             int sx = vx + volCap.PreferredWidth + 8;
@@ -127,6 +129,16 @@ namespace ValoLive
                 var b = MakeButton("", new Rectangle(cx + i % cols * (bw + gap), y + i / cols * (bh + gap), bw, bh), Field);
                 b.Font = new Font(L.SansBold, 9f); b.Visible = false;
                 b.Click += (s, e) => PlayBoard(k);
+                // Sağ tık: panelden kaldır (dosya "kaldirilanlar" klasörüne taşınır, silinmez).
+                b.MouseUp += (s, e) =>
+                {
+                    if (e.Button != MouseButtons.Right) return;
+                    var snd = SoundBoard.Sounds;
+                    if (k >= snd.Length) return;
+                    var menu = new ContextMenuStrip();
+                    menu.Items.Add(L.T("Panelden kaldır"), null, (s2, e2) => { try { SoundBoard.StopAll(); SoundBoard.Remove(snd[k]); } catch { } });
+                    menu.Show(boardButtons[k], e.Location);
+                };
                 boardButtons[i] = b;
             }
             y += (boardButtons.Length + cols - 1) / cols * (bh + gap) + 4;

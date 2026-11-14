@@ -638,9 +638,31 @@ Yok	ไม่มี
 {0} yarım ton	{0} ครึ่งเสียง
 İptal	ยกเลิก
 Henüz ses yok: "Klasörü aç" ile ekle.	ยังไม่มีเสียง: เพิ่มด้วย "เปิดโฟลเดอร์"
-Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	ใส่ไฟล์เสียง (mp3, wav) ในโฟลเดอร์ แล้วจะกลายเป็นปุ่มตรงนี้ ในเกมกด Alt+1…9 เพื่อเล่น Alt+0 เพื่อหยุด กดปุ่มกดเพื่อพูดค้างไว้เพื่อให้ทีมได้ยิน
 SES PANELİ	ซาวด์บอร์ด
 Ses	ระดับเสียง
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	เสียงจะออกทางไมค์เสมือน: เปิดตัวเปลี่ยนเสียงก่อน
 Sustur	หยุด
 Klasörü aç	เปิดโฟลเดอร์
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	เพิ่มจาก myinstants ด้วย "หาเสียง" หรือใส่ไฟล์ mp3 ในโฟลเดอร์ คลิกขวาเพื่อเอาออก ในเกมกด Alt+1…9 เพื่อเล่น Alt+0 เพื่อหยุด กดปุ่มกดเพื่อพูดค้างไว้เพื่อให้ทีมได้ยิน
++ Ekle	+ เพิ่ม
+Ara	ค้นหา
+Arama	การค้นหา
+Aramak için bir şey yaz.	พิมพ์คำที่ต้องการค้นหา
+Bu ses açılamadı.	เปิดเสียงนี้ไม่ได้
+Daha fazla	เพิ่มเติม
+Dünyada popüler	ยอดนิยมทั่วโลก
+Hepsi bu kadar.	หมดแล้ว
+Kapat	ปิด
+Liste	รายการ
+Panel dolu ({0}): bir sesi kaldırmak için düğmesine sağ tıkla.	ซาวด์บอร์ดเต็มแล้ว ({0}): คลิกขวาที่ปุ่มเสียงเพื่อเอาออก
+Panelde {0}/{1} ses.	มีเสียงในซาวด์บอร์ด {0}/{1}
+Panelden kaldır	เอาออกจากซาวด์บอร์ด
+SES BUL	หาเสียง
+Ses bul	หาเสียง
+Sesler myinstants.com'dan gelir ve başkalarına aittir; yalnızca kendi oyunun için kullan.	เสียงมาจาก myinstants.com และเป็นของผู้อื่น ใช้ในเกมของคุณเองเท่านั้น
+Sonuç yok.	ไม่พบผลลัพธ์
+Türkiye'de popüler	ยอดนิยมในตุรกี
+Yükleniyor…	กำลังโหลด…
+myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	เชื่อมต่อ myinstants ไม่ได้ ตรวจสอบการเชื่อมต่ออินเทอร์เน็ต
+İndirilemedi, tekrar dene.	ดาวน์โหลดไม่สำเร็จ ลองอีกครั้ง
+✓ Eklendi	✓ เพิ่มแล้ว

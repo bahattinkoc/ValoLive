@@ -638,9 +638,31 @@ Yok	無
 {0} yarım ton	{0} 個半音
 İptal	取消
 Henüz ses yok: "Klasörü aç" ile ekle.	還沒有音效：用「開啟資料夾」加入。
-Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	把音效檔 (mp3、wav) 放進資料夾，這裡就會出現按鈕。遊戲中 Alt+1…9 播放，Alt+0 停止。按住按鍵通話鍵，隊友才聽得到。
 SES PANELİ	音效板
 Ses	音量
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	音效透過虛擬麥克風送出：請先開啟變聲器。
 Sustur	停止
 Klasörü aç	開啟資料夾
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	用「尋找音效」從 myinstants 加入，或把 mp3 放進資料夾。按右鍵移除。遊戲中 Alt+1…9 播放，Alt+0 停止。按住按鍵通話鍵，隊友才聽得到。
++ Ekle	+ 加入
+Ara	搜尋
+Arama	搜尋
+Aramak için bir şey yaz.	請輸入要搜尋的內容。
+Bu ses açılamadı.	無法開啟這個音效。
+Daha fazla	更多
+Dünyada popüler	全球熱門
+Hepsi bu kadar.	就這些了。
+Kapat	關閉
+Liste	清單
+Panel dolu ({0}): bir sesi kaldırmak için düğmesine sağ tıkla.	音效板已滿 ({0})：在按鈕上按右鍵即可移除。
+Panelde {0}/{1} ses.	音效板中有 {0}/{1} 個音效。
+Panelden kaldır	從音效板移除
+SES BUL	尋找音效
+Ses bul	尋找音效
+Sesler myinstants.com'dan gelir ve başkalarına aittir; yalnızca kendi oyunun için kullan.	音效來自 myinstants.com，屬於他人所有；只在你自己的遊戲中使用。
+Sonuç yok.	沒有結果。
+Türkiye'de popüler	土耳其熱門
+Yükleniyor…	載入中…
+myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	無法連線到 myinstants，請檢查網路連線。
+İndirilemedi, tekrar dene.	下載失敗，請再試一次。
+✓ Eklendi	✓ 已加入

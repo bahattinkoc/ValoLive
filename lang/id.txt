@@ -638,9 +638,31 @@ Yok	Tidak ada
 {0} yarım ton	{0} semiton
 İptal	Batal
 Henüz ses yok: "Klasörü aç" ile ekle.	Belum ada suara: tambahkan lewat "Buka folder".
-Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Taruh file suara (mp3, wav) di folder, nanti jadi tombol di sini. Di game, Alt+1…9 memutar, Alt+0 menghentikan. Tahan tombol push-to-talk agar timmu mendengarnya.
 SES PANELİ	PAPAN SUARA
 Ses	Volume
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	Suara keluar lewat mikrofon virtual: nyalakan pengubah suara dulu.
 Sustur	Hentikan
 Klasörü aç	Buka folder
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Tambahkan dari myinstants lewat "Cari suara" atau taruh mp3 di folder. Klik kanan untuk menghapus. Di game, Alt+1…9 memutar, Alt+0 menghentikan. Tahan tombol push-to-talk agar timmu mendengarnya.
++ Ekle	+ Tambah
+Ara	Cari
+Arama	Pencarian
+Aramak için bir şey yaz.	Ketik sesuatu untuk dicari.
+Bu ses açılamadı.	Suara ini tidak bisa dibuka.
+Daha fazla	Lagi
+Dünyada popüler	Populer di dunia
+Hepsi bu kadar.	Sudah semua.
+Kapat	Tutup
+Liste	Daftar
+Panel dolu ({0}): bir sesi kaldırmak için düğmesine sağ tıkla.	Papan suara penuh ({0}): klik kanan tombol suara untuk menghapusnya.
+Panelde {0}/{1} ses.	{0}/{1} suara di papan.
+Panelden kaldır	Hapus dari papan
+SES BUL	CARI SUARA
+Ses bul	Cari suara
+Sesler myinstants.com'dan gelir ve başkalarına aittir; yalnızca kendi oyunun için kullan.	Suara berasal dari myinstants.com dan milik orang lain; pakai hanya di game-mu sendiri.
+Sonuç yok.	Tidak ada hasil.
+Türkiye'de popüler	Populer di Turki
+Yükleniyor…	Memuat…
+myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	Tidak bisa terhubung ke myinstants. Periksa koneksi internetmu.
+İndirilemedi, tekrar dene.	Gagal mengunduh, coba lagi.
+✓ Eklendi	✓ Ditambahkan

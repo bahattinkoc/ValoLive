@@ -638,9 +638,31 @@ Yok	Nessuno
 {0} yarım ton	{0} semitoni
 İptal	Annulla
 Henüz ses yok: "Klasörü aç" ile ekle.	Ancora nessun suono: aggiungine con «Apri cartella».
-Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Metti file audio (mp3, wav) nella cartella e qui diventano pulsanti. In gioco Alt+1…9 li riproduce, Alt+0 li ferma. Tieni premuto il tasto push-to-talk perché la squadra li senta.
 SES PANELİ	SOUNDBOARD
 Ses	Volume
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	I suoni passano dal microfono virtuale: prima attiva il modificatore vocale.
 Sustur	Ferma
 Klasörü aç	Apri cartella
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Aggiungi da myinstants con «Trova suoni» o metti mp3 nella cartella. Clic destro per rimuovere. In gioco Alt+1…9 riproduce, Alt+0 ferma. Tieni premuto il tasto push-to-talk perché la squadra senta.
++ Ekle	+ Aggiungi
+Ara	Cerca
+Arama	Ricerca
+Aramak için bir şey yaz.	Scrivi qualcosa da cercare.
+Bu ses açılamadı.	Impossibile aprire questo suono.
+Daha fazla	Altri
+Dünyada popüler	Popolari nel mondo
+Hepsi bu kadar.	È tutto.
+Kapat	Chiudi
+Liste	Elenco
+Panel dolu ({0}): bir sesi kaldırmak için düğmesine sağ tıkla.	Soundboard pieno ({0}): clic destro su un pulsante per rimuoverlo.
+Panelde {0}/{1} ses.	{0}/{1} suoni nel soundboard.
+Panelden kaldır	Rimuovi dal soundboard
+SES BUL	TROVA SUONI
+Ses bul	Trova suoni
+Sesler myinstants.com'dan gelir ve başkalarına aittir; yalnızca kendi oyunun için kullan.	I suoni vengono da myinstants.com e appartengono ad altri; usali solo nelle tue partite.
+Sonuç yok.	Nessun risultato.
+Türkiye'de popüler	Popolari in Turchia
+Yükleniyor…	Caricamento…
+myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	Impossibile raggiungere myinstants. Controlla la connessione.
+İndirilemedi, tekrar dene.	Download non riuscito, riprova.
+✓ Eklendi	✓ Aggiunto

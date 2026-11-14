@@ -638,9 +638,31 @@ Yok	Нет
 {0} yarım ton	{0} полутонов
 İptal	Отмена
 Henüz ses yok: "Klasörü aç" ile ekle.	Звуков пока нет: добавь через «Открыть папку».
-Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Положи звуковые файлы (mp3, wav) в папку — здесь они станут кнопками. В игре Alt+1…9 включает, Alt+0 останавливает. Держи клавишу рации, чтобы команда услышала.
 SES PANELİ	САУНДБОРД
 Ses	Громкость
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	Звуки идут через виртуальный микрофон: сначала включи преобразователь голоса.
 Sustur	Стоп
 Klasörü aç	Открыть папку
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Добавляй с myinstants через «Найти звуки» или клади mp3 в папку. Правый клик — убрать. В игре Alt+1…9 включает, Alt+0 останавливает. Держи клавишу рации, чтобы команда услышала.
++ Ekle	+ Добавить
+Ara	Поиск
+Arama	Поиск
+Aramak için bir şey yaz.	Напиши, что искать.
+Bu ses açılamadı.	Не удалось открыть этот звук.
+Daha fazla	Ещё
+Dünyada popüler	Популярное в мире
+Hepsi bu kadar.	Это всё.
+Kapat	Закрыть
+Liste	Список
+Panel dolu ({0}): bir sesi kaldırmak için düğmesine sağ tıkla.	Саундборд заполнен ({0}): правый клик по кнопке звука, чтобы убрать его.
+Panelde {0}/{1} ses.	Звуков в саундборде: {0}/{1}.
+Panelden kaldır	Убрать из саундборда
+SES BUL	НАЙТИ ЗВУКИ
+Ses bul	Найти звуки
+Sesler myinstants.com'dan gelir ve başkalarına aittir; yalnızca kendi oyunun için kullan.	Звуки взяты с myinstants.com и принадлежат другим; используй их только в своих играх.
+Sonuç yok.	Ничего не найдено.
+Türkiye'de popüler	Популярное в Турции
+Yükleniyor…	Загрузка…
+myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	Не удалось подключиться к myinstants. Проверь интернет.
+İndirilemedi, tekrar dene.	Не удалось скачать, попробуй ещё раз.
+✓ Eklendi	✓ Добавлено

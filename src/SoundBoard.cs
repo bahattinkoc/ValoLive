@@ -17,7 +17,41 @@ namespace ValoLive
         public static string Dir => Path.Combine(Settings.Dir, "ses-paneli");
         static readonly string[] Exts = { ".mp3", ".wav", ".ogg", ".m4a", ".flac", ".opus", ".aac", ".wma" };
 
-        public sealed class Sound { public string Name; public float[] Data; }
+        public sealed class Sound { public string Name, File; public float[] Data; }
+
+        static IEnumerable<string> Files() =>
+            Directory.Exists(Dir) ? Directory.GetFiles(Dir).Where(f => Exts.Contains(Path.GetExtension(f).ToLowerInvariant())) : Enumerable.Empty<string>();
+
+        public static int FileCount() => Files().Count();
+
+        /// <summary>Ses adından dosya adı (Windows'un kabul etmediği karakterler atılır).</summary>
+        static string FileName(string name)
+        {
+            var s = new string(name.Where(c => Array.IndexOf(Path.GetInvalidFileNameChars(), c) < 0).ToArray()).Trim().TrimEnd('.');
+            if (s.Length > 40) s = s.Substring(0, 40).Trim();
+            return s.Length == 0 ? "ses" : s;
+        }
+
+        public static bool Has(string name) => Files().Any(f => Path.GetFileNameWithoutExtension(f).Equals(FileName(name), StringComparison.CurrentCultureIgnoreCase));
+
+        /// <summary>İndirilmiş dosyayı panele kopyalar (klasör izleyicisi düğmeyi ekler).</summary>
+        public static void Add(string name, string source)
+        {
+            Directory.CreateDirectory(Dir);
+            string b = FileName(name), ext = Path.GetExtension(source), path = Path.Combine(Dir, b + ext);
+            for (int i = 2; System.IO.File.Exists(path); i++) path = Path.Combine(Dir, $"{b} ({i}){ext}");
+            System.IO.File.Copy(source, path);
+        }
+
+        /// <summary>Paneldeki sesi kaldırır: dosya silinmez, "kaldirilanlar" klasörüne taşınır.</summary>
+        public static void Remove(Sound s)
+        {
+            string bin = Path.Combine(Dir, "kaldirilanlar");
+            Directory.CreateDirectory(bin);
+            string name = Path.GetFileNameWithoutExtension(s.File), ext = Path.GetExtension(s.File), to = Path.Combine(bin, name + ext);
+            for (int i = 2; System.IO.File.Exists(to); i++) to = Path.Combine(bin, $"{name} ({i}){ext}");
+            System.IO.File.Move(s.File, to);
+        }
         sealed class Playing { public float[] Data; public double Pos; }
 
         public static volatile Sound[] Sounds = new Sound[0];
@@ -48,7 +82,7 @@ namespace ValoLive
         static Sound[] LoadAll()
         {
             var list = new List<Sound>();
-            foreach (var f in Directory.GetFiles(Dir).Where(f => Exts.Contains(Path.GetExtension(f).ToLowerInvariant())).OrderBy(f => f, StringComparer.CurrentCultureIgnoreCase))
+            foreach (var f in Files().OrderBy(f => f, StringComparer.CurrentCultureIgnoreCase))
             {
                 if (list.Count >= Max) break;
                 float[] a = null;
@@ -56,7 +90,7 @@ namespace ValoLive
                 if (a == null) try { a = Decode(f); } catch { }
                 if (a == null || a.Length < Rate / 20) continue;
                 Normalize(a);
-                list.Add(new Sound { Name = Path.GetFileNameWithoutExtension(f), Data = a });
+                list.Add(new Sound { Name = Path.GetFileNameWithoutExtension(f), File = f, Data = a });
             }
             return list.ToArray();
         }

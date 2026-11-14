@@ -638,9 +638,31 @@ Yok	Không
 {0} yarım ton	{0} nửa cung
 İptal	Hủy
 Henüz ses yok: "Klasörü aç" ile ekle.	Chưa có âm thanh: thêm bằng "Mở thư mục".
-Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Bỏ tệp âm thanh (mp3, wav) vào thư mục, chúng sẽ thành nút ở đây. Trong game, Alt+1…9 để phát, Alt+0 để dừng. Giữ phím nhấn để nói để đồng đội nghe thấy.
 SES PANELİ	BẢNG ÂM THANH
 Ses	Âm lượng
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	Âm thanh phát qua micro ảo: hãy bật bộ đổi giọng trước.
 Sustur	Dừng
 Klasörü aç	Mở thư mục
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Thêm từ myinstants bằng "Tìm âm thanh" hoặc bỏ mp3 vào thư mục. Nhấp phải để gỡ. Trong game, Alt+1…9 để phát, Alt+0 để dừng. Giữ phím nhấn để nói để đồng đội nghe thấy.
++ Ekle	+ Thêm
+Ara	Tìm
+Arama	Tìm kiếm
+Aramak için bir şey yaz.	Hãy nhập gì đó để tìm.
+Bu ses açılamadı.	Không mở được âm thanh này.
+Daha fazla	Thêm nữa
+Dünyada popüler	Phổ biến toàn cầu
+Hepsi bu kadar.	Hết rồi.
+Kapat	Đóng
+Liste	Danh sách
+Panel dolu ({0}): bir sesi kaldırmak için düğmesine sağ tıkla.	Bảng âm thanh đã đầy ({0}): nhấp phải vào nút để gỡ.
+Panelde {0}/{1} ses.	Bảng âm thanh có {0}/{1} âm thanh.
+Panelden kaldır	Gỡ khỏi bảng âm thanh
+SES BUL	TÌM ÂM THANH
+Ses bul	Tìm âm thanh
+Sesler myinstants.com'dan gelir ve başkalarına aittir; yalnızca kendi oyunun için kullan.	Âm thanh lấy từ myinstants.com và thuộc về người khác; chỉ dùng trong game của bạn.
+Sonuç yok.	Không có kết quả.
+Türkiye'de popüler	Phổ biến ở Thổ Nhĩ Kỳ
+Yükleniyor…	Đang tải…
+myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	Không kết nối được myinstants. Kiểm tra kết nối internet.
+İndirilemedi, tekrar dene.	Tải xuống thất bại, thử lại nhé.
+✓ Eklendi	✓ Đã thêm

@@ -638,9 +638,31 @@ Yok	Brak
 {0} yarım ton	{0} półtonów
 İptal	Anuluj
 Henüz ses yok: "Klasörü aç" ile ekle.	Brak dźwięków: dodaj je przez „Otwórz folder”.
-Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Wrzuć pliki dźwiękowe (mp3, wav) do folderu, a pojawią się tu jako przyciski. W grze Alt+1…9 odtwarza, Alt+0 wycisza. Trzymaj klawisz push-to-talk, żeby drużyna słyszała.
 SES PANELİ	SOUNDBOARD
 Ses	Głośność
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	Dźwięki idą przez wirtualny mikrofon: najpierw włącz zmieniacz głosu.
 Sustur	Zatrzymaj
 Klasörü aç	Otwórz folder
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Dodaj z myinstants przez „Znajdź dźwięki” albo wrzuć mp3 do folderu. Prawy klik usuwa. W grze Alt+1…9 odtwarza, Alt+0 wycisza. Trzymaj klawisz push-to-talk, żeby drużyna słyszała.
++ Ekle	+ Dodaj
+Ara	Szukaj
+Arama	Wyszukiwanie
+Aramak için bir şey yaz.	Wpisz coś, aby wyszukać.
+Bu ses açılamadı.	Nie udało się otworzyć tego dźwięku.
+Daha fazla	Więcej
+Dünyada popüler	Popularne na świecie
+Hepsi bu kadar.	To wszystko.
+Kapat	Zamknij
+Liste	Lista
+Panel dolu ({0}): bir sesi kaldırmak için düğmesine sağ tıkla.	Soundboard pełny ({0}): kliknij prawym przyciskiem dźwięk, aby go usunąć.
+Panelde {0}/{1} ses.	{0}/{1} dźwięków w soundboardzie.
+Panelden kaldır	Usuń z soundboardu
+SES BUL	ZNAJDŹ DŹWIĘKI
+Ses bul	Znajdź dźwięki
+Sesler myinstants.com'dan gelir ve başkalarına aittir; yalnızca kendi oyunun için kullan.	Dźwięki pochodzą z myinstants.com i należą do innych; używaj ich tylko we własnych grach.
+Sonuç yok.	Brak wyników.
+Türkiye'de popüler	Popularne w Turcji
+Yükleniyor…	Ładowanie…
+myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	Nie można połączyć się z myinstants. Sprawdź połączenie z internetem.
+İndirilemedi, tekrar dene.	Pobieranie nie powiodło się, spróbuj ponownie.
+✓ Eklendi	✓ Dodano

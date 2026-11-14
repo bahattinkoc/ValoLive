@@ -638,9 +638,31 @@ Yok	Nenhum
 {0} yarım ton	{0} semitons
 İptal	Cancelar
 Henüz ses yok: "Klasörü aç" ile ekle.	Nenhum som ainda: adicione com "Abrir pasta".
-Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Coloque arquivos de som (mp3, wav) na pasta e eles viram botões aqui. No jogo, Alt+1…9 toca e Alt+0 para. Segure a tecla de apertar para falar para o time ouvir.
 SES PANELİ	SOUNDBOARD
 Ses	Volume
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	Os sons saem pelo microfone virtual: ative primeiro o modificador de voz.
 Sustur	Parar
 Klasörü aç	Abrir pasta
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Adicione do myinstants com "Buscar sons" ou coloque mp3 na pasta. Clique direito remove. No jogo, Alt+1…9 toca e Alt+0 para. Segure a tecla de apertar para falar para o time ouvir.
++ Ekle	+ Adicionar
+Ara	Buscar
+Arama	Busca
+Aramak için bir şey yaz.	Digite algo para buscar.
+Bu ses açılamadı.	Não foi possível abrir este som.
+Daha fazla	Mais
+Dünyada popüler	Populares no mundo
+Hepsi bu kadar.	É só isso.
+Kapat	Fechar
+Liste	Lista
+Panel dolu ({0}): bir sesi kaldırmak için düğmesine sağ tıkla.	Soundboard cheio ({0}): clique direito no botão de um som para removê-lo.
+Panelde {0}/{1} ses.	{0}/{1} sons no soundboard.
+Panelden kaldır	Remover do soundboard
+SES BUL	BUSCAR SONS
+Ses bul	Buscar sons
+Sesler myinstants.com'dan gelir ve başkalarına aittir; yalnızca kendi oyunun için kullan.	Os sons vêm do myinstants.com e pertencem a outras pessoas; use só nas suas próprias partidas.
+Sonuç yok.	Nenhum resultado.
+Türkiye'de popüler	Populares na Turquia
+Yükleniyor…	Carregando…
+myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	Não foi possível acessar o myinstants. Verifique sua internet.
+İndirilemedi, tekrar dene.	Falha no download, tente de novo.
+✓ Eklendi	✓ Adicionado

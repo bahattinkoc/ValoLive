@@ -6,10 +6,12 @@
  · {0} maçlık galibiyet serisi
  ▲seri
  ▼tilt
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.
 "{0}" adında kategori bulunamadı.
 %{0}
 (mikrofon yok)
 (sanal mikrofon bulunamadı)
++ Ekle
 +{0} karşılaşma daha
 , ilk ölüm %{0}
 . İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.
@@ -33,6 +35,9 @@ Akvaryum: chat'e yazan balık olur
 Akşam
 Altın
 Analizim
+Ara
+Arama
+Aramak için bir şey yaz.
 Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.
 Atak
 Atakta
@@ -66,6 +71,7 @@ Bu pencere yayına ve kayda girmez · adını gizleyenler aranmaz
 Bu platforma yayınla
 Bu projede "YouTube Data API v3"ü etkinleştir (Enable):
 Bu raund ace gelir mi? 🎯
+Bu ses açılamadı.
 Bugün henüz rekabetçi maç yok.
 Bugün rank atlıyoruz 💪
 Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.
@@ -93,6 +99,7 @@ Clients → Create client → Application type: Desktop app → Create. Client I
 Ctrl+Alt+V  efekti aç/kapat      Ctrl+Alt+B  sonraki efekt
 DEVRE ARASI
 DOST ATEŞİ
+Daha fazla
 Defans
 Defansta
 Demir
@@ -104,6 +111,7 @@ Dil, yayın bitince ValoLive yeniden açıldığında değişir.
 Domates
 Domates / yumurta fırlat
 Duvar yazısı (1 dk kalır)
+Dünyada popüler
 EFEKTLER
 EKRAN ŞAKALARI
 ESKİ DOST
@@ -149,6 +157,7 @@ Hazırlanıyor…
 HenrikDev anahtarı yok
 Henüz ses yok: "Klasörü aç" ile ekle.
 Hepsi
+Hepsi bu kadar.
 Hesabı bağlı platforma yayın kapalı: chat okunmaz
 Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.
 Hiçbir platform açık değil: yalnızca test kaydı alınabilir.
@@ -167,6 +176,7 @@ Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.
 Kalite
 Kalın
 Kapalı: ValoLive → Ses Değiştirici sekmesinden aç.
+Kapat
 Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil
 Kategori
 Katmanlar (radar, chat kutusu, yayın anları) ve chat eğlencesi (balon, uçak, domates, ördek yarışı…) ayrı pencerede.
@@ -191,7 +201,6 @@ Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):
 Kick'ten URL ve key al
 Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:
 Kick: başlık, kategori ve etiketler uygulandı ✓
-Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.
 Klasörü aç
 Komutlar: 
 Komutları okumak için ana pencerede Kick ya da YouTube hesabını bağla.
@@ -201,6 +210,7 @@ Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.
 Kısayollar: 1-4 sekmeler · B brifing · Esc oyuncu sekmesini kapat · tekerlek kaydırır
 LOBİDE
 Lejyon
+Liste
 MAÇ
 MAÇ ODASI
 MAÇ SAYISI
@@ -241,6 +251,9 @@ PARTİ
 PAT!
 PLATFORMLAR
 POP!
+Panel dolu ({0}): bir sesi kaldırmak için düğmesine sağ tıkla.
+Panelde {0}/{1} ses.
+Panelden kaldır
 Perde
 Platin
 Profil
@@ -284,6 +297,7 @@ SABIRLI
 SAYILAR
 SERİ
 SES
+SES BUL
 SES DEĞİŞTİRİCİ
 SES PANELİ
 SIK GÖRÜLEN
@@ -305,11 +319,13 @@ Sarhoş
 Selam chat!
 Selam chat! Bu yayın efsane 🔥
 Ses
+Ses bul
 Ses cihazı yanıt vermedi.
 Ses değiştiriciyi aç (Valorant sesli sohbeti)
 Ses rengi
 Sesim
 Sesim {0}
+Sesler myinstants.com'dan gelir ve başkalarına aittir; yalnızca kendi oyunun için kullan.
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.
 Sesli oku
 Sesli oku (robot sesi)
@@ -326,6 +342,7 @@ Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.
 Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.
 Sonra tarayıcıda Google onayı açılır. "Google bu uygulamayı doğrulamadı" derse Gelişmiş → ValoLive'a git: uygulama senin kendi projen.
 Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.
+Sonuç yok.
 Spike kurulumları
 Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).
 Sprey
@@ -367,6 +384,7 @@ Ters ekran (3 sn)
 Ters ekran, büyüteç ve sesli okuma yalnızca abone ve modlara
 Teşekkürler: {0}
 Titreme
+Türkiye'de popüler
 TİLT
 UZATMA
 Uyarı: Steam'in sanal mikrofonu Valorant'ta boğuk duyulur. Ücretsiz VB-CABLE'ı kur, ValoLive onu kendiliğinden seçer.
@@ -437,6 +455,7 @@ YouTube: başlık ve etiketler uygulandı ✓
 YouTube: şu an açık ya da planlanmış yayın yok; başlık yayın başlayınca uygulanır.
 Yumurta
 Yücelik
+Yükleniyor…
 ZAFER
 adını gizliyor — geçmişine bakılmaz
 atak
@@ -491,6 +510,7 @@ kurma {0} · imha {1}
 maç
 maçları inceleniyor…
 misafir erişimi alınamadı
+myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.
 nerede oynuyorlar
 noktalar: öldürdüğü anda durduğu yer
 ort.
@@ -605,6 +625,7 @@ zirve
 İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.
 İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.
 İnce
+İndirilemedi, tekrar dene.
 İndirilen pakette ValoLive.exe yok
 İndiriliyor… %{0}
 İptal
@@ -640,6 +661,7 @@ zirve
 ● {0} BAĞLANTIYI REDDETTİ
 ● Çalışıyor: {0}
 ⚠  Valorant "Tam ekran" modunda: alt-tab'da yayın takılır.  Valorant → Ayarlar → Video → Genel → Görüntü Modu: "Pencereli Tam Ekran" seç.
+✓ Eklendi
 ✗ Bağlantı hatası
 ✗ HenrikDev anahtarı geçersiz
 ✗ Oyuncu bulunamadı (isim/etiket/bölge)

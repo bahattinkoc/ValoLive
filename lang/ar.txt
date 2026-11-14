@@ -638,9 +638,31 @@ Yok	لا شيء
 {0} yarım ton	{0} نصف نغمة
 İptal	إلغاء
 Henüz ses yok: "Klasörü aç" ile ekle.	لا توجد أصوات بعد: أضفها عبر "فتح المجلد".
-Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	ضع ملفات صوت (mp3، wav) في المجلد لتصبح أزرارًا هنا. في اللعبة Alt+1…9 للتشغيل وAlt+0 للإيقاف. اضغط مع الاستمرار على زر التحدث ليسمعك فريقك.
 SES PANELİ	لوحة الأصوات
 Ses	مستوى الصوت
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	تخرج الأصوات عبر الميكروفون الافتراضي: شغّل مغيّر الصوت أولًا.
 Sustur	إيقاف
 Klasörü aç	فتح المجلد
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	أضف من myinstants عبر "ابحث عن أصوات" أو ضع ملفات mp3 في المجلد. النقر بالزر الأيمن يزيل الصوت. في اللعبة Alt+1…9 للتشغيل وAlt+0 للإيقاف. اضغط مع الاستمرار على زر التحدث ليسمعك فريقك.
++ Ekle	+ إضافة
+Ara	بحث
+Arama	بحث
+Aramak için bir şey yaz.	اكتب شيئًا للبحث.
+Bu ses açılamadı.	تعذّر فتح هذا الصوت.
+Daha fazla	المزيد
+Dünyada popüler	الأكثر شعبية عالميًا
+Hepsi bu kadar.	هذا كل شيء.
+Kapat	إغلاق
+Liste	القائمة
+Panel dolu ({0}): bir sesi kaldırmak için düğmesine sağ tıkla.	اللوحة ممتلئة ({0}): انقر بالزر الأيمن على زر صوت لإزالته.
+Panelde {0}/{1} ses.	{0}/{1} أصوات في اللوحة.
+Panelden kaldır	إزالة من اللوحة
+SES BUL	ابحث عن أصوات
+Ses bul	ابحث عن أصوات
+Sesler myinstants.com'dan gelir ve başkalarına aittir; yalnızca kendi oyunun için kullan.	الأصوات من myinstants.com وملك لأصحابها؛ استخدمها في ألعابك فقط.
+Sonuç yok.	لا نتائج.
+Türkiye'de popüler	الأكثر شعبية في تركيا
+Yükleniyor…	جارٍ التحميل…
+myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	تعذّر الوصول إلى myinstants. تحقّق من اتصالك بالإنترنت.
+İndirilemedi, tekrar dene.	فشل التنزيل، حاول مجددًا.
+✓ Eklendi	✓ تمت الإضافة
