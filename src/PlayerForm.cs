@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -54,8 +54,8 @@ namespace ValoLive
             go = Btn(L.T("Ara"), 546, Theme.ButtonWidth(L.T("Ara"), 28, 70));
             go.BackColor = Red;
             Controls.Add(box);
-            back.Click += (s, e) => { if (histPos > 0) { histPos--; Load(hist[histPos]); } };
-            fwd.Click += (s, e) => { if (histPos < hist.Count - 1) { histPos++; Load(hist[histPos]); } };
+            back.Click += (s, e) => { if (histPos > 0) { histPos--; Show(hist[histPos]); } };
+            fwd.Click += (s, e) => { if (histPos < hist.Count - 1) { histPos++; Show(hist[histPos]); } };
             go.Click += (s, e) => Search();
             box.KeyDown += (s, e) => { if (e.KeyCode == Keys.Enter) { e.SuppressKeyPress = true; Search(); } };
             box.MouseWheel += (s, e) => Wheel(e.Delta);
@@ -80,10 +80,10 @@ namespace ValoLive
 
         void Navigate(string target)
         {
-            if (histPos >= 0 && hist[histPos] == target) { Load(target); return; }
+            if (histPos >= 0 && hist[histPos] == target) { Show(target); return; }
             hist.RemoveRange(histPos + 1, hist.Count - histPos - 1);
             hist.Add(target); histPos = hist.Count - 1;
-            Load(target);
+            Show(target);
         }
 
         void Search()
@@ -104,7 +104,7 @@ namespace ValoLive
         }
 
         /// <summary>Hedefi (puuid ya da ad#etiket) arka planda yükler; eski yükleme sonuçları yok sayılır.</summary>
-        void Load(string target)
+        void Show(string target)
         {
             int my = ++gen;
             acc = null; rank = null; stored = new List<PStored>(); details = new List<PDetail>(); suggestions = null; error = null;
