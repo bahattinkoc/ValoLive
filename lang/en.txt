@@ -637,3 +637,10 @@ Yeni ses	New voice
 Yok	None
 {0} yarım ton	{0} semitones
 İptal	Cancel
+Henüz ses yok: "Klasörü aç" ile ekle.	No sounds yet: add some with "Open folder".
+Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Drop sound files (mp3, wav) into the folder and they become buttons here. In game, Alt+1…9 plays, Alt+0 stops. Hold your push-to-talk key so your team hears it.
+SES PANELİ	SOUNDBOARD
+Ses	Volume
+Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	Sounds go out through the virtual microphone: turn on the voice changer first.
+Sustur	Stop
+Klasörü aç	Open folder

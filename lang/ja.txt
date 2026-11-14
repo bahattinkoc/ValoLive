@@ -637,3 +637,10 @@ Yeni ses	新しい声
 Yok	なし
 {0} yarım ton	{0} 半音
 İptal	キャンセル
+Henüz ses yok: "Klasörü aç" ile ekle.	まだサウンドがありません:「フォルダーを開く」から追加してください。
+Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	サウンドファイル (mp3, wav) をフォルダーに入れると、ここにボタンとして表示されます。ゲーム中は Alt+1…9 で再生、Alt+0 で停止。チームに聞こえるようにプッシュトゥトークキーを押したままにしてください。
+SES PANELİ	サウンドボード
+Ses	音量
+Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	サウンドは仮想マイクから流れます。先にボイスチェンジャーをオンにしてください。
+Sustur	停止
+Klasörü aç	フォルダーを開く

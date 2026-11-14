@@ -637,3 +637,10 @@ Yeni ses	Nova voz
 Yok	Nenhum
 {0} yarım ton	{0} semitons
 İptal	Cancelar
+Henüz ses yok: "Klasörü aç" ile ekle.	Nenhum som ainda: adicione com "Abrir pasta".
+Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Coloque arquivos de som (mp3, wav) na pasta e eles viram botões aqui. No jogo, Alt+1…9 toca e Alt+0 para. Segure a tecla de apertar para falar para o time ouvir.
+SES PANELİ	SOUNDBOARD
+Ses	Volume
+Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	Os sons saem pelo microfone virtual: ative primeiro o modificador de voz.
+Sustur	Parar
+Klasörü aç	Abrir pasta

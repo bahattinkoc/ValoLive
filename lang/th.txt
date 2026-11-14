@@ -637,3 +637,10 @@ Yeni ses	เสียงใหม่
 Yok	ไม่มี
 {0} yarım ton	{0} ครึ่งเสียง
 İptal	ยกเลิก
+Henüz ses yok: "Klasörü aç" ile ekle.	ยังไม่มีเสียง: เพิ่มด้วย "เปิดโฟลเดอร์"
+Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	ใส่ไฟล์เสียง (mp3, wav) ในโฟลเดอร์ แล้วจะกลายเป็นปุ่มตรงนี้ ในเกมกด Alt+1…9 เพื่อเล่น Alt+0 เพื่อหยุด กดปุ่มกดเพื่อพูดค้างไว้เพื่อให้ทีมได้ยิน
+SES PANELİ	ซาวด์บอร์ด
+Ses	ระดับเสียง
+Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	เสียงจะออกทางไมค์เสมือน: เปิดตัวเปลี่ยนเสียงก่อน
+Sustur	หยุด
+Klasörü aç	เปิดโฟลเดอร์

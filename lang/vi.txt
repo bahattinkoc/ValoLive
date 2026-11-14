@@ -637,3 +637,10 @@ Yeni ses	Giọng mới
 Yok	Không
 {0} yarım ton	{0} nửa cung
 İptal	Hủy
+Henüz ses yok: "Klasörü aç" ile ekle.	Chưa có âm thanh: thêm bằng "Mở thư mục".
+Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Bỏ tệp âm thanh (mp3, wav) vào thư mục, chúng sẽ thành nút ở đây. Trong game, Alt+1…9 để phát, Alt+0 để dừng. Giữ phím nhấn để nói để đồng đội nghe thấy.
+SES PANELİ	BẢNG ÂM THANH
+Ses	Âm lượng
+Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	Âm thanh phát qua micro ảo: hãy bật bộ đổi giọng trước.
+Sustur	Dừng
+Klasörü aç	Mở thư mục

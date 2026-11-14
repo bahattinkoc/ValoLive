@@ -637,3 +637,10 @@ Yeni ses	صوت جديد
 Yok	لا شيء
 {0} yarım ton	{0} نصف نغمة
 İptal	إلغاء
+Henüz ses yok: "Klasörü aç" ile ekle.	لا توجد أصوات بعد: أضفها عبر "فتح المجلد".
+Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	ضع ملفات صوت (mp3، wav) في المجلد لتصبح أزرارًا هنا. في اللعبة Alt+1…9 للتشغيل وAlt+0 للإيقاف. اضغط مع الاستمرار على زر التحدث ليسمعك فريقك.
+SES PANELİ	لوحة الأصوات
+Ses	مستوى الصوت
+Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	تخرج الأصوات عبر الميكروفون الافتراضي: شغّل مغيّر الصوت أولًا.
+Sustur	إيقاف
+Klasörü aç	فتح المجلد

@@ -1542,6 +1542,8 @@ namespace ValoLive
             RegisterHotKey(Handle, 2, 0x4000, (int)Keys.F10);
             RegisterHotKey(Handle, 3, 0x4000 | 0x0003, (int)Keys.V); // Ctrl+Alt+V: ses efekti aç/kapa
             RegisterHotKey(Handle, 4, 0x4000 | 0x0003, (int)Keys.B); // Ctrl+Alt+B: sonraki ses efekti
+            // Alt+0…9: ses paneli. Ctrl+Alt değil: Türkçe klavyede o AltGr demek, AltGr+7…0 ile { [ ] } yazılamaz olurdu.
+            for (int i = 0; i <= 9; i++) RegisterHotKey(Handle, 10 + i, 0x4000 | 0x0001, (int)Keys.D0 + i);
         }
 
         protected override void WndProc(ref Message m)
@@ -1551,6 +1553,7 @@ namespace ValoLive
                 if ((int)m.WParam == 1) { overlay.Cover = !overlay.Cover; autoCovered = false; } // elle dokunulan perde artık elle yönetilir
                 if ((int)m.WParam == 2) overlay.Summary = !overlay.Summary;
                 if ((int)m.WParam == 3 || (int)m.WParam == 4) VoiceHotkey((int)m.WParam == 4);
+                if ((int)m.WParam >= 10 && (int)m.WParam <= 19) BoardHotkey((int)m.WParam - 10);
                 UpdateTitle();
             }
             base.WndProc(ref m);

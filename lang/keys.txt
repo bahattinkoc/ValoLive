@@ -147,6 +147,7 @@ Havai fişek hedefi
 Hayalet
 Hazırlanıyor…
 HenrikDev anahtarı yok
+Henüz ses yok: "Klasörü aç" ile ekle.
 Hepsi
 Hesabı bağlı platforma yayın kapalı: chat okunmaz
 Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.
@@ -190,6 +191,8 @@ Kick'te geliştirici sayfasını aç (giriş yapmış olmalısın):
 Kick'ten URL ve key al
 Kick, başlık ve kategoriyi değiştirmek için kendi "geliştirici uygulamanı" ister.\nBir kerelik, 2 dakikalık bir iş:
 Kick: başlık, kategori ve etiketler uygulandı ✓
+Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.
+Klasörü aç
 Komutlar: 
 Komutları okumak için ana pencerede Kick ya da YouTube hesabını bağla.
 Kopyala
@@ -282,6 +285,7 @@ SAYILAR
 SERİ
 SES
 SES DEĞİŞTİRİCİ
+SES PANELİ
 SIK GÖRÜLEN
 SIRA BEKLENİYOR
 SIRADAKİ MAÇ BİRAZDAN
@@ -300,11 +304,13 @@ Sanal mikrofon, ValoLive'ın değiştirdiği sesi Valorant'a mikrofon gibi verir
 Sarhoş
 Selam chat!
 Selam chat! Bu yayın efsane 🔥
+Ses
 Ses cihazı yanıt vermedi.
 Ses değiştiriciyi aç (Valorant sesli sohbeti)
 Ses rengi
 Sesim
 Sesim {0}
+Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.
 Sesli oku
 Sesli oku (robot sesi)
 Seçtiğim uygulama
@@ -327,6 +333,7 @@ Stadyum
 Stil çıkarmak için yeterli round yok (en az 40).
 Stream URL / Stream Key'i platformun panelinden yeniden kopyala
 Su altı
+Sustur
 Sv
 Süre: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n

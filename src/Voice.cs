@@ -679,7 +679,8 @@ namespace ValoLive
                 while (running)
                 {
                     IAudioClient cap = null;
-                    RenderOut outDev = null, mon = null;
+                    RenderOut outDev = null, mon = null, board = null; // board: dinleme kapalıyken ses paneli kulaklığa
+                    int boardIdle = 0;
                     try
                     {
                         IMMDevice mic;
@@ -737,11 +738,27 @@ namespace ValoLive
                                     inPk = Math.Max(inPk, Math.Abs(mono[f]));
                                 }
                                 runner.Mono(mono, n, rate);
+                                // Ses paneli efektten sonra eklenir (seviye eşitleyici ve efekt onu bozmasın).
+                                bool sb = SoundBoard.Render(sent, n, rate);
+                                if (sb)
+                                    for (int f = 0; f < n; f++)
+                                    {
+                                        float v = mono[f] + sent[f], a = Math.Abs(v);
+                                        mono[f] = a > 0.8f ? Math.Sign(v) * (0.8f + 0.2f * (float)Math.Tanh((a - 0.8f) / 0.2f)) : v;
+                                    }
                                 for (int f = 0; f < n; f++) outPk = Math.Max(outPk, Math.Abs(mono[f]));
                                 InLevel = Math.Max(inPk, InLevel * 0.85f);
                                 OutLevel = Math.Max(outPk, OutLevel * 0.85f);
                                 outDev.Write(mono, n);
                                 mon?.Write(mono, n);
+                                // Kendi sesini dinlemiyorsa da paneldeki sesi kulaklıktan duysun.
+                                if (mon == null && sb)
+                                {
+                                    if (board == null) try { en.GetDefaultAudioEndpoint(EDataFlow.Render, 0, out IMMDevice bd); board = new RenderOut(bd, rate); } catch { }
+                                    board?.Write(sent, n);
+                                    boardIdle = 0;
+                                }
+                                else if (board != null && (mon != null || (boardIdle += n) > rate * 3)) { board.Dispose(); board = null; }
                             }
                         }
                     }
@@ -756,6 +773,7 @@ namespace ValoLive
                         try { cap?.Stop(); } catch { }
                         outDev?.Dispose();
                         mon?.Dispose();
+                        board?.Dispose();
                     }
                 }
         }

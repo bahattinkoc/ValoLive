@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -48,6 +49,7 @@ namespace ValoLive
             host.Controls.Add(lblVoiceState); y += 26;
             voiceMeter = new VoiceMeter { Location = new Point(cx, y), Size = new Size(ColW, 14) };
             host.Controls.Add(voiceMeter); y += 22;
+            y = BuildSoundBoard(y + 6);
             int leftBottom = y;
 
             cx = ColW + 60;
@@ -85,6 +87,100 @@ namespace ValoLive
             chkVoiceMon.CheckedChanged += (s, e) => { if (loading) return; cfg.VoiceMonitor = chkVoiceMon.Checked; SaveSettings(); if (voice != null) voice.Monitor = cfg.VoiceMonitor; };
             chkVoiceStream.CheckedChanged += (s, e) => { if (loading) return; cfg.VoiceStream = chkVoiceStream.Checked; SaveSettings(); ApplyVoiceFlags(); };
             voiceTimer.Tick += (s, e) => TickVoice();
+        }
+
+        // ---------- Ses paneli ----------
+        readonly Button[] boardButtons = new Button[SoundBoard.Max];
+        Label lblBoardEmpty;
+        FileSystemWatcher boardWatch;
+        readonly Timer boardDebounce = new Timer { Interval = 800 };
+
+        int BuildSoundBoard(int y)
+        {
+            y = Section(L.T("SES PANELİ"), y);
+            var hint = new Label
+            {
+                Text = L.T("Klasöre ses dosyası (mp3, wav) at, burada düğme olur. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut."),
+                ForeColor = Mut, AutoSize = true, MaximumSize = new Size(ColW, 0), Location = new Point(cx, y),
+            };
+            host.Controls.Add(hint);
+            y += hint.GetPreferredSize(new Size(ColW, 0)).Height + 8;
+            // Önce denetim satırı, altında düğmeler: az ses varken boşluk en altta kalır.
+            int ow = Theme.ButtonWidth(L.T("Klasörü aç"), 24, 90), sw = Theme.ButtonWidth(L.T("Sustur"), 24, 70);
+            var open = MakeButton(L.T("Klasörü aç"), new Rectangle(cx, y, ow, 30), Field);
+            var stop = MakeButton(L.T("Sustur"), new Rectangle(cx + ow + 8, y, sw, 30), Field);
+            open.Font = stop.Font = new Font(L.SansBold, 9f);
+            int vx = cx + ow + sw + 24;
+            var volCap = new Label { Text = Theme.Upper(L.T("Ses")), ForeColor = Mut, Font = new Font(L.SansBold, 8.25f), AutoSize = true, Location = new Point(vx, y + 8) };
+            host.Controls.Add(volCap);
+            int sx = vx + volCap.PreferredWidth + 8;
+            var vol = new VSlider { Location = new Point(sx, y + 4), Width = Math.Max(60, cx + ColW - sx), Height = 24, Minimum = 0, Maximum = 100 };
+            host.Controls.Add(vol);
+            y += 40;
+            const int cols = 3, bh = 30, gap = 6;
+            int bw = (ColW - gap * (cols - 1)) / cols;
+            lblBoardEmpty = new Label { Text = L.T("Henüz ses yok: \"Klasörü aç\" ile ekle."), ForeColor = Mut, AutoSize = true, Location = new Point(cx, y + 6) };
+            host.Controls.Add(lblBoardEmpty);
+            for (int i = 0; i < boardButtons.Length; i++)
+            {
+                int k = i;
+                var b = MakeButton("", new Rectangle(cx + i % cols * (bw + gap), y + i / cols * (bh + gap), bw, bh), Field);
+                b.Font = new Font(L.SansBold, 9f); b.Visible = false;
+                b.Click += (s, e) => PlayBoard(k);
+                boardButtons[i] = b;
+            }
+            y += (boardButtons.Length + cols - 1) / cols * (bh + gap) + 4;
+
+            open.Click += (s, e) => { Directory.CreateDirectory(SoundBoard.Dir); Process.Start("explorer.exe", SoundBoard.Dir); };
+            stop.Click += (s, e) => SoundBoard.StopAll();
+            vol.Value = Math.Max(0, Math.Min(100, cfg.BoardVolume));
+            SoundBoard.Volume = vol.Value / 100f;
+            vol.ValueChanged += (s, e) => { SoundBoard.Volume = vol.Value / 100f; if (loading) return; cfg.BoardVolume = vol.Value; SaveSettings(); };
+
+            SoundBoard.Loaded += () => { try { BeginInvoke((Action)FillBoard); } catch { } };
+            boardDebounce.Tick += (s, e) => { boardDebounce.Stop(); SoundBoard.Reload(); };
+            try
+            {
+                Directory.CreateDirectory(SoundBoard.Dir);
+                // Klasöre dosya atılınca düğmeler kendiliğinden gelsin (kopyalama birkaç olay üretir: kısa bekleyip bir kez yüklenir).
+                boardWatch = new FileSystemWatcher(SoundBoard.Dir) { NotifyFilter = NotifyFilters.FileName | NotifyFilters.LastWrite | NotifyFilters.Size };
+                FileSystemEventHandler h = (s, e) => { try { BeginInvoke((Action)(() => { boardDebounce.Stop(); boardDebounce.Start(); })); } catch { } };
+                boardWatch.Created += h; boardWatch.Deleted += h; boardWatch.Changed += h;
+                boardWatch.Renamed += (s, e) => h(s, e);
+                boardWatch.EnableRaisingEvents = true;
+            }
+            catch { }
+            SoundBoard.Reload();
+            return y;
+        }
+
+        void FillBoard()
+        {
+            var s = SoundBoard.Sounds;
+            for (int i = 0; i < boardButtons.Length; i++)
+            {
+                var b = boardButtons[i];
+                b.Visible = i < s.Length;
+                if (i >= s.Length) continue;
+                string name = s[i].Name.Length > 22 ? s[i].Name.Substring(0, 21) + "…" : s[i].Name;
+                b.Text = i < 9 ? (i + 1) + " · " + name : name;
+            }
+            lblBoardEmpty.Visible = s.Length == 0;
+        }
+
+        void PlayBoard(int i)
+        {
+            if (!chkVoice.Checked) chkVoice.Checked = true;
+            if (voice == null) { Toast.Show(L.T("SES PANELİ"), new List<KeyValuePair<string, Color>> { new KeyValuePair<string, Color>(L.T("Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç."), Mut) }, 2500, false); return; }
+            SoundBoard.Trigger(i);
+        }
+
+        /// <summary>Alt+1…9: ses, Alt+0: sustur (oyundayken).</summary>
+        void BoardHotkey(int n)
+        {
+            if (n == 0) { SoundBoard.StopAll(); return; }
+            if (!cfg.VoiceOn || voice == null) { Toast.Show(L.T("SES PANELİ"), new List<KeyValuePair<string, Color>> { new KeyValuePair<string, Color>(L.T("Kapalı: ValoLive → Ses Değiştirici sekmesinden aç."), Mut) }, 2500, false); return; }
+            SoundBoard.Trigger(n - 1);
         }
 
         /// <summary>"Hoparlör (Steam Streaming Microphone)" → "Steam Streaming Microphone": kablonun hangi ucu olduğu kafa karıştırmasın.</summary>
