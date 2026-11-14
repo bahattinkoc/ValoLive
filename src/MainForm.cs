@@ -1542,8 +1542,20 @@ namespace ValoLive
             RegisterHotKey(Handle, 2, 0x4000, (int)Keys.F10);
             RegisterHotKey(Handle, 3, 0x4000 | 0x0003, (int)Keys.V); // Ctrl+Alt+V: ses efekti aç/kapa
             RegisterHotKey(Handle, 4, 0x4000 | 0x0003, (int)Keys.B); // Ctrl+Alt+B: sonraki ses efekti
-            // Alt+0…9: ses paneli. Ctrl+Alt değil: Türkçe klavyede o AltGr demek, AltGr+7…0 ile { [ ] } yazılamaz olurdu.
-            for (int i = 0; i <= 9; i++) RegisterHotKey(Handle, 10 + i, 0x4000 | 0x0001, (int)Keys.D0 + i);
+            RegisterBoardKeys();
+        }
+
+        /// <summary>Ses paneli kısayolları: Alt+0…9 ya da Numpad 0…9 (ayara göre). Ctrl+Alt değil: Türkçe klavyede o AltGr demek,
+        /// AltGr+7…0 ile { [ ] } yazılamaz olurdu. Numpad seçiliyken ValoLive açıkken Numpad rakamları başka yerde yazmaz.</summary>
+        void RegisterBoardKeys()
+        {
+            if (!IsHandleCreated) return;
+            for (int i = 0; i <= 9; i++)
+            {
+                UnregisterHotKey(Handle, 10 + i);
+                if (cfg.BoardNumpad) RegisterHotKey(Handle, 10 + i, 0x4000, (int)Keys.NumPad0 + i);
+                else RegisterHotKey(Handle, 10 + i, 0x4000 | 0x0001, (int)Keys.D0 + i);
+            }
         }
 
         protected override void WndProc(ref Message m)

@@ -71,8 +71,10 @@ namespace ValoLive
             y += keys.GetPreferredSize(new Size(ColW, 0)).Height + 4;
             var own = new Label { Text = L.T("Kendi sesini yap: \"+ Yeni ses\" · düzenlemek için sesine sağ tıkla"), ForeColor = Mut, AutoSize = true, MaximumSize = new Size(ColW, 0), Location = new Point(cx, y) };
             host.Controls.Add(own);
-            y += own.GetPreferredSize(new Size(ColW, 0)).Height + 4;
-            voiceBelow = new Control[] { chkVoiceMon, chkVoiceStream, keys, own };
+            y += own.GetPreferredSize(new Size(ColW, 0)).Height + 10;
+            int firstPtt = host.Controls.Count;
+            BuildPtt(ref y);
+            voiceBelow = new Control[] { chkVoiceMon, chkVoiceStream, keys, own }.Concat(host.Controls.Cast<Control>().Skip(firstPtt)).ToArray();
             foreach (var c in voiceBelow) c.Tag = c.Top - voiceGrid.Bottom;
             AddDivider(Math.Max(leftBottom, y));
             page.Height = Math.Max(leftBottom, y);
@@ -100,7 +102,7 @@ namespace ValoLive
             y = Section(L.T("SES PANELİ"), y);
             var hint = new Label
             {
-                Text = L.T("\"Ses bul\" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut."),
+                Text = L.T("\"Ses bul\" ile myinstants'tan ekle ya da klasöre mp3 at. Sürükleyip sırala, sağ tıkla kaldır. Oyunda 1…9 numaralı tuşlar çalar, 0 susturur (Alt ya da Numpad: sağdaki ayar)."),
                 ForeColor = Mut, AutoSize = true, MaximumSize = new Size(ColW, 0), Location = new Point(cx, y),
             };
             host.Controls.Add(hint);
@@ -128,7 +130,25 @@ namespace ValoLive
                 int k = i;
                 var b = MakeButton("", new Rectangle(cx + i % cols * (bw + gap), y + i / cols * (bh + gap), bw, bh), Field);
                 b.Font = new Font(L.SansBold, 9f); b.Visible = false;
-                b.Click += (s, e) => PlayBoard(k);
+                b.Click += (s, e) => { if (boardDragged) { boardDragged = false; return; } PlayBoard(k); };
+                // Sürükle-bırak: basılı tutup başka bir düğmenin üstüne bırakınca o sıraya taşınır (tuş numaraları da).
+                b.MouseDown += (s, e) => { if (e.Button == MouseButtons.Left) { boardDragFrom = k; boardDragStart = Cursor.Position; boardDragged = false; } };
+                b.MouseMove += (s, e) =>
+                {
+                    if (boardDragFrom != k || e.Button != MouseButtons.Left) return;
+                    var p = Cursor.Position;
+                    if (!boardDragged && Math.Abs(p.X - boardDragStart.X) + Math.Abs(p.Y - boardDragStart.Y) > 8) { boardDragged = true; b.Cursor = Cursors.SizeAll; }
+                    if (boardDragged) HighlightBoard(BoardIndexAt(p));
+                };
+                b.MouseUp += (s, e) =>
+                {
+                    if (e.Button != MouseButtons.Left || boardDragFrom != k) return;
+                    b.Cursor = Cursors.Hand;
+                    int to = boardDragged ? BoardIndexAt(Cursor.Position) : -1;
+                    boardDragFrom = -1;
+                    HighlightBoard(-1);
+                    if (to >= 0 && to != k) { SoundBoard.Move(k, to); FillBoard(); }
+                };
                 // Sağ tık: panelden kaldır (dosya "kaldirilanlar" klasörüne taşınır, silinmez).
                 b.MouseUp += (s, e) =>
                 {
@@ -164,6 +184,76 @@ namespace ValoLive
             catch { }
             SoundBoard.Reload();
             return y;
+        }
+
+        // ValoLive bas-konuş: Valorant'ta parti sohbeti "Otomatik"; sesin yalnızca bu tuşla, panel sesleri tuşsuz gider.
+        // Tuşun durumu yalnızca okunur (GetAsyncKeyState); oyuna tuş gönderilmez.
+        readonly KeyValuePair<int, string>[] PttKeys =
+        {
+            new KeyValuePair<int, string>(0x56, "V"), new KeyValuePair<int, string>(0x42, "B"), new KeyValuePair<int, string>(0x54, "T"),
+            new KeyValuePair<int, string>(0x55, "U"), new KeyValuePair<int, string>(0x14, "Caps Lock"),
+            new KeyValuePair<int, string>(0x05, L.T("Fare yan tuşu (geri)")), new KeyValuePair<int, string>(0x06, L.T("Fare yan tuşu (ileri)")),
+        };
+        VToggle chkPtt;
+        ComboBox cmbPttKey, cmbBoardKeys;
+
+        void BuildPtt(ref int y)
+        {
+            chkPtt = new VToggle { Text = L.T("ValoLive bas-konuş (panel sesleri tuşsuz gider)"), ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
+            host.Controls.Add(chkPtt); y += 30;
+            cmbPttKey = AddCombo(L.T("Bas-konuş tuşu"), ref y, PttKeys.Select(k => k.Value).ToArray());
+            cmbBoardKeys = AddCombo(L.T("Panel tuşları"), ref y, new[] { "Alt + 1…9", "Numpad 1…9" });
+            var help = new Label
+            {
+                Text = L.T("Bas-konuş açıkken Valorant → Ayarlar → Ses → Ses Sohbeti → Parti ses sohbeti etkinleştirme modu: Otomatik yap; arkadaşların sesleri tuşsuz duyar. Takım sohbeti yalnızca Valorant'ın bas-konuşuyla çalışır: rastgele takımda V'yi tutup paneli Numpad ile çalmak en rahatı."),
+                ForeColor = Mut, AutoSize = true, MaximumSize = new Size(ColW, 0), Location = new Point(cx, y),
+            };
+            host.Controls.Add(help);
+            y += help.GetPreferredSize(new Size(ColW, 0)).Height + 4;
+
+            chkPtt.CheckedChanged += (s, e) => { if (loading) return; cfg.PttOn = chkPtt.Checked; SaveSettings(); ApplyPtt(); };
+            cmbPttKey.SelectedIndexChanged += (s, e) => { if (loading) return; cfg.PttKey = PttKeys[Math.Max(0, cmbPttKey.SelectedIndex)].Key; SaveSettings(); ApplyPtt(); };
+            cmbBoardKeys.SelectedIndexChanged += (s, e) => { if (loading) return; cfg.BoardNumpad = cmbBoardKeys.SelectedIndex == 1; SaveSettings(); RegisterBoardKeys(); };
+        }
+
+        void LoadPtt()
+        {
+            chkPtt.Checked = cfg.PttOn;
+            cmbPttKey.SelectedIndex = Math.Max(0, Array.FindIndex(PttKeys, k => k.Key == cfg.PttKey));
+            cmbBoardKeys.SelectedIndex = cfg.BoardNumpad ? 1 : 0;
+            ApplyPtt();
+            RegisterBoardKeys();
+        }
+
+        void ApplyPtt()
+        {
+            VoiceFx.PttKey = cfg.PttKey;
+            VoiceFx.PttOn = cfg.PttOn;
+            cmbPttKey.Enabled = cfg.PttOn;
+        }
+
+        int boardDragFrom = -1;
+        Point boardDragStart;
+        bool boardDragged;
+
+        /// <summary>Ekran noktasının üstündeki görünür panel düğmesi (yoksa -1).</summary>
+        int BoardIndexAt(Point screen)
+        {
+            for (int i = 0; i < boardButtons.Length; i++)
+            {
+                var b = boardButtons[i];
+                if (b.Visible && b.RectangleToScreen(b.ClientRectangle).Contains(screen)) return i;
+            }
+            return -1;
+        }
+
+        void HighlightBoard(int target)
+        {
+            for (int i = 0; i < boardButtons.Length; i++)
+            {
+                var c = i == target && i != boardDragFrom ? Red : Field;
+                if (boardButtons[i].BackColor != c) boardButtons[i].BackColor = c;
+            }
         }
 
         void FillBoard()
@@ -252,6 +342,7 @@ namespace ValoLive
             chkVoice.Checked = cfg.VoiceOn;
             chkVoiceMon.Checked = cfg.VoiceMonitor;
             chkVoiceStream.Checked = cfg.VoiceStream;
+            LoadPtt();
             if (cfg.VoiceCustoms == null) cfg.VoiceCustoms = new List<VoiceCustom>();
             VoiceFx.SetCustom(cfg.VoiceCustoms);
             VoiceFx.Current = cfg.VoicePreset;

@@ -643,7 +643,6 @@ Ses	Громкость
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	Звуки идут через виртуальный микрофон: сначала включи преобразователь голоса.
 Sustur	Стоп
 Klasörü aç	Открыть папку
-"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Добавляй с myinstants через «Найти звуки» или клади mp3 в папку. Правый клик — убрать. В игре Alt+1…9 включает, Alt+0 останавливает. Держи клавишу рации, чтобы команда услышала.
 + Ekle	+ Добавить
 Ara	Поиск
 Arama	Поиск
@@ -666,3 +665,10 @@ Yükleniyor…	Загрузка…
 myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	Не удалось подключиться к myinstants. Проверь интернет.
 İndirilemedi, tekrar dene.	Не удалось скачать, попробуй ещё раз.
 ✓ Eklendi	✓ Добавлено
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sürükleyip sırala, sağ tıkla kaldır. Oyunda 1…9 numaralı tuşlar çalar, 0 susturur (Alt ya da Numpad: sağdaki ayar).	Добавляй с myinstants через «Найти звуки» или клади mp3 в папку. Перетаскивай для порядка, правый клик — убрать. В игре клавиши 1…9 включают, 0 останавливает (Alt или Numpad: настройка справа).
+Bas-konuş açıkken Valorant → Ayarlar → Ses → Ses Sohbeti → Parti ses sohbeti etkinleştirme modu: Otomatik yap; arkadaşların sesleri tuşsuz duyar. Takım sohbeti yalnızca Valorant'ın bas-konuşuyla çalışır: rastgele takımda V'yi tutup paneli Numpad ile çalmak en rahatı.	С включённой рацией ValoLive поставь в Valorant → Настройки → Звук → Голосовой чат режим активации группового чата на «Автоматически»; друзья слышат звуки без клавиши. Командный чат работает только с рацией самой Valorant: со случайными игроками держи V и включай звуки с Numpad.
+Bas-konuş tuşu	Клавиша рации
+Fare yan tuşu (geri)	Боковая кнопка мыши (назад)
+Fare yan tuşu (ileri)	Боковая кнопка мыши (вперёд)
+Panel tuşları	Клавиши саундборда
+ValoLive bas-konuş (panel sesleri tuşsuz gider)	Рация ValoLive (звуки саундборда идут без клавиши)

@@ -422,6 +422,17 @@ namespace ValoLive
 
         /// <summary>Yayına giden mikrofona da uygulansın mı (ses değiştirici açık ve "yayında da" seçiliyse).</summary>
         public static volatile bool OnStream;
+
+        /// <summary>ValoLive bas-konuş: açıksa mikrofon yalnızca tuş basılıyken geçer (ses paneli her zaman). Valorant'ta parti sohbeti "Otomatik" olur.</summary>
+        public static volatile bool PttOn;
+        public static volatile int PttKey = 0x56; // V
+    }
+
+    static class KeyState
+    {
+        [DllImport("user32.dll")] static extern short GetAsyncKeyState(int vk);
+        /// <summary>Tuş şu an basılı mı (yalnızca okur; oyuna hiçbir şey göndermez).</summary>
+        public static bool Down(int vk) => (GetAsyncKeyState(vk) & 0x8000) != 0;
     }
 
     /// <summary>Bir ses akışına seçili efekti uygular; seçim değişince zinciri yeniden kurar.</summary>
@@ -680,7 +691,8 @@ namespace ValoLive
                 {
                     IAudioClient cap = null;
                     RenderOut outDev = null, mon = null, board = null; // board: dinleme kapalıyken ses paneli kulaklığa
-                    int boardIdle = 0;
+                    int boardIdle = 0, pttHang = 0;
+                    float pttGain = 1;
                     try
                     {
                         IMMDevice mic;
@@ -738,6 +750,15 @@ namespace ValoLive
                                     inPk = Math.Max(inPk, Math.Abs(mono[f]));
                                 }
                                 runner.Mono(mono, n, rate);
+                                // Bas-konuş: tuş bırakılınca 150 ms daha açık (son hece kesilmesin), 5 ms'lik yumuşak geçiş.
+                                if (VoiceFx.PttOn || pttGain < 1)
+                                {
+                                    if (!VoiceFx.PttOn || KeyState.Down(VoiceFx.PttKey)) pttHang = rate * 15 / 100;
+                                    else pttHang = Math.Max(0, pttHang - n);
+                                    float target = pttHang > 0 ? 1 : 0, k = 1 - (float)Math.Exp(-1.0 / (rate * 0.005));
+                                    for (int f = 0; f < n; f++) { pttGain += (target - pttGain) * k; mono[f] *= pttGain; }
+                                    if (target == 1 && pttGain > 0.999f) pttGain = 1;
+                                }
                                 // Ses paneli efektten sonra eklenir (seviye eşitleyici ve efekt onu bozmasın).
                                 bool sb = SoundBoard.Render(sent, n, rate);
                                 if (sb)

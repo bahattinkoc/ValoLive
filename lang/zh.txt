@@ -643,7 +643,6 @@ Ses	音量
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	音效透過虛擬麥克風送出：請先開啟變聲器。
 Sustur	停止
 Klasörü aç	開啟資料夾
-"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	用「尋找音效」從 myinstants 加入，或把 mp3 放進資料夾。按右鍵移除。遊戲中 Alt+1…9 播放，Alt+0 停止。按住按鍵通話鍵，隊友才聽得到。
 + Ekle	+ 加入
 Ara	搜尋
 Arama	搜尋
@@ -666,3 +665,10 @@ Yükleniyor…	載入中…
 myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	無法連線到 myinstants，請檢查網路連線。
 İndirilemedi, tekrar dene.	下載失敗，請再試一次。
 ✓ Eklendi	✓ 已加入
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sürükleyip sırala, sağ tıkla kaldır. Oyunda 1…9 numaralı tuşlar çalar, 0 susturur (Alt ya da Numpad: sağdaki ayar).	用「尋找音效」從 myinstants 加入，或把 mp3 放進資料夾。拖曳可排序，按右鍵移除。遊戲中 1…9 鍵播放，0 停止（Alt 或數字鍵盤：右側設定）。
+Bas-konuş açıkken Valorant → Ayarlar → Ses → Ses Sohbeti → Parti ses sohbeti etkinleştirme modu: Otomatik yap; arkadaşların sesleri tuşsuz duyar. Takım sohbeti yalnızca Valorant'ın bas-konuşuyla çalışır: rastgele takımda V'yi tutup paneli Numpad ile çalmak en rahatı.	開啟按鍵通話後，請到 Valorant → 設定 → 音效 → 語音聊天 → 隊伍語音啟動模式設為「自動」；朋友不用按鍵就聽得到音效。團隊聊天只能用 Valorant 自己的按鍵通話：和路人玩時按住 V，用數字鍵盤播放音效最方便。
+Bas-konuş tuşu	按鍵通話鍵
+Fare yan tuşu (geri)	滑鼠側鍵（上一頁）
+Fare yan tuşu (ileri)	滑鼠側鍵（下一頁）
+Panel tuşları	音效板按鍵
+ValoLive bas-konuş (panel sesleri tuşsuz gider)	ValoLive 按鍵通話（音效板不用按鍵）

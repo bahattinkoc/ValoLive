@@ -43,6 +43,25 @@ namespace ValoLive
             System.IO.File.Copy(source, path);
         }
 
+        // Sıra: sürükle-bırak ile değişir, klasördeki sira.txt'de dosya adları olarak saklanır (listede olmayanlar sona, ada göre).
+        static string OrderFile => Path.Combine(Dir, "sira.txt");
+
+        static List<string> ReadOrder()
+        {
+            try { return System.IO.File.Exists(OrderFile) ? System.IO.File.ReadAllLines(OrderFile).Where(l => l.Length > 0).ToList() : new List<string>(); }
+            catch { return new List<string>(); }
+        }
+
+        /// <summary>from'daki sesi to'nun yerine taşır (aradakiler kayar). Hemen geçerli olur ve kaydedilir.</summary>
+        public static void Move(int from, int to)
+        {
+            var l = Sounds.ToList();
+            if (from < 0 || from >= l.Count || to < 0 || to >= l.Count || from == to) return;
+            var s = l[from]; l.RemoveAt(from); l.Insert(to, s);
+            Sounds = l.ToArray();
+            try { System.IO.File.WriteAllLines(OrderFile, l.Select(x => Path.GetFileName(x.File))); } catch { }
+        }
+
         /// <summary>Paneldeki sesi kaldırır: dosya silinmez, "kaldirilanlar" klasörüne taşınır.</summary>
         public static void Remove(Sound s)
         {
@@ -82,7 +101,9 @@ namespace ValoLive
         static Sound[] LoadAll()
         {
             var list = new List<Sound>();
-            foreach (var f in Files().OrderBy(f => f, StringComparer.CurrentCultureIgnoreCase))
+            var order = ReadOrder();
+            foreach (var f in Files().OrderBy(f => { int i = order.IndexOf(Path.GetFileName(f)); return i < 0 ? int.MaxValue : i; })
+                                     .ThenBy(f => f, StringComparer.CurrentCultureIgnoreCase))
             {
                 if (list.Count >= Max) break;
                 float[] a = null;

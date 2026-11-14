@@ -643,7 +643,6 @@ Ses	Volume
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	Sounds go out through the virtual microphone: turn on the voice changer first.
 Sustur	Stop
 Klasörü aç	Open folder
-"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Add from myinstants with "Find sounds" or drop mp3s into the folder. Right-click removes. In game, Alt+1…9 plays, Alt+0 stops. Hold your push-to-talk key so your team hears it.
 + Ekle	+ Add
 Ara	Search
 Arama	Search
@@ -666,3 +665,10 @@ Yükleniyor…	Loading…
 myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	Couldn't reach myinstants. Check your internet connection.
 İndirilemedi, tekrar dene.	Download failed, try again.
 ✓ Eklendi	✓ Added
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sürükleyip sırala, sağ tıkla kaldır. Oyunda 1…9 numaralı tuşlar çalar, 0 susturur (Alt ya da Numpad: sağdaki ayar).	Add from myinstants with "Find sounds" or drop mp3s into the folder. Drag to reorder, right-click to remove. In game, keys 1…9 play and 0 stops (Alt or Numpad: setting on the right).
+Bas-konuş açıkken Valorant → Ayarlar → Ses → Ses Sohbeti → Parti ses sohbeti etkinleştirme modu: Otomatik yap; arkadaşların sesleri tuşsuz duyar. Takım sohbeti yalnızca Valorant'ın bas-konuşuyla çalışır: rastgele takımda V'yi tutup paneli Numpad ile çalmak en rahatı.	With push-to-talk on, set Valorant → Settings → Audio → Voice Chat → Party Voice Activation Mode to Automatic; your friends hear sounds without a key. Team chat only works with Valorant's own push-to-talk: with random teammates, hold V and play sounds with the Numpad.
+Bas-konuş tuşu	Push-to-talk key
+Fare yan tuşu (geri)	Mouse side button (back)
+Fare yan tuşu (ileri)	Mouse side button (forward)
+Panel tuşları	Board keys
+ValoLive bas-konuş (panel sesleri tuşsuz gider)	ValoLive push-to-talk (board sounds need no key)

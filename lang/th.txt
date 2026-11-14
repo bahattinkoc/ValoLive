@@ -643,7 +643,6 @@ Ses	ระดับเสียง
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	เสียงจะออกทางไมค์เสมือน: เปิดตัวเปลี่ยนเสียงก่อน
 Sustur	หยุด
 Klasörü aç	เปิดโฟลเดอร์
-"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	เพิ่มจาก myinstants ด้วย "หาเสียง" หรือใส่ไฟล์ mp3 ในโฟลเดอร์ คลิกขวาเพื่อเอาออก ในเกมกด Alt+1…9 เพื่อเล่น Alt+0 เพื่อหยุด กดปุ่มกดเพื่อพูดค้างไว้เพื่อให้ทีมได้ยิน
 + Ekle	+ เพิ่ม
 Ara	ค้นหา
 Arama	การค้นหา
@@ -666,3 +665,10 @@ Yükleniyor…	กำลังโหลด…
 myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	เชื่อมต่อ myinstants ไม่ได้ ตรวจสอบการเชื่อมต่ออินเทอร์เน็ต
 İndirilemedi, tekrar dene.	ดาวน์โหลดไม่สำเร็จ ลองอีกครั้ง
 ✓ Eklendi	✓ เพิ่มแล้ว
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sürükleyip sırala, sağ tıkla kaldır. Oyunda 1…9 numaralı tuşlar çalar, 0 susturur (Alt ya da Numpad: sağdaki ayar).	เพิ่มจาก myinstants ด้วย "หาเสียง" หรือใส่ไฟล์ mp3 ในโฟลเดอร์ ลากเพื่อจัดลำดับ คลิกขวาเพื่อเอาออก ในเกมกดปุ่ม 1…9 เพื่อเล่น 0 เพื่อหยุด (Alt หรือ Numpad: ตั้งค่าทางขวา)
+Bas-konuş açıkken Valorant → Ayarlar → Ses → Ses Sohbeti → Parti ses sohbeti etkinleştirme modu: Otomatik yap; arkadaşların sesleri tuşsuz duyar. Takım sohbeti yalnızca Valorant'ın bas-konuşuyla çalışır: rastgele takımda V'yi tutup paneli Numpad ile çalmak en rahatı.	เมื่อเปิดกดเพื่อพูด ให้ตั้ง Valorant → การตั้งค่า → เสียง → แชทเสียง → โหมดเปิดใช้แชทเสียงปาร์ตี้ เป็น อัตโนมัติ เพื่อนจะได้ยินเสียงโดยไม่ต้องกดปุ่ม แชททีมใช้ได้กับกดเพื่อพูดของ Valorant เท่านั้น: เล่นกับคนสุ่มให้กด V ค้างไว้แล้วเล่นเสียงด้วย Numpad
+Bas-konuş tuşu	ปุ่มกดเพื่อพูด
+Fare yan tuşu (geri)	ปุ่มข้างเมาส์ (ย้อนกลับ)
+Fare yan tuşu (ileri)	ปุ่มข้างเมาส์ (ไปข้างหน้า)
+Panel tuşları	ปุ่มซาวด์บอร์ด
+ValoLive bas-konuş (panel sesleri tuşsuz gider)	กดเพื่อพูดของ ValoLive (เสียงซาวด์บอร์ดไม่ต้องกดปุ่ม)

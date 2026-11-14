@@ -643,7 +643,6 @@ Ses	Lautstärke
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	Sounds laufen über das virtuelle Mikrofon: schalte zuerst den Stimmverzerrer ein.
 Sustur	Stopp
 Klasörü aç	Ordner öffnen
-"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Mit „Sounds finden“ von myinstants hinzufügen oder mp3s in den Ordner legen. Rechtsklick entfernt. Im Spiel spielt Alt+1…9 ab, Alt+0 stoppt. Halte deine Push-to-Talk-Taste, damit dein Team es hört.
 + Ekle	+ Hinzufügen
 Ara	Suchen
 Arama	Suche
@@ -666,3 +665,10 @@ Yükleniyor…	Lädt…
 myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	myinstants nicht erreichbar. Prüfe deine Internetverbindung.
 İndirilemedi, tekrar dene.	Download fehlgeschlagen, versuch es nochmal.
 ✓ Eklendi	✓ Hinzugefügt
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sürükleyip sırala, sağ tıkla kaldır. Oyunda 1…9 numaralı tuşlar çalar, 0 susturur (Alt ya da Numpad: sağdaki ayar).	Mit „Sounds finden“ von myinstants hinzufügen oder mp3s in den Ordner legen. Zum Sortieren ziehen, Rechtsklick entfernt. Im Spiel spielen die Tasten 1…9 ab, 0 stoppt (Alt oder Numpad: Einstellung rechts).
+Bas-konuş açıkken Valorant → Ayarlar → Ses → Ses Sohbeti → Parti ses sohbeti etkinleştirme modu: Otomatik yap; arkadaşların sesleri tuşsuz duyar. Takım sohbeti yalnızca Valorant'ın bas-konuşuyla çalışır: rastgele takımda V'yi tutup paneli Numpad ile çalmak en rahatı.	Bei aktivem Push-to-Talk in Valorant → Einstellungen → Audio → Sprachchat den Aktivierungsmodus für Gruppen-Sprachchat auf Automatisch stellen; deine Freunde hören Sounds ohne Taste. Team-Chat funktioniert nur mit Valorants eigenem Push-to-Talk: mit Zufallsteam V halten und Sounds per Numpad abspielen.
+Bas-konuş tuşu	Push-to-Talk-Taste
+Fare yan tuşu (geri)	Maus-Seitentaste (zurück)
+Fare yan tuşu (ileri)	Maus-Seitentaste (vor)
+Panel tuşları	Soundboard-Tasten
+ValoLive bas-konuş (panel sesleri tuşsuz gider)	ValoLive-Push-to-Talk (Soundboard braucht keine Taste)

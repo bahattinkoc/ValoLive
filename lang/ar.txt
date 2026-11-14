@@ -643,7 +643,6 @@ Ses	مستوى الصوت
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	تخرج الأصوات عبر الميكروفون الافتراضي: شغّل مغيّر الصوت أولًا.
 Sustur	إيقاف
 Klasörü aç	فتح المجلد
-"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	أضف من myinstants عبر "ابحث عن أصوات" أو ضع ملفات mp3 في المجلد. النقر بالزر الأيمن يزيل الصوت. في اللعبة Alt+1…9 للتشغيل وAlt+0 للإيقاف. اضغط مع الاستمرار على زر التحدث ليسمعك فريقك.
 + Ekle	+ إضافة
 Ara	بحث
 Arama	بحث
@@ -666,3 +665,10 @@ Yükleniyor…	جارٍ التحميل…
 myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	تعذّر الوصول إلى myinstants. تحقّق من اتصالك بالإنترنت.
 İndirilemedi, tekrar dene.	فشل التنزيل، حاول مجددًا.
 ✓ Eklendi	✓ تمت الإضافة
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sürükleyip sırala, sağ tıkla kaldır. Oyunda 1…9 numaralı tuşlar çalar, 0 susturur (Alt ya da Numpad: sağdaki ayar).	أضف من myinstants عبر "ابحث عن أصوات" أو ضع ملفات mp3 في المجلد. اسحب لإعادة الترتيب، وانقر بالزر الأيمن للإزالة. في اللعبة المفاتيح 1…9 للتشغيل و0 للإيقاف (Alt أو لوحة الأرقام: الإعداد على اليمين).
+Bas-konuş açıkken Valorant → Ayarlar → Ses → Ses Sohbeti → Parti ses sohbeti etkinleştirme modu: Otomatik yap; arkadaşların sesleri tuşsuz duyar. Takım sohbeti yalnızca Valorant'ın bas-konuşuyla çalışır: rastgele takımda V'yi tutup paneli Numpad ile çalmak en rahatı.	عند تفعيل الضغط للتحدث، اضبط Valorant ← الإعدادات ← الصوت ← الدردشة الصوتية ← وضع تفعيل دردشة المجموعة الصوتية على تلقائي؛ يسمع أصدقاؤك الأصوات بلا مفتاح. دردشة الفريق تعمل فقط بالضغط للتحدث في Valorant: مع لاعبين عشوائيين اضغط V مع الاستمرار وشغّل الأصوات من لوحة الأرقام.
+Bas-konuş tuşu	مفتاح الضغط للتحدث
+Fare yan tuşu (geri)	زر الفأرة الجانبي (رجوع)
+Fare yan tuşu (ileri)	زر الفأرة الجانبي (تقدّم)
+Panel tuşları	مفاتيح اللوحة
+ValoLive bas-konuş (panel sesleri tuşsuz gider)	الضغط للتحدث من ValoLive (أصوات اللوحة بلا مفتاح)

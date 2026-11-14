@@ -643,7 +643,6 @@ Ses	Âm lượng
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	Âm thanh phát qua micro ảo: hãy bật bộ đổi giọng trước.
 Sustur	Dừng
 Klasörü aç	Mở thư mục
-"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Thêm từ myinstants bằng "Tìm âm thanh" hoặc bỏ mp3 vào thư mục. Nhấp phải để gỡ. Trong game, Alt+1…9 để phát, Alt+0 để dừng. Giữ phím nhấn để nói để đồng đội nghe thấy.
 + Ekle	+ Thêm
 Ara	Tìm
 Arama	Tìm kiếm
@@ -666,3 +665,10 @@ Yükleniyor…	Đang tải…
 myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	Không kết nối được myinstants. Kiểm tra kết nối internet.
 İndirilemedi, tekrar dene.	Tải xuống thất bại, thử lại nhé.
 ✓ Eklendi	✓ Đã thêm
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sürükleyip sırala, sağ tıkla kaldır. Oyunda 1…9 numaralı tuşlar çalar, 0 susturur (Alt ya da Numpad: sağdaki ayar).	Thêm từ myinstants bằng "Tìm âm thanh" hoặc bỏ mp3 vào thư mục. Kéo để sắp xếp, nhấp phải để gỡ. Trong game, phím 1…9 để phát, 0 để dừng (Alt hoặc Numpad: cài đặt bên phải).
+Bas-konuş açıkken Valorant → Ayarlar → Ses → Ses Sohbeti → Parti ses sohbeti etkinleştirme modu: Otomatik yap; arkadaşların sesleri tuşsuz duyar. Takım sohbeti yalnızca Valorant'ın bas-konuşuyla çalışır: rastgele takımda V'yi tutup paneli Numpad ile çalmak en rahatı.	Khi bật nhấn để nói, hãy đặt Valorant → Cài đặt → Âm thanh → Trò chuyện thoại → Chế độ kích hoạt thoại nhóm thành Tự động; bạn bè nghe âm thanh mà không cần phím. Trò chuyện đội chỉ dùng được nhấn để nói của Valorant: chơi với người lạ thì giữ V và phát âm thanh bằng Numpad.
+Bas-konuş tuşu	Phím nhấn để nói
+Fare yan tuşu (geri)	Nút bên chuột (lùi)
+Fare yan tuşu (ileri)	Nút bên chuột (tiến)
+Panel tuşları	Phím bảng âm thanh
+ValoLive bas-konuş (panel sesleri tuşsuz gider)	Nhấn để nói của ValoLive (âm thanh bảng không cần phím)

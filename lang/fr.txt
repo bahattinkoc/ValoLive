@@ -643,7 +643,6 @@ Ses	Volume
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.	Les sons passent par le micro virtuel : active d'abord le modificateur de voix.
 Sustur	Couper
 Klasörü aç	Ouvrir le dossier
-"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sağ tık kaldırır. Oyunda Alt+1…9 çalar, Alt+0 susturur. Takımın duysun diye bas-konuş tuşunu basılı tut.	Ajoute depuis myinstants avec « Trouver des sons » ou mets des mp3 dans le dossier. Clic droit pour retirer. En jeu, Alt+1…9 joue, Alt+0 coupe. Garde ta touche push-to-talk enfoncée pour que ton équipe entende.
 + Ekle	+ Ajouter
 Ara	Rechercher
 Arama	Recherche
@@ -666,3 +665,10 @@ Yükleniyor…	Chargement…
 myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.	Impossible de joindre myinstants. Vérifie ta connexion internet.
 İndirilemedi, tekrar dene.	Échec du téléchargement, réessaie.
 ✓ Eklendi	✓ Ajouté
+"Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sürükleyip sırala, sağ tıkla kaldır. Oyunda 1…9 numaralı tuşlar çalar, 0 susturur (Alt ya da Numpad: sağdaki ayar).	Ajoute depuis myinstants avec « Trouver des sons » ou mets des mp3 dans le dossier. Glisse pour réordonner, clic droit pour retirer. En jeu, les touches 1…9 jouent et 0 coupe (Alt ou pavé numérique : réglage à droite).
+Bas-konuş açıkken Valorant → Ayarlar → Ses → Ses Sohbeti → Parti ses sohbeti etkinleştirme modu: Otomatik yap; arkadaşların sesleri tuşsuz duyar. Takım sohbeti yalnızca Valorant'ın bas-konuşuyla çalışır: rastgele takımda V'yi tutup paneli Numpad ile çalmak en rahatı.	Avec le push-to-talk activé, mets Valorant → Paramètres → Audio → Chat vocal → Mode d'activation du chat vocal de groupe sur Automatique ; tes amis entendent les sons sans touche. Le chat d'équipe ne marche qu'avec le push-to-talk de Valorant : avec des inconnus, garde V enfoncé et joue les sons au pavé numérique.
+Bas-konuş tuşu	Touche push-to-talk
+Fare yan tuşu (geri)	Bouton latéral de souris (arrière)
+Fare yan tuşu (ileri)	Bouton latéral de souris (avant)
+Panel tuşları	Touches du soundboard
+ValoLive bas-konuş (panel sesleri tuşsuz gider)	Push-to-talk ValoLive (les sons du soundboard passent sans touche)
