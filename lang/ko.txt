@@ -672,3 +672,13 @@ Fare yan tuşu (geri)	마우스 옆 버튼 (뒤로)
 Fare yan tuşu (ileri)	마우스 옆 버튼 (앞으로)
 Panel tuşları	사운드보드 키
 ValoLive bas-konuş (panel sesleri tuşsuz gider)	ValoLive 눌러서 말하기 (사운드보드는 키 불필요)
+Henüz ses yok	아직 소리가 없어요
+Oyunda kopya kâğıdı göster (Ctrl+Alt+N)	게임 중 커닝 페이퍼 표시 (Ctrl+Alt+N)
+Sağ orta	오른쪽 가운데
+Sağ üst	오른쪽 위
+Ses paneli	사운드보드
+Sol alt	왼쪽 아래
+Sol orta (haritanın altı)	왼쪽 가운데 (지도 아래)
+Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	클릭되지 않고, 게임을 방해하지 않으며, 방송에 나오지 않습니다. Valorant 화면 모드가 "창 모드 전체 화면"이어야 하며 "전체 화면"에서는 보이지 않습니다.
+Yeri	위치
+sustur	정지

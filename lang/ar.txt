@@ -672,3 +672,13 @@ Fare yan tuşu (geri)	زر الفأرة الجانبي (رجوع)
 Fare yan tuşu (ileri)	زر الفأرة الجانبي (تقدّم)
 Panel tuşları	مفاتيح اللوحة
 ValoLive bas-konuş (panel sesleri tuşsuz gider)	الضغط للتحدث من ValoLive (أصوات اللوحة بلا مفتاح)
+Henüz ses yok	لا توجد أصوات بعد
+Oyunda kopya kâğıdı göster (Ctrl+Alt+N)	إظهار ورقة المساعدة في اللعبة (Ctrl+Alt+N)
+Sağ orta	الوسط الأيمن
+Sağ üst	أعلى اليمين
+Ses paneli	لوحة الأصوات
+Sol alt	أسفل اليسار
+Sol orta (haritanın altı)	الوسط الأيسر (أسفل الخريطة)
+Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	لا يمكن النقر عليها، لا تقاطع اللعبة، ولا تظهر في البث. يجب أن يكون وضع عرض Valorant "ملء الشاشة في نافذة"؛ لا تظهر في "ملء الشاشة".
+Yeri	الموضع
+sustur	إيقاف

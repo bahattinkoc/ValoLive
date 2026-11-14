@@ -672,3 +672,13 @@ Fare yan tuşu (geri)	Mouse side button (back)
 Fare yan tuşu (ileri)	Mouse side button (forward)
 Panel tuşları	Board keys
 ValoLive bas-konuş (panel sesleri tuşsuz gider)	ValoLive push-to-talk (board sounds need no key)
+Henüz ses yok	No sounds yet
+Oyunda kopya kâğıdı göster (Ctrl+Alt+N)	Show cheat sheet in game (Ctrl+Alt+N)
+Sağ orta	Right middle
+Sağ üst	Top right
+Ses paneli	Soundboard
+Sol alt	Bottom left
+Sol orta (haritanın altı)	Left middle (below the map)
+Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	Can't be clicked, doesn't interrupt the game, isn't shown on stream. Valorant's display mode must be "Windowed Fullscreen"; it doesn't show in "Fullscreen".
+Yeri	Position
+sustur	stop

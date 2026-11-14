@@ -225,6 +225,16 @@ namespace ValoLive
 
         public static void StopAll() { lock (gate) playing = new Playing[0]; }
 
+        /// <summary>Şu an çalan seslerin paneldeki sırası (kopya kâğıdı için).</summary>
+        public static int[] PlayingIndexes()
+        {
+            var s = Sounds; var ps = playing;
+            var l = new List<int>();
+            for (int i = 0; i < s.Length; i++)
+                foreach (var p in ps) if (p.Data == s[i].Data && (int)p.Pos + 1 < p.Data.Length) { l.Add(i); break; }
+            return l.ToArray();
+        }
+
         /// <summary>Ses iş parçacığından: çalan seslerin karışımını out'a yazar. Çalan yoksa false (out'a dokunmaz).</summary>
         public static bool Render(float[] output, int n, int rate)
         {

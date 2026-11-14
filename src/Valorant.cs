@@ -61,7 +61,8 @@ namespace ValoLive
         public string VoicePreset = "normal", VoiceLast = "robot";   // seçili ses ve Ctrl+Alt+V ile dönülecek son efekt
         public List<VoiceCustom> VoiceCustoms = new List<VoiceCustom>(); // kullanıcının kendi sesleri (en çok 4)
         public int BoardVolume = 60;                                     // ses paneli yüksekliği (%)
-        public bool BoardNumpad;                                         // panel tuşları: false Alt+1…9, true Numpad 1…9
+        public bool BoardHud; public int BoardHudPos;                    // oyun içi kopya kâğıdı ve yeri (0 sol orta, 1 sağ orta, 2 sol alt, 3 sağ üst)
+        public bool BoardNumpad;                                       // panel tuşları: false Alt+1…9, true Numpad 1…9
         public bool PttOn; public int PttKey = 0x56;                     // ValoLive bas-konuş ve tuşu (sanal tuş kodu, varsayılan V)
 
         public static Settings Load()

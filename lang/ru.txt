@@ -672,3 +672,13 @@ Fare yan tuşu (geri)	Боковая кнопка мыши (назад)
 Fare yan tuşu (ileri)	Боковая кнопка мыши (вперёд)
 Panel tuşları	Клавиши саундборда
 ValoLive bas-konuş (panel sesleri tuşsuz gider)	Рация ValoLive (звуки саундборда идут без клавиши)
+Henüz ses yok	Звуков пока нет
+Oyunda kopya kâğıdı göster (Ctrl+Alt+N)	Показывать шпаргалку в игре (Ctrl+Alt+N)
+Sağ orta	Справа по центру
+Sağ üst	Справа вверху
+Ses paneli	Саундборд
+Sol alt	Слева внизу
+Sol orta (haritanın altı)	Слева по центру (под картой)
+Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	Не нажимается, не мешает игре, не видна на стриме. Режим экрана Valorant должен быть «Полноэкранный в окне»; в «Полноэкранном» она не видна.
+Yeri	Положение
+sustur	стоп

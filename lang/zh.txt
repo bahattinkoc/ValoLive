@@ -672,3 +672,13 @@ Fare yan tuşu (geri)	滑鼠側鍵（上一頁）
 Fare yan tuşu (ileri)	滑鼠側鍵（下一頁）
 Panel tuşları	音效板按鍵
 ValoLive bas-konuş (panel sesleri tuşsuz gider)	ValoLive 按鍵通話（音效板不用按鍵）
+Henüz ses yok	還沒有音效
+Oyunda kopya kâğıdı göster (Ctrl+Alt+N)	在遊戲中顯示小抄（Ctrl+Alt+N）
+Sağ orta	右側中間
+Sağ üst	右上
+Ses paneli	音效板
+Sol alt	左下
+Sol orta (haritanın altı)	左側中間（地圖下方）
+Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	無法點擊、不會打斷遊戲、不會出現在直播中。Valorant 的顯示模式必須是「視窗化全螢幕」；「全螢幕」下看不到。
+Yeri	位置
+sustur	停止

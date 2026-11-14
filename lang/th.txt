@@ -672,3 +672,13 @@ Fare yan tuşu (geri)	ปุ่มข้างเมาส์ (ย้อนก�
 Fare yan tuşu (ileri)	ปุ่มข้างเมาส์ (ไปข้างหน้า)
 Panel tuşları	ปุ่มซาวด์บอร์ด
 ValoLive bas-konuş (panel sesleri tuşsuz gider)	กดเพื่อพูดของ ValoLive (เสียงซาวด์บอร์ดไม่ต้องกดปุ่ม)
+Henüz ses yok	ยังไม่มีเสียง
+Oyunda kopya kâğıdı göster (Ctrl+Alt+N)	แสดงโพยในเกม (Ctrl+Alt+N)
+Sağ orta	ขวากลาง
+Sağ üst	ขวาบน
+Ses paneli	ซาวด์บอร์ด
+Sol alt	ซ้ายล่าง
+Sol orta (haritanın altı)	ซ้ายกลาง (ใต้แผนที่)
+Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	คลิกไม่ได้ ไม่รบกวนเกม และไม่ขึ้นในสตรีม โหมดแสดงผลของ Valorant ต้องเป็น "เต็มจอแบบหน้าต่าง" ในโหมด "เต็มจอ" จะมองไม่เห็น
+Yeri	ตำแหน่ง
+sustur	หยุด

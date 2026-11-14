@@ -162,6 +162,14 @@ namespace ValoLive
                 boardButtons[i] = b;
             }
             y += (boardButtons.Length + cols - 1) / cols * (bh + gap) + 4;
+            chkBoardHud = new VToggle { Text = L.T("Oyunda kopya kâğıdı göster (Ctrl+Alt+N)"), ForeColor = Txt, AutoSize = true, Location = new Point(cx, y - 4) };
+            host.Controls.Add(chkBoardHud); y += 28;
+            cmbBoardHudPos = AddCombo(L.T("Yeri"), ref y, new[] { L.T("Sol orta (haritanın altı)"), L.T("Sağ orta"), L.T("Sol alt"), L.T("Sağ üst") });
+            var hudHelp = new Label { Text = L.T("Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu \"Pencereli tam ekran\" olmalı; \"Tam ekran\"da görünmez."), ForeColor = Mut, AutoSize = true, MaximumSize = new Size(ColW, 0), Location = new Point(cx, y) };
+            host.Controls.Add(hudHelp);
+            y += hudHelp.GetPreferredSize(new Size(ColW, 0)).Height + 4;
+            chkBoardHud.CheckedChanged += (s, e) => { ShowBoardHud(chkBoardHud.Checked); if (loading) return; cfg.BoardHud = chkBoardHud.Checked; SaveSettings(); };
+            cmbBoardHudPos.SelectedIndexChanged += (s, e) => { boardHud?.SetCorner(cmbBoardHudPos.SelectedIndex); if (loading) return; cfg.BoardHudPos = cmbBoardHudPos.SelectedIndex; SaveSettings(); };
 
             open.Click += (s, e) => { Directory.CreateDirectory(SoundBoard.Dir); Process.Start("explorer.exe", SoundBoard.Dir); };
             stop.Click += (s, e) => SoundBoard.StopAll();
@@ -216,8 +224,20 @@ namespace ValoLive
             cmbBoardKeys.SelectedIndexChanged += (s, e) => { if (loading) return; cfg.BoardNumpad = cmbBoardKeys.SelectedIndex == 1; SaveSettings(); RegisterBoardKeys(); };
         }
 
+        VToggle chkBoardHud;
+        ComboBox cmbBoardHudPos;
+        BoardHud boardHud;
+
+        void ShowBoardHud(bool on)
+        {
+            if (on && boardHud == null) { boardHud = new BoardHud(() => cfg.BoardNumpad, Math.Max(0, cmbBoardHudPos.SelectedIndex)); boardHud.Show(); }
+            else if (!on && boardHud != null) { boardHud.Close(); boardHud = null; }
+        }
+
         void LoadPtt()
         {
+            cmbBoardHudPos.SelectedIndex = Math.Max(0, Math.Min(3, cfg.BoardHudPos));
+            chkBoardHud.Checked = cfg.BoardHud;
             chkPtt.Checked = cfg.PttOn;
             cmbPttKey.SelectedIndex = Math.Max(0, Array.FindIndex(PttKeys, k => k.Key == cfg.PttKey));
             cmbBoardKeys.SelectedIndex = cfg.BoardNumpad ? 1 : 0;

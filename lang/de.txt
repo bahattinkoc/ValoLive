@@ -672,3 +672,13 @@ Fare yan tuşu (geri)	Maus-Seitentaste (zurück)
 Fare yan tuşu (ileri)	Maus-Seitentaste (vor)
 Panel tuşları	Soundboard-Tasten
 ValoLive bas-konuş (panel sesleri tuşsuz gider)	ValoLive-Push-to-Talk (Soundboard braucht keine Taste)
+Henüz ses yok	Noch keine Sounds
+Oyunda kopya kâğıdı göster (Ctrl+Alt+N)	Spickzettel im Spiel zeigen (Strg+Alt+N)
+Sağ orta	Rechts Mitte
+Sağ üst	Oben rechts
+Ses paneli	Soundboard
+Sol alt	Unten links
+Sol orta (haritanın altı)	Links Mitte (unter der Karte)
+Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	Nicht anklickbar, unterbricht das Spiel nicht, im Stream unsichtbar. Valorants Anzeigemodus muss „Vollbild im Fenster“ sein; im „Vollbild“ ist er nicht sichtbar.
+Yeri	Position
+sustur	stopp

@@ -672,3 +672,13 @@ Fare yan tuşu (geri)	Tombol samping mouse (mundur)
 Fare yan tuşu (ileri)	Tombol samping mouse (maju)
 Panel tuşları	Tombol papan suara
 ValoLive bas-konuş (panel sesleri tuşsuz gider)	Push-to-talk ValoLive (suara papan tanpa tombol)
+Henüz ses yok	Belum ada suara
+Oyunda kopya kâğıdı göster (Ctrl+Alt+N)	Tampilkan contekan di game (Ctrl+Alt+N)
+Sağ orta	Kanan tengah
+Sağ üst	Kanan atas
+Ses paneli	Papan suara
+Sol alt	Kiri bawah
+Sol orta (haritanın altı)	Kiri tengah (di bawah peta)
+Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	Tidak bisa diklik, tidak mengganggu game, tidak tampil di stream. Mode tampilan Valorant harus "Layar penuh berjendela"; di "Layar penuh" tidak terlihat.
+Yeri	Posisi
+sustur	hentikan

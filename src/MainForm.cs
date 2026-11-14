@@ -1543,6 +1543,7 @@ namespace ValoLive
             RegisterHotKey(Handle, 3, 0x4000 | 0x0003, (int)Keys.V); // Ctrl+Alt+V: ses efekti aç/kapa
             RegisterHotKey(Handle, 4, 0x4000 | 0x0003, (int)Keys.B); // Ctrl+Alt+B: sonraki ses efekti
             RegisterBoardKeys();
+            RegisterHotKey(Handle, 21, 0x4000 | 0x0003, (int)Keys.N); // Ctrl+Alt+N: ses paneli kopya kâğıdı
         }
 
         /// <summary>Ses paneli kısayolları: Alt+0…9 ya da Numpad 0…9 (ayara göre). Ctrl+Alt değil: Türkçe klavyede o AltGr demek,
@@ -1566,6 +1567,7 @@ namespace ValoLive
                 if ((int)m.WParam == 2) overlay.Summary = !overlay.Summary;
                 if ((int)m.WParam == 3 || (int)m.WParam == 4) VoiceHotkey((int)m.WParam == 4);
                 if ((int)m.WParam >= 10 && (int)m.WParam <= 19) BoardHotkey((int)m.WParam - 10);
+                if ((int)m.WParam == 21) chkBoardHud.Checked = !chkBoardHud.Checked;
                 UpdateTitle();
             }
             base.WndProc(ref m);

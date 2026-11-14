@@ -672,3 +672,13 @@ Fare yan tuşu (geri)	Bouton latéral de souris (arrière)
 Fare yan tuşu (ileri)	Bouton latéral de souris (avant)
 Panel tuşları	Touches du soundboard
 ValoLive bas-konuş (panel sesleri tuşsuz gider)	Push-to-talk ValoLive (les sons du soundboard passent sans touche)
+Henüz ses yok	Aucun son
+Oyunda kopya kâğıdı göster (Ctrl+Alt+N)	Afficher l'antisèche en jeu (Ctrl+Alt+N)
+Sağ orta	Milieu droit
+Sağ üst	En haut à droite
+Ses paneli	Soundboard
+Sol alt	En bas à gauche
+Sol orta (haritanın altı)	Milieu gauche (sous la carte)
+Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	Non cliquable, n'interrompt pas le jeu, invisible en stream. Le mode d'affichage de Valorant doit être « Plein écran fenêtré » ; en « Plein écran » elle n'apparaît pas.
+Yeri	Position
+sustur	couper

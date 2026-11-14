@@ -672,3 +672,13 @@ Fare yan tuşu (geri)	Botón lateral del ratón (atrás)
 Fare yan tuşu (ileri)	Botón lateral del ratón (adelante)
 Panel tuşları	Teclas del panel
 ValoLive bas-konuş (panel sesleri tuşsuz gider)	Pulsar para hablar de ValoLive (los sonidos del panel no necesitan tecla)
+Henüz ses yok	Aún no hay sonidos
+Oyunda kopya kâğıdı göster (Ctrl+Alt+N)	Mostrar chuleta en el juego (Ctrl+Alt+N)
+Sağ orta	Centro derecha
+Sağ üst	Arriba a la derecha
+Ses paneli	Panel de sonidos
+Sol alt	Abajo a la izquierda
+Sol orta (haritanın altı)	Centro izquierda (bajo el mapa)
+Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	No se puede pulsar, no interrumpe el juego y no sale en el stream. El modo de pantalla de Valorant debe ser «Pantalla completa en ventana»; en «Pantalla completa» no se ve.
+Yeri	Posición
+sustur	detener

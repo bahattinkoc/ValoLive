@@ -672,3 +672,13 @@ Fare yan tuşu (geri)	Nút bên chuột (lùi)
 Fare yan tuşu (ileri)	Nút bên chuột (tiến)
 Panel tuşları	Phím bảng âm thanh
 ValoLive bas-konuş (panel sesleri tuşsuz gider)	Nhấn để nói của ValoLive (âm thanh bảng không cần phím)
+Henüz ses yok	Chưa có âm thanh
+Oyunda kopya kâğıdı göster (Ctrl+Alt+N)	Hiện bảng nhắc trong game (Ctrl+Alt+N)
+Sağ orta	Giữa bên phải
+Sağ üst	Trên bên phải
+Ses paneli	Bảng âm thanh
+Sol alt	Dưới bên trái
+Sol orta (haritanın altı)	Giữa bên trái (dưới bản đồ)
+Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	Không bấm được, không làm gián đoạn game, không hiện trên stream. Chế độ hiển thị của Valorant phải là "Toàn màn hình dạng cửa sổ"; ở "Toàn màn hình" sẽ không thấy.
+Yeri	Vị trí
+sustur	dừng

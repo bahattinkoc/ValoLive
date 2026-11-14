@@ -159,6 +159,7 @@ Havai fişek hedefi
 Hayalet
 Hazırlanıyor…
 HenrikDev anahtarı yok
+Henüz ses yok
 Henüz ses yok: "Klasörü aç" ile ekle.
 Hepsi
 Hepsi bu kadar.
@@ -251,6 +252,7 @@ Ortam miktarı
 Otomatik (Valorant dili)
 Oyun sesi
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.
+Oyunda kopya kâğıdı göster (Ctrl+Alt+N)
 PARTİ
 PAT!
 PLATFORMLAR
@@ -321,12 +323,15 @@ Salon
 Sanal mikrofon
 Sanal mikrofon, ValoLive'ın değiştirdiği sesi Valorant'a mikrofon gibi verir. Kurulumdan sonra bilgisayarı yeniden başlatman gerekebilir.
 Sarhoş
+Sağ orta
+Sağ üst
 Selam chat!
 Selam chat! Bu yayın efsane 🔥
 Ses
 Ses bul
 Ses cihazı yanıt vermedi.
 Ses değiştiriciyi aç (Valorant sesli sohbeti)
+Ses paneli
 Ses rengi
 Sesim
 Sesim {0}
@@ -339,6 +344,8 @@ Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atab
 Sil
 Sincap
 Sniper koruması (F9)
+Sol alt
+Sol orta (haritanın altı)
 Son maç bilgisi yok.
 Son maç: {0} {1} · {2} · {3} · {4} · HS {5}
 Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.
@@ -391,6 +398,7 @@ Teşekkürler: {0}
 Titreme
 Türkiye'de popüler
 TİLT
+Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.
 UZATMA
 Uyarı: Steam'in sanal mikrofonu Valorant'ta boğuk duyulur. Ücretsiz VB-CABLE'ı kur, ValoLive onu kendiliğinden seçer.
 Uygulama
@@ -444,6 +452,7 @@ Yeni balık
 Yeni ses
 Yeni sürüm {0} hazır · güncelle
 Yeni uygulama oluştur. Ad: ValoLive · Redirect URL olarak şunu yaz:
+Yeri
 Yok
 YouTube Studio'dan yayın anahtarı al
 YouTube başlığı uygulanamadı: 
@@ -534,6 +543,7 @@ son {0} rekabetçi maç
 spike patlamasında {0} kez öldün
 standart
 sunucu sessiz kaldı
+sustur
 takım arkadaşların
 takım arkadaşın
 takım arkadaşın seni {0} kez vurdu

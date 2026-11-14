@@ -672,3 +672,13 @@ Fare yan tuşu (geri)	Tasto laterale del mouse (indietro)
 Fare yan tuşu (ileri)	Tasto laterale del mouse (avanti)
 Panel tuşları	Tasti del soundboard
 ValoLive bas-konuş (panel sesleri tuşsuz gider)	Push-to-talk di ValoLive (i suoni del soundboard non servono tasti)
+Henüz ses yok	Ancora nessun suono
+Oyunda kopya kâğıdı göster (Ctrl+Alt+N)	Mostra il promemoria in gioco (Ctrl+Alt+N)
+Sağ orta	Centro destra
+Sağ üst	In alto a destra
+Ses paneli	Soundboard
+Sol alt	In basso a sinistra
+Sol orta (haritanın altı)	Centro sinistra (sotto la mappa)
+Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	Non cliccabile, non interrompe il gioco, non appare in stream. La modalità schermo di Valorant deve essere «Schermo intero in finestra»; in «Schermo intero» non si vede.
+Yeri	Posizione
+sustur	ferma
