@@ -637,11 +637,3 @@ Yeni ses	Neue Stimme
 Yok	Keine
 {0} yarım ton	{0} Halbtöne
 İptal	Abbrechen
-Kaydedildi. Bir tane daha?	Gespeichert. Noch einer?
-Kayıt için ses değiştiricinin çalışması gerekiyor.	Zum Aufnehmen muss der Stimmverzerrer laufen.
-Klasörü aç	Ordner öffnen
-Konuş… {0}	Sprich… {0}
-Ses duyulmadı, tekrar dene.	Nichts gehört, versuch es nochmal.
-İnternet kafe	Internetcafé
-İnternet kafe: {0} bağırış, {1} ortam kaydı. Bağırışlar her seferinde başka biri gibi çalar. Kendi kayıtlarını (wav, mp3) klasördeki "sesler" ve "ortam" içine at.	Internetcafé: {0} Rufe, {1} Hintergrundaufnahmen. Jeder Ruf klingt wie eine andere Person. Lege eigene Aufnahmen (wav, mp3) in die Ordner „sesler“ und „ortam“.
-● Bağırış kaydet (4 sn)	● Ruf aufnehmen (4 s)

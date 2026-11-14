@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -70,27 +69,8 @@ namespace ValoLive
             y += keys.GetPreferredSize(new Size(ColW, 0)).Height + 4;
             var own = new Label { Text = L.T("Kendi sesini yap: \"+ Yeni ses\" · düzenlemek için sesine sağ tıkla"), ForeColor = Mut, AutoSize = true, MaximumSize = new Size(ColW, 0), Location = new Point(cx, y) };
             host.Controls.Add(own);
-            y += own.GetPreferredSize(new Size(ColW, 0)).Height + 10;
-            // İnternet kafe: gerçek kayıtlar klasörden; bağırışlar buradan da kaydedilir.
-            lblCafe = new Label { ForeColor = Mut, AutoSize = true, MaximumSize = new Size(ColW, 0), Location = new Point(cx, y) };
-            host.Controls.Add(lblCafe);
-            lblCafe.Text = CafeText();
-            y += lblCafe.GetPreferredSize(new Size(ColW, 0)).Height + 6;
-            int rw = Theme.ButtonWidth(L.T("● Bağırış kaydet (4 sn)"), 24, 150);
-            btnCafeRec = MakeButton(L.T("● Bağırış kaydet (4 sn)"), new Rectangle(cx, y, rw, 30), Field);
-            var openCafe = MakeButton(L.T("Klasörü aç"), new Rectangle(cx + rw + 8, y, Theme.ButtonWidth(L.T("Klasörü aç"), 24, 90), 30), Field);
-            btnCafeRec.Font = openCafe.Font = new Font(L.SansBold, 9.5f);
-            y += 38;
-            btnCafeRec.Click += (s, e) => RecordShout();
-            openCafe.Click += (s, e) =>
-            {
-                Directory.CreateDirectory(CafeBank.BedDir); Directory.CreateDirectory(CafeBank.ShoutDir);
-                Process.Start("explorer.exe", CafeBank.Dir);
-                CafeBank.Reload(); // klasöre dosya atıp dönünce sayılar tazelensin
-            };
-            CafeBank.Loaded += () => { try { BeginInvoke((Action)(() => lblCafe.Text = CafeText())); } catch { } };
-            CafeBank.Reload();
-            voiceBelow = new Control[] { chkVoiceMon, chkVoiceStream, keys, own, lblCafe, btnCafeRec, openCafe };
+            y += own.GetPreferredSize(new Size(ColW, 0)).Height + 4;
+            voiceBelow = new Control[] { chkVoiceMon, chkVoiceStream, keys, own };
             foreach (var c in voiceBelow) c.Tag = c.Top - voiceGrid.Bottom;
             AddDivider(Math.Max(leftBottom, y));
             page.Height = Math.Max(leftBottom, y);
@@ -105,34 +85,6 @@ namespace ValoLive
             chkVoiceMon.CheckedChanged += (s, e) => { if (loading) return; cfg.VoiceMonitor = chkVoiceMon.Checked; SaveSettings(); if (voice != null) voice.Monitor = cfg.VoiceMonitor; };
             chkVoiceStream.CheckedChanged += (s, e) => { if (loading) return; cfg.VoiceStream = chkVoiceStream.Checked; SaveSettings(); ApplyVoiceFlags(); };
             voiceTimer.Tick += (s, e) => TickVoice();
-        }
-
-        Label lblCafe;
-        Button btnCafeRec;
-
-        static string CafeText() =>
-            L.F("İnternet kafe: {0} bağırış, {1} ortam kaydı. Bağırışlar her seferinde başka biri gibi çalar. Kendi kayıtlarını (wav, mp3) klasördeki \"sesler\" ve \"ortam\" içine at.",
-                CafeBank.Shouts.Length, CafeBank.Beds.Length);
-
-        /// <summary>Mikrofondan 4 saniye efektsiz kayıt; baş/son sessizliği kırpılıp kafe seslerine eklenir.</summary>
-        void RecordShout()
-        {
-            if (CafeBank.Recording) return;
-            if (!chkVoice.Checked) chkVoice.Checked = true;
-            if (voice == null) { lblCafe.Text = L.T("Kayıt için ses değiştiricinin çalışması gerekiyor."); return; }
-            CafeBank.StartRecording(4);
-            int left = 4;
-            btnCafeRec.Text = L.F("Konuş… {0}", left); btnCafeRec.BackColor = Red;
-            var t = new Timer { Interval = 1000 };
-            t.Tick += (s, e) =>
-            {
-                if (--left > 0) { btnCafeRec.Text = L.F("Konuş… {0}", left); return; }
-                t.Stop(); t.Dispose();
-                bool ok = CafeBank.StopRecording();
-                btnCafeRec.Text = L.T("● Bağırış kaydet (4 sn)"); btnCafeRec.BackColor = Field;
-                lblCafe.Text = ok ? L.T("Kaydedildi. Bir tane daha?") : L.T("Ses duyulmadı, tekrar dene.");
-            };
-            t.Start();
         }
 
         /// <summary>"Hoparlör (Steam Streaming Microphone)" → "Steam Streaming Microphone": kablonun hangi ucu olduğu kafa karıştırmasın.</summary>

@@ -637,11 +637,3 @@ Yeni ses	Nouvelle voix
 Yok	Aucun
 {0} yarım ton	{0} demi-tons
 İptal	Annuler
-Kaydedildi. Bir tane daha?	Enregistré. Un autre ?
-Kayıt için ses değiştiricinin çalışması gerekiyor.	Le modificateur de voix doit être actif pour enregistrer.
-Klasörü aç	Ouvrir le dossier
-Konuş… {0}	Parle… {0}
-Ses duyulmadı, tekrar dene.	Aucun son entendu, réessaie.
-İnternet kafe	Cybercafé
-İnternet kafe: {0} bağırış, {1} ortam kaydı. Bağırışlar her seferinde başka biri gibi çalar. Kendi kayıtlarını (wav, mp3) klasördeki "sesler" ve "ortam" içine at.	Cybercafé : {0} cris, {1} ambiances. Chaque cri sonne comme une autre personne. Mets tes propres enregistrements (wav, mp3) dans les dossiers « sesler » et « ortam ».
-● Bağırış kaydet (4 sn)	● Enregistrer un cri (4 s)

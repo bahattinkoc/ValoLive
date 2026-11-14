@@ -637,11 +637,3 @@ Yeni ses	새 목소리
 Yok	없음
 {0} yarım ton	{0} 반음
 İptal	취소
-Kaydedildi. Bir tane daha?	저장했어요. 하나 더?
-Kayıt için ses değiştiricinin çalışması gerekiyor.	녹음하려면 음성 변조기가 실행 중이어야 합니다.
-Klasörü aç	폴더 열기
-Konuş… {0}	말하세요… {0}
-Ses duyulmadı, tekrar dene.	소리가 들리지 않았어요. 다시 해 보세요.
-İnternet kafe	PC방
-İnternet kafe: {0} bağırış, {1} ortam kaydı. Bağırışlar her seferinde başka biri gibi çalar. Kendi kayıtlarını (wav, mp3) klasördeki "sesler" ve "ortam" içine at.	PC방: 외침 {0}개, 배경 녹음 {1}개. 외침은 매번 다른 사람처럼 들립니다. 직접 녹음한 파일(wav, mp3)을 "sesler"와 "ortam" 폴더에 넣으세요.
-● Bağırış kaydet (4 sn)	● 외침 녹음 (4초)

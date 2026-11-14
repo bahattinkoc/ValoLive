@@ -86,7 +86,7 @@ namespace ValoLive
                     shake.Value = c.Shake; amount.Value = c.Amount;
                     place.SelectedIndex = Math.Max(0, Array.FindIndex(VoiceFx.Places, p => p.Key == c.Place));
                     filling = false;
-                    amount.Enabled = c.Place == "oda" || c.Place == "banyo" || c.Place == "salon" || c.Place == "magara" || c.Place == "stadyum" || c.Place == "kafe";
+                    amount.Enabled = c.Place == "oda" || c.Place == "banyo" || c.Place == "salon" || c.Place == "magara" || c.Place == "stadyum";
                 };
                 Action apply = () =>
                 {
@@ -94,7 +94,7 @@ namespace ValoLive
                     c.Name = string.IsNullOrWhiteSpace(name.Text) ? L.T("Sesim") : name.Text.Trim();
                     c.Pitch = pitch.Value; c.Formant = formant.Value; c.Robot = robot.Value; c.Breath = breath.Value; c.Shake = shake.Value;
                     c.Place = VoiceFx.Places[Math.Max(0, place.SelectedIndex)].Key; c.Amount = amount.Value;
-                    amount.Enabled = c.Place == "oda" || c.Place == "banyo" || c.Place == "salon" || c.Place == "magara" || c.Place == "stadyum" || c.Place == "kafe";
+                    amount.Enabled = c.Place == "oda" || c.Place == "banyo" || c.Place == "salon" || c.Place == "magara" || c.Place == "stadyum";
                     VoiceFx.SetCustom(cfg.VoiceCustoms);
                     voiceGrid.Invalidate();
                     if (voice != null) VoiceRunning();

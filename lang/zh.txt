@@ -637,11 +637,3 @@ Yeni ses	新聲音
 Yok	無
 {0} yarım ton	{0} 個半音
 İptal	取消
-Kaydedildi. Bir tane daha?	已儲存。再來一個?
-Kayıt için ses değiştiricinin çalışması gerekiyor.	錄音時變聲器必須在運作中。
-Klasörü aç	開啟資料夾
-Konuş… {0}	說話… {0}
-Ses duyulmadı, tekrar dene.	沒有聽到聲音，請再試一次。
-İnternet kafe	網咖
-İnternet kafe: {0} bağırış, {1} ortam kaydı. Bağırışlar her seferinde başka biri gibi çalar. Kendi kayıtlarını (wav, mp3) klasördeki "sesler" ve "ortam" içine at.	網咖：{0} 段喊叫、{1} 段環境錄音。每段喊叫聽起來都像不同的人。把你自己的錄音 (wav、mp3) 放進「sesler」和「ortam」資料夾。
-● Bağırış kaydet (4 sn)	● 錄一段喊叫 (4 秒)

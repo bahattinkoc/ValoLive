@@ -637,11 +637,3 @@ Yeni ses	New voice
 Yok	None
 {0} yarım ton	{0} semitones
 İptal	Cancel
-Kaydedildi. Bir tane daha?	Saved. Another one?
-Kayıt için ses değiştiricinin çalışması gerekiyor.	The voice changer must be running to record.
-Klasörü aç	Open folder
-Konuş… {0}	Speak… {0}
-Ses duyulmadı, tekrar dene.	No sound heard, try again.
-İnternet kafe	Internet cafe
-İnternet kafe: {0} bağırış, {1} ortam kaydı. Bağırışlar her seferinde başka biri gibi çalar. Kendi kayıtlarını (wav, mp3) klasördeki "sesler" ve "ortam" içine at.	Internet cafe: {0} shouts, {1} ambience recordings. Each shout plays as if someone else said it. Drop your own recordings (wav, mp3) into the "sesler" and "ortam" folders.
-● Bağırış kaydet (4 sn)	● Record a shout (4 s)

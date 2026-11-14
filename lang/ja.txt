@@ -637,11 +637,3 @@ Yeni ses	新しい声
 Yok	なし
 {0} yarım ton	{0} 半音
 İptal	キャンセル
-Kaydedildi. Bir tane daha?	保存しました。もう一つ?
-Kayıt için ses değiştiricinin çalışması gerekiyor.	録音するにはボイスチェンジャーを動かしておく必要があります。
-Klasörü aç	フォルダーを開く
-Konuş… {0}	話して… {0}
-Ses duyulmadı, tekrar dene.	音が聞こえませんでした。もう一度どうぞ。
-İnternet kafe	ネットカフェ
-İnternet kafe: {0} bağırış, {1} ortam kaydı. Bağırışlar her seferinde başka biri gibi çalar. Kendi kayıtlarını (wav, mp3) klasördeki "sesler" ve "ortam" içine at.	ネットカフェ: 叫び声 {0} 件、環境音 {1} 件。叫び声は毎回別人のように鳴ります。自分の録音 (wav, mp3) を「sesler」「ortam」フォルダーに入れてください。
-● Bağırış kaydet (4 sn)	● 叫び声を録音 (4 秒)
