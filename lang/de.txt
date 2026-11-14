@@ -682,3 +682,50 @@ Sol orta (haritanın altı)	Links Mitte (unter der Karte)
 Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	Nicht anklickbar, unterbricht das Spiel nicht, im Stream unsichtbar. Valorants Anzeigemodus muss „Vollbild im Fenster“ sein; im „Vollbild“ ist er nicht sichtbar.
 Yeri	Position
 sustur	stopp
+%{0} kafa	{0}% HS
+10 maç daha yükle	10 weitere Matches laden
+ACS	ACS
+Ajanlar	Agenten
+Bir oyuncunun Riot ID'sini yaz: Ad#Etiket (ör. Oyuncu#TR1). Etiketi bilmiyorsan yalnızca adı yaz: daha önce gördüklerinden önerilir.	Gib die Riot ID eines Spielers ein: Name#Tag (z. B. Spieler#EUW). Kennst du den Tag nicht, gib nur den Namen ein: Spieler, die du schon gesehen hast, werden vorgeschlagen.
+Birlikte oynadıkları (son {0} maç)	Zusammen gespielt (letzte {0} Matches)
+Bu adla daha önce kimseyi görmedik. Etiketiyle yaz: Ad#Etiket (ör. Oyuncu#TR1).	Mit diesem Namen haben wir noch niemanden gesehen. Gib ihn mit Tag ein: Name#Tag (z. B. Spieler#EUW).
+Bu maçlarda hep tek başına sıraya girmiş.	In all diesen Matches allein in die Warteschlange.
+Bu türde maç yok.	Keine Matches dieser Art.
+Daha eski maçlar yükleniyor…	Ältere Matches werden geladen…
+En yüksek: {0} ({1})	Höchster: {0} ({1})
+Etiket yazılmadı. Daha önce gördüğün bu adlı oyuncular:	Kein Tag angegeben. Spieler mit diesem Namen, die du schon gesehen hast:
+Genel	Übersicht
+HenrikDev anahtarı gerekli: Valorant sekmesinde gir.	HenrikDev-Schlüssel nötig: im Valorant-Tab eingeben.
+HenrikDev anahtarı geçersiz.	HenrikDev-Schlüssel ist ungültig.
+HenrikDev hatası ({0}). Biraz sonra tekrar dene.	HenrikDev-Fehler ({0}). Versuch es etwas später.
+HenrikDev sınırı: {0} sn bekleniyor…	HenrikDev-Limit: {0} s warten…
+HenrikDev'e ulaşılamadı. İnternet bağlantını kontrol et.	HenrikDev nicht erreichbar. Prüfe deine Internetverbindung.
+K / D / A	K / D / A
+K/D	K/D
+KDA	KDA
+Maçlar	Matches
+Maçlar yükleniyor…	Matches werden geladen…
+OYUNCU ARA	SPIELER SUCHEN
+Oyuncu Ara	Spieler suchen
+Oyuncu bulunamadı. Ad ve etiketi kontrol et.	Spieler nicht gefunden. Prüfe Name und Tag.
+Seviye {0} · {1}	Level {0} · {1}
+Sezonlar	Saisons
+Sık denk geldikleri	Oft getroffen
+Takım Ölüm Kalım	Team-Deathmatch
+Takımı	Sein Team
+Tam Gaz	Swiftplay
+ValoLive — Oyuncu Ara	ValoLive — Spieler suchen
+kafa	HS
+kafadan vuruş	Kopftreffer
+kazanma · {0}G {1}M	Siegquote · {0}S {1}N
+ortalama skor (ACS)	durchschnittlicher Kampfwert (ACS)
+round başına hasar	Schaden pro Runde
+{0} ACS	{0} ACS
+{0} maç birlikte · {1}G {2}M	{0} Matches zusammen · {1}S {2}N
+{0} maç · %{1} kazanma · {2} K/D	{0} Matches · {1}% Siege · {2} K/D
+{0} maç · {1}G {2}M	{0} Matches · {1}S {2}N
+{0} takım, {1} rakip	{0}× im Team, {1}× Gegner
+{0}G / {1} maç	{0}S / {1} Matches
+Ölüm Kalım	Deathmatch
+Haritalar	Karten
+parti	Gruppe

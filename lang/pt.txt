@@ -682,3 +682,50 @@ Sol orta (haritanın altı)	Meio esquerdo (abaixo do mapa)
 Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	Não é clicável, não interrompe o jogo e não aparece na stream. O modo de tela do Valorant deve ser "Tela cheia em janela"; em "Tela cheia" não aparece.
 Yeri	Posição
 sustur	parar
+%{0} kafa	{0}% HS
+10 maç daha yükle	Carregar mais 10 partidas
+ACS	ACS
+Ajanlar	Agentes
+Bir oyuncunun Riot ID'sini yaz: Ad#Etiket (ör. Oyuncu#TR1). Etiketi bilmiyorsan yalnızca adı yaz: daha önce gördüklerinden önerilir.	Digite o Riot ID de um jogador: Nome#Tag (ex. Jogador#BR1). Se não souber a tag, digite só o nome: sugerimos jogadores que você já viu.
+Birlikte oynadıkları (son {0} maç)	Jogou com (últimas {0} partidas)
+Bu adla daha önce kimseyi görmedik. Etiketiyle yaz: Ad#Etiket (ör. Oyuncu#TR1).	Ainda não vimos ninguém com esse nome. Digite com a tag: Nome#Tag (ex. Jogador#BR1).
+Bu maçlarda hep tek başına sıraya girmiş.	Entrou sozinho em todas essas partidas.
+Bu türde maç yok.	Nenhuma partida desse tipo.
+Daha eski maçlar yükleniyor…	Carregando partidas antigas…
+En yüksek: {0} ({1})	Máximo: {0} ({1})
+Etiket yazılmadı. Daha önce gördüğün bu adlı oyuncular:	Sem tag. Jogadores com esse nome que você já viu:
+Genel	Visão geral
+HenrikDev anahtarı gerekli: Valorant sekmesinde gir.	Precisa da chave HenrikDev: digite na aba Valorant.
+HenrikDev anahtarı geçersiz.	A chave HenrikDev é inválida.
+HenrikDev hatası ({0}). Biraz sonra tekrar dene.	Erro do HenrikDev ({0}). Tente de novo daqui a pouco.
+HenrikDev sınırı: {0} sn bekleniyor…	Limite do HenrikDev: aguardando {0} s…
+HenrikDev'e ulaşılamadı. İnternet bağlantını kontrol et.	Não foi possível acessar o HenrikDev. Verifique sua internet.
+K / D / A	K / D / A
+K/D	K/D
+KDA	KDA
+Maçlar	Partidas
+Maçlar yükleniyor…	Carregando partidas…
+OYUNCU ARA	BUSCAR JOGADOR
+Oyuncu Ara	Buscar jogador
+Oyuncu bulunamadı. Ad ve etiketi kontrol et.	Jogador não encontrado. Verifique o nome e a tag.
+Seviye {0} · {1}	Nível {0} · {1}
+Sezonlar	Temporadas
+Sık denk geldikleri	Encontros frequentes
+Takım Ölüm Kalım	Mata-mata em equipe
+Takımı	Time dele
+Tam Gaz	Disputa rápida
+ValoLive — Oyuncu Ara	ValoLive — Buscar jogador
+kafa	HS
+kafadan vuruş	tiros na cabeça
+kazanma · {0}G {1}M	vitórias · {0}V {1}D
+ortalama skor (ACS)	pontuação média de combate (ACS)
+round başına hasar	dano por rodada
+{0} ACS	{0} ACS
+{0} maç birlikte · {1}G {2}M	{0} partidas juntos · {1}V {2}D
+{0} maç · %{1} kazanma · {2} K/D	{0} partidas · {1}% vitórias · {2} K/D
+{0} maç · {1}G {2}M	{0} partidas · {1}V {2}D
+{0} takım, {1} rakip	{0} no time, {1} adversário
+{0}G / {1} maç	{0}V / {1} partidas
+Ölüm Kalım	Mata-mata
+Haritalar	Mapas
+parti	grupo

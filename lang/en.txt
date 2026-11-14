@@ -682,3 +682,50 @@ Sol orta (haritanın altı)	Left middle (below the map)
 Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	Can't be clicked, doesn't interrupt the game, isn't shown on stream. Valorant's display mode must be "Windowed Fullscreen"; it doesn't show in "Fullscreen".
 Yeri	Position
 sustur	stop
+%{0} kafa	{0}% HS
+10 maç daha yükle	Load 10 more matches
+ACS	ACS
+Ajanlar	Agents
+Bir oyuncunun Riot ID'sini yaz: Ad#Etiket (ör. Oyuncu#TR1). Etiketi bilmiyorsan yalnızca adı yaz: daha önce gördüklerinden önerilir.	Type a player's Riot ID: Name#Tag (e.g. Player#EUW). If you don't know the tag, type only the name: players you've seen before are suggested.
+Birlikte oynadıkları (son {0} maç)	Played with (last {0} matches)
+Bu adla daha önce kimseyi görmedik. Etiketiyle yaz: Ad#Etiket (ör. Oyuncu#TR1).	We haven't seen anyone with this name yet. Type it with the tag: Name#Tag (e.g. Player#EUW).
+Bu maçlarda hep tek başına sıraya girmiş.	Queued alone in all of these matches.
+Bu türde maç yok.	No matches of this type.
+Daha eski maçlar yükleniyor…	Loading older matches…
+En yüksek: {0} ({1})	Peak: {0} ({1})
+Etiket yazılmadı. Daha önce gördüğün bu adlı oyuncular:	No tag given. Players with this name you've seen before:
+Genel	Overview
+HenrikDev anahtarı gerekli: Valorant sekmesinde gir.	HenrikDev key needed: enter it in the Valorant tab.
+HenrikDev anahtarı geçersiz.	HenrikDev key is invalid.
+HenrikDev hatası ({0}). Biraz sonra tekrar dene.	HenrikDev error ({0}). Try again a bit later.
+HenrikDev sınırı: {0} sn bekleniyor…	HenrikDev rate limit: waiting {0} s…
+HenrikDev'e ulaşılamadı. İnternet bağlantını kontrol et.	Couldn't reach HenrikDev. Check your internet connection.
+K / D / A	K / D / A
+K/D	K/D
+KDA	KDA
+Maçlar	Matches
+Maçlar yükleniyor…	Loading matches…
+OYUNCU ARA	FIND PLAYER
+Oyuncu Ara	Find player
+Oyuncu bulunamadı. Ad ve etiketi kontrol et.	Player not found. Check the name and tag.
+Seviye {0} · {1}	Level {0} · {1}
+Sezonlar	Seasons
+Sık denk geldikleri	Often met
+Takım Ölüm Kalım	Team Deathmatch
+Takımı	Their team
+Tam Gaz	Swiftplay
+ValoLive — Oyuncu Ara	ValoLive — Find player
+kafa	HS
+kafadan vuruş	headshots
+kazanma · {0}G {1}M	win rate · {0}W {1}L
+ortalama skor (ACS)	average combat score (ACS)
+round başına hasar	damage per round
+{0} ACS	{0} ACS
+{0} maç birlikte · {1}G {2}M	{0} matches together · {1}W {2}L
+{0} maç · %{1} kazanma · {2} K/D	{0} matches · {1}% wins · {2} K/D
+{0} maç · {1}G {2}M	{0} matches · {1}W {2}L
+{0} takım, {1} rakip	{0} as teammate, {1} as opponent
+{0}G / {1} maç	{0}W / {1} matches
+Ölüm Kalım	Deathmatch
+Haritalar	Maps
+parti	party

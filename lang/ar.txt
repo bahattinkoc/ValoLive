@@ -682,3 +682,50 @@ Sol orta (haritanın altı)	الوسط الأيسر (أسفل الخريطة)
 Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	لا يمكن النقر عليها، لا تقاطع اللعبة، ولا تظهر في البث. يجب أن يكون وضع عرض Valorant "ملء الشاشة في نافذة"؛ لا تظهر في "ملء الشاشة".
 Yeri	الموضع
 sustur	إيقاف
+%{0} kafa	{0}% رأس
+10 maç daha yükle	تحميل 10 مباريات أخرى
+ACS	ACS
+Ajanlar	العملاء
+Bir oyuncunun Riot ID'sini yaz: Ad#Etiket (ör. Oyuncu#TR1). Etiketi bilmiyorsan yalnızca adı yaz: daha önce gördüklerinden önerilir.	اكتب Riot ID للاعب: الاسم#الوسم (مثل Player#EUW). إن لم تعرف الوسم فاكتب الاسم فقط: سنقترح لاعبين رأيتهم من قبل.
+Birlikte oynadıkları (son {0} maç)	لعب مع (آخر {0} مباريات)
+Bu adla daha önce kimseyi görmedik. Etiketiyle yaz: Ad#Etiket (ör. Oyuncu#TR1).	لم نرَ أحدًا بهذا الاسم بعد. اكتبه مع الوسم: الاسم#الوسم (مثل Player#EUW).
+Bu maçlarda hep tek başına sıraya girmiş.	دخل منفردًا في كل هذه المباريات.
+Bu türde maç yok.	لا مباريات من هذا النوع.
+Daha eski maçlar yükleniyor…	جارٍ تحميل المباريات الأقدم…
+En yüksek: {0} ({1})	الأعلى: {0} ({1})
+Etiket yazılmadı. Daha önce gördüğün bu adlı oyuncular:	لا يوجد وسم. لاعبون بهذا الاسم رأيتهم من قبل:
+Genel	نظرة عامة
+HenrikDev anahtarı gerekli: Valorant sekmesinde gir.	مطلوب مفتاح HenrikDev: أدخله في تبويب Valorant.
+HenrikDev anahtarı geçersiz.	مفتاح HenrikDev غير صالح.
+HenrikDev hatası ({0}). Biraz sonra tekrar dene.	خطأ HenrikDev ({0}). حاول بعد قليل.
+HenrikDev sınırı: {0} sn bekleniyor…	حد HenrikDev: انتظار {0} ث…
+HenrikDev'e ulaşılamadı. İnternet bağlantını kontrol et.	تعذّر الوصول إلى HenrikDev. تحقّق من اتصالك بالإنترنت.
+K / D / A	K / D / A
+K/D	K/D
+KDA	KDA
+Maçlar	المباريات
+Maçlar yükleniyor…	جارٍ تحميل المباريات…
+OYUNCU ARA	ابحث عن لاعب
+Oyuncu Ara	ابحث عن لاعب
+Oyuncu bulunamadı. Ad ve etiketi kontrol et.	لم يُعثر على اللاعب. تحقّق من الاسم والوسم.
+Seviye {0} · {1}	المستوى {0} · {1}
+Sezonlar	المواسم
+Sık denk geldikleri	يلتقيهم كثيرًا
+Takım Ölüm Kalım	مواجهة الفرق حتى الموت
+Takımı	فريقه
+Tam Gaz	اللعب السريع
+ValoLive — Oyuncu Ara	ValoLive — ابحث عن لاعب
+kafa	رأس
+kafadan vuruş	إصابات الرأس
+kazanma · {0}G {1}M	الفوز · {0}ف {1}خ
+ortalama skor (ACS)	متوسط نقاط القتال (ACS)
+round başına hasar	الضرر لكل جولة
+{0} ACS	{0} ACS
+{0} maç birlikte · {1}G {2}M	{0} مباريات معًا · {1}ف {2}خ
+{0} maç · %{1} kazanma · {2} K/D	{0} مباريات · {1}% فوز · {2} K/D
+{0} maç · {1}G {2}M	{0} مباريات · {1}ف {2}خ
+{0} takım, {1} rakip	{0} زميل، {1} خصم
+{0}G / {1} maç	{0}ف / {1} مباريات
+Ölüm Kalım	المواجهة حتى الموت
+Haritalar	الخرائط
+parti	فريق

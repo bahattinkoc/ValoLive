@@ -682,3 +682,50 @@ Sol orta (haritanın altı)	왼쪽 가운데 (지도 아래)
 Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	클릭되지 않고, 게임을 방해하지 않으며, 방송에 나오지 않습니다. Valorant 화면 모드가 "창 모드 전체 화면"이어야 하며 "전체 화면"에서는 보이지 않습니다.
 Yeri	위치
 sustur	정지
+%{0} kafa	헤드샷 {0}%
+10 maç daha yükle	10경기 더 불러오기
+ACS	ACS
+Ajanlar	요원
+Bir oyuncunun Riot ID'sini yaz: Ad#Etiket (ör. Oyuncu#TR1). Etiketi bilmiyorsan yalnızca adı yaz: daha önce gördüklerinden önerilir.	플레이어의 Riot ID를 입력하세요: 이름#태그 (예: Player#KR1). 태그를 모르면 이름만 입력하세요: 전에 본 플레이어를 추천합니다.
+Birlikte oynadıkları (son {0} maç)	함께 플레이 (최근 {0}경기)
+Bu adla daha önce kimseyi görmedik. Etiketiyle yaz: Ad#Etiket (ör. Oyuncu#TR1).	이 이름의 플레이어를 아직 본 적이 없어요. 태그와 함께 입력하세요: 이름#태그 (예: Player#KR1).
+Bu maçlarda hep tek başına sıraya girmiş.	이 경기들은 모두 혼자 대기열에 들어갔어요.
+Bu türde maç yok.	이 유형의 경기가 없어요.
+Daha eski maçlar yükleniyor…	이전 경기를 불러오는 중…
+En yüksek: {0} ({1})	최고: {0} ({1})
+Etiket yazılmadı. Daha önce gördüğün bu adlı oyuncular:	태그가 없어요. 전에 본 이 이름의 플레이어:
+Genel	개요
+HenrikDev anahtarı gerekli: Valorant sekmesinde gir.	HenrikDev 키가 필요해요: Valorant 탭에서 입력하세요.
+HenrikDev anahtarı geçersiz.	HenrikDev 키가 올바르지 않아요.
+HenrikDev hatası ({0}). Biraz sonra tekrar dene.	HenrikDev 오류 ({0}). 잠시 후 다시 시도하세요.
+HenrikDev sınırı: {0} sn bekleniyor…	HenrikDev 제한: {0}초 대기 중…
+HenrikDev'e ulaşılamadı. İnternet bağlantını kontrol et.	HenrikDev에 연결할 수 없어요. 인터넷 연결을 확인하세요.
+K / D / A	K / D / A
+K/D	K/D
+KDA	KDA
+Maçlar	경기
+Maçlar yükleniyor…	경기 불러오는 중…
+OYUNCU ARA	플레이어 검색
+Oyuncu Ara	플레이어 검색
+Oyuncu bulunamadı. Ad ve etiketi kontrol et.	플레이어를 찾을 수 없어요. 이름과 태그를 확인하세요.
+Seviye {0} · {1}	레벨 {0} · {1}
+Sezonlar	시즌
+Sık denk geldikleri	자주 만난 플레이어
+Takım Ölüm Kalım	팀 데스매치
+Takımı	상대 팀
+Tam Gaz	신속 플레이
+ValoLive — Oyuncu Ara	ValoLive — 플레이어 검색
+kafa	HS
+kafadan vuruş	헤드샷
+kazanma · {0}G {1}M	승률 · {0}승 {1}패
+ortalama skor (ACS)	평균 전투 점수 (ACS)
+round başına hasar	라운드당 피해
+{0} ACS	{0} ACS
+{0} maç birlikte · {1}G {2}M	함께 {0}경기 · {1}승 {2}패
+{0} maç · %{1} kazanma · {2} K/D	{0}경기 · 승률 {1}% · {2} K/D
+{0} maç · {1}G {2}M	{0}경기 · {1}승 {2}패
+{0} takım, {1} rakip	같은 팀 {0}, 상대 {1}
+{0}G / {1} maç	{0}승 / {1}경기
+Ölüm Kalım	데스매치
+Haritalar	맵
+parti	파티

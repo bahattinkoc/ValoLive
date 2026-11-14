@@ -9,12 +9,14 @@
 "Ses bul" ile myinstants'tan ekle ya da klasöre mp3 at. Sürükleyip sırala, sağ tıkla kaldır. Oyunda 1…9 numaralı tuşlar çalar, 0 susturur (Alt ya da Numpad: sağdaki ayar).
 "{0}" adında kategori bulunamadı.
 %{0}
+%{0} kafa
 (mikrofon yok)
 (sanal mikrofon bulunamadı)
 + Ekle
 +{0} karşılaşma daha
 , ilk ölüm %{0}
 . İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.
+10 maç daha yükle
 1080p60 · 6000 kbps (önerilen)
 2 kayıp serisinden sonra yeterli maç yok; örnek arttıkça netleşir.
 2 kayıptan sonra ({0})
@@ -23,6 +25,7 @@
 <h2>ValoLive Kick'e bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>
 <h2>ValoLive YouTube'a bağlandı ✓</h2><p>Bu sekmeyi kapatabilirsin.</p>
 ACE GELİYOR
+ACS
 AGRESİF
 AJAN SEÇİMİ
 AKVARYUM
@@ -31,6 +34,7 @@ AYARLAR
 Ad
 Ajan
 Ajan seçiminde sniper perdesi (otomatik)
+Ajanlar
 Akvaryum: chat'e yazan balık olur
 Akşam
 Altın
@@ -64,16 +68,21 @@ Başlık uygulanamadı:
 Başlık ve etiketler bağlı her hesaba gider, yayın başlarken kendiliğinden. Kategori yalnızca Kick'te; YouTube'da yayın Oyun kategorisinde açılır, küçük resim Studio'dan. Chat kutusu ve chat eğlencesi iki chat'i birlikte okur.
 Belirgin bir alışkanlık yok — dengeli oynuyor.
 Bildirimler (tanıdık oyuncu, smurf, parti)
+Bir oyuncunun Riot ID'sini yaz: Ad#Etiket (ör. Oyuncu#TR1). Etiketi bilmiyorsan yalnızca adı yaz: daha önce gördüklerinden önerilir.
+Birlikte oynadıkları (son {0} maç)
 Brifing
 Bronz
 Bu Google hesabında YouTube kanalı yok.
+Bu adla daha önce kimseyi görmedik. Etiketiyle yaz: Ad#Etiket (ör. Oyuncu#TR1).
 Bu haritada bomba kurmamış.
 Bu lobide öne çıkan bir bilgi yok.
+Bu maçlarda hep tek başına sıraya girmiş.
 Bu pencere yayına ve kayda girmez · adını gizleyenler aranmaz
 Bu platforma yayınla
 Bu projede "YouTube Data API v3"ü etkinleştir (Enable):
 Bu raund ace gelir mi? 🎯
 Bu ses açılamadı.
+Bu türde maç yok.
 Bugün henüz rekabetçi maç yok.
 Bugün rank atlıyoruz 💪
 Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.
@@ -101,6 +110,7 @@ Clients → Create client → Application type: Desktop app → Create. Client I
 Ctrl+Alt+V  efekti aç/kapat      Ctrl+Alt+B  sonraki efekt
 DEVRE ARASI
 DOST ATEŞİ
+Daha eski maçlar yükleniyor…
 Daha fazla
 Defans
 Defansta
@@ -123,7 +133,9 @@ Elmas
 Emoji yağmuru
 Emoji yağmuru (aynı emojiyi yazınca)
 Emoji yağmuru eşiği
+En yüksek: {0} ({1})
 Enter: kaydet     Esc: vazgeç\n\n
+Etiket yazılmadı. Daha önce gördüğün bu adlı oyuncular:
 Etiketler
 F9  Sniper koruması      F10  Yayın özeti
 F9: sniper perdesi · F10: yayın özeti
@@ -136,6 +148,7 @@ Fısıltı
 GERİ DÖNÜŞ
 GG, TEŞEKKÜRLER!
 Gece
+Genel
 Gizli oyuncu
 Google Auth Platform → Get started: uygulama adı ValoLive, kitle External. Sonra Audience sayfasında "Publish app" de (yoksa giriş 7 günde bir düşer).
 Google Cloud'da yeni bir proje oluştur (ad: ValoLive):
@@ -155,10 +168,16 @@ HARİTA
 HARİTALAR
 Hafif yakalama (yalnızca oyun penceresi)
 Harita
+Haritalar
 Havai fişek hedefi
 Hayalet
 Hazırlanıyor…
+HenrikDev anahtarı gerekli: Valorant sekmesinde gir.
+HenrikDev anahtarı geçersiz.
 HenrikDev anahtarı yok
+HenrikDev hatası ({0}). Biraz sonra tekrar dene.
+HenrikDev sınırı: {0} sn bekleniyor…
+HenrikDev'e ulaşılamadı. İnternet bağlantını kontrol et.
 Henüz ses yok
 Henüz ses yok: "Klasörü aç" ile ekle.
 Hepsi
@@ -167,9 +186,12 @@ Hesabı bağlı platforma yayın kapalı: chat okunmaz
 Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.
 Hiçbir platform açık değil: yalnızca test kaydı alınabilir.
 Hızlı
+K / D / A
+K/D
 KAFACI
 KATMANLAR
 KAZANMA
+KDA
 KENDİ ANALİZİM
 KENDİ KENDİNE
 KENDİ SESİN
@@ -229,7 +251,9 @@ Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada öze
 Maç bulununca takımın burada listelenir.
 Maç bulununca yayın kendiliğinden oyuna döner
 Maç sonu kartı (ısı haritası + özet)
+Maçlar
 Maçlar inceleniyor {0}/{1}…
+Maçlar yükleniyor…
 Maçları inceleniyor…
 Mağara
 Mağaza bilgisi alınamadı.
@@ -245,12 +269,15 @@ NİNJA DEFUSE
 OP'ÇU
 OTURUM
 OYUN STİLİ
+OYUNCU ARA
 Oda
 Ortak havai fişek
 Ortam
 Ortam miktarı
 Otomatik (Valorant dili)
 Oyun sesi
+Oyuncu Ara
+Oyuncu bulunamadı. Ad ve etiketi kontrol et.
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.
 Oyunda kopya kâğıdı göster (Ctrl+Alt+N)
 PARTİ
@@ -339,6 +366,8 @@ Sesler myinstants.com'dan gelir ve başkalarına aittir; yalnızca kendi oyunun 
 Sesler sanal mikrofondan gider: önce ses değiştiriciyi aç.
 Sesli oku
 Sesli oku (robot sesi)
+Seviye {0} · {1}
+Sezonlar
 Seçtiğim uygulama
 Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.
 Sil
@@ -368,6 +397,7 @@ Süre: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n
 SİLAH
 SİLAH GÖRÜNÜMLERİ
+Sık denk geldikleri
 Sık ilk ölüyor (roundların %{0}). Erken peek atar; sabırlı bekle, sana gelir.
 Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz
 Sıraya girilince sayaç başlar
@@ -382,9 +412,12 @@ TEK AJAN
 TEST KAYDEDİLİYOR…
 TEST KAYDI (15 sn)
 Takım arkadaşın
+Takım Ölüm Kalım
+Takımı
 Takımın
 Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.
 Takımında {0} kişilik parti
+Tam Gaz
 Tam ekran (her şey görünür)
 Tarayıcıda Google onayı bekleniyor…
 Tarayıcıda Kick onayı bekleniyor…
@@ -413,6 +446,7 @@ ValoLive — Chat eğlencesi önizleme
 ValoLive — Kendi Analizim
 ValoLive — Maç Odası
 ValoLive — Oyuncu Analizi
+ValoLive — Oyuncu Ara
 ValoLive — SNIPER KORUMASI AÇIK
 ValoLive — YAYIN ÖZETİ
 ValoLive — Yayın Paneli
@@ -509,12 +543,15 @@ ilk öldüğün round kayıp
 ilk ölen sensin
 ilk ölüm / round
 incelenecek maç bulunamadı
+kafa
 kafa isabeti
+kafadan vuruş
 kapalı
 katılmak için !race yaz · {0}
 kaybettin
 kazandın
 kazanma
+kazanma · {0}G {1}M
 kendi yeteneğinle {0} kez öldün
 kendiliğinden
 kilitledi
@@ -529,13 +566,16 @@ myinstants'a ulaşılamadı. İnternet bağlantını kontrol et.
 nerede oynuyorlar
 noktalar: öldürdüğü anda durduğu yer
 ort.
+ortalama skor (ACS)
 oturumun 4.+ maçı ({0})
+parti
 rakip
 rakiplerin bu haritadaki son maçları
 rakipte
 rakipte tek kişi kaldı
 rank yükleniyor…
 reddetti
+round başına hasar
 seçti
 son maçlarında oynadıkları
 son {0} maç · {1} round incelendi
@@ -560,6 +600,7 @@ zirve
 {0:0} ay önce
 {0:0} gün önce
 {0:0} hafta önce
+{0} ACS
 {0} KAZANDI!
 {0} açılamadı: {1}
 {0} açılınca yayın kendiliğinden devam eder
@@ -576,10 +617,13 @@ zirve
 {0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.
 {0} kez düşerek öldün
 {0} kişi
+{0} maç birlikte · {1}G {2}M
 {0} maç · %{1} kazanma · atak round %{2} · defans round %{3}
+{0} maç · %{1} kazanma · {2} K/D
 {0} maç · düellolar ekleniyor {1}/{2}
 {0} maç · tarama hatası: {1}
 {0} maç · {1}
+{0} maç · {1}G {2}M
 {0} oyuncu inceleniyor…
 {0} patlattı
 {0} platform × ~{1} kbps → internetin yükleme hızı en az {2} Mbps olmalı (pay ile).
@@ -590,6 +634,7 @@ zirve
 {0} raund üst üste
 {0} rekabetçi maç
 {0} sn
+{0} takım, {1} rakip
 {0} yarım ton
 {0} yayını reddetti: Stream Key'i kontrol et
 {0} yeniden bağlandı
@@ -603,6 +648,7 @@ zirve
 {0}: kullanılmamış
 {0}: {1} round · round başı {2:0.00} öldürme · kafa %{3}
 {0}G  {1}M
+{0}G / {1} maç
 · act %{0} ({1})
 · düello sen {0} – {1} o
 · {0} kez aynı maçtaydınız
@@ -617,6 +663,7 @@ zirve
 Öldürmelerinin büyük kısmı Operator ile (%{0}). Uzun açıları kuru peek'leme, flaşla ya da başka yerden gir.
 Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.
+Ölüm Kalım
 Ölümsüzlük
 Önce Kick ya da YouTube hesabını bağla (Platformlar → Bağlan).
 Öne çıkan başka bir bilgi yok.

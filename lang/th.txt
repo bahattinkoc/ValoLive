@@ -682,3 +682,50 @@ Sol orta (haritanın altı)	ซ้ายกลาง (ใต้แผนที�
 Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	คลิกไม่ได้ ไม่รบกวนเกม และไม่ขึ้นในสตรีม โหมดแสดงผลของ Valorant ต้องเป็น "เต็มจอแบบหน้าต่าง" ในโหมด "เต็มจอ" จะมองไม่เห็น
 Yeri	ตำแหน่ง
 sustur	หยุด
+%{0} kafa	HS {0}%
+10 maç daha yükle	โหลดอีก 10 แมตช์
+ACS	ACS
+Ajanlar	เอเจนต์
+Bir oyuncunun Riot ID'sini yaz: Ad#Etiket (ör. Oyuncu#TR1). Etiketi bilmiyorsan yalnızca adı yaz: daha önce gördüklerinden önerilir.	พิมพ์ Riot ID ของผู้เล่น: ชื่อ#แท็ก (เช่น Player#TH1) ถ้าไม่รู้แท็ก พิมพ์แค่ชื่อ: จะแนะนำผู้เล่นที่คุณเคยเห็น
+Birlikte oynadıkları (son {0} maç)	เล่นด้วยกัน ({0} แมตช์ล่าสุด)
+Bu adla daha önce kimseyi görmedik. Etiketiyle yaz: Ad#Etiket (ör. Oyuncu#TR1).	ยังไม่เคยเห็นใครชื่อนี้ พิมพ์พร้อมแท็ก: ชื่อ#แท็ก (เช่น Player#TH1)
+Bu maçlarda hep tek başına sıraya girmiş.	ทุกแมตช์นี้เข้าคิวคนเดียว
+Bu türde maç yok.	ไม่มีแมตช์ประเภทนี้
+Daha eski maçlar yükleniyor…	กำลังโหลดแมตช์เก่า…
+En yüksek: {0} ({1})	สูงสุด: {0} ({1})
+Etiket yazılmadı. Daha önce gördüğün bu adlı oyuncular:	ไม่มีแท็ก ผู้เล่นชื่อนี้ที่คุณเคยเห็น:
+Genel	ภาพรวม
+HenrikDev anahtarı gerekli: Valorant sekmesinde gir.	ต้องใช้คีย์ HenrikDev: ใส่ในแท็บ Valorant
+HenrikDev anahtarı geçersiz.	คีย์ HenrikDev ไม่ถูกต้อง
+HenrikDev hatası ({0}). Biraz sonra tekrar dene.	HenrikDev ผิดพลาด ({0}) ลองอีกครั้งภายหลัง
+HenrikDev sınırı: {0} sn bekleniyor…	HenrikDev จำกัด: รอ {0} วิ…
+HenrikDev'e ulaşılamadı. İnternet bağlantını kontrol et.	เชื่อมต่อ HenrikDev ไม่ได้ ตรวจสอบอินเทอร์เน็ต
+K / D / A	K / D / A
+K/D	K/D
+KDA	KDA
+Maçlar	แมตช์
+Maçlar yükleniyor…	กำลังโหลดแมตช์…
+OYUNCU ARA	ค้นหาผู้เล่น
+Oyuncu Ara	ค้นหาผู้เล่น
+Oyuncu bulunamadı. Ad ve etiketi kontrol et.	ไม่พบผู้เล่น ตรวจสอบชื่อและแท็ก
+Seviye {0} · {1}	เลเวล {0} · {1}
+Sezonlar	ซีซั่น
+Sık denk geldikleri	เจอบ่อย
+Takım Ölüm Kalım	ทีมเดธแมตช์
+Takımı	ทีมของเขา
+Tam Gaz	สวิฟต์เพลย์
+ValoLive — Oyuncu Ara	ValoLive — ค้นหาผู้เล่น
+kafa	HS
+kafadan vuruş	ยิงหัว
+kazanma · {0}G {1}M	อัตราชนะ · ชนะ {0} แพ้ {1}
+ortalama skor (ACS)	คะแนนต่อสู้เฉลี่ย (ACS)
+round başına hasar	ความเสียหายต่อรอบ
+{0} ACS	{0} ACS
+{0} maç birlikte · {1}G {2}M	เล่นด้วยกัน {0} แมตช์ · ชนะ {1} แพ้ {2}
+{0} maç · %{1} kazanma · {2} K/D	{0} แมตช์ · ชนะ {1}% · {2} K/D
+{0} maç · {1}G {2}M	{0} แมตช์ · ชนะ {1} แพ้ {2}
+{0} takım, {1} rakip	ทีมเดียวกัน {0}, ฝ่ายตรงข้าม {1}
+{0}G / {1} maç	ชนะ {0} / {1} แมตช์
+Ölüm Kalım	เดธแมตช์
+Haritalar	แผนที่
+parti	ปาร์ตี้

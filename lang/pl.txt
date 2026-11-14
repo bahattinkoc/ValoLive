@@ -682,3 +682,50 @@ Sol orta (haritanın altı)	Lewy środek (pod mapą)
 Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	Nie da się kliknąć, nie przerywa gry, nie widać jej na streamie. Tryb wyświetlania Valoranta musi być „Pełny ekran w oknie”; w „Pełnym ekranie” jej nie widać.
 Yeri	Położenie
 sustur	wycisz
+%{0} kafa	{0}% HS
+10 maç daha yükle	Wczytaj 10 meczów więcej
+ACS	ACS
+Ajanlar	Agenci
+Bir oyuncunun Riot ID'sini yaz: Ad#Etiket (ör. Oyuncu#TR1). Etiketi bilmiyorsan yalnızca adı yaz: daha önce gördüklerinden önerilir.	Wpisz Riot ID gracza: Nazwa#Tag (np. Gracz#EUW). Jeśli nie znasz tagu, wpisz samą nazwę: podpowiemy graczy, których już widziałeś.
+Birlikte oynadıkları (son {0} maç)	Grał z (ostatnie {0} meczów)
+Bu adla daha önce kimseyi görmedik. Etiketiyle yaz: Ad#Etiket (ör. Oyuncu#TR1).	Nikogo z tą nazwą jeszcze nie widzieliśmy. Wpisz ją z tagiem: Nazwa#Tag (np. Gracz#EUW).
+Bu maçlarda hep tek başına sıraya girmiş.	We wszystkich tych meczach grał solo.
+Bu türde maç yok.	Brak meczów tego typu.
+Daha eski maçlar yükleniyor…	Wczytywanie starszych meczów…
+En yüksek: {0} ({1})	Najwyżej: {0} ({1})
+Etiket yazılmadı. Daha önce gördüğün bu adlı oyuncular:	Bez tagu. Gracze z tą nazwą, których już widziałeś:
+Genel	Przegląd
+HenrikDev anahtarı gerekli: Valorant sekmesinde gir.	Potrzebny klucz HenrikDev: wpisz go w zakładce Valorant.
+HenrikDev anahtarı geçersiz.	Klucz HenrikDev jest nieprawidłowy.
+HenrikDev hatası ({0}). Biraz sonra tekrar dene.	Błąd HenrikDev ({0}). Spróbuj trochę później.
+HenrikDev sınırı: {0} sn bekleniyor…	Limit HenrikDev: czekam {0} s…
+HenrikDev'e ulaşılamadı. İnternet bağlantını kontrol et.	Nie można połączyć się z HenrikDev. Sprawdź internet.
+K / D / A	K / D / A
+K/D	K/D
+KDA	KDA
+Maçlar	Mecze
+Maçlar yükleniyor…	Wczytywanie meczów…
+OYUNCU ARA	SZUKAJ GRACZA
+Oyuncu Ara	Szukaj gracza
+Oyuncu bulunamadı. Ad ve etiketi kontrol et.	Nie znaleziono gracza. Sprawdź nazwę i tag.
+Seviye {0} · {1}	Poziom {0} · {1}
+Sezonlar	Sezony
+Sık denk geldikleri	Często spotykani
+Takım Ölüm Kalım	Drużynowy deathmatch
+Takımı	Jego drużyna
+Tam Gaz	Swiftplay
+ValoLive — Oyuncu Ara	ValoLive — Szukaj gracza
+kafa	HS
+kafadan vuruş	trafienia w głowę
+kazanma · {0}G {1}M	wygrane · {0}W {1}P
+ortalama skor (ACS)	średni wynik walki (ACS)
+round başına hasar	obrażenia na rundę
+{0} ACS	{0} ACS
+{0} maç birlikte · {1}G {2}M	{0} meczów razem · {1}W {2}P
+{0} maç · %{1} kazanma · {2} K/D	{0} meczów · {1}% wygranych · {2} K/D
+{0} maç · {1}G {2}M	{0} meczów · {1}W {2}P
+{0} takım, {1} rakip	{0}× w drużynie, {1}× przeciwnik
+{0}G / {1} maç	{0}W / {1} meczów
+Ölüm Kalım	Deathmatch
+Haritalar	Mapy
+parti	drużyna

@@ -682,3 +682,50 @@ Sol orta (haritanın altı)	Kiri tengah (di bawah peta)
 Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	Tidak bisa diklik, tidak mengganggu game, tidak tampil di stream. Mode tampilan Valorant harus "Layar penuh berjendela"; di "Layar penuh" tidak terlihat.
 Yeri	Posisi
 sustur	hentikan
+%{0} kafa	{0}% HS
+10 maç daha yükle	Muat 10 pertandingan lagi
+ACS	ACS
+Ajanlar	Agen
+Bir oyuncunun Riot ID'sini yaz: Ad#Etiket (ör. Oyuncu#TR1). Etiketi bilmiyorsan yalnızca adı yaz: daha önce gördüklerinden önerilir.	Ketik Riot ID pemain: Nama#Tag (mis. Player#ID1). Jika tidak tahu tagnya, ketik namanya saja: pemain yang pernah kamu lihat akan disarankan.
+Birlikte oynadıkları (son {0} maç)	Bermain bersama ({0} pertandingan terakhir)
+Bu adla daha önce kimseyi görmedik. Etiketiyle yaz: Ad#Etiket (ör. Oyuncu#TR1).	Belum pernah melihat siapa pun dengan nama ini. Ketik dengan tag: Nama#Tag (mis. Player#ID1).
+Bu maçlarda hep tek başına sıraya girmiş.	Selalu antre sendirian di pertandingan ini.
+Bu türde maç yok.	Tidak ada pertandingan jenis ini.
+Daha eski maçlar yükleniyor…	Memuat pertandingan lama…
+En yüksek: {0} ({1})	Tertinggi: {0} ({1})
+Etiket yazılmadı. Daha önce gördüğün bu adlı oyuncular:	Tanpa tag. Pemain dengan nama ini yang pernah kamu lihat:
+Genel	Ringkasan
+HenrikDev anahtarı gerekli: Valorant sekmesinde gir.	Perlu kunci HenrikDev: masukkan di tab Valorant.
+HenrikDev anahtarı geçersiz.	Kunci HenrikDev tidak valid.
+HenrikDev hatası ({0}). Biraz sonra tekrar dene.	Galat HenrikDev ({0}). Coba lagi sebentar lagi.
+HenrikDev sınırı: {0} sn bekleniyor…	Batas HenrikDev: menunggu {0} dtk…
+HenrikDev'e ulaşılamadı. İnternet bağlantını kontrol et.	Tidak bisa terhubung ke HenrikDev. Periksa koneksi internet.
+K / D / A	K / D / A
+K/D	K/D
+KDA	KDA
+Maçlar	Pertandingan
+Maçlar yükleniyor…	Memuat pertandingan…
+OYUNCU ARA	CARI PEMAIN
+Oyuncu Ara	Cari pemain
+Oyuncu bulunamadı. Ad ve etiketi kontrol et.	Pemain tidak ditemukan. Periksa nama dan tag.
+Seviye {0} · {1}	Level {0} · {1}
+Sezonlar	Musim
+Sık denk geldikleri	Sering bertemu
+Takım Ölüm Kalım	Team Deathmatch
+Takımı	Timnya
+Tam Gaz	Swiftplay
+ValoLive — Oyuncu Ara	ValoLive — Cari pemain
+kafa	HS
+kafadan vuruş	tembakan kepala
+kazanma · {0}G {1}M	menang · {0}M {1}K
+ortalama skor (ACS)	skor tempur rata-rata (ACS)
+round başına hasar	damage per ronde
+{0} ACS	{0} ACS
+{0} maç birlikte · {1}G {2}M	{0} pertandingan bersama · {1}M {2}K
+{0} maç · %{1} kazanma · {2} K/D	{0} pertandingan · {1}% menang · {2} K/D
+{0} maç · {1}G {2}M	{0} pertandingan · {1}M {2}K
+{0} takım, {1} rakip	{0} rekan, {1} lawan
+{0}G / {1} maç	{0}M / {1} pertandingan
+Ölüm Kalım	Deathmatch
+Haritalar	Peta
+parti	party

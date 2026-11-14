@@ -682,3 +682,50 @@ Sol orta (haritanın altı)	Giữa bên trái (dưới bản đồ)
 Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	Không bấm được, không làm gián đoạn game, không hiện trên stream. Chế độ hiển thị của Valorant phải là "Toàn màn hình dạng cửa sổ"; ở "Toàn màn hình" sẽ không thấy.
 Yeri	Vị trí
 sustur	dừng
+%{0} kafa	{0}% HS
+10 maç daha yükle	Tải thêm 10 trận
+ACS	ACS
+Ajanlar	Đặc vụ
+Bir oyuncunun Riot ID'sini yaz: Ad#Etiket (ör. Oyuncu#TR1). Etiketi bilmiyorsan yalnızca adı yaz: daha önce gördüklerinden önerilir.	Nhập Riot ID của người chơi: Tên#Tag (vd. Player#VN2). Nếu không biết tag, chỉ nhập tên: sẽ gợi ý người chơi bạn từng gặp.
+Birlikte oynadıkları (son {0} maç)	Đã chơi cùng ({0} trận gần nhất)
+Bu adla daha önce kimseyi görmedik. Etiketiyle yaz: Ad#Etiket (ör. Oyuncu#TR1).	Chưa thấy ai tên này. Hãy nhập kèm tag: Tên#Tag (vd. Player#VN2).
+Bu maçlarda hep tek başına sıraya girmiş.	Xếp hàng một mình trong tất cả các trận này.
+Bu türde maç yok.	Không có trận loại này.
+Daha eski maçlar yükleniyor…	Đang tải trận cũ hơn…
+En yüksek: {0} ({1})	Cao nhất: {0} ({1})
+Etiket yazılmadı. Daha önce gördüğün bu adlı oyuncular:	Không có tag. Người chơi tên này bạn từng gặp:
+Genel	Tổng quan
+HenrikDev anahtarı gerekli: Valorant sekmesinde gir.	Cần khóa HenrikDev: nhập ở tab Valorant.
+HenrikDev anahtarı geçersiz.	Khóa HenrikDev không hợp lệ.
+HenrikDev hatası ({0}). Biraz sonra tekrar dene.	Lỗi HenrikDev ({0}). Thử lại sau chút nữa.
+HenrikDev sınırı: {0} sn bekleniyor…	Giới hạn HenrikDev: đang chờ {0} giây…
+HenrikDev'e ulaşılamadı. İnternet bağlantını kontrol et.	Không kết nối được HenrikDev. Kiểm tra kết nối internet.
+K / D / A	K / D / A
+K/D	K/D
+KDA	KDA
+Maçlar	Trận đấu
+Maçlar yükleniyor…	Đang tải trận đấu…
+OYUNCU ARA	TÌM NGƯỜI CHƠI
+Oyuncu Ara	Tìm người chơi
+Oyuncu bulunamadı. Ad ve etiketi kontrol et.	Không tìm thấy người chơi. Kiểm tra tên và tag.
+Seviye {0} · {1}	Cấp {0} · {1}
+Sezonlar	Mùa
+Sık denk geldikleri	Hay gặp
+Takım Ölüm Kalım	Đấu đội tử chiến
+Takımı	Đội của họ
+Tam Gaz	Chơi nhanh
+ValoLive — Oyuncu Ara	ValoLive — Tìm người chơi
+kafa	HS
+kafadan vuruş	bắn trúng đầu
+kazanma · {0}G {1}M	tỉ lệ thắng · {0}T {1}B
+ortalama skor (ACS)	điểm chiến đấu trung bình (ACS)
+round başına hasar	sát thương mỗi hiệp
+{0} ACS	{0} ACS
+{0} maç birlikte · {1}G {2}M	{0} trận cùng nhau · {1}T {2}B
+{0} maç · %{1} kazanma · {2} K/D	{0} trận · thắng {1}% · {2} K/D
+{0} maç · {1}G {2}M	{0} trận · {1}T {2}B
+{0} takım, {1} rakip	{0} đồng đội, {1} đối thủ
+{0}G / {1} maç	{0}T / {1} trận
+Ölüm Kalım	Tử chiến
+Haritalar	Bản đồ
+parti	nhóm

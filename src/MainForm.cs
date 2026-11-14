@@ -203,8 +203,12 @@ namespace ValoLive
             var btnSelf = MakeButton(L.T("ANALİZİM"), new Rectangle(btnLobby.Left - 8 - selfW, 16, selfW, 32), Field);
             btnSelf.Font = new Font(L.SansBold, 9.5f);
             btnSelf.Click += (s, e) => AnalysisForm.Open();
+            int findW = Theme.ButtonWidth(L.T("OYUNCU ARA"), 32, 120);
+            var btnFind = MakeButton(L.T("OYUNCU ARA"), new Rectangle(btnSelf.Left - 8 - findW, 16, findW, 32), Field);
+            btnFind.Font = new Font(L.SansBold, 9.5f);
+            btnFind.Click += (s, e) => OpenPlayerSearch();
             var logs = new LinkLabel { Text = L.T("Günlükler"), AutoSize = true, LinkColor = Mut, ActiveLinkColor = Txt };
-            logs.Location = new Point(btnSelf.Left - 14 - TextRenderer.MeasureText(logs.Text, Font).Width, 24);
+            logs.Location = new Point(btnFind.Left - 14 - TextRenderer.MeasureText(logs.Text, Font).Width, 24);
             logs.LinkClicked += (s, e) => { Directory.CreateDirectory(Diag.Dir); Process.Start("explorer.exe", Diag.Dir); };
             Controls.Add(logs);
             // Dil: değişince uygulama yeniden başlar (metinler açılışta bir kez kurulur).
@@ -1658,6 +1662,7 @@ namespace ValoLive
                 new ToolStripMenuItem(L.T("Yayın Paneli"), null, (s, e) => StreamPanel.Open(this, cfg)),
                 new ToolStripMenuItem(L.T("Maç Odası"), null, (s, e) => OpenLobby()),
                 new ToolStripMenuItem(L.T("Analizim"), null, (s, e) => AnalysisForm.Open()),
+                new ToolStripMenuItem(L.T("Oyuncu Ara"), null, (s, e) => OpenPlayerSearch()),
                 new ToolStripMenuItem(L.T("Günlükler"), null, (s, e) => { Directory.CreateDirectory(Diag.Dir); Process.Start("explorer.exe", Diag.Dir); }),
                 new ToolStripSeparator(),
                 new ToolStripMenuItem(L.T("Çıkış"), null, (s, e) => { exiting = true; Close(); }),
@@ -1671,6 +1676,9 @@ namespace ValoLive
             tray = new NotifyIcon { Icon = Icon ?? SystemIcons.Application, Text = "ValoLive", ContextMenuStrip = menu, Visible = true };
             tray.MouseClick += (s, e) => { if (e.Button == MouseButtons.Left) ShowFromTray(); };
         }
+
+        /// <summary>Oyuncu Ara penceresi (HenrikDev anahtarıyla; anahtar her açılışta ayarlardan okunur).</summary>
+        void OpenPlayerSearch() => PlayerForm.Open(() => Settings.Unprotect(cfg.HdevKeyEnc));
 
         void ShowFromTray()
         {

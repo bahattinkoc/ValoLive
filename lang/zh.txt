@@ -682,3 +682,50 @@ Sol orta (haritanın altı)	左側中間（地圖下方）
 Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	無法點擊、不會打斷遊戲、不會出現在直播中。Valorant 的顯示模式必須是「視窗化全螢幕」；「全螢幕」下看不到。
 Yeri	位置
 sustur	停止
+%{0} kafa	爆頭 {0}%
+10 maç daha yükle	再載入 10 場
+ACS	ACS
+Ajanlar	特務
+Bir oyuncunun Riot ID'sini yaz: Ad#Etiket (ör. Oyuncu#TR1). Etiketi bilmiyorsan yalnızca adı yaz: daha önce gördüklerinden önerilir.	輸入玩家的 Riot ID：名稱#標籤（例如 Player#TW1）。不知道標籤的話只輸入名稱：會從你看過的玩家中推薦。
+Birlikte oynadıkları (son {0} maç)	一起玩過（最近 {0} 場）
+Bu adla daha önce kimseyi görmedik. Etiketiyle yaz: Ad#Etiket (ör. Oyuncu#TR1).	還沒看過這個名稱的玩家。請加上標籤：名稱#標籤（例如 Player#TW1）。
+Bu maçlarda hep tek başına sıraya girmiş.	這些對戰都是單排。
+Bu türde maç yok.	沒有這類對戰。
+Daha eski maçlar yükleniyor…	正在載入較舊的對戰…
+En yüksek: {0} ({1})	最高：{0}（{1}）
+Etiket yazılmadı. Daha önce gördüğün bu adlı oyuncular:	沒有標籤。你看過的同名玩家：
+Genel	總覽
+HenrikDev anahtarı gerekli: Valorant sekmesinde gir.	需要 HenrikDev 金鑰：請在 Valorant 分頁輸入。
+HenrikDev anahtarı geçersiz.	HenrikDev 金鑰無效。
+HenrikDev hatası ({0}). Biraz sonra tekrar dene.	HenrikDev 錯誤（{0}）。請稍後再試。
+HenrikDev sınırı: {0} sn bekleniyor…	HenrikDev 限制：等待 {0} 秒…
+HenrikDev'e ulaşılamadı. İnternet bağlantını kontrol et.	無法連線到 HenrikDev，請檢查網路連線。
+K / D / A	K / D / A
+K/D	K/D
+KDA	KDA
+Maçlar	對戰
+Maçlar yükleniyor…	正在載入對戰…
+OYUNCU ARA	搜尋玩家
+Oyuncu Ara	搜尋玩家
+Oyuncu bulunamadı. Ad ve etiketi kontrol et.	找不到玩家，請檢查名稱和標籤。
+Seviye {0} · {1}	等級 {0} · {1}
+Sezonlar	賽季
+Sık denk geldikleri	常遇到的玩家
+Takım Ölüm Kalım	團隊死鬥
+Takımı	對方隊伍
+Tam Gaz	快速模式
+ValoLive — Oyuncu Ara	ValoLive — 搜尋玩家
+kafa	爆頭
+kafadan vuruş	爆頭率
+kazanma · {0}G {1}M	勝率 · {0}勝 {1}敗
+ortalama skor (ACS)	平均戰鬥分數 (ACS)
+round başına hasar	每回合傷害
+{0} ACS	{0} ACS
+{0} maç birlikte · {1}G {2}M	一起 {0} 場 · {1}勝 {2}敗
+{0} maç · %{1} kazanma · {2} K/D	{0} 場 · 勝率 {1}% · {2} K/D
+{0} maç · {1}G {2}M	{0} 場 · {1}勝 {2}敗
+{0} takım, {1} rakip	隊友 {0} 次、對手 {1} 次
+{0}G / {1} maç	{0}勝 / {1} 場
+Ölüm Kalım	死鬥
+Haritalar	地圖
+parti	組隊

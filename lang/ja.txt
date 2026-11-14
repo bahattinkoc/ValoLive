@@ -682,3 +682,50 @@ Sol orta (haritanın altı)	左中央 (マップの下)
 Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	クリックできず、ゲームを邪魔せず、配信にも映りません。Valorant の表示モードは「ウィンドウフルスクリーン」にしてください。「フルスクリーン」では表示されません。
 Yeri	位置
 sustur	停止
+%{0} kafa	HS {0}%
+10 maç daha yükle	さらに10試合読み込む
+ACS	ACS
+Ajanlar	エージェント
+Bir oyuncunun Riot ID'sini yaz: Ad#Etiket (ör. Oyuncu#TR1). Etiketi bilmiyorsan yalnızca adı yaz: daha önce gördüklerinden önerilir.	プレイヤーの Riot ID を入力: 名前#タグ (例: Player#JP1)。タグが分からなければ名前だけ入力すると、以前見たプレイヤーから候補を出します。
+Birlikte oynadıkları (son {0} maç)	一緒にプレイ (直近{0}試合)
+Bu adla daha önce kimseyi görmedik. Etiketiyle yaz: Ad#Etiket (ör. Oyuncu#TR1).	この名前のプレイヤーはまだ見ていません。タグ付きで入力してください: 名前#タグ (例: Player#JP1)。
+Bu maçlarda hep tek başına sıraya girmiş.	これらの試合はすべてソロでキューしています。
+Bu türde maç yok.	この種類の試合はありません。
+Daha eski maçlar yükleniyor…	古い試合を読み込み中…
+En yüksek: {0} ({1})	最高: {0} ({1})
+Etiket yazılmadı. Daha önce gördüğün bu adlı oyuncular:	タグなし。以前見たこの名前のプレイヤー:
+Genel	概要
+HenrikDev anahtarı gerekli: Valorant sekmesinde gir.	HenrikDev キーが必要です: Valorant タブで入力してください。
+HenrikDev anahtarı geçersiz.	HenrikDev キーが無効です。
+HenrikDev hatası ({0}). Biraz sonra tekrar dene.	HenrikDev エラー ({0})。少し後で再試行してください。
+HenrikDev sınırı: {0} sn bekleniyor…	HenrikDev の制限: {0} 秒待機中…
+HenrikDev'e ulaşılamadı. İnternet bağlantını kontrol et.	HenrikDev に接続できません。インターネット接続を確認してください。
+K / D / A	K / D / A
+K/D	K/D
+KDA	KDA
+Maçlar	試合
+Maçlar yükleniyor…	試合を読み込み中…
+OYUNCU ARA	プレイヤー検索
+Oyuncu Ara	プレイヤー検索
+Oyuncu bulunamadı. Ad ve etiketi kontrol et.	プレイヤーが見つかりません。名前とタグを確認してください。
+Seviye {0} · {1}	レベル {0} · {1}
+Sezonlar	シーズン
+Sık denk geldikleri	よく会う相手
+Takım Ölüm Kalım	チームデスマッチ
+Takımı	相手のチーム
+Tam Gaz	スイフトプレイ
+ValoLive — Oyuncu Ara	ValoLive — プレイヤー検索
+kafa	HS
+kafadan vuruş	ヘッドショット
+kazanma · {0}G {1}M	勝率 · {0}勝 {1}敗
+ortalama skor (ACS)	平均コンバットスコア (ACS)
+round başına hasar	ラウンドあたりダメージ
+{0} ACS	{0} ACS
+{0} maç birlikte · {1}G {2}M	一緒に{0}試合 · {1}勝 {2}敗
+{0} maç · %{1} kazanma · {2} K/D	{0}試合 · 勝率{1}% · {2} K/D
+{0} maç · {1}G {2}M	{0}試合 · {1}勝 {2}敗
+{0} takım, {1} rakip	味方{0}回、敵{1}回
+{0}G / {1} maç	{0}勝 / {1}試合
+Ölüm Kalım	デスマッチ
+Haritalar	マップ
+parti	パーティー

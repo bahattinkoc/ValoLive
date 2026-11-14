@@ -682,3 +682,50 @@ Sol orta (haritanın altı)	Слева по центру (под картой)
 Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.	Не нажимается, не мешает игре, не видна на стриме. Режим экрана Valorant должен быть «Полноэкранный в окне»; в «Полноэкранном» она не видна.
 Yeri	Положение
 sustur	стоп
+%{0} kafa	{0}% HS
+10 maç daha yükle	Загрузить ещё 10 матчей
+ACS	ACS
+Ajanlar	Агенты
+Bir oyuncunun Riot ID'sini yaz: Ad#Etiket (ör. Oyuncu#TR1). Etiketi bilmiyorsan yalnızca adı yaz: daha önce gördüklerinden önerilir.	Введи Riot ID игрока: Имя#Тег (напр. Игрок#EUW). Если не знаешь тег, введи только имя: предложим игроков, которых ты уже видел.
+Birlikte oynadıkları (son {0} maç)	Играл с (последние {0} матчей)
+Bu adla daha önce kimseyi görmedik. Etiketiyle yaz: Ad#Etiket (ör. Oyuncu#TR1).	С таким именем мы пока никого не видели. Введи с тегом: Имя#Тег (напр. Игрок#EUW).
+Bu maçlarda hep tek başına sıraya girmiş.	Во всех этих матчах играл соло.
+Bu türde maç yok.	Матчей такого типа нет.
+Daha eski maçlar yükleniyor…	Загрузка более старых матчей…
+En yüksek: {0} ({1})	Пик: {0} ({1})
+Etiket yazılmadı. Daha önce gördüğün bu adlı oyuncular:	Тег не указан. Игроки с этим именем, которых ты уже видел:
+Genel	Обзор
+HenrikDev anahtarı gerekli: Valorant sekmesinde gir.	Нужен ключ HenrikDev: введи его на вкладке Valorant.
+HenrikDev anahtarı geçersiz.	Ключ HenrikDev недействителен.
+HenrikDev hatası ({0}). Biraz sonra tekrar dene.	Ошибка HenrikDev ({0}). Попробуй чуть позже.
+HenrikDev sınırı: {0} sn bekleniyor…	Лимит HenrikDev: ждём {0} с…
+HenrikDev'e ulaşılamadı. İnternet bağlantını kontrol et.	Не удалось подключиться к HenrikDev. Проверь интернет.
+K / D / A	K / D / A
+K/D	K/D
+KDA	KDA
+Maçlar	Матчи
+Maçlar yükleniyor…	Загрузка матчей…
+OYUNCU ARA	НАЙТИ ИГРОКА
+Oyuncu Ara	Найти игрока
+Oyuncu bulunamadı. Ad ve etiketi kontrol et.	Игрок не найден. Проверь имя и тег.
+Seviye {0} · {1}	Уровень {0} · {1}
+Sezonlar	Сезоны
+Sık denk geldikleri	Часто встречались
+Takım Ölüm Kalım	Командный бой насмерть
+Takımı	Его команда
+Tam Gaz	Быстрая игра
+ValoLive — Oyuncu Ara	ValoLive — Найти игрока
+kafa	HS
+kafadan vuruş	попадания в голову
+kazanma · {0}G {1}M	победы · {0}В {1}П
+ortalama skor (ACS)	средний боевой счёт (ACS)
+round başına hasar	урон за раунд
+{0} ACS	{0} ACS
+{0} maç birlikte · {1}G {2}M	{0} матчей вместе · {1}В {2}П
+{0} maç · %{1} kazanma · {2} K/D	{0} матчей · {1}% побед · {2} K/D
+{0} maç · {1}G {2}M	{0} матчей · {1}В {2}П
+{0} takım, {1} rakip	{0} в команде, {1} соперник
+{0}G / {1} maç	{0}В / {1} матчей
+Ölüm Kalım	Бой насмерть
+Haritalar	Карты
+parti	группа
