@@ -11,8 +11,6 @@
 %{0}	{0} %
 (mikrofon yok)	(sin micrófono)
 +{0} karşılaşma daha	+{0} encuentros más
-, ilk ölüm %{0}	, primera muerte {0} %
-. İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.	. El primer contacto suele venir de él; preapunta el ángulo, no hagas peek en seco.
 1080p60 · 6000 kbps (önerilen)	1080p60 · 6000 kbps (recomendado)
 2 kayıp serisinden sonra yeterli maç yok; örnek arttıkça netleşir.	Aún no hay suficientes partidas tras 2 derrotas seguidas; se aclarará con más datos.
 2 kayıptan sonra ({0})	Tras 2 derrotas ({0})
@@ -84,7 +82,6 @@ KATMANLAR	CAPAS
 KAZANMA	VICTORIAS
 KENDİ ANALİZİM	MIS STATS
 KISA BİR ARA	PAUSA CORTA
-Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.	Mucho headshot ({0} %). No vayas a duelos directos — entra con habilidades.
 Kalite	Calidad
 Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil	Registro de encuentros: {0}  ·  anillo de color = ya coincidisteis en una partida (pasa el ratón)  ·  clic en un jugador: análisis · clic derecho: perfil
 Kategori	Categoría
@@ -149,7 +146,6 @@ Riot istemcisi kapalı	El cliente de Riot está cerrado
 Riot istemcisine ulaşılamadı: 	No se pudo contactar con el cliente de Riot: 
 Riot yavaşlattı, bekleniyor… {0}/{1}	Riot está limitando, esperando… {0}/{1}
 Round açılışların dengeli.	Tus aperturas de ronda están equilibradas.
-Roundu o açıyor: ilk kan %{0}	Él abre las rondas: first blood {0} %
 Roundu sık sık ilk ölerek açıyorsun (ortalama ~%10). İlk teması takım arkadaşına ver ya da fayda ile gir.	Sueles abrir rondas muriendo primero (la media es ~10 %). Deja el primer contacto a un compañero o entra con habilidades.
 Rozet yeri	Posición de la insignia
 RÖVANŞ	REVANCHA
@@ -168,7 +164,6 @@ Sabah	Mañana
 Sadece Valorant (önerilen)	Solo Valorant (recomendado)
 Ses cihazı yanıt vermedi.	El dispositivo de audio no responde.
 Seçtiğim uygulama	Aplicación elegida
-Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.	Muchas kills con la Sheriff ({0} % de sus kills). Puede hacerte one-tap también en rondas eco.
 Sniper koruması (F9)	Anti-sniping (F9)
 Son maç bilgisi yok.	No hay información de la última partida.
 Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	Última partida: {0} {1} · {2} · {3} · {4} · HS {5}
@@ -179,7 +174,6 @@ Sv	Nv
 Süre: {0:hh\:mm\:ss}	Duración: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	Arrastrar: mover\nRueda del ratón: agrandar / reducir (Shift: fino)\nFlechas: 1 px (Shift: 10 px)\n\n
 SİLAH	ARMAS
-Sık ilk ölüyor (roundların %{0}). Erken peek atar; sabırlı bekle, sana gelir.	Suele morir primero ({0} % de las rondas). Hace peek pronto; espera con paciencia, vendrá a ti.
 Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz	Cola / selección de agente oculta — volvemos al empezar la partida
 Sıraya girilince sayaç başlar	El contador empieza al entrar en cola
 TAKIMIN	TU EQUIPO
@@ -289,8 +283,6 @@ zirve	pico
 · {0} kez aynı maçtaydınız	· {0} veces en la misma partida
 Çap {0} px · konum {1}, {2}	Tamaño {0} px · posición {1}, {2}
 Çıkış	Salir
-Öldürmelerinin büyük kısmı Operator ile (%{0}). Uzun açıları kuru peek'leme, flaşla ya da başka yerden gir.	La mayoría de sus kills son con la Operator ({0} %). No hagas peek en seco a ángulos largos — usa flash o entra por otro lado.
-Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	Rara vez le hacen trade al morir ({0} %). Juega solo, lejos de su equipo.
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	Tu equipo casi nunca te hace trade: te quedas solo. Juega en la misma zona que un compañero.
 Ölümsüzlük	Inmortal
 Öğlen	Mediodía
@@ -303,7 +295,6 @@ zirve	pico
 ölümün trade edildi	te hicieron trade
 İLK KAN	FIRST BLOODS
 İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.	Bajas claramente tras dos derrotas: en ese punto ayuda un descanso corto.
-İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.	Rara vez entra al primer duelo ({0} %). Espera una rotación tardía/lurk, vigila tu espalda.
 İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.	Permisos: marca user:read, channel:read, channel:write, chat:write → Guardar.
 Şu an maçta değil.	Ahora no está en partida.
 …	…
@@ -517,33 +508,20 @@ Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	El stream bajó a {0} FPS: el 
 Yeni sürüm {0} hazır · güncelle	Nueva versión {0} disponible · actualizar
 İndirilen pakette ValoLive.exe yok	El paquete descargado no contiene ValoLive.exe
 İndiriliyor… %{0}	Descargando… {0} %
-Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.	Su agente principal es {0} ({2} de las últimas {1} partidas), esta partida juega {3}.
 Atakta	En ataque
 Brifing	Resumen
 Bu lobide öne çıkan bir bilgi yok.	Nada destaca en este lobby.
-Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Jugó {0} partidas hoy y perdió las últimas {1} seguidas: puede estar tilteado, presiona pronto.
 Defansta	En defensa
 Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	Al encontrar partida, aquí se resume lo más útil de las últimas partidas de los jugadores.
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	Analizando las últimas partidas de los jugadores; los hallazgos aparecen aquí a medida que llegan.
-Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.	Jugó {2} en {1} de las últimas {0} partidas: muy experimentado con este agente, juega su plan de memoria.
-Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Perdió las últimas {0} partidas seguidas: puede estar tilteado, presiona pronto.
-Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	Ganó las últimas {0} partidas seguidas: con confianza, juega agresivo.
-Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	En este mapa suele plantar la spike en {0} ({2} de {1} plantas).
 TEK AJAN	ONE-TRICK
-Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	Ganó {1} de {0} rondas siendo el último vivo: si queda solo, entrad juntos, no lo dejéis para el final.
-Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	Solo ganó {1} de {0} rondas siendo el último vivo: presiónalo cuando esté solo, se pone nervioso.
-{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0} suele jugar en {1}: {3} de sus {2} enfrentamientos en este mapa fueron ahí (sobre todo {4}).
-{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	Dúo con {0}: en el mismo grupo en {1} de sus últimas partidas, se cubren entre sí.
-{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	No ha jugado {0} en sus últimas {1} partidas: no está acostumbrado a este agente, puede usar sus habilidades tarde o mal.
 {0} oyuncu inceleniyor…	analizando {0} jugadores…
 Öne çıkan başka bir bilgi yok.	Nada más destaca.
 İLK KEZ?	¿PRIMERA VEZ?
 İSTİHBARAT	INTEL
 FIRSAT	OPORTUNIDAD
 Harita	Mapa
-Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.	Muy fuerte para su nivel de cuenta (Nv {0}, {1}): puede ser una cuenta nueva, no lo subestimes.
 KONUM	POSICIÓN
-Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.	La mayoría de plantas son en {0}: en defensa pon un jugador más ahí.
 Kısayollar: 1-4 sekmeler · B brifing · Esc oyuncu sekmesini kapat · tekerlek kaydırır	Atajos: 1-4 pestañas · B informe · Esc cierra la pestaña del jugador · la rueda desplaza
 Profil	Perfil
 RAKİP	RIVAL
@@ -728,11 +706,32 @@ round başına hasar	daño por ronda
 Ölüm Kalım	Duelo a muerte
 Haritalar	Mapas
 parti	grupo
-Bu oturumun {0}. maçı, {1} önce başlamış.	Partida {0} de esta sesión, que empezó hace {1}.
-Oturumun ilk maçı: henüz ısınmamış olabilir.	Primera partida de la sesión: puede que aún no haya calentado.
 Son oturum: {0} maç · {1} sürdü · {2} önce bitti	Última sesión: {0} partidas · duró {1} · terminó hace {2}
 {0} sa	{0} h
 {0} sa {1} dk	{0} h {1} min
-{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.	Lleva {0} horas jugando, es su partida {1} de hoy: al final de una sesión larga baja la concentración.
 {0}. MAÇ	PARTIDA {0}
 ● Şu an oturumda: {0} maç · {1} süredir oynuyor	● En sesión ahora: {0} partidas · lleva {1} jugando
+ · açıyı önceden tut	 · preapunta el ángulo
+ · ilk ölüm %{0}	 · primera muerte {0}%
+{0} {1} · {3}/{2} çatışma · en çok {4}	{0} {1} · {3}/{2} duelos · sobre todo {4}
+{0} ile düo · {1} maç aynı parti	Dúo con {0} · {1} partidas mismo grupo
+{0} maçtır kaybediyor · tilt, erken bas	{0} derrotas seguidas · tilt, presiona pronto
+{0} maçtır kazanıyor · özgüvenli	{0} victorias seguidas · confiado
+{0} saattir oynuyor · bugün {1}. maç · yorgun	Juega hace {0} h · partida {1} hoy · cansado
+{0}: son {1} maçta hiç yok · faydası geç ve hatalı	{0}: ninguna en {1} partidas · habilidades lentas y torpes
+{2}: {1}/{0} maç · bu ajanda çok deneyimli	{2}: {1}/{0} partidas · muy experimentado
+Asıl ajanı {0} ({2}/{1} maç) · şimdi {3}	Su main es {0} ({2}/{1} partidas) · ahora {3}
+Clutch {1}/{0} · sona bırakma, kalabalık gir	Clutch {1}/{0} · no lo dejes último, entrad juntos
+Clutch {1}/{0} · yalnız kalınca panikler	Clutch {1}/{0} · se pone nervioso solo
+HS %{0} · düz düello yok, fayda ile gir	HS {0}% · sin duelos en seco, usa habilidades
+İlk düello %{0} · lurk bekle, arkana bak	Primer duelo {0}% · espera lurk, mira atrás
+İlk kan %{0}	Primera kill {0}%
+İlk ölüm %{0} · bekle, sana gelir	Primera muerte {0}% · espera, viene a ti
+Kurulum çoğunlukla {0} · defansta oraya +1 kişi	Planta sobre todo en {0} · +1 allí en defensa
+Operator: öldürmelerin %{0} · uzun açıya kuru peek yok	Operator: {0}% de kills · sin peeks en seco a ángulos largos
+Oturumun {0}. maçı · {1}	Partida {0} de la sesión · {1}
+Oturumun ilk maçı · ısınmamış	Primera partida de la sesión · sin calentar
+Sheriff: öldürmelerin %{0} · ecoda da tek atar	Sheriff: {0}% de kills · peligroso también en eco
+Spike: {0} · {2}/{1} kurulum	Spike: {0} · {2}/{1} plantes
+Sv {0} ama {1} · yeni hesap olabilir	Nv {0} pero {1} · quizá cuenta nueva
+Trade edilme %{0} · takımdan uzak oynar	Tradeado {0}% · juega lejos del equipo

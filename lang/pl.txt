@@ -11,8 +11,6 @@
 %{0}	{0}%
 (mikrofon yok)	(brak mikrofonu)
 +{0} karşılaşma daha	+{0} kolejnych spotkań
-, ilk ölüm %{0}	, pierwsza śmierć {0}%
-. İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.	. Pierwszy kontakt zwykle wychodzi od niego; trzymaj kąt, nie peekuj na sucho.
 1080p60 · 6000 kbps (önerilen)	1080p60 · 6000 kbps (zalecane)
 2 kayıp serisinden sonra yeterli maç yok; örnek arttıkça netleşir.	Za mało meczów po 2 porażkach z rzędu; z czasem obraz się wyostrzy.
 2 kayıptan sonra ({0})	Po 2 porażkach ({0})
@@ -84,7 +82,6 @@ KATMANLAR	WARSTWY
 KAZANMA	WYGRANE
 KENDİ ANALİZİM	MOJE STATY
 KISA BİR ARA	KRÓTKA PRZERWA
-Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.	Wysoki procent headshotów ({0}%). Nie idź w czyste pojedynki — wchodź z umiejętnościami.
 Kalite	Jakość
 Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil	Dziennik spotkań: {0}  ·  kolorowy pierścień = graliście już razem (najedź)  ·  kliknij gracza: analiza · prawy przycisk: profil
 Kategori	Kategoria
@@ -149,7 +146,6 @@ Riot istemcisi kapalı	Klient Riot jest zamknięty
 Riot istemcisine ulaşılamadı: 	Nie można połączyć się z klientem Riot: 
 Riot yavaşlattı, bekleniyor… {0}/{1}	Riot zwolnił, czekam… {0}/{1}
 Round açılışların dengeli.	Twoje otwarcia rund są wyważone.
-Roundu o açıyor: ilk kan %{0}	To on otwiera rundy: first blood {0}%
 Roundu sık sık ilk ölerek açıyorsun (ortalama ~%10). İlk teması takım arkadaşına ver ya da fayda ile gir.	Często otwierasz rundy, ginąc pierwszy (średnio ~10%). Oddaj pierwszy kontakt koledze albo wchodź z umiejętnościami.
 Rozet yeri	Pozycja odznaki
 RÖVANŞ	REWANŻ
@@ -168,7 +164,6 @@ Sabah	Rano
 Sadece Valorant (önerilen)	Tylko Valorant (zalecane)
 Ses cihazı yanıt vermedi.	Urządzenie audio nie odpowiada.
 Seçtiğim uygulama	Wybrana aplikacja
-Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.	Dużo zabójstw Sheriffem ({0}% zabójstw). Potrafi zrobić one-tapa także w rundzie eco.
 Sniper koruması (F9)	Anty-snipe (F9)
 Son maç bilgisi yok.	Brak informacji o ostatnim meczu.
 Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	Ostatni mecz: {0} {1} · {2} · {3} · {4} · HS {5}
@@ -179,7 +174,6 @@ Sv	Poz.
 Süre: {0:hh\:mm\:ss}	Czas: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	Przeciągnij: przesuń\nKółko myszy: powiększ / pomniejsz (Shift: dokładnie)\nStrzałki: 1 px (Shift: 10 px)\n\n
 SİLAH	BROŃ
-Sık ilk ölüyor (roundların %{0}). Erken peek atar; sabırlı bekle, sana gelir.	Często ginie pierwszy ({0}% rund). Peekuje wcześnie; poczekaj cierpliwie, sam przyjdzie.
 Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz	Kolejka / wybór agenta ukryte — wracamy, gdy mecz się zacznie
 Sıraya girilince sayaç başlar	Licznik rusza po wejściu do kolejki
 TAKIMIN	TWOJA DRUŻYNA
@@ -289,8 +283,6 @@ zirve	szczyt
 · {0} kez aynı maçtaydınız	· {0} razy w tym samym meczu
 Çap {0} px · konum {1}, {2}	Średnica {0} px · pozycja {1}, {2}
 Çıkış	Wyjście
-Öldürmelerinin büyük kısmı Operator ile (%{0}). Uzun açıları kuru peek'leme, flaşla ya da başka yerden gir.	Większość zabójstw Operatorem ({0}%). Nie peekuj długich kątów na sucho — użyj flasha albo wejdź inną drogą.
-Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	Rzadko trade'owany po śmierci ({0}%). Gra sam, z dala od drużyny.
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	Drużyna zwykle nie trade'uje twojej śmierci: zostajesz sam. Graj w tej samej strefie co kolega.
 Ölümsüzlük	Nieśmiertelny
 Öğlen	Popołudnie
@@ -303,7 +295,6 @@ zirve	szczyt
 ölümün trade edildi	twoja śmierć została trade'owana
 İLK KAN	FIRST BLOODY
 İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.	Po dwóch porażkach wyraźnie słabniesz: wtedy pomaga krótka przerwa.
-İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.	Rzadko wchodzi w pierwszy pojedynek ({0}%). Spodziewaj się późnej rotacji/lurka, pilnuj pleców.
 İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.	Uprawnienia: zaznacz user:read, channel:read, channel:write, chat:write → Zapisz.
 Şu an maçta değil.	Teraz nie jest w meczu.
 …	…
@@ -517,33 +508,20 @@ Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	Stream spadł do {0} FPS: komp
 Yeni sürüm {0} hazır · güncelle	Nowa wersja {0} dostępna · aktualizuj
 İndirilen pakette ValoLive.exe yok	W pobranym pakiecie brak ValoLive.exe
 İndiriliyor… %{0}	Pobieranie… {0}%
-Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.	Główny agent to {0} ({2} z ostatnich {1} meczów), w tym meczu gra {3}.
 Atakta	W ataku
 Brifing	Odprawa
 Bu lobide öne çıkan bir bilgi yok.	W tym lobby nic się nie wyróżnia.
-Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Zagrał dziś {0} meczów i przegrał ostatnie {1} z rzędu: może mieć tilta, naciskaj wcześnie.
 Defansta	W obronie
 Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	Po znalezieniu meczu tu pojawią się najprzydatniejsze informacje z ostatnich meczów graczy.
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	Analiza ostatnich meczów graczy; wyniki pojawiają się tu na bieżąco.
-Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.	Grał {2} w {1} z ostatnich {0} meczów: bardzo doświadczony na tym agencie, gra wyuczony schemat.
-Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Przegrał ostatnie {0} mecze z rzędu: może mieć tilta, naciskaj wcześnie.
-Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	Wygrał ostatnie {0} mecze z rzędu: pewny siebie, gra agresywnie.
-Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	Na tej mapie zwykle podkłada spike na {0} ({2} z {1} podłożeń).
 TEK AJAN	ONE-TRICK
-Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	Wygrał {1} z {0} rund jako ostatni żywy: gdy zostanie sam, wchodźcie razem, nie zostawiajcie go na koniec.
-Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	Wygrał tylko {1} z {0} rund jako ostatni żywy: naciskaj go, gdy jest sam, panikuje.
-{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0} gra głównie na {1}: {3} z {2} jego starć na tej mapie było tam (najczęściej {4}).
-{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	Duo z {0}: w tej samej drużynie w {1} ostatnich meczach, osłaniają się nawzajem.
-{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	Nie grał {0} w ostatnich {1} meczach: nie zna tego agenta, może używać umiejętności późno lub źle.
 {0} oyuncu inceleniyor…	analiza {0} graczy…
 Öne çıkan başka bir bilgi yok.	Nic więcej się nie wyróżnia.
 İLK KEZ?	PIERWSZY RAZ?
 İSTİHBARAT	WYWIAD
 FIRSAT	OKAZJA
 Harita	Mapa
-Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.	Bardzo mocny jak na poziom konta (Poz. {0}, {1}): może to nowe konto, nie lekceważ.
 KONUM	POZYCJA
-Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.	Większość podłożeń na {0}: w obronie postaw tam dodatkowego gracza.
 Kısayollar: 1-4 sekmeler · B brifing · Esc oyuncu sekmesini kapat · tekerlek kaydırır	Skróty: 1-4 karty · B odprawa · Esc zamyka kartę gracza · kółko przewija
 Profil	Profil
 RAKİP	WRÓG
@@ -728,11 +706,32 @@ round başına hasar	obrażenia na rundę
 Ölüm Kalım	Deathmatch
 Haritalar	Mapy
 parti	drużyna
-Bu oturumun {0}. maçı, {1} önce başlamış.	Mecz {0} tej sesji, która zaczęła się {1} temu.
-Oturumun ilk maçı: henüz ısınmamış olabilir.	Pierwszy mecz sesji: może jeszcze nie być rozgrzany.
 Son oturum: {0} maç · {1} sürdü · {2} önce bitti	Ostatnia sesja: {0} meczów · trwała {1} · skończyła się {2} temu
 {0} sa	{0} godz.
 {0} sa {1} dk	{0} godz. {1} min
-{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.	Gra od {0} godzin, to jego {1}. mecz dziś: pod koniec długiej sesji koncentracja spada.
 {0}. MAÇ	MECZ {0}
 ● Şu an oturumda: {0} maç · {1} süredir oynuyor	● Teraz w sesji: {0} meczów · gra od {1}
+ · açıyı önceden tut	 · trzymaj celownik na kącie
+ · ilk ölüm %{0}	 · pierwsza śmierć {0}%
+{0} {1} · {3}/{2} çatışma · en çok {4}	{0} {1} · {3}/{2} starć · najczęściej {4}
+{0} ile düo · {1} maç aynı parti	Duo z {0} · {1} meczów w jednej drużynie
+{0} maçtır kaybediyor · tilt, erken bas	{0} porażek z rzędu · tilt, naciskaj wcześnie
+{0} maçtır kazanıyor · özgüvenli	{0} wygranych z rzędu · pewny siebie
+{0} saattir oynuyor · bugün {1}. maç · yorgun	Gra od {0} godz. · {1}. mecz dziś · zmęczony
+{0}: son {1} maçta hiç yok · faydası geç ve hatalı	{0}: brak w {1} meczach · umiejętności wolno i z błędami
+{2}: {1}/{0} maç · bu ajanda çok deneyimli	{2}: {1}/{0} meczów · bardzo doświadczony
+Asıl ajanı {0} ({2}/{1} maç) · şimdi {3}	Main to {0} ({2}/{1} meczów) · teraz {3}
+Clutch {1}/{0} · sona bırakma, kalabalık gir	Clutch {1}/{0} · nie zostawiaj go na koniec, wchodźcie razem
+Clutch {1}/{0} · yalnız kalınca panikler	Clutch {1}/{0} · sam panikuje
+HS %{0} · düz düello yok, fayda ile gir	HS {0}% · bez suchych pojedynków, użyj umiejętności
+İlk düello %{0} · lurk bekle, arkana bak	Pierwszy pojedynek {0}% · uważaj na lurk, sprawdzaj tyły
+İlk kan %{0}	Pierwsze zabójstwo {0}%
+İlk ölüm %{0} · bekle, sana gelir	Pierwsza śmierć {0}% · czekaj, sam przyjdzie
+Kurulum çoğunlukla {0} · defansta oraya +1 kişi	Planty głównie {0} · +1 tam w obronie
+Operator: öldürmelerin %{0} · uzun açıya kuru peek yok	Operator: {0}% zabójstw · bez suchych peeków na długie kąty
+Oturumun {0}. maçı · {1}	Mecz {0} sesji · {1}
+Oturumun ilk maçı · ısınmamış	Pierwszy mecz sesji · nierozgrzany
+Sheriff: öldürmelerin %{0} · ecoda da tek atar	Sheriff: {0}% zabójstw · groźny też na eco
+Spike: {0} · {2}/{1} kurulum	Spike: {0} · {2}/{1} plantów
+Sv {0} ama {1} · yeni hesap olabilir	Poz {0} ale {1} · może nowe konto
+Trade edilme %{0} · takımdan uzak oynar	Trade {0}% · gra daleko od drużyny

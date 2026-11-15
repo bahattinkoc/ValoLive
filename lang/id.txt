@@ -11,8 +11,6 @@
 %{0}	{0}%
 (mikrofon yok)	(tanpa mikrofon)
 +{0} karşılaşma daha	+{0} pertemuan lagi
-, ilk ölüm %{0}	, mati pertama {0}%
-. İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.	. Kontak pertama biasanya datang darinya; pre-aim sudutnya, jangan dry peek.
 1080p60 · 6000 kbps (önerilen)	1080p60 · 6000 kbps (disarankan)
 2 kayıp serisinden sonra yeterli maç yok; örnek arttıkça netleşir.	Belum cukup match setelah 2 kekalahan beruntun; makin banyak data makin jelas.
 2 kayıptan sonra ({0})	Setelah 2 kekalahan ({0})
@@ -84,7 +82,6 @@ KATMANLAR	LAPISAN
 KAZANMA	WIN RATE
 KENDİ ANALİZİM	STATISTIKKU
 KISA BİR ARA	ISTIRAHAT SEBENTAR
-Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.	Headshot tinggi ({0}%). Jangan duel langsung — masuk pakai skill.
 Kalite	Kualitas
 Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil	Catatan pertemuan: {0}  ·  cincin berwarna = pernah satu match (arahkan kursor)  ·  klik pemain: analisis · klik kanan: profil
 Kategori	Kategori
@@ -149,7 +146,6 @@ Riot istemcisi kapalı	Riot Client tertutup
 Riot istemcisine ulaşılamadı: 	Riot Client tidak bisa dihubungi: 
 Riot yavaşlattı, bekleniyor… {0}/{1}	Riot membatasi, menunggu… {0}/{1}
 Round açılışların dengeli.	Pembukaan rondemu seimbang.
-Roundu o açıyor: ilk kan %{0}	Dia yang membuka ronde: first blood {0}%
 Roundu sık sık ilk ölerek açıyorsun (ortalama ~%10). İlk teması takım arkadaşına ver ya da fayda ile gir.	Kamu sering membuka ronde dengan mati duluan (rata-rata ~10%). Serahkan kontak pertama ke rekan tim atau masuk pakai skill.
 Rozet yeri	Posisi lencana
 RÖVANŞ	BALAS DENDAM
@@ -168,7 +164,6 @@ Sabah	Pagi
 Sadece Valorant (önerilen)	Hanya Valorant (disarankan)
 Ses cihazı yanıt vermedi.	Perangkat audio tidak merespons.
 Seçtiğim uygulama	Aplikasi pilihan
-Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.	Banyak kill dengan Sheriff ({0}% kill). Bisa one-tap kamu di ronde eco juga.
 Sniper koruması (F9)	Anti-sniping (F9)
 Son maç bilgisi yok.	Tidak ada info match terakhir.
 Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	Match terakhir: {0} {1} · {2} · {3} · {4} · HS {5}
@@ -179,7 +174,6 @@ Sv	Lv
 Süre: {0:hh\:mm\:ss}	Durasi: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	Seret: pindah\nRoda mouse: perbesar / perkecil (Shift: halus)\nTombol panah: 1 px (Shift: 10 px)\n\n
 SİLAH	SENJATA
-Sık ilk ölüyor (roundların %{0}). Erken peek atar; sabırlı bekle, sana gelir.	Sering mati duluan ({0}% ronde). Peek terlalu cepat; tunggu dengan sabar, dia akan datang.
 Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz	Antrean / pemilihan agent disembunyikan — kembali saat match dimulai
 Sıraya girilince sayaç başlar	Penghitung mulai saat kamu masuk antrean
 TAKIMIN	TIMMU
@@ -289,8 +283,6 @@ zirve	tertinggi
 · {0} kez aynı maçtaydınız	· {0} kali di match yang sama
 Çap {0} px · konum {1}, {2}	Diameter {0} px · posisi {1}, {2}
 Çıkış	Keluar
-Öldürmelerinin büyük kısmı Operator ile (%{0}). Uzun açıları kuru peek'leme, flaşla ya da başka yerden gir.	Kebanyakan kill-nya dengan Operator ({0}%). Jangan dry peek sudut panjang — flash atau lewat jalur lain.
-Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	Jarang di-trade saat mati ({0}%). Main sendiri, jauh dari tim.
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	Timmu biasanya tidak bisa men-trade kamu: kamu sendirian. Main di area yang sama dengan rekan tim.
 Ölümsüzlük	Immortal
 Öğlen	Siang
@@ -303,7 +295,6 @@ zirve	tertinggi
 ölümün trade edildi	kematianmu di-trade
 İLK KAN	FIRST BLOOD
 İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.	Performamu jelas turun setelah dua kekalahan: istirahat sebentar membantu saat itu.
-İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.	Jarang ikut duel pertama ({0}%). Waspadai rotasi telat/lurk, cek belakangmu.
 İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.	Izin: centang user:read, channel:read, channel:write, chat:write → Simpan.
 Şu an maçta değil.	Sedang tidak dalam match.
 …	…
@@ -517,33 +508,20 @@ Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	Stream turun ke {0} FPS: PC ti
 Yeni sürüm {0} hazır · güncelle	Versi baru {0} tersedia · perbarui
 İndirilen pakette ValoLive.exe yok	Paket yang diunduh tidak berisi ValoLive.exe
 İndiriliyor… %{0}	Mengunduh… {0}%
-Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.	Agen utamanya {0} ({2} dari {1} match terakhir), match ini main {3}.
 Atakta	Saat menyerang
 Brifing	Ringkasan
 Bu lobide öne çıkan bir bilgi yok.	Tidak ada yang menonjol di lobi ini.
-Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Hari ini main {0} match dan kalah {1} match terakhir berturut-turut: mungkin sedang tilt, tekan dari awal.
 Defansta	Saat bertahan
 Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	Saat match ditemukan, info paling berguna dari match terakhir para pemain dirangkum di sini.
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	Menganalisis match terakhir para pemain; temuan muncul di sini begitu tersedia.
-Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.	Main {2} di {1} dari {0} match terakhir: sangat berpengalaman dengan agen ini, mainnya sudah hafal.
-Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Kalah {0} match terakhir berturut-turut: mungkin sedang tilt, tekan dari awal.
-Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	Menang {0} match terakhir berturut-turut: percaya diri, main agresif.
-Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	Di map ini biasanya menanam spike di {0} ({2} dari {1} kali tanam).
 TEK AJAN	ONE-TRICK
-Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	Menang {1} dari {0} ronde saat tersisa sendirian: kalau dia tinggal sendiri, masuk bareng, jangan sisakan dia sampai akhir.
-Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	Hanya menang {1} dari {0} ronde saat tersisa sendirian: tekan saat dia sendiri, dia panik.
-{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0} biasanya main di {1}: {3} dari {2} duelnya di map ini terjadi di sana (paling sering {4}).
-{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	Duo dengan {0}: satu party di {1} match terakhir mereka, saling melindungi.
-{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	Belum pernah main {0} dalam {1} match terakhir: belum terbiasa dengan agen ini, bisa telat atau salah pakai skill.
 {0} oyuncu inceleniyor…	menganalisis {0} pemain…
 Öne çıkan başka bir bilgi yok.	Tidak ada lagi yang menonjol.
 İLK KEZ?	PERTAMA KALI?
 İSTİHBARAT	INTEL
 FIRSAT	PELUANG
 Harita	Peta
-Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.	Terlalu kuat untuk level akunnya (Lv {0}, {1}): bisa akun baru, jangan diremehkan.
 KONUM	POSISI
-Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.	Sebagian besar plant di {0}: saat bertahan taruh satu pemain tambahan di sana.
 Kısayollar: 1-4 sekmeler · B brifing · Esc oyuncu sekmesini kapat · tekerlek kaydırır	Pintasan: 1-4 tab · B briefing · Esc tutup tab pemain · roda untuk menggulir
 Profil	Profil
 RAKİP	LAWAN
@@ -728,11 +706,32 @@ round başına hasar	damage per ronde
 Ölüm Kalım	Deathmatch
 Haritalar	Peta
 parti	party
-Bu oturumun {0}. maçı, {1} önce başlamış.	Pertandingan ke-{0} sesi ini, dimulai {1} lalu.
-Oturumun ilk maçı: henüz ısınmamış olabilir.	Pertandingan pertama sesi: mungkin belum panas.
 Son oturum: {0} maç · {1} sürdü · {2} önce bitti	Sesi terakhir: {0} pertandingan · berlangsung {1} · selesai {2} lalu
 {0} sa	{0} jam
 {0} sa {1} dk	{0} jam {1} mnt
-{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.	Sudah main {0} jam, ini pertandingan ke-{1} hari ini: di akhir sesi panjang fokus menurun.
 {0}. MAÇ	MATCH {0}
 ● Şu an oturumda: {0} maç · {1} süredir oynuyor	● Sedang dalam sesi: {0} pertandingan · main selama {1}
+ · açıyı önceden tut	 · pre-aim sudutnya
+ · ilk ölüm %{0}	 · mati pertama {0}%
+{0} {1} · {3}/{2} çatışma · en çok {4}	{0} {1} · {3}/{2} duel · paling sering {4}
+{0} ile düo · {1} maç aynı parti	Duo dengan {0} · {1} pertandingan satu party
+{0} maçtır kaybediyor · tilt, erken bas	Kalah {0} beruntun · tilt, tekan lebih awal
+{0} maçtır kazanıyor · özgüvenli	Menang {0} beruntun · percaya diri
+{0} saattir oynuyor · bugün {1}. maç · yorgun	Main {0} jam · pertandingan ke-{1} hari ini · lelah
+{0}: son {1} maçta hiç yok · faydası geç ve hatalı	{0}: tak pernah dalam {1} pertandingan · skill lambat dan salah
+{2}: {1}/{0} maç · bu ajanda çok deneyimli	{2}: {1}/{0} pertandingan · sangat berpengalaman
+Asıl ajanı {0} ({2}/{1} maç) · şimdi {3}	Main {0} ({2}/{1} pertandingan) · sekarang {3}
+Clutch {1}/{0} · sona bırakma, kalabalık gir	Clutch {1}/{0} · jangan sisakan terakhir, masuk bersama
+Clutch {1}/{0} · yalnız kalınca panikler	Clutch {1}/{0} · panik saat sendiri
+HS %{0} · düz düello yok, fayda ile gir	HS {0}% · jangan duel kering, pakai skill
+İlk düello %{0} · lurk bekle, arkana bak	Duel pertama {0}% · awas lurk, cek belakang
+İlk kan %{0}	Kill pertama {0}%
+İlk ölüm %{0} · bekle, sana gelir	Mati pertama {0}% · tunggu, dia datang sendiri
+Kurulum çoğunlukla {0} · defansta oraya +1 kişi	Plant sering di {0} · +1 di sana saat bertahan
+Operator: öldürmelerin %{0} · uzun açıya kuru peek yok	Operator: {0}% kill · jangan peek kering di sudut panjang
+Oturumun {0}. maçı · {1}	Pertandingan ke-{0} sesi · {1}
+Oturumun ilk maçı · ısınmamış	Pertandingan pertama sesi · belum panas
+Sheriff: öldürmelerin %{0} · ecoda da tek atar	Sheriff: {0}% kill · berbahaya juga saat eco
+Spike: {0} · {2}/{1} kurulum	Spike: {0} · {2}/{1} plant
+Sv {0} ama {1} · yeni hesap olabilir	Lv {0} tapi {1} · mungkin akun baru
+Trade edilme %{0} · takımdan uzak oynar	Di-trade {0}% · main jauh dari tim

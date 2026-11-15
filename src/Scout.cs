@@ -174,13 +174,13 @@ namespace ValoLive
             int fk = Pct(ms.Sum(m => m.FirstKills), r), fd = Pct(ms.Sum(m => m.FirstDeaths), r);
             int op = Pct(ms.Sum(m => m.OpKills), k), sh = Pct(ms.Sum(m => m.SheriffKills), k);
             int tr = Pct(ms.Sum(m => m.Traded), d), hs = Pct(ms.Sum(m => m.Hs), ms.Sum(m => m.Shots));
-            if (op >= 20 && k >= 20) tags.Add(new Tag { Text = L.T("OP'ÇU"), Color = Purple, Note = L.F("Öldürmelerinin büyük kısmı Operator ile (%{0}). Uzun açıları kuru peek'leme, flaşla ya da başka yerden gir.", op) });
-            if (fk >= 15) tags.Add(new Tag { Text = L.T("GİRİŞÇİ"), Color = Orange, Note = L.F("Roundu o açıyor: ilk kan %{0}", fk) + (fd >= 15 ? L.F(", ilk ölüm %{0}", fd) : "") + L.T(". İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.") });
-            else if (fd >= 15) tags.Add(new Tag { Text = L.T("AGRESİF"), Color = Pink, Note = L.F("Sık ilk ölüyor (roundların %{0}). Erken peek atar; sabırlı bekle, sana gelir.", fd) });
-            else if (fk + fd <= 12) tags.Add(new Tag { Text = L.T("SABIRLI"), Color = Blue, Note = L.F("İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.", fk + fd) });
-            if (d >= 20 && tr < 12) tags.Add(new Tag { Text = L.T("YALNIZ"), Color = Blue, Note = L.F("Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.", tr) });
-            if (sh >= 10 && k >= 20) tags.Add(new Tag { Text = "SHERIFF", Color = Orange, Note = L.F("Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.", sh) });
-            if (hs >= 30) tags.Add(new Tag { Text = L.T("KAFACI"), Color = Green, Note = L.F("Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.", hs) });
+            if (op >= 20 && k >= 20) tags.Add(new Tag { Text = L.T("OP'ÇU"), Color = Purple, Note = L.F("Operator: öldürmelerin %{0} · uzun açıya kuru peek yok", op) });
+            if (fk >= 15) tags.Add(new Tag { Text = L.T("GİRİŞÇİ"), Color = Orange, Note = L.F("İlk kan %{0}", fk) + (fd >= 15 ? L.F(" · ilk ölüm %{0}", fd) : "") + L.T(" · açıyı önceden tut") });
+            else if (fd >= 15) tags.Add(new Tag { Text = L.T("AGRESİF"), Color = Pink, Note = L.F("İlk ölüm %{0} · bekle, sana gelir", fd) });
+            else if (fk + fd <= 12) tags.Add(new Tag { Text = L.T("SABIRLI"), Color = Blue, Note = L.F("İlk düello %{0} · lurk bekle, arkana bak", fk + fd) });
+            if (d >= 20 && tr < 12) tags.Add(new Tag { Text = L.T("YALNIZ"), Color = Blue, Note = L.F("Trade edilme %{0} · takımdan uzak oynar", tr) });
+            if (sh >= 10 && k >= 20) tags.Add(new Tag { Text = "SHERIFF", Color = Orange, Note = L.F("Sheriff: öldürmelerin %{0} · ecoda da tek atar", sh) });
+            if (hs >= 30) tags.Add(new Tag { Text = L.T("KAFACI"), Color = Green, Note = L.F("HS %{0} · düz düello yok, fayda ile gir", hs) });
             return tags;
         }
     }

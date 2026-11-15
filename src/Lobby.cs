@@ -825,7 +825,7 @@ XWehWA==
                     var list = Intel.For(new Intel.Input { P = p, H = h, Ms = ScoutedOf(p.Puuid), MapUrl = map, Starts = st, Duos = duos, AgentName = ValApi.AgentName });
                     if (Smurf(p, h))
                         list.Insert(0, new Intel.Fact { Puuid = p.Puuid, Pill = "SMURF?", Score = 88, Color = Warn, Kind = Intel.Kinds.Danger,
-                            Text = L.F("Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.", p.Level, h.Rank ?? "?") });
+                            Text = L.F("Sv {0} ama {1} · yeni hesap olabilir", p.Level, h.Rank ?? "?") });
                     res[p.Puuid] = list;
                 }
                 catch (Exception e) { Diag.Event("ODA", "istihbarat çıkarılamadı: " + e.Message); }

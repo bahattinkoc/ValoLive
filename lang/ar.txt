@@ -11,8 +11,6 @@
 %{0}	{0}%
 (mikrofon yok)	(بدون ميكروفون)
 +{0} karşılaşma daha	+{0} لقاءات أخرى
-, ilk ölüm %{0}	، أول موت {0}%
-. İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.	. الاحتكاك الأول يأتي منه عادةً؛ صوّب على الزاوية مسبقًا ولا تكشف نفسك مباشرة.
 1080p60 · 6000 kbps (önerilen)	1080p60 · 6000 kbps (موصى به)
 2 kayıp serisinden sonra yeterli maç yok; örnek arttıkça netleşir.	لا توجد مباريات كافية بعد خسارتين متتاليتين؛ تتضح الصورة مع المزيد من البيانات.
 2 kayıptan sonra ({0})	بعد خسارتين ({0})
@@ -84,7 +82,6 @@ KATMANLAR	الطبقات
 KAZANMA	نسبة الفوز
 KENDİ ANALİZİM	إحصائياتي
 KISA BİR ARA	استراحة قصيرة
-Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.	نسبة إصابات رأس عالية ({0}%). لا تدخل مبارزة مباشرة — ادخل بالقدرات.
 Kalite	الجودة
 Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil	سجل اللقاءات: {0}  ·  الحلقة الملونة = لعبتما معًا من قبل (مرّر المؤشر)  ·  انقر على لاعب: تحليل · زر أيمن: الملف الشخصي
 Kategori	الفئة
@@ -149,7 +146,6 @@ Riot istemcisi kapalı	عميل Riot مغلق
 Riot istemcisine ulaşılamadı: 	تعذّر الوصول إلى عميل Riot: 
 Riot yavaşlattı, bekleniyor… {0}/{1}	Riot أبطأت الطلبات، بانتظار… {0}/{1}
 Round açılışların dengeli.	افتتاحك للجولات متوازن.
-Roundu o açıyor: ilk kan %{0}	هو من يفتتح الجولات: أول قتل {0}%
 Roundu sık sık ilk ölerek açıyorsun (ortalama ~%10). İlk teması takım arkadaşına ver ya da fayda ile gir.	كثيرًا ما تفتتح الجولة بموتك أولًا (المتوسط ~10%). اترك الاحتكاك الأول لزميلك أو ادخل بالقدرات.
 Rozet yeri	موضع الشارة
 RÖVANŞ	ثأر
@@ -168,7 +164,6 @@ Sabah	الصباح
 Sadece Valorant (önerilen)	Valorant فقط (موصى به)
 Ses cihazı yanıt vermedi.	جهاز الصوت لا يستجيب.
 Seçtiğim uygulama	التطبيق المختار
-Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.	يقتل كثيرًا بالـ Sheriff ({0}% من قتلاته). قد يقتلك بطلقة واحدة حتى في جولات التوفير.
 Sniper koruması (F9)	منع السنايبنغ (F9)
 Son maç bilgisi yok.	لا توجد معلومات عن آخر مباراة.
 Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	آخر مباراة: {0} {1} · {2} · {3} · {4} · HS {5}
@@ -179,7 +174,6 @@ Sv	مستوى
 Süre: {0:hh\:mm\:ss}	المدة: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	سحب: تحريك\nعجلة الماوس: تكبير / تصغير (Shift: دقيق)\nالأسهم: 1 px (Shift: 10 px)\n\n
 SİLAH	السلاح
-Sık ilk ölüyor (roundların %{0}). Erken peek atar; sabırlı bekle, sana gelir.	يموت أولًا كثيرًا ({0}% من الجولات). يكشف نفسه مبكرًا؛ انتظر بصبر وسيأتي إليك.
 Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz	الطابور / اختيار العميل مخفي — نعود عند بدء المباراة
 Sıraya girilince sayaç başlar	يبدأ العدّاد عند دخول الطابور
 TAKIMIN	فريقك
@@ -289,8 +283,6 @@ zirve	الأعلى
 · {0} kez aynı maçtaydınız	· {0} مرات في المباراة نفسها
 Çap {0} px · konum {1}, {2}	القطر {0} px · الموضع {1}, {2}
 Çıkış	خروج
-Öldürmelerinin büyük kısmı Operator ile (%{0}). Uzun açıları kuru peek'leme, flaşla ya da başka yerden gir.	معظم قتلاته بالـ Operator ({0}%). لا تكشف الزوايا الطويلة مباشرة — استخدم الوميض أو ادخل من طريق آخر.
-Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	نادرًا ما يُثأر له عند موته ({0}%). يلعب وحيدًا بعيدًا عن فريقه.
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	فريقك لا يستطيع غالبًا الثأر لك: تبقى وحيدًا. العب في المنطقة نفسها مع زميل.
 Ölümsüzlük	خالد
 Öğlen	الظهيرة
@@ -303,7 +295,6 @@ zirve	الأعلى
 ölümün trade edildi	تم الثأر لموتك
 İLK KAN	أول قتل
 İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.	تتراجع بوضوح بعد خسارتين: استراحة قصيرة تفيدك في تلك اللحظة.
-İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.	نادرًا ما يدخل المبارزة الأولى ({0}%). توقّع تدويرًا متأخرًا/التفافًا وانتبه لظهرك.
 İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.	الأذونات: حدّد user:read و channel:read و channel:write و chat:write → حفظ.
 Şu an maçta değil.	ليس في مباراة الآن.
 …	…
@@ -517,33 +508,20 @@ Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	انخفض البث إلى {0}
 Yeni sürüm {0} hazır · güncelle	إصدار جديد {0} متاح · تحديث
 İndirilen pakette ValoLive.exe yok	الحزمة التي نُزّلت لا تحتوي على ValoLive.exe
 İndiriliyor… %{0}	جارٍ التنزيل… {0}%
-Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.	عميله الأساسي {0} ({2} من آخر {1} مباريات)، ويلعب {3} في هذه المباراة.
 Atakta	في الهجوم
 Brifing	الموجز
 Bu lobide öne çıkan bir bilgi yok.	لا شيء لافت في هذه الردهة.
-Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	لعب {0} مباريات اليوم وخسر آخر {1} على التوالي: قد يكون متوترًا، اضغط مبكرًا.
 Defansta	في الدفاع
 Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	عند العثور على مباراة تُلخَّص هنا أهم المعلومات من آخر مباريات اللاعبين.
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	جارٍ تحليل آخر مباريات اللاعبين؛ تظهر النتائج هنا تباعًا.
-Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.	لعب {2} في {1} من آخر {0} مباريات: خبير جدًا بهذا العميل ويلعب خطة محفوظة.
-Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	خسر آخر {0} مباريات على التوالي: قد يكون متوترًا، اضغط مبكرًا.
-Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	فاز بآخر {0} مباريات على التوالي: واثق ويلعب بهجومية.
-Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	يزرع السبايك عادة في {0} على هذه الخريطة ({2} من {1} زرعات).
 TEK AJAN	عميل واحد
-Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	فاز بـ {1} من {0} جولات حين بقي آخر حيّ: إذا بقي وحده فادخلوا معًا ولا تتركوه للنهاية.
-Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	فاز بـ {1} فقط من {0} جولات حين بقي آخر حيّ: اضغط عليه وهو وحده، يرتبك.
-{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0} يلعب غالبًا في {1}: {3} من {2} مواجهات له على هذه الخريطة كانت هناك (أكثرها في {4}).
-{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	ثنائي مع {0}: في نفس الفريق في {1} من مبارياتهما الأخيرة، يغطي كل منهما الآخر.
-{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	لم يلعب {0} في آخر {1} مباريات: غير معتاد على هذا العميل، قد يستخدم قدراته متأخرًا أو بشكل خاطئ.
 {0} oyuncu inceleniyor…	جارٍ تحليل {0} لاعبين…
 Öne çıkan başka bir bilgi yok.	لا شيء آخر لافت.
 İLK KEZ?	أول مرة؟
 İSTİHBARAT	استخبارات
 FIRSAT	فرصة
 Harita	الخريطة
-Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.	قوي جدًا بالنسبة لمستوى الحساب (مستوى {0}، {1}): قد يكون حسابًا جديدًا، لا تستهن به.
 KONUM	الموقع
-Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.	معظم الزرع في {0}: في الدفاع ضع لاعبًا إضافيًا هناك.
 Kısayollar: 1-4 sekmeler · B brifing · Esc oyuncu sekmesini kapat · tekerlek kaydırır	اختصارات: 1-4 التبويبات · B الإحاطة · Esc إغلاق تبويب اللاعب · العجلة للتمرير
 Profil	الملف
 RAKİP	الخصم
@@ -728,11 +706,32 @@ round başına hasar	الضرر لكل جولة
 Ölüm Kalım	المواجهة حتى الموت
 Haritalar	الخرائط
 parti	فريق
-Bu oturumun {0}. maçı, {1} önce başlamış.	المباراة {0} في هذه الجلسة التي بدأت قبل {1}.
-Oturumun ilk maçı: henüz ısınmamış olabilir.	أول مباراة في الجلسة: ربما لم يتحمّس بعد.
 Son oturum: {0} maç · {1} sürdü · {2} önce bitti	آخر جلسة: {0} مباريات · استمرت {1} · انتهت قبل {2}
 {0} sa	{0} س
 {0} sa {1} dk	{0} س {1} د
-{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.	يلعب منذ {0} ساعات، وهذه مباراته رقم {1} اليوم: في آخر الجلسات الطويلة يقلّ التركيز.
 {0}. MAÇ	المباراة {0}
 ● Şu an oturumda: {0} maç · {1} süredir oynuyor	● في جلسة الآن: {0} مباريات · يلعب منذ {1}
+ · açıyı önceden tut	 · صوّب على الزاوية مسبقًا
+ · ilk ölüm %{0}	 · أول موت {0}%
+{0} {1} · {3}/{2} çatışma · en çok {4}	{0} {1} · {3}/{2} اشتباك · غالبًا {4}
+{0} ile düo · {1} maç aynı parti	ثنائي مع {0} · {1} مباريات في نفس الفريق
+{0} maçtır kaybediyor · tilt, erken bas	{0} خسائر متتالية · متوتر، اضغط مبكرًا
+{0} maçtır kazanıyor · özgüvenli	{0} انتصارات متتالية · واثق
+{0} saattir oynuyor · bugün {1}. maç · yorgun	يلعب منذ {0} س · المباراة {1} اليوم · متعب
+{0}: son {1} maçta hiç yok · faydası geç ve hatalı	{0}: لم يلعبه في آخر {1} مباريات · قدراته بطيئة وخاطئة
+{2}: {1}/{0} maç · bu ajanda çok deneyimli	{2}: {1}/{0} مباريات · خبير جدًا
+Asıl ajanı {0} ({2}/{1} maç) · şimdi {3}	عميله الأساسي {0} ({2}/{1}) · الآن {3}
+Clutch {1}/{0} · sona bırakma, kalabalık gir	كلاتش {1}/{0} · لا تتركه للأخير، ادخلوا معًا
+Clutch {1}/{0} · yalnız kalınca panikler	كلاتش {1}/{0} · يرتبك وحده
+HS %{0} · düz düello yok, fayda ile gir	HS {0}% · لا مبارزة مباشرة، استخدم القدرات
+İlk düello %{0} · lurk bekle, arkana bak	أول مبارزة {0}% · توقع التسلل، راقب خلفك
+İlk kan %{0}	أول قتل {0}%
+İlk ölüm %{0} · bekle, sana gelir	أول موت {0}% · انتظر، سيأتيك
+Kurulum çoğunlukla {0} · defansta oraya +1 kişi	يزرع غالبًا في {0} · +1 هناك في الدفاع
+Operator: öldürmelerin %{0} · uzun açıya kuru peek yok	Operator: {0}% من القتلات · لا تكشف الزوايا الطويلة
+Oturumun {0}. maçı · {1}	المباراة {0} في الجلسة · {1}
+Oturumun ilk maçı · ısınmamış	أول مباراة في الجلسة · لم يسخن
+Sheriff: öldürmelerin %{0} · ecoda da tek atar	Sheriff: {0}% من القتلات · خطر حتى في الإيكو
+Spike: {0} · {2}/{1} kurulum	Spike: {0} · {2}/{1} زرع
+Sv {0} ama {1} · yeni hesap olabilir	مستوى {0} لكن {1} · ربما حساب جديد
+Trade edilme %{0} · takımdan uzak oynar	تمت مبادلته {0}% · يلعب بعيدًا عن الفريق

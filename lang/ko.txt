@@ -11,8 +11,6 @@
 %{0}	{0}%
 (mikrofon yok)	(마이크 없음)
 +{0} karşılaşma daha	+{0}번 더 만남
-, ilk ölüm %{0}	, 첫 데스 {0}%
-. İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.	. 첫 교전은 주로 이 플레이어에게서 시작됩니다. 각을 미리 잡고 무작정 피킹하지 마세요.
 1080p60 · 6000 kbps (önerilen)	1080p60 · 6000 kbps (권장)
 2 kayıp serisinden sonra yeterli maç yok; örnek arttıkça netleşir.	2연패 이후 경기가 아직 부족합니다. 데이터가 쌓이면 더 정확해집니다.
 2 kayıptan sonra ({0})	2연패 후 ({0})
@@ -84,7 +82,6 @@ KATMANLAR	레이어
 KAZANMA	승률
 KENDİ ANALİZİM	내 분석
 KISA BİR ARA	잠깐 휴식
-Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.	헤드샷 비율이 높음 ({0}%). 정면 교전 대신 스킬로 들어가세요.
 Kalite	화질
 Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil	만남 기록: {0}  ·  색 테두리 = 이전에 같은 경기에 있었음 (마우스 올리기)  ·  플레이어 클릭: 분석 · 우클릭: 프로필
 Kategori	카테고리
@@ -149,7 +146,6 @@ Riot istemcisi kapalı	Riot 클라이언트가 꺼져 있음
 Riot istemcisine ulaşılamadı: 	Riot 클라이언트에 연결할 수 없음: 
 Riot yavaşlattı, bekleniyor… {0}/{1}	Riot 요청 제한, 대기 중… {0}/{1}
 Round açılışların dengeli.	라운드 초반이 균형 잡혀 있습니다.
-Roundu o açıyor: ilk kan %{0}	라운드를 여는 타입: 퍼스트 블러드 {0}%
 Roundu sık sık ilk ölerek açıyorsun (ortalama ~%10). İlk teması takım arkadaşına ver ya da fayda ile gir.	먼저 죽으며 라운드를 시작하는 경우가 많습니다 (평균 ~10%). 첫 교전은 팀원에게 맡기거나 스킬로 들어가세요.
 Rozet yeri	배지 위치
 RÖVANŞ	복수
@@ -168,7 +164,6 @@ Sabah	아침
 Sadece Valorant (önerilen)	발로란트만 (권장)
 Ses cihazı yanıt vermedi.	오디오 장치가 응답하지 않습니다.
 Seçtiğim uygulama	선택한 앱
-Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.	셰리프 킬이 많음 (킬의 {0}%). 에코 라운드에도 원탭 당할 수 있습니다.
 Sniper koruması (F9)	스나이핑 방지 (F9)
 Son maç bilgisi yok.	지난 경기 정보가 없습니다.
 Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	지난 경기: {0} {1} · {2} · {3} · {4} · HS {5}
@@ -179,7 +174,6 @@ Sv	Lv
 Süre: {0:hh\:mm\:ss}	시간: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	드래그: 이동\n마우스 휠: 확대 / 축소 (Shift: 미세)\n방향키: 1 px (Shift: 10 px)\n\n
 SİLAH	무기
-Sık ilk ölüyor (roundların %{0}). Erken peek atar; sabırlı bekle, sana gelir.	먼저 죽는 경우가 많음 (라운드의 {0}%). 일찍 피킹하니 침착하게 기다리면 옵니다.
 Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz	대기열 / 요원 선택 숨김 — 경기가 시작되면 돌아옵니다
 Sıraya girilince sayaç başlar	대기열에 들어가면 타이머가 시작됩니다
 TAKIMIN	우리 팀
@@ -289,8 +283,6 @@ zirve	최고
 · {0} kez aynı maçtaydınız	· 같은 경기 {0}번
 Çap {0} px · konum {1}, {2}	지름 {0} px · 위치 {1}, {2}
 Çıkış	종료
-Öldürmelerinin büyük kısmı Operator ile (%{0}). Uzun açıları kuru peek'leme, flaşla ya da başka yerden gir.	킬 대부분이 오퍼레이터 ({0}%). 긴 각을 무작정 피킹하지 말고 섬광을 쓰거나 다른 길로 가세요.
-Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	죽어도 트레이드되는 경우가 드묾 ({0}%). 팀과 떨어져 혼자 플레이합니다.
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	내가 죽어도 팀이 트레이드하지 못합니다: 고립되고 있어요. 팀원과 같은 구역에서 플레이하세요.
 Ölümsüzlük	불멸
 Öğlen	오후
@@ -303,7 +295,6 @@ zirve	최고
 ölümün trade edildi	내 데스가 트레이드됨
 İLK KAN	퍼스트 블러드
 İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.	2연패 후 확실히 무너집니다: 그때 잠깐 쉬는 게 좋습니다.
-İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.	첫 교전에 잘 나서지 않음 ({0}%). 늦은 로테이션/뒷치기에 대비하고 뒤를 확인하세요.
 İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.	권한: user:read, channel:read, channel:write, chat:write 체크 → 저장.
 Şu an maçta değil.	지금은 경기 중이 아닙니다.
 …	…
@@ -517,33 +508,20 @@ Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	방송이 {0} FPS로 떨어짐
 Yeni sürüm {0} hazır · güncelle	새 버전 {0} 사용 가능 · 업데이트
 İndirilen pakette ValoLive.exe yok	다운로드한 패키지에 ValoLive.exe가 없습니다
 İndiriliyor… %{0}	다운로드 중… {0}%
-Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.	주 요원은 {0} (최근 {1}경기 중 {2}경기), 이번 경기는 {3} 플레이.
 Atakta	공격 시
 Brifing	브리핑
 Bu lobide öne çıkan bir bilgi yok.	이 로비에서 눈에 띄는 정보가 없습니다.
-Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	오늘 {0}경기를 했고 최근 {1}연패 중: 멘탈이 흔들렸을 수 있으니 초반부터 압박하세요.
 Defansta	수비 시
 Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	매치가 잡히면 플레이어들의 최근 경기에서 가장 유용한 정보가 여기에 요약됩니다.
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	플레이어들의 최근 경기를 분석 중이며, 결과가 나오는 대로 여기에 표시됩니다.
-Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.	최근 {0}경기 중 {1}경기에서 {2} 플레이: 이 요원에 매우 능숙하고 익숙한 플레이를 합니다.
-Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	최근 {0}연패 중: 멘탈이 흔들렸을 수 있으니 초반부터 압박하세요.
-Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	최근 {0}연승 중: 자신감 있고 공격적으로 플레이합니다.
-Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	이 맵에서는 주로 {0}에 스파이크 설치 ({1}번 중 {2}번).
 TEK AJAN	원챔
-Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	혼자 남았을 때 {0}라운드 중 {1}라운드 승리: 혼자 남으면 함께 들어가고 마지막까지 남겨두지 마세요.
-Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	혼자 남은 {0}라운드 중 {1}번만 이김: 혼자일 때 압박하면 당황합니다.
-{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0} 주로 {1}에서 플레이: 이 맵 교전 {2}번 중 {3}번이 그곳 (가장 많이 {4}).
-{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	{0}와(과) 듀오: 최근 경기 중 {1}경기에서 같은 파티, 서로를 커버합니다.
-{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	최근 {1}경기에서 {0}을(를) 플레이하지 않음: 이 요원에 익숙하지 않아 스킬을 늦거나 잘못 쓸 수 있습니다.
 {0} oyuncu inceleniyor…	{0}명 분석 중…
 Öne çıkan başka bir bilgi yok.	그 밖에 눈에 띄는 정보가 없습니다.
 İLK KEZ?	처음?
 İSTİHBARAT	정보
 FIRSAT	기회
 Harita	맵
-Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.	계정 레벨에 비해 너무 강함 (Lv {0}, {1}): 새 계정일 수 있으니 방심 금지.
 KONUM	위치
-Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.	설치는 대부분 {0}: 수비 때 그곳에 한 명 더 배치.
 Kısayollar: 1-4 sekmeler · B brifing · Esc oyuncu sekmesini kapat · tekerlek kaydırır	단축키: 1-4 탭 · B 브리핑 · Esc 플레이어 탭 닫기 · 휠로 스크롤
 Profil	프로필
 RAKİP	적
@@ -728,11 +706,32 @@ round başına hasar	라운드당 피해
 Ölüm Kalım	데스매치
 Haritalar	맵
 parti	파티
-Bu oturumun {0}. maçı, {1} önce başlamış.	이번 세션의 {0}번째 경기, {1} 전에 시작.
-Oturumun ilk maçı: henüz ısınmamış olabilir.	세션 첫 경기: 아직 몸이 덜 풀렸을 수 있어요.
 Son oturum: {0} maç · {1} sürdü · {2} önce bitti	지난 세션: {0}경기 · {1} 동안 · {2} 전에 끝남
 {0} sa	{0}시간
 {0} sa {1} dk	{0}시간 {1}분
-{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.	{0}시간째 플레이 중, 오늘 {1}번째 경기: 긴 세션 막바지엔 집중력이 떨어져요.
 {0}. MAÇ	{0}번째 경기
 ● Şu an oturumda: {0} maç · {1} süredir oynuyor	● 지금 세션 중: {0}경기 · {1}째 플레이
+ · açıyı önceden tut	 · 각도를 미리 잡아라
+ · ilk ölüm %{0}	 · 첫 데스 {0}%
+{0} {1} · {3}/{2} çatışma · en çok {4}	{0} {1} · {3}/{2} 교전 · 주로 {4}
+{0} ile düo · {1} maç aynı parti	{0}와 듀오 · {1}경기 같은 파티
+{0} maçtır kaybediyor · tilt, erken bas	{0}연패 · 틸트, 일찍 밀어라
+{0} maçtır kazanıyor · özgüvenli	{0}연승 · 자신감
+{0} saattir oynuyor · bugün {1}. maç · yorgun	{0}시간째 플레이 · 오늘 {1}번째 경기 · 피곤
+{0}: son {1} maçta hiç yok · faydası geç ve hatalı	{0}: 최근 {1}경기 미사용 · 스킬이 느리고 서툼
+{2}: {1}/{0} maç · bu ajanda çok deneyimli	{2}: {1}/{0}경기 · 매우 숙련
+Asıl ajanı {0} ({2}/{1} maç) · şimdi {3}	주 요원 {0} ({2}/{1}경기) · 지금 {3}
+Clutch {1}/{0} · sona bırakma, kalabalık gir	클러치 {1}/{0} · 마지막에 남기지 말고 몰려가라
+Clutch {1}/{0} · yalnız kalınca panikler	클러치 {1}/{0} · 혼자면 당황
+HS %{0} · düz düello yok, fayda ile gir	HS {0}% · 맞총 말고 스킬로
+İlk düello %{0} · lurk bekle, arkana bak	첫 교전 {0}% · 뒤치기 주의
+İlk kan %{0}	첫 킬 {0}%
+İlk ölüm %{0} · bekle, sana gelir	첫 데스 {0}% · 기다리면 온다
+Kurulum çoğunlukla {0} · defansta oraya +1 kişi	설치는 주로 {0} · 수비 때 거기 +1
+Operator: öldürmelerin %{0} · uzun açıya kuru peek yok	오퍼레이터: 킬의 {0}% · 긴 각에 그냥 피크 금지
+Oturumun {0}. maçı · {1}	세션 {0}번째 경기 · {1}
+Oturumun ilk maçı · ısınmamış	세션 첫 경기 · 몸 덜 풀림
+Sheriff: öldürmelerin %{0} · ecoda da tek atar	셰리프: 킬의 {0}% · 에코에도 위험
+Spike: {0} · {2}/{1} kurulum	스파이크: {0} · {2}/{1} 설치
+Sv {0} ama {1} · yeni hesap olabilir	레벨 {0}인데 {1} · 새 계정일 수도
+Trade edilme %{0} · takımdan uzak oynar	트레이드율 {0}% · 팀과 떨어져 플레이

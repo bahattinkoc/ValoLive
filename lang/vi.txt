@@ -11,8 +11,6 @@
 %{0}	{0}%
 (mikrofon yok)	(không có micro)
 +{0} karşılaşma daha	+{0} lần gặp nữa
-, ilk ölüm %{0}	, chết đầu {0}%
-. İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.	. Pha giao tranh đầu thường đến từ họ; ngắm sẵn góc, đừng peek chay.
 1080p60 · 6000 kbps (önerilen)	1080p60 · 6000 kbps (khuyên dùng)
 2 kayıp serisinden sonra yeterli maç yok; örnek arttıkça netleşir.	Chưa đủ trận sau chuỗi thua 2; dữ liệu nhiều hơn sẽ rõ hơn.
 2 kayıptan sonra ({0})	Sau 2 trận thua ({0})
@@ -84,7 +82,6 @@ KATMANLAR	LỚP PHỦ
 KAZANMA	TỈ LỆ THẮNG
 KENDİ ANALİZİM	THỐNG KÊ CỦA TÔI
 KISA BİR ARA	NGHỈ CHÚT
-Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.	Tỉ lệ headshot cao ({0}%). Đừng đấu súng trực diện — vào bằng kỹ năng.
 Kalite	Chất lượng
 Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil	Sổ gặp mặt: {0}  ·  vòng màu = từng chung trận (rê chuột)  ·  nhấn người chơi: phân tích · chuột phải: hồ sơ
 Kategori	Danh mục
@@ -149,7 +146,6 @@ Riot istemcisi kapalı	Riot Client đang tắt
 Riot istemcisine ulaşılamadı: 	Không liên lạc được Riot Client: 
 Riot yavaşlattı, bekleniyor… {0}/{1}	Riot giới hạn yêu cầu, đang chờ… {0}/{1}
 Round açılışların dengeli.	Mở đầu hiệp của bạn cân bằng.
-Roundu o açıyor: ilk kan %{0}	Họ là người mở hiệp: first blood {0}%
 Roundu sık sık ilk ölerek açıyorsun (ortalama ~%10). İlk teması takım arkadaşına ver ya da fayda ile gir.	Bạn hay mở hiệp bằng việc chết trước (trung bình ~10%). Nhường pha giao tranh đầu cho đồng đội hoặc vào bằng kỹ năng.
 Rozet yeri	Vị trí huy hiệu
 RÖVANŞ	BÁO THÙ
@@ -168,7 +164,6 @@ Sabah	Buổi sáng
 Sadece Valorant (önerilen)	Chỉ Valorant (khuyên dùng)
 Ses cihazı yanıt vermedi.	Thiết bị âm thanh không phản hồi.
 Seçtiğim uygulama	Ứng dụng đã chọn
-Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.	Hạ nhiều bằng Sheriff ({0}% số mạng). Vòng eco vẫn có thể one-tap bạn.
 Sniper koruması (F9)	Chống snipe (F9)
 Son maç bilgisi yok.	Không có thông tin trận trước.
 Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	Trận trước: {0} {1} · {2} · {3} · {4} · HS {5}
@@ -179,7 +174,6 @@ Sv	Cấp
 Süre: {0:hh\:mm\:ss}	Thời lượng: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	Kéo: di chuyển\nLăn chuột: phóng to / thu nhỏ (Shift: tinh chỉnh)\nPhím mũi tên: 1 px (Shift: 10 px)\n\n
 SİLAH	VŨ KHÍ
-Sık ilk ölüyor (roundların %{0}). Erken peek atar; sabırlı bekle, sana gelir.	Hay chết trước ({0}% số hiệp). Peek sớm; cứ kiên nhẫn chờ, họ sẽ tự tới.
 Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz	Đã ẩn hàng chờ / chọn đặc vụ — quay lại khi trận bắt đầu
 Sıraya girilince sayaç başlar	Đồng hồ chạy khi bạn vào hàng chờ
 TAKIMIN	ĐỘI BẠN
@@ -289,8 +283,6 @@ zirve	cao nhất
 · {0} kez aynı maçtaydınız	· {0} lần chung trận
 Çap {0} px · konum {1}, {2}	Đường kính {0} px · vị trí {1}, {2}
 Çıkış	Thoát
-Öldürmelerinin büyük kısmı Operator ile (%{0}). Uzun açıları kuru peek'leme, flaşla ya da başka yerden gir.	Phần lớn mạng hạ bằng Operator ({0}%). Đừng peek chay góc dài — dùng flash hoặc đi đường khác.
-Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	Hiếm khi được trade khi chết ({0}%). Chơi một mình, xa đồng đội.
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	Đội bạn thường không trade kịp: bạn bị cô lập. Hãy chơi cùng khu vực với đồng đội.
 Ölümsüzlük	Bất Tử
 Öğlen	Buổi trưa
@@ -303,7 +295,6 @@ zirve	cao nhất
 ölümün trade edildi	bạn đã được trade
 İLK KAN	FIRST BLOOD
 İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.	Bạn tụt rõ sau hai trận thua: lúc đó nghỉ ngắn sẽ giúp ích.
-İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.	Hiếm khi vào pha đấu súng đầu ({0}%). Cẩn thận xoay muộn/lurk, kiểm tra sau lưng.
 İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.	Quyền: tích user:read, channel:read, channel:write, chat:write → Lưu.
 Şu an maçta değil.	Hiện không ở trong trận.
 …	…
@@ -517,33 +508,20 @@ Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	Stream giảm xuống {0} FPS:
 Yeni sürüm {0} hazır · güncelle	Có phiên bản mới {0} · cập nhật
 İndirilen pakette ValoLive.exe yok	Gói đã tải không có ValoLive.exe
 İndiriliyor… %{0}	Đang tải… {0}%
-Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.	Đặc vụ chính là {0} ({2} trong {1} trận gần nhất), trận này chơi {3}.
 Atakta	Khi tấn công
 Brifing	Tóm tắt
 Bu lobide öne çıkan bir bilgi yok.	Phòng chờ này không có gì nổi bật.
-Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Hôm nay đã chơi {0} trận và thua liên tiếp {1} trận gần nhất: có thể đang tilt, ép sớm.
 Defansta	Khi phòng thủ
 Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	Khi tìm được trận, thông tin hữu ích nhất từ các trận gần đây của người chơi sẽ được tóm tắt ở đây.
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	Đang phân tích các trận gần đây của người chơi; kết quả sẽ hiện ở đây khi có.
-Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.	Chơi {2} trong {1} trên {0} trận gần nhất: rất thạo đặc vụ này, chơi theo lối quen thuộc.
-Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Thua liên tiếp {0} trận gần nhất: có thể đang tilt, ép sớm.
-Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	Thắng liên tiếp {0} trận gần nhất: tự tin, chơi hung hăng.
-Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	Trên bản đồ này thường cắm spike ở {0} ({2} trên {1} lần cắm).
 TEK AJAN	CHUYÊN 1 TƯỚNG
-Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	Thắng {1} trên {0} vòng khi còn sống cuối cùng: khi họ còn một mình, vào cùng nhau, đừng để họ đến cuối.
-Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	Chỉ thắng {1} trong {0} vòng khi còn sống cuối cùng: ép khi họ một mình, họ sẽ hoảng.
-{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0} thường chơi ở {1}: {3} trên {2} lần giao tranh trên bản đồ này ở đó (nhiều nhất ở {4}).
-{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	Duo với {0}: cùng nhóm trong {1} trận gần đây, yểm trợ lẫn nhau.
-{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	Không chơi {0} trong {1} trận gần nhất: chưa quen đặc vụ này, có thể dùng kỹ năng muộn hoặc sai.
 {0} oyuncu inceleniyor…	đang phân tích {0} người chơi…
 Öne çıkan başka bir bilgi yok.	Không có gì nổi bật khác.
 İLK KEZ?	LẦN ĐẦU?
 İSTİHBARAT	TÌNH BÁO
 FIRSAT	CƠ HỘI
 Harita	Bản đồ
-Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.	Quá mạnh so với cấp tài khoản (Cấp {0}, {1}): có thể là tài khoản mới, đừng xem thường.
 KONUM	VỊ TRÍ
-Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.	Phần lớn lần cài ở {0}: khi phòng thủ hãy đặt thêm một người ở đó.
 Kısayollar: 1-4 sekmeler · B brifing · Esc oyuncu sekmesini kapat · tekerlek kaydırır	Phím tắt: 1-4 thẻ · B tóm tắt · Esc đóng thẻ người chơi · cuộn chuột để cuộn
 Profil	Hồ sơ
 RAKİP	ĐỊCH
@@ -728,11 +706,32 @@ round başına hasar	sát thương mỗi hiệp
 Ölüm Kalım	Tử chiến
 Haritalar	Bản đồ
 parti	nhóm
-Bu oturumun {0}. maçı, {1} önce başlamış.	Trận thứ {0} của phiên này, bắt đầu {1} trước.
-Oturumun ilk maçı: henüz ısınmamış olabilir.	Trận đầu của phiên: có thể chưa khởi động.
 Son oturum: {0} maç · {1} sürdü · {2} önce bitti	Phiên gần nhất: {0} trận · kéo dài {1} · kết thúc {2} trước
 {0} sa	{0} giờ
 {0} sa {1} dk	{0} giờ {1} phút
-{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.	Đã chơi {0} giờ, đây là trận thứ {1} hôm nay: cuối phiên dài sự tập trung giảm.
 {0}. MAÇ	TRẬN {0}
 ● Şu an oturumda: {0} maç · {1} süredir oynuyor	● Đang trong phiên: {0} trận · đã chơi {1}
+ · açıyı önceden tut	 · ngắm sẵn góc
+ · ilk ölüm %{0}	 · chết đầu {0}%
+{0} {1} · {3}/{2} çatışma · en çok {4}	{0} {1} · {3}/{2} giao tranh · chủ yếu {4}
+{0} ile düo · {1} maç aynı parti	Duo với {0} · {1} trận cùng nhóm
+{0} maçtır kaybediyor · tilt, erken bas	Thua {0} trận liền · tilt, ép sớm
+{0} maçtır kazanıyor · özgüvenli	Thắng {0} trận liền · tự tin
+{0} saattir oynuyor · bugün {1}. maç · yorgun	Chơi {0} giờ · trận {1} hôm nay · mệt
+{0}: son {1} maçta hiç yok · faydası geç ve hatalı	{0}: không chơi trong {1} trận · kỹ năng chậm, lỗi
+{2}: {1}/{0} maç · bu ajanda çok deneyimli	{2}: {1}/{0} trận · rất thành thạo
+Asıl ajanı {0} ({2}/{1} maç) · şimdi {3}	Main là {0} ({2}/{1} trận) · giờ {3}
+Clutch {1}/{0} · sona bırakma, kalabalık gir	Clutch {1}/{0} · đừng để cuối, vào cùng nhau
+Clutch {1}/{0} · yalnız kalınca panikler	Clutch {1}/{0} · một mình thì hoảng
+HS %{0} · düz düello yok, fayda ile gir	HS {0}% · đừng đấu tay đôi, dùng kỹ năng
+İlk düello %{0} · lurk bekle, arkana bak	Đấu đầu {0}% · coi chừng lurk, nhìn sau lưng
+İlk kan %{0}	Hạ gục đầu {0}%
+İlk ölüm %{0} · bekle, sana gelir	Chết đầu {0}% · chờ, họ tự đến
+Kurulum çoğunlukla {0} · defansta oraya +1 kişi	Cài chủ yếu ở {0} · thủ thì +1 ở đó
+Operator: öldürmelerin %{0} · uzun açıya kuru peek yok	Operator: {0}% số hạ gục · đừng peek khô góc dài
+Oturumun {0}. maçı · {1}	Trận {0} của phiên · {1}
+Oturumun ilk maçı · ısınmamış	Trận đầu của phiên · chưa khởi động
+Sheriff: öldürmelerin %{0} · ecoda da tek atar	Sheriff: {0}% số hạ gục · nguy hiểm cả vòng eco
+Spike: {0} · {2}/{1} kurulum	Spike: {0} · {2}/{1} lần cài
+Sv {0} ama {1} · yeni hesap olabilir	Cấp {0} nhưng {1} · có thể là acc mới
+Trade edilme %{0} · takımdan uzak oynar	Được trade {0}% · chơi xa đồng đội

@@ -11,8 +11,6 @@
 %{0}	{0}%
 (mikrofon yok)	(無麥克風)
 +{0} karşılaşma daha	+{0} 次相遇
-, ilk ölüm %{0}	，首殺陣亡 {0}%
-. İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.	。首次交火通常來自他；預瞄角度，不要硬探頭。
 1080p60 · 6000 kbps (önerilen)	1080p60 · 6000 kbps (建議)
 2 kayıp serisinden sonra yeterli maç yok; örnek arttıkça netleşir.	連敗 2 場後的對戰數還不夠；資料越多越準確。
 2 kayıptan sonra ({0})	連敗 2 場後 ({0})
@@ -84,7 +82,6 @@ KATMANLAR	圖層
 KAZANMA	勝率
 KENDİ ANALİZİM	我的分析
 KISA BİR ARA	稍微休息
-Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.	爆頭率很高 ({0}%)。別正面對槍，用技能進場。
 Kalite	畫質
 Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil	相遇記錄：{0}  ·  彩色外框 = 曾在同一場對戰 (滑鼠移上去)  ·  點擊玩家：分析 · 右鍵：個人檔案
 Kategori	分類
@@ -149,7 +146,6 @@ Riot istemcisi kapalı	Riot 用戶端已關閉
 Riot istemcisine ulaşılamadı: 	無法連線到 Riot 用戶端： 
 Riot yavaşlattı, bekleniyor… {0}/{1}	Riot 限流中，等待… {0}/{1}
 Round açılışların dengeli.	你的回合開局很平衡。
-Roundu o açıyor: ilk kan %{0}	由他開啟回合：首殺 {0}%
 Roundu sık sık ilk ölerek açıyorsun (ortalama ~%10). İlk teması takım arkadaşına ver ya da fayda ile gir.	你常常第一個陣亡開局 (平均約 10%)。把首次交火交給隊友，或用技能進場。
 Rozet yeri	徽章位置
 RÖVANŞ	復仇
@@ -168,7 +164,6 @@ Sabah	早上
 Sadece Valorant (önerilen)	僅 VALORANT (建議)
 Ses cihazı yanıt vermedi.	音訊裝置沒有回應。
 Seçtiğim uygulama	選擇的應用程式
-Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.	常用雪梨擊殺 (擊殺的 {0}%)。經濟局也可能一槍爆頭。
 Sniper koruması (F9)	防偷看 (F9)
 Son maç bilgisi yok.	沒有上一場的資訊。
 Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	上一場：{0} {1} · {2} · {3} · {4} · HS {5}
@@ -179,7 +174,6 @@ Sv	Lv
 Süre: {0:hh\:mm\:ss}	時長：{0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	拖曳：移動\n滑鼠滾輪：放大 / 縮小 (Shift：微調)\n方向鍵：1 px (Shift：10 px)\n\n
 SİLAH	武器
-Sık ilk ölüyor (roundların %{0}). Erken peek atar; sabırlı bekle, sana gelir.	常常第一個陣亡 (回合的 {0}%)。會提早探頭，耐心等他過來。
 Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz	已隱藏排隊 / 特務選擇 — 對戰開始後回來
 Sıraya girilince sayaç başlar	開始排隊後計時器才會啟動
 TAKIMIN	我方隊伍
@@ -289,8 +283,6 @@ zirve	最高
 · {0} kez aynı maçtaydınız	· 同場 {0} 次
 Çap {0} px · konum {1}, {2}	直徑 {0} px · 位置 {1}, {2}
 Çıkış	結束
-Öldürmelerinin büyük kısmı Operator ile (%{0}). Uzun açıları kuru peek'leme, flaşla ya da başka yerden gir.	大部分擊殺來自間諜狙擊槍 ({0}%)。別硬探長距離角度 — 先閃光或換路線。
-Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	陣亡時很少被補槍 ({0}%)。單獨行動，遠離隊友。
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	你陣亡時隊友常常補不到槍：你太孤立了。和隊友在同一區域行動。
 Ölümsüzlük	神話
 Öğlen	下午
@@ -303,7 +295,6 @@ zirve	最高
 ölümün trade edildi	你的陣亡被補槍
 İLK KAN	首殺
 İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.	連敗 2 場後明顯下滑：這時短暫休息會有幫助。
-İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.	很少參與首次交火 ({0}%)。小心晚轉點/繞後，注意背後。
 İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.	權限：勾選 user:read、channel:read、channel:write、chat:write → 儲存。
 Şu an maçta değil.	目前不在對戰中。
 …	…
@@ -517,33 +508,20 @@ Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	直播降到 {0} FPS：電腦�
 Yeni sürüm {0} hazır · güncelle	有新版本 {0} · 更新
 İndirilen pakette ValoLive.exe yok	下載的套件中沒有 ValoLive.exe
 İndiriliyor… %{0}	下載中… {0}%
-Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.	主力特務是{0}（最近 {1} 場中有 {2} 場），本場使用{3}。
 Atakta	進攻時
 Brifing	簡報
 Bu lobide öne çıkan bir bilgi yok.	這個大廳沒有特別值得注意的資訊。
-Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	今天打了 {0} 場，最近連輸 {1} 場：可能心態崩了，開局就施壓。
 Defansta	防守時
 Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	找到對戰後，這裡會整理出玩家最近對戰中最有用的資訊。
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	正在分析玩家最近的對戰；結果會陸續顯示在這裡。
-Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.	最近 {0} 場中有 {1} 場使用{2}：這個特務非常熟練，打法固定。
-Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	最近連輸 {0} 場：可能心態崩了，開局就施壓。
-Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	最近連贏 {0} 場：很有自信，打法積極。
-Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	在這張地圖通常把炸彈裝在 {0}（{1} 次中有 {2} 次）。
 TEK AJAN	專精
-Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	剩自己一人時贏了 {0} 回合中的 {1} 回合：他落單時一起進攻，別留他到最後。
-Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	剩自己一人的 {0} 回合只贏了 {1} 場：他落單時施壓，他會慌。
-{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0}通常在 {1} 一帶：這張地圖的 {2} 次交火中有 {3} 次在那裡（最常在 {4}）。
-{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	與{0}雙排：最近對戰中有 {1} 場同隊伍，會互相掩護。
-{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	最近 {1} 場沒用過{0}：不熟悉這個特務，技能可能放太晚或用錯。
 {0} oyuncu inceleniyor…	正在分析 {0} 名玩家…
 Öne çıkan başka bir bilgi yok.	沒有其他值得注意的資訊。
 İLK KEZ?	第一次？
 İSTİHBARAT	情報
 FIRSAT	機會
 Harita	地圖
-Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.	以帳號等級來說過強（等級 {0}，{1}）：可能是新帳號，別輕敵。
 KONUM	位置
-Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.	多數下包在 {0}：防守時那裡多放一人。
 Kısayollar: 1-4 sekmeler · B brifing · Esc oyuncu sekmesini kapat · tekerlek kaydırır	快捷鍵：1-4 分頁 · B 簡報 · Esc 關閉玩家分頁 · 滾輪捲動
 Profil	個人檔案
 RAKİP	敵方
@@ -728,11 +706,32 @@ round başına hasar	每回合傷害
 Ölüm Kalım	死鬥
 Haritalar	地圖
 parti	組隊
-Bu oturumun {0}. maçı, {1} önce başlamış.	本次連續遊玩的第 {0} 場，{1}前開始。
-Oturumun ilk maçı: henüz ısınmamış olabilir.	連續遊玩的第一場：可能還沒熱身。
 Son oturum: {0} maç · {1} sürdü · {2} önce bitti	上次連續遊玩：{0} 場 · 持續 {1} · {2}前結束
 {0} sa	{0} 小時
 {0} sa {1} dk	{0} 小時 {1} 分
-{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.	已連續玩 {0} 小時，今天第 {1} 場：長時間遊玩到後段專注力會下降。
 {0}. MAÇ	第 {0} 場
 ● Şu an oturumda: {0} maç · {1} süredir oynuyor	● 正在連續遊玩：{0} 場 · 已玩 {1}
+ · açıyı önceden tut	 · 預瞄角度
+ · ilk ölüm %{0}	 · 首死 {0}%
+{0} {1} · {3}/{2} çatışma · en çok {4}	{0} {1} · {3}/{2} 交火 · 多在 {4}
+{0} ile düo · {1} maç aynı parti	與 {0} 雙排 · {1} 場同隊
+{0} maçtır kaybediyor · tilt, erken bas	{0} 連敗 · 心態崩，早點壓
+{0} maçtır kazanıyor · özgüvenli	{0} 連勝 · 有自信
+{0} saattir oynuyor · bugün {1}. maç · yorgun	已玩 {0} 小時 · 今天第 {1} 場 · 疲累
+{0}: son {1} maçta hiç yok · faydası geç ve hatalı	{0}：最近 {1} 場沒玩過 · 技能慢且失誤
+{2}: {1}/{0} maç · bu ajanda çok deneyimli	{2}：{1}/{0} 場 · 非常熟練
+Asıl ajanı {0} ({2}/{1} maç) · şimdi {3}	主玩 {0}（{2}/{1} 場）· 這場 {3}
+Clutch {1}/{0} · sona bırakma, kalabalık gir	殘局 {1}/{0} · 別留他到最後，一起上
+Clutch {1}/{0} · yalnız kalınca panikler	殘局 {1}/{0} · 落單會慌
+HS %{0} · düz düello yok, fayda ile gir	爆頭 {0}% · 別硬對槍，用技能
+İlk düello %{0} · lurk bekle, arkana bak	首次對決 {0}% · 小心繞後
+İlk kan %{0}	首殺 {0}%
+İlk ölüm %{0} · bekle, sana gelir	首死 {0}% · 等他自己過來
+Kurulum çoğunlukla {0} · defansta oraya +1 kişi	多在 {0} 下包 · 防守時那邊 +1
+Operator: öldürmelerin %{0} · uzun açıya kuru peek yok	Operator：擊殺的 {0}% · 長角別乾拉
+Oturumun {0}. maçı · {1}	本次第 {0} 場 · {1}
+Oturumun ilk maçı · ısınmamış	本次第一場 · 還沒熱身
+Sheriff: öldürmelerin %{0} · ecoda da tek atar	Sheriff：擊殺的 {0}% · 經濟局也危險
+Spike: {0} · {2}/{1} kurulum	Spike：{0} · {2}/{1} 次下包
+Sv {0} ama {1} · yeni hesap olabilir	等級 {0} 卻是 {1} · 可能是新帳號
+Trade edilme %{0} · takımdan uzak oynar	被補槍 {0}% · 離隊友遠

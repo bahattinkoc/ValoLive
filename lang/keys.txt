@@ -1,7 +1,9 @@
  (sen)
  (şu an kapalı)
  · BU HARİTADA {0} MAÇI
+ · açıyı önceden tut
  · devam ediyor…
+ · ilk ölüm %{0}
  · seni {0} kez öldürdü, sen onu {1}
  · {0} maçlık galibiyet serisi
  ▲seri
@@ -14,8 +16,6 @@
 (sanal mikrofon bulunamadı)
 + Ekle
 +{0} karşılaşma daha
-, ilk ölüm %{0}
-. İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.
 10 maç daha yükle
 1080p60 · 6000 kbps (önerilen)
 2 kayıp serisinden sonra yeterli maç yok; örnek arttıkça netleşir.
@@ -42,7 +42,7 @@ Analizim
 Ara
 Arama
 Aramak için bir şey yaz.
-Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.
+Asıl ajanı {0} ({2}/{1} maç) · şimdi {3}
 Atak
 Atakta
 Autotune
@@ -77,7 +77,6 @@ Bu adla daha önce kimseyi görmedik. Etiketiyle yaz: Ad#Etiket (ör. Oyuncu#TR1
 Bu haritada bomba kurmamış.
 Bu lobide öne çıkan bir bilgi yok.
 Bu maçlarda hep tek başına sıraya girmiş.
-Bu oturumun {0}. maçı, {1} önce başlamış.
 Bu pencere yayına ve kayda girmez · adını gizleyenler aranmaz
 Bu platforma yayınla
 Bu projede "YouTube Data API v3"ü etkinleştir (Enable):
@@ -86,7 +85,6 @@ Bu ses açılamadı.
 Bu türde maç yok.
 Bugün henüz rekabetçi maç yok.
 Bugün rank atlıyoruz 💪
-Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.
 Bugün {0}G {1}M · {2} RR
 Bölge bulunamadı: Valorant'ı bir kez açman gerekiyor
 Büyüteç
@@ -107,6 +105,8 @@ Cihazları yenile
 Client ID ve Client Secret gerekli.
 Client ID ve Client Secret'ı yeniden girmek için Evet'e bas.
 Clients → Create client → Application type: Desktop app → Create. Client ID ve Client secret'ı buraya yapıştır:
+Clutch {1}/{0} · sona bırakma, kalabalık gir
+Clutch {1}/{0} · yalnız kalınca panikler
 Ctrl+Alt+V  efekti aç/kapat      Ctrl+Alt+B  sonraki efekt
 DEVRE ARASI
 DOST ATEŞİ
@@ -166,6 +166,7 @@ Güvercin postası (ve sürprizi)
 GİRİŞÇİ
 HARİTA
 HARİTALAR
+HS %{0} · düz düello yok, fayda ile gir
 Hafif yakalama (yalnızca oyun penceresi)
 Harita
 Haritalar
@@ -183,7 +184,6 @@ Henüz ses yok: "Klasörü aç" ile ekle.
 Hepsi
 Hepsi bu kadar.
 Hesabı bağlı platforma yayın kapalı: chat okunmaz
-Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.
 Hiçbir platform açık değil: yalnızca test kaydı alınabilir.
 Hızlı
 K / D / A
@@ -199,7 +199,6 @@ KISA BİR ARA
 KONUM
 KUSURSUZ
 Kadın
-Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.
 Kalite
 Kalın
 Kapalı: ValoLive → Ses Değiştirici sekmesinden aç.
@@ -233,7 +232,7 @@ Komutlar:
 Komutları okumak için ana pencerede Kick ya da YouTube hesabını bağla.
 Kopyala
 Kurduğu bölge: 
-Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.
+Kurulum çoğunlukla {0} · defansta oraya +1 kişi
 Kısayollar: 1-4 sekmeler · B brifing · Esc oyuncu sekmesini kapat · tekerlek kaydırır
 LOBİDE
 Lejyon
@@ -271,11 +270,13 @@ OTURUM
 OYUN STİLİ
 OYUNCU ARA
 Oda
+Operator: öldürmelerin %{0} · uzun açıya kuru peek yok
 Ortak havai fişek
 Ortam
 Ortam miktarı
 Otomatik (Valorant dili)
-Oturumun ilk maçı: henüz ısınmamış olabilir.
+Oturumun ilk maçı · ısınmamış
+Oturumun {0}. maçı · {1}
 Oyun sesi
 Oyuncu Ara
 Oyuncu bulunamadı. Ad ve etiketi kontrol et.
@@ -323,7 +324,6 @@ Riot istemcisine ulaşılamadı:
 Riot yavaşlattı, bekleniyor… {0}/{1}
 Robot
 Round açılışların dengeli.
-Roundu o açıyor: ilk kan %{0}
 Roundu sık sık ilk ölerek açıyorsun (ortalama ~%10). İlk teması takım arkadaşına ver ya da fayda ile gir.
 Rozet yeri
 RÖVANŞ
@@ -370,7 +370,7 @@ Sesli oku (robot sesi)
 Seviye {0} · {1}
 Sezonlar
 Seçtiğim uygulama
-Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.
+Sheriff: öldürmelerin %{0} · ecoda da tek atar
 Sil
 Sincap
 Sniper koruması (F9)
@@ -380,14 +380,11 @@ Son maç bilgisi yok.
 Son maç: {0} {1} · {2} · {3} · {4} · HS {5}
 Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.
 Son oturum: {0} maç · {1} sürdü · {2} önce bitti
-Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.
-Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.
-Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.
 Sonra tarayıcıda Google onayı açılır. "Google bu uygulamayı doğrulamadı" derse Gelişmiş → ValoLive'a git: uygulama senin kendi projen.
 Sonra tarayıcıda Kick onay sayfası açılır; "İzin ver" demen yeterli.
 Sonuç yok.
 Spike kurulumları
-Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).
+Spike: {0} · {2}/{1} kurulum
 Sprey
 Stadyum
 Stil çıkarmak için yeterli round yok (en az 40).
@@ -395,12 +392,12 @@ Stream URL / Stream Key'i platformun panelinden yeniden kopyala
 Su altı
 Sustur
 Sv
+Sv {0} ama {1} · yeni hesap olabilir
 Süre: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n
 SİLAH
 SİLAH GÖRÜNÜMLERİ
 Sık denk geldikleri
-Sık ilk ölüyor (roundların %{0}). Erken peek atar; sabırlı bekle, sana gelir.
 Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz
 Sıraya girilince sayaç başlar
 TAKIM
@@ -417,13 +414,11 @@ Takım arkadaşın
 Takım Ölüm Kalım
 Takımı
 Takımın
-Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.
 Takımında {0} kişilik parti
 Tam Gaz
 Tam ekran (her şey görünür)
 Tarayıcıda Google onayı bekleniyor…
 Tarayıcıda Kick onayı bekleniyor…
-Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.
 Telefon
 Telsiz
 Ters ekran
@@ -431,6 +426,7 @@ Ters ekran (3 sn)
 Ters ekran, büyüteç ve sesli okuma yalnızca abone ve modlara
 Teşekkürler: {0}
 Titreme
+Trade edilme %{0} · takımdan uzak oynar
 Türkiye'de popüler
 TİLT
 Tıklanmaz, oyunu bölmez, yayında görünmez. Valorant'ın ekran modu "Pencereli tam ekran" olmalı; "Tam ekran"da görünmez.
@@ -614,9 +610,7 @@ zirve
 {0} ekranı ters çevirdi!
 {0} fişek
 {0} fps  ·  {1}  ·  düşen kare: {2}  ·  hız {3}
-{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).
-{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.
-{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.
+{0} ile düo · {1} maç aynı parti
 {0} kez düşerek öldün
 {0} kişi
 {0} maç birlikte · {1}G {2}M
@@ -626,6 +620,8 @@ zirve
 {0} maç · tarama hatası: {1}
 {0} maç · {1}
 {0} maç · {1}G {2}M
+{0} maçtır kaybediyor · tilt, erken bas
+{0} maçtır kazanıyor · özgüvenli
 {0} oyuncu inceleniyor…
 {0} patlattı
 {0} platform × ~{1} kbps → internetin yükleme hızı en az {2} Mbps olmalı (pay ile).
@@ -637,12 +633,13 @@ zirve
 {0} rekabetçi maç
 {0} sa
 {0} sa {1} dk
-{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.
+{0} saattir oynuyor · bugün {1}. maç · yorgun
 {0} sn
 {0} takım, {1} rakip
 {0} yarım ton
 {0} yayını reddetti: Stream Key'i kontrol et
 {0} yeniden bağlandı
+{0} {1} · {3}/{2} çatışma · en çok {4}
 {0} · o maçta {1}/{2}/{3}{4}
 {0} · {1} RR
 {0} · {1} {2} · daha önce {3} kez
@@ -652,9 +649,11 @@ zirve
 {0}: Stream URL ve Stream Key gerekli.
 {0}: internet yetişmiyor, yayın takılabilir
 {0}: kullanılmamış
+{0}: son {1} maçta hiç yok · faydası geç ve hatalı
 {0}: {1} round · round başı {2:0.00} öldürme · kafa %{3}
 {0}G  {1}M
 {0}G / {1} maç
+{2}: {1}/{0} maç · bu ajanda çok deneyimli
 · act %{0} ({1})
 · düello sen {0} – {1} o
 · {0} kez aynı maçtaydınız
@@ -666,8 +665,6 @@ zirve
 Çıkış
 ÖNİZLEME
 ÖRDEK YARIŞI
-Öldürmelerinin büyük kısmı Operator ile (%{0}). Uzun açıları kuru peek'leme, flaşla ya da başka yerden gir.
-Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.
 Ölüm Kalım
 Ölümsüzlük
@@ -692,7 +689,9 @@ zirve
 İSTİHBARAT
 İblis
 İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.
-İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.
+İlk düello %{0} · lurk bekle, arkana bak
+İlk kan %{0}
+İlk ölüm %{0} · bekle, sana gelir
 İnce
 İndirilemedi, tekrar dene.
 İndirilen pakette ValoLive.exe yok

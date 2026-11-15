@@ -85,14 +85,14 @@ namespace ValoLive
             int[] lv = null;
             x.H?.Mastery?.TryGetValue(cur, out lv);
             if (same == 0 && (lv == null || lv[0] <= 2))
-                add(75, L.T("İLK KEZ?"), L.F("{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.", name, ms.Count), Orange, Kinds.Chance);
+                add(75, L.T("İLK KEZ?"), L.F("{0}: son {1} maçta hiç yok · faydası geç ve hatalı", name, ms.Count), Orange, Kinds.Chance);
             else if (same >= ms.Count - 1 && ms.Count >= 6)
-                add(68, L.T("TEK AJAN"), L.F("Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.", ms.Count, same, name), Purple, Kinds.Danger);
+                add(68, L.T("TEK AJAN"), L.F("{2}: {1}/{0} maç · bu ajanda çok deneyimli", ms.Count, same, name), Purple, Kinds.Danger);
             else
             {
                 var main = ms.GroupBy(m => m.Agent).OrderByDescending(gr => gr.Count()).First();
                 if (main.Count() * 2 > ms.Count && !string.Equals(main.Key, cur, StringComparison.OrdinalIgnoreCase))
-                    add(48, null, L.F("Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.", x.AgentName(main.Key), ms.Count, main.Count(), name), Mut, Kinds.Chance);
+                    add(48, null, L.F("Asıl ajanı {0} ({2}/{1} maç) · şimdi {3}",x.AgentName(main.Key), ms.Count, main.Count(), name), Mut, Kinds.Chance);
             }
         }
 
@@ -166,13 +166,13 @@ namespace ValoLive
                 var sub = top.GroupBy(r => r[1]).OrderByDescending(gr => gr.Count()).First();
                 string where = sub.Key != "" && sub.Count() * 2 >= top.Count() ? top.Key + " " + sub.Key : top.Key;
                 string sideName = side == 1 ? L.T("Atakta") : L.T("Defansta");
-                var f = add(side == 0 ? 86 : 80, null, L.F("{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).", sideName, top.Key, spots.Count, top.Count(), where), Teal, Kinds.Place);
+                var f = add(side == 0 ? 86 : 80, null, L.F("{0} {1} · {3}/{2} çatışma · en çok {4}",sideName, top.Key, spots.Count, top.Count(), where), Teal, Kinds.Place);
                 f.Side = side; f.Zone = top.Key; f.N = top.Count(); f.Of = spots.Count;
             }
             var plants = Plants(here);
             int total = plants.Sum(s => s.Value);
             if (total >= 3 && plants[0].Value * 100 >= total * 70)
-                add(70, null, L.F("Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).", plants[0].Key, total, plants[0].Value), Orange, Kinds.Place);
+                add(70, null, L.F("Spike: {0} · {2}/{1} kurulum",plants[0].Key, total, plants[0].Value), Orange, Kinds.Place);
         }
 
         /// <summary>Maçlardaki spike kurulumları bölgeye göre, çoktan aza.</summary>
@@ -185,9 +185,9 @@ namespace ValoLive
             // Gerçek veride tek kalınan roundların (1vX) ~%30'u kazanılıyor: %45 üstü belirgin iyi, %10 altı belirgin kötü.
             int n = ms.Sum(m => m.ClutchN), w = ms.Sum(m => m.ClutchW);
             if (n >= 8 && w * 100 >= n * 45)
-                add(78, "CLUTCH", L.F("Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.", n, w), Green, Kinds.Danger);
+                add(78, "CLUTCH", L.F("Clutch {1}/{0} · sona bırakma, kalabalık gir", n, w), Green, Kinds.Danger);
             else if (n >= 10 && w * 10 <= n)
-                add(44, null, L.F("Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.", n, w), Mut, Kinds.Chance);
+                add(44, null, L.F("Clutch {1}/{0} · yalnız kalınca panikler", n, w), Mut, Kinds.Chance);
         }
 
         static void Duo(Input x, Adder add)
@@ -197,7 +197,7 @@ namespace ValoLive
                 if (d.Value < 2) continue;
                 var o = d.Key;
                 string who = string.IsNullOrEmpty(o.AgentId) ? (o.Name ?? "?") : x.AgentName(o.AgentId) + (o.Name != null ? " (" + o.Name + ")" : "");
-                add(64, null, L.F("{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.", who, d.Value), Blue, Kinds.Danger);
+                add(64, null, L.F("{0} ile düo · {1} maç aynı parti", who, d.Value), Blue, Kinds.Danger);
             }
         }
 
@@ -213,16 +213,15 @@ namespace ValoLive
             var recent = ms.OrderByDescending(m => m.Start).ToList();
             int losses = recent.TakeWhile(m => m.Result == "L").Count(), wins = recent.TakeWhile(m => m.Result == "W").Count();
             if (losses >= 3)
-                add(58, null, played >= 2 ? L.F("Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.", played, losses)
-                                          : L.F("Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.", losses), Pink, Kinds.Chance);
+                add(58, null, L.F("{0} maçtır kaybediyor · tilt, erken bas", losses), Pink, Kinds.Chance);
             else if (wins >= 4)
-                add(54, null, L.F("Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.", wins), Green, Kinds.Danger);
+                add(54, null, L.F("{0} maçtır kazanıyor · özgüvenli", wins), Green, Kinds.Danger);
             if (played >= 5 || mins >= 180)
-                add(44, L.F("{0}. MAÇ", played + 1), L.F("{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.", Hours(mins), played + 1), Mut, Kinds.Chance);
+                add(44, L.F("{0}. MAÇ", played + 1), L.F("{0} saattir oynuyor · bugün {1}. maç · yorgun", Hours(mins), played + 1), Mut, Kinds.Chance);
             else if (played >= 1)
-                add(20, null, L.F("Bu oturumun {0}. maçı, {1} önce başlamış.", played + 1, Duration(mins)), Mut, Kinds.Info);
+                add(20, null, L.F("Oturumun {0}. maçı · {1}", played + 1, Duration(mins)), Mut, Kinds.Info);
             else if (x.Starts != null && x.Starts.Count > 0)
-                add(24, null, L.T("Oturumun ilk maçı: henüz ısınmamış olabilir."), Mut, Kinds.Info);
+                add(24, null, L.T("Oturumun ilk maçı · ısınmamış"), Mut, Kinds.Info);
         }
 
         /// <summary>

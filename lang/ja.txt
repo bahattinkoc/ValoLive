@@ -11,8 +11,6 @@
 %{0}	{0}%
 (mikrofon yok)	(マイクなし)
 +{0} karşılaşma daha	+{0}件の遭遇
-, ilk ölüm %{0}	、ファーストデス {0}%
-. İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.	。最初の接敵は彼からが多い。角を置きエイムで待ち、ドライピークはしないこと。
 1080p60 · 6000 kbps (önerilen)	1080p60 · 6000 kbps (推奨)
 2 kayıp serisinden sonra yeterli maç yok; örnek arttıkça netleşir.	2連敗後の試合数がまだ足りません。データが増えると明確になります。
 2 kayıptan sonra ({0})	2連敗後 ({0})
@@ -84,7 +82,6 @@ KATMANLAR	オーバーレイ
 KAZANMA	勝率
 KENDİ ANALİZİM	自分の分析
 KISA BİR ARA	ちょっと休憩
-Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.	ヘッドショット率が高い ({0}%)。正面撃ち合いは避け、スキルで入ろう。
 Kalite	画質
 Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil	遭遇記録: {0}  ·  色付きリング = 以前同じ試合にいた (ホバー)  ·  プレイヤーをクリック: 分析 · 右クリック: プロフィール
 Kategori	カテゴリー
@@ -149,7 +146,6 @@ Riot istemcisi kapalı	Riot クライアントが閉じています
 Riot istemcisine ulaşılamadı: 	Riot クライアントに接続できません: 
 Riot yavaşlattı, bekleniyor… {0}/{1}	Riot の制限中、待機… {0}/{1}
 Round açılışların dengeli.	ラウンド序盤のバランスは良好です。
-Roundu o açıyor: ilk kan %{0}	ラウンドを開くタイプ: ファーストブラッド {0}%
 Roundu sık sık ilk ölerek açıyorsun (ortalama ~%10). İlk teması takım arkadaşına ver ya da fayda ile gir.	最初に倒れてラウンドを始めることが多い (平均 ~10%)。最初の接敵は味方に任せるか、スキルで入ろう。
 Rozet yeri	バッジの位置
 RÖVANŞ	リベンジ
@@ -168,7 +164,6 @@ Sabah	朝
 Sadece Valorant (önerilen)	VALORANT のみ (推奨)
 Ses cihazı yanıt vermedi.	オーディオデバイスが応答しません。
 Seçtiğim uygulama	選択したアプリ
-Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.	シェリフでのキルが多い (キルの{0}%)。エコラウンドでもワンタップされうる。
 Sniper koruması (F9)	スナイプ対策 (F9)
 Son maç bilgisi yok.	前の試合の情報はありません。
 Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	前の試合: {0} {1} · {2} · {3} · {4} · HS {5}
@@ -179,7 +174,6 @@ Sv	Lv
 Süre: {0:hh\:mm\:ss}	時間: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	ドラッグ: 移動\nマウスホイール: 拡大 / 縮小 (Shift: 微調整)\n矢印キー: 1 px (Shift: 10 px)\n\n
 SİLAH	武器
-Sık ilk ölüyor (roundların %{0}). Erken peek atar; sabırlı bekle, sana gelir.	よく最初に倒れる (ラウンドの{0}%)。早めにピークしてくるので、落ち着いて待てば来る。
 Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz	キュー / エージェント選択は非表示 — 試合開始で戻ります
 Sıraya girilince sayaç başlar	キューに入るとタイマーが始まります
 TAKIMIN	味方チーム
@@ -289,8 +283,6 @@ zirve	最高
 · {0} kez aynı maçtaydınız	· 同じ試合 {0} 回
 Çap {0} px · konum {1}, {2}	直径 {0} px · 位置 {1}, {2}
 Çıkış	終了
-Öldürmelerinin büyük kısmı Operator ile (%{0}). Uzun açıları kuru peek'leme, flaşla ya da başka yerden gir.	キルの大半がオペレーター ({0}%)。長いアングルにドライピークせず、フラッシュか別ルートで。
-Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	倒れてもトレードされにくい ({0}%)。味方から離れて単独行動。
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	倒れても味方がトレードできていない: 孤立しています。味方と同じエリアでプレイしよう。
 Ölümsüzlük	イモータル
 Öğlen	昼
@@ -303,7 +295,6 @@ zirve	最高
 ölümün trade edildi	トレードされたデス
 İLK KAN	ファーストブラッド
 İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.	2連敗後に明らかに崩れています: そこで短い休憩を挟もう。
-İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.	最初の撃ち合いにはあまり出ない ({0}%)。遅いローテ/裏取りに注意し、背後を確認。
 İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.	権限: user:read, channel:read, channel:write, chat:write にチェック → 保存。
 Şu an maçta değil.	現在試合中ではありません。
 …	…
@@ -517,33 +508,20 @@ Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	配信が {0} FPS に低下：
 Yeni sürüm {0} hazır · güncelle	新バージョン {0} があります · アップデート
 İndirilen pakette ValoLive.exe yok	ダウンロードしたパッケージに ValoLive.exe がありません
 İndiriliyor… %{0}	ダウンロード中… {0}%
-Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.	メインエージェントは{0}（直近{1}試合中{2}試合）、この試合は{3}を使用。
 Atakta	攻撃時
 Brifing	ブリーフィング
 Bu lobide öne çıkan bir bilgi yok.	このロビーに目立つ情報はありません。
-Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	今日{0}試合プレイし、直近{1}試合連敗中：ティルトしている可能性、序盤から圧をかけよう。
 Defansta	防衛時
 Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	マッチが見つかると、各プレイヤーの直近の試合から特に役立つ情報がここにまとめられます。
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	プレイヤーの直近の試合を分析中。結果は届き次第ここに表示されます。
-Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.	直近{0}試合中{1}試合で{2}を使用：このエージェントの熟練者、決まった動きをする。
-Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	直近{0}試合連敗中：ティルトしている可能性、序盤から圧をかけよう。
-Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	直近{0}試合連勝中：自信があり、積極的に攻めてくる。
-Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	このマップではスパイクを主に{0}に設置（{1}回中{2}回）。
 TEK AJAN	専用キャラ
-Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	最後の1人になったラウンドで{0}回中{1}回勝利：1人残ったら全員で詰めよう、最後まで残さないこと。
-Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	最後の1人になった{0}ラウンドで{1}回しか勝てていない：1人のときに圧をかければ焦る。
-{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0}は主に{1}側でプレイ：このマップでの交戦{2}回中{3}回がそこ（最多は{4}）。
-{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	{0}とデュオ：直近の試合のうち{1}試合で同じパーティー、互いにカバーし合う。
-{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	直近{1}試合で{0}を使っていない：このエージェントに不慣れ、アビリティの使い方が遅れたり誤ったりしやすい。
 {0} oyuncu inceleniyor…	{0}人を分析中…
 Öne çıkan başka bir bilgi yok.	他に目立つ情報はありません。
 İLK KEZ?	初使用？
 İSTİHBARAT	インテル
 FIRSAT	チャンス
 Harita	マップ
-Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.	アカウントレベルの割に強すぎる（Lv {0}、{1}）：新しいアカウントかも、油断しない。
 KONUM	ポジション
-Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.	設置の多くは{0}：守りではそこに1人多く置く。
 Kısayollar: 1-4 sekmeler · B brifing · Esc oyuncu sekmesini kapat · tekerlek kaydırır	ショートカット：1-4 タブ · B ブリーフィング · Esc プレイヤータブを閉じる · ホイールでスクロール
 Profil	プロフィール
 RAKİP	敵
@@ -728,11 +706,32 @@ round başına hasar	ラウンドあたりダメージ
 Ölüm Kalım	デスマッチ
 Haritalar	マップ
 parti	パーティー
-Bu oturumun {0}. maçı, {1} önce başlamış.	このセッションの{0}試合目、{1}前に開始。
-Oturumun ilk maçı: henüz ısınmamış olabilir.	セッションの1試合目: まだ温まっていないかも。
 Son oturum: {0} maç · {1} sürdü · {2} önce bitti	前回のセッション: {0}試合 · {1}続いた · {2}前に終了
 {0} sa	{0}時間
 {0} sa {1} dk	{0}時間{1}分
-{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.	{0}時間プレイ中、今日{1}試合目: 長いセッションの終盤は集中力が落ちる。
 {0}. MAÇ	{0}試合目
 ● Şu an oturumda: {0} maç · {1} süredir oynuyor	● セッション中: {0}試合 · {1}プレイ中
+ · açıyı önceden tut	 · 角度を事前に置く
+ · ilk ölüm %{0}	 · ファーストデス {0}%
+{0} {1} · {3}/{2} çatışma · en çok {4}	{0} {1} · {3}/{2}交戦 · 主に{4}
+{0} ile düo · {1} maç aynı parti	{0}とデュオ · {1}試合同じパーティー
+{0} maçtır kaybediyor · tilt, erken bas	{0}連敗 · ティルト、早めに攻める
+{0} maçtır kazanıyor · özgüvenli	{0}連勝 · 自信あり
+{0} saattir oynuyor · bugün {1}. maç · yorgun	{0}時間プレイ中 · 今日{1}試合目 · 疲れ
+{0}: son {1} maçta hiç yok · faydası geç ve hatalı	{0}: 直近{1}試合で未使用 · スキルが遅く不正確
+{2}: {1}/{0} maç · bu ajanda çok deneyimli	{2}: {1}/{0}試合 · 熟練
+Asıl ajanı {0} ({2}/{1} maç) · şimdi {3}	メインは{0} ({2}/{1}試合) · 今回{3}
+Clutch {1}/{0} · sona bırakma, kalabalık gir	クラッチ {1}/{0} · 最後に残すな、数で入る
+Clutch {1}/{0} · yalnız kalınca panikler	クラッチ {1}/{0} · 一人だと焦る
+HS %{0} · düz düello yok, fayda ile gir	HS {0}% · 撃ち合いよりスキルで
+İlk düello %{0} · lurk bekle, arkana bak	ファーストデュエル {0}% · 裏取りに注意
+İlk kan %{0}	ファーストキル {0}%
+İlk ölüm %{0} · bekle, sana gelir	ファーストデス {0}% · 待てば来る
+Kurulum çoğunlukla {0} · defansta oraya +1 kişi	設置は主に{0} · 守備でそこに+1
+Operator: öldürmelerin %{0} · uzun açıya kuru peek yok	オペレーター: キルの{0}% · 長い射線に素で顔を出すな
+Oturumun {0}. maçı · {1}	セッション{0}試合目 · {1}
+Oturumun ilk maçı · ısınmamış	セッション1試合目 · まだ温まっていない
+Sheriff: öldürmelerin %{0} · ecoda da tek atar	シェリフ: キルの{0}% · エコでも危険
+Spike: {0} · {2}/{1} kurulum	スパイク: {0} · {2}/{1}設置
+Sv {0} ama {1} · yeni hesap olabilir	Lv{0}なのに{1} · 新アカウントかも
+Trade edilme %{0} · takımdan uzak oynar	トレードされる率 {0}% · 味方から離れる

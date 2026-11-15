@@ -611,7 +611,7 @@ namespace ValoLive
                     bx += w;
                 }
                 if (plants[0].Value * 100 >= total * 60)
-                    Write(g, L.F("Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.", plants[0].Key), FSmall, Mut, box.X + 12, box.Y + 59, box.Width - 24);
+                    Write(g, L.F("Kurulum çoğunlukla {0} · defansta oraya +1 kişi", plants[0].Key), FSmall, Mut, box.X + 12, box.Y + 59, box.Width - 24);
                 y += box.Height + 10;
             }
             return y;

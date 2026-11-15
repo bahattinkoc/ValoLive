@@ -11,8 +11,6 @@
 %{0}	{0}%
 (mikrofon yok)	(ไม่มีไมโครโฟน)
 +{0} karşılaşma daha	+อีก {0} ครั้งที่เจอกัน
-, ilk ölüm %{0}	, ตายก่อน {0}%
-. İlk temas genelde ondan gelir; açıyı önceden tut, kuru peek verme.	. การปะทะแรกมักมาจากเขา เล็งมุมรอไว้ อย่าพีคโล่ง ๆ
 1080p60 · 6000 kbps (önerilen)	1080p60 · 6000 kbps (แนะนำ)
 2 kayıp serisinden sonra yeterli maç yok; örnek arttıkça netleşir.	ยังมีเกมหลังแพ้ติด 2 ไม่พอ ข้อมูลมากขึ้นจะชัดขึ้น
 2 kayıptan sonra ({0})	หลังแพ้ 2 เกม ({0})
@@ -84,7 +82,6 @@ KATMANLAR	เลเยอร์
 KAZANMA	อัตราชนะ
 KENDİ ANALİZİM	สถิติของฉัน
 KISA BİR ARA	พักสั้น ๆ
-Kafa isabeti yüksek (%{0}). Düz düelloya değil, fayda ile gir.	เฮดช็อตสูง ({0}%) อย่าดวลตรง ๆ — เข้าพร้อมสกิล
 Kalite	คุณภาพ
 Karşılaşma defteri: {0}  ·  renkli halka = daha önce aynı maçtaydınız (üzerine gel)  ·  oyuncuya tıkla: analiz · sağ tık: profil	บันทึกการเจอกัน: {0}  ·  วงสี = เคยอยู่แมตช์เดียวกัน (ชี้เมาส์)  ·  คลิกผู้เล่น: วิเคราะห์ · คลิกขวา: โปรไฟล์
 Kategori	หมวดหมู่
@@ -149,7 +146,6 @@ Riot istemcisi kapalı	Riot Client ปิดอยู่
 Riot istemcisine ulaşılamadı: 	ติดต่อ Riot Client ไม่ได้: 
 Riot yavaşlattı, bekleniyor… {0}/{1}	Riot จำกัดคำขอ กำลังรอ… {0}/{1}
 Round açılışların dengeli.	การเปิดรอบของคุณสมดุลดี
-Roundu o açıyor: ilk kan %{0}	เขาเป็นคนเปิดรอบ: เฟิร์สบลัด {0}%
 Roundu sık sık ilk ölerek açıyorsun (ortalama ~%10). İlk teması takım arkadaşına ver ya da fayda ile gir.	คุณมักเปิดรอบด้วยการตายก่อน (เฉลี่ย ~10%) ให้เพื่อนรับการปะทะแรก หรือเข้าพร้อมสกิล
 Rozet yeri	ตำแหน่งตรา
 RÖVANŞ	แก้แค้น
@@ -168,7 +164,6 @@ Sabah	ตอนเช้า
 Sadece Valorant (önerilen)	เฉพาะ VALORANT (แนะนำ)
 Ses cihazı yanıt vermedi.	อุปกรณ์เสียงไม่ตอบสนอง
 Seçtiğim uygulama	แอปที่เลือก
-Sheriff ile çok öldürüyor (öldürmelerinin %{0}). Eco roundunda da tek atabilir.	ฆ่าด้วย Sheriff เยอะ ({0}% ของการฆ่า) รอบอีโคก็โดนวันแท็ปได้
 Sniper koruması (F9)	กันสไนป์ (F9)
 Son maç bilgisi yok.	ไม่มีข้อมูลแมตช์ล่าสุด
 Son maç: {0} {1} · {2} · {3} · {4} · HS {5}	แมตช์ล่าสุด: {0} {1} · {2} · {3} · {4} · HS {5}
@@ -179,7 +174,6 @@ Sv	Lv
 Süre: {0:hh\:mm\:ss}	ระยะเวลา: {0:hh\:mm\:ss}
 Sürükle: taşı\nFare tekerleği: büyüt / küçült (Shift: ince)\nOk tuşları: 1 px (Shift: 10 px)\n\n	ลาก: ย้าย\nล้อเมาส์: ขยาย / ย่อ (Shift: ละเอียด)\nปุ่มลูกศร: 1 px (Shift: 10 px)\n\n
 SİLAH	อาวุธ
-Sık ilk ölüyor (roundların %{0}). Erken peek atar; sabırlı bekle, sana gelir.	ตายก่อนบ่อย ({0}% ของรอบ) ชอบพีคเร็ว รอใจเย็น ๆ เดี๋ยวเขามาเอง
 Sıra / ajan seçimi gizleniyor — maç başlayınca dönüyoruz	ซ่อนคิว / การเลือกเอเจนต์ — กลับมาเมื่อแมตช์เริ่ม
 Sıraya girilince sayaç başlar	ตัวจับเวลาจะเริ่มเมื่อเข้าคิว
 TAKIMIN	ทีมของคุณ
@@ -289,8 +283,6 @@ zirve	สูงสุด
 · {0} kez aynı maçtaydınız	· เจอในแมตช์เดียวกัน {0} ครั้ง
 Çap {0} px · konum {1}, {2}	ขนาด {0} px · ตำแหน่ง {1}, {2}
 Çıkış	ออก
-Öldürmelerinin büyük kısmı Operator ile (%{0}). Uzun açıları kuru peek'leme, flaşla ya da başka yerden gir.	ฆ่าส่วนใหญ่ด้วย Operator ({0}%) อย่าพีคมุมยาวโล่ง ๆ — ใช้แฟลชหรือไปทางอื่น
-Öldüğünde nadiren trade ediliyor (%{0}). Takımından uzakta, tek başına oynuyor.	ตายแล้วไม่ค่อยมีคนเทรด ({0}%) เล่นคนเดียวห่างจากทีม
 Öldüğünde takımın seni çoğunlukla geri alamıyor: yalnız kalıyorsun. Bir arkadaşınla aynı bölgeden oyna.	ทีมมักเทรดคุณไม่ทัน: คุณอยู่คนเดียว เล่นโซนเดียวกับเพื่อนร่วมทีม
 Ölümsüzlük	อิมมอร์ทัล
 Öğlen	ตอนบ่าย
@@ -303,7 +295,6 @@ zirve	สูงสุด
 ölümün trade edildi	การตายของคุณถูกเทรด
 İLK KAN	เฟิร์สบลัด
 İki kayıptan sonra belirgin düşüyorsun: o noktada kısa bir mola iyi gelir.	หลังแพ้ 2 เกมคุณดรอปชัดเจน ตอนนั้นพักสั้น ๆ จะช่วยได้
-İlk düelloya nadiren giriyor (%{0}). Geç dönüş/lurk bekle, arkanı kontrol et.	ไม่ค่อยเข้าดวลแรก ({0}%) ระวังการหมุนช้า/อ้อมหลัง เช็กหลังด้วย
 İzinler: user:read, channel:read, channel:write, chat:write işaretle → Kaydet.	สิทธิ์: ติ๊ก user:read, channel:read, channel:write, chat:write → บันทึก
 Şu an maçta değil.	ตอนนี้ไม่ได้อยู่ในแมตช์
 …	…
@@ -517,33 +508,20 @@ Yayın {0} FPS'e düştü: bilgisayar yetişmiyor	สตรีมลดลงเ
 Yeni sürüm {0} hazır · güncelle	มีเวอร์ชันใหม่ {0} · อัปเดต
 İndirilen pakette ValoLive.exe yok	แพ็กเกจที่ดาวน์โหลดไม่มี ValoLive.exe
 İndiriliyor… %{0}	กำลังดาวน์โหลด… {0}%
-Asıl ajanı {0} (son {1} maçta {2} kez), bu maçta {3} oynuyor.	เอเจนต์หลักคือ {0} ({2} จาก {1} แมตช์ล่าสุด) แมตช์นี้เล่น {3}
 Atakta	ฝั่งบุก
 Brifing	บรีฟฟิง
 Bu lobide öne çıkan bir bilgi yok.	ล็อบบี้นี้ไม่มีอะไรโดดเด่น
-Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	วันนี้เล่นไป {0} แมตช์ และแพ้ติดกัน {1} แมตช์ล่าสุด: อาจกำลังเสียสมาธิ กดดันตั้งแต่ต้น
 Defansta	ฝั่งป้องกัน
 Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	เมื่อเจอแมตช์ ข้อมูลที่มีประโยชน์ที่สุดจากแมตช์ล่าสุดของผู้เล่นจะสรุปไว้ที่นี่
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	กำลังวิเคราะห์แมตช์ล่าสุดของผู้เล่น ผลจะปรากฏที่นี่เมื่อพร้อม
-Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.	เล่น {2} ใน {1} จาก {0} แมตช์ล่าสุด: เชี่ยวชาญเอเจนต์นี้มาก เล่นตามแบบที่ซ้อมมา
-Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	แพ้ติดกัน {0} แมตช์ล่าสุด: อาจกำลังเสียสมาธิ กดดันตั้งแต่ต้น
-Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.	ชนะติดกัน {0} แมตช์ล่าสุด: มั่นใจ เล่นดุดัน
-Spike'ı bu haritada genelde {0} bölgesine kuruyor ({1} kurulumdan {2} tanesi).	ในแมปนี้มักวางสไปค์ที่ {0} ({2} จาก {1} ครั้ง)
 TEK AJAN	เล่นตัวเดียว
-Takımında tek kaldığı {0} roundun {1} tanesini kazanmış: son kişi kalınca kalabalık gir, onu sona bırakma.	ชนะ {1} จาก {0} รอบเมื่อเหลือคนสุดท้าย: ถ้าเขาเหลือคนเดียวให้บุกพร้อมกัน อย่าปล่อยไว้ท้ายสุด
-Tek kaldığı {0} roundun yalnızca {1} tanesini kazanmış: yalnız kalınca baskı kur, panikler.	ชนะแค่ {1} จาก {0} รอบที่เหลือคนสุดท้าย: กดดันตอนเขาอยู่คนเดียว เขาจะตื่นตระหนก
-{0} genelde {1} tarafında: bu haritadaki {2} çatışmadan {3} tanesi orada (en çok {4}).	{0} มักเล่นที่ {1}: การปะทะ {3} จาก {2} ครั้งในแมปนี้อยู่ที่นั่น (มากที่สุดที่ {4})
-{0} ile düo: son maçlarından {1} tanesinde aynı partideydiler, birbirlerini kollarlar.	ดูโอกับ {0}: อยู่ปาร์ตี้เดียวกันใน {1} แมตช์ล่าสุด คอยคุ้มกันกัน
-{0} ile son {1} maçında hiç oynamamış: bu ajana alışık değil, faydasını geç ve hatalı kullanabilir.	ไม่ได้เล่น {0} ใน {1} แมตช์ล่าสุด: ไม่คุ้นกับเอเจนต์นี้ อาจใช้สกิลช้าหรือผิดจังหวะ
 {0} oyuncu inceleniyor…	กำลังวิเคราะห์ผู้เล่น {0} คน…
 Öne çıkan başka bir bilgi yok.	ไม่มีอะไรโดดเด่นอีก
 İLK KEZ?	ครั้งแรก?
 İSTİHBARAT	ข่าวกรอง
 FIRSAT	โอกาส
 Harita	แผนที่
-Hesap seviyesine göre çok güçlü (Sv {0}, {1}): yeni hesap olabilir, hafife alma.	เก่งเกินระดับบัญชี (Lv {0}, {1}): อาจเป็นบัญชีใหม่ อย่าประมาท
 KONUM	ตำแหน่ง
-Kurulumların çoğu {0} bölgesinde: defansta oraya bir kişi fazla koy.	วางสไปค์ส่วนใหญ่ที่ {0}: ตอนป้องกันให้วางคนเพิ่มที่นั่นหนึ่งคน
 Kısayollar: 1-4 sekmeler · B brifing · Esc oyuncu sekmesini kapat · tekerlek kaydırır	ทางลัด: 1-4 แท็บ · B สรุป · Esc ปิดแท็บผู้เล่น · ล้อเมาส์เลื่อน
 Profil	โปรไฟล์
 RAKİP	ศัตรู
@@ -728,11 +706,32 @@ round başına hasar	ความเสียหายต่อรอบ
 Ölüm Kalım	เดธแมตช์
 Haritalar	แผนที่
 parti	ปาร์ตี้
-Bu oturumun {0}. maçı, {1} önce başlamış.	แมตช์ที่ {0} ของเซสชันนี้ เริ่มเมื่อ {1} ก่อน
-Oturumun ilk maçı: henüz ısınmamış olabilir.	แมตช์แรกของเซสชัน: อาจยังไม่อุ่นเครื่อง
 Son oturum: {0} maç · {1} sürdü · {2} önce bitti	เซสชันล่าสุด: {0} แมตช์ · นาน {1} · จบเมื่อ {2} ก่อน
 {0} sa	{0} ชม.
 {0} sa {1} dk	{0} ชม. {1} นาที
-{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.	เล่นมา {0} ชั่วโมง นี่คือแมตช์ที่ {1} ของวันนี้: ท้ายเซสชันยาวสมาธิจะลดลง
 {0}. MAÇ	แมตช์ {0}
 ● Şu an oturumda: {0} maç · {1} süredir oynuyor	● กำลังเล่นต่อเนื่อง: {0} แมตช์ · เล่นมา {1}
+ · açıyı önceden tut	 · เล็งมุมรอไว้
+ · ilk ölüm %{0}	 · ตายก่อน {0}%
+{0} {1} · {3}/{2} çatışma · en çok {4}	{0} {1} · {3}/{2} การปะทะ · ส่วนใหญ่ {4}
+{0} ile düo · {1} maç aynı parti	ดูโอกับ {0} · {1} แมตช์ปาร์ตี้เดียวกัน
+{0} maçtır kaybediyor · tilt, erken bas	แพ้ติด {0} · เสียฟอร์ม บุกเร็ว
+{0} maçtır kazanıyor · özgüvenli	ชนะติด {0} · มั่นใจ
+{0} saattir oynuyor · bugün {1}. maç · yorgun	เล่นมา {0} ชม. · แมตช์ที่ {1} วันนี้ · เหนื่อย
+{0}: son {1} maçta hiç yok · faydası geç ve hatalı	{0}: ไม่เคยเล่นใน {1} แมตช์ · สกิลช้าและพลาด
+{2}: {1}/{0} maç · bu ajanda çok deneyimli	{2}: {1}/{0} แมตช์ · เชี่ยวชาญมาก
+Asıl ajanı {0} ({2}/{1} maç) · şimdi {3}	ตัวหลัก {0} ({2}/{1}) · ตอนนี้ {3}
+Clutch {1}/{0} · sona bırakma, kalabalık gir	คลัตช์ {1}/{0} · อย่าปล่อยไว้คนสุดท้าย บุกพร้อมกัน
+Clutch {1}/{0} · yalnız kalınca panikler	คลัตช์ {1}/{0} · อยู่คนเดียวแล้วลน
+HS %{0} · düz düello yok, fayda ile gir	HS {0}% · อย่ายิงดวลตรง ใช้สกิล
+İlk düello %{0} · lurk bekle, arkana bak	ดวลแรก {0}% · ระวังอ้อมหลัง
+İlk kan %{0}	ฆ่าก่อน {0}%
+İlk ölüm %{0} · bekle, sana gelir	ตายก่อน {0}% · รอ เดี๋ยวมาเอง
+Kurulum çoğunlukla {0} · defansta oraya +1 kişi	วางสไปก์ส่วนใหญ่ที่ {0} · ตอนป้องกัน +1 ที่นั่น
+Operator: öldürmelerin %{0} · uzun açıya kuru peek yok	Operator: {0}% ของการฆ่า · อย่าพีคมุมยาวเปล่าๆ
+Oturumun {0}. maçı · {1}	แมตช์ที่ {0} ของเซสชัน · {1}
+Oturumun ilk maçı · ısınmamış	แมตช์แรกของเซสชัน · ยังไม่อุ่นเครื่อง
+Sheriff: öldürmelerin %{0} · ecoda da tek atar	Sheriff: {0}% ของการฆ่า · อันตรายแม้รอบอีโค
+Spike: {0} · {2}/{1} kurulum	Spike: {0} · {2}/{1} ครั้ง
+Sv {0} ama {1} · yeni hesap olabilir	เลเวล {0} แต่ {1} · อาจเป็นบัญชีใหม่
+Trade edilme %{0} · takımdan uzak oynar	ถูกเทรด {0}% · เล่นห่างทีม
