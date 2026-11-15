@@ -110,6 +110,12 @@ Open it during agent select or in game, and every player in the lobby is scouted
 
 Everything fits in a compact tabbed window (Briefing, Map, Enemies, Team) with all ten agents in a strip at the bottom. Click a player to open their own tab with every detail, or right-click to open their profile. **MY STATS** runs the same breakdown on your own account: your best maps, agents and recent form.
 
+### 🔎 Find player
+Type any Riot ID (`Name#Tag`) and see what tracker sites show, without leaving ValoLive. If you only know the name, players you've met before are suggested.
+- Current and peak rank, every season's rank, win rate, K/D, KDA, HS%, ADR and ACS, top agents and maps.
+- **Played with**: who they queue with, how many matches together and their record.
+- Every match opens into the full scoreboard with parties colored. Click any player to open their page, and use ◀ ▶ to go back.
+
 ### 🧠 Enemy memory (experimental)
 Clutching 1v2 and can't remember where you last saw their Jett? ValoLive watches your minimap and remembers it for you.
 - Every enemy you or your team spots is remembered with the **callout** where they were last seen and **how long ago**.
@@ -200,6 +206,7 @@ ValoLive isn't endorsed by Riot Games and doesn't reflect the views or opinions 
 - **Ses paneli**: myinstants.com'daki komik sesleri ValoLive içinden bul, dinle, tek tıkla ekle (en çok 12). Oyunda **Alt+1…9** ya da **Numpad 1…9** ile çal; tıklanmayan kopya kâğıdı (**Ctrl+Alt+N**) hangi tuşun ne çaldığını gösterir.
 - **Yayın Paneli**: Yayın üstü bütün ayarlar ayrı bir pencerede; ana pencereden ya da tepsi simgesinden açılır.
 - **Maç Odası**: Lobideki herkesin rankı, en yüksek rankı, formu (▲seri / ▼tilt), son maçları, **parti tespiti**, **smurf uyarısı**, daha önce karşılaştığın oyuncular ve takımların güç dengesi. Sekmeli küçük pencerede gruplu **brifing** (tehlike, fırsat, konum), rakiplerin haritada nerede oynadığını gösteren **Harita** sekmesi ve ajan seçiminde takımının ajan havuzu.
+- **Oyuncu Ara**: Herhangi bir Riot ID'yi (`Ad#Etiket`) yaz; rankı, sezon geçmişi, istatistikleri, en çok oynadığı ajan ve haritalar, kimlerle sıraya girdiği ve her maçın tam skor tablosu gelir. Bir oyuncuya tıklayınca onun sayfasına geçersin. Yalnızca ad yazarsan daha önce karşılaştığın oyuncular önerilir.
 - **Rakip hafızası (deneysel)**: Minimap'te senin ya da takımının gördüğü her rakibin son görüldüğü yeri ve ne kadar önce görüldüğünü hatırlar. Minimap'in altında liste olarak, haritanın üstünde ikon olarak ya da ikisi birden gösterilir. Ölen rakipler skor çubuğundan anlaşılıp listeden düşer, her raund sıfırlanır. Varsayılan olarak kapalıdır, **MAÇ ODASI** altından açılır. Rakip vurgu rengi **mor** olmalıdır. Maç sırasında bilgi veren üçüncü taraf araçlar Riot kurallarıyla çelişebilir; kullanım sorumluluğu sana aittir.
 - **16 dil**: Valorant sunucularında konuşulan diller.
 - **Gizlilik**: ValoLive pencereleri yayına ve kayda girmez. Yayın anahtarın bilgisayarında şifreli (DPAPI) saklanır. Oyuna hiçbir şey enjekte edilmez; rakip hafızası yalnızca ekranda zaten görünen görüntüyü okur.
