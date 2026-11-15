@@ -522,7 +522,6 @@ Atakta	No ataque
 Brifing	Resumo
 Bu lobide öne çıkan bir bilgi yok.	Nada se destaca neste lobby.
 Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Jogou {0} partidas hoje e perdeu as últimas {1} seguidas: pode estar tiltado, pressione cedo.
-Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.	Jogou {0} partidas hoje: no fim de uma sessão longa a atenção cai.
 Defansta	Na defesa
 Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	Quando a partida for encontrada, as informações mais úteis das últimas partidas dos jogadores aparecem aqui.
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	Analisando as últimas partidas dos jogadores; os achados aparecem aqui conforme chegam.
@@ -729,3 +728,11 @@ round başına hasar	dano por rodada
 Ölüm Kalım	Mata-mata
 Haritalar	Mapas
 parti	grupo
+Bu oturumun {0}. maçı, {1} önce başlamış.	Partida {0} desta sessão, que começou há {1}.
+Oturumun ilk maçı: henüz ısınmamış olabilir.	Primeira partida da sessão: talvez ainda não tenha aquecido.
+Son oturum: {0} maç · {1} sürdü · {2} önce bitti	Última sessão: {0} partidas · durou {1} · terminou há {2}
+{0} sa	{0} h
+{0} sa {1} dk	{0} h {1} min
+{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.	Jogando há {0} horas, é a {1}ª partida de hoje: no fim de uma sessão longa a atenção cai.
+{0}. MAÇ	PARTIDA {0}
+● Şu an oturumda: {0} maç · {1} süredir oynuyor	● Em sessão agora: {0} partidas · jogando há {1}

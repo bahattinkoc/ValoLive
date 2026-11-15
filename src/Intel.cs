@@ -207,11 +207,9 @@ namespace ValoLive
         /// </summary>
         static void Session(Input x, List<PMatch> ms, Adder add)
         {
-            var st = (x.Starts ?? new List<long>()).OrderByDescending(s => s).ToList();
-            long now = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(), gap = 90 * 60000L;
-            int played = 0;
-            if (st.Count > 0 && now - st[0] < 3 * 3600000L)
-                for (played = 1; played < st.Count && st[played - 1] - st[played] < gap; played++) { }
+            long now = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+            int played = SessionOf(x.Starts, now, out long first);
+            int mins = played > 0 ? (int)((now - first) / 60000) : 0; // ilk maçın başından bu maça: şu an oynuyor
             var recent = ms.OrderByDescending(m => m.Start).ToList();
             int losses = recent.TakeWhile(m => m.Result == "L").Count(), wins = recent.TakeWhile(m => m.Result == "W").Count();
             if (losses >= 3)
@@ -219,8 +217,30 @@ namespace ValoLive
                                           : L.F("Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.", losses), Pink, Kinds.Chance);
             else if (wins >= 4)
                 add(54, null, L.F("Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.", wins), Green, Kinds.Danger);
-            else if (played >= 6)
-                add(40, null, L.F("Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.", played), Mut, Kinds.Chance);
+            if (played >= 5 || mins >= 180)
+                add(44, L.F("{0}. MAÇ", played + 1), L.F("{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.", Hours(mins), played + 1), Mut, Kinds.Chance);
+            else if (played >= 1)
+                add(20, null, L.F("Bu oturumun {0}. maçı, {1} önce başlamış.", played + 1, Duration(mins)), Mut, Kinds.Info);
+            else if (x.Starts != null && x.Starts.Count > 0)
+                add(24, null, L.T("Oturumun ilk maçı: henüz ısınmamış olabilir."), Mut, Kinds.Info);
         }
+
+        /// <summary>
+        /// Oturum: aralarında 90 dakikadan az boşluk olan son maçlar (gece yarısını aşsa da). Son maç 3 saatten
+        /// eskiyse oturum bitmiştir (0). Dönen: oturumdaki maç sayısı; first: oturumun ilk maçının başlangıcı (ms).
+        /// </summary>
+        public static int SessionOf(IEnumerable<long> starts, long now, out long first)
+        {
+            var st = (starts ?? new long[0]).Where(s => s > 0).OrderByDescending(s => s).ToList();
+            first = 0;
+            if (st.Count == 0 || now - st[0] >= 3 * 3600000L) return 0;
+            int n = 1;
+            while (n < st.Count && st[n - 1] - st[n] < 90 * 60000L) n++;
+            first = st[n - 1];
+            return n;
+        }
+
+        public static string Duration(int mins) => mins < 60 ? L.F("{0} dk", Math.Max(1, mins)) : mins % 60 == 0 ? L.F("{0} sa", mins / 60) : L.F("{0} sa {1} dk", mins / 60, mins % 60);
+        static string Hours(int mins) => (Math.Round(mins / 30.0) / 2).ToString("0.#", L.Culture); // yarım saate yuvarla: 3,5
     }
 }

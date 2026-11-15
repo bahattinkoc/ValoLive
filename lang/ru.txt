@@ -522,7 +522,6 @@ Atakta	В атаке
 Brifing	Сводка
 Bu lobide öne çıkan bir bilgi yok.	В этом лобби ничего примечательного.
 Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Сегодня сыграл {0} матчей и проиграл последние {1} подряд: возможно, тильтует, дави с самого начала.
-Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.	Сегодня сыграл {0} матчей: к концу долгой сессии внимание падает.
 Defansta	В защите
 Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	Когда матч найден, здесь собирается самое полезное из последних матчей игроков.
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	Изучаются последние матчи игроков; находки появляются здесь по мере поступления.
@@ -729,3 +728,11 @@ round başına hasar	урон за раунд
 Ölüm Kalım	Бой насмерть
 Haritalar	Карты
 parti	группа
+Bu oturumun {0}. maçı, {1} önce başlamış.	Матч {0} этой сессии, начавшейся {1} назад.
+Oturumun ilk maçı: henüz ısınmamış olabilir.	Первый матч сессии: возможно, ещё не разогрелся.
+Son oturum: {0} maç · {1} sürdü · {2} önce bitti	Последняя сессия: {0} матчей · длилась {1} · закончилась {2} назад
+{0} sa	{0} ч
+{0} sa {1} dk	{0} ч {1} мин
+{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.	Играет уже {0} ч, это его {1}-й матч за сегодня: к концу долгой сессии внимание падает.
+{0}. MAÇ	МАТЧ {0}
+● Şu an oturumda: {0} maç · {1} süredir oynuyor	● Сейчас в сессии: {0} матчей · играет уже {1}

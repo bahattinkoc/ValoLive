@@ -522,7 +522,6 @@ Atakta	進攻時
 Brifing	簡報
 Bu lobide öne çıkan bir bilgi yok.	這個大廳沒有特別值得注意的資訊。
 Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	今天打了 {0} 場，最近連輸 {1} 場：可能心態崩了，開局就施壓。
-Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.	今天打了 {0} 場：長時間遊玩後期專注力會下降。
 Defansta	防守時
 Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	找到對戰後，這裡會整理出玩家最近對戰中最有用的資訊。
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	正在分析玩家最近的對戰；結果會陸續顯示在這裡。
@@ -729,3 +728,11 @@ round başına hasar	每回合傷害
 Ölüm Kalım	死鬥
 Haritalar	地圖
 parti	組隊
+Bu oturumun {0}. maçı, {1} önce başlamış.	本次連續遊玩的第 {0} 場，{1}前開始。
+Oturumun ilk maçı: henüz ısınmamış olabilir.	連續遊玩的第一場：可能還沒熱身。
+Son oturum: {0} maç · {1} sürdü · {2} önce bitti	上次連續遊玩：{0} 場 · 持續 {1} · {2}前結束
+{0} sa	{0} 小時
+{0} sa {1} dk	{0} 小時 {1} 分
+{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.	已連續玩 {0} 小時，今天第 {1} 場：長時間遊玩到後段專注力會下降。
+{0}. MAÇ	第 {0} 場
+● Şu an oturumda: {0} maç · {1} süredir oynuyor	● 正在連續遊玩：{0} 場 · 已玩 {1}

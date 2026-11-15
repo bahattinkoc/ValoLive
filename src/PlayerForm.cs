@@ -292,7 +292,11 @@ namespace ValoLive
                 using (var t = Theme.Display(20)) Draw(g, "#" + acc.Tag, t, Mut, tx + nw, y + 7);
             }
             using (var f = new Font(L.Sans, 9.5f))
+            {
                 Draw(g, L.F("Seviye {0} · {1}", acc.Level, acc.Region.ToUpperInvariant()), f, Mut, tx + 2, y + 40);
+                var session = SessionText(out var sc);
+                if (session != null) Draw(g, session, f, sc, tx + 2, y + 60);
+            }
             // Rütbe (sağda)
             if (rank != null)
             {
@@ -307,6 +311,27 @@ namespace ValoLive
                 }
             }
             return y + 100;
+        }
+
+        /// <summary>
+        /// Bugünkü oturum (tüm modlar): son maçı 40 dakikadan yeniyse hâlâ oynuyor sayılır; değilse oturumun ne kadar
+        /// sürdüğü (son maç ~40 dk) ve ne zaman bittiği. Son maç 3 saatten eskiyse yazılmaz.
+        /// </summary>
+        string SessionText(out Color c)
+        {
+            c = Mut;
+            var starts = stored.Select(s => s.Start).Concat(details.Select(d => d.Start)).Where(t => t > DateTime.MinValue)
+                .Select(t => new DateTimeOffset(t).ToUnixTimeMilliseconds()).Distinct().ToList();
+            long now = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+            int n = Intel.SessionOf(starts, now, out long first);
+            if (n == 0) return null;
+            long last = starts.Max();
+            if (now - last < 40 * 60000L)
+            {
+                c = Win;
+                return L.F("● Şu an oturumda: {0} maç · {1} süredir oynuyor", n, Intel.Duration((int)((now - first) / 60000)));
+            }
+            return L.F("Son oturum: {0} maç · {1} sürdü · {2} önce bitti", n, Intel.Duration((int)((last + 40 * 60000L - first) / 60000)), Intel.Duration((int)((now - last) / 60000) - 40));
         }
 
         float PaintSummary(Graphics g, float x, float y, float w)

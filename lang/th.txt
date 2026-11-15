@@ -522,7 +522,6 @@ Atakta	ฝั่งบุก
 Brifing	บรีฟฟิง
 Bu lobide öne çıkan bir bilgi yok.	ล็อบบี้นี้ไม่มีอะไรโดดเด่น
 Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	วันนี้เล่นไป {0} แมตช์ และแพ้ติดกัน {1} แมตช์ล่าสุด: อาจกำลังเสียสมาธิ กดดันตั้งแต่ต้น
-Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.	วันนี้เล่นไป {0} แมตช์: ช่วงท้ายของเซสชันยาวสมาธิจะลดลง
 Defansta	ฝั่งป้องกัน
 Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	เมื่อเจอแมตช์ ข้อมูลที่มีประโยชน์ที่สุดจากแมตช์ล่าสุดของผู้เล่นจะสรุปไว้ที่นี่
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	กำลังวิเคราะห์แมตช์ล่าสุดของผู้เล่น ผลจะปรากฏที่นี่เมื่อพร้อม
@@ -729,3 +728,11 @@ round başına hasar	ความเสียหายต่อรอบ
 Ölüm Kalım	เดธแมตช์
 Haritalar	แผนที่
 parti	ปาร์ตี้
+Bu oturumun {0}. maçı, {1} önce başlamış.	แมตช์ที่ {0} ของเซสชันนี้ เริ่มเมื่อ {1} ก่อน
+Oturumun ilk maçı: henüz ısınmamış olabilir.	แมตช์แรกของเซสชัน: อาจยังไม่อุ่นเครื่อง
+Son oturum: {0} maç · {1} sürdü · {2} önce bitti	เซสชันล่าสุด: {0} แมตช์ · นาน {1} · จบเมื่อ {2} ก่อน
+{0} sa	{0} ชม.
+{0} sa {1} dk	{0} ชม. {1} นาที
+{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.	เล่นมา {0} ชั่วโมง นี่คือแมตช์ที่ {1} ของวันนี้: ท้ายเซสชันยาวสมาธิจะลดลง
+{0}. MAÇ	แมตช์ {0}
+● Şu an oturumda: {0} maç · {1} süredir oynuyor	● กำลังเล่นต่อเนื่อง: {0} แมตช์ · เล่นมา {1}

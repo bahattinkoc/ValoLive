@@ -522,7 +522,6 @@ Atakta	Khi tấn công
 Brifing	Tóm tắt
 Bu lobide öne çıkan bir bilgi yok.	Phòng chờ này không có gì nổi bật.
 Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Hôm nay đã chơi {0} trận và thua liên tiếp {1} trận gần nhất: có thể đang tilt, ép sớm.
-Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.	Hôm nay đã chơi {0} trận: cuối phiên chơi dài sẽ giảm tập trung.
 Defansta	Khi phòng thủ
 Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	Khi tìm được trận, thông tin hữu ích nhất từ các trận gần đây của người chơi sẽ được tóm tắt ở đây.
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	Đang phân tích các trận gần đây của người chơi; kết quả sẽ hiện ở đây khi có.
@@ -729,3 +728,11 @@ round başına hasar	sát thương mỗi hiệp
 Ölüm Kalım	Tử chiến
 Haritalar	Bản đồ
 parti	nhóm
+Bu oturumun {0}. maçı, {1} önce başlamış.	Trận thứ {0} của phiên này, bắt đầu {1} trước.
+Oturumun ilk maçı: henüz ısınmamış olabilir.	Trận đầu của phiên: có thể chưa khởi động.
+Son oturum: {0} maç · {1} sürdü · {2} önce bitti	Phiên gần nhất: {0} trận · kéo dài {1} · kết thúc {2} trước
+{0} sa	{0} giờ
+{0} sa {1} dk	{0} giờ {1} phút
+{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.	Đã chơi {0} giờ, đây là trận thứ {1} hôm nay: cuối phiên dài sự tập trung giảm.
+{0}. MAÇ	TRẬN {0}
+● Şu an oturumda: {0} maç · {1} süredir oynuyor	● Đang trong phiên: {0} trận · đã chơi {1}

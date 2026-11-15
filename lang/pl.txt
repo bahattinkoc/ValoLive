@@ -522,7 +522,6 @@ Atakta	W ataku
 Brifing	Odprawa
 Bu lobide öne çıkan bir bilgi yok.	W tym lobby nic się nie wyróżnia.
 Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Zagrał dziś {0} meczów i przegrał ostatnie {1} z rzędu: może mieć tilta, naciskaj wcześnie.
-Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.	Zagrał dziś {0} meczów: pod koniec długiej sesji spada koncentracja.
 Defansta	W obronie
 Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	Po znalezieniu meczu tu pojawią się najprzydatniejsze informacje z ostatnich meczów graczy.
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	Analiza ostatnich meczów graczy; wyniki pojawiają się tu na bieżąco.
@@ -729,3 +728,11 @@ round başına hasar	obrażenia na rundę
 Ölüm Kalım	Deathmatch
 Haritalar	Mapy
 parti	drużyna
+Bu oturumun {0}. maçı, {1} önce başlamış.	Mecz {0} tej sesji, która zaczęła się {1} temu.
+Oturumun ilk maçı: henüz ısınmamış olabilir.	Pierwszy mecz sesji: może jeszcze nie być rozgrzany.
+Son oturum: {0} maç · {1} sürdü · {2} önce bitti	Ostatnia sesja: {0} meczów · trwała {1} · skończyła się {2} temu
+{0} sa	{0} godz.
+{0} sa {1} dk	{0} godz. {1} min
+{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.	Gra od {0} godzin, to jego {1}. mecz dziś: pod koniec długiej sesji koncentracja spada.
+{0}. MAÇ	MECZ {0}
+● Şu an oturumda: {0} maç · {1} süredir oynuyor	● Teraz w sesji: {0} meczów · gra od {1}

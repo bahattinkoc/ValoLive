@@ -522,7 +522,6 @@ Atakta	攻撃時
 Brifing	ブリーフィング
 Bu lobide öne çıkan bir bilgi yok.	このロビーに目立つ情報はありません。
 Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	今日{0}試合プレイし、直近{1}試合連敗中：ティルトしている可能性、序盤から圧をかけよう。
-Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.	今日{0}試合プレイ：長いセッションの終盤は集中力が落ちる。
 Defansta	防衛時
 Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	マッチが見つかると、各プレイヤーの直近の試合から特に役立つ情報がここにまとめられます。
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	プレイヤーの直近の試合を分析中。結果は届き次第ここに表示されます。
@@ -729,3 +728,11 @@ round başına hasar	ラウンドあたりダメージ
 Ölüm Kalım	デスマッチ
 Haritalar	マップ
 parti	パーティー
+Bu oturumun {0}. maçı, {1} önce başlamış.	このセッションの{0}試合目、{1}前に開始。
+Oturumun ilk maçı: henüz ısınmamış olabilir.	セッションの1試合目: まだ温まっていないかも。
+Son oturum: {0} maç · {1} sürdü · {2} önce bitti	前回のセッション: {0}試合 · {1}続いた · {2}前に終了
+{0} sa	{0}時間
+{0} sa {1} dk	{0}時間{1}分
+{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.	{0}時間プレイ中、今日{1}試合目: 長いセッションの終盤は集中力が落ちる。
+{0}. MAÇ	{0}試合目
+● Şu an oturumda: {0} maç · {1} süredir oynuyor	● セッション中: {0}試合 · {1}プレイ中

@@ -77,6 +77,7 @@ Bu adla daha önce kimseyi görmedik. Etiketiyle yaz: Ad#Etiket (ör. Oyuncu#TR1
 Bu haritada bomba kurmamış.
 Bu lobide öne çıkan bir bilgi yok.
 Bu maçlarda hep tek başına sıraya girmiş.
+Bu oturumun {0}. maçı, {1} önce başlamış.
 Bu pencere yayına ve kayda girmez · adını gizleyenler aranmaz
 Bu platforma yayınla
 Bu projede "YouTube Data API v3"ü etkinleştir (Enable):
@@ -86,7 +87,6 @@ Bu türde maç yok.
 Bugün henüz rekabetçi maç yok.
 Bugün rank atlıyoruz 💪
 Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.
-Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.
 Bugün {0}G {1}M · {2} RR
 Bölge bulunamadı: Valorant'ı bir kez açman gerekiyor
 Büyüteç
@@ -275,6 +275,7 @@ Ortak havai fişek
 Ortam
 Ortam miktarı
 Otomatik (Valorant dili)
+Oturumun ilk maçı: henüz ısınmamış olabilir.
 Oyun sesi
 Oyuncu Ara
 Oyuncu bulunamadı. Ad ve etiketi kontrol et.
@@ -378,6 +379,7 @@ Sol orta (haritanın altı)
 Son maç bilgisi yok.
 Son maç: {0} {1} · {2} · {3} · {4} · HS {5}
 Son maçlarında bu haritayı oynamamış. Yukarıdaki stil yine de geçerli.
+Son oturum: {0} maç · {1} sürdü · {2} önce bitti
 Son {0} maçta {1} kez {2} oynamış: bu ajanda çok deneyimli, ezberindeki oyunu oynar.
 Son {0} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.
 Son {0} maçını üst üste kazanmış: özgüvenli, agresif oynar.
@@ -633,6 +635,9 @@ zirve
 {0} raund geriden eşitlendi
 {0} raund üst üste
 {0} rekabetçi maç
+{0} sa
+{0} sa {1} dk
+{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.
 {0} sn
 {0} takım, {1} rakip
 {0} yarım ton
@@ -642,6 +647,7 @@ zirve
 {0} · {1} RR
 {0} · {1} {2} · daha önce {3} kez
 {0} çatışmanın {1} tanesi
+{0}. MAÇ
 {0}. ROUND
 {0}: Stream URL ve Stream Key gerekli.
 {0}: internet yetişmiyor, yayın takılabilir
@@ -723,6 +729,7 @@ zirve
 ● canlı
 ● {0} BAĞLANTIYI REDDETTİ
 ● Çalışıyor: {0}
+● Şu an oturumda: {0} maç · {1} süredir oynuyor
 ⚠  Valorant "Tam ekran" modunda: alt-tab'da yayın takılır.  Valorant → Ayarlar → Video → Genel → Görüntü Modu: "Pencereli Tam Ekran" seç.
 ✓ Eklendi
 ✗ Bağlantı hatası

@@ -522,7 +522,6 @@ Atakta	في الهجوم
 Brifing	الموجز
 Bu lobide öne çıkan bir bilgi yok.	لا شيء لافت في هذه الردهة.
 Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	لعب {0} مباريات اليوم وخسر آخر {1} على التوالي: قد يكون متوترًا، اضغط مبكرًا.
-Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.	لعب {0} مباريات اليوم: يقل التركيز في آخر الجلسة الطويلة.
 Defansta	في الدفاع
 Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	عند العثور على مباراة تُلخَّص هنا أهم المعلومات من آخر مباريات اللاعبين.
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	جارٍ تحليل آخر مباريات اللاعبين؛ تظهر النتائج هنا تباعًا.
@@ -729,3 +728,11 @@ round başına hasar	الضرر لكل جولة
 Ölüm Kalım	المواجهة حتى الموت
 Haritalar	الخرائط
 parti	فريق
+Bu oturumun {0}. maçı, {1} önce başlamış.	المباراة {0} في هذه الجلسة التي بدأت قبل {1}.
+Oturumun ilk maçı: henüz ısınmamış olabilir.	أول مباراة في الجلسة: ربما لم يتحمّس بعد.
+Son oturum: {0} maç · {1} sürdü · {2} önce bitti	آخر جلسة: {0} مباريات · استمرت {1} · انتهت قبل {2}
+{0} sa	{0} س
+{0} sa {1} dk	{0} س {1} د
+{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.	يلعب منذ {0} ساعات، وهذه مباراته رقم {1} اليوم: في آخر الجلسات الطويلة يقلّ التركيز.
+{0}. MAÇ	المباراة {0}
+● Şu an oturumda: {0} maç · {1} süredir oynuyor	● في جلسة الآن: {0} مباريات · يلعب منذ {1}

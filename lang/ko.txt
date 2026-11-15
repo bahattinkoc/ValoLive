@@ -522,7 +522,6 @@ Atakta	공격 시
 Brifing	브리핑
 Bu lobide öne çıkan bir bilgi yok.	이 로비에서 눈에 띄는 정보가 없습니다.
 Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	오늘 {0}경기를 했고 최근 {1}연패 중: 멘탈이 흔들렸을 수 있으니 초반부터 압박하세요.
-Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.	오늘 {0}경기 플레이: 긴 세션 막바지에는 집중력이 떨어집니다.
 Defansta	수비 시
 Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	매치가 잡히면 플레이어들의 최근 경기에서 가장 유용한 정보가 여기에 요약됩니다.
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	플레이어들의 최근 경기를 분석 중이며, 결과가 나오는 대로 여기에 표시됩니다.
@@ -729,3 +728,11 @@ round başına hasar	라운드당 피해
 Ölüm Kalım	데스매치
 Haritalar	맵
 parti	파티
+Bu oturumun {0}. maçı, {1} önce başlamış.	이번 세션의 {0}번째 경기, {1} 전에 시작.
+Oturumun ilk maçı: henüz ısınmamış olabilir.	세션 첫 경기: 아직 몸이 덜 풀렸을 수 있어요.
+Son oturum: {0} maç · {1} sürdü · {2} önce bitti	지난 세션: {0}경기 · {1} 동안 · {2} 전에 끝남
+{0} sa	{0}시간
+{0} sa {1} dk	{0}시간 {1}분
+{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.	{0}시간째 플레이 중, 오늘 {1}번째 경기: 긴 세션 막바지엔 집중력이 떨어져요.
+{0}. MAÇ	{0}번째 경기
+● Şu an oturumda: {0} maç · {1} süredir oynuyor	● 지금 세션 중: {0}경기 · {1}째 플레이

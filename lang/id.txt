@@ -522,7 +522,6 @@ Atakta	Saat menyerang
 Brifing	Ringkasan
 Bu lobide öne çıkan bir bilgi yok.	Tidak ada yang menonjol di lobi ini.
 Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Hari ini main {0} match dan kalah {1} match terakhir berturut-turut: mungkin sedang tilt, tekan dari awal.
-Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.	Hari ini main {0} match: di akhir sesi panjang fokusnya turun.
 Defansta	Saat bertahan
 Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	Saat match ditemukan, info paling berguna dari match terakhir para pemain dirangkum di sini.
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	Menganalisis match terakhir para pemain; temuan muncul di sini begitu tersedia.
@@ -729,3 +728,11 @@ round başına hasar	damage per ronde
 Ölüm Kalım	Deathmatch
 Haritalar	Peta
 parti	party
+Bu oturumun {0}. maçı, {1} önce başlamış.	Pertandingan ke-{0} sesi ini, dimulai {1} lalu.
+Oturumun ilk maçı: henüz ısınmamış olabilir.	Pertandingan pertama sesi: mungkin belum panas.
+Son oturum: {0} maç · {1} sürdü · {2} önce bitti	Sesi terakhir: {0} pertandingan · berlangsung {1} · selesai {2} lalu
+{0} sa	{0} jam
+{0} sa {1} dk	{0} jam {1} mnt
+{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.	Sudah main {0} jam, ini pertandingan ke-{1} hari ini: di akhir sesi panjang fokus menurun.
+{0}. MAÇ	MATCH {0}
+● Şu an oturumda: {0} maç · {1} süredir oynuyor	● Sedang dalam sesi: {0} pertandingan · main selama {1}

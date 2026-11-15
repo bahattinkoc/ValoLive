@@ -522,7 +522,6 @@ Atakta	On attack
 Brifing	Briefing
 Bu lobide öne çıkan bir bilgi yok.	Nothing stands out in this lobby.
 Bugün {0} maç oynamış, son {1} maçını üst üste kaybetmiş: tilt'te olabilir, erken baskı kur.	Played {0} matches today and lost the last {1} in a row: may be tilted, push early.
-Bugün {0} maç oynamış: uzun oturumun sonunda dikkati düşer.	Played {0} matches today: focus drops late in a long session.
 Defansta	On defense
 Maç bulununca oyuncuların son maçlarından en işe yarar bilgiler burada özetlenir.	Once a match is found, the most useful facts from players' recent matches are summed up here.
 Oyuncuların son maçları inceleniyor; bulgular geldikçe burada belirir.	Scouting players' recent matches; findings appear here as they come in.
@@ -729,3 +728,11 @@ round başına hasar	damage per round
 Ölüm Kalım	Deathmatch
 Haritalar	Maps
 parti	party
+Bu oturumun {0}. maçı, {1} önce başlamış.	Match {0} of this session, which started {1} ago.
+Oturumun ilk maçı: henüz ısınmamış olabilir.	First match of the session: may not be warmed up yet.
+Son oturum: {0} maç · {1} sürdü · {2} önce bitti	Last session: {0} matches · lasted {1} · ended {2} ago
+{0} sa	{0} h
+{0} sa {1} dk	{0} h {1} min
+{0} saattir oynuyor, bu bugünkü {1}. maçı: uzun oturumun sonunda dikkati düşer.	Playing for {0} hours, this is match {1} today: focus drops late in a long session.
+{0}. MAÇ	MATCH {0}
+● Şu an oturumda: {0} maç · {1} süredir oynuyor	● In a session now: {0} matches · playing for {1}
